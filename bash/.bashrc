@@ -42,7 +42,7 @@ export DAWSONDIR=$HOME/prj/dawson.sh/config_templates/
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ACKRC=".ackrc"
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:$PATH"
 
 
 #
