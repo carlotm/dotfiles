@@ -177,10 +177,3 @@ export GEM_HOME=$HOME/.gem
 # rust
 #
 export PATH="$HOME/.cargo/bin:$PATH"
-
-#
-# set window manager
-#
-if [ ! -f /tmp/.wmanager ]; then
-    echo "dwm" > /tmp/.wmanager
-fi

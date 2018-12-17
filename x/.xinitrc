@@ -29,7 +29,7 @@ udiskie --automount &
 
 xrandr | grep "DP-1 connected"
 if [ $? -eq 0 ]; then
-  bash $HOME/.screenlayout/dell.sh &
+  bash $HOME/.screenlayout/dell_and_laptop.sh &
 fi
 
 WM=$(cat /tmp/.wmanager)
