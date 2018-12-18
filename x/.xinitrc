@@ -32,14 +32,5 @@ if [ $? -eq 0 ]; then
   bash $HOME/.screenlayout/dell_and_laptop.sh &
 fi
 
-WM=$(cat /tmp/.wmanager)
-case $WM in
-  dwm)
-    conky | while read -r; do xsetroot -name "$REPLY"; done &
-    exec ${HOME}/bin/startdwm
-    ;;
-  wmaker)
-    exec wmaker
-    ;;
-esac
-
+conky | while read -r; do xsetroot -name "$REPLY"; done &
+exec ${HOME}/bin/startdwm
