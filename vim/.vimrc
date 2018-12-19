@@ -24,6 +24,7 @@ Plugin 'aserebryakov/vim-todo-lists'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'rust-lang/rust.vim'
 Plugin 'fisadev/vim-isort'
+Plugin 'ElmCast/elm-vim'
 
 call vundle#end()
 filetype plugin on
