@@ -38,7 +38,6 @@ export QT_STYLE_OVERRIDE
 export VST_PATH="$HOME/.vst"
 export LV2_PATH="$HOME/.lv2:/usr/local/lib/lv2:/usr/lib/lv2"
 export GIT_PS1_SHOWDIRTYSTATE=1
-export DAWSONDIR=$HOME/prj/dawson.sh/config_templates/
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ACKRC=".ackrc"
@@ -178,3 +177,36 @@ export GEM_HOME=$HOME/.gem
 # rust
 #
 export PATH="$HOME/.cargo/bin:$PATH"
+
+
+#
+# prompt
+#
+
+function __git_branch {
+  __git_ps1 "» $IPurple%s$Color_Off"
+}
+
+function __virtualenv {
+  local env=$(basename "$VIRTUAL_ENV")
+  [ "$env" != "" ] && echo -e "» $IGreen${env}$Color_Off"
+}
+
+function __node {
+  if hash node 2>/dev/null; then
+    local v=$(node -v)
+  fi
+  [ "$v" != "" ] && echo -e "» $IYellow${v:1}$Color_Off"
+}
+
+function __info {
+  local full=(
+    $(__virtualenv)
+    $(__node)
+    $(__git_branch)
+  )
+  full="${full[*]}"
+  [ "$full" != "" ] && echo "$full"
+}
+
+PS1="\$(__info)\n$ICyan\w$Color_Off $ "
