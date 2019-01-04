@@ -43,6 +43,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ACKRC=".ackrc"
 export PATH="$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:$PATH"
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 
 #
