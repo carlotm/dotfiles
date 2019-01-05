@@ -29,8 +29,10 @@ udiskie --automount &
 
 xrandr | grep "DP-1 connected"
 if [ $? -eq 0 ]; then
-  bash $HOME/.screenlayout/dell_and_laptop.sh &
+  bash $HOME/.screenlayout/dell_only.sh &
 fi
+
+echo -e "power on\n connect 90:7F:61:03:88:CA\n" | bluetoothctl
 
 conky | while read -r; do xsetroot -name "$REPLY"; done &
 exec ${HOME}/bin/startdwm
