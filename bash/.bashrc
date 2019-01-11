@@ -122,4 +122,4 @@ function __node {
     [ "$v" != "" ] && echo "(${v:1}) "
 }
 
-PS1="\$(__node)\$(__venv)\$(__git_branch)\n\w $ "
+PS1="\[\e[33m\]\$(__node)\[\e[32m\]\$(__venv)\[\e[35m\]\$(__git_branch)\n\[\e[34m\]\w\[\e[m\] $ "
