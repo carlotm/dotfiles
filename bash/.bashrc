@@ -107,29 +107,19 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 function __git_branch {
     local branch=$(__git_ps1)
-    echo "» $branch"
+    [ "$branch" != "" ] && echo "${branch}"
 }
 
-function __virtualenv {
-    local env=$(basename "$VIRTUAL_ENV")
-    [ "$env" != "" ] && echo "» ${env}"
+function __venv {
+    local venv=$(basename "$VIRTUAL_ENV")
+    [ "$venv" != "" ] && echo "(${venv})"
 }
 
 function __node {
     if hash node 2>/dev/null; then
         local v=$(node -v)
     fi
-    [ "$v" != "" ] && echo "» ${v:1}"
+    [ "$v" != "" ] && echo "(${v:1}) "
 }
 
-function __info {
-    local full=(
-        $(__virtualenv)
-        $(__node)
-        $(__git_branch)
-    )
-    full="${full[*]}"
-    [ "$full" != "" ] && echo "$full"
-}
-
-PS1="\$(__info)\n\w $ "
+PS1="\$(__node)\$(__venv)\$(__git_branch)\n\w $ "
