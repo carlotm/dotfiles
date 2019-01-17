@@ -1,0 +1,30 @@
+[user]
+    name = Ascani Carlo
+    email = carlo.ratm@gmail.com
+[alias]
+    co = checkout
+    s = status
+    d = diff
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+[color "branch"]
+    current = green reverse
+    local = green
+    remote = yellow
+[color "diff"]
+    meta = magenta bold
+    frag = black bold
+    old = red bold
+    new = green
+[color "status"]
+    added = green
+    changed = green
+    untracked = yellow
+[merge]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[http]
+    postBuffer = 524288000
