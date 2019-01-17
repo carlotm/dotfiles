@@ -26,15 +26,11 @@ eval `keychain --eval --agents ssh id_rsa`
 #
 # ENVIRONMENT VARIABLES
 #
-HISTCONTROL=ignoreboth
-EDITOR=vim
-TERM=rxvt-unicode
-QT_STYLE_OVERRIDE=gtk
-export TERM
-export HISTCONTROL
-export EDITOR
+export TERM=rxvt-unicode
+export HISTCONTROL=ignoreboth
+export EDITOR=vim
 export PIP_DOWNLOAD_CACHE="$HOME/.pip_download_cache"
-export QT_STYLE_OVERRIDE
+export QT_STYLE_OVERRIDE=gtk
 export VST_PATH="$HOME/.vst"
 export LV2_PATH="$HOME/.lv2:/usr/local/lib/lv2:/usr/lib/lv2"
 export GIT_PS1_SHOWDIRTYSTATE=1
@@ -100,11 +96,9 @@ export GEM_HOME=$HOME/.gem
 #
 export PATH="$HOME/.cargo/bin:$PATH"
 
-
 #
 # prompt
 #
-
 function __git_branch {
     local branch=$(__git_ps1)
     [ "$branch" != "" ] && echo "${branch}"
@@ -123,3 +117,8 @@ function __node {
 }
 
 PS1="\[\e[33m\]\$(__node)\[\e[32m\]\$(__venv)\[\e[35m\]\$(__git_branch)\n\[\e[34m\]\w\[\e[m\] $ "
+
+#
+# Autorun
+#
+$HOME/bin/colors.sh
