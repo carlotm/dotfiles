@@ -16,30 +16,38 @@ URxvt.keysym.Control-Down: \033[1;5B
 URxvt.keysym.Control-Left: \033[1;5D
 URxvt.keysym.Control-Right: \033[1;5C
 
-*foreground: #465571
+*foreground: #1a3f48
 *background: #FDF6E3
 
-!black
-*color0:     #465571
-*color8:     #7A89AA
-!red
-*color1:     #BF1E2D
-*color9:     #E7212A
-!green
-*color2:     #9DBA3A
-*color10:    #A9C938
-!yellow
-*color3:     #F5B915
-*color11:    #F7D325
-!blue
-*color4:     #1CA1DB
-*color12:    #00AFDA
-!magenta
-*color5:     #652F90
-*color13:    #894E9F
-!cyan
-*color6:     #EA7D24
-*color14:    #F79321
-!white
-*color7:     #E7E8E9
-*color15:    #F3F3F4
+! black
+*color0:       #051519
+*color8:       #323b3e
+
+! red
+*color1:       #f8818e
+*color9:       #fb3d66
+
+! green
+*color2:       #84969a
+*color10:      #22292a
+
+! yellow
+*color3:       #97a6aa
+*color11:      #3e494c
+
+! blue
+*color12:      #5893d4
+*color4:       #1f3c88
+
+! magenta
+*color5:       #677a7e
+*color13:      #e0e5e6
+
+! cyan
+*color6:       #7b8e93
+*color14:      #556468
+
+! white
+*color7:       #b3bec1
+*color15:      #f7f8f8
+
