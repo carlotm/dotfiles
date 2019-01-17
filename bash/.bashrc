@@ -28,7 +28,7 @@ eval `keychain --eval --agents ssh id_rsa`
 #
 HISTCONTROL=ignoreboth
 EDITOR=vim
-TERM=xterm-256color
+TERM=rxvt-unicode
 QT_STYLE_OVERRIDE=gtk
 export TERM
 export HISTCONTROL

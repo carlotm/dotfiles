@@ -65,6 +65,7 @@ let g:VimTodoListsMoveItems = 0
 
 filetype off
 syntax on
+syntax enable
 
 set t_Co=256
 set background=light
