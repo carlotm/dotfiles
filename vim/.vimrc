@@ -68,14 +68,17 @@ syntax on
 syntax enable
 
 set t_Co=256
-set background=light
-colorscheme PaperColor
+set background=dark
+set colorcolumn=90
 
-highlight default RedBG ctermbg=darkred guibg=darkred
-autocmd ColorScheme * highlight default ExtraWhitespace ctermbg=darkred guibg=darkred
+highlight ExtraWhitespace ctermbg=9
+highlight CursorLine ctermbg=8 ctermfg=none cterm=bold
+highlight default RedBG ctermbg=1
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
-highlight ColorColumn ctermbg=lightgrey
+highlight ColorColumn ctermbg=8
+
+match ExtraWhitespace /\s\+$/
 
 vnoremap < <gv
 vnoremap > >gv

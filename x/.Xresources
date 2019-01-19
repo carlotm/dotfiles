@@ -1,5 +1,6 @@
-URxvt.font: xft:IBM Plex Mono:size=11
-URxvt.letterSpace: 0.5
+URxvt.font: xft:Courier Prime Code:size=13
+URxvt.boldFont: xft:Courier Prime Code:size=13
+URxvt.letterSpace: -0.5
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
@@ -8,38 +9,56 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt.loginShell: true
 URxvt.scrollBar: false
-URxvt.visualBell: true
-URxvt.lineSpace: 4
+URxvt.visualBell: false
+URxvt.lineSpace: 6
 URxvt.mapAlert: true
 URxvt.keysym.Control-Up: \033[1;5A
 URxvt.keysym.Control-Down: \033[1;5B
 URxvt.keysym.Control-Left: \033[1;5D
 URxvt.keysym.Control-Right: \033[1;5C
+URxvt.cursorUnderline: true
+URxvt.cursorBlink: true
+URxvt.urlLauncher: firefox
 
-*foreground: #1a3f48
-*background: #FDF6E3
+Xft*dpi: 97
+Xft*antialias: true
+Xft*hinting: medium
+
+
+! special
+*.foreground:   #ffffff
+*.background:   #000000
+*.cursorColor:  #ffffff
 
 ! black
-*color0:       #051519
-*color8:       #323b3e
+*.color0:       #000000
+*.color8:       #202020
+
 ! red
-*color1:       #f8818e
-*color9:       #fb3d66
+*.color1:       #6b6b6b
+*.color9:       #e32525
+
 ! green
-*color2:       #84969a
-*color10:      #22292a
+*.color2:       #c4c4c4
+*.color10:      #f8f8f8
+
 ! yellow
-*color3:       #97a6aa
-*color11:      #3e494c
+*.color3:       #b3b3b3
+*.color11:      #eeeeee
+
 ! blue
-*color12:      #5893d4
-*color4:       #1f3c88
+*.color4:       #999999
+*.color12:      #7c7c7c
+
 ! magenta
-*color5:       #677a7e
-*color13:      #e0e5e6
+*.color5:       #717171
+*.color13:      #adadad
+
 ! cyan
-*color6:       #7b8e93
-*color14:      #556468
+*.color6:       #8a8a8a
+*.color14:      #c0c0c0
+
 ! white
-*color7:       #b3bec1
-*color15:      #f7f8f8
+*.color7:       #b5cabb
+*.color15:      #99ac9e
+
