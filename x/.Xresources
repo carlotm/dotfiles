@@ -19,46 +19,40 @@ URxvt.keysym.Control-Right: \033[1;5C
 URxvt.cursorUnderline: true
 URxvt.cursorBlink: true
 URxvt.urlLauncher: firefox
+URxvt.perl-ext-common: ...,clipboard
+URxvt.keysym.M-c:   perl:clipboard:copy
+URxvt.keysym.M-v:   perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 
 Xft*dpi: 97
 Xft*antialias: true
 Xft*hinting: medium
 
-
 ! special
-*.foreground:   #ffffff
-*.background:   #000000
-*.cursorColor:  #ffffff
-
+*.foreground:  #ffffff
+*.background:  #000000
+*.cursorColor: #ffffff
 ! black
-*.color0:       #000000
-*.color8:       #202020
-
+*.color0:      #000000
+*.color8:      #202020
 ! red
-*.color1:       #6b6b6b
-*.color9:       #e32525
-
+*.color1:      #6b6b6b
+*.color9:      #e32525
 ! green
-*.color2:       #c4c4c4
-*.color10:      #f8f8f8
-
+*.color2:      #c4c4c4
+*.color10:     #f8f8f8
 ! yellow
-*.color3:       #b3b3b3
-*.color11:      #eeeeee
-
+*.color3:      #b3b3b3
+*.color11:     #eeeeee
 ! blue
-*.color4:       #999999
-*.color12:      #7c7c7c
-
+*.color4:      #999999
+*.color12:     #
 ! magenta
-*.color5:       #717171
-*.color13:      #adadad
-
+*.color5:      #717171
+*.color13:     #adadad
 ! cyan
-*.color6:       #8a8a8a
-*.color14:      #c0c0c0
-
+*.color6:      #8a8a8a
+*.color14:     #c0c0c0
 ! white
-*.color7:       #b5cabb
-*.color15:      #99ac9e
-
+*.color7:      #b5cabb
+*.color15:     #99ac9e
