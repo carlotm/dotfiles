@@ -62,6 +62,10 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 let NERDTreeMinimalUI=1
 let g:VimTodoListsMoveItems = 0
+let g:buftabline_numbers = 0
+let g:buftabline_indicators = 1
+let g:buftabline_separators = 0
+let g:buftabline_show       = 2
 
 filetype off
 syntax on
@@ -70,9 +74,10 @@ syntax enable
 set t_Co=256
 set background=dark
 set colorcolumn=90
+colorscheme carloratm
 
 highlight ExtraWhitespace ctermbg=9
-highlight CursorLine ctermbg=8 ctermfg=none cterm=bold
+highlight CursorLine ctermbg=8 ctermfg=none cterm=none
 highlight default RedBG ctermbg=1
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE

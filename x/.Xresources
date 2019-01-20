@@ -1,5 +1,5 @@
 URxvt.font: xft:Courier Prime Code:size=13
-URxvt.boldFont: xft:Courier Prime Code:size=13
+URxvt.boldFont: xft:Courier Prime Code:size=13:weight=bold
 URxvt.letterSpace: -0.5
 URxvt.perl-ext-common: default,matcher,clipboard
 URxvt.url-launcher: /usr/bin/xdg-open
@@ -19,8 +19,8 @@ URxvt.keysym.Control-Right: \033[1;5C
 URxvt.cursorUnderline: true
 URxvt.cursorBlink: true
 URxvt.urlLauncher: firefox
-URxvt.keysym.M-c:   perl:clipboard:copy
-URxvt.keysym.M-v:   perl:clipboard:paste
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
 URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 URxvt.clipboard.autocopy: true
 
@@ -31,7 +31,7 @@ Xft*hinting: medium
 ! special
 *.foreground:  #ffffff
 *.background:  #000000
-*.cursorColor: #ffffff
+*.cursorColor: #ff0000
 ! black
 *.color0:      #000000
 *.color8:      #202020
