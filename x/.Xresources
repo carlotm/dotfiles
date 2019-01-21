@@ -1,6 +1,6 @@
-URxvt.font: xft:Courier Prime Code:size=13
-URxvt.boldFont: xft:Courier Prime Code:size=13:weight=bold
-URxvt.letterSpace: -0.5
+URxvt.font: xft:Courier Prime Code:size=14
+URxvt.boldFont: xft:Courier Prime Code:size=14
+URxvt.letterSpace: -1.5
 URxvt.perl-ext-common: default,matcher,clipboard,resize-font
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
@@ -33,30 +33,38 @@ Xft*antialias: true
 Xft*hinting: medium
 
 ! special
-*.foreground:  #ffffff
-*.background:  #000000
-*.cursorColor: #ff0000
+*.foreground:   #4c4c4c
+*.background:   #FFF9DC
+*.cursorColor:  #ff0000
+
 ! black
-*.color0:      #000000
-*.color8:      #202020
+*.color0:       #ffffff
+*.color8:       #cfcfcf
+
 ! red
-*.color1:      #6b6b6b
-*.color9:      #e32525
+*.color1:       #e75c58
+*.color9:       #b22b31
+
 ! green
-*.color2:      #c4c4c4
-*.color10:     #f8f8f8
+*.color2:       #00a250
+*.color10:      #007427
+
 ! yellow
-*.color3:      #b3b3b3
-*.color11:     #eeeeee
+*.color3:       #a08a00
+*.color11:      #715f00
+
 ! blue
-*.color4:      #070d59
-*.color12:     #999999
+*.color4:       #208ffb
+*.color12:      #0065ca
+
 ! magenta
-*.color5:      #717171
-*.color13:     #adadad
+*.color5:       #d160c4
+*.color13:      #a03196
+
 ! cyan
-*.color6:      #8a8a8a
-*.color14:     #c0c0c0
+*.color6:       #00a4c1
+*.color14:      #007693
+
 ! white
-*.color7:      #b5cabb
-*.color15:     #99ac9e
+*.color7:       #3e424d
+*.color15:      #282c36

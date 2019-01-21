@@ -72,16 +72,16 @@ syntax on
 syntax enable
 
 set t_Co=256
-set background=dark
+set background=light
 set colorcolumn=90
-colorscheme carloratm
+colorscheme PaperColor
 
 highlight ExtraWhitespace ctermbg=9
-highlight CursorLine ctermbg=8 ctermfg=none cterm=none
-highlight default RedBG ctermbg=1
+highlight CursorLine ctermbg=0 ctermfg=none cterm=none
+highlight default RedBG ctermbg=9
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
-highlight ColorColumn ctermbg=8
+highlight ColorColumn ctermbg=0
 
 match ExtraWhitespace /\s\+$/
 
