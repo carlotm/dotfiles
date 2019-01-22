@@ -106,14 +106,14 @@ function __git_branch {
 
 function __venv {
     local venv=$(basename "$VIRTUAL_ENV")
-    [ "$venv" != "" ] && echo "(${venv})"
+    [ "$venv" != "" ] && echo " ${venv}"
 }
 
 function __node {
     if hash node 2>/dev/null; then
         local v=$(node -v)
     fi
-    [ "$v" != "" ] && echo "(${v:1})"
+    [ "$v" != "" ] && echo "node ${v:1}"
 }
 
 PS1="\[\e[33m\]\$(__node)\[\e[32m\]\$(__venv)\[\e[35m\]\$(__git_branch)\n\[\e[34m\]\w\[\e[m\] $ "
