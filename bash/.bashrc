@@ -84,6 +84,8 @@ NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 [ -e "/usr/share/nvm/nvm.sh" ] && source /usr/share/nvm/nvm.sh
 [ -e "/usr/share/nvm/bash_completion" ] && source /usr/share/nvm/bash_completion
 [ -e "/usr/share/nvm/install-nvm-exec" ] && source /usr/share/nvm/install-nvm-exec
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 #
 # RUBY GEM
