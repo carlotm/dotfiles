@@ -44,10 +44,10 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 #
 # SOURCES
 #
-source /usr/share/git/completion/git-completion.bash
-source /usr/share/bash-completion/completions/git
-source /usr/share/git/completion/git-prompt.sh
-source $HOME/.git-prompt.sh
+[ -e "/usr/share/git/completion/git-completion.bash" ] && source /usr/share/git/completion/git-completion.bash
+[ -e "/usr/share/bash-completion/completions/git" ] && source /usr/share/bash-completion/completions/git
+[ -e "/usr/share/git/completion/git-prompt.sh" ] && source /usr/share/git/completion/git-prompt.sh
+[ -e "$HOME/.git-prompt.sh" ] && source $HOME/.git-prompt.sh
 
 #
 # COMPLETION
@@ -65,7 +65,7 @@ unset sq_color
 #
 export WORKON_HOME=~/.virtualenvs
 VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source /usr/bin/virtualenvwrapper.sh
+[ -e "/usr/bin/virtualenvwrapper.sh" ] && source /usr/bin/virtualenvwrapper.sh
 
 #
 # NPM
@@ -75,15 +75,15 @@ PATH="$NPM_PACKAGES/bin:$PATH"
 unset MANPATH
 MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
-source /usr/share/nvm/init-nvm.sh
+[ -e "/usr/share/nvm/init-nvm.sh" ] && source /usr/share/nvm/init-nvm.sh
 
 #
 # NVM
 #
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-source /usr/share/nvm/nvm.sh
-source /usr/share/nvm/bash_completion
-source /usr/share/nvm/install-nvm-exec
+[ -e "/usr/share/nvm/nvm.sh" ] && source /usr/share/nvm/nvm.sh
+[ -e "/usr/share/nvm/bash_completion" ] && source /usr/share/nvm/bash_completion
+[ -e "/usr/share/nvm/install-nvm-exec" ] && source /usr/share/nvm/install-nvm-exec
 
 #
 # RUBY GEM
