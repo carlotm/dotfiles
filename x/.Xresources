@@ -1,6 +1,6 @@
 URxvt.font: xft:Courier Prime Code:size=12
 URxvt.boldFont: xft:Courier Prime Code:style=italic:size=12
-URxvt.letterSpace: -1
+URxvt.letterSpace: 0
 URxvt.perl-ext-common: default,matcher,clipboard,resize-font
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
