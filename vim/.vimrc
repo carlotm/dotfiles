@@ -77,11 +77,11 @@ set colorcolumn=90
 colorscheme PaperColor
 
 highlight ExtraWhitespace ctermbg=9
-highlight CursorLine ctermbg=0 ctermfg=none cterm=none
+highlight CursorLine ctermbg=15 ctermfg=none cterm=none
 highlight default RedBG ctermbg=9
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
-highlight ColorColumn ctermbg=0
+highlight ColorColumn ctermbg=15
 
 match ExtraWhitespace /\s\+$/
 
