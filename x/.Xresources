@@ -1,5 +1,5 @@
-URxvt.font: xft:Iosevka:size=14
-URxvt.boldFont: xft:Iosevka:style=italic:size=14
+URxvt.font: xft:Iosevka SS02:size=12:weight=70
+URxvt.boldFont: xft:Iosevka SS02:style=italic:size=12:weight=70
 URxvt.letterSpace: 0
 URxvt.perl-ext-common: default,matcher,clipboard,resize-font
 URxvt.url-launcher: /usr/bin/xdg-open
