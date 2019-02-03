@@ -7,10 +7,10 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'ap/vim-buftabline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'xolox/vim-misc'
-Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'mileszs/ack.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
@@ -72,16 +72,16 @@ syntax on
 syntax enable
 
 set t_Co=256
-set background=light
+set background=dark
 set colorcolumn=90
-colorscheme PaperColor
+colorscheme 256_noir
 
 highlight ExtraWhitespace ctermbg=9
-highlight CursorLine ctermbg=15 ctermfg=none cterm=none
+highlight CursorLine ctermbg=8 ctermfg=none cterm=none
 highlight default RedBG ctermbg=9
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
-highlight ColorColumn ctermbg=15
+highlight ColorColumn ctermbg=8
 
 match ExtraWhitespace /\s\+$/
 
