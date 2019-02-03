@@ -42,7 +42,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 
 #
-# SOURCES
+# BASH SOURCES
 #
 [ -e "/usr/share/git/completion/git-completion.bash" ] && source /usr/share/git/completion/git-completion.bash
 [ -e "/usr/share/bash-completion/completions/git" ] && source /usr/share/bash-completion/completions/git
