@@ -1,5 +1,5 @@
-URxvt.font: xft:Hack:size=13
-URxvt.boldFont: xft:Hack:style=italic:size=13
+URxvt.font: xft:Consola Mono:size=13
+URxvt.boldFont: xft:Consola Mono:style=italic:size=13
 URxvt.letterSpace: 0
 URxvt.perl-ext-common: default,matcher,clipboard,resize-font
 URxvt.url-launcher: /usr/bin/xdg-open
@@ -10,7 +10,7 @@ URxvt.iso14755_52: false
 URxvt.loginShell: true
 URxvt.scrollBar: false
 URxvt.visualBell: false
-URxvt.lineSpace: 8
+URxvt.lineSpace: 6
 URxvt.mapAlert: true
 URxvt.keysym.Control-Up: \033[1;5A
 URxvt.keysym.Control-Down: \033[1;5B
