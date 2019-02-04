@@ -7,7 +7,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'ap/vim-buftabline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'xolox/vim-misc'
@@ -72,9 +71,9 @@ syntax on
 syntax enable
 
 set t_Co=256
-set background=dark
+set background=light
 set colorcolumn=90
-colorscheme 256_noir
+colorscheme PaperColor
 
 highlight ExtraWhitespace ctermbg=9
 highlight CursorLine ctermbg=8 ctermfg=none cterm=none
