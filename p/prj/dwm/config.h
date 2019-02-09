@@ -26,8 +26,8 @@ static const int nmaster     = 1;
 static const int resizehints = 0;
 
 static const Rule rules[] = {
-  /* class      instance    title       tags mask     isfloating   monitor */
-  { "FS-UAE · Amiga 600",    NULL,       NULL,       1 << 8,       1,           -1 },
+  /* class|instance|title|tags mask|isfloating|monitor */
+  { "fs-uae", NULL, NULL, 1 << 8, 1, -1 },
 };
 
 static const Layout layouts[] = {

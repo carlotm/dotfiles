@@ -37,8 +37,9 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ACKRC=".ackrc"
-export PATH="$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.screenlayout:$HOME/prj/amiga_sdk/vbcc/bin:$HOME/bin:$HOME/.local/bin:$PATH"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+export VBCC=$HOME/prj/amiga_sdk/vbcc
 
 
 #
