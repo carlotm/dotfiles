@@ -1,1 +1,1 @@
-/home/carloratm/prj/dwm/config.h
+/home/carloratm/.dotfiles/p/prj/dwm/config.h
