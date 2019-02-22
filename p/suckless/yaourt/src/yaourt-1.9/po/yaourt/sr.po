@@ -1,0 +1,807 @@
+# yaourt default.po file
+# Copyright (C) 2010-2017
+# This file is distributed under the same license as the yaourt package.
+# Tuxce <tuxce.net@gmail.com>, 2010-2015
+# 
+# Translators:
+# archlinuxfr <webmaster@archlinux.fr>, 2017
+# Filip Brcic <brcha@gna.org>, 2014
+# larchunix, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: yaourt\n"
+"Report-Msgid-Bugs-To: https://github.com/archlinuxfr/yaourt\n"
+"POT-Creation-Date: 2016-02-21 21:05+0100\n"
+"PO-Revision-Date: 2017-06-26 10:09+0000\n"
+"Last-Translator: archlinuxfr <webmaster@archlinux.fr>\n"
+"Language-Team: Serbian (http://www.transifex.com/archlinuxfr/yaourt/language/sr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sr\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../../pacdiffviewer.sh.in:42
+msgid "Delete all *.pac* found"
+msgstr "Избриши све нађене *.pac* фајлове"
+
+#: ../../pacdiffviewer.sh.in:43
+msgid "Save all packages backup files for a later merge"
+msgstr "Сачувај бекап фајлове свих пакета ради каснијег спајања"
+
+#: ../../pacdiffviewer.sh.in:44
+msgid "Use with backup to not output messages"
+msgstr "Користи уз бекап како не би исписивао поруке"
+
+#: ../../pacdiffviewer.sh.in:45
+msgid "Sequential listing"
+msgstr "Листај по реду"
+
+#: ../../pacdiffviewer.sh.in:46
+msgid "Display diff"
+msgstr "Прикажи разлику"
+
+#: ../../pacdiffviewer.sh.in:47
+msgid "This help"
+msgstr "Ова помоћ"
+
+#: ../../pacdiffviewer.sh.in:48
+msgid "Show version"
+msgstr "Прикажи верзију"
+
+#: ../../pacdiffviewer.sh.in:70
+msgid "saving"
+msgstr "чување"
+
+#: ../../pacdiffviewer.sh.in:102 ../../pacdiffviewer.sh.in:103
+#: ../../pacdiffviewer.sh.in:104
+msgid "found"
+msgstr "нађено"
+
+#: ../../pacdiffviewer.sh.in:105
+msgid "files are orphans"
+msgstr "фајлови су сирочићи"
+
+#: ../../pacdiffviewer.sh.in:157
+msgid "The following files have no original version."
+msgstr "Следећи фајлови немају оригиналну верзију."
+
+#: ../../pacdiffviewer.sh.in:160
+msgid "Do you want to delete these files ?"
+msgstr "Да ли желите да избришете ове фајлове?"
+
+#: ../../pacdiffviewer.sh.in:161
+msgid "(S: no confirm)"
+msgstr "(П: без потврде)"
+
+#: ../../pacdiffviewer.sh.in:162
+msgid "YNS"
+msgstr "ДНП"
+
+#: ../../pacdiffviewer.sh.in:179
+msgid "**same file**"
+msgstr "**исти фајл**"
+
+#: ../../pacdiffviewer.sh.in:183
+msgid "**automerge**"
+msgstr "**ауто-спајање**"
+
+#: ../../pacdiffviewer.sh.in:187
+msgid "Action: [E]dit, [R]eplace, [S]uppress, [C]ontinue (default), [A]bort ?"
+msgstr "Акције: [И]змени, [З]амени, [П]отисни, [Н]астави (подразумевано), [О]дустани?"
+
+#: ../../pacdiffviewer.sh.in:188
+msgid ""
+"Action: [E]dit, [R]eplace, [S]uppress, [M]erge, [C]ontinue (default), "
+"[A]bort ?"
+msgstr "Акције: [И]змени, [З]амени, [П]отисни, [С]поји, [Н]астави (подразумевано), [О]дустани?"
+
+#: ../../pacdiffviewer.sh.in:189
+msgid "ERSCA"
+msgstr "ИЗПНО"
+
+#: ../../pacdiffviewer.sh.in:190
+msgid "ERSCAM"
+msgstr "ИЗПНОС"
+
+#: ../../pacdiffviewer.sh.in:200
+msgid "Patch: "
+msgstr "Закрпа:"
+
+#: ../../pacdiffviewer.sh.in:203
+msgid "Apply ?"
+msgstr "Примени ?"
+
+#: ../../pacdiffviewer.sh.in:206
+msgid "patch returned an error!"
+msgstr "закрпа је вратила грешку!"
+
+#: ../../pacdiffviewer.sh.in:228
+msgid "Enter n° : "
+msgstr "Унеси број: "
+
+#: ../../yaourt.sh.in:35
+msgid "Yaourt does not support --help for a particular option."
+msgstr "Yaourt не подржава --help за конкретну опцију."
+
+#: ../../yaourt.sh.in:36
+msgid "The following is %s help :"
+msgstr "Следеће је %s помоћ :"
+
+#: ../../yaourt.sh.in:41
+msgid "Usage: yaourt <operation> [...]"
+msgstr "Употреба: yaourt <операција> [...]"
+
+#: ../../yaourt.sh.in:42
+msgid "operations:"
+msgstr "операције:"
+
+#: ../../yaourt.sh.in:43
+msgid "yaourt (search pattern|package file)"
+msgstr "yaourt (реч претраге|фајл пакета)"
+
+#: ../../yaourt.sh.in:44
+msgid "yaourt {-h --help}"
+msgstr "yaourt {-h --help}"
+
+#: ../../yaourt.sh.in:45
+msgid "yaourt {-V --version}"
+msgstr "yaourt {-V --version}"
+
+#: ../../yaourt.sh.in:46
+msgid "yaourt {-Q --query}       [options] [package(s)]"
+msgstr "yaourt {-Q --query}       [опције] [пакет(и)]"
+
+#: ../../yaourt.sh.in:47
+msgid "yaourt {-R --remove}      [options] <package(s)>"
+msgstr "yaourt {-R --remove}      [опције] <пакет(и)>"
+
+#: ../../yaourt.sh.in:48
+msgid "yaourt {-S --sync}        [options] [package(s)]"
+msgstr "yaourt {-S --sync}        [опције] [пакет(и)]"
+
+#: ../../yaourt.sh.in:49
+msgid "yaourt {-U --upgrade}     [options] <package(s)>"
+msgstr "yaourt {-U --upgrade}     [опције] <пакет(и)>"
+
+#: ../../yaourt.sh.in:50
+msgid "yaourt {-C}               [options]"
+msgstr ""
+
+#: ../../yaourt.sh.in:51
+msgid "yaourt {-B --backup}      [save directory|restore file]"
+msgstr "yaourt {-B --backup}      [директоријум за чување|фајл за враћање]"
+
+#: ../../yaourt.sh.in:52
+msgid "yaourt {-G --getpkgbuild} [options] <package(s)>"
+msgstr "yaourt {-G --getpkgbuild} [опције] <пакет(и)>"
+
+#: ../../yaourt.sh.in:53
+msgid "yaourt {-P --pkgbuild}    [-i --install] <directory>"
+msgstr ""
+
+#: ../../yaourt.sh.in:54
+msgid "yaourt {--stats}"
+msgstr "yaourt {--stats}"
+
+#: ../../yaourt.sh.in:59
+msgid "homepage: http://archlinux.fr/yaourt-en"
+msgstr "веб страница: http://archlinux.fr/yaourt-en"
+
+#: ../../yaourt.sh.in:117
+msgid "query packages"
+msgstr "испитај пакете"
+
+#: ../../yaourt.sh.in:131
+msgid "Following packages have not been installed:"
+msgstr "Следећи пакети нису инсталирани:"
+
+#: ../../yaourt.sh.in:144
+msgid "listing all packages in repo(s)"
+msgstr "листа свих пакета у складишту/има"
+
+#: ../../yaourt.sh.in:145
+msgid "Listing all packages in repo(s)"
+msgstr "Листа свих пакета у складишту/има"
+
+#: ../../yaourt.sh.in:147
+msgid "show groups"
+msgstr "прикажи групе"
+
+#: ../../yaourt.sh.in:166
+msgid "Information for %s"
+msgstr "Информације о %s"
+
+#: ../../yaourt.sh.in:214
+msgid "Unable to read %s file"
+msgstr "Нисам могао да прочитам фајл %s"
+
+#: ../../yaourt.sh.in:240
+msgid "%s directory does not contain a PKGBUILD"
+msgstr ""
+
+#: ../../yaourt.sh.in:246
+msgid "Installing %s from local PKGBUILD"
+msgstr ""
+
+#: ../../yaourt.sh.in:259
+msgid "Enter n° of packages to be installed (e.g., 1 2 3 or 1-3)"
+msgstr "Унеси број пакета за инсталирање (нпр. 1 2 3 или 1-3)"
+
+#: ../../yaourt.sh.in:493
+msgid "get PKGBUILD"
+msgstr "преузми PKGBUILD"
+
+#: ../../lib/abs.sh.in:49
+msgid "Building %s from sources."
+msgstr "Градим %s од изворног кода."
+
+#: ../../lib/abs.sh.in:50
+msgid "Install %s from sources"
+msgstr "Инсталирам %s од изворног кода"
+
+#: ../../lib/abs.sh.in:52
+msgid "Retrieving PKGBUILD and local sources..."
+msgstr "Преузимам PKGBUILD и локални изворни код…"
+
+#: ../../lib/abs.sh.in:129
+msgid "Foreign packages: "
+msgstr "Страни пакети: "
+
+#: ../../lib/abs.sh.in:184
+msgid "not found"
+msgstr "није нађено"
+
+#: ../../lib/abs.sh.in:202
+msgid "Continue upgrade ?"
+msgstr "Настави ажурирање?"
+
+#: ../../lib/abs.sh.in:203
+msgid "[V]iew package detail   [M]anually select packages"
+msgstr "[П]огледај детаље пакета   [Р]учно изабери пакете"
+
+#: ../../lib/abs.sh.in:204
+msgid "YNVM"
+msgstr "ДНПР"
+
+#: ../../lib/abs.sh.in:225
+msgid "Proceed with upgrade? "
+msgstr "Настави са ажурирањем? "
+
+#: ../../lib/abs.sh.in:253
+msgid "Source targets"
+msgstr "Циљеви од изворног кода"
+
+#: ../../lib/abs.sh.in:280
+msgid "unable to update %s"
+msgstr "нисам могао да ажурирам %s"
+
+#: ../../lib/abs.sh.in:299
+msgid "Package upgrade only (new release):"
+msgstr "Ажурирање само пакета (ново издање):"
+
+#: ../../lib/abs.sh.in:300
+msgid "Software upgrade (new version) :"
+msgstr "Ажурирање софтвера (нова верзија):"
+
+#: ../../lib/abs.sh.in:301
+msgid "New package :"
+msgstr "Нови пакет:"
+
+#: ../../lib/abs.sh.in:317 ../../lib/abs.sh.in:325
+msgid "(required by %s)"
+msgstr "(захтева %s)"
+
+#: ../../lib/abs.sh.in:342 ../../lib/abs.sh.in:343
+msgid "Installing from a package list"
+msgstr "Инсталирам по листи пакета"
+
+#: ../../lib/abs.sh.in:396 ../../lib/abs.sh.in:397
+msgid "upgrading SVN/CVS/HG/GIT package"
+msgstr "ажурирам SVN/CVS/HG/GIT пакет"
+
+#: ../../lib/abs.sh.in:406
+msgid "Targets"
+msgstr "Циљеви"
+
+#: ../../lib/alpm_backup.sh:10 ../../lib/alpm_backup.sh:11
+msgid "Saving pacman database in %s"
+msgstr "Чувам pacman-ову базу података у %s"
+
+#: ../../lib/alpm_backup.sh:13
+msgid "Pacman database successfully saved in %s"
+msgstr "Pacman-ова база података успешно сачувана у %s"
+
+#: ../../lib/alpm_backup.sh:19 ../../lib/alpm_backup.sh:20
+msgid "Analysing backup file"
+msgstr "Анализирам бекап фајл"
+
+#: ../../lib/alpm_backup.sh:30
+msgid "%s is not a valid alpm database backup"
+msgstr "%s није валидан бекап alpm базе података"
+
+#: ../../lib/alpm_backup.sh:45
+msgid "New packages installed since backup:"
+msgstr "Нови пакети инсталирани од бекапа:"
+
+#: ../../lib/alpm_backup.sh:48
+msgid "Packages removed or ugpraded since backup:"
+msgstr "Уклоњени или ажурирани пакети од бекапа"
+
+#: ../../lib/alpm_backup.sh:51 ../../lib/alpm_backup.sh:52
+msgid "Warning! Do you want to restore this backup ?"
+msgstr "Упозорење! Да ли желите да повратите овај бекап?"
+
+#: ../../lib/alpm_backup.sh:53
+msgid "(local db will be saved in %s)"
+msgstr "(локална база ће бити сачувана у %s)"
+
+#: ../../lib/alpm_backup.sh:54
+msgid "If you want to restore this backup, type \"yes\""
+msgstr "Ако желите да повратите овај бекап, откуцајте „да“"
+
+#: ../../lib/alpm_backup.sh:56
+msgid "yes"
+msgstr "да"
+
+#: ../../lib/alpm_backup.sh:57
+msgid "Deleting pacman DB"
+msgstr "Бришем pacman-ову базу"
+
+#: ../../lib/alpm_backup.sh:59
+msgid "Copying backup"
+msgstr "Копирам бекап"
+
+#: ../../lib/alpm_backup.sh:62
+msgid "Testing the new database"
+msgstr "Тестирам нову базу података"
+
+#: ../../lib/alpm_backup.sh:65
+msgid "Your backup is not successfully restored"
+msgstr "Ваш бекап није успешно повраћен"
+
+#: ../../lib/alpm_backup.sh:67
+msgid "Your backup has been successfully restored"
+msgstr "Ваш бекап је успешно повраћен"
+
+#: ../../lib/alpm_backup.sh:68
+msgid "packages found"
+msgstr "нађени пакети"
+
+#: ../../lib/alpm_backup.sh:70
+msgid "(old database is saved in %s)"
+msgstr "(стара база података је сачувана у %s)"
+
+#: ../../lib/alpm_backup.sh:82
+msgid "wrong argument"
+msgstr "погрешан аргумент"
+
+#: ../../lib/alpm_query.sh:50
+msgid "Do you want to remove these packages (with -Rcs options) ? "
+msgstr "Да ли желите да уклоните ове пакете (са -Rcs опцијом)? "
+
+#: ../../lib/alpm_query.sh:51 ../../lib/pkgbuild.sh.in:400
+msgid "YN"
+msgstr "ДН"
+
+#: ../../lib/alpm_stats.sh:49
+msgid "Total installed packages:"
+msgstr "Укупно инсталираних пакета:"
+
+#: ../../lib/alpm_stats.sh:50
+msgid "Explicitly installed packages:"
+msgstr "Директно инсталираних пакета:"
+
+#: ../../lib/alpm_stats.sh:51
+msgid "Packages installed as dependencies to run other packages:"
+msgstr "Пакети инсталирани као зависности за друге пакете:"
+
+#: ../../lib/alpm_stats.sh:52
+msgid "Packages out of date:"
+msgstr "Неажурни пакети:"
+
+#: ../../lib/alpm_stats.sh:54
+msgid "Where %s packages seem to no longer be in use by any package:"
+msgstr "Чини се да %s пакета више не користи ни један пакет:"
+
+#: ../../lib/alpm_stats.sh:57
+msgid "Hold packages:"
+msgstr "Задржи пакете:"
+
+#: ../../lib/alpm_stats.sh:58
+msgid "Ignored packages:"
+msgstr "Игнорисани пакети:"
+
+#: ../../lib/alpm_stats.sh:59
+msgid "Ignored groups:"
+msgstr "Игнорисане групе:"
+
+#: ../../lib/alpm_stats.sh:65
+msgid "Number of configured repositories:"
+msgstr "Број подешених складишта:"
+
+#: ../../lib/alpm_stats.sh:66
+msgid "Packages by repositories (ordered by pacmans priority)"
+msgstr "Пакети по складиштима (сортираних по pacman-овим приоритетима)"
+
+#: ../../lib/alpm_stats.sh:74 ../../lib/alpm_stats.sh:80
+msgid "others"
+msgstr "остали"
+
+#: ../../lib/alpm_stats.sh:80
+msgid "are packages from local build or AUR Unsupported"
+msgstr "су локално изграђени пакети или неподржани AUR пакети"
+
+#: ../../lib/alpm_stats.sh:88
+msgid "Theoretical - Real space used by packages:"
+msgstr "Теоријски - Стварни простор заузет пакетима:"
+
+#: ../../lib/alpm_stats.sh:89
+msgid "progression:"
+msgstr "прогрес:"
+
+#: ../../lib/alpm_stats.sh:98
+msgid "Theoretical space used by packages:"
+msgstr "Теоријски простор заузет пакетима:"
+
+#: ../../lib/alpm_stats.sh:99
+msgid "Real space used by packages:"
+msgstr "Стварни простор заузет пакетима:"
+
+#: ../../lib/alpm_stats.sh:103
+msgid "Space used by pkg downloaded in cache (cachedir):"
+msgstr "Простор заузет кешираним пакетима (cachedir):"
+
+#: ../../lib/alpm_stats.sh:105
+msgid "Space used by src downloaded in cache:"
+msgstr "Простор заузет кешираним изворним кодом:"
+
+#: ../../lib/aur.sh:20
+msgid ""
+"AURUSEGIT is set but git command is not found. Falling back to tarballs."
+msgstr ""
+
+#: ../../lib/aur.sh:32 ../../lib/aur.sh:60
+msgid "%s not found in AUR."
+msgstr "%s није нађен у AUR-у."
+
+#: ../../lib/aur.sh:55
+msgid "Yes"
+msgstr "Да"
+
+#: ../../lib/aur.sh:55
+msgid "No"
+msgstr "Не"
+
+#: ../../lib/aur.sh:69
+msgid "Repository     "
+msgstr "Складиште      "
+
+#: ../../lib/aur.sh:70
+msgid "Name           "
+msgstr "Име            "
+
+#: ../../lib/aur.sh:72
+msgid "Base Package   "
+msgstr ""
+
+#: ../../lib/aur.sh:73
+msgid "Version        "
+msgstr "Верзија        "
+
+#: ../../lib/aur.sh:74
+msgid "Description    "
+msgstr "Опис           "
+
+#: ../../lib/aur.sh:75
+msgid "Architecture   "
+msgstr "Архитектура    "
+
+#: ../../lib/aur.sh:76
+msgid "URL            "
+msgstr "УРЛ            "
+
+#: ../../lib/aur.sh:77
+msgid "AUR URL        "
+msgstr "AUR УРЛ        "
+
+#: ../../lib/aur.sh:79
+msgid "Keywords       "
+msgstr ""
+
+#: ../../lib/aur.sh:80
+msgid "Licenses       "
+msgstr "Лиценце        "
+
+#: ../../lib/aur.sh:81
+msgid "Groups         "
+msgstr "Групе          "
+
+#: ../../lib/aur.sh:82
+msgid "Provides       "
+msgstr "Омогућава      "
+
+#: ../../lib/aur.sh:83
+msgid "Depends On     "
+msgstr "Зависи од      "
+
+#: ../../lib/aur.sh:84
+msgid "Optional Deps  "
+msgstr "Опционе Зав.   "
+
+#: ../../lib/aur.sh:85
+msgid "Conflicts With "
+msgstr "Сукобљава се са"
+
+#: ../../lib/aur.sh:86
+msgid "Replaces       "
+msgstr "Мења           "
+
+#: ../../lib/aur.sh:87
+msgid "Maintainer     "
+msgstr "Одржавалац     "
+
+#: ../../lib/aur.sh:88
+msgid "First submit   "
+msgstr ""
+
+#: ../../lib/aur.sh:89
+msgid "Last update    "
+msgstr "Ажурирано      "
+
+#: ../../lib/aur.sh:90
+msgid "Out Of Date    "
+msgstr "Неажуран       "
+
+#: ../../lib/aur.sh:91
+msgid "Votes          "
+msgstr "Гласови        "
+
+#: ../../lib/aur.sh:92
+msgid "Popularity     "
+msgstr ""
+
+#: ../../lib/aur.sh:175
+msgid "Checking vote status for %s"
+msgstr "Проверавам статус гласања за %s"
+
+#: ../../lib/aur.sh:178
+msgid "You have already voted for %s"
+msgstr "Већ сте гласали за %s"
+
+#: ../../lib/aur.sh:181
+msgid "Do you want to vote for %s ? "
+msgstr "Да ли желите гласати за %s ? "
+
+#: ../../lib/aur.sh:195
+msgid "Installing %s from AUR"
+msgstr "Инсталирам %s из AUR-а"
+
+#: ../../lib/aur.sh:199
+msgid "Downloading %s PKGBUILD from AUR..."
+msgstr "Преузимам PKGBUILD %s-а из АУР-а…"
+
+#: ../../lib/aur.sh:205
+msgid "This package is orphaned"
+msgstr "Овај пакет је сироче"
+
+#: ../../lib/aur.sh:206
+msgid "( Unsupported package: Potentially dangerous ! )"
+msgstr "(Неподржан пакет: Потенцијално опасан ! )"
+
+#: ../../lib/aur.sh:227
+msgid "not found on AUR"
+msgstr "није нађен у AUR-у"
+
+#: ../../lib/aur.sh:234
+msgid "up to date "
+msgstr "ажуран "
+
+#: ../../lib/aur.sh:235
+msgid "flagged as out of date"
+msgstr "обележен као неажуран"
+
+#: ../../lib/aur.sh:244
+msgid "Orphan"
+msgstr "Сироче"
+
+#: ../../lib/io.sh:101
+msgid "[Y/n]"
+msgstr "[Д/н]"
+
+#: ../../lib/io.sh:102
+msgid "[y/N]"
+msgstr "[д/Н]"
+
+#: ../../lib/io.sh:103
+msgid "[y/n]"
+msgstr "[д/н]"
+
+#: ../../lib/io.sh:158
+msgid "WARNING: "
+msgstr "УПОЗОРЕЊЕ: "
+
+#: ../../lib/io.sh:167
+msgid "ERROR: "
+msgstr "ГРЕШКА: "
+
+#: ../../lib/misc.sh:28
+msgid "Packages no longer required by any installed package:"
+msgstr "Пакети које више не захтева ни један инсталирани пакет:"
+
+#: ../../lib/misc.sh:37
+msgid "Searching for original config files to save"
+msgstr "Тражим оригиналне конфигурационе фајлове ради чувања"
+
+#: ../../lib/pacman.sh.in:36
+msgid "Pacman is currently in use, please wait."
+msgstr "Pacman је тренутно у употреби, молимо сачекајте."
+
+#: ../../lib/pacman.sh.in:58
+msgid "synchronizing package databases"
+msgstr "синхронизујем базу пакета"
+
+#: ../../lib/pacman.sh.in:71
+msgid "(ignoring package upgrade)"
+msgstr "(игноришем ажурирање пакета)"
+
+#: ../../lib/pkgbuild.sh.in:94
+msgid "Unable to read PKGBUILD"
+msgstr "Немогуће прочитати PKGBUILD"
+
+#: ../../lib/pkgbuild.sh.in:98
+msgid "This PKGBUILD describes a split package."
+msgstr "Овај PKGBUILD описује подељени пакет."
+
+#: ../../lib/pkgbuild.sh.in:99
+msgid "Specific package options are unknown"
+msgstr "Конкретне опције пакета су непознате"
+
+#: ../../lib/pkgbuild.sh.in:121
+msgid "%s dependencies:"
+msgstr "Зависности %s-а:"
+
+#: ../../lib/pkgbuild.sh.in:124 ../../lib/pkgbuild.sh.in:126
+msgid "(already installed)"
+msgstr "(већ инсталирано)"
+
+#: ../../lib/pkgbuild.sh.in:132 ../../lib/pkgbuild.sh.in:134
+msgid "(package found)"
+msgstr "(нађен пакет)"
+
+#: ../../lib/pkgbuild.sh.in:137 ../../lib/pkgbuild.sh.in:139
+msgid "(building from AUR)"
+msgstr "(градим из AUR-а)"
+
+#: ../../lib/pkgbuild.sh.in:175
+msgid "%s conflicts:"
+msgstr "%s је у сукобу са:"
+
+#: ../../lib/pkgbuild.sh.in:243
+msgid "Building and installing package"
+msgstr "Градим и инсталирам пакет"
+
+#: ../../lib/pkgbuild.sh.in:259
+msgid "%s is already up to date."
+msgstr "%s је већ ажуран."
+
+#: ../../lib/pkgbuild.sh.in:267
+msgid "Install or build missing dependencies for %s:"
+msgstr "Инсталирам или градим недостајуће зависности %s-а:"
+
+#: ../../lib/pkgbuild.sh.in:275
+msgid "Dependencies have been installed before the failure"
+msgstr "Зависности које су инсталиране пре грешке"
+
+#: ../../lib/pkgbuild.sh.in:286
+msgid "Makepkg was unable to build %s."
+msgstr "Makepkg није могао да изгради %s."
+
+#: ../../lib/pkgbuild.sh.in:314 ../../lib/pkgbuild.sh.in:317
+msgid "Exporting %s to %s directory"
+msgstr "Извозим %s у директоријум %s"
+
+#: ../../lib/pkgbuild.sh.in:323
+msgid "Continue installing %s ?"
+msgstr "Наставити са инсталацијом %s-а ?"
+
+#: ../../lib/pkgbuild.sh.in:324
+msgid "[v]iew package contents   [c]heck package with namcap"
+msgstr "погледај [с]адржај пакета    [п]ровери пакет namcap-ом"
+
+#: ../../lib/pkgbuild.sh.in:325
+msgid "YNVC"
+msgstr "ДНСП"
+
+#: ../../lib/pkgbuild.sh.in:330
+msgid "Press any key to continue"
+msgstr "Притисни било који тастер за наставак"
+
+#: ../../lib/pkgbuild.sh.in:339
+msgid "namcap is not installed"
+msgstr "namcap није инсталиран"
+
+#: ../../lib/pkgbuild.sh.in:351
+msgid "Your packages are saved in %s"
+msgstr "Ваши пакети су сачувани у %s"
+
+#: ../../lib/pkgbuild.sh.in:352
+msgid "Unable to copy packages to %s directory"
+msgstr "Не могу да ископирам пакете у директоријум %s"
+
+#: ../../lib/pkgbuild.sh.in:362
+msgid "Unable to delete directory %s. Please remove it using root privileges."
+msgstr "Не могу да избришем директоријум %s. Молимо, избришите га са „root“ привилегијама."
+
+#: ../../lib/pkgbuild.sh.in:364
+msgid "Unable to create directory %s."
+msgstr "Не могу да направим директоријум %s."
+
+#: ../../lib/pkgbuild.sh.in:393
+msgid "Continue building %s ? "
+msgstr "Наставити изградњу %s-а ? "
+
+#: ../../lib/pkgbuild.sh.in:399
+msgid "Restart building %s ? "
+msgstr "Поновити изградњу %s-а ? "
+
+#: ../../lib/pkgbuild.sh.in:458
+msgid "%s directory already exist. [R]eplace, [C]hange to %s, [S]kip ?"
+msgstr ""
+
+#: ../../lib/pkgbuild.sh.in:459
+msgid "RCS"
+msgstr ""
+
+#: ../../lib/pkgbuild.sh.in:468
+msgid "Download %s sources"
+msgstr "Преузимам изворни код %s-а"
+
+#: ../../lib/pkgbuild.sh.in:510
+msgid "Copying files from %s to build directory..."
+msgstr ""
+
+#: ../../lib/util.sh.in:159
+msgid "is not a directory"
+msgstr "није директоријум"
+
+#: ../../lib/util.sh.in:160
+msgid "is not writable"
+msgstr "није уписив"
+
+#: ../../lib/util.sh.in:205
+msgid "Edit %s ?"
+msgstr "Уредити %s ?"
+
+#: ../../lib/util.sh.in:205
+msgid "(\"A\" to abort)"
+msgstr "(„П“ за прекид)"
+
+#: ../../lib/util.sh.in:206
+msgid "YNA"
+msgstr "ДНП"
+
+#: ../../lib/util.sh.in:208
+msgid "Aborted..."
+msgstr "Прекинуто…"
+
+#: ../../lib/util.sh.in:214
+#, sh-format
+msgid "Please add $VISUAL to your environment variables"
+msgstr "Молимо додајте $VISUAL у ваше променљиве окружења"
+
+#: ../../lib/util.sh.in:215
+msgid "for example:"
+msgstr "на пример:"
+
+#: ../../lib/util.sh.in:216
+msgid "(in ~/.bashrc)"
+msgstr "(у ~/.bashrc)"
+
+#: ../../lib/util.sh.in:217
+msgid "(replace vim with your favorite editor)"
+msgstr "(замените vim вашим омиљеним уређивачем)"
+
+#: ../../lib/util.sh.in:219
+msgid "Edit %s with: "
+msgstr "Уреди %s коришћењем: "

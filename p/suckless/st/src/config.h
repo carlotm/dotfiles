@@ -1,0 +1,1 @@
+/home/carloratm/.dotfiles/p/prj/st/config.h

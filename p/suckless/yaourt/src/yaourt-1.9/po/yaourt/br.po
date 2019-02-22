@@ -1,0 +1,807 @@
+# yaourt default.po file
+# Copyright (C) 2010-2017
+# This file is distributed under the same license as the yaourt package.
+# Tuxce <tuxce.net@gmail.com>, 2010-2015
+# 
+# Translators:
+# archlinuxfr <webmaster@archlinux.fr>, 2017
+# Gwenn M <tornoz@laposte.net>, 2015-2016
+# larchunix, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: yaourt\n"
+"Report-Msgid-Bugs-To: https://github.com/archlinuxfr/yaourt\n"
+"POT-Creation-Date: 2016-02-21 21:05+0100\n"
+"PO-Revision-Date: 2017-06-26 10:09+0000\n"
+"Last-Translator: archlinuxfr <webmaster@archlinux.fr>\n"
+"Language-Team: Breton (http://www.transifex.com/archlinuxfr/yaourt/language/br/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: br\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../pacdiffviewer.sh.in:42
+msgid "Delete all *.pac* found"
+msgstr "Dilemel an holl restroù *.pac* kavet"
+
+#: ../../pacdiffviewer.sh.in:43
+msgid "Save all packages backup files for a later merge"
+msgstr "Enrollañ an holl pakadoù restroù gwarediñ evit ur c'hendeuziñ diwezhatoc'h"
+
+#: ../../pacdiffviewer.sh.in:44
+msgid "Use with backup to not output messages"
+msgstr "Arverit gant ar gwared evit chom hep ec'hankañ kemennadennoù"
+
+#: ../../pacdiffviewer.sh.in:45
+msgid "Sequential listing"
+msgstr "Roll urzhiet"
+
+#: ../../pacdiffviewer.sh.in:46
+msgid "Display diff"
+msgstr "Skrammañ an difoc'hoù"
+
+#: ../../pacdiffviewer.sh.in:47
+msgid "This help"
+msgstr "Ar skoazell-mañ"
+
+#: ../../pacdiffviewer.sh.in:48
+msgid "Show version"
+msgstr "Skrammañ an handelv"
+
+#: ../../pacdiffviewer.sh.in:70
+msgid "saving"
+msgstr "oc'h enrollañ"
+
+#: ../../pacdiffviewer.sh.in:102 ../../pacdiffviewer.sh.in:103
+#: ../../pacdiffviewer.sh.in:104
+msgid "found"
+msgstr "kavet"
+
+#: ../../pacdiffviewer.sh.in:105
+msgid "files are orphans"
+msgstr "emzivaded eo ar restroù"
+
+#: ../../pacdiffviewer.sh.in:157
+msgid "The following files have no original version."
+msgstr "N'eus handelv orin ebet evit ar restroù da heul."
+
+#: ../../pacdiffviewer.sh.in:160
+msgid "Do you want to delete these files ?"
+msgstr "Fellout a ra deoc'h dilemel ar restroù-mañ ?"
+
+#: ../../pacdiffviewer.sh.in:161
+msgid "(S: no confirm)"
+msgstr "(S : kadarnadur ebet)"
+
+#: ../../pacdiffviewer.sh.in:162
+msgid "YNS"
+msgstr "YNS"
+
+#: ../../pacdiffviewer.sh.in:179
+msgid "**same file**"
+msgstr "**hevelep restr**"
+
+#: ../../pacdiffviewer.sh.in:183
+msgid "**automerge**"
+msgstr "**emgendeuziñ**"
+
+#: ../../pacdiffviewer.sh.in:187
+msgid "Action: [E]dit, [R]eplace, [S]uppress, [C]ontinue (default), [A]bort ?"
+msgstr "Gwered: [E]mbann, E[R]lec'hiañ, [D]ilemel, [K]enderc'hel (dre ziouer), Di[L]ezel?"
+
+#: ../../pacdiffviewer.sh.in:188
+msgid ""
+"Action: [E]dit, [R]eplace, [S]uppress, [M]erge, [C]ontinue (default), "
+"[A]bort ?"
+msgstr "Gwered: [E]mbann, E[R]lec'hiañ, [D]ilemel, [K]endeuziñ, Ke[N]derc'hel (dre ziouer), Di[L]ezel?"
+
+#: ../../pacdiffviewer.sh.in:189
+msgid "ERSCA"
+msgstr "ERDKL"
+
+#: ../../pacdiffviewer.sh.in:190
+msgid "ERSCAM"
+msgstr "ERDKLN"
+
+#: ../../pacdiffviewer.sh.in:200
+msgid "Patch: "
+msgstr "Pegell :"
+
+#: ../../pacdiffviewer.sh.in:203
+msgid "Apply ?"
+msgstr "Arloañ ?"
+
+#: ../../pacdiffviewer.sh.in:206
+msgid "patch returned an error!"
+msgstr "ur fazi a zo bet distroet gant ar begell !"
+
+#: ../../pacdiffviewer.sh.in:228
+msgid "Enter n° : "
+msgstr "Enankit an niver :"
+
+#: ../../yaourt.sh.in:35
+msgid "Yaourt does not support --help for a particular option."
+msgstr "N'eo ket skoret --help gant yaourt evel dibarzh arbennik."
+
+#: ../../yaourt.sh.in:36
+msgid "The following is %s help :"
+msgstr "Skoazell %s eo ar pezh a zo da heul :"
+
+#: ../../yaourt.sh.in:41
+msgid "Usage: yaourt <operation> [...]"
+msgstr "Arver : yaourt <oberatadenn> [...]"
+
+#: ../../yaourt.sh.in:42
+msgid "operations:"
+msgstr "oberatadennoù :"
+
+#: ../../yaourt.sh.in:43
+msgid "yaourt (search pattern|package file)"
+msgstr "yaourt (goustur enklask|restr pakad)"
+
+#: ../../yaourt.sh.in:44
+msgid "yaourt {-h --help}"
+msgstr "yaourt {-h --help}"
+
+#: ../../yaourt.sh.in:45
+msgid "yaourt {-V --version}"
+msgstr "yaourt {-V --version}"
+
+#: ../../yaourt.sh.in:46
+msgid "yaourt {-Q --query}       [options] [package(s)]"
+msgstr "yaourt {-Q --query} [dibarzhioù] [pakad(où)]"
+
+#: ../../yaourt.sh.in:47
+msgid "yaourt {-R --remove}      [options] <package(s)>"
+msgstr "yaourt {-R --remove} [dibarzhioù] <pakad(où)>"
+
+#: ../../yaourt.sh.in:48
+msgid "yaourt {-S --sync}        [options] [package(s)]"
+msgstr "yaourt {-S --sync} [dibarzhioù] [pakad(où)]"
+
+#: ../../yaourt.sh.in:49
+msgid "yaourt {-U --upgrade}     [options] <package(s)>"
+msgstr "yaourt {-U --upgrade} [dibarzhioù] <pakad(où)>"
+
+#: ../../yaourt.sh.in:50
+msgid "yaourt {-C}               [options]"
+msgstr "yaourt {-C} [dibarzhioù]"
+
+#: ../../yaourt.sh.in:51
+msgid "yaourt {-B --backup}      [save directory|restore file]"
+msgstr "yaourt {-B --backup} [kavlec'h enrollañ|restr assaviñ]"
+
+#: ../../yaourt.sh.in:52
+msgid "yaourt {-G --getpkgbuild} [options] <package(s)>"
+msgstr "yaourt {-G --getpkgbuild} [dibarzhioù] <pakad(où)>"
+
+#: ../../yaourt.sh.in:53
+msgid "yaourt {-P --pkgbuild}    [-i --install] <directory>"
+msgstr ""
+
+#: ../../yaourt.sh.in:54
+msgid "yaourt {--stats}"
+msgstr "yaourt {--stats}"
+
+#: ../../yaourt.sh.in:59
+msgid "homepage: http://archlinux.fr/yaourt-en"
+msgstr "pennbajenn: http://archlinux.fr/yaourt-en"
+
+#: ../../yaourt.sh.in:117
+msgid "query packages"
+msgstr "azgoulenn pakadoù"
+
+#: ../../yaourt.sh.in:131
+msgid "Following packages have not been installed:"
+msgstr "N'eo ket bet staliet ar pakadoù da heul :"
+
+#: ../../yaourt.sh.in:144
+msgid "listing all packages in repo(s)"
+msgstr "o sevel roll an holl pakadoù er mirlec'h(ioù)"
+
+#: ../../yaourt.sh.in:145
+msgid "Listing all packages in repo(s)"
+msgstr "O sevel roll an holl pakadoù er mirlec'h(ioù)"
+
+#: ../../yaourt.sh.in:147
+msgid "show groups"
+msgstr "diskouez ar strolladoù"
+
+#: ../../yaourt.sh.in:166
+msgid "Information for %s"
+msgstr ""
+
+#: ../../yaourt.sh.in:214
+msgid "Unable to read %s file"
+msgstr "N'haller ket lenn ar restr %s"
+
+#: ../../yaourt.sh.in:240
+msgid "%s directory does not contain a PKGBUILD"
+msgstr ""
+
+#: ../../yaourt.sh.in:246
+msgid "Installing %s from local PKGBUILD"
+msgstr ""
+
+#: ../../yaourt.sh.in:259
+msgid "Enter n° of packages to be installed (e.g., 1 2 3 or 1-3)"
+msgstr "Enankit niverenn ar pakadoù a fell deoc'h staliañ (sk: 1 2 3 pe 1-3) "
+
+#: ../../yaourt.sh.in:493
+msgid "get PKGBUILD"
+msgstr "kaout PKGBUILD"
+
+#: ../../lib/abs.sh.in:49
+msgid "Building %s from sources."
+msgstr "O kempunañ %s adalek an tarzh."
+
+#: ../../lib/abs.sh.in:50
+msgid "Install %s from sources"
+msgstr "O staliañ %s adalek an tarzh"
+
+#: ../../lib/abs.sh.in:52
+msgid "Retrieving PKGBUILD and local sources..."
+msgstr "Oc'h adtapout PKGBUILD hag an tarzhioù lec'hel..."
+
+#: ../../lib/abs.sh.in:129
+msgid "Foreign packages: "
+msgstr "Pakadoù estren :"
+
+#: ../../lib/abs.sh.in:184
+msgid "not found"
+msgstr "n'eo ket bet kavet"
+
+#: ../../lib/abs.sh.in:202
+msgid "Continue upgrade ?"
+msgstr "Kenderc'hel gant an hizivadenn ?"
+
+#: ../../lib/abs.sh.in:203
+msgid "[V]iew package detail   [M]anually select packages"
+msgstr "[V]Munudoù ar pakad [M]Diuzañ pakadoù gant an dorn"
+
+#: ../../lib/abs.sh.in:204
+msgid "YNVM"
+msgstr "YNVM"
+
+#: ../../lib/abs.sh.in:225
+msgid "Proceed with upgrade? "
+msgstr "Kenderc'hel gant an hizivadenn ?"
+
+#: ../../lib/abs.sh.in:253
+msgid "Source targets"
+msgstr ""
+
+#: ../../lib/abs.sh.in:280
+msgid "unable to update %s"
+msgstr "n'haller ket hizivaat %s"
+
+#: ../../lib/abs.sh.in:299
+msgid "Package upgrade only (new release):"
+msgstr "Hizivadenn pakad hepken (ermaeziadenn nevez) :"
+
+#: ../../lib/abs.sh.in:300
+msgid "Software upgrade (new version) :"
+msgstr "Hizivadenn meziant (handelv nevez) :"
+
+#: ../../lib/abs.sh.in:301
+msgid "New package :"
+msgstr "Pakadenn nevez :"
+
+#: ../../lib/abs.sh.in:317 ../../lib/abs.sh.in:325
+msgid "(required by %s)"
+msgstr "(azgoulennet gant %s)"
+
+#: ../../lib/abs.sh.in:342 ../../lib/abs.sh.in:343
+msgid "Installing from a package list"
+msgstr "O staliañ adalek roll ar pakadoù"
+
+#: ../../lib/abs.sh.in:396 ../../lib/abs.sh.in:397
+msgid "upgrading SVN/CVS/HG/GIT package"
+msgstr "o hizivaat ar pakad "
+
+#: ../../lib/abs.sh.in:406
+msgid "Targets"
+msgstr ""
+
+#: ../../lib/alpm_backup.sh:10 ../../lib/alpm_backup.sh:11
+msgid "Saving pacman database in %s"
+msgstr "Oc'h enrollañ stlennvon pacman e %s"
+
+#: ../../lib/alpm_backup.sh:13
+msgid "Pacman database successfully saved in %s"
+msgstr "Enrollet eo bet  gant berzh stlennvon pacman e %s"
+
+#: ../../lib/alpm_backup.sh:19 ../../lib/alpm_backup.sh:20
+msgid "Analysing backup file"
+msgstr "O tezranniñ ar restr gwarediñ"
+
+#: ../../lib/alpm_backup.sh:30
+msgid "%s is not a valid alpm database backup"
+msgstr "%s n'eo ket ur gwared stlennvon alpm talvoudek"
+
+#: ../../lib/alpm_backup.sh:45
+msgid "New packages installed since backup:"
+msgstr "Pakadoù nevez staliet abaoe ar gwarediñ :"
+
+#: ../../lib/alpm_backup.sh:48
+msgid "Packages removed or ugpraded since backup:"
+msgstr "Pakadoù dilammet pe hizivaet abaoe ar gwarediñ :"
+
+#: ../../lib/alpm_backup.sh:51 ../../lib/alpm_backup.sh:52
+msgid "Warning! Do you want to restore this backup ?"
+msgstr "Diwallit ! C'hoant ho peus assav ar gwared-mañ ?"
+
+#: ../../lib/alpm_backup.sh:53
+msgid "(local db will be saved in %s)"
+msgstr "(enrollet e vo ar stlennvon lec'hel e %s)"
+
+#: ../../lib/alpm_backup.sh:54
+msgid "If you want to restore this backup, type \"yes\""
+msgstr "Biziatait 'ya' ma fell deoc'h assav ar gwared"
+
+#: ../../lib/alpm_backup.sh:56
+msgid "yes"
+msgstr "ya"
+
+#: ../../lib/alpm_backup.sh:57
+msgid "Deleting pacman DB"
+msgstr "O tilemel stlennvon pacman"
+
+#: ../../lib/alpm_backup.sh:59
+msgid "Copying backup"
+msgstr "Oc'h eilañ ar gwared"
+
+#: ../../lib/alpm_backup.sh:62
+msgid "Testing the new database"
+msgstr "Oc'h amprouiñ ar stlennvon nevez"
+
+#: ../../lib/alpm_backup.sh:65
+msgid "Your backup is not successfully restored"
+msgstr "N'eo ket assavet gant berzh ho gwared"
+
+#: ../../lib/alpm_backup.sh:67
+msgid "Your backup has been successfully restored"
+msgstr "Assavet eo bet ho gwared gant berzh"
+
+#: ../../lib/alpm_backup.sh:68
+msgid "packages found"
+msgstr "a bakadoù kavet"
+
+#: ../../lib/alpm_backup.sh:70
+msgid "(old database is saved in %s)"
+msgstr "(enrollet eo bet ar stlennvon kozh e %s)"
+
+#: ../../lib/alpm_backup.sh:82
+msgid "wrong argument"
+msgstr "arguzenn fall"
+
+#: ../../lib/alpm_query.sh:50
+msgid "Do you want to remove these packages (with -Rcs options) ? "
+msgstr "Fell a ra deoc'h dilemel ar pakadoù-mañ (gant an dibarzh -Rcs) ?"
+
+#: ../../lib/alpm_query.sh:51 ../../lib/pkgbuild.sh.in:400
+msgid "YN"
+msgstr "YN"
+
+#: ../../lib/alpm_stats.sh:49
+msgid "Total installed packages:"
+msgstr "Hollad ar pakadoù staliet :"
+
+#: ../../lib/alpm_stats.sh:50
+msgid "Explicitly installed packages:"
+msgstr "Pakadoù staliet a-ratozh :"
+
+#: ../../lib/alpm_stats.sh:51
+msgid "Packages installed as dependencies to run other packages:"
+msgstr "Pakadoù staliet evel amzalc'hoù evit lañsañ pakadoù all :"
+
+#: ../../lib/alpm_stats.sh:52
+msgid "Packages out of date:"
+msgstr "Pakadoù diamzeret :"
+
+#: ../../lib/alpm_stats.sh:54
+msgid "Where %s packages seem to no longer be in use by any package:"
+msgstr "Lec'h ma vez %s a bakadoù ne seblantont ket bezañ implijet gant pakad ebet :"
+
+#: ../../lib/alpm_stats.sh:57
+msgid "Hold packages:"
+msgstr "Pakadoù miret :"
+
+#: ../../lib/alpm_stats.sh:58
+msgid "Ignored packages:"
+msgstr "Pakadoù laosket a-gostez :"
+
+#: ../../lib/alpm_stats.sh:59
+msgid "Ignored groups:"
+msgstr "Strolladoù laosket a-gostez :"
+
+#: ../../lib/alpm_stats.sh:65
+msgid "Number of configured repositories:"
+msgstr "Niver a mirlec'hioù kefluniet :"
+
+#: ../../lib/alpm_stats.sh:66
+msgid "Packages by repositories (ordered by pacmans priority)"
+msgstr "Pakadoù dre mirlec'hioù (urzhiet dre tevet pacman)"
+
+#: ../../lib/alpm_stats.sh:74 ../../lib/alpm_stats.sh:80
+msgid "others"
+msgstr "re all"
+
+#: ../../lib/alpm_stats.sh:80
+msgid "are packages from local build or AUR Unsupported"
+msgstr "a zo pakadoù kempunet lec'hel pe AUR amskoret"
+
+#: ../../lib/alpm_stats.sh:88
+msgid "Theoretical - Real space used by packages:"
+msgstr "Ez teorikel - egor arveret gant ar pakadoù :"
+
+#: ../../lib/alpm_stats.sh:89
+msgid "progression:"
+msgstr "araokadenn :"
+
+#: ../../lib/alpm_stats.sh:98
+msgid "Theoretical space used by packages:"
+msgstr "Egor teorikel kemeret gant ar pakadoù :"
+
+#: ../../lib/alpm_stats.sh:99
+msgid "Real space used by packages:"
+msgstr "Egor gwirion kemeret gant ar pakadoù :"
+
+#: ../../lib/alpm_stats.sh:103
+msgid "Space used by pkg downloaded in cache (cachedir):"
+msgstr "Egor arveret gant ar pakadoù pellgarget er c'hrubuilh (cachedir) :"
+
+#: ../../lib/alpm_stats.sh:105
+msgid "Space used by src downloaded in cache:"
+msgstr "Egor arveret gant tarzhioù pellgarget er c'hrubuilh :"
+
+#: ../../lib/aur.sh:20
+msgid ""
+"AURUSEGIT is set but git command is not found. Falling back to tarballs."
+msgstr "Arventennet eo AURUSEGIT met n'eo ket bet kavet an arc'had  git. O tistreiñ d'an tarballs."
+
+#: ../../lib/aur.sh:32 ../../lib/aur.sh:60
+msgid "%s not found in AUR."
+msgstr "N'eo ket bet kavet %s e AUR."
+
+#: ../../lib/aur.sh:55
+msgid "Yes"
+msgstr "Ya"
+
+#: ../../lib/aur.sh:55
+msgid "No"
+msgstr "Ket"
+
+#: ../../lib/aur.sh:69
+msgid "Repository     "
+msgstr ""
+
+#: ../../lib/aur.sh:70
+msgid "Name           "
+msgstr ""
+
+#: ../../lib/aur.sh:72
+msgid "Base Package   "
+msgstr ""
+
+#: ../../lib/aur.sh:73
+msgid "Version        "
+msgstr ""
+
+#: ../../lib/aur.sh:74
+msgid "Description    "
+msgstr ""
+
+#: ../../lib/aur.sh:75
+msgid "Architecture   "
+msgstr ""
+
+#: ../../lib/aur.sh:76
+msgid "URL            "
+msgstr ""
+
+#: ../../lib/aur.sh:77
+msgid "AUR URL        "
+msgstr ""
+
+#: ../../lib/aur.sh:79
+msgid "Keywords       "
+msgstr ""
+
+#: ../../lib/aur.sh:80
+msgid "Licenses       "
+msgstr ""
+
+#: ../../lib/aur.sh:81
+msgid "Groups         "
+msgstr ""
+
+#: ../../lib/aur.sh:82
+msgid "Provides       "
+msgstr ""
+
+#: ../../lib/aur.sh:83
+msgid "Depends On     "
+msgstr ""
+
+#: ../../lib/aur.sh:84
+msgid "Optional Deps  "
+msgstr ""
+
+#: ../../lib/aur.sh:85
+msgid "Conflicts With "
+msgstr ""
+
+#: ../../lib/aur.sh:86
+msgid "Replaces       "
+msgstr ""
+
+#: ../../lib/aur.sh:87
+msgid "Maintainer     "
+msgstr ""
+
+#: ../../lib/aur.sh:88
+msgid "First submit   "
+msgstr ""
+
+#: ../../lib/aur.sh:89
+msgid "Last update    "
+msgstr ""
+
+#: ../../lib/aur.sh:90
+msgid "Out Of Date    "
+msgstr ""
+
+#: ../../lib/aur.sh:91
+msgid "Votes          "
+msgstr ""
+
+#: ../../lib/aur.sh:92
+msgid "Popularity     "
+msgstr ""
+
+#: ../../lib/aur.sh:175
+msgid "Checking vote status for %s"
+msgstr "O gwiriañ stad ar mouezhiadeg evit %s"
+
+#: ../../lib/aur.sh:178
+msgid "You have already voted for %s"
+msgstr "Mouezhiet ho peus evit %s endeo"
+
+#: ../../lib/aur.sh:181
+msgid "Do you want to vote for %s ? "
+msgstr "Fellout a ra deoc'h votiñ evit %s ?"
+
+#: ../../lib/aur.sh:195
+msgid "Installing %s from AUR"
+msgstr "O staliañ %s adalek AUR"
+
+#: ../../lib/aur.sh:199
+msgid "Downloading %s PKGBUILD from AUR..."
+msgstr "O pellgargañ PKGBUILD %s adalek AUR..."
+
+#: ../../lib/aur.sh:205
+msgid "This package is orphaned"
+msgstr "Emzivad eo ar pakad"
+
+#: ../../lib/aur.sh:206
+msgid "( Unsupported package: Potentially dangerous ! )"
+msgstr "( pakad amskoret : arvarus e c'hell bezañ !)"
+
+#: ../../lib/aur.sh:227
+msgid "not found on AUR"
+msgstr "n'eo ket bet kavet war AUR"
+
+#: ../../lib/aur.sh:234
+msgid "up to date "
+msgstr "hizivaet"
+
+#: ../../lib/aur.sh:235
+msgid "flagged as out of date"
+msgstr "merket evel diamzeret"
+
+#: ../../lib/aur.sh:244
+msgid "Orphan"
+msgstr "Emzivad"
+
+#: ../../lib/io.sh:101
+msgid "[Y/n]"
+msgstr "[Y/n]"
+
+#: ../../lib/io.sh:102
+msgid "[y/N]"
+msgstr "[y/N]"
+
+#: ../../lib/io.sh:103
+msgid "[y/n]"
+msgstr "[y/n]"
+
+#: ../../lib/io.sh:158
+msgid "WARNING: "
+msgstr "DIWALLIT :"
+
+#: ../../lib/io.sh:167
+msgid "ERROR: "
+msgstr "FAZI :"
+
+#: ../../lib/misc.sh:28
+msgid "Packages no longer required by any installed package:"
+msgstr "N'eo ket azgoulennet ar pakadoù ken gant pakadoù staliet all :"
+
+#: ../../lib/misc.sh:37
+msgid "Searching for original config files to save"
+msgstr "O klask war-lec'h ar restroù kefluniañ orin da enrollañ"
+
+#: ../../lib/pacman.sh.in:36
+msgid "Pacman is currently in use, please wait."
+msgstr "Arveret eo pacman endeo, gortozit mar plij."
+
+#: ../../lib/pacman.sh.in:58
+msgid "synchronizing package databases"
+msgstr "O goubredañ stlennvonioù ar pakdoù"
+
+#: ../../lib/pacman.sh.in:71
+msgid "(ignoring package upgrade)"
+msgstr "(o leuskel hizivadenn ar pakad a-gostez)"
+
+#: ../../lib/pkgbuild.sh.in:94
+msgid "Unable to read PKGBUILD"
+msgstr "N'haller ket lenn PKGBUILD"
+
+#: ../../lib/pkgbuild.sh.in:98
+msgid "This PKGBUILD describes a split package."
+msgstr "Ur pakad troc'het a zo deskrivet gant ar PKGBUILD."
+
+#: ../../lib/pkgbuild.sh.in:99
+msgid "Specific package options are unknown"
+msgstr "Dianav eo an dibarzhioù pakad arbennik"
+
+#: ../../lib/pkgbuild.sh.in:121
+msgid "%s dependencies:"
+msgstr "%s amzalc'hoù :"
+
+#: ../../lib/pkgbuild.sh.in:124 ../../lib/pkgbuild.sh.in:126
+msgid "(already installed)"
+msgstr "(staliet endeo)"
+
+#: ../../lib/pkgbuild.sh.in:132 ../../lib/pkgbuild.sh.in:134
+msgid "(package found)"
+msgstr "(pakad kavet)"
+
+#: ../../lib/pkgbuild.sh.in:137 ../../lib/pkgbuild.sh.in:139
+msgid "(building from AUR)"
+msgstr "(o sevel adalek AUR)"
+
+#: ../../lib/pkgbuild.sh.in:175
+msgid "%s conflicts:"
+msgstr "%s a tabutoù :"
+
+#: ../../lib/pkgbuild.sh.in:243
+msgid "Building and installing package"
+msgstr "O sevel hag o staliañ ar pakad"
+
+#: ../../lib/pkgbuild.sh.in:259
+msgid "%s is already up to date."
+msgstr "Hizivaet eo %s endeo."
+
+#: ../../lib/pkgbuild.sh.in:267
+msgid "Install or build missing dependencies for %s:"
+msgstr "Staliañ pe sevel an amzalc'hoù a vank evit %s :"
+
+#: ../../lib/pkgbuild.sh.in:275
+msgid "Dependencies have been installed before the failure"
+msgstr "Staliet eo bet amzalc'hoù a-raok ar c'hwitaden"
+
+#: ../../lib/pkgbuild.sh.in:286
+msgid "Makepkg was unable to build %s."
+msgstr "N'eo ket bet gouest Makepkg da sevel %s."
+
+#: ../../lib/pkgbuild.sh.in:314 ../../lib/pkgbuild.sh.in:317
+msgid "Exporting %s to %s directory"
+msgstr "Oc'h ezporzhiañ %s da kavlec'h %s"
+
+#: ../../lib/pkgbuild.sh.in:323
+msgid "Continue installing %s ?"
+msgstr "Kenderc'hel da staliañ %s ?"
+
+#: ../../lib/pkgbuild.sh.in:324
+msgid "[v]iew package contents   [c]heck package with namcap"
+msgstr "[v]gwelet endalc'hadoù ar pakad [c]gwiriañ ar pakad gant namcap"
+
+#: ../../lib/pkgbuild.sh.in:325
+msgid "YNVC"
+msgstr "YNVC"
+
+#: ../../lib/pkgbuild.sh.in:330
+msgid "Press any key to continue"
+msgstr "Pouezit war ur stokell evit kenderc'hel"
+
+#: ../../lib/pkgbuild.sh.in:339
+msgid "namcap is not installed"
+msgstr "n'eo ket staliet namcap"
+
+#: ../../lib/pkgbuild.sh.in:351
+msgid "Your packages are saved in %s"
+msgstr "Enrollet eo ho pakadoù e %s"
+
+#: ../../lib/pkgbuild.sh.in:352
+msgid "Unable to copy packages to %s directory"
+msgstr "N'haller ket eilañ pakadoù e kavlec'h %s"
+
+#: ../../lib/pkgbuild.sh.in:362
+msgid "Unable to delete directory %s. Please remove it using root privileges."
+msgstr "N'haller ket dilemel ar c'havlec'h %s. Dilamit anezhañ gant brientoù root."
+
+#: ../../lib/pkgbuild.sh.in:364
+msgid "Unable to create directory %s."
+msgstr "N'haller ket krouiñ ur c'havlec'h %s."
+
+#: ../../lib/pkgbuild.sh.in:393
+msgid "Continue building %s ? "
+msgstr "Kenderc'hel da sevel %s ?"
+
+#: ../../lib/pkgbuild.sh.in:399
+msgid "Restart building %s ? "
+msgstr "Adloc'hañ savidigezh %s ?"
+
+#: ../../lib/pkgbuild.sh.in:458
+msgid "%s directory already exist. [R]eplace, [C]hange to %s, [S]kip ?"
+msgstr "%s a gavlec'hioù a zo endeo. [R]Amsaviñ, [C]Kemmañ da %s, [S]Tremen ?"
+
+#: ../../lib/pkgbuild.sh.in:459
+msgid "RCS"
+msgstr "RCS"
+
+#: ../../lib/pkgbuild.sh.in:468
+msgid "Download %s sources"
+msgstr "Pellgargañ %s a darzhioù"
+
+#: ../../lib/pkgbuild.sh.in:510
+msgid "Copying files from %s to build directory..."
+msgstr ""
+
+#: ../../lib/util.sh.in:159
+msgid "is not a directory"
+msgstr "n'eo ket ur c'havlec'h"
+
+#: ../../lib/util.sh.in:160
+msgid "is not writable"
+msgstr "n'haller ket skrivañ warnañ/warni"
+
+#: ../../lib/util.sh.in:205
+msgid "Edit %s ?"
+msgstr "Embann %s ?"
+
+#: ../../lib/util.sh.in:205
+msgid "(\"A\" to abort)"
+msgstr "(\"A\" evit dilezel)"
+
+#: ../../lib/util.sh.in:206
+msgid "YNA"
+msgstr ""
+
+#: ../../lib/util.sh.in:208
+msgid "Aborted..."
+msgstr "Dilezet..."
+
+#: ../../lib/util.sh.in:214
+#, sh-format
+msgid "Please add $VISUAL to your environment variables"
+msgstr "Ouzhpennit $VISUAL d'ho variennoù endro"
+
+#: ../../lib/util.sh.in:215
+msgid "for example:"
+msgstr "da skouer :"
+
+#: ../../lib/util.sh.in:216
+msgid "(in ~/.bashrc)"
+msgstr "(e ~/.bashrc)"
+
+#: ../../lib/util.sh.in:217
+msgid "(replace vim with your favorite editor)"
+msgstr "(amsavit vim gant ho embanner karetañ)"
+
+#: ../../lib/util.sh.in:219
+msgid "Edit %s with: "
+msgstr "Embann %s gant :"
