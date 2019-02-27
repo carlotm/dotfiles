@@ -1,4 +1,0 @@
-#!/bin/bash
-
-cd ~/FS-UAE/Configurations
-exec fs-uae amiga500.fs-uae

@@ -1,3 +1,0 @@
-#!/bin/bash
-
-xinit /usr/bin/fs-uae-arcade -- :1 vt2
