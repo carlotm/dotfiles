@@ -7,6 +7,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'ap/vim-buftabline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'xolox/vim-misc'
