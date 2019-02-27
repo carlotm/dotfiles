@@ -59,7 +59,7 @@ static const char *dmenucmd[] = {
     "-sf", selfgcolor,
     NULL
 };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 
 static Key keys[] = {
 	/* modifier         key        function        argument */

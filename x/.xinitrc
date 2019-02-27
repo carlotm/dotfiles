@@ -12,7 +12,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 if [ -d ~/Desktop ]; then
-	rm -rf ~/Desktop*
+  rm -rf ~/Desktop*
 fi
 
 rm -rf /opt/yogurt/*
@@ -31,3 +31,4 @@ echo -e "power on\n connect 90:7F:61:03:88:CA\n" | bluetoothctl
 
 conky | while read -r; do xsetroot -name "$REPLY"; done &
 exec ${HOME}/bin/startdwm
+#exec wmaker

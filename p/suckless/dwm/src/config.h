@@ -1,1 +1,1 @@
-/home/carloratm/.dotfiles/p/prj/dwm/config.h
+/home/carloratm/.dotfiles/p/suckless/dwm/config.h
