@@ -20,7 +20,6 @@ Plugin 'sotte/presenting.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'posva/vim-vue'
 Plugin 'aserebryakov/vim-todo-lists'
-Plugin 'slim-template/vim-slim.git'
 Plugin 'rust-lang/rust.vim'
 Plugin 'fisadev/vim-isort'
 
@@ -71,7 +70,7 @@ syntax on
 syntax enable
 
 set t_Co=256
-set background=light
+set background=dark
 set colorcolumn=90
 colorscheme PaperColor
 
