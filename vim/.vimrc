@@ -65,6 +65,7 @@ let g:buftabline_numbers = 0
 let g:buftabline_indicators = 1
 let g:buftabline_separators = 0
 let g:buftabline_show       = 2
+let g:indentLine_color_term = 239
 
 filetype off
 syntax on
@@ -73,10 +74,9 @@ syntax enable
 set t_Co=256
 set background=dark
 set colorcolumn=90
-colorscheme PaperColor
+colorscheme CarloRatm
 
 highlight ExtraWhitespace ctermbg=9
-highlight CursorLine ctermbg=8 ctermfg=none cterm=none
 highlight default RedBG ctermbg=9
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
