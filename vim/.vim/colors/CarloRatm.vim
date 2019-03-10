@@ -17,7 +17,7 @@ hi Search	        ctermfg=0 ctermbg=14 cterm=NONE
 hi MoreMsg	        ctermfg=9 ctermbg=NONE cterm=NONE
 hi ModeMsg	        ctermfg=NONE ctermbg=NONE cterm=NONE
 hi LineNr	        ctermfg=7 ctermbg=NONE cterm=NONE
-hi CursorLineNr	    ctermfg=3 ctermbg=0 cterm=NONE
+hi CursorLineNr	    ctermfg=5 ctermbg=15 cterm=NONE
 hi Question	        ctermfg=9 ctermbg=NONE cterm=NONE
 hi StatusLine	    ctermfg=11 ctermbg=242 cterm=NONE
 hi StatusLineNC	    ctermfg=NONE ctermbg=NONE cterm=NONE
@@ -46,9 +46,9 @@ hi PmenuThumb	    ctermfg=NONE ctermbg=0 cterm=NONE
 hi TabLine	        ctermfg=0 ctermbg=7 cterm=NONE
 hi TabLineSel	    ctermfg=NONE ctermbg=NONE cterm=NONE
 hi TabLineFill      ctermfg=NONE ctermbg=NONE cterm=NONE
-hi CursorColumn     ctermfg=NONE ctermbg=7 cterm=NONE
-hi CursorLine       ctermfg=NONE ctermbg=0 cterm=NONE
-hi ColorColumn      ctermfg=NONE ctermbg=224 cterm=NONE
+hi CursorColumn     ctermfg=NONE ctermbg=15 cterm=NONE
+hi CursorLine       ctermfg=NONE ctermbg=15 cterm=NONE
+hi ColorColumn      ctermfg=NONE ctermbg=15 cterm=NONE
 hi MatchParen       ctermfg=NONE ctermbg=14 cterm=NONE
 hi Underlined       ctermfg=5 ctermbg=NONE cterm=NONE
 hi Ignore	        ctermfg=15 ctermbg=NONE cterm=NONE
@@ -61,7 +61,7 @@ hi PreProc	        ctermfg=13 ctermbg=NONE cterm=NONE
 hi Type	            ctermfg=12 ctermbg=NONE cterm=NONE
 hi Error	        ctermfg=15 ctermbg=9 cterm=NONE
 hi Todo	            ctermfg=0 ctermbg=11 cterm=NONE
-hi String	        ctermfg=3 ctermbg=NONE cterm=NONE
+hi String	        ctermfg=0 ctermbg=NONE cterm=NONE
 hi Character	    ctermfg=13 ctermbg=NONE cterm=NONE
 hi Number	        ctermfg=13 ctermbg=NONE cterm=NONE
 hi Boolean	        ctermfg=13 ctermbg=NONE cterm=NONE

@@ -80,7 +80,7 @@ highlight ExtraWhitespace ctermbg=9
 highlight default RedBG ctermbg=9
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
-highlight ColorColumn ctermbg=8
+highlight ColorColumn ctermbg=15
 
 match ExtraWhitespace /\s\+$/
 
