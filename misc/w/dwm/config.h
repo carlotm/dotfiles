@@ -2,14 +2,14 @@
 
 /* appearance */
 static const char *fonts[] = {
-    "Ubuntu Mono:size=12"
+    "artwiz anorexia:size=9"
 };
 static const char dmenufont[]       = "Space Mono:size=28";
 static const char normbordercolor[] = "#ffffff";
 static const char normbgcolor[]     = "#ffffff";
-static const char normfgcolor[]     = "#888888";
+static const char normfgcolor[]     = "#000000";
 static const char selbordercolor[]  = "#ff0000";
-static const char selbgcolor[]      = "#ffffff";
+static const char selbgcolor[]      = "#e5e5e5";
 static const char selfgcolor[]      = "#000000";
 static const unsigned int borderpx  = 1;
 static const unsigned int snap      = 32;
