@@ -133,7 +133,7 @@ draw_bold_text_with_bright_colors: false
 
 colors:
   primary:
-    background: '0xe5e5e5'
+    background: '0xd5d5d5'
     foreground: '0x303030'
 
     # Bright and dim foreground colors

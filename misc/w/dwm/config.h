@@ -5,7 +5,7 @@ static const char *fonts[] = {
     "artwiz anorexia:size=9"
 };
 static const char dmenufont[]       = "Space Mono:size=28";
-static const char normbordercolor[] = "#ffffff";
+static const char normbordercolor[] = "#dadada";
 static const char normbgcolor[]     = "#ffffff";
 static const char normfgcolor[]     = "#000000";
 static const char selbordercolor[]  = "#ff0000";
@@ -27,7 +27,7 @@ static const int resizehints = 0;
 
 static const Rule rules[] = {
   /* class|instance|title|tags mask|isfloating|monitor */
-  { "dunno", NULL, NULL, 1 << 8, 1, -1 },
+  { "fs-uae", NULL, NULL, 1 << 8, 1, -1 },
 };
 
 static const Layout layouts[] = {
