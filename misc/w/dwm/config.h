@@ -9,7 +9,7 @@ static const char normbordercolor[] = "#dadada";
 static const char normbgcolor[]     = "#ffffff";
 static const char normfgcolor[]     = "#000000";
 static const char selbordercolor[]  = "#ff0000";
-static const char selbgcolor[]      = "#e5e5e5";
+static const char selbgcolor[]      = "#E7E8EB";
 static const char selfgcolor[]      = "#000000";
 static const unsigned int borderpx  = 1;
 static const unsigned int snap      = 32;
@@ -21,7 +21,7 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 
 /* layout(s) */
-static const float mfact     = 0.55;
+static const float mfact     = 0.60;
 static const int nmaster     = 1;
 static const int resizehints = 0;
 
