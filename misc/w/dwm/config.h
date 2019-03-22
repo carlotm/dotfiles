@@ -2,15 +2,15 @@
 
 /* appearance */
 static const char *fonts[] = {
-    "artwiz anorexia:size=9"
+    "Crisp:size=12"
 };
-static const char dmenufont[]       = "Space Mono:size=28";
-static const char normbordercolor[] = "#dadada";
-static const char normbgcolor[]     = "#ffffff";
-static const char normfgcolor[]     = "#000000";
-static const char selbordercolor[]  = "#ff0000";
-static const char selbgcolor[]      = "#E7E8EB";
-static const char selfgcolor[]      = "#000000";
+static const char dmenufont[]       = "CodeNewRoman Nerd Font:size=42";
+static const char normbordercolor[] = "#bbbbbb";
+static const char normbgcolor[]     = "#000000";
+static const char normfgcolor[]     = "#707070";
+static const char selbordercolor[]  = "#ffffff";
+static const char selbgcolor[]      = "#000000";
+static const char selfgcolor[]      = "#fafafa";
 static const unsigned int borderpx  = 1;
 static const unsigned int snap      = 32;
 static const int showbar            = 1;

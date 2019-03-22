@@ -13,7 +13,7 @@ hi NonText	        ctermfg=12 ctermbg=NONE cterm=NONE
 hi Directory	    ctermfg=4 ctermbg=NONE cterm=NONE
 hi ErrorMsg	        ctermfg=1 ctermbg=0 cterm=NONE
 hi IncSearch	    ctermfg=NONE ctermbg=NONE cterm=NONE
-hi Search	        ctermfg=0 ctermbg=14 cterm=NONE
+hi Search	        ctermfg=0 ctermbg=3 cterm=NONE
 hi MoreMsg	        ctermfg=9 ctermbg=NONE cterm=NONE
 hi ModeMsg	        ctermfg=NONE ctermbg=NONE cterm=NONE
 hi LineNr	        ctermfg=7 ctermbg=NONE cterm=NONE

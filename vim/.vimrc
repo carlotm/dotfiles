@@ -65,7 +65,7 @@ let g:buftabline_numbers = 0
 let g:buftabline_indicators = 1
 let g:buftabline_separators = 0
 let g:buftabline_show       = 2
-let g:indentLine_color_term = 239
+let g:indentLine_color_term = 7
 
 filetype off
 syntax on
