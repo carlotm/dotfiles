@@ -23,6 +23,8 @@ Plugin 'posva/vim-vue'
 Plugin 'aserebryakov/vim-todo-lists'
 Plugin 'rust-lang/rust.vim'
 Plugin 'fisadev/vim-isort'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 filetype plugin on

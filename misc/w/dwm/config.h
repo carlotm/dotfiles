@@ -8,7 +8,7 @@ static const char dmenufont[]       = "CodeNewRoman Nerd Font:size=42";
 static const char normbordercolor[] = "#bbbbbb";
 static const char normbgcolor[]     = "#000000";
 static const char normfgcolor[]     = "#707070";
-static const char selbordercolor[]  = "#ffffff";
+static const char selbordercolor[]  = "#000000";
 static const char selbgcolor[]      = "#000000";
 static const char selfgcolor[]      = "#fafafa";
 static const unsigned int borderpx  = 1;
