@@ -25,6 +25,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'fisadev/vim-isort'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'prettier/vim-prettier'
 
 call vundle#end()
 filetype plugin on
@@ -94,6 +95,7 @@ cnoreabbrev Ack Ack!
 
 autocmd FileType make setlocal noexpandtab
 autocmd FileType json setlocal syntax=off
+"autocmd BufWritePre *.js Prettier
 
 function! HLNext (blinktime)
   let [bufnum, lnum, col, off] = getpos('.')

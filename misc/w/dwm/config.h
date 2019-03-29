@@ -2,15 +2,15 @@
 
 /* appearance */
 static const char *fonts[] = {
-    "Crisp:size=12"
+    "Input Mono Condensed:size=10"
 };
-static const char dmenufont[]       = "CodeNewRoman Nerd Font:size=42";
+static const char dmenufont[]       = "Input Mono Condensed:size=42";
 static const char normbordercolor[] = "#bbbbbb";
-static const char normbgcolor[]     = "#000000";
-static const char normfgcolor[]     = "#707070";
+static const char normbgcolor[]     = "#ffffff";
+static const char normfgcolor[]     = "#999999";
 static const char selbordercolor[]  = "#000000";
-static const char selbgcolor[]      = "#000000";
-static const char selfgcolor[]      = "#fafafa";
+static const char selbgcolor[]      = "#ffffff";
+static const char selfgcolor[]      = "#000000";
 static const unsigned int borderpx  = 1;
 static const unsigned int snap      = 32;
 static const int showbar            = 1;

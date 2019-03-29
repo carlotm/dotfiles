@@ -23,7 +23,7 @@ hi ModeMsg	        ctermfg=NONE ctermbg=NONE cterm=NONE
 hi Normal	        ctermfg=NONE ctermbg=NONE cterm=NONE
 hi NonText	        ctermfg=3 ctermbg=NONE cterm=NONE
 hi Number	        ctermfg=1 ctermbg=NONE cterm=NONE
-hi Operator	        ctermfg=2 ctermbg=3 cterm=NONE
+hi Operator	        ctermfg=1 ctermbg=NONE cterm=NONE
 hi Search	        ctermfg=NONE ctermbg=3 cterm=NONE
 hi SpecialKey       ctermfg=4 ctermbg=NONE cterm=NONE
 hi StatusLine	    ctermfg=11 ctermbg=1 cterm=NONE
