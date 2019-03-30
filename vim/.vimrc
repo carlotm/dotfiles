@@ -95,7 +95,8 @@ cnoreabbrev Ack Ack!
 
 autocmd FileType make setlocal noexpandtab
 autocmd FileType json setlocal syntax=off
-"autocmd BufWritePre *.js Prettier
+autocmd FileType javascript.jsx setlocal shiftwidth=2 softtabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2
 
 function! HLNext (blinktime)
   let [bufnum, lnum, col, off] = getpos('.')
