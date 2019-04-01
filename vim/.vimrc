@@ -94,9 +94,10 @@ nnoremap > >>
 cnoreabbrev Ack Ack!
 
 autocmd FileType make setlocal noexpandtab
-autocmd FileType json setlocal syntax=off
 autocmd FileType javascript.jsx setlocal shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2
+autocmd FileType json setlocal syntax=off shiftwidth=2 softtabstop=2
+autocmd FileType scss setlocal shiftwidth=2 softtabstop=2
 
 function! HLNext (blinktime)
   let [bufnum, lnum, col, off] = getpos('.')

@@ -24,9 +24,9 @@ hi Normal	        ctermfg=NONE ctermbg=NONE cterm=NONE
 hi NonText	        ctermfg=3 ctermbg=NONE cterm=NONE
 hi Number	        ctermfg=1 ctermbg=NONE cterm=NONE
 hi Operator	        ctermfg=1 ctermbg=NONE cterm=NONE
-hi Search	        ctermfg=NONE ctermbg=3 cterm=NONE
+hi Search	        ctermfg=0 ctermbg=10 cterm=NONE
 hi SpecialKey       ctermfg=4 ctermbg=NONE cterm=NONE
-hi StatusLine	    ctermfg=11 ctermbg=1 cterm=NONE
+hi StatusLine	    ctermfg=8 ctermbg=1 cterm=NONE
 hi String	        ctermfg=0 ctermbg=15 cterm=NONE
 hi TabLine	        ctermfg=7 ctermbg=4 cterm=NONE
 hi TabLineSel	    ctermfg=0 ctermbg=15 cterm=NONE
@@ -40,14 +40,14 @@ hi VertSplit	    ctermfg=NONE ctermbg=NONE cterm=NONE
 hi Title	        ctermfg=5 ctermbg=NONE cterm=NONE
 hi Visual	        ctermfg=0 ctermbg=3 cterm=NONE
 hi VisualNOS	    ctermfg=NONE ctermbg=NONE cterm=NONE
-hi WarningMsg	    ctermfg=11 ctermbg=9 cterm=NONE
+hi WarningMsg	    ctermfg=8 ctermbg=1 cterm=NONE
 hi WildMenu	        ctermfg=0 ctermbg=11 cterm=NONE
 hi Folded	        ctermfg=4 ctermbg=248 cterm=NONE
 hi FoldColumn	    ctermfg=4 ctermbg=248 cterm=NONE
 hi DiffAdd	        ctermfg=NONE ctermbg=81 cterm=NONE
 hi DiffChange	    ctermfg=NONE ctermbg=225 cterm=NONE
 hi DiffDelete	    ctermfg=12 ctermbg=159 cterm=NONE
-hi DiffText	        ctermfg=NONE ctermbg=9 cterm=NONE
+hi DiffText	        ctermfg=0 ctermbg=9 cterm=NONE
 hi SignColumn	    ctermfg=4 ctermbg=248 cterm=NONE
 hi Conceal	        ctermfg=NONE ctermbg=NONE cterm=NONE
 hi SpellBad	        ctermfg=NONE ctermbg=224 cterm=NONE
@@ -70,7 +70,7 @@ hi Identifier	    ctermfg=12 ctermbg=NONE cterm=NONE
 hi Statement	    ctermfg=12 ctermbg=NONE cterm=NONE
 hi PreProc	        ctermfg=13 ctermbg=NONE cterm=NONE
 hi Type	            ctermfg=12 ctermbg=NONE cterm=NONE
-hi Error	        ctermfg=15 ctermbg=9 cterm=NONE
+hi Error	        ctermfg=0 ctermbg=9 cterm=NONE
 hi Todo	            ctermfg=0 ctermbg=11 cterm=NONE
 hi Character	    ctermfg=13 ctermbg=NONE cterm=NONE
 hi Float	        ctermfg=13 ctermbg=NONE cterm=NONE
