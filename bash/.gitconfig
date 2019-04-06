@@ -19,7 +19,7 @@
     old = red bold
     new = green
 [color "status"]
-    added = green
+    added = blue
     changed = green
     untracked = yellow
 [merge]

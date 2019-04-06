@@ -46,10 +46,9 @@ export PATH="$VBCC/bin:$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:$PATH"
 #
 # BASH SOURCES
 #
-[ -e "/usr/share/git/completion/git-completion.bash" ] && source /usr/share/git/completion/git-completion.bash
-[ -e "/usr/share/bash-completion/completions/git" ] && source /usr/share/bash-completion/completions/git
-[ -e "/usr/share/git/completion/git-prompt.sh" ] && source /usr/share/git/completion/git-prompt.sh
-[ -e "$HOME/.git-prompt.sh" ] && source $HOME/.git-prompt.sh
+source /usr/share/git/completion/git-completion.bash
+source /usr/share/bash-completion/completions/git
+source /usr/share/git/completion/git-prompt.sh
 
 #
 # COMPLETION
@@ -101,28 +100,11 @@ export GEM_HOME=$HOME/.gem
 export PATH="$HOME/.cargo/bin:$PATH"
 
 #
-# prompt
-#
-function __git_branch {
-    local branch=$(__git_ps1)
-    [ "$branch" != "" ] && echo "${branch}"
-}
-
-function __venv {
-    local venv=$(basename "$VIRTUAL_ENV")
-    [ "$venv" != "" ] && echo " ${venv}"
-}
-
-function __node {
-    if hash node 2>/dev/null; then
-        local v=$(node -v)
-    fi
-    [ "$v" != "" ] && echo "node ${v:1}"
-}
-
-PS1="\[\e[35m\]\$(__node)\[\e[32m\]\$(__venv)\[\e[35m\]\$(__git_branch)\n\[\e[34m\]\w\[\e[m\] $ "
-
-#
 # Autorun
 #
 $HOME/bin/colors.sh
+
+#
+# PROMPT
+#
+source ~/.bash-powerline.sh
