@@ -1,4 +1,4 @@
-set nocompatible
+"set nocompatible
 filetype off
 
 " set the runtime path to include Vundle and initialize
@@ -26,6 +26,8 @@ Plugin 'fisadev/vim-isort'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'prettier/vim-prettier'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 filetype plugin on
@@ -69,6 +71,9 @@ let g:buftabline_indicators = 1
 let g:buftabline_separators = 0
 let g:buftabline_show       = 2
 let g:indentLine_color_term = 7
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='papercolor'
 
 filetype off
 syntax on
