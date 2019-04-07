@@ -153,10 +153,10 @@ colors:
     black:   '0x000000'
     red:     '0xEF4343'
     green:   '0x17956A'
-    yellow:  '0x8F7526'
-    blue:    '0x003486'
+    yellow:  '0xD75F00'
+    blue:    '0x005F87'
     magenta: '0x624280'
-    cyan:    '0x306EB6'
+    cyan:    '0x0087AF'
     white:   '0x999999'
 
   # Bright colors
@@ -164,10 +164,10 @@ colors:
     black:   '0x282828'
     red:     '0xf15f5f'
     green:   '0x4EAB8C'
-    yellow:  '0xA58E49'
-    blue:    '0x0041a8'
+    yellow:  '0xD47E38'
+    blue:    '0x206D8E'
     magenta: '0x744D99'
-    cyan:    '0x5183BD'
+    cyan:    '0x2297B9'
     white:   '0xbababa'
 
   # Dim colors
