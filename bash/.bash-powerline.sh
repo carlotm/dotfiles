@@ -83,14 +83,14 @@ __powerline() {
         # POC: https://github.com/njhartwell/pw3nage
         # Related fix in git-bash: https://github.com/git/git/blob/9d77b0405ce6b471cb5ce3a904368fc25e55643d/contrib/completion/git-prompt.sh#L324
         if shopt -q promptvars; then
-            __powerline_git_info="$(__git_info)"
+            __powerline_git_info="$(__git_info) "
             local git="$COLOR_GIT\${__powerline_git_info}$COLOR_GIT_ARROW$SYMBOL_ARROW$RESET"
         else
             # promptvars is disabled. Avoid creating unnecessary env var.
             local git="$COLOR_GIT$(__git_info) $COLOR_GIT_ARROW$SYMBOL_ARROW$RESET"
         fi
 
-        local node="$COLOR_NODE$(__node_info) $COLOR_NODE_ARROW$SYMBOL_ARROW$RESET"
+        local node="$COLOR_NODE $(__node_info) $COLOR_NODE_ARROW$SYMBOL_ARROW$RESET"
         local venv="$COLOR_VENV$(__venv_info) $RESET$COLOR_VENV_ARROW$SYMBOL_ARROW$RESET"
 
         PS1="$node$git$venv\n$cwd$symbol"
