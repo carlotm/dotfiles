@@ -1,27 +1,25 @@
 #!/usr/bin/env bash
 
-## Uncomment to disable git info
-#POWERLINE_GIT=0
-
 __powerline() {
     # Colorscheme
     readonly RESET='\[\033[m\]'
-    readonly COLOR_CWD='\[\033[0;34m\]' # blue
-    readonly COLOR_GIT='\[\033[0;106m\]' # cyan
-    readonly COLOR_NODE='\[\033[47m\]' # magenta
-    readonly COLOR_VENV='\[\033[0;102m\]' # green
-    readonly COLOR_SUCCESS='\[\033[0;32m\]' # green
-    readonly COLOR_FAILURE='\[\033[0;31m\]' # red
+    readonly COLOR_CWD='\[\033[0;34m\]'
+    readonly COLOR_GIT='\[\033[0;106m\]'
+    readonly COLOR_NODE='\[\033[107m\]'
+    readonly COLOR_NODE_ARROW="\[\033[1;107m\]\[\033[106m\]"
+    readonly COLOR_VENV='\[\033[0;102m\]'
+    readonly COLOR_SUCCESS='\[\033[0;32m\]'
+    readonly COLOR_FAILURE='\[\033[0;31m\]'
 
+    readonly SYMBOL_ARROW=''
     readonly SYMBOL_GIT_BRANCH=''
     readonly SYMBOL_GIT_MODIFIED='*'
     readonly SYMBOL_GIT_PUSH='↑'
     readonly SYMBOL_GIT_PULL='↓'
 
-    PS_SYMBOL='‣'
+    PS_SYMBOL='$'
 
     __git_info() {
-        [[ $POWERLINE_GIT = 0 ]] && return
         hash git 2>/dev/null || return
         local git_eng="env LANG=C git"
 
@@ -90,8 +88,9 @@ __powerline() {
             local git="$COLOR_GIT$(__git_info) $RESET"
         fi
 
-        local node="$COLOR_NODE $(__node_info) $RESET"
-        local venv="$COLOR_VENV$(__venv_info) $RESET"
+        echo "$COLOR_NODE_ARROW$SYMBOL_ARROW$RESET"
+        local node="$COLOR_NODE$(__node_info)$COLOR_NODE_ARROW$SYMBOL_ARROW$RESET"
+        local venv="$COLOR_VENV$(__venv_info)$RESET"
 
         PS1="$node$git$venv\n$cwd$symbol"
     }
