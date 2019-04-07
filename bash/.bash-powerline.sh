@@ -87,11 +87,11 @@ __powerline() {
             local git="$COLOR_GIT\${__powerline_git_info}$COLOR_GIT_ARROW$SYMBOL_ARROW$RESET"
         else
             # promptvars is disabled. Avoid creating unnecessary env var.
-            local git="$COLOR_GIT$(__git_info)$COLOR_GIT_ARROW$SYMBOL_ARROW$RESET"
+            local git="$COLOR_GIT$(__git_info) $COLOR_GIT_ARROW$SYMBOL_ARROW$RESET"
         fi
 
-        local node="$COLOR_NODE$(__node_info)$COLOR_NODE_ARROW$SYMBOL_ARROW$RESET"
-        local venv="$COLOR_VENV$(__venv_info)$RESET$COLOR_VENV_ARROW$SYMBOL_ARROW$RESET"
+        local node="$COLOR_NODE$(__node_info) $COLOR_NODE_ARROW$SYMBOL_ARROW$RESET"
+        local venv="$COLOR_VENV$(__venv_info) $RESET$COLOR_VENV_ARROW$SYMBOL_ARROW$RESET"
 
         PS1="$node$git$venv\n$cwd$symbol"
     }
