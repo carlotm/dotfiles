@@ -1,19 +1,14 @@
 #!/usr/bin/env bash
 
 __powerline() {
-    # Colorscheme
-    readonly RESET='\[\033[m\]'
-    readonly COLOR_CWD='\[\033[0;34m\]'
-    readonly COLOR_GIT='\[\033[0;100m\]'
-    readonly COLOR_GIT_ARROW="\[\033[1;96m\]\[\033[102m\]"
-    readonly COLOR_NODE='\[\033[100m\]'
-    readonly COLOR_NODE_ARROW="\[\033[1;97m\]\[\033[106m\]"
-    readonly COLOR_VENV='\[\033[0;100m\]'
-    readonly COLOR_VENV_ARROW="\[\033[1;92m\]"
-    readonly COLOR_SUCCESS='\[\033[0;32m\]'
-    readonly COLOR_FAILURE='\[\033[0;31m\]'
+    readonly RESET=$(tput sgr0)
+    readonly COLOR_CWD=$(tput setaf 4)
+    readonly COLOR_GIT=$(tput setaf 6)
+    readonly COLOR_NODE=$(tput setaf 3)
+    readonly COLOR_VENV=$(tput setaf 2)
+    readonly COLOR_SUCCESS=$(tput setaf 2)
+    readonly COLOR_FAILURE=$(tput setaf 1)
 
-    readonly SYMBOL_ARROW=''
     readonly SYMBOL_GIT_BRANCH=''
     readonly SYMBOL_GIT_MODIFIED='*'
     readonly SYMBOL_GIT_PUSH='↑'
@@ -64,10 +59,12 @@ __powerline() {
 
     function __venv_info {
         local venv=$(basename "$VIRTUAL_ENV")
-        [ "$venv" != "" ] && echo " ${venv}"
+        [ "$venv" != "" ] && echo "${venv}"
     }
 
     ps1() {
+        local rev="$(tput setab 0)"
+
         # Check the exit code of the previous command and display different
         # colors in the prompt accordingly.
         if [ $? -eq 0 ]; then
@@ -84,16 +81,17 @@ __powerline() {
         # Related fix in git-bash: https://github.com/git/git/blob/9d77b0405ce6b471cb5ce3a904368fc25e55643d/contrib/completion/git-prompt.sh#L324
         if shopt -q promptvars; then
             __powerline_git_info="$(__git_info) "
-            local git="$COLOR_GIT\${__powerline_git_info}$COLOR_GIT_ARROW$SYMBOL_ARROW$RESET"
+            local git="$rev$COLOR_GIT\${__powerline_git_info}$RESET"
         else
             # promptvars is disabled. Avoid creating unnecessary env var.
-            local git="$COLOR_GIT$(__git_info) $COLOR_GIT_ARROW$SYMBOL_ARROW$RESET"
+            local git="$rev$COLOR_GIT$(__git_info) $RESET"
         fi
 
-        local node="$COLOR_NODE $(__node_info) $COLOR_NODE_ARROW$SYMBOL_ARROW$RESET"
-        local venv="$COLOR_VENV$(__venv_info) $RESET$COLOR_VENV_ARROW$SYMBOL_ARROW$RESET"
+        local node="$rev$COLOR_NODE $(__node_info) $RESET"
+        local venv="$rev$COLOR_VENV $(__venv_info) $RESET"
 
-        PS1="$node$git$venv\n$cwd$symbol"
+
+        PS1="$node$git$venv\n$cwd$symbol$RESET"
     }
 
     PROMPT_COMMAND="ps1${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
