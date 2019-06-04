@@ -26,14 +26,14 @@ Plugin 'fisadev/vim-isort'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'prettier/vim-prettier'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'pearofducks/ansible-vim'
 
 call vundle#end()
 filetype plugin on
 
 set relativenumber
 set number
+set laststatus=2
 set title
 set softtabstop=4
 set shiftwidth=4
@@ -47,7 +47,7 @@ set ignorecase
 set smartcase
 set incsearch
 set hlsearch
-set showmatch
+"set showmatch
 set nocompatible
 set hidden
 set modeline
@@ -56,6 +56,7 @@ set backspace=indent,eol,start
 set cursorline
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.*.swp,*.pyc
 set backupcopy=yes
+set colorcolumn=89
 
 let mapleader=","
 let g:GrepRoot="3"
@@ -70,9 +71,7 @@ let g:buftabline_numbers = 0
 let g:buftabline_indicators = 1
 let g:buftabline_separators = 0
 let g:buftabline_show       = 2
-let g:indentLine_color_term = 7
-let g:airline_powerline_fonts = 0
-let g:airline_theme='papercolor'
+let g:indentLine_color_term = 8
 
 filetype off
 syntax on
@@ -80,14 +79,13 @@ syntax enable
 
 set t_Co=256
 set background=dark
-set colorcolumn=90
 colorscheme CarloRatm
 
 highlight ExtraWhitespace ctermbg=9
 highlight default RedBG ctermbg=9
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
-highlight ColorColumn ctermbg=15
+highlight ColorColumn ctermbg=0
 
 match ExtraWhitespace /\s\+$/
 
@@ -102,6 +100,7 @@ autocmd FileType javascript.jsx setlocal shiftwidth=4 softtabstop=4
 autocmd FileType javascript setlocal shiftwidth=4 softtabstop=4
 autocmd FileType json setlocal syntax=off shiftwidth=4 softtabstop=4
 autocmd FileType scss setlocal shiftwidth=4 softtabstop=4
+autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2
 
 function! HLNext (blinktime)
   let [bufnum, lnum, col, off] = getpos('.')
@@ -143,3 +142,8 @@ augroup presentation
     au BufEnter _SLIDE_ nmap <LEFT> :PresentingPrev<CR>
     au BufEnter _SLIDE_ nmap <RIGHT> :PresentingNext<CR>
 augroup END
+
+" status line color
+au InsertEnter * hi statusline ctermbg=2 ctermfg=0
+au InsertLeave * hi statusline ctermbg=0
+hi statusline ctermbg=0

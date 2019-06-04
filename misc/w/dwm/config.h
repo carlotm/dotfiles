@@ -2,14 +2,14 @@
 
 /* appearance */
 static const char *fonts[] = {
-    "Misc Ohsnap:size=12"
+    "Input Mono Condensed:size=12"
 };
 static const char dmenufont[]       = "Input Mono Condensed:size=42";
-static const char normbordercolor[] = "#bbbbbb";
-static const char normbgcolor[]     = "#000000";
-static const char normfgcolor[]     = "#999999";
-static const char selbordercolor[]  = "#000000";
-static const char selbgcolor[]      = "#000000";
+static const char normbordercolor[] = "#3B4252";
+static const char normbgcolor[]     = "#2E3440";
+static const char normfgcolor[]     = "#aaaaaa";
+static const char selbordercolor[]  = "#BF616A";
+static const char selbgcolor[]      = "#2E3440";
 static const char selfgcolor[]      = "#ffffff";
 static const unsigned int borderpx  = 1;
 static const unsigned int snap      = 32;
@@ -27,7 +27,7 @@ static const int resizehints = 0;
 
 static const Rule rules[] = {
   /* class|instance|title|tags mask|isfloating|monitor */
-  { "fs-uae", NULL, NULL, 1 << 8, 1, -1 },
+  { "nulla", NULL, NULL, 1 << 8, 1, -1 },
 };
 
 static const Layout layouts[] = {

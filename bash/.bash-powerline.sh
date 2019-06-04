@@ -4,16 +4,15 @@ __powerline() {
     # Colorscheme
     readonly RESET='\[\033[m\]'
     readonly COLOR_CWD='\[\033[0;34m\]'
-    readonly COLOR_GIT='\[\033[0;106m\]'
+    readonly COLOR_GIT='\[\033[0;100m\]'
     readonly COLOR_GIT_ARROW="\[\033[1;96m\]\[\033[102m\]"
-    readonly COLOR_NODE='\[\033[107m\]'
+    readonly COLOR_NODE='\[\033[100m\]'
     readonly COLOR_NODE_ARROW="\[\033[1;97m\]\[\033[106m\]"
-    readonly COLOR_VENV='\[\033[0;102m\]'
+    readonly COLOR_VENV='\[\033[0;100m\]'
     readonly COLOR_VENV_ARROW="\[\033[1;92m\]"
     readonly COLOR_SUCCESS='\[\033[0;32m\]'
     readonly COLOR_FAILURE='\[\033[0;31m\]'
 
-    #readonly SYMBOL_ARROW=''
     readonly SYMBOL_ARROW=''
     readonly SYMBOL_GIT_BRANCH=''
     readonly SYMBOL_GIT_MODIFIED='*'
