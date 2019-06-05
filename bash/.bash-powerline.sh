@@ -63,7 +63,7 @@ __powerline() {
     }
 
     ps1() {
-        local rev="$(tput setab 0)"
+        local rev="$(tput rev)"
 
         # Check the exit code of the previous command and display different
         # colors in the prompt accordingly.
@@ -88,7 +88,7 @@ __powerline() {
         fi
 
         local node="$rev$COLOR_NODE $(__node_info) $RESET"
-        local venv="$rev$COLOR_VENV $(__venv_info) $RESET"
+        local venv="$rev$COLOR_VENV $(__venv_info)$RESET"
 
 
         PS1="$node$git$venv\n$cwd$symbol$RESET"
