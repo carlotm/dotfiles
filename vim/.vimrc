@@ -50,7 +50,7 @@ set hlsearch
 "set showmatch
 set nocompatible
 set hidden
-set modeline
+set nomodeline
 set encoding=utf-8
 set backspace=indent,eol,start
 set cursorline

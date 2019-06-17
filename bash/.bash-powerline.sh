@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 __powerline() {
-    readonly RESET=$(tput sgr0)
-    readonly COLOR_CWD=$(tput setaf 4)
-    readonly COLOR_GIT=$(tput setaf 6)
-    readonly COLOR_NODE=$(tput setaf 3)
-    readonly COLOR_VENV=$(tput setaf 2)
-    readonly COLOR_SUCCESS=$(tput setaf 2)
-    readonly COLOR_FAILURE=$(tput setaf 1)
+    #readonly RESET=$(tput sgr0)
+    #readonly COLOR_CWD=$(tput setaf 4)
+    #readonly COLOR_GIT=$(tput setaf 6)
+    #readonly COLOR_NODE=$(tput setaf 3)
+    #readonly COLOR_VENV=$(tput setaf 2)
+    #readonly COLOR_SUCCESS=$(tput setaf 2)
+    #readonly COLOR_FAILURE=$(tput setaf 1)
 
     readonly SYMBOL_GIT_BRANCH=''
     readonly SYMBOL_GIT_MODIFIED='*'
@@ -63,14 +63,14 @@ __powerline() {
     }
 
     ps1() {
-        local rev="$(tput rev)"
+        #local rev="$(tput setab 0)"
 
         # Check the exit code of the previous command and display different
         # colors in the prompt accordingly.
         if [ $? -eq 0 ]; then
-            local symbol="$COLOR_SUCCESS $PS_SYMBOL $RESET"
+            local symbol="$COLOR_SUCCESS$PS_SYMBOL $RESET"
         else
-            local symbol="$COLOR_FAILURE $PS_SYMBOL $RESET"
+            local symbol="$COLOR_FAILURE$PS_SYMBOL $RESET"
         fi
 
         local cwd="$COLOR_CWD\w$RESET"
@@ -87,11 +87,11 @@ __powerline() {
             local git="$rev$COLOR_GIT$(__git_info) $RESET"
         fi
 
-        local node="$rev$COLOR_NODE $(__node_info) $RESET"
-        local venv="$rev$COLOR_VENV $(__venv_info)$RESET"
+        local node="$rev$COLOR_NODE$(__node_info) $RESET"
+        local venv="$rev$COLOR_VENV$(__venv_info) $RESET"
 
 
-        PS1="$node$git$venv\n$cwd$symbol$RESET"
+        PS1="$node$git$venv\n$cwd $symbol$RESET"
     }
 
     PROMPT_COMMAND="ps1${PROMPT_COMMAND:+; $PROMPT_COMMAND}"

@@ -14,6 +14,7 @@ alias tree='tree -C -a -I .git'
 alias lsvirtualenv='lsvirtualenv -b'
 alias pdb='python -m pdb'
 alias feh='feh --scale-down'
+alias p='pwd'
 
 shopt -s checkwinsize
 stty -ixon
