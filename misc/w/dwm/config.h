@@ -6,10 +6,10 @@ static const char *fonts[] = {
 };
 static const char dmenufont[]       = "Input Mono Condensed:size=42";
 static const char normbordercolor[] = "#3B4252";
-static const char normbgcolor[]     = "#2E3440";
+static const char normbgcolor[]     = "#000000";
 static const char normfgcolor[]     = "#aaaaaa";
-static const char selbordercolor[]  = "#BF616A";
-static const char selbgcolor[]      = "#2E3440";
+static const char selbordercolor[]  = "#000000";
+static const char selbgcolor[]      = "#000000";
 static const char selfgcolor[]      = "#ffffff";
 static const unsigned int borderpx  = 1;
 static const unsigned int snap      = 32;
