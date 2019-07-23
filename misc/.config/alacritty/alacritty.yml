@@ -47,13 +47,13 @@ draw_bold_text_with_bright_colors: false
 
 colors:
   primary:
-    background: '0x2E3440'
+    background: '0x273142'
     foreground: '0xD8DEE9'
   cursor:
     text: '0x222222'
     cursor: '0xffffff'
   normal:
-    black: '0x3B4252'
+    black: '0x2E3B50'
     red: '0xBF616A'
     green: '0x8FAF73'
     yellow: '0xEBCB8B'

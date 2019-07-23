@@ -13,7 +13,6 @@ alias grep='grep --color -n'
 alias tree='tree -C -a -I .git'
 alias lsvirtualenv='lsvirtualenv -b'
 alias pdb='python -m pdb'
-alias feh='feh --scale-down'
 alias p='pwd'
 
 shopt -s checkwinsize
@@ -63,13 +62,6 @@ complete -cf man
 unset sq_color
 
 #
-# VIRTUALENVWRAPPER
-#
-export WORKON_HOME=~/.virtualenvs
-VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-[ -e "/usr/bin/virtualenvwrapper.sh" ] && source /usr/bin/virtualenvwrapper.sh
-
-#
 # NPM
 #
 NPM_PACKAGES="$HOME/.npm-packages"
@@ -94,6 +86,14 @@ NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 #
 #export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 #export GEM_HOME=$HOME/.gem
+
+#
+# PYENV
+#
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 #
 # rust

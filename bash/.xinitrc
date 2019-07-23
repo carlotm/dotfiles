@@ -20,7 +20,7 @@ rm -rf /opt/yogurt/*
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
-xsetroot -solid "#3B4252" &
+xsetroot -solid "#1A2230" &
 xset +fp /usr/share/fonts/local
 xset fp rehash
 xrdb -merge .Xresources &

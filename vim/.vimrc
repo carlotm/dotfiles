@@ -27,6 +27,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'prettier/vim-prettier'
 Plugin 'pearofducks/ansible-vim'
+Plugin 'nvie/vim-flake8'
 
 call vundle#end()
 filetype plugin on
@@ -101,6 +102,7 @@ autocmd FileType javascript setlocal shiftwidth=4 softtabstop=4
 autocmd FileType json setlocal syntax=off shiftwidth=4 softtabstop=4
 autocmd FileType scss setlocal shiftwidth=4 softtabstop=4
 autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2
+"autocmd BufWritePost *.py call flake8#Flake8()
 
 function! HLNext (blinktime)
   let [bufnum, lnum, col, off] = getpos('.')

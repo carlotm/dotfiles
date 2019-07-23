@@ -11,7 +11,7 @@ set bg&
 hi CursorLineNr	    ctermfg=3       ctermbg=0       cterm=NONE
 hi CursorLine       ctermfg=NONE    ctermbg=0       cterm=NONE
 hi CursorColumn     ctermfg=NONE    ctermbg=7       cterm=NONE
-hi LineNr	        ctermfg=8      ctermbg=NONE    cterm=NONE
+hi LineNr	        ctermfg=8       ctermbg=NONE    cterm=NONE
 hi ColorColumn      ctermfg=NONE    ctermbg=7       cterm=NONE
 
 hi TabLineFill      ctermfg=NONE    ctermbg=0       cterm=NONE

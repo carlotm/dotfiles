@@ -1,53 +1,16 @@
 #!/usr/bin/env bash
 
 __powerline() {
-    #readonly RESET=$(tput sgr0)
-    #readonly COLOR_CWD=$(tput setaf 4)
-    #readonly COLOR_GIT=$(tput setaf 6)
-    #readonly COLOR_NODE=$(tput setaf 3)
-    #readonly COLOR_VENV=$(tput setaf 2)
-    #readonly COLOR_SUCCESS=$(tput setaf 2)
-    #readonly COLOR_FAILURE=$(tput setaf 1)
-
-    readonly SYMBOL_GIT_BRANCH=''
-    readonly SYMBOL_GIT_MODIFIED='*'
-    readonly SYMBOL_GIT_PUSH='↑'
-    readonly SYMBOL_GIT_PULL='↓'
-
-    PS_SYMBOL='$'
+    readonly OFF="$(tput sgr0)"
+    readonly REV="$(tput setab 0)"
+    readonly DIM="$(tput setaf 14)"
 
     __git_info() {
         hash git 2>/dev/null || return
         local git_eng="env LANG=C git"
-
-        # get current branch name
         local ref=$($git_eng symbolic-ref --short HEAD 2>/dev/null)
-
-        if [[ -n "$ref" ]]; then
-            # prepend branch symbol
-            ref=$SYMBOL_GIT_BRANCH$ref
-        else
-            # get tag name or short unique hash
-            ref=$($git_eng describe --tags --always 2>/dev/null)
-        fi
-
         [[ -n "$ref" ]] || return  # not a git repo
-
-        local marks
-
-        # scan first two lines of output from `git status`
-        while IFS= read -r line; do
-            if [[ $line =~ ^## ]]; then # header line
-                [[ $line =~ ahead\ ([0-9]+) ]] && marks+=" $SYMBOL_GIT_PUSH${BASH_REMATCH[1]}"
-                [[ $line =~ behind\ ([0-9]+) ]] && marks+=" $SYMBOL_GIT_PULL${BASH_REMATCH[1]}"
-            else # branch is modified if output contains more lines after the header line
-                marks="$SYMBOL_GIT_MODIFIED$marks"
-                break
-            fi
-        done < <($git_eng status --porcelain --branch 2>/dev/null)  # note the space between the two <
-
-        # print the git branch segment without a trailing newline
-        printf " $ref$marks"
+        printf "  $ref"
     }
 
     function __node_info {
@@ -57,41 +20,16 @@ __powerline() {
         [ "$v" != "" ] && echo "node ${v:1}"
     }
 
-    function __venv_info {
-        local venv=$(basename "$VIRTUAL_ENV")
-        [ "$venv" != "" ] && echo "${venv}"
+    function __py_version {
+        local v=$(pyenv version)
+        echo "  python ${v%% *}"
     }
 
     ps1() {
-        #local rev="$(tput setab 0)"
-
-        # Check the exit code of the previous command and display different
-        # colors in the prompt accordingly.
-        if [ $? -eq 0 ]; then
-            local symbol="$COLOR_SUCCESS$PS_SYMBOL $RESET"
-        else
-            local symbol="$COLOR_FAILURE$PS_SYMBOL $RESET"
-        fi
-
-        local cwd="$COLOR_CWD\w$RESET"
-        # Bash by default expands the content of PS1 unless promptvars is disabled.
-        # We must use another layer of reference to prevent expanding any user
-        # provided strings, which would cause security issues.
-        # POC: https://github.com/njhartwell/pw3nage
-        # Related fix in git-bash: https://github.com/git/git/blob/9d77b0405ce6b471cb5ce3a904368fc25e55643d/contrib/completion/git-prompt.sh#L324
-        if shopt -q promptvars; then
-            __powerline_git_info="$(__git_info) "
-            local git="$rev$COLOR_GIT\${__powerline_git_info}$RESET"
-        else
-            # promptvars is disabled. Avoid creating unnecessary env var.
-            local git="$rev$COLOR_GIT$(__git_info) $RESET"
-        fi
-
-        local node="$rev$COLOR_NODE$(__node_info) $RESET"
-        local venv="$rev$COLOR_VENV$(__venv_info) $RESET"
-
-
-        PS1="$node$git$venv\n$cwd $symbol$RESET"
+        local node="$(__node_info)"
+        local venv="$(__py_version)"
+        local git="$(__git_info)"
+        PS1="$REV$BG\r$DIM${node}${venv}${git}$OFF\n\w \$ "
     }
 
     PROMPT_COMMAND="ps1${PROMPT_COMMAND:+; $PROMPT_COMMAND}"

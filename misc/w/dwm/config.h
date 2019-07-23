@@ -5,12 +5,13 @@ static const char *fonts[] = {
     "Input Mono Condensed:size=12"
 };
 static const char dmenufont[]       = "Input Mono Condensed:size=42";
-static const char normbordercolor[] = "#3B4252";
-static const char normbgcolor[]     = "#000000";
+static const char normbordercolor[] = "#2E3440";
+static const char normbgcolor[]     = "#1A2230";
 static const char normfgcolor[]     = "#aaaaaa";
-static const char selbordercolor[]  = "#000000";
-static const char selbgcolor[]      = "#000000";
+static const char selbordercolor[]  = "#1A2230";
+static const char selbgcolor[]      = "#1A2230";
 static const char selfgcolor[]      = "#ffffff";
+static const unsigned int gappx     = 4;
 static const unsigned int borderpx  = 1;
 static const unsigned int snap      = 32;
 static const int showbar            = 1;
