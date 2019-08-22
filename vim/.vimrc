@@ -21,13 +21,13 @@ Plugin 'sotte/presenting.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'posva/vim-vue'
 Plugin 'aserebryakov/vim-todo-lists'
-Plugin 'rust-lang/rust.vim'
 Plugin 'fisadev/vim-isort'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'prettier/vim-prettier'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'nvie/vim-flake8'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin on
@@ -73,6 +73,7 @@ let g:buftabline_indicators = 1
 let g:buftabline_separators = 0
 let g:buftabline_show       = 2
 let g:indentLine_color_term = 8
+let g:NERDSpaceDelims = 1
 
 filetype off
 syntax on
