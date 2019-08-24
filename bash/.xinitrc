@@ -32,4 +32,3 @@ udiskie --automount &
 
 conky | while read -r; do xsetroot -name "$REPLY"; done &
 exec ${HOME}/bin/startdwm
-#exec wmaker
