@@ -1,25 +1,25 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char *fonts[] = {
-    "Input Mono Condensed:size=12"
-};
+static const unsigned int borderpx  = 1;  /* border pixel of windows */
+static const unsigned int snap      = 32; /* snap pixel */
+static const int showbar            = 1;  /* 0 means no bar */
+static const int topbar             = 1;  /* 0 means bottom bar */
+static const char *fonts[]          = { "Input Mono Condensed:size=12" };
 static const char dmenufont[]       = "Input Mono Condensed:size=42";
-static const char normbordercolor[] = "#2E3B50";
-static const char normbgcolor[]     = "#1A2230";
-static const char normfgcolor[]     = "#aaaaaa";
-static const char selbordercolor[]  = "#BF616A";
-static const char selbgcolor[]      = "#1A2230";
-static const char selfgcolor[]      = "#ffffff";
-static const unsigned int gappx     = 4;
-static const unsigned int borderpx  = 1;
-static const unsigned int snap      = 32;
-static const int showbar            = 1;
-static const int topbar             = 1;
+static const char col_white[]       = "#ffffff";
+static const char col_white_d[]     = "#aaaaaa";
+static const char col_deep_sea[]    = "#1A2230";
+static const char col_deep_sea_l[]    = "#2E3B50";
+static const char col_highlight[]   = "#BF616A";
+static const char *colors[][3]      = {
+	/*               fg           bg            border   */
+	[SchemeNorm] = { col_white_d, col_deep_sea, col_deep_sea_l },
+	[SchemeSel]  = { col_white,   col_deep_sea, col_highlight  },
+};
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-
 
 /* layout(s) */
 static const float mfact     = 0.60;
@@ -54,10 +54,10 @@ static const char *dmenucmd[] = {
     "dmenu_run",
     "-m", dmenumon,
     "-fn", dmenufont,
-    "-nb", normbgcolor,
-    "-nf", normfgcolor,
-    "-sb", selbgcolor,
-    "-sf", selfgcolor,
+    "-nb", col_deep_sea,
+    "-nf", col_white_d,
+    "-sb", col_deep_sea,
+    "-sf", col_white,
     NULL
 };
 static const char *termcmd[]  = { "kitty", NULL };
