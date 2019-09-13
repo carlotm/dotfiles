@@ -9,7 +9,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'ap/vim-buftabline'
-" Plugin 'scrooloose/nerdcommenter'
 Plugin 'xolox/vim-misc'
 Plugin 'mileszs/ack.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -132,7 +131,7 @@ nmap <silent> <C-Up> :wincmd k<CR>
 nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
 nmap <silent> <C-Right> :wincmd l<CR>
-" nmap <C-N> :bnext<CR>
+nmap <C-N> :bnext<CR>
 nmap <C-P> :bprevious<CR>
 nmap <C-T> :edit<Space>
 nmap <C-X> :bd<CR>
