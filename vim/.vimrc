@@ -9,7 +9,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'ap/vim-buftabline'
-Plugin 'scrooloose/nerdcommenter'
+" Plugin 'scrooloose/nerdcommenter'
 Plugin 'xolox/vim-misc'
 Plugin 'mileszs/ack.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -28,6 +28,10 @@ Plugin 'prettier/vim-prettier'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'fatih/vim-go'
+Plugin 'dense-analysis/ale'
+Plugin 'dracula/vim'
+Plugin 'evidens/vim-twig'
+Plugin 'tomtom/tcomment_vim'
 
 call vundle#end()
 filetype plugin on
@@ -36,11 +40,12 @@ set relativenumber
 set number
 set laststatus=2
 set title
-set softtabstop=4
-set shiftwidth=4
-set tabstop=4
+set softtabstop=2
+set shiftwidth=2
+set tabstop=2
 set expandtab
 set ruler
+set binary noeol
 set rulerformat=%25(%n%m%r:\ %Y\ [%l,%v]\ %p%%%)
 set autoread
 set scrolloff=4
@@ -48,7 +53,7 @@ set ignorecase
 set smartcase
 set incsearch
 set hlsearch
-"set showmatch
+set showmatch
 set nocompatible
 set hidden
 set nomodeline
@@ -74,6 +79,11 @@ let g:buftabline_separators = 0
 let g:buftabline_show       = 2
 let g:indentLine_color_term = 8
 let g:NERDSpaceDelims = 1
+" let g:ale_linters = {'css': ['stylelint']}
+" let g:ale_linters_explicit = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0
 
 filetype off
 syntax on
@@ -81,13 +91,14 @@ syntax enable
 
 set t_Co=256
 set background=dark
-colorscheme CarloRatm
+color dracula
 
 highlight ExtraWhitespace ctermbg=9
 highlight default RedBG ctermbg=9
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 highlight ColorColumn ctermbg=0
+highlight CursorLine ctermbg=0
 
 match ExtraWhitespace /\s\+$/
 
@@ -98,12 +109,12 @@ nnoremap > >>
 cnoreabbrev Ack Ack!
 
 autocmd FileType make setlocal noexpandtab
-autocmd FileType javascript.jsx setlocal shiftwidth=4 softtabstop=4
-autocmd FileType javascript setlocal shiftwidth=4 softtabstop=4
-autocmd FileType json setlocal syntax=off shiftwidth=4 softtabstop=4
-autocmd FileType scss setlocal shiftwidth=4 softtabstop=4
-autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2
-"autocmd BufWritePost *.py call flake8#Flake8()
+" autocmd FileType javascript.jsx setlocal shiftwidth=2 softtabstop=2
+" autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2
+" autocmd FileType json setlocal syntax=off shiftwidth=2 softtabstop=2
+" autocmd FileType scss setlocal shiftwidth=2 softtabstop=2
+" autocmd FileType css setlocal shiftwidth=2 softtabstop=2
+" autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2
 
 function! HLNext (blinktime)
   let [bufnum, lnum, col, off] = getpos('.')
@@ -121,13 +132,14 @@ nmap <silent> <C-Up> :wincmd k<CR>
 nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
 nmap <silent> <C-Right> :wincmd l<CR>
-map <C-c> <Leader>ci<CR>
-nmap <C-N> :bnext<CR>
+" nmap <C-N> :bnext<CR>
 nmap <C-P> :bprevious<CR>
 nmap <C-T> :edit<Space>
 nmap <C-X> :bd<CR>
 nmap <C-w> yiw
 nmap <C-s> viw"0p
+nmap <C-c> gccj
+vmap <C-c> gcj
 nnoremap <C-f> :Ack!<Space>
 nnoremap <silent> n   n:call HLNext(0.2)<CR>
 nnoremap <silent> N   N:call HLNext(0.2)<CR>
