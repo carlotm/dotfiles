@@ -31,6 +31,7 @@ Plugin 'dense-analysis/ale'
 Plugin 'dracula/vim'
 Plugin 'evidens/vim-twig'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'ryanoasis/vim-devicons'
 
 call vundle#end()
 filetype plugin on
@@ -39,10 +40,11 @@ set relativenumber
 set number
 set laststatus=2
 set title
-set softtabstop=2
-set shiftwidth=2
-set tabstop=2
+set tabstop=8
+set softtabstop=0
 set expandtab
+set shiftwidth=4
+set smarttab
 set ruler
 set binary noeol
 set rulerformat=%25(%n%m%r:\ %Y\ [%l,%v]\ %p%%%)
@@ -96,8 +98,6 @@ highlight ExtraWhitespace ctermbg=9
 highlight default RedBG ctermbg=9
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
-highlight ColorColumn ctermbg=0
-highlight CursorLine ctermbg=0
 
 match ExtraWhitespace /\s\+$/
 
@@ -108,12 +108,6 @@ nnoremap > >>
 cnoreabbrev Ack Ack!
 
 autocmd FileType make setlocal noexpandtab
-" autocmd FileType javascript.jsx setlocal shiftwidth=2 softtabstop=2
-" autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2
-" autocmd FileType json setlocal syntax=off shiftwidth=2 softtabstop=2
-" autocmd FileType scss setlocal shiftwidth=2 softtabstop=2
-" autocmd FileType css setlocal shiftwidth=2 softtabstop=2
-" autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2
 
 function! HLNext (blinktime)
   let [bufnum, lnum, col, off] = getpos('.')

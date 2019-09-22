@@ -15,8 +15,6 @@ if [ -d ~/Desktop ]; then
   rm -rf ~/Desktop*
 fi
 
-rm -rf /opt/yogurt/*
-
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
@@ -26,8 +24,8 @@ xrdb -merge .Xresources &
 setxkbmap us &
 /usr/bin/start-pulseaudio-x11 &
 udiskie --automount &
+xfce4-power-manager &
 feh --bg-center gfx/pictures/wallpaper.jpg &
-
 #echo -e "power on\n connect 90:7F:61:03:88:CA\n" | bluetoothctl
-
-exec /usr/bin/qtile
+conky | while read -r; do xsetroot -name "$REPLY"; done &
+exec ${HOME}/bin/startdwm

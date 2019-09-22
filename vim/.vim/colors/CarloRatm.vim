@@ -8,18 +8,18 @@ let colors_name = "CarloRatm"
 
 set bg&
 
-hi CursorLineNr     ctermfg=3       ctermbg=0       cterm=NONE
-hi CursorLine       ctermfg=NONE    ctermbg=0       cterm=NONE
 hi CursorColumn     ctermfg=NONE    ctermbg=7       cterm=NONE
 hi LineNr           ctermfg=8       ctermbg=NONE    cterm=NONE
-hi ColorColumn      ctermfg=NONE    ctermbg=7       cterm=NONE
+hi ColorColumn			ctermfg=NONE    ctermbg=8       cterm=NONE
+hi CursorLine				ctermfg=NONE    ctermbg=8       cterm=NONE
+hi CursorLineNr     ctermfg=3       ctermbg=8       cterm=NONE
 
-hi TabLineFill      ctermfg=NONE    ctermbg=0       cterm=NONE
-hi TabLine          ctermfg=8       ctermbg=0       cterm=NONE
+hi TabLineFill      ctermfg=NONE    ctermbg=8       cterm=NONE
+hi TabLine          ctermfg=5       ctermbg=8       cterm=NONE
 hi TabLineSel       ctermfg=3       ctermbg=NONE    cterm=NONE
 
 " An example comment
-hi Comment          ctermfg=8       ctermbg=0       cterm=NONE
+hi Comment          ctermfg=0       ctermbg=NONE    cterm=NONE
 hi Normal           ctermfg=7       ctermbg=NONE    cterm=NONE
 hi Conditional      ctermfg=15      ctermbg=NONE    cterm=NONE
 hi Keyword          ctermfg=15      ctermbg=NONE    cterm=NONE
