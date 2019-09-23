@@ -7,3 +7,7 @@ bash/bin/vmu0.bin
 bash/bin/vmu1.bin
 bash/bin/vmu2.bin
 bash/bin/vmu3.bin
+vim/.vim/bundle
+bash/bin/phab
+bash/bin/phab-old.phar
+fonts/.fonts/.uuid
