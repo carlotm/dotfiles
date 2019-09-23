@@ -40,25 +40,25 @@ hi Special          ctermfg=6       ctermbg=NONE    cterm=NONE
 hi PreProc          ctermfg=6       ctermbg=NONE    cterm=NONE
 hi Error            ctermfg=1       ctermbg=NONE    cterm=NONE
 hi Repeat           ctermfg=15      ctermbg=NONE    cterm=NONE
+hi VertSplit        ctermfg=8       ctermbg=8       cterm=NONE
+hi IncSearch        ctermfg=0       ctermbg=11      cterm=NONE
+hi Search           ctermfg=0       ctermbg=11      cterm=NONE
+hi Visual           ctermfg=NONE    ctermbg=0       cterm=NONE
+hi NonText          ctermfg=5       ctermbg=NONE    cterm=NONE
+hi MatchParen       ctermfg=NONE    ctermbg=13     cterm=NONE
 
 
 
 
-hi IncSearch      ctermfg=1       ctermbg=3    cterm=NONE
-hi Search         ctermfg=1       ctermbg=3    cterm=NONE
-hi Visual         ctermfg=1       ctermbg=3    cterm=NONE
 hi VisualNOS      ctermfg=1       ctermbg=3    cterm=NONE
-hi MatchParen     ctermfg=1       ctermbg=2    cterm=NONE
 hi StatusLine     ctermfg=1       ctermbg=0    cterm=NONE
 hi StatusLineNC   ctermfg=1       ctermbg=0    cterm=NONE
 hi Directory      ctermfg=1       ctermbg=NONE cterm=NONE
 hi ErrorMsg       ctermfg=1       ctermbg=NONE cterm=NONE
 hi MoreMsg        ctermfg=1       ctermbg=NONE cterm=NONE
 hi ModeMsg        ctermfg=1       ctermbg=NONE cterm=NONE
-hi NonText        ctermfg=1       ctermbg=NONE cterm=NONE
 hi SpecialKey     ctermfg=1       ctermbg=NONE cterm=NONE
 hi Question       ctermfg=1       ctermbg=NONE cterm=NONE
-hi VertSplit      ctermfg=1       ctermbg=NONE cterm=NONE
 hi Title          ctermfg=1       ctermbg=NONE cterm=NONE
 hi WarningMsg     ctermfg=1       ctermbg=NONE cterm=NONE
 hi WildMenu       ctermfg=1       ctermbg=NONE cterm=NONE
