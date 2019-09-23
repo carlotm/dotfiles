@@ -7,8 +7,8 @@ static const unsigned int borderpx  = 2;  /* border pixel of windows */
 static const unsigned int snap      = 8; /* snap pixel */
 static const int showbar            = 1;  /* 0 means no bar */
 static const int topbar             = 1;  /* 0 means bottom bar */
-static const int horizpadbar        = 4;  /* horizontal padding for statusbar */
-static const int vertpadbar         = 4;  /* vertical padding for statusbar */
+static const int horizpadbar        = 12;  /* horizontal padding for statusbar */
+static const int vertpadbar         = 12;  /* vertical padding for statusbar */
 static const char *fonts[]          = { "Siji:size=10", "CodingFontTobi:size=12" };
 static const char dmenufont[]       = "Input Mono Condensed:size=42";
 static const char col_white[]       = "#ffffff";
