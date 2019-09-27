@@ -32,6 +32,7 @@ Plugin 'dracula/vim'
 Plugin 'evidens/vim-twig'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'ElmCast/elm-vim'
 
 call vundle#end()
 filetype plugin on
