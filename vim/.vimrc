@@ -33,6 +33,8 @@ Plugin 'evidens/vim-twig'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'ElmCast/elm-vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 filetype plugin on
@@ -81,8 +83,6 @@ let g:buftabline_separators = 0
 let g:buftabline_show       = 2
 let g:indentLine_color_term = 8
 let g:NERDSpaceDelims = 1
-" let g:ale_linters = {'css': ['stylelint']}
-" let g:ale_linters_explicit = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0
@@ -92,11 +92,13 @@ syntax on
 syntax enable
 
 set t_Co=256
-set background=dark
-colorscheme CarloRatm
+set background=light
+colorscheme PaperColor
 
 highlight ExtraWhitespace ctermbg=9
 highlight default RedBG ctermbg=9
+highlight cursorline ctermbg=0
+highlight colorColumn ctermbg=0
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 

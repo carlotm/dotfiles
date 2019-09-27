@@ -3,7 +3,7 @@
 __powerline() {
     readonly OFF="$(tput sgr0)"
     readonly REV=""
-    readonly DIM="$(tput setaf 12)"
+    readonly DIM="$(tput setaf 6)"
 
     __git_info() {
         hash git 2>/dev/null || return
