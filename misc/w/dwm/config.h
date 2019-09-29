@@ -2,24 +2,24 @@
 
 /* appearance */
 static const unsigned int panel[]   = {0, 0, 0, 0};
-static const unsigned int gappx     = 1; /* gaps between windows */
-static const unsigned int borderpx  = 2; /* border pixel of windows */
+static const unsigned int gappx     = 20; /* gaps between windows */
+static const unsigned int borderpx  = 1; /* border pixel of windows */
 static const unsigned int snap      = 8; /* snap pixel */
 static const int showbar            = 1; /* 0 means no bar */
 static const int topbar             = 1; /* 0 means bottom bar */
 static const int horizpadbar        = 12; /* horizontal padding for statusbar */
 static const int vertpadbar         = 12; /* vertical padding for statusbar */
-static const char *fonts[]          = { "Siji:size=10", "CodingFontTobi:size=12" };
+static const char *fonts[]          = { "CodingFontTobi:size=12" };
 static const char dmenufont[]       = "Input Mono Condensed:size=42";
 static const char col_white[]       = "#ffffff";
-static const char col_white_d[]     = "#999999";
+static const char col_white_d[]     = "#888888";
 static const char col_deep_sea[]    = "#1A2230";
 static const char col_deep_sea_l[]  = "#000000";
 static const char col_highlight[]   = "#87DFEB";
 static const char *colors[][3]      = {
 	/*               fg           bg            border   */
 	[SchemeNorm] = { col_white_d, "#000000", "#c9c9c9" },
-	[SchemeSel]  = { col_white,   "#000000", "#005FAF" },
+	[SchemeSel]  = { col_white,   "#000000", "#000000" },
 };
 
 /* tagging */

@@ -41,13 +41,7 @@ filetype plugin on
 
 set relativenumber
 set number
-set laststatus=2
 set title
-set tabstop=8
-set softtabstop=0
-set expandtab
-set shiftwidth=4
-set smarttab
 set ruler
 set binary noeol
 set rulerformat=%25(%n%m%r:\ %Y\ [%l,%v]\ %p%%%)
@@ -67,6 +61,11 @@ set cursorline
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.*.swp,*.pyc
 set backupcopy=yes
 set colorcolumn=89
+set tabstop=8
+set softtabstop=0
+set expandtab
+set shiftwidth=4
+set smarttab
 
 let mapleader=","
 let g:GrepRoot="3"
@@ -86,6 +85,7 @@ let g:NERDSpaceDelims = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 0
 
 filetype off
 syntax on

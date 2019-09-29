@@ -28,7 +28,7 @@ xinput set-int-prop 12 "Evdev Wheel Emulation" 8 1 &
 xinput set-int-prop 12 "Evdev Wheel Emulation Button" 8 2 &
 xinput set-int-prop 12 "Evdev Wheel Emulation Timeout" 16 200 &
 xfce4-power-manager &
-feh --bg-center gfx/pictures/wallpaper.jpg &
+feh --bg-center gfx/pictures/wallpapers/RDcafhn.jpg &
 #echo -e "power on\n connect 90:7F:61:03:88:CA\n" | bluetoothctl
 conky | while read -r; do xsetroot -name "$REPLY"; done &
 exec ${HOME}/bin/startdwm
