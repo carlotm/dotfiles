@@ -31,7 +31,6 @@ export TERM=xterm-256color
 export HISTCONTROL=ignoreboth
 export EDITOR=vim
 export PIP_DOWNLOAD_CACHE="$HOME/.pip_download_cache"
-export QT_STYLE_OVERRIDE=gtk
 export VST_PATH="$HOME/.vst"
 export LV2_PATH="$HOME/.lv2:/usr/local/lib/lv2:/usr/lib/lv2"
 export GIT_PS1_SHOWDIRTYSTATE=1
@@ -43,6 +42,7 @@ export VBCC=$HOME/FS-UAE/sdk
 export NDK_INC=$VBCC/NDK_3.9/Include/include_h
 export PATH="$VBCC/bin:$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:$PATH"
 export GOPATH=$HOME/w/go
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 
 #

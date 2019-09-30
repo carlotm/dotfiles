@@ -35,6 +35,7 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'ElmCast/elm-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'suan/vim-instant-markdown'
 
 call vundle#end()
 filetype plugin on
