@@ -7,7 +7,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'ap/vim-buftabline'
 Plugin 'xolox/vim-misc'
 Plugin 'mileszs/ack.vim'
@@ -28,14 +27,14 @@ Plugin 'pearofducks/ansible-vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'fatih/vim-go'
 Plugin 'dense-analysis/ale'
-Plugin 'dracula/vim'
-Plugin 'evidens/vim-twig'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'ElmCast/elm-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'suan/vim-instant-markdown'
+Plugin '2pxsolidblack/docsurf.vim'
+Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 
 call vundle#end()
 filetype plugin on
@@ -61,12 +60,17 @@ set backspace=indent,eol,start
 set cursorline
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.*.swp,*.pyc
 set backupcopy=yes
-set colorcolumn=89
-set tabstop=8
+set colorcolumn=80
+set tabstop=4
 set softtabstop=0
 set expandtab
 set shiftwidth=4
 set smarttab
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 let mapleader=","
 let g:GrepRoot="3"
@@ -87,6 +91,9 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 0
+let g:instant_markdown_autostart = 0
+let g:instant_markdown_browser = "/usr/bin/surf"
+let g:airline_theme='onehalflight'
 
 filetype off
 syntax on
@@ -94,14 +101,10 @@ syntax enable
 
 set t_Co=256
 set background=light
-colorscheme PaperColor
+colorscheme onehalflight
 
-highlight ExtraWhitespace ctermbg=9
+highlight ExtraWhitespace ctermbg=1
 highlight default RedBG ctermbg=9
-highlight cursorline ctermbg=0
-highlight colorColumn ctermbg=0
-highlight Normal ctermbg=NONE
-highlight nonText ctermbg=NONE
 
 match ExtraWhitespace /\s\+$/
 
@@ -129,6 +132,7 @@ nmap <silent> <C-Up> :wincmd k<CR>
 nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
 nmap <silent> <C-Right> :wincmd l<CR>
+nmap <C-d> :DocSurf<CR>
 nmap <C-N> :bnext<CR>
 nmap <C-P> :bprevious<CR>
 nmap <C-T> :edit<Space>
@@ -155,7 +159,9 @@ augroup presentation
     au BufEnter _SLIDE_ nmap <RIGHT> :PresentingNext<CR>
 augroup END
 
-" status line color
-au InsertEnter * hi statusline ctermbg=2 ctermfg=0
-au InsertLeave * hi statusline ctermbg=0
-hi statusline ctermbg=0
+function! StartPresentation()
+    PresentingStart
+    Goyo
+    hi StatusLine ctermfg=1
+endfunction
+command Present :call StartPresentation()
