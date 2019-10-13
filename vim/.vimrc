@@ -35,6 +35,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'suan/vim-instant-markdown'
 Plugin '2pxsolidblack/docsurf.vim'
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}
+Plugin 'liuchengxu/vista.vim'
 
 call vundle#end()
 filetype plugin on
@@ -90,10 +91,11 @@ let g:NERDSpaceDelims = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0
-let g:ale_lint_on_save = 0
+let g:ale_lint_on_save = 1
 let g:instant_markdown_autostart = 0
 let g:instant_markdown_browser = "/usr/bin/surf"
 let g:airline_theme='onehalflight'
+let g:vista#renderer#enable_icon = 0
 
 filetype off
 syntax on
