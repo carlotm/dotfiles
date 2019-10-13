@@ -27,6 +27,5 @@ udiskie --automount &
 
 xfce4-power-manager &
 #echo -e "power on\n connect 90:7F:61:03:88:CA\n" | bluetoothctl
-feh --bg-center gfx/pictures/wallpapers/RDcafhn.jpg &
 conky | while read -r; do xsetroot -name "$REPLY"; done &
-exec ${HOME}/bin/startdwm
+exec "${HOME}/bin/startdwm"
