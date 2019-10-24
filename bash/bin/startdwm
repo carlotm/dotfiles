@@ -1,4 +1,5 @@
 #!/bin/bash
+
 while true; do
-    /usr/bin/dwm 2> ~/.dwm.log
+    /usr/local/bin/dwm 2> ~/.dwm.log
 done

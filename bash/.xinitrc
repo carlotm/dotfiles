@@ -15,9 +15,6 @@ if [ -d ~/Desktop ]; then
   rm -rf ~/Desktop*
 fi
 
-export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
-
 xset +fp /usr/share/fonts/local
 xset fp rehash
 xrdb -merge .Xresources &
@@ -25,8 +22,7 @@ setxkbmap us &
 /usr/bin/start-pulseaudio-x11 &
 udiskie --automount &
 feh --bg-scale gfx/wallpapers/lake.jpg &
-
 xfce4-power-manager &
 # echo -e "power on\n connect 90:7F:61:03:88:CA\n" | bluetoothctl
-"${HOME}/w/dwm-bar/dwm_bar.sh" &
+"${HOME}/bin/bar.sh" &
 exec "${HOME}/bin/startdwm"
