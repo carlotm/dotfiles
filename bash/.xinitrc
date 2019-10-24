@@ -24,8 +24,9 @@ xrdb -merge .Xresources &
 setxkbmap us &
 /usr/bin/start-pulseaudio-x11 &
 udiskie --automount &
+feh --bg-scale gfx/wallpapers/lake.jpg &
 
 xfce4-power-manager &
-#echo -e "power on\n connect 90:7F:61:03:88:CA\n" | bluetoothctl
-conky | while read -r; do xsetroot -name "$REPLY"; done &
+# echo -e "power on\n connect 90:7F:61:03:88:CA\n" | bluetoothctl
+"${HOME}/w/dwm-bar/dwm_bar.sh" &
 exec "${HOME}/bin/startdwm"

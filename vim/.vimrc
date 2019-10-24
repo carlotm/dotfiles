@@ -36,6 +36,10 @@ Plugin 'suan/vim-instant-markdown'
 Plugin '2pxsolidblack/docsurf.vim'
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 Plugin 'liuchengxu/vista.vim'
+Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'vim-scripts/django.vim'
+Plugin 'joukevandermaas/vim-ember-hbs'
+Plugin 'arcticicestudio/nord-vim'
 
 call vundle#end()
 filetype plugin on
@@ -61,7 +65,7 @@ set backspace=indent,eol,start
 set cursorline
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.*.swp,*.pyc
 set backupcopy=yes
-set colorcolumn=80
+" set colorcolumn=80
 set tabstop=4
 set softtabstop=0
 set expandtab
@@ -92,21 +96,27 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 1
+let g:ale_linters = {
+\   'python': ['flake8', 'mypy'],
+\   'typescript': ['tslint'],
+\}
 let g:instant_markdown_autostart = 0
 let g:instant_markdown_browser = "/usr/bin/surf"
-let g:airline_theme='onehalflight'
+let g:airline_theme='nord'
 let g:vista#renderer#enable_icon = 0
+let g:nord_cursor_line_number_background = 1
 
-filetype off
+filetype on
 syntax on
 syntax enable
 
 set t_Co=256
-set background=light
-colorscheme onehalflight
+set background=dark
+colorscheme CarloRatm
 
-highlight ExtraWhitespace ctermbg=1
+highlight CursorLineNR cterm=NONE
 highlight default RedBG ctermbg=9
+highlight ExtraWhitespace ctermbg=1
 
 match ExtraWhitespace /\s\+$/
 

@@ -1,24 +1,35 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int panel[]   = {0, 0, 0, 0};
-static const unsigned int borderpx  = 4; /* border pixel of windows */
-static const unsigned int snap      = 8; /* snap pixel */
-static const int showbar            = 1; /* 0 means no bar */
-static const int topbar             = 1; /* 0 means bottom bar */
-static const int horizpadbar        = 8; /* horizontal padding for statusbar */
-static const int vertpadbar         = 8; /* vertical padding for statusbar */
-static const char *fonts[]          = { "CodingFontTobi:size=12" };
-static const char dmenufont[]       = "Iosevka Custom:size=42";
-static const char col_white[]       = "#ffffff";
-static const char col_white_d[]     = "#888888";
-static const char col_deep_sea[]    = "#1A2230";
-static const char col_deep_sea_l[]  = "#000000";
-static const char col_highlight[]   = "#87DFEB";
-static const char *colors[][3]      = {
-	/*               fg           bg            border   */
-	[SchemeNorm] = { "#cccccc",   "#000000",    "#dcdcdc" },
-	[SchemeSel]  = { "#ffffff",   "#000000",    "#E45649" },
+static const unsigned int panel[] = {0, 0, 0, 0};
+static const unsigned int borderpx = 2; /* border pixel of windows */
+static const unsigned int snap = 8; /* snap pixel */
+static const int showbar = 1; /* 0 means no bar */
+static const int topbar = 1; /* 0 means bottom bar */
+static const int horizpadbar = 0; /* horizontal padding for statusbar */
+static const int vertpadbar = 8; /* vertical padding for statusbar */
+static const char *fonts[] = { "Envy Code R:size=10", "FontAwesome:size=11" };
+static const char dmenufont[] = "Fira Sans Book:size=42";
+
+static const char bg_norm[] = "#000000";
+static const char fg_norm[] = "#ffffff";
+static const char border_norm[] = "#4C566A";
+static const char bg_sel[] = "#000000";
+static const char fg_sel[] = "#ffffff";
+static const char border_sel[] = "#8FBCBB";
+static const char bg_status[] = "#000000";
+static const char fg_status[] = "#ffffff";
+static const char bg_tag[] = "#000000";
+static const char fg_tag[] = "#777777";
+static const char bg_tag_sel[] = "#000000";
+static const char fg_tag_sel[] = "#ffffff";
+static const char no_border[] = "#000000";
+static const char *colors[][3] = {
+	[SchemeNorm] = { fg_norm, bg_norm, border_norm },
+	[SchemeSel]  = { fg_sel, bg_sel, border_sel },
+	[SchemeStatus] = { fg_status, bg_status, no_border },
+	[SchemeTag] = { fg_tag, bg_tag, no_border },
+	[SchemeTagSel] = { fg_tag_sel, bg_tag_sel, no_border },
 };
 
 /* tagging */
@@ -56,13 +67,13 @@ static const char *dmenucmd[] = {
     "dmenu_run",
     "-m", dmenumon,
     "-fn", dmenufont,
-    "-nb", "#000000",
-    "-nf", col_white_d,
-    "-sb", "#000000",
-    "-sf", col_white,
+    "-nb", bg_norm,
+    "-nf", fg_tag,
+    "-sb", bg_norm,
+    "-sf", fg_norm,
     NULL
 };
-static const char *termcmd[]  = { "kitty", NULL };
+static const char *termcmd[]  = { "xfce4-terminal", NULL };
 
 static Key keys[] = {
     /* modifier         key        function        argument */
