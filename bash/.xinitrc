@@ -16,6 +16,8 @@ if [ -d ~/Desktop ]; then
 fi
 
 xset +fp /usr/share/fonts/local
+xset +fp /usr/share/fonts/misc
+xset fp+ /usr/share/fonts/bitmap
 xset fp rehash
 xrdb -merge .Xresources &
 setxkbmap us &
@@ -26,3 +28,4 @@ xfce4-power-manager &
 # echo -e "power on\n connect 90:7F:61:03:88:CA\n" | bluetoothctl
 "${HOME}/bin/bar.sh" &
 exec "${HOME}/bin/startdwm"
+# exec /usr/bin/wmaker

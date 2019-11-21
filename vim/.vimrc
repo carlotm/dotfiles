@@ -40,6 +40,7 @@ Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'vim-scripts/django.vim'
 Plugin 'joukevandermaas/vim-ember-hbs'
 Plugin 'arcticicestudio/nord-vim'
+Plugin 'psf/black'
 
 call vundle#end()
 filetype plugin on
@@ -157,6 +158,8 @@ nnoremap <C-f> :Ack!<Space>
 nnoremap <silent> n   n:call HLNext(0.2)<CR>
 nnoremap <silent> N   N:call HLNext(0.2)<CR>
 map <C-l> :NERDTreeToggle<CR>
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " For presenting
 augroup presentation

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 bclock() {
-    printf "%s" "$(date "+%A %d %B  %T")"
+    printf "%s" "$(date "+%A %d %B  %H:%M")"
 }
 
 bbattery () {
@@ -9,18 +9,14 @@ bbattery () {
     STATUS=$(cat /sys/class/power_supply/BAT1/status)
 
     if [ "$STATUS" = "Charging" ]; then
-        printf "\uf1e6 %s%%   " "$CHARGE"
+        printf "\ue239%s%%   " "$CHARGE"
     else
         if (( $CHARGE > 90 )); then
-            printf "\uf240 %s%%   " "$CHARGE"
-        elif (( $CHARGE > 55 )); then
-            printf "\uf241 %s%%   " "$CHARGE"
-        elif (( $CHARGE > 45 )); then
-            printf "\uf242 %s%%   " "$CHARGE"
-        elif (( $CHARGE > 24 )); then
-            printf "\uf243 %s%%   " "$CHARGE"
+            printf "\ue238%s%%   " "$CHARGE"
+        elif (( $CHARGE > 5 )); then
+            printf "\ue237%s%%   " "$CHARGE"
         else
-            printf "\uf244 %s%%   " "$CHARGE"
+            printf "\ue236%s%%   " "$CHARGE"
         fi
     fi
 }
@@ -29,11 +25,9 @@ bvol() {
     VOL=$(pamixer --get-volume-human | tr -d '%')
 
     if [ "$VOL" = "muted" ] || [ "$VOL" -eq 0 ]; then
-        printf "\uf6a9   "
-    elif [ "$VOL" -gt 75 ]; then
-        printf "\uf028 %s%%   " "$VOL"
+        printf "\ue84f   "
     else
-        printf "\uf027 %s%%   " "$VOL"
+        printf "\ue05d%s%%   " "$VOL"
     fi
 }
 

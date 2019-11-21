@@ -91,14 +91,6 @@ PATH="$HOME/.yarn/bin:$PATH"
 #export GEM_HOME=$HOME/.gem
 
 #
-# PYENV
-#
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-#
 # rust
 #
 export PATH="$HOME/.cargo/bin:$PATH"
