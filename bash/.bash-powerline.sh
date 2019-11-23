@@ -23,8 +23,8 @@ __powerline() {
     }
 
     function __py_version {
-        local v="" #$(pyenv version)
-        echo "  python ${v%% *}"
+        local v=$VIRTUAL_ENV
+        echo " ${v}"
     }
 
     ps1() {
