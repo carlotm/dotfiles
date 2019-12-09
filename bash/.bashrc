@@ -40,7 +40,7 @@ export ACKRC=".ackrc"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export VBCC=$HOME/FS-UAE/sdk
 export NDK_INC=$VBCC/NDK_3.9/Include/include_h
-export PATH="$VBCC/bin:$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/w/go/bin:$VBCC/bin:$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:$PATH"
 export GOPATH=$HOME/w/go
 export QT_QPA_PLATFORMTHEME=qt5ct
 
