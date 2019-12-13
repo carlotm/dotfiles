@@ -23,7 +23,7 @@ xrdb -merge .Xresources &
 setxkbmap us &
 /usr/bin/start-pulseaudio-x11 &
 udiskie --automount &
-feh --bg-scale gfx/wallpapers/lake.jpg &
+feh --bg-tile gfx/wallpapers/stripes.png &
 xfce4-power-manager &
 # echo -e "power on\n connect 90:7F:61:03:88:CA\n" | bluetoothctl
 "${HOME}/bin/bar.sh" &

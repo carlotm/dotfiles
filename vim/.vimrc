@@ -41,6 +41,7 @@ Plugin 'vim-scripts/django.vim'
 Plugin 'joukevandermaas/vim-ember-hbs'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'psf/black'
+Plugin 'nikvdp/ejs-syntax'
 
 call vundle#end()
 filetype plugin on
