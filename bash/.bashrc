@@ -14,7 +14,6 @@ alias tree='tree -C -a -I .git'
 alias lsvirtualenv='lsvirtualenv -b'
 alias pdb='python -m pdb'
 alias p='pwd'
-alias scrot='xfce4-screenshooter'
 
 shopt -s checkwinsize
 stty -ixon

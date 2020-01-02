@@ -31,7 +31,6 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'ElmCast/elm-vim'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'suan/vim-instant-markdown'
 Plugin '2pxsolidblack/docsurf.vim'
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}
@@ -39,9 +38,9 @@ Plugin 'liuchengxu/vista.vim'
 Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'vim-scripts/django.vim'
 Plugin 'joukevandermaas/vim-ember-hbs'
-Plugin 'arcticicestudio/nord-vim'
 Plugin 'psf/black'
 Plugin 'nikvdp/ejs-syntax'
+Plugin 'arcticicestudio/nord-vim'
 
 call vundle#end()
 filetype plugin on
@@ -114,7 +113,7 @@ syntax enable
 
 set t_Co=256
 set background=dark
-colorscheme CarloRatm
+colorscheme nord
 
 highlight CursorLineNR cterm=NONE
 highlight default RedBG ctermbg=9

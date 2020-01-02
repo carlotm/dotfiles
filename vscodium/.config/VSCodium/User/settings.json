@@ -2,13 +2,12 @@
     "window.menuBarVisibility": "toggle",
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
-    "editor.fontSize": 16,
     "editor.tabSize": 2,
-    "editor.fontFamily": "Input Mono Condensed, monospace",
+    "editor.fontFamily": "Operator Mono Light",
     "editor.cursorStyle": "block",
     "editor.wordWrap": "on",
     "editor.folding": false,
-    "editor.lineHeight": 38,
+    "editor.lineHeight": 30,
     "editor.renderLineHighlight": "all",
     "editor.occurrencesHighlight": false,
     "workbench.editor.tabSizing": "shrink",
@@ -18,12 +17,10 @@
     "vim.visualstar": true,
     "vim.hlsearch": true,
     "terminal.integrated.fontWeightBold": "normal",
-    "workbench.colorTheme": "papercolor-vscode",
     "window.zoomLevel": 1.1,
     "eslint.alwaysShowStatus": true,
     "eslint.autoFixOnSave": true,
     "editor.highlightActiveIndentGuide": false,
-    "editor.renderIndentGuides": false,
     "guides.active.enabled": false,
     "guides.indent.showFirstIndentGuides": false,
     "guides.normal.color.light": "rgba(100, 100, 100, 0.15)",
@@ -31,5 +28,13 @@
     "guides.active.color.light": "rgba(100, 100, 100, 0.15)",
     "terminal.external.linuxExec": "kitty",
     "terminal.explorerKind": "external",
-    "workbench.iconTheme": "material-icon-theme"
+    "workbench.iconTheme": "material-icon-theme",
+    "explorer.confirmDelete": false,
+    "workbench.colorTheme": "Nord",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.renderWhitespace": "boundary",
+    "workbench.tree.renderIndentGuides": "none",
+    "editor.renderIndentGuides": false
 }

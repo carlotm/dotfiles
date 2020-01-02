@@ -25,7 +25,7 @@ bvol() {
     VOL=$(pamixer --get-volume-human | tr -d '%')
 
     if [ "$VOL" = "muted" ] || [ "$VOL" -eq 0 ]; then
-        printf "\ue84f   "
+        printf "\ue04f "
     else
         printf "\ue05d%s%%   " "$VOL"
     fi
