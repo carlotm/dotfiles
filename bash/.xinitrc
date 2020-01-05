@@ -25,6 +25,7 @@ setxkbmap us &
 udiskie --automount &
 feh --bg-tile gfx/wallpapers/wallpaper.jpg &
 xfce4-power-manager &
+xbindkeys &
 # echo -e "power on\n connect 90:7F:61:03:88:CA\n" | bluetoothctl
 "${HOME}/bin/bar.sh" &
 exec "${HOME}/bin/startdwm"
