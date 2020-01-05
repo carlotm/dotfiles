@@ -3,7 +3,7 @@
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
     "editor.tabSize": 2,
-    "editor.fontFamily": "Operator Mono Light",
+    "editor.fontFamily": "Unifont",
     "editor.cursorStyle": "block",
     "editor.wordWrap": "on",
     "editor.folding": false,
@@ -36,5 +36,6 @@
     },
     "editor.renderWhitespace": "boundary",
     "workbench.tree.renderIndentGuides": "none",
-    "editor.renderIndentGuides": false
+    "editor.renderIndentGuides": false,
+    "editor.fontSize": 13
 }

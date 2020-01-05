@@ -10,7 +10,7 @@ let s:nord_vim_version="0.12.0"
 set background=dark
 
 let s:nord0_gui = "#1c1c1c"
-let s:nord1_gui = "#000000"
+let s:nord1_gui = "#222222"
 let s:nord2_gui = "#434C5E"
 let s:nord3_gui = "#4C566A"
 let s:nord3_gui_bright = "#616E88"
