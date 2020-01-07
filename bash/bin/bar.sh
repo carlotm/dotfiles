@@ -9,7 +9,7 @@ bbattery () {
     STATUS=$(cat /sys/class/power_supply/BAT1/status)
 
     if [ "$STATUS" = "Charging" ]; then
-        printf "\ue239%s%%   " "$CHARGE"
+        printf "\uf1e6 %s%%   " "$CHARGE"
     else
         if (( CHARGE > 90 )); then
             printf "\uf240 %s%%   " "$CHARGE"
