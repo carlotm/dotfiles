@@ -23,7 +23,7 @@ xrdb -merge .Xresources &
 setxkbmap us &
 /usr/bin/start-pulseaudio-x11 &
 udiskie --automount &
-feh --bg-tile gfx/wallpapers/wallpaper.jpg &
+feh --bg-scale gfx/wallpapers/trees2.jpg &
 xfce4-power-manager &
 xbindkeys &
 # echo -e "power on\n connect 90:7F:61:03:88:CA\n" | bluetoothctl
