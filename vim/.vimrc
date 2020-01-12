@@ -113,7 +113,7 @@ syntax enable
 
 set t_Co=256
 set background=dark
-colorscheme nord
+colorscheme CarloRatm
 
 highlight CursorLineNR cterm=NONE
 highlight default RedBG ctermbg=9

@@ -1,3 +1,10 @@
+" Copyright (C) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+" Copyright (C) 2016-present Sven Greb <development@svengreb.de>
+
+" Project: Nord Vim
+" Repository: https://github.com/arcticicestudio/nord-vim
+" License: MIT
+
 if version > 580
   hi clear
   if exists("syntax_on")
@@ -9,8 +16,8 @@ let g:colors_name = "nord"
 let s:nord_vim_version="0.12.0"
 set background=dark
 
-let s:nord0_gui = "#1c1c1c"
-let s:nord1_gui = "#222222"
+let s:nord0_gui = "#2E3440"
+let s:nord1_gui = "#3B4252"
 let s:nord2_gui = "#434C5E"
 let s:nord3_gui = "#4C566A"
 let s:nord3_gui_bright = "#616E88"
@@ -250,7 +257,7 @@ call s:hi("Search", s:nord1_gui, s:nord8_gui, s:nord1_term, s:nord8_term, "NONE"
 "+--- Tabs ---+
 call s:hi("TabLine", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
 call s:hi("TabLineFill", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
-call s:hi("TabLineSel", s:nord4_gui, s:nord0_gui, s:nord8_term, s:nord3_term, "NONE", "")
+call s:hi("TabLineSel", s:nord8_gui, s:nord0_gui, s:nord8_term, s:nord3_term, "NONE", "")
 
 "+--- Window ---+
 call s:hi("Title", s:nord4_gui, "", "NONE", "", "NONE", "")
