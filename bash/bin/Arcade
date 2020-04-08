@@ -1,0 +1,13 @@
+#!/bin/sh
+MYDIR=$( cd $(dirname $0) ; pwd -P )
+ARCH="x86"
+if [ -e "$MYDIR/System/Launcher/Linux/x86-64/" ]; then
+if [ x`uname -m` = "xx86_64" ]; then
+ARCH="x86-64"
+fi
+fi
+# Cd into Cache/Home so fontconfig directory is created there.
+mkdir -p "$MYDIR/Cache/Home"
+cd "$MYDIR/Cache/Home"
+exec "$MYDIR/System/Launcher/Linux/$ARCH/fs-uae-launcher" \
+--fs-uae-arcade "$@"
