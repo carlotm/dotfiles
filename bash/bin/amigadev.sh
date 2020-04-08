@@ -1,5 +1,5 @@
 #!/bin/bash
-game="/home/carloratm/bin/Arcade"
+game="fs-uae /home/carloratm/FS-UAE/Configurations/a600dev.fs-uae"
 openbox="$(which openbox)"
 tmpgame="/tmp/tmpgame.sh"
 DISPLAY=:1.0
