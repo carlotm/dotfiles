@@ -14,6 +14,8 @@ alias tree='tree -C -a -I .git'
 alias lsvirtualenv='lsvirtualenv -b'
 alias pdb='python -m pdb'
 alias p='pwd'
+alias dockimages='docker image ls --format='"'"'{{ print .ID " " .Repository " (" .Size ")"}}'"'"''
+alias dockps='docker ps --format='"'"'{{ print .ID " " .Image " (" .Ports ")"}}'"'"''
 
 shopt -s checkwinsize
 stty -ixon
@@ -37,9 +39,11 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ACKRC=".ackrc"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-export VBCC=$HOME/FS-UAE/sdk
-export NDK_INC=$VBCC/NDK_3.9/Include/include_h
-export PATH="$HOME/w/go/bin:$VBCC/bin:$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:$PATH"
+export VBCC=$HOME/w/amiga/c/vbcc
+export NDK=$HOME/w/amiga/c/NDK_3.9
+export NDK_INC=$NDK/Include/include_h
+export NDK_LIB=$NDK/Include/linker_libs
+export PATH="$HOME/w/amiga/c/vbcc/bin:$HOME/w/go/bin:$VBCC/bin:$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:$PATH"
 export GOPATH=$HOME/w/go
 export QT_QPA_PLATFORMTHEME=qt5ct
 
