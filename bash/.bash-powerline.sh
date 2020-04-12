@@ -11,7 +11,7 @@ __powerline() {
         local ref
         ref=$($git_eng symbolic-ref --short HEAD 2>/dev/null)
         [[ -n "$ref" ]] || return  # not a git repo
-        printf " %s" "$ref"
+        printf "%s " "$ref"
     }
 
     function __node_info {
@@ -19,12 +19,12 @@ __powerline() {
             local v
             v=$(node -v)
         fi
-        [ "$v" != "" ] && echo "node ${v:1}"
+        [ "$v" != "" ] && echo "n${v:1} "
     }
 
     function __py_version {
         local v=$VIRTUAL_ENV
-        echo " ${v}"
+        echo "${v} "
     }
 
     ps1() {
@@ -34,7 +34,7 @@ __powerline() {
         venv="$(__py_version)"
         local git
         git="$(__git_info)"
-        PS1="$REV$BG\r$DIM${node}${venv}${git}$OFF\n\w \$ "
+        PS1="$REV$BG\r$DIM${node}${venv}${git}$OFF\w \$ "
     }
 
     PROMPT_COMMAND="ps1${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
