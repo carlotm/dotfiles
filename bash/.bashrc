@@ -88,12 +88,6 @@ PATH="$HOME/.yarn/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 #
-# RUBY GEM
-#
-#export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-#export GEM_HOME=$HOME/.gem
-
-#
 # rust
 #
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -106,4 +100,4 @@ $HOME/bin/colors.sh
 #
 # PROMPT
 #
-source ~/.bash-powerline.sh
+eval "$(starship init bash)"

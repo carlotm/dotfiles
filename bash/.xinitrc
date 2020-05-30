@@ -21,12 +21,10 @@ xset fp+ /usr/share/fonts/bitmap
 xset fp rehash
 xrdb -merge .Xresources &
 setxkbmap us &
+xfce4-power-manager &
 /usr/bin/start-pulseaudio-x11 &
 udiskie --automount &
 feh --bg-scale gfx/wallpapers/current &
-xfce4-power-manager &
 xbindkeys &
-# echo -e "power on\n connect 90:7F:61:03:88:CA\n" | bluetoothctl
 "${HOME}/bin/bar.sh" &
 exec "${HOME}/bin/startdwm"
-# exec /usr/bin/wmaker
