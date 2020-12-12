@@ -46,6 +46,8 @@ export NDK_LIB=$NDK/Include/linker_libs
 export PATH="$HOME/w/amiga/c/vbcc/bin:$HOME/w/go/bin:$VBCC/bin:$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:$PATH"
 export GOPATH=$HOME/w/go
 export QT_QPA_PLATFORMTHEME=qt5ct
+export SOUND_CARD_IRQ=49
+export ELIXIR_EDITOR="echo vim +__LINE__ __FILE__"
 
 
 #

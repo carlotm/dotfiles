@@ -26,7 +26,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'suan/vim-instant-markdown'
 Plug 'vim-scripts/django.vim'
 Plug 'joukevandermaas/vim-ember-hbs'
-Plug 'psf/black', { 'commit': 'ce14fa8b497bae2b50ec48b3bd7022573a59cdb1' }
+Plug 'psf/black', { 'branch': 'stable' }
 Plug 'nikvdp/ejs-syntax'
 Plug 'arcticicestudio/nord-vim'
 Plug 'jiangmiao/auto-pairs'
@@ -34,6 +34,7 @@ Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'elixir-editors/vim-elixir'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 set relativenumber
@@ -88,11 +89,16 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
 let g:ale_linters_explicit = 0
 let g:ale_linters = {
-\   'python': ['flake8', 'mypy'],
+\   'python': ['flake8', 'black'],
 \   'typescript': ['tslint'],
+\   'elixir': ['mix'],
 \   'c': [],
+\}
+let g:ale_fixers = {
+\   'elixir': ['mix_format', 'remove_trailing_lines', 'trim_whitespace'],
 \}
 let g:instant_markdown_autostart = 0
 let g:instant_markdown_browser = "/usr/bin/surf"
@@ -100,6 +106,8 @@ let g:airline_theme='nord'
 let g:vista#renderer#enable_icon = 0
 let g:nord_cursor_line_number_background = 1
 let g:vim_markdown_folding_disabled = 1
+let g:black_linelength = 119
+let g:black_skip_string_normalization = 1
 
 filetype plugin on
 filetype on
@@ -142,6 +150,7 @@ nmap <silent> <C-Left> :wincmd h<CR>
 nmap <silent> <C-Right> :wincmd l<CR>
 nmap <C-d> :DocSurf<CR>
 nmap <C-N> :bnext<CR>
+nmap <C-Tab> :bnext<CR>
 nmap <C-P> :bprevious<CR>
 nmap <C-T> :edit<Space>
 nmap <C-X> :bd<CR>

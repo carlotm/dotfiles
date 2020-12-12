@@ -1,6 +1,6 @@
 [user]
     name = Ascani Carlo
-    email = 2pxsolidblack@protonmail.com
+    email = carlo.ratm@gmail.com
 [alias]
     co = checkout
     s = status
@@ -31,3 +31,5 @@
     postBuffer = 524288000
 [credential]
     helper = cache --timeout=10800
+[pull]
+	rebase = true

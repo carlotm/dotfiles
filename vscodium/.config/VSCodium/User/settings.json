@@ -3,7 +3,7 @@
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
     "editor.tabSize": 2,
-    "editor.fontFamily": "Source Code Pro",
+    "editor.fontFamily": "JetBrains Mono",
     "editor.cursorStyle": "block",
     "editor.wordWrap": "on",
     "editor.folding": false,
@@ -35,6 +35,5 @@
         "source.fixAll.eslint": true
     },
     "editor.renderWhitespace": "boundary",
-    "workbench.tree.renderIndentGuides": "none",
-    "editor.renderIndentGuides": false
+    "workbench.tree.renderIndentGuides": "none"
 }
