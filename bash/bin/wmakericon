@@ -1,0 +1,5 @@
+#!/bin/bash
+
+FILENAME=$1
+OF="$(basename "$FILENAME")"
+inkscape -z -w 48 -h 48 "$FILENAME" --export-filename "${OF%.svg}.png"

@@ -23,7 +23,7 @@ stty -ixon
 #
 # SSH AUTH AGENT
 #
-# eval `keychain --eval --agents ssh id_rsa`
+eval `keychain --eval --agents ssh id_rsa_t450s`
 
 #
 # ENVIRONMENT VARIABLES

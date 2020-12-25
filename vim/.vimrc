@@ -34,6 +34,7 @@ Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'elixir-editors/vim-elixir'
+Plug 'morhetz/gruvbox'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -102,7 +103,7 @@ let g:ale_fixers = {
 \}
 let g:instant_markdown_autostart = 0
 let g:instant_markdown_browser = "/usr/bin/surf"
-let g:airline_theme='nord'
+let g:airline_theme='gruvbox'
 let g:vista#renderer#enable_icon = 0
 let g:nord_cursor_line_number_background = 1
 let g:vim_markdown_folding_disabled = 1
@@ -115,7 +116,8 @@ syntax on
 
 set t_Co=256
 set background=dark
-colorscheme CarloRatm
+" colorscheme CarloRatm
+autocmd vimenter * ++nested colorscheme gruvbox
 
 highlight CursorLineNR cterm=NONE
 highlight default RedBG ctermbg=9
