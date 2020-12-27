@@ -1,2 +1,0 @@
-#!/bin/bash
-echo ffmpeg -i $1 -vf "scale=640:-2" ${1%.*}.mp4
