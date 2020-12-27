@@ -35,7 +35,6 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'elixir-editors/vim-elixir'
 Plug 'morhetz/gruvbox'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 set relativenumber

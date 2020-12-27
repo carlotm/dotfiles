@@ -8,14 +8,8 @@
 # ALIASES
 #
 alias ls='ls -lhop --color=auto'
-alias lst='ls -lht --color=auto'
 alias grep='grep --color -n'
 alias tree='tree -C -a -I .git'
-alias lsvirtualenv='lsvirtualenv -b'
-alias pdb='python -m pdb'
-alias p='pwd'
-alias dockimages='docker image ls --format='"'"'{{ print .ID " " .Repository " (" .Size ")"}}'"'"''
-alias dockps='docker ps --format='"'"'{{ print .ID " " .Image " (" .Ports ")"}}'"'"''
 
 shopt -s checkwinsize
 stty -ixon
@@ -39,11 +33,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ACKRC=".ackrc"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-export VBCC=$HOME/w/amiga/c/vbcc
-export NDK=$HOME/w/amiga/c/NDK_3.9
-export NDK_INC=$NDK/Include/include_h
-export NDK_LIB=$NDK/Include/linker_libs
-export PATH="$HOME/w/amiga/c/vbcc/bin:$HOME/w/go/bin:$VBCC/bin:$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:$PATH"
 export GOPATH=$HOME/w/go
 export QT_QPA_PLATFORMTHEME=qt5ct
 export SOUND_CARD_IRQ=49
@@ -53,9 +43,7 @@ export ELIXIR_EDITOR="echo vim +__LINE__ __FILE__"
 #
 # BASH SOURCES
 #
-source /usr/share/git/completion/git-completion.bash
-source /usr/share/bash-completion/completions/git
-source /usr/share/git/completion/git-prompt.sh
+source /usr/share/bash-completion/bash_completion
 
 #
 # COMPLETION
@@ -71,13 +59,13 @@ unset sq_color
 #
 # NPM
 #
-NPM_PACKAGES="$HOME/.npm-packages"
-PATH="$NPM_PACKAGES/bin:$PATH"
-unset MANPATH
-MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
-[ -e "/usr/share/nvm/init-nvm.sh" ] && source /usr/share/nvm/init-nvm.sh
-PATH="$HOME/.yarn/bin:$PATH"
+#NPM_PACKAGES="$HOME/.npm-packages"
+#PATH="$NPM_PACKAGES/bin:$PATH"
+#unset MANPATH
+#MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+#NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+#[ -e "/usr/share/nvm/init-nvm.sh" ] && source /usr/share/nvm/init-nvm.sh
+#PATH="$HOME/.yarn/bin:$PATH"
 
 #
 # NVM
@@ -90,14 +78,9 @@ PATH="$HOME/.yarn/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 #
-# rust
-#
-export PATH="$HOME/.cargo/bin:$PATH"
-
-#
 # Autorun
 #
-$HOME/bin/colors.sh
+$HOME/bin/colors
 
 #
 # PROMPT
