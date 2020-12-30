@@ -115,8 +115,8 @@ syntax on
 
 set t_Co=256
 set background=dark
-" colorscheme CarloRatm
-autocmd vimenter * ++nested colorscheme gruvbox
+colorscheme gruvbox
+" autocmd vimenter * ++nested colorscheme gruvbox
 
 highlight CursorLineNR cterm=NONE
 highlight default RedBG ctermbg=9
