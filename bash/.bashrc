@@ -85,4 +85,3 @@ $HOME/bin/colors
 #
 # PROMPT
 #
-eval "$(starship init bash)"
