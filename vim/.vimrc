@@ -35,6 +35,7 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'elixir-editors/vim-elixir'
 Plug 'morhetz/gruvbox'
+Plug 'stephenway/postcss.vim'
 call plug#end()
 
 set relativenumber
