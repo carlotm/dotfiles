@@ -33,7 +33,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ACKRC=".ackrc"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-export PATH="$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:$PATH:/sbin"
 export GOPATH=$HOME/w/go
 export QT_QPA_PLATFORMTHEME=qt5ct
 export SOUND_CARD_IRQ=49
@@ -57,27 +57,6 @@ complete -cf man
 unset sq_color
 
 #
-# NPM
-#
-#NPM_PACKAGES="$HOME/.npm-packages"
-#PATH="$NPM_PACKAGES/bin:$PATH"
-#unset MANPATH
-#MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-#NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
-#[ -e "/usr/share/nvm/init-nvm.sh" ] && source /usr/share/nvm/init-nvm.sh
-#PATH="$HOME/.yarn/bin:$PATH"
-
-#
-# NVM
-#
-[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-[ -e "/usr/share/nvm/nvm.sh" ] && source /usr/share/nvm/nvm.sh
-[ -e "/usr/share/nvm/bash_completion" ] && source /usr/share/nvm/bash_completion
-[ -e "/usr/share/nvm/install-nvm-exec" ] && source /usr/share/nvm/install-nvm-exec
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-
-#
 # Autorun
 #
 $HOME/bin/colors
@@ -85,3 +64,9 @@ $HOME/bin/colors
 #
 # PROMPT
 #
+
+#
+# Volta
+#
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
