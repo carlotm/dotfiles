@@ -1,0 +1,15 @@
+(
+  "Window Maker",
+  (Run..., SHORTCUT, "Mod1+F2", EXEC, "%A(Run, Type command:)"),
+  (Terminal, SHORTCUT, "Mod1+Return", EXEC, "/usr/bin/xfce4-terminal"),
+  (
+    Tilix,
+    SHORTCUT,
+    "Shift+Mod1+Return",
+    EXEC,
+    "/usr/bin/tilix --session /home/harloratm/.tilix.json"
+  ),
+  ("Configure Window Maker", EXEC, WPrefs),
+  ("Save Session", SAVE_SESSION),
+  ("Restart Window Maker", RESTART)
+)

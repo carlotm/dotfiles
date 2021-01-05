@@ -1,0 +1,156 @@
+{
+  FrameBorderColor = "#000000";
+  FTitleColor = "#282828";
+  LTCMaximizeKey = None;
+  MenuDisabledColor = "#666666";
+  CycleIgnoreMinimized = NO;
+  LastWorkspaceKey = None;
+  IconTitleBack = "#000000";
+  MoveToWorkspace9Key = "Shift+Mod1+9";
+  PixmapPath = (
+    "/home/harloratm/GNUstep/Library/WindowMaker/Pixmaps",
+    "/home/harloratm/GNUstep/Library/WindowMaker/Backgrounds",
+    "/home/harloratm/GNUstep/Library/WindowMaker/CachedPixmaps",
+    "/usr/share/WindowMaker/Pixmaps",
+    "/usr/share/WindowMaker/Backgrounds",
+    "/usr/share/pixmaps"
+  );
+  FTitleBack = (vgradient, "#a79883", "#928374");
+  MoveToPrevWorkspaceLayerKey = None;
+  MiniwindowPreviewBalloons = NO;
+  HideKey = None;
+  MouseForwardButtonAction = None;
+  MoveToWorkspace7Key = "Shift+Mod1+7";
+  IconTitleFont = "Arial:slant=0:weight=80:width=100:pixelsize=9";
+  LargeDisplayFont = "DejaVu Sans:slant=110:weight=200:width=100:pixelsize=72";
+  RBCMaximizeKey = None;
+  DisableClip = YES;
+  MoveDisplay = none;
+  WindowShortcut10Key = None;
+  IconTitleColor = "#ffffff";
+  MoveToWorkspace2Key = "Shift+Mod1+2";
+  MenuTitleColor = "#282828";
+  MouseWheelTiltAction = None;
+  WindowShortcut3Key = None;
+  ClipAutolowerDelay = "";
+  MenuTitleFont = "DejaVu Sans:slant=0:weight=200:width=87:pixelsize=14";
+  WindowRelaunchKey = None;
+  EnableWorkspacePager = NO;
+  WindowShortcut4Key = None;
+  NoWindowOverDock = YES;
+  WorkspaceBack = (tpixmap, leonard.png, "#504945");
+  OmnipresentKey = None;
+  HighlightTextColor = "#282828";
+  LBCMaximizeKey = None;
+  SnapEdgeDetect = 1;
+  ClipAutoexpandDelay = "";
+  WindowShortcut9Key = None;
+  HelpBalloons = NO;
+  WindowSnapping = YES;
+  KeepAtBottomKey = None;
+  MoveResizeKey = None;
+  KeepOnTopKey = None;
+  PrevWorkspaceKey = None;
+  ClipTitleColor = "#000000";
+  AppIconBalloons = NO;
+  MoveHalfMaximizedWindowsBetweenScreens = NO;
+  FrameFocusedBorderColor = "#000000";
+  WorkspaceBorder = None;
+  WindowTitleFont = "DejaVu Sans:slant=0:weight=200:width=87:pixelsize=14";
+  MoveToWorkspace8Key = "Shift+Mod1+8";
+  RunKey = "Mod1+F2";
+  LHMaximizeKey = None;
+  RootMenuKey = None;
+  MoveToPrevWorkspaceKey = None;
+  ResizebarBack = (solid, "#928374");
+  MoveToWorkspace6Key = "Shift+Mod1+6";
+  MoveToWorkspace10Key = "Shift+Mod1+0";
+  DisplayFont = "-*-helvetica-medium-r-normal-*-12-*-*-*-*-*-*-*";
+  MouseBackwardButtonAction = None;
+  BHMaximizeKey = None;
+  WorkspaceBorderSize = 0;
+  CycleActiveHeadOnly = NO;
+  MenuTitleExtendSpace = 0;
+  MoveToWorkspace1Key = "Shift+Mod1+1";
+  DockRaiseLowerKey = None;
+  IgnoreGtkHints = NO;
+  ShowClipTitle = NO;
+  WindowShortcut1Key = None;
+  RHMaximizeKey = None;
+  FrameSelectedBorderColor = "#ffffff";
+  ClipAutocollapseDelay = "";
+  THMaximizeKey = None;
+  AlternativeHalfMaximized = NO;
+  MiniaturizeKey = None;
+  WindowShortcut2Key = None;
+  MoveToNextWorkspaceLayerKey = None;
+  WorkspaceMapKey = None;
+  ToggleKbdModeKey = None;
+  WindowMenuKey = None;
+  DragMaximizedWindow = RestoreGeometry;
+  DoNotMakeAppIconsBounce = NO;
+  MiniwindowTitleBalloons = NO;
+  MaximusKey = None;
+  WindowShortcut7Key = None;
+  OpaqueResize = NO;
+  MenuTextBack = (solid, "#aeaaae");
+  RaiseAppIconsWhenBouncing = NO;
+  ResizeIncrement = 0;
+  WindowShortcut8Key = None;
+  OpaqueMoveResizeKeyboard = NO;
+  MoveToLastWorkspaceKey = None;
+  GroupNextKey = None;
+  MenuTextColor = "#000000";
+  SingleClickLaunch = NO;
+  Attraction = NO;
+  IconBack = (solid, "#a89984");
+  DisableBlinking = NO;
+  AntialiasedText = YES;
+  MoveToWorkspace5Key = "Shift+Mod1+5";
+  LowerKey = None;
+  WindowTitleExtendSpace = 0;
+  NormalCursor = (builtin, left_ptr);
+  WindowListKey = None;
+  WorkspaceNameDisplayPosition = center;
+  MenuTextFont = "DejaVu Sans:slant=0:weight=80:width=87:pixelsize=14";
+  ScreenSwitchKey = None;
+  MenuTitleBack = (solid, "#a89984");
+  SnapCornerDetect = 10;
+  MoveToNextWorkspaceKey = None;
+  HMaximizeKey = None;
+  SnapToTopMaximizesFullscreen = YES;
+  CloseKey = "Shift+Mod1+C";
+  HighlightColor = "#d79921";
+  FocusMode = sloppy;
+  NextWorkspaceKey = None;
+  GroupPrevKey = None;
+  PointerWithHalfMaxWindows = NO;
+  MinimizeAllKey = None;
+  MoveToWorkspace3Key = "Shift+Mod1+3";
+  DisableDrawers = YES;
+  CClipTitleColor = "#333333";
+  WindowShortcut5Key = None;
+  HideOthersKey = None;
+  IconPath = (
+    "/home/harloratm/GNUstep/Library/Icons",
+    "/home/harloratm/GNUstep/Library/WindowMaker/Pixmaps",
+    "/home/harloratm/GNUstep/Library/WindowMaker/CachedPixmaps",
+    "/usr/share/WindowMaker/Icons",
+    "/usr/share/WindowMaker/Pixmaps",
+    "/usr/share/pixmaps"
+  );
+  RaiseKey = None;
+  ClipAutoraiseDelay = "";
+  MenuTextExtendSpace = 0;
+  WindowShortcut6Key = None;
+  UTitleColor = "#848184";
+  ViKeyMenus = NO;
+  BounceAppIconsWhenUrgent = YES;
+  UTitleBack = (solid, "#aeaaae");
+  CirculateRaise = YES;
+  HighlightActiveApp = NO;
+  PTitleColor = "#ffffff";
+  ResizeDisplay = none;
+  MoveToWorkspace4Key = "Shift+Mod1+4";
+  RTCMaximizeKey = None;
+}

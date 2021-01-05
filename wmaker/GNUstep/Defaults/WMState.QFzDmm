@@ -1,0 +1,175 @@
+{
+  Dock = {
+    AutoRaiseLower = No;
+    Applications = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = No;
+        Command = "-";
+      },
+      {
+        Forced = No;
+        Name = "firefox-esr.Firefox-esr";
+        DropCommand = "firefox-esr %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,1";
+        Lock = Yes;
+        PasteCommand = "firefox-esr %s";
+        Command = "firefox-esr";
+      },
+      {
+        Forced = No;
+        Name = "xfce4-terminal.Xfce4-terminal";
+        DropCommand = "xfce4-terminal %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,2";
+        Lock = No;
+        PasteCommand = "xfce4-terminal %s";
+        Command = "xfce4-terminal";
+      },
+      {
+        Forced = No;
+        Name = inkscape.Inkscape;
+        DropCommand = "inkscape %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,4";
+        Lock = No;
+        PasteCommand = "inkscape %s";
+        Command = inkscape;
+      },
+      {
+        Forced = No;
+        Name = gimp.Gimp;
+        DropCommand = "gimp %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,3";
+        Lock = No;
+        PasteCommand = "gimp %s";
+        Command = gimp;
+      }
+    );
+    Applications1080 = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = No;
+        Command = "-";
+      },
+      {
+        Forced = No;
+        Name = "firefox-esr.Firefox-esr";
+        DropCommand = "firefox-esr %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,1";
+        Lock = Yes;
+        PasteCommand = "firefox-esr %s";
+        Command = "firefox-esr";
+      },
+      {
+        Forced = No;
+        Name = "xfce4-terminal.Xfce4-terminal";
+        DropCommand = "xfce4-terminal %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,2";
+        Lock = No;
+        PasteCommand = "xfce4-terminal %s";
+        Command = "xfce4-terminal";
+      },
+      {
+        Forced = No;
+        Name = inkscape.Inkscape;
+        DropCommand = "inkscape %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,4";
+        Lock = No;
+        PasteCommand = "inkscape %s";
+        Command = inkscape;
+      },
+      {
+        Forced = No;
+        Name = gimp.Gimp;
+        DropCommand = "gimp %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,3";
+        Lock = No;
+        PasteCommand = "gimp %s";
+        Command = gimp;
+      }
+    );
+    Lowered = Yes;
+    Position = "-64,0";
+  };
+  Clip = {
+    Forced = No;
+    Name = Logo.WMClip;
+    BuggyApplication = No;
+    AutoLaunch = No;
+    Lock = No;
+    Position = "0,0";
+    Command = "-";
+  };
+  Applications = ();
+  Drawers = ();
+  Workspaces = (
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        Applications = ();
+        AutoCollapse = No;
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = Yes;
+      };
+      Name = "Workspace 1";
+    },
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        Applications = ();
+        AutoCollapse = No;
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = Yes;
+      };
+      Name = "Workspace 2";
+    },
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        Applications = ();
+        AutoCollapse = No;
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = Yes;
+      };
+      Name = "Workspace 3";
+    },
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        Applications = ();
+        AutoCollapse = No;
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = Yes;
+      };
+      Name = "Workspace 4";
+    }
+  );
+  Workspace = "Workspace 1";
+}
