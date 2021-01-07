@@ -328,7 +328,7 @@
       }
     );
     Lowered = Yes;
-    Position = "-64,82";
+    Position = "-64,0";
   };
   Applications = ();
   Workspaces = (

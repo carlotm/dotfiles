@@ -9,6 +9,13 @@
     EXEC,
     "/usr/bin/tilix --session /home/harloratm/.tilix.json"
   ),
+  (
+    Mediacenter,
+    SHORTCUT,
+    XF86Display,
+    EXEC,
+    "/home/harloratm/.screenlayout/beam.sh"
+  ),
   ("Configure Window Maker", EXEC, WPrefs),
   ("Save Session", SAVE_SESSION),
   ("Restart Window Maker", RESTART)

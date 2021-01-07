@@ -154,7 +154,7 @@
       },
       {
         Forced = No;
-        Name = .reaper;
+        Name = reaper;
         DropCommand = "reaper %d";
         BuggyApplication = No;
         AutoLaunch = No;
@@ -317,7 +317,7 @@
       },
       {
         Forced = No;
-        Name = .reaper;
+        Name = reaper;
         DropCommand = "reaper %d";
         BuggyApplication = No;
         AutoLaunch = No;
@@ -328,7 +328,7 @@
       }
     );
     Lowered = Yes;
-    Position = "-64,82";
+    Position = "-64,0";
   };
   Applications = ();
   Workspaces = (
