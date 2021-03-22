@@ -36,6 +36,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'elixir-editors/vim-elixir'
 Plug 'morhetz/gruvbox'
 Plug 'stephenway/postcss.vim'
+Plug 'mattreduce/vim-mix'
 call plug#end()
 
 set relativenumber
@@ -104,6 +105,9 @@ let g:ale_fixers = {
 let g:instant_markdown_autostart = 0
 let g:instant_markdown_browser = "/usr/bin/surf"
 let g:airline_theme='gruvbox'
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 let g:vista#renderer#enable_icon = 0
 let g:nord_cursor_line_number_background = 1
 let g:vim_markdown_folding_disabled = 1

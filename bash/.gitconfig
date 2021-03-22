@@ -33,3 +33,6 @@
     helper = cache --timeout=10800
 [pull]
     rebase = true
+[cola]
+	startupmode = folder
+	spellcheck = false

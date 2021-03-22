@@ -1,3 +1,11 @@
 # Mute volume
 "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-   XF86AudioMute
+    XF86AudioMute
+
+# Screenshoter
+"xfce4-screenshooter"
+    Print
+
+# Change keyboard layout
+"cycle_kb_layout"
+    Mod4 + l
