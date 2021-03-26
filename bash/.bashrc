@@ -62,6 +62,12 @@ unset sq_color
 $HOME/bin/colors
 
 #
+# NPM
+#
+PATH="$HOME/.node_modules/bin:$PATH"
+export npm_config_prefix=~/.node_modules
+
+#
 # PROMPT
 #
 eval "$(starship init bash)"

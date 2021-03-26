@@ -37,6 +37,7 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'morhetz/gruvbox'
 Plug 'stephenway/postcss.vim'
 Plug 'mattreduce/vim-mix'
+Plug 'gko/vim-coloresque'
 call plug#end()
 
 set relativenumber
