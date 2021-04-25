@@ -36,3 +36,5 @@
 [cola]
 	startupmode = folder
 	spellcheck = false
+[init]
+	defaultBranch = main

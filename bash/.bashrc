@@ -68,6 +68,12 @@ PATH="$HOME/.node_modules/bin:$PATH"
 export npm_config_prefix=~/.node_modules
 
 #
+# asdf
+#
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
+#
 # PROMPT
 #
 eval "$(starship init bash)"

@@ -32,12 +32,13 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
+Plug 'tpope/vim-markdown'
 Plug 'elixir-editors/vim-elixir'
 Plug 'morhetz/gruvbox'
 Plug 'stephenway/postcss.vim'
 Plug 'mattreduce/vim-mix'
 Plug 'gko/vim-coloresque'
+Plug 'merlinrebrovic/focus.vim'
 call plug#end()
 
 set relativenumber
@@ -67,6 +68,7 @@ set softtabstop=0
 set expandtab
 set shiftwidth=4
 set smarttab
+set linebreak
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -114,6 +116,7 @@ let g:nord_cursor_line_number_background = 1
 let g:vim_markdown_folding_disabled = 1
 let g:black_linelength = 119
 let g:black_skip_string_normalization = 1
+" let g:venter_width = 500
 
 filetype plugin on
 filetype on
@@ -161,16 +164,14 @@ nmap <C-Tab> :bnext<CR>
 nmap <C-P> :bprevious<CR>
 nmap <C-T> :edit<Space>
 nmap <C-X> :bd<CR>
-nmap <C-w> yiw
-nmap <C-s> viw"0p
-nmap <C-c> gccj
-vmap <C-c> gcj
 nnoremap <C-f> :Ack!<Space>
 nnoremap <silent> n   n:call HLNext(0.2)<CR>
 nnoremap <silent> N   N:call HLNext(0.2)<CR>
 map <C-l> :NERDTreeToggle<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let g:focus_use_default_mapping = 0
+nmap <C-a> <Plug>FocusModeToggle
 
 " For presenting
 augroup presentation
