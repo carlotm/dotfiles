@@ -10,6 +10,7 @@
 alias ls='ls -lhop --color=auto'
 alias grep='grep --color -n'
 alias tree='tree -C -a -I .git'
+alias v='vi'
 
 shopt -s checkwinsize
 stty -ixon
@@ -33,7 +34,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ACKRC=".ackrc"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-export PATH="$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:$PATH:/sbin:.asdf/installs/haskell/8.10.4/bin"
+export PATH="$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:$PATH:/sbin:"
 export GOPATH=$HOME/w/go
 export QT_QPA_PLATFORMTHEME=qt5ct
 export SOUND_CARD_IRQ=49
