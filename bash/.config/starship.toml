@@ -5,3 +5,6 @@ command_timeout = 800
 [character]
 success_symbol = "[>](bold green)"
 error_symbol = "[x](bold red)"
+
+[nodejs]
+symbol = "🤖  "

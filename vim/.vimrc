@@ -27,7 +27,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'suan/vim-instant-markdown'
 Plug 'vim-scripts/django.vim'
 Plug 'joukevandermaas/vim-ember-hbs'
-Plug 'psf/black', { 'branch': 'stable' }
 Plug 'nikvdp/ejs-syntax'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-markdown'
@@ -36,8 +35,9 @@ Plug 'stephenway/postcss.vim'
 Plug 'mattreduce/vim-mix'
 Plug 'gko/vim-coloresque'
 Plug 'merlinrebrovic/focus.vim'
-Plug 'morhetz/gruvbox'
-Plug 'carlotm/coloratm'
+Plug 'arcticicestudio/nord-vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 set relativenumber
@@ -103,7 +103,7 @@ let g:ale_fixers = {
 \}
 let g:instant_markdown_autostart = 0
 let g:instant_markdown_browser = "/usr/bin/surf"
-let g:airline_theme='gruvbox'
+let g:airline_theme='nord_minimal'
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
@@ -114,13 +114,14 @@ let g:black_linelength = 119
 let g:black_skip_string_normalization = 1
 
 filetype plugin on
+filetype plugin indent on
 filetype on
 syntax on
 
 set t_Co=256
 set background=dark
 let g:one_allow_italics = 1
-colorscheme gruvbox
+colorscheme coloratm
 
 highlight CursorLineNR ctermbg=9 cterm=NONE
 highlight default RedBG ctermbg=9
