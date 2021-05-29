@@ -18,7 +18,6 @@ Plug 'prettier/vim-prettier'
 Plug 'pearofducks/ansible-vim'
 Plug 'nvie/vim-flake8'
 Plug 'fatih/vim-go'
-Plug 'dense-analysis/ale'
 Plug 'tomtom/tcomment_vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'ElmCast/elm-vim'
@@ -36,8 +35,11 @@ Plug 'mattreduce/vim-mix'
 Plug 'gko/vim-coloresque'
 Plug 'merlinrebrovic/focus.vim'
 Plug 'arcticicestudio/nord-vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'joshdick/onedark.vim'
 call plug#end()
 
 set relativenumber
@@ -86,32 +88,15 @@ let g:buftabline_separators = 0
 let g:buftabline_show       = 2
 let g:indentLine_char = '⎸'
 let g:NERDSpaceDelims = 1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 0
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_save = 1
-let g:ale_fix_on_save = 1
-let g:ale_linters_explicit = 0
-let g:ale_linters = {
-\   'python': ['flake8', 'black'],
-\   'typescript': ['tslint'],
-\   'elixir': ['mix'],
-\   'c': [],
-\}
-let g:ale_fixers = {
-\   'elixir': ['mix_format', 'remove_trailing_lines', 'trim_whitespace'],
-\}
 let g:instant_markdown_autostart = 0
 let g:instant_markdown_browser = "/usr/bin/surf"
-let g:airline_theme='nord_minimal'
+let g:airline_theme='nord'
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:vista#renderer#enable_icon = 0
 let g:nord_cursor_line_number_background = 1
 let g:vim_markdown_folding_disabled = 1
-let g:black_linelength = 119
-let g:black_skip_string_normalization = 1
 
 filetype plugin on
 filetype plugin indent on
@@ -121,7 +106,7 @@ syntax on
 set t_Co=256
 set background=dark
 let g:one_allow_italics = 1
-colorscheme coloratm
+colorscheme nord
 
 highlight CursorLineNR ctermbg=9 cterm=NONE
 highlight default RedBG ctermbg=9
@@ -138,6 +123,7 @@ cnoreabbrev Ack Ack!
 autocmd FileType make setlocal noexpandtab
 autocmd FileType yaml setlocal foldmethod=indent
 autocmd VimEnter * execute "IndentLinesEnable"
+autocmd BufWritePre * LspDocumentFormat
 
 function! HLNext (blinktime)
   let [bufnum, lnum, col, off] = getpos('.')
@@ -171,6 +157,9 @@ let g:focus_use_default_mapping = 0
 nmap <C-a> <Plug>FocusModeToggle
 nmap <silent> <C-c> :TComment<CR>
 vmap <silent> <C-c> :TCommentBlock<CR>
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 " For presenting
 augroup presentation
