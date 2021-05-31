@@ -35,11 +35,7 @@ Plug 'mattreduce/vim-mix'
 Plug 'gko/vim-coloresque'
 Plug 'merlinrebrovic/focus.vim'
 Plug 'arcticicestudio/nord-vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'joshdick/onedark.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 set relativenumber
@@ -61,13 +57,18 @@ set encoding=utf-8
 set backspace=indent,eol,start
 set cursorline
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.*.swp,*.pyc
-set backupcopy=yes
+set nobackup
+set nowritebackup
 set tabstop=4
 set softtabstop=0
 set expandtab
 set shiftwidth=4
 set smarttab
 set linebreak
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=number
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -121,9 +122,8 @@ nnoremap > >>
 cnoreabbrev Ack Ack!
 
 autocmd FileType make setlocal noexpandtab
-autocmd FileType yaml setlocal foldmethod=indent
 autocmd VimEnter * execute "IndentLinesEnable"
-autocmd BufWritePre * LspDocumentFormat
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 function! HLNext (blinktime)
   let [bufnum, lnum, col, off] = getpos('.')
@@ -142,7 +142,6 @@ nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
 nmap <silent> <C-Right> :wincmd l<CR>
 nmap <C-N> :bnext<CR>
-nmap <C-Tab> :bnext<CR>
 nmap <C-P> :bprevious<CR>
 nmap <C-T> :edit<Space>
 nmap <C-X> :bd<CR>
@@ -153,13 +152,23 @@ nnoremap <space> :nohlsearch<CR>
 map <C-l> :NERDTreeToggle<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
-let g:focus_use_default_mapping = 0
-nmap <C-a> <Plug>FocusModeToggle
 nmap <silent> <C-c> :TComment<CR>
 vmap <silent> <C-c> :TCommentBlock<CR>
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <silent><expr> <c-@> coc#refresh()
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 " For presenting
 augroup presentation
@@ -182,3 +191,18 @@ function! StartPresentation()
     hi StatusLine ctermfg=2
 endfunction
 command Present :call StartPresentation()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
