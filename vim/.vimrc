@@ -65,7 +65,6 @@ set expandtab
 set shiftwidth=4
 set smarttab
 set linebreak
-set cmdheight=2
 set updatetime=300
 set shortmess+=c
 set signcolumn=number
@@ -206,3 +205,8 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
+
+if exists('fullscreen')
+    set cmdheight=2
+    autocmd VimEnter * NERDTree
+endif

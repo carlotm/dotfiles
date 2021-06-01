@@ -10,7 +10,7 @@
 alias ls='ls -lhop --color=auto'
 alias grep='grep --color -n'
 alias tree='tree -C -a -I .git'
-alias v='vi'
+alias v='vim --cmd "let fullscreen=1"'
 
 shopt -s checkwinsize
 stty -ixon
