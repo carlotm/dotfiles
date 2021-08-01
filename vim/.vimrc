@@ -34,8 +34,8 @@ Plug 'stephenway/postcss.vim'
 Plug 'mattreduce/vim-mix'
 Plug 'gko/vim-coloresque'
 Plug 'merlinrebrovic/focus.vim'
-Plug 'arcticicestudio/nord-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'joshdick/onedark.vim'
+Plug 'neoclide/coc.nvim'
 call plug#end()
 
 set relativenumber
@@ -68,6 +68,7 @@ set linebreak
 set updatetime=300
 set shortmess+=c
 set signcolumn=number
+set tws=8x0
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -90,13 +91,40 @@ let g:indentLine_char = '⎸'
 let g:NERDSpaceDelims = 1
 let g:instant_markdown_autostart = 0
 let g:instant_markdown_browser = "/usr/bin/surf"
-let g:airline_theme='nord'
+let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:vista#renderer#enable_icon = 0
 let g:nord_cursor_line_number_background = 1
 let g:vim_markdown_folding_disabled = 1
+let g:tagbar_type_elixir = {
+    \ 'ctagstype' : 'elixir',
+    \ 'kinds' : [
+        \ 'p:protocols',
+        \ 'm:modules',
+        \ 'e:exceptions',
+        \ 'y:types',
+        \ 'd:delegates',
+        \ 'f:functions',
+        \ 'c:callbacks',
+        \ 'a:macros',
+        \ 't:tests',
+        \ 'i:implementations',
+        \ 'o:operators',
+        \ 'r:records'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 'p' : 'protocol',
+        \ 'm' : 'module'
+    \ },
+    \ 'scope2kind' : {
+        \ 'protocol' : 'p',
+        \ 'module' : 'm'
+    \ },
+    \ 'sort' : 0
+\ }
 
 filetype plugin on
 filetype plugin indent on
@@ -105,8 +133,19 @@ syntax on
 
 set t_Co=256
 set background=dark
-let g:one_allow_italics = 1
-colorscheme nord
+let g:onedark_terminal_italics = 1
+let g:onedark_color_overrides = {
+\ "black": {"gui": "#1E2127", "cterm": "235", "cterm16": "0" },
+\}
+if (has("autocmd"))
+  augroup colorextend
+    autocmd!
+    autocmd ColorScheme * call onedark#extend_highlight("CursorLineNr", {"bg": {"gui": "#2C323C"}})
+    autocmd ColorScheme * call onedark#extend_highlight("TabLineFill", {"bg": {"gui": "#000000"}})
+    autocmd ColorScheme * call onedark#extend_highlight("TabLine", {"fg": {"gui": "#2C323C"}, "bg": {"gui": "#000000"}})
+  augroup END
+endif
+colorscheme onedark
 
 highlight CursorLineNR ctermbg=9 cterm=NONE
 highlight default RedBG ctermbg=9
@@ -122,7 +161,7 @@ cnoreabbrev Ack Ack!
 
 autocmd FileType make setlocal noexpandtab
 autocmd VimEnter * execute "IndentLinesEnable"
-autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
 function! HLNext (blinktime)
   let [bufnum, lnum, col, off] = getpos('.')
@@ -136,14 +175,16 @@ function! HLNext (blinktime)
   exec 'sleep ' . float2nr(a:blinktime / 2 * 1000) . 'm'
 endfunction
 
+cabbrev bterm bo term
 nmap <silent> <C-Up> :wincmd k<CR>
 nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
 nmap <silent> <C-Right> :wincmd l<CR>
 nmap <C-N> :bnext<CR>
 nmap <C-P> :bprevious<CR>
-nmap <C-T> :edit<Space>
+nmap <C-E> :edit<Space>
 nmap <C-X> :bd<CR>
+nmap <C-T> :bterm<CR>
 nnoremap <C-f> :Ack!<Space>
 nnoremap <silent> n   n:call HLNext(0.2)<CR>
 nnoremap <silent> N   N:call HLNext(0.2)<CR>
@@ -153,21 +194,6 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 nmap <silent> <C-c> :TComment<CR>
 vmap <silent> <C-c> :TCommentBlock<CR>
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-inoremap <silent><expr> <c-@> coc#refresh()
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 " For presenting
 augroup presentation
@@ -194,16 +220,6 @@ command Present :call StartPresentation()
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
 endfunction
 
 if exists('fullscreen')

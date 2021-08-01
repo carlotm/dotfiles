@@ -1,0 +1,5 @@
+{
+    "elixirLS.dialyzerEnabled": false,
+    "coc.preferences.formatOnSaveFiletypes": ["elixir", "eelixir"],
+    "vetur.ignoreProjectWarning": true
+}
