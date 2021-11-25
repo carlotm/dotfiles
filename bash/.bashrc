@@ -11,6 +11,7 @@ alias ls='ls -lhop --color=auto'
 alias grep='grep --color -n'
 alias tree='tree -C -a -I .git'
 alias v='vim --cmd "let fullscreen=1"'
+diff() { command diff -u $* | diff-so-fancy; }
 
 shopt -s checkwinsize
 stty -ixon
@@ -39,12 +40,15 @@ export GOPATH=$HOME/w/go
 export QT_QPA_PLATFORMTHEME=qt5ct
 export SOUND_CARD_IRQ=49
 export ELIXIR_EDITOR="echo vim +__LINE__ __FILE__"
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 
 #
 # BASH SOURCES
 #
 source /usr/share/bash-completion/bash_completion
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
 
 #
 # COMPLETION

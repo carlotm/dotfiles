@@ -14,12 +14,10 @@ Plug 'aserebryakov/vim-todo-lists'
 Plug 'fisadev/vim-isort'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'prettier/vim-prettier'
 Plug 'pearofducks/ansible-vim'
 Plug 'nvie/vim-flake8'
 Plug 'fatih/vim-go'
 Plug 'tomtom/tcomment_vim'
-Plug 'ryanoasis/vim-devicons'
 Plug 'ElmCast/elm-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -36,6 +34,8 @@ Plug 'gko/vim-coloresque'
 Plug 'merlinrebrovic/focus.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'neoclide/coc.nvim'
+Plug 'python-mode/python-mode'
+Plug 'python-rope/ropevim'
 call plug#end()
 
 set relativenumber
@@ -74,6 +74,12 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+
+filetype plugin on
+filetype plugin indent on
+filetype indent on
+filetype on
+syntax on
 
 let mapleader=","
 let g:GrepRoot="3"
@@ -125,11 +131,7 @@ let g:tagbar_type_elixir = {
     \ },
     \ 'sort' : 0
 \ }
-
-filetype plugin on
-filetype plugin indent on
-filetype on
-syntax on
+let g:pymode_rope_goto_definition_bind = '<C-c>['
 
 set t_Co=256
 set background=dark
@@ -163,6 +165,8 @@ autocmd FileType make setlocal noexpandtab
 autocmd VimEnter * execute "IndentLinesEnable"
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 function! HLNext (blinktime)
   let [bufnum, lnum, col, off] = getpos('.')
   let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
@@ -192,8 +196,8 @@ nnoremap <space> :nohlsearch<CR>
 map <C-l> :NERDTreeToggle<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
-nmap <silent> <C-c> :TComment<CR>
-vmap <silent> <C-c> :TCommentBlock<CR>
+" nmap <silent> <C-c> :TComment<CR>
+" vmap <silent> <C-c> :TCommentBlock<CR>
 
 " For presenting
 augroup presentation
