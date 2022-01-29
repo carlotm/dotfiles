@@ -1,6 +1,7 @@
 [user]
     name = Ascani Carlo
     email = carlotm@pm.me
+	signingkey = B65D77CA6B16E83D
 [alias]
     co = checkout
     s = status

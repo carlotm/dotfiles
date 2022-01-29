@@ -47,6 +47,7 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 # BASH SOURCES
 #
 source /usr/share/bash-completion/bash_completion
+source /usr/share/git/completion/git-completion.bash
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
 
