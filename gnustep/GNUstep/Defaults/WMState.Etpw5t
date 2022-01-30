@@ -1,0 +1,285 @@
+{
+  Dock = {
+    AutoRaiseLower = No;
+    Applications = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = No;
+        Command = "-";
+      },
+      {
+        Forced = No;
+        Name = groupLeader.WPrefs;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,1";
+        Lock = No;
+        Command = "/home/carloratm/bin/WPrefs";
+      },
+      {
+        Forced = No;
+        Name = "org\\.gnome\\.Nautilus.Org\\.gnome\\.Nautilus";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,2";
+        Lock = No;
+        Command = nautilus;
+      },
+      {
+        Forced = No;
+        Name = firefox.Firefox;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,3";
+        Lock = No;
+        Command = firefox;
+      },
+      {
+        Forced = No;
+        Name = "xfce4-terminal.Xfce4-terminal";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,4";
+        Lock = No;
+        Command = "xfce4-terminal";
+      },
+      {
+        Forced = No;
+        Name = "mainwindow\\.py.Mainwindow\\.py";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,8";
+        Lock = No;
+        Command = playonlinux;
+      },
+      {
+        Forced = No;
+        Name = gimp.Gimp;
+        DropCommand = "gimp %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,5";
+        Lock = No;
+        PasteCommand = "gimp %s";
+        Command = gimp;
+      },
+      {
+        Forced = No;
+        Name = inkscape.Inkscape;
+        DropCommand = "inkscape %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,6";
+        Lock = No;
+        PasteCommand = "inkscape %s";
+        Command = inkscape;
+      },
+      {
+        Forced = No;
+        Name = gthumb.Gthumb;
+        DropCommand = "gthumb %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,7";
+        Lock = No;
+        PasteCommand = "gthumb %s";
+        Command = gthumb;
+      },
+      {
+        Forced = No;
+        Name = wmshutdown.Wmshutdown;
+        DropCommand = "wmshutdown %d";
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,-2";
+        Lock = Yes;
+        PasteCommand = "wmshutdown %s";
+        Command = wmshutdown;
+      },
+      {
+        Forced = No;
+        Name = "/home/carloratm/w/dockapps/wmtime/wmtime./home/carloratm/w/dockapps/wmtime/wmtime";
+        DropCommand = "/home/carloratm/w/dockapps/wmtime/wmtime -d %d";
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,-1";
+        Lock = Yes;
+        PasteCommand = "/home/carloratm/w/dockapps/wmtime/wmtime -d %s";
+        Command = "/home/carloratm/w/dockapps/wmtime/wmtime -d";
+      },
+      {
+        Forced = No;
+        Name = qjackctl.QjackCtl;
+        DropCommand = "qjackctl %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,9";
+        Lock = No;
+        PasteCommand = "qjackctl %s";
+        Command = qjackctl;
+      }
+    );
+    Lowered = Yes;
+    Position = "-64,128";
+    Applications1440 = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = No;
+        Command = "-";
+      },
+      {
+        Forced = No;
+        Name = groupLeader.WPrefs;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,1";
+        Lock = No;
+        Command = "/home/carloratm/bin/WPrefs";
+      },
+      {
+        Forced = No;
+        Name = "org\\.gnome\\.Nautilus.Org\\.gnome\\.Nautilus";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,2";
+        Lock = No;
+        Command = nautilus;
+      },
+      {
+        Forced = No;
+        Name = firefox.Firefox;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,3";
+        Lock = No;
+        Command = firefox;
+      },
+      {
+        Forced = No;
+        Name = "xfce4-terminal.Xfce4-terminal";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,4";
+        Lock = No;
+        Command = "xfce4-terminal";
+      },
+      {
+        Forced = No;
+        Name = "mainwindow\\.py.Mainwindow\\.py";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,8";
+        Lock = No;
+        Command = playonlinux;
+      },
+      {
+        Forced = No;
+        Name = gimp.Gimp;
+        DropCommand = "gimp %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,5";
+        Lock = No;
+        PasteCommand = "gimp %s";
+        Command = gimp;
+      },
+      {
+        Forced = No;
+        Name = inkscape.Inkscape;
+        DropCommand = "inkscape %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,6";
+        Lock = No;
+        PasteCommand = "inkscape %s";
+        Command = inkscape;
+      },
+      {
+        Forced = No;
+        Name = gthumb.Gthumb;
+        DropCommand = "gthumb %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,7";
+        Lock = No;
+        PasteCommand = "gthumb %s";
+        Command = gthumb;
+      },
+      {
+        Forced = No;
+        Name = wmshutdown.Wmshutdown;
+        DropCommand = "wmshutdown %d";
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,-2";
+        Lock = Yes;
+        PasteCommand = "wmshutdown %s";
+        Command = wmshutdown;
+      },
+      {
+        Forced = No;
+        Name = "/home/carloratm/w/dockapps/wmtime/wmtime./home/carloratm/w/dockapps/wmtime/wmtime";
+        DropCommand = "/home/carloratm/w/dockapps/wmtime/wmtime -d %d";
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,-1";
+        Lock = Yes;
+        PasteCommand = "/home/carloratm/w/dockapps/wmtime/wmtime -d %s";
+        Command = "/home/carloratm/w/dockapps/wmtime/wmtime -d";
+      },
+      {
+        Forced = No;
+        Name = qjackctl.QjackCtl;
+        DropCommand = "qjackctl %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,9";
+        Lock = No;
+        PasteCommand = "qjackctl %s";
+        Command = qjackctl;
+      }
+    );
+  };
+  Clip = {
+    Forced = No;
+    Name = Logo.WMClip;
+    BuggyApplication = No;
+    AutoLaunch = No;
+    Lock = No;
+    Position = "0,0";
+    Command = "-";
+  };
+  Applications = ();
+  Drawers = ();
+  Workspaces = (
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        Applications = ();
+        AutoCollapse = No;
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = Yes;
+      };
+      Name = "Workspace 1";
+    },
+    {
+      Name = "Workspace 2";
+    },
+    {
+      Name = "Workspace 3";
+    },
+    {
+      Name = "Workspace 4";
+    }
+  );
+  Workspace = "Workspace 1";
+}

@@ -1,0 +1,247 @@
+{
+  Dock = {
+    AutoRaiseLower = Yes;
+    Applications = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = No;
+        Command = "-";
+      }
+    );
+    Lowered = Yes;
+    Position = "0,1376";
+    Applications1440 = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = No;
+        Command = "-";
+      }
+    );
+  };
+  Clip = {
+    Forced = No;
+    Name = Logo.WMClip;
+    BuggyApplication = No;
+    AutoLaunch = No;
+    Position = "0,1376";
+    Lock = No;
+    Command = "-";
+  };
+  Applications = ();
+  Workspaces = (
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        AutoCollapse = No;
+        Applications = ();
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = No;
+      };
+      Name = "Workspace 1";
+    },
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        AutoCollapse = No;
+        Applications = ();
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = Yes;
+      };
+      Name = "Workspace 2";
+    },
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        AutoCollapse = No;
+        Applications = (
+          {
+            Forced = No;
+            Name = wmtime.wmtime;
+            DropCommand = "/home/carloratm/w/dockapps/wmtime/wmtime -d %d";
+            BuggyApplication = No;
+            AutoLaunch = Yes;
+            Position = "1,0";
+            Lock = Yes;
+            PasteCommand = "/home/carloratm/w/dockapps/wmtime/wmtime -d %s";
+            Command = "/home/carloratm/w/dockapps/wmtime/wmtime -d";
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = groupLeader.WPrefs;
+            BuggyApplication = No;
+            AutoLaunch = No;
+            Position = "2,0";
+            Lock = No;
+            Command = "/home/carloratm/bin/WPrefs";
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = "org\\.gnome\\.Nautilus.Org\\.gnome\\.Nautilus";
+            BuggyApplication = No;
+            AutoLaunch = No;
+            Position = "3,0";
+            Lock = No;
+            Command = nautilus;
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = firefox.Firefox;
+            BuggyApplication = No;
+            AutoLaunch = No;
+            Position = "4,0";
+            Lock = No;
+            Command = firefox;
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = "xfce4-terminal.Xfce4-terminal";
+            BuggyApplication = No;
+            AutoLaunch = No;
+            Position = "5,0";
+            Lock = No;
+            Command = alacritty;
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = gimp.Gimp;
+            DropCommand = "gimp %d";
+            BuggyApplication = No;
+            AutoLaunch = No;
+            Position = "6,0";
+            Lock = No;
+            PasteCommand = "gimp %s";
+            Command = gimp;
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = inkscape.Inkscape;
+            DropCommand = "inkscape %d";
+            BuggyApplication = No;
+            AutoLaunch = No;
+            Position = "7,0";
+            Lock = No;
+            PasteCommand = "inkscape %s";
+            Command = inkscape;
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = gthumb.Gthumb;
+            DropCommand = "gthumb %d";
+            BuggyApplication = No;
+            AutoLaunch = No;
+            Position = "8,0";
+            Lock = No;
+            PasteCommand = "gthumb %s";
+            Command = gthumb;
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = xpdf.XpdfReader;
+            DropCommand = "xpdf %d";
+            BuggyApplication = No;
+            AutoLaunch = No;
+            Position = "9,0";
+            Lock = No;
+            PasteCommand = "xpdf %s";
+            Command = xpdf;
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = qbittorrent.qBittorrent;
+            DropCommand = "qbittorrent %d";
+            BuggyApplication = No;
+            AutoLaunch = No;
+            Position = "10,0";
+            Lock = No;
+            PasteCommand = "qbittorrent %s";
+            Command = qbittorrent;
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = gcolor2.Gcolor2;
+            DropCommand = "gcolor2 %d";
+            BuggyApplication = No;
+            AutoLaunch = No;
+            Position = "11,0";
+            Lock = No;
+            PasteCommand = "gcolor2 %s";
+            Command = gcolor2;
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = "xfce4-screenshooter.Xfce4-screenshooter";
+            DropCommand = "xfce4-screenshooter %d";
+            BuggyApplication = No;
+            AutoLaunch = No;
+            Position = "12,0";
+            Lock = No;
+            PasteCommand = "xfce4-screenshooter %s";
+            Command = "xfce4-screenshooter";
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = "fs-uae-launcher.fs-uae-launcher";
+            DropCommand = "/usr/bin/python3 /usr/bin/fs-uae-launcher %d";
+            BuggyApplication = No;
+            AutoLaunch = No;
+            Position = "13,0";
+            Lock = No;
+            PasteCommand = "/usr/bin/python3 /usr/bin/fs-uae-launcher %s";
+            Command = "/usr/bin/python3 /usr/bin/fs-uae-launcher";
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = wmshutdown.Wmshutdown;
+            DropCommand = "wmshutdown %d";
+            BuggyApplication = No;
+            AutoLaunch = Yes;
+            Position = "14,0";
+            Lock = No;
+            PasteCommand = "wmshutdown %s";
+            Command = wmshutdown;
+            Omnipresent = No;
+          }
+        );
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = Yes;
+      };
+      Name = "Workspace 3";
+    },
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        AutoCollapse = No;
+        Applications = ();
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = Yes;
+      };
+      Name = "Workspace 4";
+    }
+  );
+  Workspace = "Workspace 3";
+}

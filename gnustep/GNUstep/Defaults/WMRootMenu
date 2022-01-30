@@ -1,0 +1,22 @@
+(
+  "Window Maker",
+  (
+    Apps,
+    (Tasks, SHORTCUT, "Shift+Mod1+t", EXEC, "/home/carloratm/bin/tasks"),
+    (
+      "Vim Fullscreen",
+      SHORTCUT,
+      "Shift+Mod1+p",
+      EXEC,
+      "/home/carloratm/bin/vimfull"
+    ),
+    (Terminal, SHORTCUT, "Shift+Mod1+Return", EXEC, alacritty),
+    (Screenshot, SHORTCUT, Print, EXEC, "xfce4-screenshooter")
+  ),
+  (Run..., SHORTCUT, "Mod1+F2", EXEC, "%A(Run, Type command:)"),
+  (Workspaces, WORKSPACE_MENU),
+  (Refresh, REFRESH),
+  ("Restart Window Maker", RESTART),
+  ("Save Session", SAVE_SESSION),
+  ("Exit Window Maker", EXIT)
+)

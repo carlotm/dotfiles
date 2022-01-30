@@ -1,0 +1,4 @@
+{
+  BoldSystemFont = "Inter:slant=0:weight=180:width=100:pixelsize=12";
+  SystemFont = "Inter:slant=0:weight=80:width=100:pixelsize=12";
+}
