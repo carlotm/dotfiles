@@ -1,14 +1,14 @@
 {
-  FTitleColor = "#dcdfe4";
   FrameBorderColor = "#000000";
+  FTitleColor = "#dadde2";
   MiniaturizeKey = None;
   MenuDisabledColor = "#7f7f7f";
+  IconTitleBack = "#000000";
   PixmapPath = (
     "/usr/share/WindowMaker/Pixmaps",
     "/usr/share/WindowMaker/Backgrounds",
     "/usr/share/pixmaps"
   );
-  IconTitleBack = "#000000";
   FTitleBack = (vgradient, "#414235", "#2c2d24");
   ToggleKbdModeKey = None;
   DragMaximizedWindow = RestoreGeometry;
@@ -25,12 +25,12 @@
   DisableClip = YES;
   OpaqueMoveResizeKeyboard = YES;
   MoveDisplay = corner;
-  IconTitleColor = "#e4e4e4";
   TitleJustify = left;
-  MenuTextColor = "#d3d6db";
+  IconTitleColor = "#e2e2e2";
+  MenuTextColor = "#d1d4d9";
   MoveToWorkspace2Key = "Shift+Mod1+2";
-  IconBack = (dgradient, "#7c6f64", "#918274");
-  MenuTitleColor = "#d3d6db";
+  IconBack = (dgradient, "#7c6f64", "#8f8074");
+  MenuTitleColor = "#d1d4d9";
   AntialiasedText = YES;
   LowerKey = None;
   MenuTitleFont = "Inter:slant=0:weight=180:width=100:pixelsize=14";
@@ -50,8 +50,8 @@
   ClipTitleColor = "#000000";
   MoveTo12to6Head = None;
   CloseKey = "Shift+Mod1+C";
-  HighlightColor = "#e4e4e4";
   FrameFocusedBorderColor = "#000000";
+  HighlightColor = "#e2e2e2";
   WindowTitleFont = "Inter:slant=0:weight=180:width=100:pixelsize=14";
   FocusMode = sloppy;
   NextWorkspaceKey = None;
@@ -78,13 +78,13 @@
   Workspace7Key = None;
   UTitleColor = "#4c566a";
   UTitleBack = (solid, "#ada9ad");
+  PTitleColor = "#bdc3ce";
   CloseRootMenuByLeftOrRightMouseClick = NO;
-  PTitleColor = "#bfc5d0";
   ResizeDisplay = corner;
   MoveToWorkspace1Key = "Shift+Mod1+1";
   IgnoreGtkHints = YES;
   RHMaximizeKey = "Shift+Mod1+Right";
   MoveToWorkspace4Key = "Shift+Mod1+4";
+  FrameSelectedBorderColor = "#e2e2e2";
   RTCMaximizeKey = "Shift+Mod1+Prior";
-  FrameSelectedBorderColor = "#e4e4e4";
 }
