@@ -42,18 +42,10 @@ export SOUND_CARD_IRQ=49
 export ELIXIR_EDITOR="echo vim +__LINE__ __FILE__"
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
-
-#
-# BASH SOURCES
-#
-source /usr/share/bash-completion/bash_completion
-source /usr/share/git/completion/git-completion.bash
-source /usr/share/fzf/key-bindings.bash
-source /usr/share/fzf/completion.bash
-
 #
 # COMPLETION
 #
+source /usr/share/bash-completion/bash_completion
 complete -cf sudo
 complete -cf man
 
@@ -61,11 +53,6 @@ complete -cf man
 # COLORS
 #
 unset sq_color
-
-#
-# Autorun
-#
-$HOME/bin/colors
 
 #
 # NPM
@@ -76,8 +63,15 @@ export npm_config_prefix=~/.node_modules
 #
 # asdf
 #
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+ASDF_DIR="$HOME/.asdf"
+if [ -d "$ASDF_DIR" ]; then
+  :
+else
+  echo "Installing asdf in $ASDF_DIR..."
+  git clone https://github.com/asdf-vm/asdf.git $ASDF_DIR
+fi
+. $ASDF_DIR/asdf.sh
+. $ASDF_DIR/completions/asdf.bash
 
 #
 # PROMPT

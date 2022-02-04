@@ -15,6 +15,6 @@
 # This file must be executable.
 #
 xset m 20/10 4
-
 setxkbmap -rules evdev -model pc105 -layout "us,it,de" -option "grp:win_space_toggle" &
-dunst &
+# aterm -geometry 160x10+4+820 &
+aterm &

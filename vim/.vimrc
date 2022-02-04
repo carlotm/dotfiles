@@ -1,3 +1,10 @@
+"""""""""""""""""""""""""""""" vim-plug automatic install
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -7,8 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sgur/vim-editorconfig'
 Plug 'preservim/nerdtree'
-Plug 'fisadev/vim-isort'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dense-analysis/ale'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
@@ -45,11 +51,13 @@ filetype plugin indent on
 filetype indent on
 filetype on
 syntax on
+au BufRead,BufNewFile *.html setfiletype htmldjango
+
+"""""""""""""""""""""""""""""" Key mapping
 vnoremap < <gv
 vnoremap > >gv
 nnoremap < <<
 nnoremap > >>
-au BufRead,BufNewFile *.html setfiletype htmldjango
 
 """""""""""""""""""""""""""""" NerdTree settings
 nnoremap <C-l> :NERDTreeToggle<CR>
@@ -76,6 +84,82 @@ let g:plug_window = 'vertical topleft new'
 let g:plug_pwindow = 'above 12new'
 let g:plug_url_format = 'https://git::@github.com/%s.git'
 
+"""""""""""""""""""""""""""""" ale settings
+let g:airline#extensions#ale#enabled = 1
+let g:ale_change_sign_column_color = 0
+let g:ale_close_preview_on_insert = 1
+let g:ale_command_wrapper = 'nice -n5'
+let g:ale_completion_delay = 100
+let g:ale_completion_enabled = 1
+let g:ale_completion_tsserver_remove_warnings = 0
+let g:ale_completion_autoimport = 1
+let g:ale_completion_max_suggestions = 10
+let g:ale_cursor_detail = 1
+let g:ale_detail_to_floating_preview = 1
+let g:ale_disable_lsp = 0
+let g:ale_echo_cursor = 1
+let g:ale_echo_delay = 10
+let g:ale_echo_msg_error_str = 'SUCA'
+let g:ale_echo_msg_format = '%linter% DICE %code: %%s'
+let g:ale_echo_msg_info_str = 'Info'
+let g:ale_echo_msg_log_str = 'Log'
+let g:ale_echo_msg_warning_str = 'Warning'
+let g:ale_enabled = 1
+let g:ale_fixers = {}
+let g:ale_fix_on_save = 0
+let g:ale_fix_on_save_ignore = {}
+let g:ale_floating_preview = 1
+let g:ale_floating_window_border = [' ', ' ', ' ', ' ', ' ', ' ']
+let g:ale_history_enabled = 0
+let g:ale_history_log_output = 0
+let g:ale_hover_cursor = 1
+let g:ale_hover_to_preview = 1
+let g:ale_hover_to_floating_preview = 1
+let g:ale_keep_list_window_open = 0
+let g:ale_list_window_size = 10
+let g:ale_lint_delay = 200
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_filetype_changed = 0
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+let g:ale_linters = {
+  \   'elixir': ['credo', 'dialyxir', 'dogma'],
+  \   'go': ['gofmt', 'golint', 'gopls', 'govet'],
+  \   'python': ['black', 'flake8', 'isort', 'autoimport', 'pyright'],
+  \   'rust': ['cargo', 'rls'],
+  \   'svelte': ['eslint', 'svelteserver'],
+  \   'vue': ['eslint', 'vls'],
+  \}
+let g:ale_linters_explicit = 1
+let g:ale_linters_ignore = {'python': ['pylint']}
+let g:ale_list_vertical = 0
+let g:ale_lsp_show_message_format = 'LSP %severity%:%linter%: %s'
+let g:ale_lsp_suggestions = 0
+let g:ale_max_buffer_history_size = 10
+let g:ale_max_signs = -1
+let g:ale_open_list = 0
+let g:ale_root = {}
+let g:ale_set_highlights = 1
+let g:ale_set_loclist = 1
+let g:ale_set_quickfix = 0
+let g:ale_set_signs = 1
+let g:ale_sign_priority = 30
+let g:ale_sign_column_always = 0
+let g:ale_sign_error = '>'
+let g:ale_sign_info = '-'
+let g:ale_sign_style_error = '>'
+let g:ale_sign_style_warning = '-'
+let g:ale_sign_warning = '-'
+let g:ale_sign_highlight_linenrs = 0
+let g:ale_update_tagstack = 1
+let g:ale_virtualtext_cursor = 0
+let g:ale_virtualtext_delay = 10
+let g:ale_virtualtext_prefix = '> '
+let g:ale_virtualenv_dir_names = ['.env', '.venv', 'env', 've-py3', 've', 'virtualenv', 'venv']
+let g:ale_warn_about_trailing_blank_lines = 1
+let g:ale_warn_about_trailing_whitespace = 1
+
 """""""""""""""""""""""""""""" fzf settings
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 let g:fzf_buffers_jump = 1
@@ -99,7 +183,7 @@ let g:airline#extensions#tabline#left_alt_sep = ' '
 nmap <C-n> :bnext<CR>
 nmap <C-p> :bprev<CR>
 nnoremap bb :Buffers<CR>
-nmap <C-X> :Bclose<CR>
+nmap <C-X> :bd<CR>
 nmap <silent> <C-Up> :wincmd k<CR>
 nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Left> :wincmd h<CR>

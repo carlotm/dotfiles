@@ -1,7 +1,0 @@
-# Mute volume
-"pactl set-sink-mute @DEFAULT_SINK@ toggle"
-    XF86AudioMute
-
-# Screenshoter
-"xfce4-screenshooter"
-    Print
