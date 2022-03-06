@@ -1,4 +1,4 @@
-packages = alacritty bash fonts git gtk scripts starship vim x
+packages = $(notdir $(realpath $(dir $(wildcard ./*/))))
 
 .PHONY: all clean link
 
