@@ -76,6 +76,10 @@
   xterm.XTerm = {
     Icon = terminal.png;
   };
+  nemo.Nemo = {
+    AlwaysUserIcon = Yes;
+    Icon = "file-manager.png";
+  };
   audacious.Audacious = {
     SkipWindowList = Yes;
     NoTitlebar = Yes;
@@ -107,42 +111,42 @@
     AlwaysUserIcon = Yes;
     Icon = gthumb.png;
   };
-  groupLeader.WPrefs = {
-    Icon = prefs.png;
-  };
   SystemPreferences.GNUstep = {
     Icon = SystemPreferences.GNUstep.xpm;
+  };
+  groupLeader.WPrefs = {
+    Icon = prefs.png;
   };
   sakura.Sakura = {
     Icon = sakura.Sakura.xpm;
   };
-  reaper. = {
-    Icon = reaper..xpm;
-  };
   TextEdit.GNUstep = {
     Icon = TextEdit.GNUstep.xpm;
+  };
+  reaper. = {
+    Icon = reaper..xpm;
   };
   xpdf.XpdfReader = {
     AlwaysUserIcon = Yes;
     Icon = pdf.png;
   };
-  emacs.Emacs = {
-    AlwaysUserIcon = Yes;
-    Icon = emacs.png;
-  };
   qbittorrent.qBittorrent = {
     AlwaysUserIcon = Yes;
     Icon = torrent.png;
   };
+  emacs.Emacs = {
+    AlwaysUserIcon = Yes;
+    Icon = emacs.png;
+  };
   Cynthiune.GNUstep = {
     Icon = Cynthiune.GNUstep.xpm;
+  };
+  main.py. = {
+    Icon = "menu-editor.png";
   };
   keepassxc.KeePassXC = {
     AlwaysUserIcon = Yes;
     Icon = keepassxc.png;
-  };
-  main.py. = {
-    Icon = "menu-editor.png";
   };
   Gorilla = {
     AlwaysUserIcon = No;

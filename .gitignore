@@ -1,10 +1,7 @@
 vim/.vim/black
 vim/.vim/plugged
-bash/bin/tilde
 gnustep/GNUstep/Defaults/WMState
 gnustep/GNUstep/Defaults/WMState.*
 gnustep/GNUstep/.AppInfo/WindowMaker/History
 gnustep/GNUstep/Library/WindowMaker/CachedPixmaps
-fonts/.local/share/recently-used.xbel
-fonts/.local/share/qtile/
-fonts/.local/share/xorg/
+fonts/.local/share
