@@ -1,6 +1,12 @@
 # Mute volume
-"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+"amixer set Master toggle"
     XF86AudioMute
+
+"amixer set Master 5%+"
+    XF86AudioRaiseVolume
+
+"amixer set Master 5%-"
+    XF86AudioLowerVolume
 
 # Screenshoter
 "xfce4-screenshooter"
