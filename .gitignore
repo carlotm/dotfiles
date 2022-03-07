@@ -5,3 +5,4 @@ gnustep/GNUstep/Defaults/WMState.*
 gnustep/GNUstep/.AppInfo/WindowMaker/History
 gnustep/GNUstep/Library/WindowMaker/CachedPixmaps
 fonts/.local/share
+fonts/.local/bin

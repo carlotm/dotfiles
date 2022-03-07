@@ -120,6 +120,11 @@
   sakura.Sakura = {
     Icon = sakura.Sakura.xpm;
   };
+  mupdf.MuPDF = {
+    AlwaysUserIcon = Yes;
+    EmulateAppIcon = Yes;
+    Icon = pdf.png;
+  };
   TextEdit.GNUstep = {
     Icon = TextEdit.GNUstep.xpm;
   };

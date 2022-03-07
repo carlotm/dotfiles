@@ -84,8 +84,8 @@
   Workspace5Key = None;
   Workspace6Key = None;
   Workspace7Key = None;
-  UTitleColor = "#5c6881";
-  UTitleBack = (solid, "#aeaaae");
+  UTitleColor = "#b6b2b6";
+  UTitleBack = (solid, "#e3e3e3");
   PTitleColor = "#bdc3ce";
   CloseRootMenuByLeftOrRightMouseClick = NO;
   ResizeDisplay = corner;
