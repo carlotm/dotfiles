@@ -111,11 +111,11 @@
     AlwaysUserIcon = Yes;
     Icon = gthumb.png;
   };
-  SystemPreferences.GNUstep = {
-    Icon = SystemPreferences.GNUstep.xpm;
-  };
   groupLeader.WPrefs = {
     Icon = prefs.png;
+  };
+  SystemPreferences.GNUstep = {
+    Icon = SystemPreferences.GNUstep.xpm;
   };
   sakura.Sakura = {
     Icon = sakura.Sakura.xpm;
@@ -125,33 +125,33 @@
     EmulateAppIcon = Yes;
     Icon = pdf.png;
   };
-  TextEdit.GNUstep = {
-    Icon = TextEdit.GNUstep.xpm;
-  };
   reaper. = {
     Icon = reaper..xpm;
+  };
+  TextEdit.GNUstep = {
+    Icon = TextEdit.GNUstep.xpm;
   };
   xpdf.XpdfReader = {
     AlwaysUserIcon = Yes;
     Icon = pdf.png;
   };
-  qbittorrent.qBittorrent = {
-    AlwaysUserIcon = Yes;
-    Icon = torrent.png;
-  };
   emacs.Emacs = {
     AlwaysUserIcon = Yes;
     Icon = emacs.png;
   };
+  qbittorrent.qBittorrent = {
+    AlwaysUserIcon = Yes;
+    Icon = torrent.png;
+  };
   Cynthiune.GNUstep = {
     Icon = Cynthiune.GNUstep.xpm;
-  };
-  main.py. = {
-    Icon = "menu-editor.png";
   };
   keepassxc.KeePassXC = {
     AlwaysUserIcon = Yes;
     Icon = keepassxc.png;
+  };
+  main.py. = {
+    Icon = "menu-editor.png";
   };
   Gorilla = {
     AlwaysUserIcon = No;
@@ -166,8 +166,8 @@
   };
   Navigator.firefox = {
     AlwaysUserIcon = Yes;
-    Icon = firefox.png;
     EmulateAppIcon = Yes;
+    Icon = firefox.png;
   };
   "firefox-esr.Firefox-esr" = {
     NoAppIcon = Yes;
