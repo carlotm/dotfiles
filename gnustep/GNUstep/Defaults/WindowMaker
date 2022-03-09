@@ -1,7 +1,6 @@
 {
   FTitleColor = "#25282f";
   FrameBorderColor = "#000000";
-  SelectCursor = (builtin, cross);
   MenuDisabledColor = "#7f7f7f";
   IconTitleBack = "#000000";
   PixmapPath = (
@@ -11,13 +10,11 @@
     "/home/carloratm/GNUstep/Library/WindowMaker/Pixmaps"
   );
   FTitleBack = (solid, "#c9b8a7");
-  TopLeftResizeCursor = (builtin, top_left_corner);
   ClipTitleFont = "Noto Sans Display:slant=0:weight=100:width=100:pixelsize=10";
   HideKey = None;
   IconTitleFont = "Noto Sans Display:slant=0:weight=100:width=100:pixelsize=10";
   LargeDisplayFont = "Noto Sans Display:slant=100:weight=200:width=100:pixelsize=72";
   RBCMaximizeKey = "Shift+Mod1+Next";
-  ResizeCursor = (builtin, sizing);
   DisableClip = YES;
   MoveDisplay = corner;
   IconTitleColor = "#e2e2e2";
@@ -26,45 +23,40 @@
   MenuTitleFont = "Inter:slant=0:weight=200:width=100:pixelsize=14";
   MoveTo6to12Head = None;
   DbClickFullScreen = YES;
-  ArrowCursor = (builtin, top_left_arrow);
+  IconPosition = tlv;
   NoWindowOverDock = YES;
   WorkspaceBack = (
     tpixmap,
     "~/dotfiles/gnustep/GNUstep/Library/WindowMaker/Themes/Carlotm.themed/tile.jpg",
     "#191d24"
   );
-  HighlightTextColor = "#000000";
   SnapEdgeDetect = 10;
+  HighlightTextColor = "#000000";
   EnforceIconMargin = NO;
   WindowSnapping = YES;
   PrevWorkspaceKey = None;
   ClipTitleColor = "#000000";
   MoveTo12to6Head = None;
-  WaitCursor = (builtin, watch);
-  BottomRightResizeCursor = (builtin, bottom_right_corner);
   FrameFocusedBorderColor = "#000000";
   WindowTitleFont = "Inter:slant=0:weight=200:width=100:pixelsize=14";
   SwitchPanelImages = (swtile_carlotm.png, swback_carlotm.png, 3, 3);
-  WindowPlaceOrigin = (0, 0);
-  RunKey = "Mod1+F2";
   Workspace8Key = None;
+  RunKey = "Mod1+F2";
+  WindowPlaceOrigin = (0, 0);
   Workspace9Key = None;
   LHMaximizeKey = "Shift+Mod1+Left";
   RootMenuKey = None;
   ResizebarBack = (solid, "#ded4ca");
-  Workspace5Key = None;
   KbdModeLock = YES;
+  Workspace5Key = None;
   Workspace6Key = None;
   Workspace7Key = None;
   CloseRootMenuByLeftOrRightMouseClick = NO;
-  MenuTitleExtendSpace = 0;
   MoveToWorkspace1Key = "Shift+Mod1+1";
   IgnoreGtkHints = YES;
   RHMaximizeKey = "Shift+Mod1+Right";
   FrameSelectedBorderColor = "#e2e2e2";
-  QuestionCursor = (builtin, question_arrow);
   MiniaturizeKey = None;
-  BottomLeftResizeCursor = (builtin, bottom_left_corner);
   ToggleKbdModeKey = None;
   DragMaximizedWindow = RestoreGeometry;
   WindowMenuKey = None;
@@ -73,7 +65,6 @@
   MenuTextBack = (solid, "#c9b8a7");
   WindowPlacement = center;
   OpaqueMoveResizeKeyboard = YES;
-  TextCursor = (builtin, xterm);
   TitleJustify = left;
   MenuTextColor = "#1e2126";
   IconBack = (
@@ -83,14 +74,10 @@
   );
   AntialiasedText = YES;
   LowerKey = None;
-  WindowTitleExtendSpace = 0;
-  NormalCursor = (builtin, left_ptr);
   WindowListKey = None;
   MenuTextFont = "Inter:slant=0:weight=80:width=100:pixelsize=14";
-  VerticalResizeCursor = (builtin, sb_v_double_arrow);
   MenuTitleBack = (solid, "#a19385");
   SnapToTopMaximizesFullscreen = YES;
-  TopRightResizeCursor = (builtin, top_right_corner);
   CloseKey = "Shift+Mod1+C";
   HighlightColor = "#f7e2cd";
   FocusMode = sloppy;
@@ -99,18 +86,12 @@
   MoveToWorkspace3Key = "Shift+Mod1+3";
   Workspace10Key = None;
   CClipTitleColor = "#616161";
-  MoveCursor = (builtin, fleur);
-  MenuStyle = normal;
   IconPath = (
     "/home/carloratm/GNUstep/Library/Icons",
     "/usr/share/WindowMaker/Pixmaps",
     "/usr/share/pixmaps"
   );
   RaiseKey = None;
-  HorizontalResizeCursor = (builtin, sb_h_double_arrow);
-  FrameBorderWidth = 1;
-  MenuTextExtendSpace = 0;
-  PTitleBack = (solid, gray40);
   UTitleColor = "#b6b2b6";
   UTitleBack = (solid, "#e3e3e3");
   PTitleColor = "#bdc3ce";
