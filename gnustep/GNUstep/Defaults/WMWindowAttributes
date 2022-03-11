@@ -166,7 +166,6 @@
   };
   Navigator.firefox = {
     AlwaysUserIcon = Yes;
-    EmulateAppIcon = Yes;
     Icon = firefox.png;
   };
   "firefox-esr.Firefox-esr" = {
