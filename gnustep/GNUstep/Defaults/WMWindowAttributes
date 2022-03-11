@@ -43,35 +43,14 @@
   gcolor2.Gcolor2 = {
     AlwaysUserIcon = No;
   };
-  Alacritty.Alacritty = {
-    AlwaysUserIcon = Yes;
-    EmulateAppIcon = Yes;
-    Icon = terminal.png;
-  };
   GSPdf.GNUstep = {
     Icon = GSPdf.GNUstep.xpm;
   };
   inkscape.Inkscape = {
     Icon = inkscape.png;
   };
-  qjackctl.QjackCtl = {
-    AlwaysUserIcon = Yes;
-    Icon = "multimedia-player-ipod-orange.png";
-  };
-  gimp.Gimp = {
-    AlwaysUserIcon = Yes;
-    Icon = gimp.png;
-  };
   PRICE.GNUstep = {
     Icon = PRICE.GNUstep.xpm;
-  };
-  org.inkscape.Inkscape.Inkscape = {
-    AlwaysUserIcon = Yes;
-    Icon = inkscape.png;
-  };
-  wprefs.WPrefs = {
-    AlwaysUserIcon = Yes;
-    Icon = prefs.png;
   };
   xterm.XTerm = {
     Icon = terminal.png;
@@ -80,31 +59,10 @@
     AlwaysUserIcon = Yes;
     Icon = "file-manager.png";
   };
-  audacious.Audacious = {
-    SkipWindowList = Yes;
-    NoTitlebar = Yes;
-    NoMiniaturizable = Yes;
-    NoBorder = Yes;
-    AlwaysUserIcon = Yes;
-    NoResizebar = Yes;
-    Icon = audacious.png;
-    NoCloseButton = Yes;
-  };
-  thunar.Thunar = {
-    Icon = "system-file-manager.png";
-  };
   org.gnome.Nautilus.Org.gnome.Nautilus = {
     NoBorder = Yes;
     AlwaysUserIcon = Yes;
     Icon = "system-file-manager.png";
-  };
-  "xfce4-terminal.Xfce4-terminal" = {
-    AlwaysUserIcon = Yes;
-    Icon = terminal.png;
-  };
-  "Navigator.Firefox-esr" = {
-    AlwaysUserIcon = Yes;
-    Icon = firefox.png;
   };
   gthumb.Gthumb = {
     NoBorder = Yes;
@@ -113,9 +71,6 @@
   };
   groupLeader.WPrefs = {
     Icon = prefs.png;
-  };
-  SystemPreferences.GNUstep = {
-    Icon = SystemPreferences.GNUstep.xpm;
   };
   sakura.Sakura = {
     Icon = sakura.Sakura.xpm;
@@ -128,9 +83,6 @@
   reaper. = {
     Icon = reaper..xpm;
   };
-  TextEdit.GNUstep = {
-    Icon = TextEdit.GNUstep.xpm;
-  };
   xpdf.XpdfReader = {
     AlwaysUserIcon = Yes;
     Icon = pdf.png;
@@ -139,25 +91,13 @@
     AlwaysUserIcon = Yes;
     Icon = emacs.png;
   };
-  qbittorrent.qBittorrent = {
-    AlwaysUserIcon = Yes;
-    Icon = torrent.png;
-  };
-  Cynthiune.GNUstep = {
-    Icon = Cynthiune.GNUstep.xpm;
-  };
   keepassxc.KeePassXC = {
     AlwaysUserIcon = Yes;
     Icon = keepassxc.png;
   };
-  main.py. = {
-    Icon = "menu-editor.png";
-  };
-  Gorilla = {
-    AlwaysUserIcon = No;
-  };
-  Logo.WMDock = {
-    Icon = windowmaker.png;
+  "transmission-gtk.Transmission-gtk" = {
+    AlwaysUserIcon = Yes;
+    Icon = torrent.png;
   };
   mainwindow.py.Mainwindow.py = {
     NoMiniaturizable = Yes;
@@ -174,6 +114,70 @@
   };
   Logo.WMClip = {
     Icon = "distributor-logo-archlinux.png";
+  };
+  Alacritty.Alacritty = {
+    AlwaysUserIcon = Yes;
+    EmulateAppIcon = Yes;
+    Icon = terminal.png;
+  };
+  gimp.Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = gimp.png;
+  };
+  qjackctl.QjackCtl = {
+    AlwaysUserIcon = Yes;
+    Icon = "multimedia-player-ipod-orange.png";
+  };
+  org.inkscape.Inkscape.Inkscape = {
+    AlwaysUserIcon = Yes;
+    Icon = inkscape.png;
+  };
+  wprefs.WPrefs = {
+    AlwaysUserIcon = Yes;
+    Icon = prefs.png;
+  };
+  audacious.Audacious = {
+    SkipWindowList = Yes;
+    NoTitlebar = Yes;
+    NoMiniaturizable = Yes;
+    NoBorder = Yes;
+    AlwaysUserIcon = Yes;
+    NoResizebar = Yes;
+    Icon = audacious.png;
+    NoCloseButton = Yes;
+  };
+  thunar.Thunar = {
+    Icon = "system-file-manager.png";
+  };
+  "xfce4-terminal.Xfce4-terminal" = {
+    AlwaysUserIcon = Yes;
+    Icon = terminal.png;
+  };
+  "Navigator.Firefox-esr" = {
+    AlwaysUserIcon = Yes;
+    Icon = firefox.png;
+  };
+  SystemPreferences.GNUstep = {
+    Icon = SystemPreferences.GNUstep.xpm;
+  };
+  TextEdit.GNUstep = {
+    Icon = TextEdit.GNUstep.xpm;
+  };
+  qbittorrent.qBittorrent = {
+    AlwaysUserIcon = Yes;
+    Icon = torrent.png;
+  };
+  Cynthiune.GNUstep = {
+    Icon = Cynthiune.GNUstep.xpm;
+  };
+  main.py. = {
+    Icon = "menu-editor.png";
+  };
+  Gorilla = {
+    AlwaysUserIcon = No;
+  };
+  Logo.WMDock = {
+    Icon = windowmaker.png;
   };
   "xfce4-screenshooter.Xfce4-screenshooter" = {
     SharedAppIcon = No;
