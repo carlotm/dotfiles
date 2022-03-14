@@ -14,6 +14,11 @@
   --tab-icon-size: 12px;
 }
 
+#tabbrowser-tabs[movingtab] {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
 #tabbrowser-tabs, #tabbrowser-arrowscrollbox, #tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {
 	min-height: var(--wmaker-window-decoration-height) !important;
 	height: var(--wmaker-window-decoration-height) !important;
