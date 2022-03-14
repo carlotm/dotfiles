@@ -105,8 +105,10 @@ let g:ale_echo_msg_info_str = 'Info'
 let g:ale_echo_msg_log_str = 'Log'
 let g:ale_echo_msg_warning_str = 'Warning'
 let g:ale_enabled = 1
-let g:ale_fixers = {}
-let g:ale_fix_on_save = 0
+let g:ale_fixers = {
+    \ 'python': ['isort', 'black']
+    \ }
+let g:ale_fix_on_save = 1
 let g:ale_fix_on_save_ignore = {}
 let g:ale_floating_preview = 1
 let g:ale_floating_window_border = [' ', ' ', ' ', ' ', ' ', ' ']
@@ -213,6 +215,12 @@ set background=dark
 colorscheme onedark
 highlight ExtraWhitespace ctermbg=1
 match ExtraWhitespace /\s\+$/
+
+"""""""""""""""""""""""""""""" open vim help in a vertical split
+augroup vimrc_help
+  autocmd!
+  autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
+augroup END
 
 """""""""""""""""""""""""""""" when used as an IDE (with the `v` alias)
 if exists('fullscreen')
