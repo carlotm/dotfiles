@@ -149,6 +149,10 @@
   thunar.Thunar = {
     Icon = "system-file-manager.png";
   };
+  osmo.Osmo = {
+    AlwaysUserIcon = Yes;
+    Icon = osmo.png;
+  };
   "xfce4-terminal.Xfce4-terminal" = {
     AlwaysUserIcon = Yes;
     Icon = terminal.png;
@@ -162,6 +166,14 @@
   };
   TextEdit.GNUstep = {
     Icon = TextEdit.GNUstep.xpm;
+  };
+  "gnome-todo.gnome-todo" = {
+    NoTitlebar = Yes;
+    NoMiniaturizeButton = Yes;
+    NoBorder = Yes;
+    AlwaysUserIcon = No;
+    NoResizebar = Yes;
+    NoCloseButton = Yes;
   };
   qbittorrent.qBittorrent = {
     AlwaysUserIcon = Yes;
