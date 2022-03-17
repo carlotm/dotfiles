@@ -1,30 +1,6 @@
 {
-  firefox.Firefox = {
-    SharedAppIcon = No;
-    Icon = firefox.png;
-  };
-  gcolor3.Gcolor3 = {
-    NoTitlebar = Yes;
-    NoMiniaturizeButton = Yes;
-    NoBorder = Yes;
+  gcolor2.Gcolor2 = {
     AlwaysUserIcon = No;
-    NoResizebar = Yes;
-    NoCloseButton = Yes;
-  };
-  main.py.Main.py = {
-    AlwaysUserIcon = Yes;
-    Icon = "menu-editor.png";
-  };
-  default.default = {
-    Icon = default.default.xpm;
-  };
-  pcmanfm.Pcmanfm = {
-    AlwaysUserIcon = Yes;
-    Icon = "file-manager.png";
-  };
-  "fs-uae-launcher.fs-uae-launcher" = {
-    AlwaysUserIcon = Yes;
-    Icon = games.png;
   };
   aterm.XTerm = {
     SharedAppIcon = No;
@@ -40,8 +16,32 @@
     NoCloseButton = Yes;
     Omnipresent = Yes;
   };
-  gcolor2.Gcolor2 = {
+  "fs-uae-launcher.fs-uae-launcher" = {
+    AlwaysUserIcon = Yes;
+    Icon = games.png;
+  };
+  pcmanfm.Pcmanfm = {
+    AlwaysUserIcon = Yes;
+    Icon = "file-manager.png";
+  };
+  default.default = {
+    Icon = default.default.xpm;
+  };
+  main.py.Main.py = {
+    AlwaysUserIcon = Yes;
+    Icon = "menu-editor.png";
+  };
+  gcolor3.Gcolor3 = {
+    NoTitlebar = Yes;
+    NoMiniaturizeButton = Yes;
+    NoBorder = Yes;
     AlwaysUserIcon = No;
+    NoResizebar = Yes;
+    NoCloseButton = Yes;
+  };
+  firefox.Firefox = {
+    SharedAppIcon = No;
+    Icon = firefox.png;
   };
   GSPdf.GNUstep = {
     Icon = GSPdf.GNUstep.xpm;
@@ -58,6 +58,11 @@
   nemo.Nemo = {
     AlwaysUserIcon = Yes;
     Icon = "file-manager.png";
+  };
+  "gimp-2.10.Gimp-2.10" = {
+    NoAppIcon = Yes;
+    AlwaysUserIcon = Yes;
+    Icon = gimp.png;
   };
   org.gnome.Nautilus.Org.gnome.Nautilus = {
     NoBorder = Yes;

@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'ghifarit53/tokyonight-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -197,22 +198,15 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-if (has("autocmd") && !has("gui_running"))
-  augroup colorset
-    autocmd!
-    let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
-    autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white })
-  augroup END
-endif
-if (has("autocmd"))
-  augroup colorextend
-    autocmd!
-    autocmd ColorScheme * call onedark#extend_highlight("CursorLineNr", { "bg": { "gui": "#2C323C" } })
-  augroup END
-endif
-let g:onedark_terminal_italics=1
-set background=dark
-colorscheme onedark
+let g:tokyonight_style = 'night'
+let g:tokyonight_transparent_background = 0
+let g:tokyonight_menu_selection_background = 'green'
+let g:tokyonight_disable_italic_comment = 0
+let g:tokyonight_enable_italic = 0
+let g:tokyonight_cursor = 'auto'
+let g:tokyonight_current_word = 'grey background'
+colorscheme tokyonight
+
 highlight ExtraWhitespace ctermbg=1
 match ExtraWhitespace /\s\+$/
 
