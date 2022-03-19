@@ -9,10 +9,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'ghifarit53/tokyonight-vim'
+Plug 'carlotm/tokyonight-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'sgur/vim-editorconfig'
 Plug 'preservim/nerdtree'
 Plug 'dense-analysis/ale'
@@ -86,7 +85,6 @@ let g:plug_pwindow = 'above 12new'
 let g:plug_url_format = 'https://git::@github.com/%s.git'
 
 """""""""""""""""""""""""""""" ale settings
-let g:airline#extensions#ale#enabled = 1
 let g:ale_change_sign_column_color = 0
 let g:ale_close_preview_on_insert = 1
 let g:ale_command_wrapper = 'nice -n5'
@@ -128,10 +126,7 @@ let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 let g:ale_linters = {
   \   'elixir': ['credo', 'dialyxir', 'dogma'],
-  \   'go': ['gofmt', 'golint', 'gopls', 'govet'],
   \   'python': ['black', 'flake8', 'isort', 'autoimport', 'pyright'],
-  \   'rust': ['cargo', 'rls'],
-  \   'svelte': ['eslint', 'svelteserver'],
   \   'vue': ['eslint', 'vls'],
   \}
 let g:ale_linters_explicit = 1
@@ -177,10 +172,12 @@ let g:editorconfig_blacklist = {'filetype': ['git.*', 'fugitive']}
 let g:editorconfig_verbose = 0
 
 """""""""""""""""""""""""""""" airline settings
+let g:airline#extensions#ale#enabled = 1
 let g:airline_section_z = '%=%(%l,%c %P%)'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = ' '
+let g:airline_theme = "tokyonight"
 
 """""""""""""""""""""""""""""" windows, tabs and buffers settings
 nmap <C-n> :bnext<CR>
