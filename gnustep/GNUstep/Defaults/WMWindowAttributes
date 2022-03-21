@@ -1,148 +1,39 @@
 {
-  firefox.Firefox = {
-    SharedAppIcon = No;
-    Icon = firefox.png;
-  };
-  gcolor3.Gcolor3 = {
-    NoTitlebar = Yes;
-    NoMiniaturizeButton = Yes;
-    NoBorder = Yes;
-    AlwaysUserIcon = No;
-    NoResizebar = Yes;
-    NoCloseButton = Yes;
-  };
-  main.py.Main.py = {
+  mupdf.MuPDF = {
     AlwaysUserIcon = Yes;
-    Icon = "menu-editor.png";
-  };
-  default.default = {
-    Icon = default.default.xpm;
-  };
-  pcmanfm.Pcmanfm = {
-    AlwaysUserIcon = Yes;
-    Icon = "file-manager.png";
+    Icon = pdf.png;
   };
   "fs-uae-launcher.fs-uae-launcher" = {
     AlwaysUserIcon = Yes;
     Icon = games.png;
   };
-  aterm.XTerm = {
-    SharedAppIcon = No;
-    SkipWindowList = Yes;
-    NoTitlebar = Yes;
-    SkipSwitchPanel = Yes;
-    NoAppIcon = Yes;
-    NoMiniaturizeButton = Yes;
-    NoBorder = Yes;
-    AlwaysUserIcon = No;
-    NoResizebar = Yes;
-    KeepOnBottom = Yes;
-    NoCloseButton = Yes;
-    Omnipresent = Yes;
-  };
-  gcolor2.Gcolor2 = {
-    AlwaysUserIcon = No;
-  };
-  GSPdf.GNUstep = {
-    Icon = GSPdf.GNUstep.xpm;
-  };
-  inkscape.Inkscape = {
-    Icon = inkscape.png;
-  };
-  PRICE.GNUstep = {
-    Icon = PRICE.GNUstep.xpm;
-  };
-  xterm.XTerm = {
-    Icon = terminal.png;
-  };
-  nemo.Nemo = {
-    AlwaysUserIcon = Yes;
-    Icon = "file-manager.png";
-  };
-  "gimp-2.10.Gimp-2.10" = {
-    NoAppIcon = Yes;
-    AlwaysUserIcon = Yes;
-    Icon = gimp.png;
-  };
-  org.gnome.Nautilus.Org.gnome.Nautilus = {
-    NoBorder = Yes;
-    AlwaysUserIcon = Yes;
-    Icon = "system-file-manager.png";
-  };
-  gthumb.Gthumb = {
-    NoBorder = Yes;
-    AlwaysUserIcon = Yes;
-    Icon = gthumb.png;
-  };
-  groupLeader.WPrefs = {
-    Icon = prefs.png;
-  };
-  sakura.Sakura = {
-    Icon = sakura.Sakura.xpm;
-  };
-  mupdf.MuPDF = {
-    AlwaysUserIcon = Yes;
-    EmulateAppIcon = Yes;
-    Icon = pdf.png;
-  };
-  reaper. = {
-    Icon = reaper..xpm;
-  };
-  xpdf.XpdfReader = {
-    AlwaysUserIcon = Yes;
-    Icon = pdf.png;
-  };
-  emacs.Emacs = {
-    AlwaysUserIcon = Yes;
-    Icon = emacs.png;
-  };
-  keepassxc.KeePassXC = {
-    AlwaysUserIcon = Yes;
-    Icon = keepassxc.png;
-  };
-  "transmission-gtk.Transmission-gtk" = {
-    AlwaysUserIcon = Yes;
-    Icon = torrent.png;
-  };
-  mainwindow.py.Mainwindow.py = {
-    NoMiniaturizable = Yes;
-    AlwaysUserIcon = Yes;
-    Icon = "applications-games.png";
-  };
-  Navigator.firefox = {
-    AlwaysUserIcon = Yes;
+  firefox.Firefox = {
     Icon = firefox.png;
-  };
-  "firefox-esr.Firefox-esr" = {
-    NoAppIcon = Yes;
-    Icon = firefox.png;
-  };
-  Logo.WMClip = {
-    Icon = "distributor-logo-archlinux.png";
   };
   Alacritty.Alacritty = {
     AlwaysUserIcon = Yes;
-    EmulateAppIcon = Yes;
-    Icon = terminal.png;
+    Icon = term.png;
+  };
+  inkscape.Inkscape = {
+    Icon = inkscape.png;
   };
   gimp.Gimp = {
     AlwaysUserIcon = Yes;
     Icon = gimp.png;
   };
-  qjackctl.QjackCtl = {
-    AlwaysUserIcon = Yes;
-    Icon = "multimedia-player-ipod-orange.png";
-  };
   org.inkscape.Inkscape.Inkscape = {
-    AlwaysUserIcon = Yes;
+    AlwaysUserIcon = No;
     Icon = inkscape.png;
   };
-  wprefs.WPrefs = {
+  keepassxc.KeePassXC = {
     AlwaysUserIcon = Yes;
-    Icon = prefs.png;
+    Icon = keepassx.png;
+  };
+  nemo.Nemo = {
+    AlwaysUserIcon = Yes;
+    Icon = mc.png;
   };
   audacious.Audacious = {
-    SkipWindowList = Yes;
     NoTitlebar = Yes;
     NoMiniaturizable = Yes;
     NoBorder = Yes;
@@ -151,56 +42,25 @@
     Icon = audacious.png;
     NoCloseButton = Yes;
   };
-  thunar.Thunar = {
-    Icon = "system-file-manager.png";
+  "transmission-gtk.Transmission-gtk" = {
+    Icon = "transmission-gtk.Transmission-gtk.xpm";
   };
   osmo.Osmo = {
     AlwaysUserIcon = Yes;
     Icon = osmo.png;
   };
-  "xfce4-terminal.Xfce4-terminal" = {
-    AlwaysUserIcon = Yes;
-    Icon = terminal.png;
-  };
-  "Navigator.Firefox-esr" = {
-    AlwaysUserIcon = Yes;
-    Icon = firefox.png;
-  };
-  SystemPreferences.GNUstep = {
-    Icon = SystemPreferences.GNUstep.xpm;
-  };
-  TextEdit.GNUstep = {
-    Icon = TextEdit.GNUstep.xpm;
-  };
-  "gnome-todo.gnome-todo" = {
-    NoTitlebar = Yes;
-    NoMiniaturizeButton = Yes;
-    NoBorder = Yes;
-    AlwaysUserIcon = No;
-    NoResizebar = Yes;
-    NoCloseButton = Yes;
-  };
-  qbittorrent.qBittorrent = {
-    AlwaysUserIcon = Yes;
-    Icon = torrent.png;
-  };
-  Cynthiune.GNUstep = {
-    Icon = Cynthiune.GNUstep.xpm;
-  };
-  main.py. = {
-    Icon = "menu-editor.png";
-  };
-  Gorilla = {
-    AlwaysUserIcon = No;
-  };
   Logo.WMDock = {
     Icon = windowmaker.png;
   };
+  Navigator.firefox = {
+    AlwaysUserIcon = Yes;
+    Icon = firefox.png;
+  };
   "xfce4-screenshooter.Xfce4-screenshooter" = {
-    SharedAppIcon = No;
     NoTitlebar = Yes;
     NoAppIcon = Yes;
     NoMiniaturizeButton = Yes;
+    NoBorder = Yes;
     AlwaysUserIcon = No;
     NoResizebar = Yes;
     NoCloseButton = Yes;

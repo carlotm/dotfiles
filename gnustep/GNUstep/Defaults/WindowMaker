@@ -10,7 +10,7 @@
     "/usr/share/pixmaps",
     "/home/carloratm/GNUstep/Library/WindowMaker/Pixmaps"
   );
-  FTitleBack = (solid, "#a19385");
+  FTitleBack = (solid, "#c9b8a7");
   ToggleKbdModeKey = None;
   DragMaximizedWindow = RestoreGeometry;
   WindowMenuKey = None;
@@ -76,7 +76,7 @@
   CClipTitleColor = "#616161";
   LHMaximizeKey = "Shift+Mod1+Left";
   RootMenuKey = None;
-  ResizebarBack = (solid, "#cfc9c2");
+  ResizebarBack = (solid, "#c9b8a7");
   IconPath = (
     "/home/carloratm/GNUstep/Library/Icons",
     "/usr/share/WindowMaker/Pixmaps",
