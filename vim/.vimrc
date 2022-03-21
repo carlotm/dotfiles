@@ -9,12 +9,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'carlotm/tokyonight-vim'
+Plug 'carlotm/tokyonight-vim', { 'branch': 'dev' }
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'sgur/vim-editorconfig'
 Plug 'preservim/nerdtree'
 Plug 'dense-analysis/ale'
+Plug 'elixir-editors/vim-elixir'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
