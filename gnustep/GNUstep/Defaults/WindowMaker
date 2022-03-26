@@ -12,16 +12,16 @@
   );
   FTitleBack = (solid, "#c9b8a7");
   ToggleKbdModeKey = None;
-  DragMaximizedWindow = RestoreGeometry;
   WindowMenuKey = None;
-  ClipTitleFont = "Noto Sans Display:slant=0:weight=100:width=100:pixelsize=10";
+  DragMaximizedWindow = RestoreGeometry;
   HideKey = None;
+  ClipTitleFont = "Noto Sans Display:slant=0:weight=100:width=100:pixelsize=10";
   MaximusKey = "Shift+Mod1+M";
-  IconTitleFont = "Noto Sans Display:slant=0:weight=100:width=100:pixelsize=10";
   OpaqueResize = YES;
+  IconTitleFont = "Noto Sans Display:slant=0:weight=100:width=100:pixelsize=10";
   MenuTextBack = (solid, "#c9b8a7");
-  LargeDisplayFont = "Noto Sans Display:slant=100:weight=200:width=100:pixelsize=72";
   WindowPlacement = center;
+  LargeDisplayFont = "Noto Sans Display:slant=100:weight=200:width=100:pixelsize=72";
   RBCMaximizeKey = "Shift+Mod1+Next";
   DisableClip = YES;
   OpaqueMoveResizeKeyboard = YES;
@@ -62,17 +62,17 @@
   CloseKey = "Shift+Mod1+C";
   FrameFocusedBorderColor = "#000000";
   HighlightColor = "#f7e2cd";
-  WindowTitleFont = "Inter:slant=0:weight=180:width=100:pixelsize=14";
   FocusMode = sloppy;
+  WindowTitleFont = "Inter:slant=0:weight=180:width=100:pixelsize=14";
   SwitchPanelImages = (swtile_carlotm.png, swback_carlotm.png, 3, 3);
   NextWorkspaceKey = None;
-  WindowPlaceOrigin = (0, 0);
-  RunKey = "Mod1+F2";
   Workspace8Key = None;
-  Workspace9Key = None;
-  DisableDrawers = YES;
-  MoveToWorkspace3Key = "Shift+Mod1+3";
+  RunKey = "Mod1+F2";
+  WindowPlaceOrigin = (0, 0);
   Workspace10Key = None;
+  MoveToWorkspace3Key = "Shift+Mod1+3";
+  DisableDrawers = YES;
+  Workspace9Key = None;
   CClipTitleColor = "#616161";
   LHMaximizeKey = "Shift+Mod1+Left";
   RootMenuKey = None;
@@ -83,8 +83,8 @@
     "/usr/share/pixmaps"
   );
   RaiseKey = None;
-  Workspace5Key = None;
   KbdModeLock = YES;
+  Workspace5Key = None;
   Workspace6Key = None;
   Workspace7Key = None;
   UTitleColor = "#8d8983";
@@ -94,8 +94,8 @@
   ResizeDisplay = corner;
   MoveToWorkspace1Key = "Shift+Mod1+1";
   IgnoreGtkHints = YES;
-  RHMaximizeKey = "Shift+Mod1+Right";
   MoveToWorkspace4Key = "Shift+Mod1+4";
+  RHMaximizeKey = "Shift+Mod1+Right";
   FrameSelectedBorderColor = "#e2e2e2";
   RTCMaximizeKey = "Shift+Mod1+Prior";
 }

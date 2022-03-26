@@ -9,11 +9,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'carlotm/tokyonight-vim', { 'branch': 'dev' }
-Plug 'joshdick/onedark.vim'
-Plug 'vim-airline/vim-airline'
 Plug 'sgur/vim-editorconfig'
 Plug 'preservim/nerdtree'
+Plug 'ap/vim-buftabline'
 Plug 'dense-analysis/ale'
 Plug 'elixir-editors/vim-elixir'
 call plug#end()
@@ -161,6 +159,7 @@ let g:ale_warn_about_trailing_whitespace = 1
 
 """""""""""""""""""""""""""""" fzf settings
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+let g:fzf_preview_window = ['down:40%', 'ctrl-/']
 let g:fzf_buffers_jump = 1
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 let g:fzf_tags_command = 'ctags -R'
@@ -172,13 +171,25 @@ nmap <C-f> :Ag<CR>
 let g:editorconfig_blacklist = {'filetype': ['git.*', 'fugitive']}
 let g:editorconfig_verbose = 0
 
-"""""""""""""""""""""""""""""" airline settings
-let g:airline#extensions#ale#enabled = 1
-let g:airline_section_z = '%=%(%l,%c %P%)'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = ' '
-let g:airline_theme = "tokyonight"
+"""""""""""""""""""""""""""""" status settings
+let g:currentmode={
+\ 'n'  : 'NORMAL ',
+\ 'v'  : 'VISUAL ',
+\ 'V'  : 'V·Line ',
+\ "\<C-V>" : 'V·Block ',
+\ 'i'  : 'INSERT ',
+\ 'R'  : 'R ',
+\ 'Rv' : 'V·Replace ',
+\ 'c'  : 'COMMAND ',
+\}
+set statusline=
+set statusline+=%2*\ %{g:currentmode[mode()]}
+set statusline+=%1*%{&modified?'✏':''}
+set statusline+=%1*%=
+set statusline+=%1*%y
+set statusline+=%1*\ %l:%c\ 
+set laststatus=2
+set noshowmode
 
 """""""""""""""""""""""""""""" windows, tabs and buffers settings
 nmap <C-n> :bnext<CR>
@@ -196,14 +207,7 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-let g:tokyonight_style = 'night'
-let g:tokyonight_transparent_background = 0
-let g:tokyonight_menu_selection_background = 'green'
-let g:tokyonight_disable_italic_comment = 0
-let g:tokyonight_enable_italic = 0
-let g:tokyonight_cursor = 'auto'
-let g:tokyonight_current_word = 'grey background'
-colorscheme tokyonight
+colorscheme ratm
 
 highlight ExtraWhitespace ctermbg=1
 match ExtraWhitespace /\s\+$/

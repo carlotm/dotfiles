@@ -1,53 +1,53 @@
 colors:
+  # Default colors
   primary:
-    background: '0x1a1b26'
-    foreground: '0xcfc9c2'
+    background: '#202020'
+    foreground: '#eeeeee'
 
-  selection:
-    text: "#ffffff"
-    background: "#000000"
+  # Cursor colors
+  cursor:
+    text: CellBackground
+    cursor: '#fbb829'
 
+  # Normal colors
   normal:
-    black:   '0x15161E'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x565f89'
-    magenta: '0xbb9af7'
-    cyan:    '0x7dcfff'
-    white:   '0xa9b1d6'
+    black:   '#000000'
+    red:     '#c80035'
+    green:   '#0fb080'
+    yellow:  '#875F00'
+    blue:    '#005FAF'
+    magenta: '#870087'
+    cyan:    '#0fb080'
+    white:   '#f0f0f0'
 
+  # Bright colors
   bright:
-    black:   '0x414868'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan:    '0x7dcfff'
-    white:   '0xc0caf5'
-
-  indexed_colors:
-    - { index: 16, color: '0xff9e64' }
-    - { index: 17, color: '0xdb4b4b' }
+    black:   '#202020'
+    red:     '#d60039'
+    green:   '#10bf8b'
+    yellow:  '#875F00'
+    blue:    '#0068bf'
+    magenta: '#960096'
+    cyan:    '#10bf8b'
+    white:   '#ffffff'
 
 draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: Terminus (TTF)
+    family: JetBrains Mono
     style: Regular
 
   bold:
-    family: Terminus (TTF)
+    family: JetBrains Mono
     style: Bold
 
   italic:
-    family: Terminus (TTF)
+    family: JetBrains Mono
     style: Italic
 
   bold_italic:
-    family: Terminus (TTF)
+    family: JetBrains Mono
     style: BoldItalic
 
   offset:
@@ -65,6 +65,9 @@ mouse:
 
 window:
   dynamic_title: true
+  padding:
+    x: 20
+    y: 20
 
 key_bindings:
   - {
