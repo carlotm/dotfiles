@@ -27,6 +27,7 @@ wmshutdown.o: wmshutdown.c /usr/include/stdc-predef.h \
  /usr/include/bits/types/timer_t.h \
  /usr/include/bits/types/struct_itimerspec.h \
  /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
+ /usr/include/string.h /usr/include/strings.h \
  /usr/include/glib-2.0/glib/garray.h \
  /usr/include/glib-2.0/glib/gasyncqueue.h \
  /usr/include/glib-2.0/glib/gthread.h \
@@ -101,7 +102,6 @@ wmshutdown.o: wmshutdown.c /usr/include/stdc-predef.h \
  /usr/include/glib-2.0/glib/gscanner.h \
  /usr/include/glib-2.0/glib/gsequence.h \
  /usr/include/glib-2.0/glib/gshell.h /usr/include/glib-2.0/glib/gslice.h \
- /usr/include/string.h /usr/include/strings.h \
  /usr/include/glib-2.0/glib/gspawn.h \
  /usr/include/glib-2.0/glib/gstrfuncs.h \
  /usr/include/glib-2.0/glib/gstringchunk.h \
@@ -140,9 +140,11 @@ wmshutdown.o: wmshutdown.c /usr/include/stdc-predef.h \
  /usr/include/glib-2.0/gobject/gmarshal.h \
  /usr/include/glib-2.0/gobject/gboxed.h \
  /usr/include/glib-2.0/gobject/glib-types.h \
+ /usr/include/glib-2.0/gobject/gbindinggroup.h \
  /usr/include/glib-2.0/gobject/genums.h \
  /usr/include/glib-2.0/gobject/glib-enumtypes.h \
  /usr/include/glib-2.0/gobject/gparamspecs.h \
+ /usr/include/glib-2.0/gobject/gsignalgroup.h \
  /usr/include/glib-2.0/gobject/gsourceclosure.h \
  /usr/include/glib-2.0/gobject/gtypemodule.h \
  /usr/include/glib-2.0/gobject/gtypeplugin.h \
@@ -202,6 +204,8 @@ wmshutdown.o: wmshutdown.c /usr/include/stdc-predef.h \
  /usr/include/glib-2.0/gio/gdbusproxy.h \
  /usr/include/glib-2.0/gio/gdbusserver.h \
  /usr/include/glib-2.0/gio/gdbusutils.h \
+ /usr/include/glib-2.0/gio/gdebugcontroller.h \
+ /usr/include/glib-2.0/gio/gdebugcontrollerdbus.h \
  /usr/include/glib-2.0/gio/gdrive.h \
  /usr/include/glib-2.0/gio/gdtlsclientconnection.h \
  /usr/include/glib-2.0/gio/gdtlsconnection.h \
@@ -423,7 +427,9 @@ wmshutdown.o: wmshutdown.c /usr/include/stdc-predef.h \
  /usr/include/atk-1.0/atk/atktable.h \
  /usr/include/atk-1.0/atk/atktablecell.h \
  /usr/include/atk-1.0/atk/atkmisc.h /usr/include/atk-1.0/atk/atkvalue.h \
- /usr/include/atk-1.0/atk/atkwindow.h /usr/include/gtk-3.0/gtk/gtkbin.h \
+ /usr/include/atk-1.0/atk/atkwindow.h \
+ /usr/include/atk-1.0/atk/atk-autocleanups.h \
+ /usr/include/gtk-3.0/gtk/gtkbin.h \
  /usr/include/gtk-3.0/gtk/gtkcontainer.h \
  /usr/include/gtk-3.0/gtk/gtkaccellabel.h \
  /usr/include/gtk-3.0/gtk/gtklabel.h \
@@ -742,6 +748,8 @@ wmshutdown.o: wmshutdown.c /usr/include/stdc-predef.h \
 /usr/include/bits/types/struct_itimerspec.h:
 /usr/include/bits/types/locale_t.h:
 /usr/include/bits/types/__locale_t.h:
+/usr/include/string.h:
+/usr/include/strings.h:
 /usr/include/glib-2.0/glib/garray.h:
 /usr/include/glib-2.0/glib/gasyncqueue.h:
 /usr/include/glib-2.0/glib/gthread.h:
@@ -851,8 +859,6 @@ wmshutdown.o: wmshutdown.c /usr/include/stdc-predef.h \
 /usr/include/glib-2.0/glib/gsequence.h:
 /usr/include/glib-2.0/glib/gshell.h:
 /usr/include/glib-2.0/glib/gslice.h:
-/usr/include/string.h:
-/usr/include/strings.h:
 /usr/include/glib-2.0/glib/gspawn.h:
 /usr/include/glib-2.0/glib/gstrfuncs.h:
 /usr/include/glib-2.0/glib/gstringchunk.h:
@@ -901,9 +907,11 @@ wmshutdown.o: wmshutdown.c /usr/include/stdc-predef.h \
 /usr/include/glib-2.0/gobject/gmarshal.h:
 /usr/include/glib-2.0/gobject/gboxed.h:
 /usr/include/glib-2.0/gobject/glib-types.h:
+/usr/include/glib-2.0/gobject/gbindinggroup.h:
 /usr/include/glib-2.0/gobject/genums.h:
 /usr/include/glib-2.0/gobject/glib-enumtypes.h:
 /usr/include/glib-2.0/gobject/gparamspecs.h:
+/usr/include/glib-2.0/gobject/gsignalgroup.h:
 /usr/include/glib-2.0/gobject/gsourceclosure.h:
 /usr/include/glib-2.0/gobject/gtypemodule.h:
 /usr/include/glib-2.0/gobject/gtypeplugin.h:
@@ -967,6 +975,8 @@ wmshutdown.o: wmshutdown.c /usr/include/stdc-predef.h \
 /usr/include/glib-2.0/gio/gdbusproxy.h:
 /usr/include/glib-2.0/gio/gdbusserver.h:
 /usr/include/glib-2.0/gio/gdbusutils.h:
+/usr/include/glib-2.0/gio/gdebugcontroller.h:
+/usr/include/glib-2.0/gio/gdebugcontrollerdbus.h:
 /usr/include/glib-2.0/gio/gdrive.h:
 /usr/include/glib-2.0/gio/gdtlsclientconnection.h:
 /usr/include/glib-2.0/gio/gdtlsconnection.h:
@@ -1219,6 +1229,7 @@ wmshutdown.o: wmshutdown.c /usr/include/stdc-predef.h \
 /usr/include/atk-1.0/atk/atkmisc.h:
 /usr/include/atk-1.0/atk/atkvalue.h:
 /usr/include/atk-1.0/atk/atkwindow.h:
+/usr/include/atk-1.0/atk/atk-autocleanups.h:
 /usr/include/gtk-3.0/gtk/gtkbin.h:
 /usr/include/gtk-3.0/gtk/gtkcontainer.h:
 /usr/include/gtk-3.0/gtk/gtkaccellabel.h:

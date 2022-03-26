@@ -7,10 +7,10 @@
   --wmaker-unselected-col1: white;
   --wmaker-unselected-col2: #717171;
   --wmaker-unselected-tile-border: var(--wmaker-unselected-col1) var(--wmaker-unselected-col2) var(--wmaker-unselected-col2) var(--wmaker-unselected-col1);
-  --wmaker-selected-col1: #c9b8a7;
-  --wmaker-selected-col2: #ffead4;
-  --wmaker-selected-col3: #645b53;
-  --wmaker-selected-fg: #1A1B26;
+  --wmaker-selected-col1: #aeaaae;
+  --wmaker-selected-col2: #fffaff;
+  --wmaker-selected-col3: #575557;
+  --wmaker-selected-fg: #000000;
   --wmaker-selected-tile-border: var(--wmaker-selected-col2) var(--wmaker-selected-col3) var(--wmaker-selected-col3) var(--wmaker-selected-col2);
   --tab-icon-size: 12px;
 }

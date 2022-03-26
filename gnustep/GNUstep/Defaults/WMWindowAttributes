@@ -1,14 +1,22 @@
 {
-  mupdf.MuPDF = {
-    AlwaysUserIcon = Yes;
-    Icon = pdf.png;
+  firefox.Firefox = {
+    Icon = firefox.png;
   };
   "fs-uae-launcher.fs-uae-launcher" = {
     AlwaysUserIcon = Yes;
     Icon = games.png;
   };
-  firefox.Firefox = {
-    Icon = firefox.png;
+  mupdf.MuPDF = {
+    AlwaysUserIcon = Yes;
+    Icon = pdf.png;
+  };
+  gcolor3.Gcolor3 = {
+    NoTitlebar = Yes;
+    NoMiniaturizeButton = Yes;
+    NoBorder = Yes;
+    AlwaysUserIcon = No;
+    NoResizebar = Yes;
+    NoCloseButton = Yes;
   };
   Alacritty.Alacritty = {
     AlwaysUserIcon = Yes;
@@ -29,10 +37,6 @@
     AlwaysUserIcon = Yes;
     Icon = keepassx.png;
   };
-  nemo.Nemo = {
-    AlwaysUserIcon = Yes;
-    Icon = mc.png;
-  };
   audacious.Audacious = {
     NoTitlebar = Yes;
     NoMiniaturizable = Yes;
@@ -41,6 +45,10 @@
     NoResizebar = Yes;
     Icon = audacious.png;
     NoCloseButton = Yes;
+  };
+  nemo.Nemo = {
+    AlwaysUserIcon = Yes;
+    Icon = mc.png;
   };
   "transmission-gtk.Transmission-gtk" = {
     Icon = "transmission-gtk.Transmission-gtk.xpm";

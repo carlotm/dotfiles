@@ -1,6 +1,6 @@
 {
   FrameBorderColor = "#000000";
-  FTitleColor = "#1a1b26";
+  FTitleColor = "#000000";
   MiniaturizeKey = None;
   MenuDisabledColor = "#7f7f7f";
   IconTitleBack = "#000000";
@@ -10,7 +10,7 @@
     "/usr/share/pixmaps",
     "/home/carloratm/GNUstep/Library/WindowMaker/Pixmaps"
   );
-  FTitleBack = (solid, "#c9b8a7");
+  FTitleBack = (solid, "#aeaaae");
   ToggleKbdModeKey = None;
   WindowMenuKey = None;
   DragMaximizedWindow = RestoreGeometry;
@@ -76,7 +76,7 @@
   CClipTitleColor = "#616161";
   LHMaximizeKey = "Shift+Mod1+Left";
   RootMenuKey = None;
-  ResizebarBack = (solid, "#c9b8a7");
+  ResizebarBack = (solid, "#aeaaae");
   IconPath = (
     "/home/carloratm/GNUstep/Library/Icons",
     "/usr/share/WindowMaker/Pixmaps",
