@@ -14,6 +14,7 @@ Plug 'preservim/nerdtree'
 Plug 'ap/vim-buftabline'
 Plug 'dense-analysis/ale'
 Plug 'elixir-editors/vim-elixir'
+Plug 'joshdick/onedark.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
@@ -183,11 +184,11 @@ let g:currentmode={
 \ 'c'  : 'COMMAND ',
 \}
 set statusline=
-set statusline+=%2*\ %{g:currentmode[mode()]}
-set statusline+=%1*%{&modified?'✏':''}
-set statusline+=%1*%=
-set statusline+=%1*%y
-set statusline+=%1*\ %l:%c\ 
+set statusline+=%#TabLineSel#\ %{g:currentmode[mode()]}
+set statusline+=%#TabLineFill#%{&modified?'✏':''}
+set statusline+=%#TabLineFill#%=
+set statusline+=%#TabLineFill#%y
+set statusline+=%#TabLineFill#\ %l:%c\ 
 set laststatus=2
 set noshowmode
 
@@ -207,7 +208,26 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-colorscheme ratm
+set background=dark
+let g:onedark_terminal_italic=1
+let g:onedark_color_overrides = {
+\ "background": {"gui": "#171a1f", "cterm": "0", "cterm16": "0" }
+\}
+if (has("autocmd") && !has("gui_running"))
+  augroup colorset
+    autocmd!
+    let s:subtle = { "gui": "#20242b", "cterm": "145", "cterm16" : "7" }
+    let s:total_black = { "gui": "#000000", "cterm": "145", "cterm16" : "7" }
+    let s:tab_fg = { "gui": "#555555", "cterm": "145", "cterm16" : "7" }
+    let s:tab_sel = { "gui": "#98c379", "cterm": "145", "cterm16" : "7" }
+    autocmd ColorScheme * call onedark#set_highlight("CursorLine", { "bg": s:subtle })
+    autocmd ColorScheme * call onedark#set_highlight("CursorLineNr", { "bg": s:subtle })
+    autocmd ColorScheme * call onedark#set_highlight("TabLine", { "bg": s:total_black, "fg": s:tab_fg})
+    autocmd ColorScheme * call onedark#set_highlight("TabLineFill", { "bg": s:total_black })
+    autocmd ColorScheme * call onedark#set_highlight("TabLineSel", { "bg": s:tab_sel, "fg": s:total_black })
+  augroup END
+endif
+colorscheme onedark
 
 highlight ExtraWhitespace ctermbg=1
 match ExtraWhitespace /\s\+$/
