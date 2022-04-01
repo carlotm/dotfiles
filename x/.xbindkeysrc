@@ -1,26 +1,24 @@
-# Increase volume
+# System control
+
 "changeVolume 2dB+ unmute"
    XF86AudioRaiseVolume
 
-# Decrease volume
 "changeVolume 2dB- unmute"
    XF86AudioLowerVolume
 
-# Mute volume
 "pactl set-sink-mute @DEFAULT_SINK@ toggle"
    XF86AudioMute
 
-# Mute microphone
 "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
    XF86AudioMicMute
 
-# Screenshoter
-"xfce4-screenshooter"
-    Print
-
-# Brightness
 "brightnessctl s 10%+"
     XF86MonBrightnessUp
 
 "brightnessctl s 10%-"
     XF86MonBrightnessDown
+
+# Applications
+
+"xfce4-screenshooter"
+    Print
