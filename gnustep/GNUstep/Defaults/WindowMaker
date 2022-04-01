@@ -19,7 +19,7 @@
   MaximusKey = "Shift+Mod1+M";
   IconTitleFont = "Noto Sans Display:slant=0:weight=100:width=100:pixelsize=10";
   OpaqueResize = YES;
-  MenuTextBack = (solid, "#e5c07b");
+  MenuTextBack = (solid, "#aeaaae");
   LargeDisplayFont = "Noto Sans Display:slant=100:weight=200:width=100:pixelsize=72";
   WindowPlacement = center;
   RBCMaximizeKey = "Shift+Mod1+Next";
@@ -52,7 +52,7 @@
   );
   HighlightTextColor = "#000000";
   SnapEdgeDetect = 10;
-  MenuTitleBack = (solid, "#b39660");
+  MenuTitleBack = (solid, "#959295");
   EnforceIconMargin = NO;
   WindowSnapping = YES;
   SnapToTopMaximizesFullscreen = YES;
@@ -61,7 +61,7 @@
   MoveTo12to6Head = None;
   CloseKey = "Shift+Mod1+C";
   FrameFocusedBorderColor = "#000000";
-  HighlightColor = "#f7e2cd";
+  HighlightColor = "#d75f00";
   WindowTitleFont = "Inter:slant=0:weight=180:width=100:pixelsize=14";
   FocusMode = sloppy;
   SwitchPanelImages = (swtile_carlotm.png, swback_carlotm.png, 3, 3);
