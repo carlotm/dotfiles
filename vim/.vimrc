@@ -14,7 +14,7 @@ Plug 'preservim/nerdtree'
 Plug 'ap/vim-buftabline'
 Plug 'dense-analysis/ale'
 Plug 'elixir-editors/vim-elixir'
-Plug 'joshdick/onedark.vim'
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
@@ -184,18 +184,17 @@ let g:currentmode={
 \ 'c'  : 'COMMAND ',
 \}
 set statusline=
-set statusline+=%#TabLineSel#\ %{g:currentmode[mode()]}
-set statusline+=%#TabLineFill#%{&modified?'✏':''}
-set statusline+=%#TabLineFill#%=
-set statusline+=%#TabLineFill#%y
-set statusline+=%#TabLineFill#\ %l:%c\ 
+set statusline+=\ %{g:currentmode[mode()]}
+set statusline+=%{&modified?'✏':''}
+set statusline+=%=
+set statusline+=%y
+set statusline+=\ %l:%c\ 
 set laststatus=2
 set noshowmode
 
 """""""""""""""""""""""""""""" windows, tabs and buffers settings
 nmap <C-n> :bnext<CR>
 nmap <C-p> :bprev<CR>
-nnoremap bb :Buffers<CR>
 nmap <C-X> :bd<CR>
 nmap <silent> <C-Up> :wincmd k<CR>
 nmap <silent> <C-Down> :wincmd j<CR>
@@ -208,26 +207,8 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-set background=dark
-let g:onedark_terminal_italic=1
-let g:onedark_color_overrides = {
-\ "background": {"gui": "#171a1f", "cterm": "0", "cterm16": "0" }
-\}
-if (has("autocmd") && !has("gui_running"))
-  augroup colorset
-    autocmd!
-    let s:subtle = { "gui": "#20242b", "cterm": "145", "cterm16" : "7" }
-    let s:total_black = { "gui": "#000000", "cterm": "145", "cterm16" : "7" }
-    let s:tab_fg = { "gui": "#555555", "cterm": "145", "cterm16" : "7" }
-    let s:tab_sel = { "gui": "#98c379", "cterm": "145", "cterm16" : "7" }
-    autocmd ColorScheme * call onedark#set_highlight("CursorLine", { "bg": s:subtle })
-    autocmd ColorScheme * call onedark#set_highlight("CursorLineNr", { "bg": s:subtle })
-    autocmd ColorScheme * call onedark#set_highlight("TabLine", { "bg": s:total_black, "fg": s:tab_fg})
-    autocmd ColorScheme * call onedark#set_highlight("TabLineFill", { "bg": s:total_black })
-    autocmd ColorScheme * call onedark#set_highlight("TabLineSel", { "bg": s:tab_sel, "fg": s:total_black })
-  augroup END
-endif
-colorscheme onedark
+set background=light
+colorscheme PaperColor
 
 highlight ExtraWhitespace ctermbg=1
 match ExtraWhitespace /\s\+$/
