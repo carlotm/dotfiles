@@ -1,4 +1,5 @@
 #!/bin/sh
-xset m 20/10 4 &
+xset m 20/10 4
+
 xsetroot -cursor_name left_ptr &
 setxkbmap -rules evdev -model pc105 -layout "us,it,de" -option "grp:win_space_toggle" &
