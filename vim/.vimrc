@@ -15,6 +15,7 @@ Plug 'ap/vim-buftabline'
 Plug 'dense-analysis/ale'
 Plug 'elixir-editors/vim-elixir'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'qpkorr/vim-bufkill'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
@@ -195,7 +196,7 @@ set noshowmode
 """""""""""""""""""""""""""""" windows, tabs and buffers settings
 nmap <C-n> :bnext<CR>
 nmap <C-p> :bprev<CR>
-nmap <C-X> :bd<CR>
+nmap <C-X> :BD<CR>
 nmap <silent> <C-Up> :wincmd k<CR>
 nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
