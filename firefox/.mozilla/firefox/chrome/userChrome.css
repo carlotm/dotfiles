@@ -7,9 +7,9 @@
   --wmaker-unselected-col1: white;
   --wmaker-unselected-col2: #717171;
   --wmaker-unselected-tile-border: var(--wmaker-unselected-col1) var(--wmaker-unselected-col2) var(--wmaker-unselected-col2) var(--wmaker-unselected-col1);
-  --wmaker-selected-col1: #aeaaae;
-  --wmaker-selected-col2: #fffaff;
-  --wmaker-selected-col3: #575557;
+  --wmaker-selected-col1: #a89984;
+  --wmaker-selected-col2: #ffe9c9;
+  --wmaker-selected-col3: #544c42;
   --wmaker-selected-fg: #000000;
   --wmaker-selected-tile-border: var(--wmaker-selected-col2) var(--wmaker-selected-col3) var(--wmaker-selected-col3) var(--wmaker-selected-col2);
   --tab-icon-size: 12px;
