@@ -16,6 +16,7 @@ Plug 'dense-analysis/ale'
 Plug 'elixir-editors/vim-elixir'
 Plug 'qpkorr/vim-bufkill'
 Plug 'morhetz/gruvbox'
+Plug 'Glench/Vim-Jinja2-Syntax'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
@@ -210,6 +211,7 @@ if exists('+termguicolors')
 endif
 set background=dark
 let g:gruvbox_italic=1
+let g:gruvbox_underline=0
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 
@@ -221,6 +223,9 @@ augroup vimrc_help
   autocmd!
   autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
 augroup END
+
+"""""""""""""""""""""""""""""" autocommands
+autocmd BufRead,BufNewFile *.tpl set filetype=jinja
 
 """""""""""""""""""""""""""""" when used as an IDE (with the `v` alias)
 if exists('fullscreen')
