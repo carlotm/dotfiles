@@ -27,19 +27,19 @@ draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: DM Mono
+    family: Terminus (TTF)
     style: Regular
 
   bold:
-    family: DM Mono
+    family: Terminus (TTF)
     style: Bold
 
   italic:
-    family: DM Mono
+    family: Terminus (TTF)
     style: Italic
 
   bold_italic:
-    family: DM Mono
+    family: Terminus (TTF)
     style: BoldItalic
 
   offset:
@@ -50,7 +50,7 @@ font:
     x: 0
     y: 5
 
-  size: 11
+  size: 13
 
 mouse:
   hide_when_typing: true
