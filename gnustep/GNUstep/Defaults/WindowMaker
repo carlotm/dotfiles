@@ -75,7 +75,7 @@
   CClipTitleColor = "#616161";
   LHMaximizeKey = "Shift+Mod1+Left";
   RootMenuKey = None;
-  ResizebarBack = (solid, "#7c7064");
+  ResizebarBack = (solid, "#a89984");
   IconPath = (
     "/home/carloratm/GNUstep/Library/Icons",
     "/usr/share/WindowMaker/Pixmaps",
@@ -86,9 +86,9 @@
   KbdModeLock = YES;
   Workspace6Key = None;
   Workspace7Key = None;
-  UTitleColor = "#aeaaae";
+  UTitleColor = "#666666";
   UTitleBack = (solid, "#919191");
-  PTitleColor = "#bdc3ce";
+  PTitleColor = "#a89984";
   CloseRootMenuByLeftOrRightMouseClick = NO;
   ResizeDisplay = corner;
   MoveToWorkspace1Key = "Shift+Mod1+1";
