@@ -15,8 +15,9 @@ Plug 'ap/vim-buftabline'
 Plug 'dense-analysis/ale'
 Plug 'elixir-editors/vim-elixir'
 Plug 'qpkorr/vim-bufkill'
-Plug 'morhetz/gruvbox'
 Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'pangloss/vim-javascript'
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
@@ -209,11 +210,8 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-set background=dark
-let g:gruvbox_italic=1
-let g:gruvbox_underline=0
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+set background=light
+colorscheme PaperColor
 
 highlight ExtraWhitespace ctermbg=1
 match ExtraWhitespace /\s\+$/
