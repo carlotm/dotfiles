@@ -1,4 +1,7 @@
 {
+  firefox.Firefox = {
+    Icon = firefox.png;
+  };
   gcolor3.Gcolor3 = {
     NoTitlebar = Yes;
     NoMiniaturizeButton = Yes;
@@ -15,8 +18,13 @@
     AlwaysUserIcon = Yes;
     Icon = games.png;
   };
-  firefox.Firefox = {
-    Icon = firefox.png;
+  warpinator.Warpinator = {
+    NoTitlebar = Yes;
+    NoMiniaturizeButton = Yes;
+    NoBorder = Yes;
+    AlwaysUserIcon = No;
+    NoResizebar = Yes;
+    NoCloseButton = Yes;
   };
   Alacritty.Alacritty = {
     AlwaysUserIcon = Yes;
@@ -58,7 +66,8 @@
     NoCloseButton = Yes;
   };
   "transmission-gtk.Transmission-gtk" = {
-    Icon = "transmission-gtk.Transmission-gtk.xpm";
+    SharedAppIcon = No;
+    AlwaysUserIcon = No;
   };
   osmo.Osmo = {
     AlwaysUserIcon = Yes;
