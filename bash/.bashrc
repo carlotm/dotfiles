@@ -5,6 +5,13 @@
 [[ $- != *i* ]] && return
 
 #
+# Fix for tilix
+#
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    source /etc/profile.d/vte.sh
+fi
+
+#
 # ALIASES
 #
 alias ls='ls -lhop --color=auto'
