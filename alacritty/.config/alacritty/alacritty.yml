@@ -1,76 +1,52 @@
 colors:
   primary:
-    background: '#282a36'
-    foreground: '#f8f8f2'
-    bright_foreground: '#ffffff'
+    background: '0x1e1e1e'
+    foreground: '0xcdcdcd'
+
   cursor:
-    text: CellBackground
-    cursor: CellForeground
-  vi_mode_cursor:
-    text: CellBackground
-    cursor: CellForeground
-  search:
-    matches:
-      foreground: '#44475a'
-      background: '#50fa7b'
-    focused_match:
-      foreground: '#44475a'
-      background: '#ffb86c'
-    bar:
-      background: '#282a36'
-      foreground: '#f8f8f2'
-  hints:
-    start:
-      foreground: '#282a36'
-      background: '#f1fa8c'
-    end:
-      foreground: '#f1fa8c'
-      background: '#282a36'
-  line_indicator:
-    foreground: None
-    background: None
-  selection:
-    text: CellForeground
-    background: '#44475a'
+    text: '0xffffff'
+    cursor: '0x9c1f10'
+
   normal:
-    black: '#21222c'
-    red: '#ff5555'
-    green: '#50fa7b'
-    yellow: '#f1fa8c'
-    blue: '#bd93f9'
-    magenta: '#ff79c6'
-    cyan: '#8be9fd'
-    white: '#f8f8f2'
+    black:   '0x32344a'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xa1715e'
+    blue:    '0x24283b'
+    magenta: '0xa16d9d'
+    cyan:    '0x449dab'
+    white:   '0xeeeeee'
+
   bright:
-    black: '#6272a4'
-    red: '#ff6e6e'
-    green: '#69ff94'
-    yellow: '#ffffa5'
-    blue: '#d6acff'
-    magenta: '#ff92df'
-    cyan: '#a4ffff'
-    white: '#ffffff'
+    black:   '0x444b6a'
+    red:     '0xff7a93'
+    green:   '0xb9f27c'
+    yellow:  '0xce9178'
+    blue:    '0x569cd6'
+    magenta: '0xc586c0'
+    cyan:    '0x0db9d7'
+    white:   '0xffffff'
 
 draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: DM Mono
+    family: Terminus (TTF)
     style: Regular
 
   bold:
-    family: DM Mono
-    style: Bold
+    family: Terminus (TTF)
+    style: Regular
 
   italic:
-    family: DM Mono
+    family: Terminus (TTF)
     style: Italic
 
   bold_italic:
-    family: DM Mono
+    family: Terminus (TTF)
     style: BoldItalic
 
-  size: 11
+  size: 13
 
   offset:
     x: 0
