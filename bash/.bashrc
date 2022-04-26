@@ -5,19 +5,11 @@
 [[ $- != *i* ]] && return
 
 #
-# Fix for tilix
-#
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
-fi
-
-#
 # ALIASES
 #
 alias ls='ls -lhop --color=auto'
 alias grep='grep --color -n'
 alias tree='tree -C -a -I .git'
-alias v='vim --cmd "let fullscreen=1"'
 diff() { command diff -u $* | diff-so-fancy; }
 
 shopt -s checkwinsize
