@@ -29,11 +29,7 @@
   IconTitleColor = "#e2e2e2";
   MenuTextColor = "#2a2821";
   MoveToWorkspace2Key = "Shift+Mod1+2";
-  IconBack = (
-    tpixmap,
-    "/home/carloratm/GNUstep/Library/WindowMaker/Backgrounds/tile.jpg",
-    "#aeaaae"
-  );
+  IconBack = (solid, "#ad9e97");
   MenuTitleColor = "#2d2d2d";
   AntialiasedText = YES;
   MenuTitleFont = "Inter:slant=0:weight=200:width=100:pixelsize=14";
@@ -44,9 +40,11 @@
   MenuTextFont = "Inter:slant=0:weight=80:width=100:pixelsize=14";
   NoWindowOverDock = YES;
   WorkspaceBack = (
-    cpixmap,
-    "/home/carloratm/GNUstep/Library/WindowMaker/Backgrounds/archi_1920x1080.jpg",
-    "#191d24"
+    tdgradient,
+    "/home/carloratm/GNUstep/Library/WindowMaker/Backgrounds/image-2paxd4q7.png",
+    124,
+    "#111119",
+    "#5a5f86"
   );
   HighlightTextColor = "#000000";
   SnapEdgeDetect = 10;
@@ -95,6 +93,6 @@
   IgnoreGtkHints = YES;
   RHMaximizeKey = "Shift+Mod1+Right";
   MoveToWorkspace4Key = "Shift+Mod1+4";
-  FrameSelectedBorderColor = "#e2e2e2";
+  FrameSelectedBorderColor = "#000000";
   RTCMaximizeKey = "Shift+Mod1+Prior";
 }

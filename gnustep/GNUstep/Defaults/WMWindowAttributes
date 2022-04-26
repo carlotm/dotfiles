@@ -1,6 +1,7 @@
 {
-  firefox.Firefox = {
-    Icon = firefox.png;
+  "fs-uae-launcher.fs-uae-launcher" = {
+    AlwaysUserIcon = Yes;
+    Icon = games.png;
   };
   gcolor3.Gcolor3 = {
     NoTitlebar = Yes;
@@ -10,21 +11,8 @@
     NoResizebar = Yes;
     NoCloseButton = Yes;
   };
-  mupdf.MuPDF = {
-    AlwaysUserIcon = Yes;
-    Icon = pdf.png;
-  };
-  "fs-uae-launcher.fs-uae-launcher" = {
-    AlwaysUserIcon = Yes;
-    Icon = games.png;
-  };
-  warpinator.Warpinator = {
-    NoTitlebar = Yes;
-    NoMiniaturizeButton = Yes;
-    NoBorder = Yes;
-    AlwaysUserIcon = No;
-    NoResizebar = Yes;
-    NoCloseButton = Yes;
+  firefox.Firefox = {
+    Icon = firefox.png;
   };
   Alacritty.Alacritty = {
     AlwaysUserIcon = Yes;
@@ -33,10 +21,6 @@
   inkscape.Inkscape = {
     Icon = inkscape.png;
   };
-  gimp.Gimp = {
-    AlwaysUserIcon = Yes;
-    Icon = gimp.png;
-  };
   io.elementary.videos.Io.elementary.videos = {
     NoTitlebar = Yes;
     NoMiniaturizeButton = Yes;
@@ -44,17 +28,13 @@
     AlwaysUserIcon = No;
     NoResizebar = Yes;
   };
+  gimp.Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = gimp.png;
+  };
   org.inkscape.Inkscape.Inkscape = {
     AlwaysUserIcon = No;
     Icon = inkscape.png;
-  };
-  keepassxc.KeePassXC = {
-    AlwaysUserIcon = Yes;
-    Icon = keepassx.png;
-  };
-  nemo.Nemo = {
-    AlwaysUserIcon = Yes;
-    Icon = mc.png;
   };
   audacious.Audacious = {
     NoTitlebar = Yes;
@@ -65,20 +45,57 @@
     Icon = audacious.png;
     NoCloseButton = Yes;
   };
-  "transmission-gtk.Transmission-gtk" = {
-    SharedAppIcon = No;
+  nemo.Nemo = {
+    AlwaysUserIcon = Yes;
+    Icon = mc.png;
+  };
+  org.gnome.Nautilus.Org.gnome.Nautilus = {
+    NoTitlebar = Yes;
+    NoMiniaturizeButton = Yes;
+    NoBorder = Yes;
     AlwaysUserIcon = No;
+    NoResizebar = Yes;
+    Icon = mc.png;
+    NoCloseButton = Yes;
   };
   osmo.Osmo = {
     AlwaysUserIcon = Yes;
     Icon = osmo.png;
+  };
+  mupdf.MuPDF = {
+    AlwaysUserIcon = Yes;
+    Icon = pdf.png;
+  };
+  warpinator.Warpinator = {
+    NoTitlebar = Yes;
+    NoMiniaturizeButton = Yes;
+    NoBorder = Yes;
+    AlwaysUserIcon = No;
+    NoResizebar = Yes;
+    NoCloseButton = Yes;
+  };
+  keepassxc.KeePassXC = {
+    AlwaysUserIcon = Yes;
+    Icon = keepassx.png;
+  };
+  blueberry.py.Blueberry.py = {
+    NoTitlebar = Yes;
+    NoMiniaturizeButton = Yes;
+    NoBorder = Yes;
+    AlwaysUserIcon = No;
+    NoResizebar = Yes;
+    NoCloseButton = Yes;
+  };
+  "transmission-gtk.Transmission-gtk" = {
+    SharedAppIcon = No;
+    AlwaysUserIcon = No;
   };
   Logo.WMDock = {
     Icon = windowmaker.png;
   };
   Navigator.firefox = {
     AlwaysUserIcon = Yes;
-    Icon = firefox.png;
+    Icon = firefox.svg;
   };
   "xfce4-screenshooter.Xfce4-screenshooter" = {
     NoTitlebar = Yes;
