@@ -6,20 +6,19 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+"""""""""""""""""""""""""""""" plugins
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'sgur/vim-editorconfig'
 Plug 'preservim/nerdtree'
 Plug 'ap/vim-buftabline'
-Plug 'elixir-editors/vim-elixir'
 Plug 'qpkorr/vim-bufkill'
-Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'pangloss/vim-javascript'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'amadeus/vim-css'
-Plug 'dracula/vim'
+"""""""""""""""""""""""""""""" syntax
+
+"""""""""""""""""""""""""""""" colorschemes
+Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
@@ -139,8 +138,8 @@ if exists('+termguicolors')
   set termguicolors
 endif
 set background=dark
-colorscheme dracula
-
+colorscheme codedark
+command! What echo synIDattr(synID(line('.'), col('.'), 1), 'name')
 highlight ExtraWhitespace ctermbg=1
 match ExtraWhitespace /\s\+$/
 
@@ -155,6 +154,8 @@ autocmd BufRead,BufNewFile *.tpl set filetype=jinja
 autocmd FileType css setl iskeyword+=-
 autocmd FileType scss setl iskeyword+=@-@
 autocmd FileType json syntax match Comment +\/\/.\+$+
+autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
+autocmd BufNewFile,BufRead *.slime setlocal filetype=slim
 
 """""""""""""""""""""""""""""" when used as an IDE (with the `v` alias)
 if exists('fullscreen')
