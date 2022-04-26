@@ -70,6 +70,7 @@ else
 fi
 . $ASDF_DIR/asdf.sh
 . $ASDF_DIR/completions/asdf.bash
+. ${HOME}/.asdf/plugins/java/set-java-home.bash
 
 #
 # PROMPT
