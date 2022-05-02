@@ -16,7 +16,7 @@ Plug 'preservim/nerdtree'
 Plug 'ap/vim-buftabline'
 Plug 'qpkorr/vim-bufkill'
 """""""""""""""""""""""""""""" syntax
-
+Plug 'elixir-editors/vim-elixir'
 """""""""""""""""""""""""""""" colorschemes
 Plug 'tomasiser/vim-code-dark'
 call plug#end()
@@ -156,6 +156,9 @@ autocmd FileType scss setl iskeyword+=@-@
 autocmd FileType json syntax match Comment +\/\/.\+$+
 autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 autocmd BufNewFile,BufRead *.slime setlocal filetype=slim
+autocmd BufRead,BufNewFile *.ex,*.exs set filetype=elixir
+autocmd BufRead,BufNewFile *.eex,*.heex,*.leex,*.sface,*.lexs set filetype=eelixir
+autocmd BufRead,BufNewFile mix.lock set filetype=elixir
 
 """""""""""""""""""""""""""""" when used as an IDE (with the `v` alias)
 if exists('fullscreen')
