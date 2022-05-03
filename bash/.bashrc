@@ -46,6 +46,8 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 source /usr/share/bash-completion/bash_completion
 complete -cf sudo
 complete -cf man
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
 
 #
 # COLORS
@@ -70,7 +72,7 @@ else
 fi
 . $ASDF_DIR/asdf.sh
 . $ASDF_DIR/completions/asdf.bash
-. ${HOME}/.asdf/plugins/java/set-java-home.bash
+# . ${HOME}/.asdf/plugins/java/set-java-home.bash
 
 #
 # PROMPT
