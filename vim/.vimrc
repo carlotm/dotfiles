@@ -115,7 +115,7 @@ let g:currentmode={
 \}
 set statusline=
 set statusline+=\ %{g:currentmode[mode()]}
-set statusline+=%{&modified?'✏':''}
+set statusline+=%F
 set statusline+=%=
 set statusline+=%y
 set statusline+=\ %l:%c\ 
