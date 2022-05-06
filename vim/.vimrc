@@ -57,6 +57,43 @@ filetype on
 syntax on
 au BufRead,BufNewFile *.html setfiletype htmldjango
 
+"""""""""""""""""""""""""""""" colorscheme settings
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+set background=dark
+colorscheme codedark
+command! What echo synIDattr(synID(line('.'), col('.'), 1), 'name')
+highlight ExtraWhitespace ctermbg=1
+highlight TabLineSel guibg=#9ECE6A guifg=#1E1E1E
+highlight TabLineFill guibg=#000000 guifg=#FFFFFF
+highlight TabLine ctermbg=1
+match ExtraWhitespace /\s\+$/
+
+"""""""""""""""""""""""""""""" open vim help in a vertical split
+augroup vimrc_help
+  autocmd!
+  autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
+augroup END
+
+"""""""""""""""""""""""""""""" autocommands
+autocmd BufRead,BufNewFile *.tpl set filetype=jinja
+autocmd FileType css setl iskeyword+=-
+autocmd FileType scss setl iskeyword+=@-@
+autocmd FileType json syntax match Comment +\/\/.\+$+
+autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
+autocmd BufNewFile,BufRead *.slime setlocal filetype=slim
+autocmd BufRead,BufNewFile *.ex,*.exs set filetype=elixir
+autocmd BufRead,BufNewFile *.eex,*.heex,*.leex,*.sface,*.lexs set filetype=eelixir
+autocmd BufRead,BufNewFile mix.lock set filetype=elixir
+
+"""""""""""""""""""""""""""""" when used as an IDE (with the `v` alias)
+if exists('fullscreen')
+  au VimEnter * vsplit
+endif
+
 """""""""""""""""""""""""""""" Key mapping
 vnoremap < <gv
 vnoremap > >gv
@@ -114,6 +151,7 @@ let g:currentmode={
 \ 'c'  : 'COMMAND ',
 \}
 set statusline=
+set statusline+=%#TabLineFill#
 set statusline+=\ %{g:currentmode[mode()]}
 set statusline+=%F
 set statusline+=%=
@@ -130,39 +168,3 @@ nmap <silent> <C-Up> :wincmd k<CR>
 nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
 nmap <silent> <C-Right> :wincmd l<CR>
-
-"""""""""""""""""""""""""""""" colorscheme settings
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
-set background=dark
-colorscheme codedark
-command! What echo synIDattr(synID(line('.'), col('.'), 1), 'name')
-highlight ExtraWhitespace ctermbg=1
-highlight TabLineSel guibg=#9ECE6A guifg=#1E1E1E
-highlight TabLine ctermbg=1
-match ExtraWhitespace /\s\+$/
-
-"""""""""""""""""""""""""""""" open vim help in a vertical split
-augroup vimrc_help
-  autocmd!
-  autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
-augroup END
-
-"""""""""""""""""""""""""""""" autocommands
-autocmd BufRead,BufNewFile *.tpl set filetype=jinja
-autocmd FileType css setl iskeyword+=-
-autocmd FileType scss setl iskeyword+=@-@
-autocmd FileType json syntax match Comment +\/\/.\+$+
-autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
-autocmd BufNewFile,BufRead *.slime setlocal filetype=slim
-autocmd BufRead,BufNewFile *.ex,*.exs set filetype=elixir
-autocmd BufRead,BufNewFile *.eex,*.heex,*.leex,*.sface,*.lexs set filetype=eelixir
-autocmd BufRead,BufNewFile mix.lock set filetype=elixir
-
-"""""""""""""""""""""""""""""" when used as an IDE (with the `v` alias)
-if exists('fullscreen')
-  au VimEnter * vsplit
-endif
