@@ -1,0 +1,6 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": ["elixir", "eelixir", "javascript", "yaml"],
+    "elixirLS.dialyzerEnabled": false,
+    "codeLens.enable": true,
+    "yaml.format.enable": true
+}
