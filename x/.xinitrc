@@ -6,4 +6,4 @@ xbindkeys &
 dunst &
 xsetroot -cursor_name Hackneyed &
 xfce4-power-manager &
-exec wmaker
+exec xmonad
