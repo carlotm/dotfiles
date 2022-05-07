@@ -4,8 +4,8 @@ colors:
     foreground: '0xcdcdcd'
 
   cursor:
-    text: '0xffffff'
-    cursor: '0x9c1f10'
+    text: '0x000000'
+    cursor: '0x9ece6a'
 
   normal:
     black:   '0x32344a'
@@ -19,7 +19,7 @@ colors:
 
   bright:
     black:   '0x5F617D'
-    red:     '0xff7a93'
+    red:     '0xff004b'
     green:   '0xb9f27c'
     yellow:  '0xce9178'
     blue:    '0x569cd6'
