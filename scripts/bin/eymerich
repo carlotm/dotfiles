@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd "/home/carloratm/.wine/drive_c/Program Files (x86)/EYMERICH-LAPESTE/01-INQUISITORE/"
+ls
+wine 'Eymerich 01.exe'
+cd -
+autorandr --change

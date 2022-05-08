@@ -16,7 +16,7 @@ Plug 'preservim/nerdtree'
 Plug 'ap/vim-buftabline'
 Plug 'qpkorr/vim-bufkill'
 """""""""""""""""""""""""""""" syntax
-Plug 'elixir-editors/vim-elixir'
+Plug 'sheerun/vim-polyglot'
 """""""""""""""""""""""""""""" colorschemes
 Plug 'tomasiser/vim-code-dark'
 call plug#end()
