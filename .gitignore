@@ -6,3 +6,6 @@ gnustep/GNUstep/.AppInfo/WindowMaker/History
 gnustep/GNUstep/Library/WindowMaker/CachedPixmaps
 fonts/.local/share
 fonts/.local/bin
+__pycache__
+*.pyc
+/qtile/.config/qtile/venv
