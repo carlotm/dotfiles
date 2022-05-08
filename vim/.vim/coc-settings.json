@@ -1,6 +1,14 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": ["elixir", "eelixir", "javascript", "yaml"],
+    "coc.preferences.formatOnSaveFiletypes": [
+        "elixir",
+        "eelixir",
+        "javascript",
+        "yaml",
+        "python"
+    ],
+    "python.analysis.extraPaths": ["."],
     "elixirLS.dialyzerEnabled": false,
     "codeLens.enable": true,
-    "yaml.format.enable": true
+    "yaml.format.enable": true,
+    "python.formatting.provider": "black"
 }
