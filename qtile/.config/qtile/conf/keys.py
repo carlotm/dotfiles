@@ -9,6 +9,8 @@ def keys(mod, groups):
         Key([mod, "shift"], "Return", lazy.spawn("alacritty"), desc="Launch terminal"),
         Key([mod], "F2", lazy.spawn("dmenu_run"), desc="Launch dmenu"),
         Key([mod], "Tab", lazy.layout.next(), desc="Move focus to next"),
+        Key([mod], "j", lazy.layout.next(), desc="Move focus to next"),
+        Key([mod], "k", lazy.layout.next(), desc="Move focus to next"),
         Key([mod], "l", lazy.layout.grow(), desc="Grow window"),
         Key([mod], "h", lazy.layout.shrink(), desc="Shrink window"),
         Key([mod], "t", lazy.window.toggle_floating(), desc="Reset floating"),
