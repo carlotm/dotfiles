@@ -3,11 +3,24 @@ from libqtile.lazy import lazy
 
 
 def keys(mod, groups):
+    menu_cmd = [
+        "dmenu_run",
+        "-l",
+        "10",
+        "-fn",
+        "Inter:weight=bold:size=36",
+        "-nb",
+        "#000000",
+        "-nf",
+        "#ffffff",
+        "-sb",
+        "#ff004b",
+    ]
     keys = [
         Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
         Key([mod, "shift"], "c", lazy.window.kill(), desc="Kill focused window"),
         Key([mod, "shift"], "Return", lazy.spawn("alacritty"), desc="Launch terminal"),
-        Key([mod], "F2", lazy.spawn("dmenu_run"), desc="Launch dmenu"),
+        Key([mod], "F2", lazy.spawn(menu_cmd), desc="Launch application launcher"),
         Key([mod], "Tab", lazy.layout.next(), desc="Move focus to next"),
         Key([mod], "j", lazy.layout.next(), desc="Move focus to next"),
         Key([mod], "k", lazy.layout.next(), desc="Move focus to next"),
