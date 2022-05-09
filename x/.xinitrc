@@ -4,7 +4,7 @@ autorandr --change &
 xrdb -merge ~/.Xresources &
 xbindkeys &
 dunst &
-feh --bg-scale ~/Pictures/Backgrounds/gradient.jpg &
+feh --bg-scale ~/.config/qtile/gradient.jpg &
 xsetroot -cursor_name left_ptr &
 xfce4-power-manager &
 exec qtile start
