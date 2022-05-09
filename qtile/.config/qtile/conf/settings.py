@@ -19,8 +19,8 @@ auto_minimize = False
 wl_input_rules = None
 wmname = "LG3D"
 widget_defaults = dict(
-    font="Terminus",
-    fontsize=17,
+    font="Terminus (TTF)",
+    fontsize=16,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
