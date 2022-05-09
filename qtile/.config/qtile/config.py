@@ -16,9 +16,3 @@ keys = k(mod, groups)
 layouts = l
 screens = s
 mouse = conf_mouse(mod)
-
-
-@subscribe.client_focus
-def send_mouse_to_focused(_):
-    cmd = f"{home}/.config/qtile/send_mouse_to_focused.sh"
-    subprocess.call([cmd])
