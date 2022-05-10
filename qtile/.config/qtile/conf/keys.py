@@ -28,6 +28,8 @@ def keys(mod, groups):
         Key([mod], "h", lazy.layout.shrink(), desc="Shrink window"),
         Key([mod], "t", lazy.window.toggle_floating(), desc="Reset floating"),
         Key([mod], "Return", lazy.layout.swap_left(), desc="Move client to left"),
+        Key([mod, "shift"], "h", lazy.layout.swap_left(), desc="Move client to left"),
+        Key([mod, "shift"], "l", lazy.layout.swap_right(), desc="Move client to right"),
         Key(
             [mod],
             "space",

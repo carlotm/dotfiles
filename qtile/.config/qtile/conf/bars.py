@@ -12,7 +12,7 @@ def block(s):
 bottom_bar = bar.Bar(
     [
         widget.GroupBox(
-            highlight_method="block",
+            highlight_method="text",
             disable_drag=True,
             active="ffffff",
             inactive="555555",
