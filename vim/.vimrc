@@ -160,6 +160,7 @@ set noshowmode
 
 """""""""""""""""""""""""""""" coc-vim settings
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> rn <Plug>(coc-rename)
 
 """""""""""""""""""""""""""""" windows, tabs and buffers settings
 nmap <C-n> :bnext<CR>

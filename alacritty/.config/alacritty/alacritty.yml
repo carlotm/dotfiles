@@ -71,3 +71,5 @@ key_bindings:
           args: ["-r", ":ACTIVE:", "-b", "toggle,fullscreen"],
         },
     }
+
+TERM: xterm-256color
