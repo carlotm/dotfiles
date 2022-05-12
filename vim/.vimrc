@@ -71,6 +71,9 @@ highlight TabLineSel guibg=#9ECE6A guifg=#1E1E1E
 highlight TabLineFill guibg=#000000 guifg=#FFFFFF
 highlight TabLine ctermbg=1
 match ExtraWhitespace /\s\+$/
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+set cursorline cursorcolumn
 
 """""""""""""""""""""""""""""" open vim help in a vertical split
 augroup vimrc_help
@@ -88,11 +91,6 @@ autocmd BufNewFile,BufRead *.slime setlocal filetype=slim
 autocmd BufRead,BufNewFile *.ex,*.exs set filetype=elixir
 autocmd BufRead,BufNewFile *.eex,*.heex,*.leex,*.sface,*.lexs set filetype=eelixir
 autocmd BufRead,BufNewFile mix.lock set filetype=elixir
-
-"""""""""""""""""""""""""""""" when used as an IDE (with the `v` alias)
-if exists('fullscreen')
-  au VimEnter * vsplit
-endif
 
 """""""""""""""""""""""""""""" Key mapping
 vnoremap < <gv
@@ -159,6 +157,9 @@ set statusline+=%y
 set statusline+=\ %l:%c\ 
 set laststatus=2
 set noshowmode
+
+"""""""""""""""""""""""""""""" coc-vim settings
+nmap <silent> gd <Plug>(coc-definition)
 
 """""""""""""""""""""""""""""" windows, tabs and buffers settings
 nmap <C-n> :bnext<CR>

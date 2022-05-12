@@ -7,15 +7,11 @@
         "python"
     ],
     "python.analysis.extraPaths": ["."],
-    "elixirLS.dialyzerEnabled": false,
     "codeLens.enable": true,
     "yaml.format.enable": true,
     "python.formatting.provider": "black",
+    "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
     "diagnostic-languageserver.filetypes": {
         "elixir": ["mix_credo", "mix_credo_compile"]
-    },
-    "diagnostic-languageserver.formatFiletypes": {
-        "elixir": "mix_format",
-        "eelixir": "mix_format"
     }
 }
