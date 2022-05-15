@@ -160,7 +160,7 @@ set noshowmode
 
 """""""""""""""""""""""""""""" coc-vim settings
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> rn <Plug>(coc-rename)
+let g:coc_global_extensions = ['coc-css', 'coc-diagnostic', 'coc-elixir', 'coc-eslint', 'coc-json', 'coc-prettier', 'coc-pyright', 'coc-tsserver', 'coc-yaml']
 
 """""""""""""""""""""""""""""" windows, tabs and buffers settings
 nmap <C-n> :bnext<CR>

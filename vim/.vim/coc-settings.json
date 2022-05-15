@@ -4,7 +4,8 @@
         "eelixir",
         "javascript",
         "yaml",
-        "python"
+        "python",
+        "css"
     ],
     "python.analysis.extraPaths": ["."],
     "codeLens.enable": true,
