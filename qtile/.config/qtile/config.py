@@ -9,7 +9,6 @@ from conf.layouts import layouts as l
 from conf.mouse import conf_mouse
 from conf.groups import groups as g
 
-home = os.path.expanduser("~")
 mod = "mod1"
 groups = g
 keys = k(mod, groups)
