@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-autorandr --change &
+autorandr --change
 xrdb -merge ~/.Xresources &
 xbindkeys &
 dunst &
