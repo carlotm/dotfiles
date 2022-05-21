@@ -1,4 +1,5 @@
 from libqtile import bar, widget
+from conf.settings import ACCENT, BLACK
 
 
 def hi(s, color="'#555'"):
@@ -16,12 +17,12 @@ bottom_bar = bar.Bar(
             disable_drag=True,
             active="ffffff",
             inactive="555555",
-            this_current_screen_border="ff004b",
-            this_screen_border="000000",
-            other_current_screen_border="ff004b",
-            other_screen_border="000000",
-            urgent_border="000000",
-            urgent_text="ff004b",
+            this_current_screen_border=ACCENT,
+            this_screen_border=BLACK,
+            other_current_screen_border=ACCENT,
+            other_screen_border=BLACK,
+            urgent_border=BLACK,
+            urgent_text=ACCENT,
             urgent_alert_method="text",
         ),
         widget.Spacer(),
@@ -33,10 +34,10 @@ bottom_bar = bar.Bar(
         widget.Volume(fmt=block("VOL {}")),
         widget.Battery(format=block("BAT {percent:2.0%}")),
         widget.QuickExit(
-            foreground="ff004b", default_text=block("X"), countdown_format=block("{}")
+            foreground=ACCENT, default_text=block("X"), countdown_format=block("{}")
         ),
     ],
     24,
     border_width=[0, 0, 2, 0],
-    border_color=["000000", "000000", "000000", "000000"],
+    border_color=[BLACK, BLACK, BLACK, BLACK],
 )

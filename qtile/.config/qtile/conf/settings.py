@@ -1,6 +1,9 @@
 from libqtile.layout.floating import Floating
 from libqtile.config import Match
 
+ACCENT = "#9ece6a"
+BLACK = "#000000"
+
 dgroups_key_binder = None
 dgroups_app_rules = []
 follow_mouse_focus = True

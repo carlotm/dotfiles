@@ -1,7 +1,3 @@
-from libqtile.hook import subscribe
-import os
-import subprocess
-
 from conf.settings import *
 from conf.screens import screens as s
 from conf.keys import keys as k

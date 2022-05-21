@@ -1,8 +1,9 @@
 from libqtile.layout.xmonad import MonadTall
 from libqtile.layout.floating import Floating
+from conf.settings import ACCENT
 
 borders = {
-    "border_focus": "#ff004b",
+    "border_focus": ACCENT,
     "border_normal": "#1e1e1e",
     "border_width": 4,
 }
