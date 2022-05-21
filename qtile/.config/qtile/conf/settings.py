@@ -3,6 +3,11 @@ from libqtile.config import Match
 
 ACCENT = "#9ece6a"
 BLACK = "#000000"
+W_BORDERS = {
+    "border_focus": ACCENT,
+    "border_normal": "#1e1e1e",
+    "border_width": 4,
+}
 
 dgroups_key_binder = None
 dgroups_app_rules = []
@@ -10,6 +15,7 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = Floating(
+    **W_BORDERS,
     float_rules=[
         *Floating.default_float_rules,
         Match(wm_class="Gcolor3"),
