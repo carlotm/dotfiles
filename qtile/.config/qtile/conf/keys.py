@@ -1,5 +1,6 @@
 from libqtile.config import Key
 from libqtile.lazy import lazy
+from conf.settings import ACCENT, BLACK
 
 
 def keys(mod, groups):
@@ -10,11 +11,11 @@ def keys(mod, groups):
         "-fn",
         "Inter:weight=bold:size=36",
         "-nb",
-        "#000000",
+        BLACK,
         "-nf",
         "#ffffff",
         "-sb",
-        "#ff004b",
+        ACCENT,
     ]
     keys = [
         Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
