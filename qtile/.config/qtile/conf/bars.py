@@ -27,15 +27,12 @@ bottom_bar = bar.Bar(
         ),
         widget.Spacer(),
         widget.Clock(format=block("%A %d %B %H:%M")),
-        widget.Wttr(location={"Vienna": "Vienna"}, format="1", fmt=block("{}")),
         widget.Spacer(),
         widget.Systray(),
         widget.KeyboardLayout(configured_keyboards=["us", "it", "de"], fmt=block("{}")),
         widget.Volume(fmt=block("VOL {}")),
         widget.Battery(format=block("BAT {percent:2.0%}")),
-        widget.QuickExit(
-            foreground=ACCENT, default_text=block("X"), countdown_format=block("{}")
-        ),
+        widget.Wttr(location={"Vienna": "Vienna"}, format="1", fmt=block("{}")),
     ],
     24,
     border_width=[0, 0, 2, 0],

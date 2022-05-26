@@ -19,7 +19,7 @@ colors:
 
   bright:
     black: "0x5F617D"
-    red: "0xdd546d"
+    red: "0xff003b"
     green: "0xb9f27c"
     yellow: "0xce9178"
     blue: "0x569cd6"

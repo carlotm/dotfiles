@@ -67,7 +67,7 @@ set background=dark
 colorscheme codedark
 command! What echo synIDattr(synID(line('.'), col('.'), 1), 'name')
 highlight ExtraWhitespace ctermbg=1
-highlight TabLineSel guibg=#9ECE6A guifg=#1E1E1E
+highlight TabLineSel guibg=#ff003b guifg=#ffffff
 highlight TabLineFill guibg=#000000 guifg=#FFFFFF
 highlight TabLine ctermbg=1
 match ExtraWhitespace /\s\+$/

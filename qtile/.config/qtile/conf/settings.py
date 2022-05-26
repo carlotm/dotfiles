@@ -1,7 +1,7 @@
 from libqtile.layout.floating import Floating
 from libqtile.config import Match
 
-ACCENT = "#9ece6a"
+ACCENT = "#ff003b"
 BLACK = "#000000"
 W_BORDERS = {
     "border_focus": ACCENT,
