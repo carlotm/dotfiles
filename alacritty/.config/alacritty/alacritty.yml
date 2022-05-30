@@ -9,19 +9,19 @@ colors:
 
   normal:
     black: "0x32344a"
-    red: "0xf7768e"
+    red: "0xcc0000"
     green: "0x9ece6a"
-    yellow: "0xa1715e"
+    yellow: "0x996633"
     blue: "0x335880"
     magenta: "0xa16d9d"
     cyan: "0x449dab"
-    white: "0xeeeeee"
+    white: "0xbdbdbd"
 
   bright:
     black: "0x5F617D"
-    red: "0xff003b"
+    red: "0xfc2f14"
     green: "0xb9f27c"
-    yellow: "0xce9178"
+    yellow: "0xd18500"
     blue: "0x569cd6"
     magenta: "0xc586c0"
     cyan: "0x0db9d7"

@@ -1,19 +1,29 @@
 #!/usr/bin/env bash
 
-pcs()
-{
-	for i in {0..7}
-	do
-		echo -en "\e[$((40+$i))m \e[0m"
-	done
-}
+if test -t 1; then
+    ncolors=$(tput colors)
 
-pcs2()
-{
-	for i in {0..7}
-	do
-		echo -en "\e[7m\e[$((90+$i))m \e[0m"
-	done
-}
+    if test -n "$ncolors" && test $ncolors -ge 8; then
+        bold="$(tput bold)"
+        underline="$(tput smul)"
+        standout="$(tput smso)"
+        normal="$(tput sgr0)"
+        bla="$(tput setaf 0)"
+        red="$(tput setaf 1)"
+        gre="$(tput setaf 2)"
+        yel="$(tput setaf 3)"
+        blu="$(tput setaf 4)"
+        mag="$(tput setaf 5)"
+        cya="$(tput setaf 6)"
+        whi="$(tput setaf 7)"
+    fi
+fi
 
-printf "%s\n%s\n" "$(pcs)" "$(pcs2)"
+echo "${bla}black text .. ${bold}bright version${normal}"
+echo "${red}red text .... ${bold}bright version${normal}"
+echo "${gre}green text .. ${bold}bright version${normal}"
+echo "${yel}yellow text . ${bold}bright version${normal}"
+echo "${blu}blue text ... ${bold}bright version${normal}"
+echo "${mag}magenta text  ${bold}bright version${normal}"
+echo "${cya}cyan text ... ${bold}bright version${normal}"
+echo "${whi}white text .. ${bold}bright version${normal}"

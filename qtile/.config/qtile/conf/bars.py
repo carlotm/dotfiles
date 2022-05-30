@@ -7,7 +7,7 @@ def hi(s, color="'#555'"):
 
 
 def block(s):
-    return "{}{}{}".format(hi("["), s, hi("]"))
+    return "{}{}{}".format(hi(" "), s, hi(" "))
 
 
 bottom_bar = bar.Bar(
