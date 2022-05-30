@@ -5,7 +5,8 @@
         "javascript",
         "yaml",
         "python",
-        "css"
+        "css",
+        "scss"
     ],
     "python.analysis.extraPaths": ["."],
     "codeLens.enable": true,
@@ -21,5 +22,7 @@
         "mix_credo": {
             "args": ["credo", "suggest", "--strict", "--format", "flycheck", "--read-from-stdin"]
         }
-    }
+    },
+    "css.lint.unknownAtRules": "ignore",
+    "scss.lint.unknownAtRules": "ignore"
 }
