@@ -5,7 +5,7 @@ xrdb -merge ~/.Xresources &
 xbindkeys &
 dunst &
 flameshot &
-feh --bg-scale ~/.config/qtile/bg.jpg &
+xsetroot -solid black &
 xsetroot -cursor_name left_ptr &
 xfce4-power-manager &
 exec qtile start
