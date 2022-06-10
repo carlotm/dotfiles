@@ -89,7 +89,7 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 autocmd BufNewFile,BufRead *.slime setlocal filetype=slim
 autocmd BufRead,BufNewFile *.ex,*.exs set filetype=elixir
-autocmd BufRead,BufNewFile *.eex,*.heex,*.leex,*.sface,*.lexs set filetype=eelixir
+" autocmd BufRead,BufNewFile *.eex,*.heex,*.leex,*.sface,*.lexs set filetype=eelixir
 autocmd BufRead,BufNewFile mix.lock set filetype=elixir
 
 """""""""""""""""""""""""""""" Key mapping
@@ -160,6 +160,8 @@ set noshowmode
 
 """""""""""""""""""""""""""""" coc-vim settings
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 let g:coc_global_extensions = ['coc-css', 'coc-diagnostic', 'coc-elixir', 'coc-eslint', 'coc-json', 'coc-prettier', 'coc-pyright', 'coc-tsserver', 'coc-yaml']
 
 """""""""""""""""""""""""""""" windows, tabs and buffers settings

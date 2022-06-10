@@ -6,7 +6,8 @@
         "yaml",
         "python",
         "css",
-        "scss"
+        "scss",
+        "javascriptreact"
     ],
     "python.analysis.extraPaths": ["."],
     "codeLens.enable": true,
