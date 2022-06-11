@@ -1,12 +1,12 @@
 from libqtile.layout.floating import Floating
 from libqtile.config import Match
 
-ACCENT = "#ff4c00"
+ACCENT = "#ff0000"
 BLACK = "#000000"
 W_BORDERS = {
     "border_focus": ACCENT,
     "border_normal": "#161616",
-    "border_width": 2,
+    "border_width": 4,
 }
 
 dgroups_key_binder = None
