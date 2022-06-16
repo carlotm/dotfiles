@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf'
 Plug 'sgur/vim-editorconfig'
 Plug 'preservim/nerdtree'
 Plug 'ap/vim-buftabline'

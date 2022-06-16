@@ -6,7 +6,7 @@ BLACK = "#000000"
 W_BORDERS = {
     "border_focus": ACCENT,
     "border_normal": "#161616",
-    "border_width": 4,
+    "border_width": 2,
 }
 
 dgroups_key_binder = None
