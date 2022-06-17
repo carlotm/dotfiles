@@ -5,7 +5,7 @@ ACCENT = "#ff0000"
 BLACK = "#000000"
 W_BORDERS = {
     "border_focus": ACCENT,
-    "border_normal": "#161616",
+    "border_normal": "#0e0f14",
     "border_width": 2,
 }
 

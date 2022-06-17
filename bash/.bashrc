@@ -10,6 +10,7 @@
 alias ls='ls -lhop --color=auto'
 alias grep='grep --color -n'
 alias tree='tree -C -a -I .git'
+alias vim='nvim'
 diff() { command diff -u $* | diff-so-fancy; }
 
 shopt -s checkwinsize

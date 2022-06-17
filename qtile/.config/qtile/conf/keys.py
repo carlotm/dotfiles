@@ -31,6 +31,7 @@ def keys(mod, groups):
         Key([mod], "Return", lazy.layout.swap_left(), desc="Move client to left"),
         Key([mod, "shift"], "h", lazy.layout.swap_left(), desc="Move client to left"),
         Key([mod, "shift"], "l", lazy.layout.swap_right(), desc="Move client to right"),
+        Key([mod, "shift"], "f", lazy.window.toggle_fullscreen()),
         Key(
             [mod],
             "space",

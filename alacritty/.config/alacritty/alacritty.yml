@@ -61,9 +61,6 @@ mouse:
 
 window:
   dynamic_title: true
-  padding:
-    x: 10
-    y: 10
 
 key_bindings:
   - {

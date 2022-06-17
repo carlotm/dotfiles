@@ -16,7 +16,7 @@ bottom_bar = bar.Bar(
             highlight_method="text",
             disable_drag=True,
             active="ffffff",
-            inactive="555555",
+            inactive="333333",
             this_current_screen_border=ACCENT,
             this_screen_border=BLACK,
             other_current_screen_border=ACCENT,
@@ -35,6 +35,7 @@ bottom_bar = bar.Bar(
         widget.Wttr(location={"Vienna": "Vienna"}, format="1", fmt=block("{}")),
     ],
     24,
-    border_width=[0, 0, 2, 0],
+    border_width=[0, 1, 0, 0],
     border_color=[BLACK, BLACK, BLACK, BLACK],
+    background=BLACK,
 )
