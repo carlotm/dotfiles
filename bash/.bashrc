@@ -10,7 +10,6 @@
 alias ls='ls -lhop --color=auto'
 alias grep='grep --color -n'
 alias tree='tree -C -a -I .git'
-alias vim='nvim'
 diff() { command diff -u $* | diff-so-fancy; }
 
 shopt -s checkwinsize
@@ -26,7 +25,7 @@ eval `keychain --eval --agents ssh id_rsa_t450s`
 #
 export TERM=xterm-256color
 export HISTCONTROL=ignoreboth
-export EDITOR=nvim
+export EDITOR=vim
 export PIP_DOWNLOAD_CACHE="$HOME/.pip_download_cache"
 export VST_PATH="$HOME/.vst"
 export LV2_PATH="$HOME/.lv2:/usr/local/lib/lv2:/usr/lib/lv2"
