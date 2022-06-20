@@ -1,6 +1,6 @@
 from libqtile.config import Key
 from libqtile.lazy import lazy
-from conf.settings import ACCENT, BLACK
+from conf.settings import ACCENT, BG, FG
 
 
 def keys(mod, groups):
@@ -9,11 +9,11 @@ def keys(mod, groups):
         "-l",
         "10",
         "-fn",
-        "Inter:weight=bold:size=36",
+        "JetBrains Mono:weight=black:size=36",
         "-nb",
-        BLACK,
+        BG,
         "-nf",
-        "#ffffff",
+        FG,
         "-sb",
         ACCENT,
     ]

@@ -1,7 +1,7 @@
 colors:
   primary:
-    background: "0x1e1e1e"
-    foreground: "0xcdcdcd"
+    background: "0xeeeeee"
+    foreground: "0x333333"
 
   cursor:
     text: "0x000000"
@@ -9,44 +9,44 @@ colors:
 
   normal:
     black: "0x32344a"
-    red: "0xC82424"
-    green: "0x9ece6a"
-    yellow: "0x996633"
-    blue: "0x335880"
-    magenta: "0xa16d9d"
-    cyan: "0x449dab"
-    white: "0xbdbdbd"
+    red: "0xaf0000"
+    green: "0x5f8700"
+    yellow: "0xd75f00"
+    blue: "0x005f87"
+    magenta: "0x8700af"
+    cyan: "0x5f8787"
+    white: "0xbcbcbc"
 
   bright:
-    black: "0x5F617D"
-    red: "0xfc2f14"
-    green: "0xb9f27c"
-    yellow: "0xd18500"
-    blue: "0x569cd6"
-    magenta: "0xc586c0"
-    cyan: "0x0db9d7"
-    white: "0xffffff"
+    black: "0x000000"
+    red: "0xd70000"
+    green: "0x008700"
+    yellow: "0xd75f00"
+    blue: "0x005faf"
+    magenta: "0xd70087"
+    cyan: "0x5f8787"
+    white: "0xd0d0d0"
 
 draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: Terminus (TTF)
+    family: Jetbrains Mono
     style: Regular
 
   bold:
-    family: Terminus (TTF)
+    family: Jetbrains Mono
     style: Regular
 
   italic:
-    family: Terminus (TTF)
+    family: Jetbrains Mono
     style: Italic
 
   bold_italic:
-    family: Terminus (TTF)
+    family: Jetbrains Mono
     style: BoldItalic
 
-  size: 13
+  size: 12
 
   offset:
     x: 0

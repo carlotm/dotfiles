@@ -15,8 +15,5 @@ sp = ScratchPad(
         )
     ],
 )
-g = [
-    Group(n, label="■")
-    for n in ["www", "dev", "terms", "gfx", "mus", "pass", "misc", "irc", "chat"]
-]
+g = [Group(n) for n in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]]
 groups = [*g, sp]
