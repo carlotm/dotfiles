@@ -2,7 +2,7 @@ from libqtile.layout.floating import Floating
 from libqtile.config import Match
 
 ACCENT = "#d70000"
-FG = "#333333"
+FG = "#ffffff"
 BG = "#f6f5f4"
 BG_D = "#cccccc"
 W_BORDERS = {
@@ -32,6 +32,6 @@ wmname = "LG3D"
 widget_defaults = dict(
     font="DM Mono Medium",
     fontsize=16,
-    padding=3,
+    padding=0,
 )
 extension_defaults = widget_defaults.copy()

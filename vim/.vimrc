@@ -16,7 +16,7 @@ Plug 'ap/vim-buftabline'
 Plug 'qpkorr/vim-bufkill'
 Plug 'sheerun/vim-polyglot'
 Plug 'tomasiser/vim-code-dark'
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'rakr/vim-one'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
@@ -62,21 +62,8 @@ if exists('+termguicolors')
   set termguicolors
 endif
 set background=light
-let g:PaperColor_Theme_Options = {
-  \   'theme': {
-  \     'default.light': {
-  \       'override' : {
-  \         'color00' : ['#d2d2d2', '232'],
-  \         'linenumber_bg' : ['#d2d2d2', '232'],
-  \         'linenumber_fg' : ['#999999', '232'],
-  \         'cursorline' : ['#c9c9c9', '232'],
-  \         'cursorlinenr_bg' : ['#c9c9c9', '232'],
-  \         'cursorcolumn' : ['#c9c9c9', '232'],
-  \       }
-  \     }
-  \   }
-  \ }
-colorscheme PaperColor
+let g:one_allow_italics = 1
+colorscheme one
 highlight ExtraWhitespace ctermbg=1
 match ExtraWhitespace /\s\+$/
 
@@ -141,7 +128,6 @@ let g:currentmode={
 \ 'c'  : 'COMMAND ',
 \}
 set statusline=
-set statusline+=%#TabLineFill#
 set statusline+=\ %{g:currentmode[mode()]}
 set statusline+=%F
 set statusline+=%=
