@@ -11,7 +11,7 @@ def keys(mod, groups):
         "-fn",
         "DM Mono Medium:weight=medium:size=36",
         "-nb",
-        BG,
+        "#000000",
         "-nf",
         FG,
         "-sb",
