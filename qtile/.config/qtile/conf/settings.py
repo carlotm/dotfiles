@@ -30,7 +30,7 @@ auto_minimize = False
 wl_input_rules = None
 wmname = "LG3D"
 widget_defaults = dict(
-    font="JetBrains Mono",
+    font="DM Mono Medium",
     fontsize=16,
     padding=3,
 )

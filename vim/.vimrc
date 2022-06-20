@@ -62,6 +62,20 @@ if exists('+termguicolors')
   set termguicolors
 endif
 set background=light
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default.light': {
+  \       'override' : {
+  \         'color00' : ['#d2d2d2', '232'],
+  \         'linenumber_bg' : ['#d2d2d2', '232'],
+  \         'linenumber_fg' : ['#999999', '232'],
+  \         'cursorline' : ['#c9c9c9', '232'],
+  \         'cursorlinenr_bg' : ['#c9c9c9', '232'],
+  \         'cursorcolumn' : ['#c9c9c9', '232'],
+  \       }
+  \     }
+  \   }
+  \ }
 colorscheme PaperColor
 highlight ExtraWhitespace ctermbg=1
 match ExtraWhitespace /\s\+$/

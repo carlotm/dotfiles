@@ -9,7 +9,7 @@ def keys(mod, groups):
         "-l",
         "10",
         "-fn",
-        "JetBrains Mono:weight=black:size=36",
+        "DM Mono Medium:weight=medium:size=36",
         "-nb",
         BG,
         "-nf",
