@@ -1,34 +1,29 @@
 from libqtile import bar, widget
-from conf.settings import ACCENT, BG, FG
+from conf.settings import COLORS
 
 
 bottom_bar = bar.Bar(
     [
         widget.GroupBox(
-            highlight_method="text",
             disable_drag=True,
             rounded=False,
-            active="#999999",
-            inactive="#333333",
-            this_current_screen_border="#ffffff",
-            this_screen_border=BG,
-            other_current_screen_border=ACCENT,
-            other_screen_border=BG,
-            urgent_border=BG,
-            urgent_text=ACCENT,
-            urgent_alert_method="text",
+            highlight_method="line",
+            padding_x=4,
+            active=COLORS[1],
+            highlight_color=[COLORS[0], COLORS[0]],
+            this_current_screen_border=COLORS[2],
         ),
         widget.Spacer(),
-        widget.Clock(format="%A %d %B %H:%M", foreground=FG),
+        widget.Clock(format="%A %d %B %H:%M", foreground=COLORS[1]),
         widget.Spacer(),
         widget.Systray(),
-        widget.KeyboardLayout(configured_keyboards=["us", "it", "de"], foreground=FG, fmt="{} "),
-        widget.Volume(fmt=" VOL {} ", foreground=FG),
-        widget.Wttr(location={"Vienna": "Vienna"}, format="1", fmt="{}", foreground=FG),
+        widget.KeyboardLayout(
+            configured_keyboards=["us", "it", "de"], foreground=COLORS[1], fmt="{} "
+        ),
+        widget.Volume(fmt=" VOL {} ", foreground=COLORS[1]),
+        widget.Wttr(location={"Vienna": "Vienna"}, format="1", foreground=COLORS[1]),
     ],
-    24,
+    22,
     margin=[0, 0, 0, 0],
-    border_width=[0, 1, 0, 0],
-    border_color=["#000000", "#000000", "#000000", "#000000"],
-    background="#000000",
+    background=COLORS[0],
 )

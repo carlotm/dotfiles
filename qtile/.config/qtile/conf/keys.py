@@ -1,6 +1,6 @@
 from libqtile.config import Key
 from libqtile.lazy import lazy
-from conf.settings import ACCENT, BG, FG
+from conf.settings import COLORS
 
 
 def keys(mod, groups):
@@ -9,13 +9,13 @@ def keys(mod, groups):
         "-l",
         "10",
         "-fn",
-        "DM Mono Medium:weight=medium:size=36",
+        "Code New Roman:weight=bold:size=36",
         "-nb",
-        "#000000",
+        COLORS[3],
         "-nf",
-        FG,
+        COLORS[0],
         "-sb",
-        ACCENT,
+        COLORS[2],
     ]
     keys = [
         Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),

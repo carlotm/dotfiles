@@ -1,13 +1,12 @@
 from libqtile.layout.floating import Floating
 from libqtile.config import Match
 
-ACCENT = "#d70000"
-FG = "#ffffff"
-BG = "#f6f5f4"
-BG_D = "#cccccc"
+COLORS = ["#ffffff", "#000000", "#4078f2", "#AAAAAA", "#ff0000", "#d2d2d2"]
+
+
 W_BORDERS = {
-    "border_focus": ACCENT,
-    "border_normal": BG_D,
+    "border_focus": COLORS[4],
+    "border_normal": COLORS[3],
     "border_width": 2,
 }
 
@@ -30,8 +29,8 @@ auto_minimize = False
 wl_input_rules = None
 wmname = "LG3D"
 widget_defaults = dict(
-    font="DM Mono Medium",
-    fontsize=16,
+    font="Cascadia Code",
+    fontsize=15,
     padding=0,
 )
 extension_defaults = widget_defaults.copy()
