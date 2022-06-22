@@ -5,6 +5,7 @@
 [alias]
     co = checkout
     s = status
+    d = icdiff
 [color]
     branch = auto
     diff = auto
@@ -18,8 +19,6 @@
     added = cyan
     changed = green
     untracked = yellow
-[difftool]
-    prompt = true
 [http]
     postBuffer = 524288000
 [credential]
@@ -29,6 +28,6 @@
 [init]
 	defaultBranch = main
 [diff]
-	tool = git-icdiff
+	tool = git icdiff
 [icdiff]
-	options = --highlight --line-numbers
+	options = --highlight
