@@ -13,8 +13,7 @@ Plug 'preservim/nerdtree'
 Plug 'ap/vim-buftabline'
 Plug 'qpkorr/vim-bufkill'
 Plug 'sheerun/vim-polyglot'
-Plug 'tomasiser/vim-code-dark'
-Plug 'rakr/vim-one'
+Plug 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
@@ -61,8 +60,8 @@ if exists('+termguicolors')
   set termguicolors
 endif
 set background=light
-let g:one_allow_italics = 1
-colorscheme one
+let g:tempus_enforce_background_color=1
+colorscheme tempus_totus
 highlight ExtraWhitespace ctermbg=1
 match ExtraWhitespace /\s\+$/
 
