@@ -24,7 +24,7 @@ bottom_bar = bar.Bar(
         widget.Volume(fmt=" VOL {} ", foreground=COLORS[1]),
         widget.Wttr(location={"Vienna": "Vienna"}, format="1", foreground=COLORS[1]),
     ],
-    22,
+    20,
     margin=[0, 0, 0, 0],
     background=COLORS[0],
 )
