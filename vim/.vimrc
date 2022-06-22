@@ -14,6 +14,7 @@ Plug 'ap/vim-buftabline'
 Plug 'qpkorr/vim-bufkill'
 Plug 'sheerun/vim-polyglot'
 Plug 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
@@ -60,8 +61,16 @@ if exists('+termguicolors')
   set termguicolors
 endif
 set background=light
-let g:tempus_enforce_background_color=1
-colorscheme tempus_totus
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default.light': {
+  \       'override' : {
+  \         'color03' : ['#437c1b', '232'],
+  \       }
+  \     }
+  \   }
+  \ }
+colorscheme PaperColor
 highlight ExtraWhitespace ctermbg=1
 match ExtraWhitespace /\s\+$/
 
