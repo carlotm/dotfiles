@@ -1,7 +1,8 @@
 from libqtile.layout.floating import Floating
 from libqtile.config import Match
 
-COLORS = ["#ffffff", "#000000", "#4078f2", "#AAAAAA", "#ff0000", "#d2d2d2"]
+COLORS = ["#ffffff", "#000000", "#4078f2", "#AAAAAA", "#ff0000", "#f5f5f5"]
+FONT = "JetBrains Mono"
 
 
 W_BORDERS = {
@@ -29,7 +30,7 @@ auto_minimize = False
 wl_input_rules = None
 wmname = "LG3D"
 widget_defaults = dict(
-    font="Cascadia Code",
+    font=FONT,
     fontsize=15,
     padding=0,
 )

@@ -8,6 +8,7 @@ bottom_bar = bar.Bar(
             disable_drag=True,
             rounded=False,
             highlight_method="line",
+            hide_unused=True,
             padding_x=4,
             active=COLORS[1],
             highlight_color=[COLORS[0], COLORS[0]],
