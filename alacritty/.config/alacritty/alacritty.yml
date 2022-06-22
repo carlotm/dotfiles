@@ -1,31 +1,5 @@
-colors:
-  primary:
-    background: "0xfafafa"
-    foreground: "0x333333"
-
-  cursor:
-    text: "0x000000"
-    cursor: "0x9ece6a"
-
-  normal:
-    black: "0x32344a"
-    red: "0xE45649"
-    green: "0x50A14F"
-    yellow: "0xd75f00"
-    blue: "0x005f87"
-    magenta: "0x8700af"
-    cyan: "0x0997B3"
-    white: "0xbcbcbc"
-
-  bright:
-    black: "0x000000"
-    red: "0xd70000"
-    green: "0x008700"
-    yellow: "0xd75f00"
-    blue: "0x005faf"
-    magenta: "0xd70087"
-    cyan: "0x0997B3"
-    white: "0xd0d0d0"
+import:
+  - ~/.config/alacritty/tempus_totus.yml
 
 draw_bold_text_with_bright_colors: true
 
