@@ -5,13 +5,15 @@ from conf.settings import COLORS
 bottom_bar = bar.Bar(
     [
         widget.GroupBox(
+            font="Terminus (TTF)",
             disable_drag=True,
             rounded=False,
             highlight_method="line",
             hide_unused=True,
             padding_x=4,
             active=COLORS[0],
-            highlight_color=[COLORS[1], COLORS[1]],
+            inactive=COLORS[3],
+            highlight_color=[COLORS[1], COLORS[6]],
             this_current_screen_border=COLORS[2],
         ),
         widget.Spacer(),

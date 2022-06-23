@@ -1,26 +1,26 @@
 import:
-  - ~/.config/alacritty/tempus_totus.yml
+  - ~/.config/alacritty/papercolor.yml
 
 draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: Terminus (TTF)
-    style: Bold
+    family: Source Code Pro
+    style: Normal
 
   bold:
-    family: Terminus (TTF)
-    style: Bold
+    family: Source Code Pro
+    style: Normal
 
   italic:
-    family: Terminus (TTF)
+    family: Source Code Pro
     style: Italic
 
   bold_italic:
-    family: Terminus (TTF)
+    family: Source Code Pro
     style: BoldItalic
 
-  size: 13
+  size: 14
 
   offset:
     x: 0
