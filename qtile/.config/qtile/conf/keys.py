@@ -1,6 +1,6 @@
 from libqtile.config import Key
 from libqtile.lazy import lazy
-from conf.settings import COLORS, FONT
+from conf.settings import COLORS
 
 
 def keys(mod, groups):
@@ -9,7 +9,7 @@ def keys(mod, groups):
         "-l",
         "10",
         "-fn",
-        f"{FONT}:weight=bold:size=36",
+        f"Source Code Pro:weight=bold:size=36",
         "-nb",
         COLORS[5],
         "-nf",
