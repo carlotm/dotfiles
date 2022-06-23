@@ -5,30 +5,30 @@ draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: IBM Plex Mono
-    style: Regular
+    family: Terminus (TTF)
+    style: Bold
 
   bold:
-    family: IBM Plex Mono
-    style: Regular
+    family: Terminus (TTF)
+    style: Bold
 
   italic:
-    family: IBM Plex Mono
+    family: Terminus (TTF)
     style: Italic
 
   bold_italic:
-    family: IBM Plex Mono
+    family: Terminus (TTF)
     style: BoldItalic
 
-  size: 12
+  size: 13
 
   offset:
     x: 0
-    y: 4
+    y: 0
 
   glyph_offset:
     x: 0
-    y: 1
+    y: 0
 
 mouse:
   hide_when_typing: true
