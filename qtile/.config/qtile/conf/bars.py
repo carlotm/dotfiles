@@ -13,7 +13,7 @@ bottom_bar = bar.Bar(
             padding_x=4,
             active=COLORS[0],
             inactive=COLORS[3],
-            highlight_color=[COLORS[1], COLORS[6]],
+            highlight_color=[COLORS[1], COLORS[1]],
             this_current_screen_border=COLORS[2],
         ),
         widget.Spacer(),
