@@ -2,7 +2,7 @@ from libqtile.layout.floating import Floating
 from libqtile.config import Match
 
 COLORS = ["#ffffff", "#000000", "#1458EC", "#AAAAAA", "#2d45b0", "#f5f5f5", "#444444"]
-FONT = "Terminus (TTF) Bold"
+FONT = "Misc Ohsnap"
 
 
 W_BORDERS = {
