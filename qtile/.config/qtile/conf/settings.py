@@ -1,14 +1,14 @@
 from libqtile.layout.floating import Floating
 from libqtile.config import Match
 
-COLORS = ["#ffffff", "#000000", "#4078f2", "#AAAAAA", "#ff0000", "#f5f5f5", "#444444"]
+COLORS = ["#ffffff", "#000000", "#1458EC", "#AAAAAA", "#2d45b0", "#f5f5f5", "#444444"]
 FONT = "Terminus (TTF) Bold"
 
 
 W_BORDERS = {
     "border_focus": COLORS[4],
     "border_normal": COLORS[3],
-    "border_width": 2,
+    "border_width": 4,
 }
 
 dgroups_key_binder = None

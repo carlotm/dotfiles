@@ -66,6 +66,9 @@ let g:PaperColor_Theme_Options = {
   \     'default.light': {
   \       'override' : {
   \         'color03' : ['#335E15', '232'],
+  \         'statusline_active_bg': ['#1458EC', '232'],
+  \         'buftabline_bg': ['#1458EC', '232'],
+  \         'buftabline_current_bg': ['#eeeeee', '232'],
   \       }
   \     }
   \   }

@@ -1,5 +1,5 @@
 colors:
-  name: "PaperColor mod"
+  name: "Alacritty theme"
   author: "Ascani Carlo"
   description: "Light theme for prose or for coding"
   primary:
@@ -16,9 +16,9 @@ colors:
     red: "#a50000"
     green: "#005d26"
     yellow: "#714700"
-    blue: "#1d3ccf"
+    blue: "#1458EC"
     magenta: "#88267a"
-    cyan: "#185570"
+    cyan: "#1F97A1"
     white: "#efefef"
   bright:
     black: "#5e4b4f"
