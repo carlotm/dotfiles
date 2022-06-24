@@ -65,7 +65,7 @@ let g:PaperColor_Theme_Options = {
   \   'theme': {
   \     'default.light': {
   \       'override' : {
-  \         'color03' : ['#437c1b', '232'],
+  \         'color03' : ['#335E15', '232'],
   \       }
   \     }
   \   }
