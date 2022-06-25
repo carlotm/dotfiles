@@ -65,6 +65,7 @@ let g:PaperColor_Theme_Options = {
   \   'theme': {
   \     'default.light': {
   \       'override' : {
+  \         'cursorlinenr_bg' : ['#e4e4e4', '232'],
   \         'color03' : ['#335E15', '232'],
   \         'statusline_active_bg': ['#1458EC', '232'],
   \         'buftabline_bg': ['#1458EC', '232'],
