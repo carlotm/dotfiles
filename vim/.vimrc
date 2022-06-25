@@ -78,6 +78,11 @@ highlight ExtraWhitespace ctermbg=1
 match ExtraWhitespace /\s\+$/
 
 """""""""""""""""""""""""""""" Key mapping
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+
 vnoremap < <gv
 vnoremap > >gv
 nnoremap < <<

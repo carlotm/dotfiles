@@ -33,7 +33,7 @@
     NoResizebar = Yes;
   };
   org.inkscape.Inkscape.Inkscape = {
-    AlwaysUserIcon = No;
+    AlwaysUserIcon = Yes;
     Icon = inkscape.png;
   };
   nemo.Nemo = {
@@ -61,6 +61,9 @@
   osmo.Osmo = {
     AlwaysUserIcon = Yes;
     Icon = osmo.png;
+  };
+  groupLeader.WPrefs = {
+    Icon = groupLeader.WPrefs.xpm;
   };
   mupdf.MuPDF = {
     AlwaysUserIcon = Yes;
