@@ -18,8 +18,8 @@ colors:
     yellow: "#BB7500"
     blue: "#1458EC"
     magenta: "#88267a"
-    cyan: "#1F97A1"
-    white: "#999999"
+    cyan: "#008efe"
+    white: "#bbbbbb"
   bright:
     black: "#000000"
     red: "#992030"
@@ -28,4 +28,4 @@ colors:
     blue: "#2d45b0"
     magenta: "#700dc9"
     cyan: "#005289"
-    white: "#aaaaaa"
+    white: "#cccccc"
