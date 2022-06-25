@@ -2,13 +2,13 @@
   FrameBorderColor = "#000000";
   FTitleColor = "#ffffff";
   MenuDisabledColor = "#7f7f7f";
+  IconTitleBack = "#000000";
   PixmapPath = (
     "/usr/share/WindowMaker/Pixmaps",
     "/usr/share/WindowMaker/Backgrounds",
     "/usr/share/pixmaps",
     "/home/carloratm/GNUstep/Library/WindowMaker/Pixmaps"
   );
-  IconTitleBack = "#000000";
   FTitleBack = (solid, "#1458ec");
   HideKey = None;
   ClipTitleFont = "Noto Sans Display:slant=0:weight=100:width=100:pixelsize=10";
@@ -31,8 +31,8 @@
     "#aca199",
     "#867d77"
   );
-  SnapEdgeDetect = 10;
   HighlightTextColor = "#ffffff";
+  SnapEdgeDetect = 10;
   EnforceIconMargin = NO;
   WindowSnapping = YES;
   PrevWorkspaceKey = None;
@@ -58,7 +58,7 @@
   RHMaximizeKey = "Shift+Mod1+Right";
   FrameSelectedBorderColor = "#000000";
   MiniaturizeKey = None;
-  ToggleKbdModeKey = None;
+  ToggleKbdModeKey = "Mod1+space";
   WindowMenuKey = None;
   DragMaximizedWindow = RestoreGeometry;
   MaximusKey = "Shift+Mod1+M";
