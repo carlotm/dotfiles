@@ -12,16 +12,16 @@
   );
   FTitleBack = (solid, "#1458ec");
   ToggleKbdModeKey = None;
-  DragMaximizedWindow = RestoreGeometry;
   WindowMenuKey = None;
-  HideKey = None;
+  DragMaximizedWindow = RestoreGeometry;
   ClipTitleFont = "Noto Sans Display:slant=0:weight=100:width=100:pixelsize=10";
+  HideKey = None;
   MaximusKey = "Shift+Mod1+M";
-  OpaqueResize = YES;
   IconTitleFont = "Noto Sans Display:slant=0:weight=100:width=100:pixelsize=10";
+  OpaqueResize = YES;
   MenuTextBack = (solid, "#ad9e97");
-  WindowPlacement = center;
   LargeDisplayFont = "Noto Sans Display:slant=100:weight=200:width=100:pixelsize=72";
+  WindowPlacement = center;
   RBCMaximizeKey = "Shift+Mod1+Next";
   DisableClip = YES;
   OpaqueMoveResizeKeyboard = YES;
@@ -30,7 +30,7 @@
   MenuTextColor = "#2a2821";
   MoveToWorkspace2Key = "Shift+Mod1+2";
   IconBack = (solid, "#aca199");
-  MenuTitleColor = "#2d2d2d";
+  MenuTitleColor = "#000000";
   AntialiasedText = YES;
   MenuTitleFont = "Inter:slant=0:weight=200:width=100:pixelsize=14";
   LowerKey = None;
@@ -46,9 +46,9 @@
     "#aca199",
     "#867d77"
   );
-  HighlightTextColor = "#000000";
+  HighlightTextColor = "#ffffff";
   SnapEdgeDetect = 10;
-  MenuTitleBack = (solid, "#847872");
+  MenuTitleBack = (solid, "#ad9e97");
   EnforceIconMargin = NO;
   WindowSnapping = YES;
   SnapToTopMaximizesFullscreen = YES;
@@ -58,18 +58,18 @@
   MoveTo12to6Head = None;
   CloseKey = "Shift+Mod1+C";
   FrameFocusedBorderColor = "#1e2126";
-  HighlightColor = "#5f8787";
-  FocusMode = sloppy;
+  HighlightColor = "#1458ec";
   WindowTitleFont = "Inter:slant=0:weight=180:width=100:pixelsize=14";
+  FocusMode = sloppy;
   SwitchPanelImages = (swtile_carlotm.png, swback_carlotm.png, 3, 3);
   NextWorkspaceKey = None;
-  RunKey = "Mod1+F2";
-  Workspace8Key = None;
   WindowPlaceOrigin = (0, 0);
-  DisableDrawers = YES;
-  Workspace10Key = None;
-  MoveToWorkspace3Key = "Shift+Mod1+3";
+  Workspace8Key = None;
+  RunKey = "Mod1+F2";
   Workspace9Key = None;
+  MoveToWorkspace3Key = "Shift+Mod1+3";
+  Workspace10Key = None;
+  DisableDrawers = YES;
   CClipTitleColor = "#616161";
   LHMaximizeKey = "Shift+Mod1+Left";
   RootMenuKey = None;
@@ -80,8 +80,8 @@
     "/usr/share/pixmaps"
   );
   RaiseKey = None;
-  Workspace5Key = None;
   KbdModeLock = YES;
+  Workspace5Key = None;
   Workspace6Key = None;
   Workspace7Key = None;
   UTitleColor = "#6a6a6a";
@@ -91,8 +91,8 @@
   ResizeDisplay = corner;
   MoveToWorkspace1Key = "Shift+Mod1+1";
   IgnoreGtkHints = YES;
-  MoveToWorkspace4Key = "Shift+Mod1+4";
   RHMaximizeKey = "Shift+Mod1+Right";
+  MoveToWorkspace4Key = "Shift+Mod1+4";
   FrameSelectedBorderColor = "#000000";
   RTCMaximizeKey = "Shift+Mod1+Prior";
 }
