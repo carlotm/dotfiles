@@ -112,25 +112,46 @@
       }
     );
     Lowered = Yes;
-    Position = "-64,193";
+    Position = "-64,323";
   };
   Clip = {
     Forced = No;
     Name = Logo.WMClip;
     BuggyApplication = No;
     AutoLaunch = No;
-    Position = "0,0";
     Lock = No;
+    Position = "0,0";
     Command = "-";
   };
-  Applications = ();
+  Applications = (
+    {
+      Name = Alacritty.Alacritty;
+      Shaded = No;
+      Miniaturized = No;
+      Command = alacritty;
+      Geometry = "800x600+527+226";
+      Hidden = No;
+      Workspace = "Workspace 1";
+      ShortcutMask = 0;
+    },
+    {
+      Name = Alacritty.Alacritty;
+      Shaded = No;
+      Miniaturized = No;
+      Command = alacritty;
+      Geometry = "800x600+527+226";
+      Hidden = No;
+      Workspace = "Workspace 1";
+      ShortcutMask = 0;
+    }
+  );
   Drawers = ();
   Workspaces = (
     {
       Clip = {
         AutoRaiseLower = No;
-        AutoCollapse = No;
         Applications = ();
+        AutoCollapse = No;
         Collapsed = No;
         AutoAttractIcons = No;
         Lowered = Yes;
