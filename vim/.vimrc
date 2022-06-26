@@ -19,6 +19,7 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
+let g:mapleader = "\<Space>"
 set relativenumber
 set number
 set title
@@ -83,21 +84,17 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 noremap <Up> <Nop>
 noremap <Down> <Nop>
-
 vnoremap < <gv
 vnoremap > >gv
 nnoremap < <<
 nnoremap > >>
-nmap <C-n> :bnext<CR>
-nmap <C-p> :bprev<CR>
-nmap <C-X> :BD<CR>
-nmap <silent> <C-Up> :wincmd k<CR>
-nmap <silent> <C-Down> :wincmd j<CR>
-nmap <silent> <C-Left> :wincmd h<CR>
-nmap <silent> <C-Right> :wincmd l<CR>
+nmap <silent> gn :bnext<CR>
+nmap <silent> gp :bprev<CR>
+nmap <silent> bd :bdelete<CR>
+nmap <silent> <Leader>ww :wincmd w<CR>
 
 """""""""""""""""""""""""""""" NerdTree settings
-nnoremap <C-l> :NERDTreeToggle<CR>
+nnoremap <Leader>l :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeIgnore=['node_modules', '\.git$', '\.vim$', '\.ropeproject']
@@ -106,8 +103,8 @@ let g:NERDTreeStatusline = ''
 let g:NERDTreeMinimalUI = 1
 
 """""""""""""""""""""""""""""" vim-commentary settings
-nmap cc :Commentary<CR>
-vmap <silent> cc :Commentary<CR>
+nmap <Leader>c :Commentary<CR>
+vmap <silent> <Leader>c :Commentary<CR>
 
 """""""""""""""""""""""""""""" vim-plug settings
 let g:plug_threads = 16
@@ -125,8 +122,22 @@ let g:fzf_buffers_jump = 1
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 let g:fzf_tags_command = 'ctags -R'
 let g:fzf_commands_expect = 'alt-enter,ctrl-x'
-nmap <C-o> :FZF<CR>
-nmap <C-f> :Ag<CR>
+let g:fzf_colors = {
+\ 'fg':      ['fg', 'Normal'],
+\ 'bg':      ['bg', 'Normal'],
+\ 'hl':      ['fg', 'Comment'],
+\ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+\ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+\ 'hl+':     ['fg', 'Statement'],
+\ 'info':    ['fg', 'PreProc'],
+\ 'border':  ['fg', 'Ignore'],
+\ 'prompt':  ['fg', 'Conditional'],
+\ 'pointer': ['fg', 'Exception'],
+\ 'marker':  ['fg', 'Keyword'],
+\ 'spinner': ['fg', 'Label'],
+\ 'header':  ['fg', 'Comment'] }
+nmap <Leader>f :FZF<CR>
+nmap <Leader>/ :Ag<CR>
 
 """""""""""""""""""""""""""""" editorconfig settings
 let g:editorconfig_blacklist = {'filetype': ['git.*', 'fugitive']}
@@ -157,3 +168,5 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 let g:coc_global_extensions = ['coc-css', 'coc-diagnostic', 'coc-elixir', 'coc-eslint', 'coc-json', 'coc-prettier', 'coc-pyright', 'coc-tsserver', 'coc-yaml']
+
+

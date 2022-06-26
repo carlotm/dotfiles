@@ -39,6 +39,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export SOUND_CARD_IRQ=49
 export ELIXIR_EDITOR="echo vim +__LINE__ __FILE__"
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export BAT_THEME="GitHub"
 
 #
 # COMPLETION
