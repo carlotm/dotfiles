@@ -54,6 +54,39 @@
         Lock = Yes;
         PasteCommand = "/home/carloratm/GNUstep/Apps/wmtime/wmtime -d %s";
         Command = "/home/carloratm/GNUstep/Apps/wmtime/wmtime -d";
+      },
+      {
+        Forced = No;
+        Name = gimp.Gimp;
+        DropCommand = "gimp %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,2";
+        Lock = Yes;
+        PasteCommand = "gimp %s";
+        Command = gimp;
+      },
+      {
+        Forced = No;
+        Name = inkscape.Inkscape;
+        DropCommand = "inkscape %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,3";
+        Lock = Yes;
+        PasteCommand = "inkscape %s";
+        Command = inkscape;
+      },
+      {
+        Forced = No;
+        Name = keepassxc.KeePassXC;
+        DropCommand = "keepassxc %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,4";
+        Lock = No;
+        PasteCommand = "keepassxc %s";
+        Command = keepassxc;
       }
     );
     Applications1080 = (
@@ -109,6 +142,39 @@
         Lock = Yes;
         PasteCommand = "/home/carloratm/GNUstep/Apps/wmtime/wmtime -d %s";
         Command = "/home/carloratm/GNUstep/Apps/wmtime/wmtime -d";
+      },
+      {
+        Forced = No;
+        Name = gimp.Gimp;
+        DropCommand = "gimp %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,2";
+        Lock = Yes;
+        PasteCommand = "gimp %s";
+        Command = gimp;
+      },
+      {
+        Forced = No;
+        Name = inkscape.Inkscape;
+        DropCommand = "inkscape %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,3";
+        Lock = Yes;
+        PasteCommand = "inkscape %s";
+        Command = inkscape;
+      },
+      {
+        Forced = No;
+        Name = keepassxc.KeePassXC;
+        DropCommand = "keepassxc %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,4";
+        Lock = No;
+        PasteCommand = "keepassxc %s";
+        Command = keepassxc;
       }
     );
     Lowered = Yes;
