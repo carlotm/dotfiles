@@ -10,6 +10,17 @@
         Position = "0,0";
         Lock = No;
         Command = "-";
+      },
+      {
+        Forced = No;
+        Name = firefox.Firefox;
+        DropCommand = "firefox %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,1";
+        Lock = No;
+        PasteCommand = "firefox %s";
+        Command = firefox;
       }
     );
     Applications1080 = (
@@ -21,10 +32,21 @@
         Position = "0,0";
         Lock = No;
         Command = "-";
+      },
+      {
+        Forced = No;
+        Name = firefox.Firefox;
+        DropCommand = "firefox %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,1";
+        Lock = No;
+        PasteCommand = "firefox %s";
+        Command = firefox;
       }
     );
     Lowered = Yes;
-    Position = "-64,0";
+    Position = "-64,323";
   };
   Clip = {
     Forced = No;
@@ -35,6 +57,7 @@
     Lock = No;
     Command = "-";
   };
+  Applications = ();
   Drawers = ();
   Workspaces = (
     {
@@ -47,6 +70,16 @@
         Lowered = Yes;
       };
       Name = "Workspace 1";
+    },
+    {
+      Name = "Workspace 2";
+    },
+    {
+      Name = "Workspace 3";
+    },
+    {
+      Name = "Workspace 4";
     }
   );
+  Workspace = "Workspace 1";
 }
