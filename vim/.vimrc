@@ -13,13 +13,11 @@ Plug 'preservim/nerdtree'
 Plug 'ap/vim-buftabline'
 Plug 'qpkorr/vim-bufkill'
 Plug 'sheerun/vim-polyglot'
-Plug 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
-let g:mapleader = "\<Space>"
 set relativenumber
 set number
 set title
@@ -80,6 +78,8 @@ highlight ExtraWhitespace ctermbg=1
 match ExtraWhitespace /\s\+$/
 
 """""""""""""""""""""""""""""" Key mapping
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 noremap <Up> <Nop>
@@ -88,9 +88,9 @@ vnoremap < <gv
 vnoremap > >gv
 nnoremap < <<
 nnoremap > >>
-nmap <silent> gn :bnext<CR>
-nmap <silent> gp :bprev<CR>
-nmap <silent> bd :bdelete<CR>
+nmap <silent> <Leader>gn :bnext<CR>
+nmap <silent> <Leader>gp :bprev<CR>
+nmap <silent> <Leader>bd :bdelete<CR>
 nmap <silent> <Leader>ww :wincmd w<CR>
 
 """""""""""""""""""""""""""""" NerdTree settings
