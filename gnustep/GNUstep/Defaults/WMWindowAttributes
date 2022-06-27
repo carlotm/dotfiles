@@ -1,4 +1,7 @@
 {
+  firefox.Firefox = {
+    Icon = firefox.png;
+  };
   "fs-uae-launcher.fs-uae-launcher" = {
     AlwaysUserIcon = Yes;
     Icon = games.png;
@@ -10,9 +13,6 @@
     AlwaysUserIcon = No;
     NoResizebar = Yes;
     NoCloseButton = Yes;
-  };
-  firefox.Firefox = {
-    Icon = firefox.png;
   };
   Alacritty.Alacritty = {
     AlwaysUserIcon = Yes;
@@ -97,8 +97,9 @@
     Icon = windowmaker.png;
   };
   Navigator.firefox = {
+    StartMaximized = Yes;
     AlwaysUserIcon = Yes;
-    Icon = firefox.svg;
+    Icon = firefox.png;
   };
   "xfce4-screenshooter.Xfce4-screenshooter" = {
     NoTitlebar = Yes;
