@@ -36,6 +36,10 @@
     AlwaysUserIcon = Yes;
     Icon = inkscape.png;
   };
+  wprefs.WPrefs = {
+    AlwaysUserIcon = Yes;
+    Icon = settings.png;
+  };
   audacious.Audacious = {
     NoTitlebar = Yes;
     NoMiniaturizable = Yes;
@@ -49,13 +53,16 @@
     AlwaysUserIcon = Yes;
     Icon = mc.png;
   };
+  evince.Evince = {
+    Icon = "output-onlinepngtools.png";
+  };
   org.gnome.Nautilus.Org.gnome.Nautilus = {
     NoTitlebar = Yes;
     NoMiniaturizeButton = Yes;
     NoBorder = Yes;
     AlwaysUserIcon = No;
     NoResizebar = Yes;
-    Icon = mc.png;
+    Icon = filemanager.png;
     NoCloseButton = Yes;
   };
   osmo.Osmo = {
@@ -63,7 +70,7 @@
     Icon = osmo.png;
   };
   groupLeader.WPrefs = {
-    Icon = groupLeader.WPrefs.xpm;
+    Icon = settings.png;
   };
   mupdf.MuPDF = {
     AlwaysUserIcon = Yes;

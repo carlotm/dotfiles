@@ -4,9 +4,9 @@ wmshutdown.o: wmshutdown.c /usr/include/stdc-predef.h \
  /usr/include/glib-2.0/glib/galloca.h /usr/include/glib-2.0/glib/gtypes.h \
  /usr/lib/glib-2.0/include/glibconfig.h \
  /usr/include/glib-2.0/glib/gmacros.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include/stddef.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/limits.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/syslimits.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stddef.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \
@@ -16,7 +16,7 @@ wmshutdown.o: wmshutdown.c /usr/include/stdc-predef.h \
  /usr/include/linux/limits.h \
  /usr/include/bits/pthread_stack_min-dynamic.h \
  /usr/include/bits/pthread_stack_min.h /usr/include/bits/posix2_lim.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include/float.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/float.h \
  /usr/include/glib-2.0/glib/gversionmacros.h /usr/include/time.h \
  /usr/include/bits/time.h /usr/include/bits/types.h \
  /usr/include/bits/typesizes.h /usr/include/bits/time64.h \
@@ -34,7 +34,7 @@ wmshutdown.o: wmshutdown.c /usr/include/stdc-predef.h \
  /usr/include/glib-2.0/glib/gatomic.h \
  /usr/include/glib-2.0/glib/glib-typeof.h \
  /usr/include/glib-2.0/glib/gerror.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include/stdarg.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h \
  /usr/include/glib-2.0/glib/gquark.h /usr/include/glib-2.0/glib/gutils.h \
  /usr/include/stdlib.h /usr/include/bits/waitflags.h \
  /usr/include/bits/waitstatus.h /usr/include/bits/floatn.h \
@@ -309,7 +309,7 @@ wmshutdown.o: wmshutdown.c /usr/include/stdc-predef.h \
  /usr/include/pango-1.0/pango/pango-version-macros.h \
  /usr/include/pango-1.0/pango/pango-features.h /usr/include/harfbuzz/hb.h \
  /usr/include/harfbuzz/hb-blob.h /usr/include/harfbuzz/hb-common.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include/stdint.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/wchar.h \
  /usr/include/bits/stdint-uintn.h /usr/include/harfbuzz/hb-buffer.h \
  /usr/include/harfbuzz/hb-unicode.h /usr/include/harfbuzz/hb-font.h \
@@ -711,9 +711,9 @@ wmshutdown.o: wmshutdown.c /usr/include/stdc-predef.h \
 /usr/include/glib-2.0/glib/gtypes.h:
 /usr/lib/glib-2.0/include/glibconfig.h:
 /usr/include/glib-2.0/glib/gmacros.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include/stddef.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/limits.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed/syslimits.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stddef.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include-fixed/limits.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include-fixed/syslimits.h:
 /usr/include/limits.h:
 /usr/include/bits/libc-header-start.h:
 /usr/include/features.h:
@@ -730,7 +730,7 @@ wmshutdown.o: wmshutdown.c /usr/include/stdc-predef.h \
 /usr/include/bits/pthread_stack_min-dynamic.h:
 /usr/include/bits/pthread_stack_min.h:
 /usr/include/bits/posix2_lim.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include/float.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/float.h:
 /usr/include/glib-2.0/glib/gversionmacros.h:
 /usr/include/time.h:
 /usr/include/bits/time.h:
@@ -756,7 +756,7 @@ wmshutdown.o: wmshutdown.c /usr/include/stdc-predef.h \
 /usr/include/glib-2.0/glib/gatomic.h:
 /usr/include/glib-2.0/glib/glib-typeof.h:
 /usr/include/glib-2.0/glib/gerror.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include/stdarg.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h:
 /usr/include/glib-2.0/glib/gquark.h:
 /usr/include/glib-2.0/glib/gutils.h:
 /usr/include/stdlib.h:
@@ -1087,7 +1087,7 @@ wmshutdown.o: wmshutdown.c /usr/include/stdc-predef.h \
 /usr/include/harfbuzz/hb.h:
 /usr/include/harfbuzz/hb-blob.h:
 /usr/include/harfbuzz/hb-common.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include/stdint.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdint.h:
 /usr/include/stdint.h:
 /usr/include/bits/wchar.h:
 /usr/include/bits/stdint-uintn.h:

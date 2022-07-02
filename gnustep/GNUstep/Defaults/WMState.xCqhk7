@@ -83,21 +83,21 @@
         DropCommand = "keepassxc %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,3";
-        Lock = Yes;
+        Position = "0,6";
+        Lock = No;
         PasteCommand = "keepassxc %s";
         Command = keepassxc;
       },
       {
         Forced = No;
-        Name = "fs-uae-launcher.fs-uae-launcher";
-        DropCommand = "/usr/bin/python3 /sbin/fs-uae-launcher %d";
+        Name = "org\\.gnome\\.Nautilus.Org\\.gnome\\.Nautilus";
+        DropCommand = "org.gnome.Nautilus %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,6";
+        Position = "0,3";
         Lock = No;
-        PasteCommand = "/usr/bin/python3 /sbin/fs-uae-launcher %s";
-        Command = "/usr/bin/python3 /sbin/fs-uae-launcher";
+        PasteCommand = "org.gnome.Nautilus %s";
+        Command = org.gnome.Nautilus;
       },
       {
         Forced = No;
@@ -193,21 +193,21 @@
         DropCommand = "keepassxc %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,3";
-        Lock = Yes;
+        Position = "0,6";
+        Lock = No;
         PasteCommand = "keepassxc %s";
         Command = keepassxc;
       },
       {
         Forced = No;
-        Name = "fs-uae-launcher.fs-uae-launcher";
-        DropCommand = "/usr/bin/python3 /sbin/fs-uae-launcher %d";
+        Name = "org\\.gnome\\.Nautilus.Org\\.gnome\\.Nautilus";
+        DropCommand = "org.gnome.Nautilus %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,6";
+        Position = "0,3";
         Lock = No;
-        PasteCommand = "/usr/bin/python3 /sbin/fs-uae-launcher %s";
-        Command = "/usr/bin/python3 /sbin/fs-uae-launcher";
+        PasteCommand = "org.gnome.Nautilus %s";
+        Command = org.gnome.Nautilus;
       },
       {
         Forced = No;
@@ -224,7 +224,18 @@
     Lowered = Yes;
     Position = "-64,193";
   };
-  Applications = ();
+  Applications = (
+    {
+      Name = Alacritty.Alacritty;
+      Shaded = No;
+      Miniaturized = No;
+      Command = alacritty;
+      Geometry = "1920x1080+0+0";
+      Hidden = No;
+      Workspace = "Workspace 1";
+      ShortcutMask = 0;
+    }
+  );
   Workspaces = (
     {
       Name = "Workspace 1";
@@ -239,5 +250,5 @@
       Name = "Workspace 4";
     }
   );
-  Workspace = "Workspace 1";
+  Workspace = "Workspace 2";
 }
