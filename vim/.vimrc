@@ -88,8 +88,8 @@ vnoremap < <gv
 vnoremap > >gv
 nnoremap < <<
 nnoremap > >>
-nmap <silent> <Leader>gn :bnext<CR>
-nmap <silent> <Leader>gp :bprev<CR>
+nmap <silent> gn :bnext<CR>
+nmap <silent> gp :bprev<CR>
 nmap <silent> <Leader>bd :bdelete<CR>
 nmap <silent> <Leader>ww :wincmd w<CR>
 
