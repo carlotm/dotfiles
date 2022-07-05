@@ -1,11 +1,4 @@
 {
-  firefox.Firefox = {
-    Icon = firefox.png;
-  };
-  "fs-uae-launcher.fs-uae-launcher" = {
-    AlwaysUserIcon = Yes;
-    Icon = games.png;
-  };
   gcolor3.Gcolor3 = {
     NoTitlebar = Yes;
     NoMiniaturizeButton = Yes;
@@ -14,6 +7,13 @@
     NoResizebar = Yes;
     NoCloseButton = Yes;
   };
+  "fs-uae-launcher.fs-uae-launcher" = {
+    AlwaysUserIcon = Yes;
+    Icon = games.png;
+  };
+  firefox.Firefox = {
+    Icon = firefox.png;
+  };
   Alacritty.Alacritty = {
     AlwaysUserIcon = Yes;
     Icon = term.png;
@@ -21,16 +21,16 @@
   inkscape.Inkscape = {
     Icon = inkscape.png;
   };
+  gimp.Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = gimp.png;
+  };
   io.elementary.videos.Io.elementary.videos = {
     NoTitlebar = Yes;
     NoMiniaturizeButton = Yes;
     NoBorder = Yes;
     AlwaysUserIcon = No;
     NoResizebar = Yes;
-  };
-  gimp.Gimp = {
-    AlwaysUserIcon = Yes;
-    Icon = gimp.png;
   };
   org.inkscape.Inkscape.Inkscape = {
     AlwaysUserIcon = Yes;
@@ -40,6 +40,10 @@
     AlwaysUserIcon = Yes;
     Icon = settings.png;
   };
+  nemo.Nemo = {
+    AlwaysUserIcon = Yes;
+    Icon = mc.png;
+  };
   audacious.Audacious = {
     NoTitlebar = Yes;
     NoMiniaturizable = Yes;
@@ -48,10 +52,6 @@
     NoResizebar = Yes;
     Icon = audacious.png;
     NoCloseButton = Yes;
-  };
-  nemo.Nemo = {
-    AlwaysUserIcon = Yes;
-    Icon = mc.png;
   };
   evince.Evince = {
     Icon = "output-onlinepngtools.png";
@@ -84,10 +84,6 @@
     NoResizebar = Yes;
     NoCloseButton = Yes;
   };
-  keepassxc.KeePassXC = {
-    AlwaysUserIcon = Yes;
-    Icon = keepassx.png;
-  };
   blueberry.py.Blueberry.py = {
     NoTitlebar = Yes;
     NoMiniaturizeButton = Yes;
@@ -95,6 +91,10 @@
     AlwaysUserIcon = No;
     NoResizebar = Yes;
     NoCloseButton = Yes;
+  };
+  keepassxc.KeePassXC = {
+    AlwaysUserIcon = Yes;
+    Icon = keepassx.png;
   };
   "transmission-gtk.Transmission-gtk" = {
     SharedAppIcon = No;
