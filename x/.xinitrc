@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
 autorandr --change
-exec wmaker
+xrdb -merge ~/.Xresources
+setxkbmap us
+exec dbus-launch leftwm

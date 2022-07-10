@@ -4,10 +4,10 @@
     follow = mouse
 
     ### Geometry ###
-    width = 500
+    width = 560
     height = 300
     origin = top-right
-    offset = 74x10
+    offset = 20x40
     scale = 0
     notification_limit = 0
 

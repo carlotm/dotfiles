@@ -10,7 +10,7 @@ font:
 
   bold:
     family: Source Code Pro
-    style: Normal
+    style: SemiBold
 
   italic:
     family: Source Code Pro
@@ -20,7 +20,7 @@ font:
     family: Source Code Pro
     style: BoldItalic
 
-  size: 11
+  size: 14
 
   offset:
     x: 0
@@ -32,18 +32,5 @@ font:
 
 mouse:
   hide_when_typing: true
-
-window:
-  dynamic_title: true
-
-key_bindings:
-  - {
-      key: F11,
-      command:
-        {
-          program: "wmctrl",
-          args: ["-r", ":ACTIVE:", "-b", "toggle,fullscreen"],
-        },
-    }
 
 TERM: xterm-256color
