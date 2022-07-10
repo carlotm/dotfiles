@@ -1,0 +1,16 @@
+#!/bin/bash
+
+export HERE="$( cd "$(dirname "$0")" ; pwd -P )"
+
+if [ -f "/tmp/leftwm-theme-down" ]; then
+    /tmp/leftwm-theme-down
+    rm /tmp/leftwm-theme-down
+fi
+
+ln -s ${HERE}/down /tmp/leftwm-theme-down
+
+leftwm command "LoadTheme ${HERE}/theme.toml"
+
+feh --bg-tile ${HERE}/bg.png &
+dunst &
+polybar &
