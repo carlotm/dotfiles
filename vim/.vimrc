@@ -90,7 +90,6 @@ nnoremap < <<
 nnoremap > >>
 nmap <silent> gn :bnext<CR>
 nmap <silent> gp :bprev<CR>
-nmap <silent> <Leader>bd :bdelete<CR>
 nmap <silent> <Leader>ww :wincmd w<CR>
 
 """""""""""""""""""""""""""""" NerdTree settings
@@ -137,7 +136,7 @@ let g:fzf_colors = {
 \ 'spinner': ['fg', 'Label'],
 \ 'header':  ['fg', 'Comment'] }
 nmap <Leader>f :FZF<CR>
-nmap <Leader>/ :Ag<CR>
+nmap <Leader>/ :Ag!<CR>
 
 """""""""""""""""""""""""""""" editorconfig settings
 let g:editorconfig_blacklist = {'filetype': ['git.*', 'fugitive']}
