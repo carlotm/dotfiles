@@ -69,6 +69,8 @@ let g:PaperColor_Theme_Options = {
   \         'statusline_active_bg': ['#1458EC', '232'],
   \         'buftabline_bg': ['#1458EC', '232'],
   \         'buftabline_current_bg': ['#eeeeee', '232'],
+  \         'buftabline_active_bg': ['#1458EC', '232'],
+  \         'buftabline_inactive_bg': ['#1458EC', '232'],
   \       }
   \     }
   \   }

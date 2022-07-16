@@ -1,0 +1,31 @@
+* {
+  font-family: "D2Coding", "Font Awesome 6 Free Solid", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+window#waybar {
+  background-color: #000;
+  color: #fff;
+}
+
+#workspaces button {
+  padding: 0 4px;
+  border-radius: 0;
+  color: #fff;
+}
+
+#workspaces button.focused {
+  background-color: #1458ec;
+}
+
+#workspaces button.urgent {
+  background-color: #f00;
+}
+
+#pulseaudio,
+#backlight,
+#language,
+#battery {
+  padding: 0 8px;
+}

@@ -1,0 +1,50 @@
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 4,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "pulseaudio",
+        "backlight",
+        "sway/language",
+        "battery"
+    ],
+    "sway/language": {
+        "format": " {short}",
+    },
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}",
+        "active-only": false,
+    },
+    "sway/mode": {
+        "format": "{}"
+    },
+    "clock": {
+        "timezone": "Europe/Rome",
+        "format": "{:%H:%M <span foreground='#aaa'>%d %B %Y</span>}",
+    },
+    "backlight": {
+        "format": " {percent}%",
+        "on-scroll-up": "brightnessctl s 1%+",
+        "on-scroll-down": "brightnessctl s 1%-",
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "pulseaudio": {
+        "scroll-step": 1,
+        "format": " {volume}%",
+        "on-click": "pavucontrol"
+    },
+}

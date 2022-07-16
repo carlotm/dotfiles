@@ -3,7 +3,7 @@ colors:
   author: "Ascani Carlo"
   description: "Light theme for prose or for coding"
   primary:
-    foreground: "#4a484d"
+    foreground: "#343434"
     background: "#eeeeee"
   cursor:
     text: "#ffffff"

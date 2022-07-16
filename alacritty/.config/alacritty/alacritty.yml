@@ -5,30 +5,30 @@ draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: Source Code Pro
+    family: D2Coding
     style: Normal
 
   bold:
-    family: Source Code Pro
+    family: D2Coding
     style: SemiBold
 
   italic:
-    family: Source Code Pro
+    family: D2Coding
     style: Italic
 
   bold_italic:
-    family: Source Code Pro
+    family: D2Coding
     style: BoldItalic
 
-  size: 14
+  size: 16
 
   offset:
     x: 0
-    y: 4
+    y: 8
 
   glyph_offset:
     x: 0
-    y: 2
+    y: 4
 
 mouse:
   hide_when_typing: true
