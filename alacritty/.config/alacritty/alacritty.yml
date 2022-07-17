@@ -5,20 +5,20 @@ draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: D2Coding
+    family: D2Coding ligature
     style: Normal
 
   bold:
-    family: D2Coding
-    style: SemiBold
+    family: D2Coding ligature
+    style: Normal
 
   italic:
-    family: D2Coding
-    style: Italic
+    family: D2Coding ligature
+    style: Normal
 
   bold_italic:
-    family: D2Coding
-    style: BoldItalic
+    family: D2Coding ligature
+    style: Normal
 
   size: 16
 
