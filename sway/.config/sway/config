@@ -6,8 +6,7 @@ set $right l
 
 set $term kitty
 
-for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
-set $menu exec $term --class "launcher" -e /usr/bin/sway-launcher-desktop
+set $menu exec fuzzel --font="JetBrains Mono:size=36" -I --lines 3 -x 20 -y 20 -b 000000ff -t 999999ff -m ffffffff -s 333333ff -S ffffffff -B 0
 
 output * bg /home/carloratm/.config/sway/texture.png tile
 
