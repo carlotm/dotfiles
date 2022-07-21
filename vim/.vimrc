@@ -46,6 +46,7 @@ set updatetime=300
 set shortmess+=c
 set signcolumn=number
 set tws=8x0
+set fillchars=vert:\│
 filetype plugin on
 filetype plugin indent on
 filetype indent on
@@ -75,6 +76,11 @@ let g:PaperColor_Theme_Options = {
   \     }
   \   }
   \ }
+augroup papercolor_overrides
+    autocmd!
+    autocmd ColorScheme PaperColor hi elixirBlockDefinition guifg=#999999
+    autocmd ColorScheme PaperColor hi Comment cterm=italic gui=italic
+augroup END
 colorscheme PaperColor
 highlight ExtraWhitespace ctermbg=1
 match ExtraWhitespace /\s\+$/
@@ -170,4 +176,5 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 let g:coc_global_extensions = ['coc-css', 'coc-diagnostic', 'coc-elixir', 'coc-eslint', 'coc-json', 'coc-prettier', 'coc-pyright', 'coc-tsserver', 'coc-yaml']
 
-
+"""""""""""""""""""""""""""""" helper functions
+command! Inspect echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
