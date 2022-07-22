@@ -10,8 +10,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
 Plug 'sgur/vim-editorconfig'
 Plug 'preservim/nerdtree'
-Plug 'ap/vim-buftabline'
-Plug 'qpkorr/vim-bufkill'
 Plug 'sheerun/vim-polyglot'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'junegunn/fzf.vim'
@@ -78,7 +76,7 @@ let g:PaperColor_Theme_Options = {
   \ }
 augroup papercolor_overrides
     autocmd!
-    autocmd ColorScheme PaperColor hi elixirBlockDefinition guifg=#999999
+    autocmd ColorScheme PaperColor hi elixirBlockDefinition guifg=#666666
     autocmd ColorScheme PaperColor hi Comment cterm=italic gui=italic
 augroup END
 colorscheme PaperColor
@@ -98,6 +96,8 @@ nnoremap < <<
 nnoremap > >>
 nmap <silent> gn :bnext<CR>
 nmap <silent> gp :bprev<CR>
+nmap <silent> <Leader>bo :Buffers<CR>
+nmap <silent> <Leader>bd :bp\|bd #<CR>
 nmap <silent> <Leader>ww :wincmd w<CR>
 
 """""""""""""""""""""""""""""" NerdTree settings
