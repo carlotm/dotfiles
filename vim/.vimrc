@@ -63,13 +63,13 @@ let g:PaperColor_Theme_Options = {
   \   'theme': {
   \     'default.light': {
   \       'override' : {
-  \         'cursorlinenr_bg' : ['#e4e4e4', '232'],
+  \         'cursorlinenr_bg' : ['#d4d4d4', '232'],
+  \         'cursorline' : ['#d4d4d4', '232'],
+  \         'cursorcolumn' : ['#d4d4d4', '232'],
+  \         'linenumber_bg' : ['#e4e4e4', '232'],
+  \         'color00' : ['#e4e4e4', '232'],
   \         'color03' : ['#335E15', '232'],
   \         'statusline_active_bg': ['#1458EC', '232'],
-  \         'buftabline_bg': ['#1458EC', '232'],
-  \         'buftabline_current_bg': ['#eeeeee', '232'],
-  \         'buftabline_active_bg': ['#1458EC', '232'],
-  \         'buftabline_inactive_bg': ['#1458EC', '232'],
   \       }
   \     }
   \   }
