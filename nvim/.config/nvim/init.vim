@@ -107,7 +107,7 @@ augroup papercolor_overrides
     autocmd ColorScheme PaperColor hi Comment cterm=italic gui=italic
 augroup END
 colorscheme PaperColor
-highlight ExtraWhitespace ctermbg=1
+highlight ExtraWhitespace guibg=#ff0000
 match ExtraWhitespace /\s\+$/
 
 """""""""""""""""""""""""""""" NerdTree settings
