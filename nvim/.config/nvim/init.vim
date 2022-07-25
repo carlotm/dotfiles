@@ -11,6 +11,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf.vim'
+Plug 'numToStr/Comment.nvim'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
@@ -142,5 +143,9 @@ let g:fzf_colors = {
 \ 'header':  ['fg', 'Comment'] }
 nmap <Leader>f :FZF<CR>
 nmap <Leader>/ :Ag!<CR>
+
+"""""""""""""""""""""""""""""" vim-commentary settings
+nmap <Leader>c :Commentary<CR>
+vmap <silent> <Leader>c :Commentary<CR>
 
 lua require('conf')

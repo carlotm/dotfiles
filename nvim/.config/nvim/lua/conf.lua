@@ -7,3 +7,12 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   }
 }
+
+require('Comment').setup({
+  ignore = '^$',
+  mappings = {
+    basic = true,
+    extra = false,
+    extended = false,
+  },
+})
