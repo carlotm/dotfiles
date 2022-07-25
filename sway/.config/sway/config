@@ -4,7 +4,7 @@ set $down j
 set $up k
 set $right l
 
-set $term kitty
+set $term alacritty
 
 set $menu exec fuzzel --font="JetBrains Mono:size=36" -I --lines 3 -x 20 -y 20 -b 000000ff -t 999999ff -m ffffffff -s 333333ff -S ffffffff -B 0
 
