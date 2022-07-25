@@ -4,7 +4,7 @@ colors:
   description: "Light theme for prose or for coding"
   primary:
     foreground: "#343434"
-    background: "#eeeeee"
+    background: "#e4e4e4"
   cursor:
     text: "#ffffff"
     cursor: "#4a484d"

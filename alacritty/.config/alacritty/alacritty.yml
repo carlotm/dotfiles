@@ -5,20 +5,20 @@ draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: JetBrains Mono
+    family: Source Code Pro
     style: Normal
 
   bold:
-    family: JetBrains Mono
-    style: Normal
+    family: Source Code Pro
+    style: Medium
 
   italic:
-    family: JetBrains Mono
-    style: Normal
+    family: Source Code Pro
+    style: Italic
 
   bold_italic:
-    family: JetBrains Mono
-    style: Normal
+    family: Source Code Pro
+    style: MediumItalic
 
   size: 16
 
