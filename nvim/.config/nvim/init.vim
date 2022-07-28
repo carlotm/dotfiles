@@ -12,6 +12,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf.vim'
 Plug 'numToStr/Comment.nvim'
+Plug 'gpanders/editorconfig.nvim'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
@@ -33,10 +34,10 @@ set cursorline cursorcolumn
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.*.swp,*.pyc
 set nobackup
 set nowritebackup
-set tabstop=4
-set softtabstop=0
+set tabstop=2
+set softtabstop=-1
 set expandtab
-set shiftwidth=4
+set shiftwidth=0
 set smarttab
 set linebreak
 set updatetime=300
@@ -90,9 +91,9 @@ let g:PaperColor_Theme_Options = {
   \   'theme': {
   \     'default.light': {
   \       'override' : {
-  \         'cursorlinenr_bg' : ['#d4d4d4', '232'],
-  \         'cursorline' : ['#d4d4d4', '232'],
-  \         'cursorcolumn' : ['#d4d4d4', '232'],
+  \         'cursorlinenr_bg' : ['#d8d8d8', '232'],
+  \         'cursorline' : ['#d8d8d8', '232'],
+  \         'cursorcolumn' : ['#d8d8d8', '232'],
   \         'linenumber_bg' : ['#e4e4e4', '232'],
   \         'color00' : ['#e4e4e4', '232'],
   \         'vertsplit_bg' : ['#e4e4e4', '232'],
