@@ -2,6 +2,7 @@
     "coc.preferences.formatOnSaveFiletypes": [
         "elixir",
         "eelixir",
+        "heex",
         "javascript",
         "yaml",
         "python",
@@ -25,5 +26,6 @@
         }
     },
     "css.lint.unknownAtRules": "ignore",
-    "scss.lint.unknownAtRules": "ignore"
+    "scss.lint.unknownAtRules": "ignore",
+    "elixirLS.suggestSpecs": true
 }

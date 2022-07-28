@@ -145,8 +145,6 @@ let g:fzf_colors = {
 nmap <Leader>f :FZF<CR>
 nmap <Leader>/ :Ag!<CR>
 
-"""""""""""""""""""""""""""""" vim-commentary settings
-nmap <Leader>c :Commentary<CR>
-vmap <silent> <Leader>c :Commentary<CR>
+autocmd BufWritePost *.html.heex !mix format <afile>
 
 lua require('conf')
