@@ -6,5 +6,5 @@ xbindkeys &
 xsetroot -solid "#777777"
 xfce4-power-manager &
 dunst &
-~/w/dwm-bar/dwm_bar.sh &
+~/w/dwm/bar/dwm_bar.sh &
 exec dwm
