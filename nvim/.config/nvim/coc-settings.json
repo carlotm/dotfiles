@@ -27,5 +27,5 @@
     },
     "css.lint.unknownAtRules": "ignore",
     "scss.lint.unknownAtRules": "ignore",
-    "elixirLS.suggestSpecs": true
+    "elixirLS.suggestSpecs": false
 }
