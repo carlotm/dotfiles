@@ -75,10 +75,24 @@ let g:plug_pwindow = 'above 12new'
 let g:plug_url_format = 'https://git::@github.com/%s.git'
 
 """""""""""""""""""""""""""""" coc-vim settings
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 let g:coc_global_extensions = ['coc-css', 'coc-diagnostic', 'coc-elixir', 'coc-eslint', 'coc-json', 'coc-prettier', 'coc-pyright', 'coc-tsserver', 'coc-yaml']
+autocmd VimEnter,ColorScheme * hi! link CocMenuSel PMenuSel
+autocmd VimEnter,ColorScheme * hi! link CocSearch Identifier
+autocmd BufWritePre *.py silent! :call CocAction('runCommand', 'python.sortImports')
 
 """""""""""""""""""""""""""""" colorscheme settings
 if exists('+termguicolors')

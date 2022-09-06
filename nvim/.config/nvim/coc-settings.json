@@ -27,5 +27,7 @@
     },
     "css.lint.unknownAtRules": "ignore",
     "scss.lint.unknownAtRules": "ignore",
-    "elixirLS.suggestSpecs": false
+    "elixirLS.suggestSpecs": false,
+    "pyright.inlayHints.enable": false,
+    "pyright.organizeimports.provider": "isort"
 }
