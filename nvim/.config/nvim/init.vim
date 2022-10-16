@@ -16,6 +16,7 @@ Plug 'gpanders/editorconfig.nvim'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
+set mouse=""
 set relativenumber
 set number
 set title
@@ -121,6 +122,7 @@ augroup papercolor_overrides
     autocmd!
     autocmd ColorScheme PaperColor hi elixirBlockDefinition guifg=#666666
     autocmd ColorScheme PaperColor hi Comment cterm=italic gui=italic
+    autocmd ColorScheme PaperColor hi VertSplit guibg=#e4e4e4 guifg=#1458ec
 augroup END
 colorscheme PaperColor
 highlight ExtraWhitespace guibg=#ff0000
@@ -134,6 +136,7 @@ let g:NERDTreeIgnore=['node_modules', '\.git$', '\.vim$', '\.ropeproject']
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeStatusline = ''
 let g:NERDTreeMinimalUI = 1
+let g:NERDTreeMinimalMenu=1
 
 """""""""""""""""""""""""""""" fzf settings
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']

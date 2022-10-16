@@ -10,6 +10,10 @@
         "scss",
         "javascriptreact"
     ],
+    "css.validate": false,
+    "stylelintplus.autoFixOnSave": true,
+    "stylelintplus.validateOnSave": true,
+    "stylelintplus.autoFixOnFormat": true,
     "python.analysis.extraPaths": ["."],
     "codeLens.enable": true,
     "yaml.format.enable": true,

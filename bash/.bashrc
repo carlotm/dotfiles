@@ -41,6 +41,8 @@ export SOUND_CARD_IRQ=49
 export ELIXIR_EDITOR="echo vim +__LINE__ __FILE__"
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export BAT_THEME="GitHub"
+export FLYCTL_INSTALL="/home/carloratm/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 #
 # COMPLETION
