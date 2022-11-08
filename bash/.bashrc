@@ -35,7 +35,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ACKRC=".ackrc"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-export PATH="$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:/sbin:/home/carloratm/.cache/rebar3/bin:$PATH"
+export PATH="$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:/sbin:/home/carloratm/.cache/rebar3/bin:$PATH:/opt/solr/bin"
 export QT_QPA_PLATFORMTHEME=qt5ct
 export SOUND_CARD_IRQ=49
 export ELIXIR_EDITOR="echo vim +__LINE__ __FILE__"

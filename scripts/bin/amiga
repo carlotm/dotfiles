@@ -1,0 +1,4 @@
+#!/bin/bash
+
+CONF=${HOME}/FS-UAE/Configurations/a500dev.fs-uae
+exec fs-uae $CONF

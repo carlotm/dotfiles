@@ -5,22 +5,22 @@ draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: Source Code Pro
+    family: UbuntuMono Nerd Font Mono
     style: Normal
 
   bold:
-    family: Source Code Pro
+    family: UbuntuMono Nerd Font Mono
     style: Medium
 
   italic:
-    family: Source Code Pro
+    family: UbuntuMono Nerd Font Mono
     style: Italic
 
   bold_italic:
-    family: Source Code Pro
+    family: UbuntuMono Nerd Font Mono
     style: MediumItalic
 
-  size: 15
+  size: 20
 
   offset:
     x: 0
