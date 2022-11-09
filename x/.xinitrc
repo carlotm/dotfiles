@@ -3,7 +3,7 @@
 xrdb -merge ~/.Xresources
 setxkbmap us
 xbindkeys &
-xsetroot -solid "#777777"
+xsetroot -solid "#979797"
 xfce4-power-manager &
 dunst &
 ~/w/dwm/bar/dwm_bar.sh &

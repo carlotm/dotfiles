@@ -5,30 +5,30 @@ draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: UbuntuMono Nerd Font Mono
+    family: DM Mono
     style: Normal
 
   bold:
-    family: UbuntuMono Nerd Font Mono
+    family: DM Mono
     style: Medium
 
   italic:
-    family: UbuntuMono Nerd Font Mono
+    family: DM Mono
     style: Italic
 
   bold_italic:
-    family: UbuntuMono Nerd Font Mono
+    family: DM Mono
     style: MediumItalic
 
   size: 20
 
   offset:
     x: 0
-    y: 8
+    y: 4
 
   glyph_offset:
     x: 0
-    y: 4
+    y: 2
 
 mouse:
   hide_when_typing: true
