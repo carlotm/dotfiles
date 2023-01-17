@@ -7,7 +7,7 @@
     width = 500
     height = 300
     origin = top-right
-    offset = 20x40
+    offset = 75x20
     scale = 0
     notification_limit = 0
 
@@ -25,15 +25,15 @@
     horizontal_padding = 10
     text_icon_padding = 0
     frame_width = 0
-    frame_color = "#1458ec"
+    frame_color = "#edc63f"
     separator_color = frame
     sort = yes
 
     ### Text ###
-    font = Source Code Pro 14
+    font = DejaVu Sans Mono - Bront 15
     line_height = 0
     markup = full
-    format = "<b>%s</b>\n%b"
+    format = "%s\n%b"
     alignment = left
     vertical_alignment = center
     show_age_threshold = 60
@@ -59,7 +59,7 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    corner_radius = 4
+    corner_radius = 0
     ignore_dbusclose = false
 
     ### Wayland ###
@@ -81,14 +81,14 @@
     background = "#000000"
     foreground = "#ffffff"
     frame_color = "#000000"
-    highlight = "#1458ec"
+    highlight = "#edc63f"
     timeout = 10
 
 [urgency_normal]
     background = "#000000"
     foreground = "#ffffff"
     frame_color = "#000000"
-    highlight = "#1458ec"
+    highlight = "#edc63f"
     timeout = 10
 
 [urgency_critical]

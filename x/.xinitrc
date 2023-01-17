@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-xrdb -merge ~/.Xresources
-setxkbmap us
-xbindkeys &
-xsetroot -solid "#979797"
+xrdb -merge ~/.Xresources &
 xfce4-power-manager &
+xbindkeys &
 dunst &
-~/w/dwm/bar/dwm_bar.sh &
-exec dwm
+setxkbmap -layout us,it,de -option grp:win_space_toggle
+exec wmaker

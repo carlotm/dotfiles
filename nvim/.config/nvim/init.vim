@@ -13,6 +13,7 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf.vim'
 Plug 'numToStr/Comment.nvim'
 Plug 'gpanders/editorconfig.nvim'
+Plug 'shortcuts/no-neck-pain.nvim'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
@@ -161,7 +162,5 @@ let g:fzf_colors = {
 \ 'header':  ['fg', 'Comment'] }
 nmap <Leader>f :FZF<CR>
 nmap <Leader>/ :Ag!<CR>
-
-autocmd BufWritePost *.html.heex !mix format <afile>
 
 lua require('conf')

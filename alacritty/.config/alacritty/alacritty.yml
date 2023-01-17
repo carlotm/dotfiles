@@ -5,32 +5,40 @@ draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: DM Mono
-    style: Normal
+    family: DejaVu Sans Mono - Bront
+    style: Regular
 
   bold:
-    family: DM Mono
-    style: Medium
+    family: DejaVu Sans Mono - Bront
+    style: Bold
 
   italic:
-    family: DM Mono
+    family: DejaVu Sans Mono - Bront
     style: Italic
 
   bold_italic:
-    family: DM Mono
-    style: MediumItalic
+    family: DejaVu Sans Mono - Bront
+    style: BoldItalic
 
-  size: 20
+  size: 17
 
   offset:
     x: 0
-    y: 4
+    y: 14
 
   glyph_offset:
     x: 0
-    y: 2
+    y: 7
 
 mouse:
   hide_when_typing: true
 
 TERM: xterm-256color
+
+window:
+  dimensions:
+    columns: 80
+    lines: 20
+
+key_bindings:
+  - { key: F11, action: ToggleFullscreen }

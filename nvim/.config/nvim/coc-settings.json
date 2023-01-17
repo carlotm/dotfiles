@@ -1,4 +1,10 @@
 {
+    "languageserver": {
+      "erlang": {
+        "command": "erlang_ls",
+        "filetypes": ["erlang"]
+      }
+    },
     "coc.preferences.formatOnSaveFiletypes": [
         "elixir",
         "eelixir",
@@ -15,7 +21,7 @@
     "stylelintplus.validateOnSave": true,
     "stylelintplus.autoFixOnFormat": true,
     "python.analysis.extraPaths": ["."],
-    "codeLens.enable": true,
+    "codeLens.enable": false,
     "yaml.format.enable": true,
     "python.formatting.provider": "black",
     "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
@@ -33,5 +39,6 @@
     "scss.lint.unknownAtRules": "ignore",
     "elixirLS.suggestSpecs": false,
     "pyright.inlayHints.enable": false,
-    "pyright.organizeimports.provider": "isort"
+    "pyright.organizeimports.provider": "isort",
+    "vetur.validation.script": false
 }
