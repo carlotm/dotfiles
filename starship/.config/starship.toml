@@ -6,12 +6,17 @@ command_timeout = 800
 success_symbol = "[>](bold green)"
 error_symbol = "[x](bold red)"
 
-
-[nodejs]
-symbol = "🚀 "
-
 [git_status]
 disabled = true
 
 [package]
 disabled = true
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[purescript]
+format = '[$symbol($version )]($style)'
