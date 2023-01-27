@@ -1,7 +1,5 @@
 nodejs 18.2.0
 python 3.10.2
 postgres 14.2
-elixir 1.13.4
-erlang 24.3.3
-clojure 1.11.1.1149
-elm 0.19.1
+elixir 1.14.1
+erlang 25.2.1

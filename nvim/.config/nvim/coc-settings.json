@@ -3,6 +3,10 @@
       "erlang": {
         "command": "erlang_ls",
         "filetypes": ["erlang"]
+      },
+      "elixir": {
+        "command": "/home/carloratm/w/elixir-ls/language_server.sh",
+        "filetypes": ["elixir", "heex", "eex"]
       }
     },
     "coc.preferences.formatOnSaveFiletypes": [
