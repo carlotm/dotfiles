@@ -13,7 +13,7 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf.vim'
 Plug 'numToStr/Comment.nvim'
 Plug 'gpanders/editorconfig.nvim'
-Plug 'shortcuts/no-neck-pain.nvim'
+Plug 'folke/zen-mode.nvim'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings

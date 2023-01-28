@@ -13,7 +13,6 @@ Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'junegunn/fzf.vim'
-Plug 'elm-tooling/elm-vim'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings

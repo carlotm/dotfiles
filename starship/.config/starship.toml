@@ -12,6 +12,9 @@ disabled = true
 [package]
 disabled = true
 
+[cmd_duration]
+disabled = true
+
 [nodejs]
 format = "[$symbol($version )]($style)"
 
@@ -19,4 +22,7 @@ format = "[$symbol($version )]($style)"
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 
 [purescript]
+format = '[$symbol($version )]($style)'
+
+[erlang]
 format = '[$symbol($version )]($style)'
