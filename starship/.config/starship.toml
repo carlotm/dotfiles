@@ -22,6 +22,7 @@ format = "[$symbol($version )]($style)"
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 
 [purescript]
+style = 'fg:black'
 format = '[$symbol($version )]($style)'
 
 [erlang]

@@ -1,5 +1,6 @@
-nodejs 18.2.0
-python 3.10.2
+nodejs 17.5.0
+python 3.9.10
 postgres 14.2
-elixir 1.14.1
-erlang 25.2.1
+erlang 24.3.3
+elixir 1.14.1-otp-24
+purescript 0.15.8-0

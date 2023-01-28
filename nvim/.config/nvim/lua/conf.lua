@@ -17,36 +17,38 @@ require('Comment').setup({
   },
 })
 
-require("no-neck-pain").setup({
-    debug = false,
-    enableOnVimEnter = false,
-    width = 100,
-    toggleMapping = "<Leader>np",
-    disableOnLastBuffer = false,
-    killAllBuffersOnDisable = false,
-    buffers = {
-        setNames = false,
-        -- backgroundColor = "#ff0000",
-        blend = 0,
-        textColor = "#ff0000",
-        bo = {
-            filetype = "no-neck-pain",
-            buftype = "nofile",
-            bufhidden = "hide",
-            buflisted = false,
-            swapfile = false,
-        },
-        wo = {
-            cursorline = false,
-            cursorcolumn = false,
-            number = false,
-            relativenumber = false,
-            foldenable = false,
-            list = false,
-            wrap = true,
-            linebreak = true,
-        },
-        left = NoNeckPain.bufferOptions,
-        right = NoNeckPain.bufferOptions,
-    }
+require("zen-mode").setup({
+  window = {
+    backdrop = 1,
+    width = 0.6,
+    height = 1,
+      options = {
+      signcolumn = "no",
+      number = false,
+      relativenumber = false,
+      cursorline = false,
+      cursorcolumn = false,
+      foldcolumn = "0",
+      list = false,
+    },
+  },
+  plugins = {
+    options = {
+      enabled = true,
+      ruler = false,
+      showcmd = false,
+    },
+    twilight = { enabled = true },
+    gitsigns = { enabled = false },
+    tmux = { enabled = false },
+    alacritty = {
+      enabled = true,
+      font = "28",
+    },
+  },
+  on_open = function(win) end,
+  on_close = function() end,
+})
+
+require("twilight").setup({
 })
