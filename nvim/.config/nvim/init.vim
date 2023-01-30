@@ -50,6 +50,7 @@ set fillchars=vert:\│
 filetype indent off
 filetype on
 syntax on
+let g:markdown_folding = 1
 
 """""""""""""""""""""""""""""" Key mapping
 nnoremap <SPACE> <Nop>
