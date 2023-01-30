@@ -32,8 +32,6 @@ export PIP_DOWNLOAD_CACHE="$HOME/.pip_download_cache"
 export VST_PATH="$HOME/.vst"
 export LV2_PATH="$HOME/.lv2:/usr/local/lib/lv2:/usr/lib/lv2"
 export GIT_PS1_SHOWDIRTYSTATE=1
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
-export _JAVA_AWT_WM_NONREPARENTING=1
 export ACKRC=".ackrc"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PATH="$HOME/.screenlayout:$HOME/bin:$HOME/.local/bin:/sbin:/home/carloratm/.cache/rebar3/bin:$PATH:/opt/solr/bin"
