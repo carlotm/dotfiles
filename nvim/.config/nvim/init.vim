@@ -15,6 +15,7 @@ Plug 'numToStr/Comment.nvim'
 Plug 'gpanders/editorconfig.nvim'
 Plug 'folke/zen-mode.nvim'
 Plug 'folke/twilight.nvim'
+Plug 'ggandor/leap.nvim'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings

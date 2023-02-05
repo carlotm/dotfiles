@@ -52,3 +52,5 @@ require("zen-mode").setup({
 
 require("twilight").setup({
 })
+
+require('leap').set_default_keymaps()
