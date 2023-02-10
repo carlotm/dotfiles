@@ -1,0 +1,16 @@
+(
+  "Window Maker",
+  (Terminal, SHORTCUT, "Shift+Mod1+Return", EXEC, "/usr/bin/alacritty"),
+  (Run..., SHORTCUT, "Mod1+F2", EXEC, "%A(Run, Type command:)"),
+  (Workspaces, WORKSPACE_MENU),
+  (
+    Workspace,
+    ("Hide Others", HIDE_OTHERS),
+    ("Show All", SHOW_ALL),
+    ("Arrange Icons", ARRANGE_ICONS),
+    (Refresh, REFRESH),
+    ("Save Session", SAVE_SESSION),
+    ("Clear Session", CLEAR_SESSION)
+  ),
+  ("Restart Window Maker", RESTART)
+)
