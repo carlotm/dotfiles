@@ -1,0 +1,386 @@
+{
+  Dock = {
+    AutoRaiseLower = No;
+    Applications = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = No;
+        Command = "-";
+      },
+      {
+        Forced = No;
+        Name = firefox.Firefox;
+        DropCommand = "firefox %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,2";
+        Lock = No;
+        PasteCommand = "firefox %s";
+        Command = firefox;
+      },
+      {
+        Forced = No;
+        Name = groupLeader.WPrefs;
+        DropCommand = "/usr/lib/GNUstep/Applications/WPrefs.app/WPrefs %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,1";
+        Lock = No;
+        PasteCommand = "/usr/lib/GNUstep/Applications/WPrefs.app/WPrefs %s";
+        Command = "/usr/lib/GNUstep/Applications/WPrefs.app/WPrefs";
+      },
+      {
+        Forced = No;
+        Name = xterm.XTerm;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,3";
+        Lock = No;
+        Command = "/usr/bin/alacritty";
+      },
+      {
+        Forced = No;
+        Name = "gimp-2\\.10.Gimp-2\\.10";
+        DropCommand = "gimp-2.10 %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,6";
+        Lock = No;
+        PasteCommand = "gimp-2.10 %s";
+        Command = "gimp-2.10";
+      },
+      {
+        Forced = No;
+        Name = thunar.Thunar;
+        DropCommand = "thunar %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,4";
+        Lock = No;
+        PasteCommand = "thunar %s";
+        Command = thunar;
+      },
+      {
+        Forced = No;
+        Name = "fs-uae-launcher.fs-uae-launcher";
+        DropCommand = "/usr/bin/python3 /sbin/fs-uae-launcher %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,7";
+        Lock = No;
+        PasteCommand = "/usr/bin/python3 /sbin/fs-uae-launcher %s";
+        Command = "/usr/bin/python3 /sbin/fs-uae-launcher";
+      },
+      {
+        Forced = No;
+        Name = wmtime.wmtime;
+        DropCommand = "wmtime %d";
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,-3";
+        Lock = Yes;
+        PasteCommand = "wmtime %s";
+        Command = "wmtime -d";
+      },
+      {
+        Forced = No;
+        Name = wmbattery.wmbattery;
+        DropCommand = "wmbattery %d";
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,-2";
+        Lock = Yes;
+        PasteCommand = "wmbattery %s";
+        Command = wmbattery;
+      },
+      {
+        Forced = No;
+        Name = audacious.Audacious;
+        DropCommand = "audacious %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,8";
+        Lock = No;
+        PasteCommand = "audacious %s";
+        Command = audacious;
+      },
+      {
+        Forced = No;
+        Name = keepassxc.KeePassXC;
+        DropCommand = "keepassxc %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,9";
+        Lock = No;
+        PasteCommand = "keepassxc %s";
+        Command = keepassxc;
+      },
+      {
+        Forced = No;
+        Name = paginator.Paginator;
+        DropCommand = "paginator -iw -g58x58 -l2x2 %d";
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,-1";
+        Lock = Yes;
+        PasteCommand = "paginator -iw -g58x58 -l2x2 %s";
+        Command = "paginator -iw -g58x58 -l3x3";
+      },
+      {
+        Forced = No;
+        Name = simplescreenrecorder.SimpleScreenRecorder;
+        DropCommand = "simplescreenrecorder %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,10";
+        Lock = No;
+        PasteCommand = "simplescreenrecorder %s";
+        Command = simplescreenrecorder;
+      },
+      {
+        Forced = No;
+        Name = vocal.Vocal;
+        DropCommand = "vocal %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,5";
+        Lock = No;
+        PasteCommand = "vocal %s";
+        Command = vocal;
+      },
+      {
+        Forced = No;
+        Name = inkscape.Inkscape;
+        DropCommand = "inkscape %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,11";
+        Lock = Yes;
+        PasteCommand = "inkscape %s";
+        Command = inkscape;
+      },
+      {
+        Forced = No;
+        Name = "ardour-7\\.2\\.0.Ardour-7\\.2\\.0";
+        DropCommand = "ardour-7.2.0 %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,12";
+        Lock = Yes;
+        PasteCommand = "ardour-7.2.0 %s";
+        Command = ardour7;
+      }
+    );
+    Applications1080 = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = No;
+        Command = "-";
+      },
+      {
+        Forced = No;
+        Name = firefox.Firefox;
+        DropCommand = "firefox %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,2";
+        Lock = No;
+        PasteCommand = "firefox %s";
+        Command = firefox;
+      },
+      {
+        Forced = No;
+        Name = groupLeader.WPrefs;
+        DropCommand = "/usr/lib/GNUstep/Applications/WPrefs.app/WPrefs %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,1";
+        Lock = No;
+        PasteCommand = "/usr/lib/GNUstep/Applications/WPrefs.app/WPrefs %s";
+        Command = "/usr/lib/GNUstep/Applications/WPrefs.app/WPrefs";
+      },
+      {
+        Forced = No;
+        Name = xterm.XTerm;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,3";
+        Lock = No;
+        Command = "/usr/bin/alacritty";
+      },
+      {
+        Forced = No;
+        Name = "gimp-2\\.10.Gimp-2\\.10";
+        DropCommand = "gimp-2.10 %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,6";
+        Lock = No;
+        PasteCommand = "gimp-2.10 %s";
+        Command = "gimp-2.10";
+      },
+      {
+        Forced = No;
+        Name = thunar.Thunar;
+        DropCommand = "thunar %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,4";
+        Lock = No;
+        PasteCommand = "thunar %s";
+        Command = thunar;
+      },
+      {
+        Forced = No;
+        Name = "fs-uae-launcher.fs-uae-launcher";
+        DropCommand = "/usr/bin/python3 /sbin/fs-uae-launcher %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,7";
+        Lock = No;
+        PasteCommand = "/usr/bin/python3 /sbin/fs-uae-launcher %s";
+        Command = "/usr/bin/python3 /sbin/fs-uae-launcher";
+      },
+      {
+        Forced = No;
+        Name = wmtime.wmtime;
+        DropCommand = "wmtime %d";
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,-3";
+        Lock = Yes;
+        PasteCommand = "wmtime %s";
+        Command = "wmtime -d";
+      },
+      {
+        Forced = No;
+        Name = wmbattery.wmbattery;
+        DropCommand = "wmbattery %d";
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,-2";
+        Lock = Yes;
+        PasteCommand = "wmbattery %s";
+        Command = wmbattery;
+      },
+      {
+        Forced = No;
+        Name = audacious.Audacious;
+        DropCommand = "audacious %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,8";
+        Lock = No;
+        PasteCommand = "audacious %s";
+        Command = audacious;
+      },
+      {
+        Forced = No;
+        Name = keepassxc.KeePassXC;
+        DropCommand = "keepassxc %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,9";
+        Lock = No;
+        PasteCommand = "keepassxc %s";
+        Command = keepassxc;
+      },
+      {
+        Forced = No;
+        Name = paginator.Paginator;
+        DropCommand = "paginator -iw -g58x58 -l2x2 %d";
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,-1";
+        Lock = Yes;
+        PasteCommand = "paginator -iw -g58x58 -l2x2 %s";
+        Command = "paginator -iw -g58x58 -l3x3";
+      },
+      {
+        Forced = No;
+        Name = simplescreenrecorder.SimpleScreenRecorder;
+        DropCommand = "simplescreenrecorder %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,10";
+        Lock = No;
+        PasteCommand = "simplescreenrecorder %s";
+        Command = simplescreenrecorder;
+      },
+      {
+        Forced = No;
+        Name = vocal.Vocal;
+        DropCommand = "vocal %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,5";
+        Lock = No;
+        PasteCommand = "vocal %s";
+        Command = vocal;
+      },
+      {
+        Forced = No;
+        Name = inkscape.Inkscape;
+        DropCommand = "inkscape %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,11";
+        Lock = Yes;
+        PasteCommand = "inkscape %s";
+        Command = inkscape;
+      },
+      {
+        Forced = No;
+        Name = "ardour-7\\.2\\.0.Ardour-7\\.2\\.0";
+        DropCommand = "ardour-7.2.0 %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,12";
+        Lock = Yes;
+        PasteCommand = "ardour-7.2.0 %s";
+        Command = ardour7;
+      }
+    );
+    Lowered = Yes;
+    Position = "-64,193";
+  };
+  Applications = ();
+  Workspaces = (
+    {
+      Name = "Workspace 1";
+    },
+    {
+      Name = "Workspace 2";
+    },
+    {
+      Name = "Workspace 3";
+    },
+    {
+      Name = "Workspace 4";
+    },
+    {
+      Name = "Workspace 5";
+    },
+    {
+      Name = "Workspace 6";
+    },
+    {
+      Name = "Workspace 7";
+    },
+    {
+      Name = "Workspace 8";
+    },
+    {
+      Name = "Workspace 9";
+    }
+  );
+  Workspace = "Workspace 1";
+}
