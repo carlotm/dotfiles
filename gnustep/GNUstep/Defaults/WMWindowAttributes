@@ -1,0 +1,108 @@
+{
+  gpodder.Gpodder = {
+    AlwaysUserIcon = Yes;
+    Icon = gpodder.png;
+  };
+  "fs-uae-launcher.fs-uae-launcher" = {
+    AlwaysUserIcon = Yes;
+    Icon = amiga.png;
+  };
+  firefox.Firefox = {
+    Icon = firefox.png;
+  };
+  qutebrowser.qutebrowser = {
+    AlwaysUserIcon = Yes;
+    Icon = qutebrowser.png;
+  };
+  gcolor3.Gcolor3 = {
+    NoTitlebar = Yes;
+    NoMiniaturizeButton = Yes;
+    AlwaysUserIcon = No;
+    NoResizebar = Yes;
+    NoCloseButton = Yes;
+  };
+  Alacritty.Alacritty = {
+    AlwaysUserIcon = Yes;
+    Icon = terminal.svg;
+  };
+  vocal.Vocal = {
+    NoTitlebar = Yes;
+    NoMiniaturizeButton = Yes;
+    AlwaysUserIcon = No;
+    NoResizebar = Yes;
+    Icon = gpodder.png;
+    NoCloseButton = Yes;
+  };
+  inkscape.Inkscape = {
+    Icon = inkscape.png;
+  };
+  gimp.Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = gimp.png;
+  };
+  org.inkscape.Inkscape.Inkscape = {
+    AlwaysUserIcon = No;
+    Icon = inkscape.png;
+  };
+  viewnior.Viewnior = {
+    AlwaysUserIcon = Yes;
+    Icon = viewnior.png;
+  };
+  wprefs.WPrefs = {
+    AlwaysUserIcon = Yes;
+    Icon = "gnome-settings-theme.png";
+  };
+  xterm.XTerm = {
+    Icon = terminal.png;
+  };
+  audacious.Audacious = {
+    NoTitlebar = Yes;
+    NoMiniaturizable = Yes;
+    NoMiniaturizeButton = Yes;
+    NoBorder = Yes;
+    AlwaysUserIcon = Yes;
+    NoResizebar = Yes;
+    Icon = audacious.png;
+    NoCloseButton = Yes;
+  };
+  thunar.Thunar = {
+    AlwaysUserIcon = Yes;
+    Icon = thunar.png;
+  };
+  "gimp-2.10.Gimp-2.10" = {
+    AlwaysUserIcon = Yes;
+    Icon = gimp.png;
+  };
+  gpodder. = {
+    Icon = gpodder.png;
+  };
+  groupLeader.WPrefs = {
+    Icon = "gnome-settings-theme.png";
+  };
+  simplescreenrecorder.SimpleScreenRecorder = {
+    AlwaysUserIcon = Yes;
+    Icon = simplescreenrecorder.png;
+  };
+  obs.obs = {
+    SharedAppIcon = No;
+    NoAppIcon = Yes;
+    AlwaysUserIcon = No;
+  };
+  keepassxc.KeePassXC = {
+    AlwaysUserIcon = Yes;
+    Icon = keepassx.png;
+  };
+  "ardour-7.2.0.Ardour-7.2.0" = {
+    Icon = ardour.png;
+  };
+  Logo.WMDock = {
+    Icon = "distributor-logo-archlinux.png";
+  };
+  Navigator.firefox = {
+    NoTitlebar = Yes;
+    StartMaximized = Yes;
+    AlwaysUserIcon = Yes;
+    Icon = firefox.png;
+    NoResizebar = Yes;
+  };
+}

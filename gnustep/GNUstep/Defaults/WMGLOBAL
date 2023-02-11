@@ -1,0 +1,4 @@
+{
+  BoldSystemFont = "Droid Sans:slant=0:weight=200:width=100:pixelsize=12";
+  SystemFont = "Droid Sans:slant=0:weight=80:width=100:pixelsize=12";
+}
