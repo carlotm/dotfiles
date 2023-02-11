@@ -13,9 +13,7 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf.vim'
 Plug 'numToStr/Comment.nvim'
 Plug 'gpanders/editorconfig.nvim'
-Plug 'folke/zen-mode.nvim'
-Plug 'folke/twilight.nvim'
-Plug 'ggandor/leap.nvim'
+Plug 'sotte/presenting.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
@@ -69,7 +67,6 @@ nmap <silent> gp :bprev<CR>
 nmap <silent> <Leader>bo :Buffers<CR>
 nmap <silent> <Leader>bd :bp\|bd #<CR>
 nmap <silent> <Leader>ww :wincmd w<CR>
-nmap <silent> <Leader>z :ZenMode<CR>
 
 """""""""""""""""""""""""""""" vim-plug settings
 let g:plug_threads = 16
