@@ -13,7 +13,6 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf.vim'
 Plug 'numToStr/Comment.nvim'
 Plug 'gpanders/editorconfig.nvim'
-Plug 'sotte/presenting.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
