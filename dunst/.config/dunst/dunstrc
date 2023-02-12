@@ -30,7 +30,7 @@
     sort = yes
 
     ### Text ###
-    font = DejaVu Sans Mono - Bront 15
+    font = Astacid 15
     line_height = 0
     markup = full
     format = "%s\n%b"

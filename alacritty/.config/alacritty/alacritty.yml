@@ -3,19 +3,19 @@ import:
 
 font:
   normal:
-    family: CodeNewRoman Nerd Font Mono
+    family: Astacid
     style: Regular
 
   bold:
-    family: CodeNewRoman Nerd Font Mono
+    family: Astacid
     style: Regular
 
   italic:
-    family: CodeNewRoman Nerd Font Mono
+    family: Astacid
     style: Italic
 
   bold_italic:
-    family: CodeNewRoman Nerd Font Mono
+    family: Astacid
     style: Italic
 
   size: 20
