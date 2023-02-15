@@ -9,21 +9,10 @@
         "filetypes": ["elixir", "heex", "eex"]
       }
     },
-    "coc.preferences.formatOnSaveFiletypes": [
-        "elixir",
-        "eelixir",
-        "heex",
-        "javascript",
-        "yaml",
-        "python",
-        "css",
-        "scss",
-        "javascriptreact"
-    ],
+    "[elixir][heex][javascript]": {
+       "coc.preferences.formatOnSave": true,
+    },
     "css.validate": false,
-    "stylelintplus.autoFixOnSave": true,
-    "stylelintplus.validateOnSave": true,
-    "stylelintplus.autoFixOnFormat": true,
     "python.analysis.extraPaths": ["."],
     "codeLens.enable": false,
     "yaml.format.enable": true,
@@ -42,7 +31,5 @@
     "css.lint.unknownAtRules": "ignore",
     "scss.lint.unknownAtRules": "ignore",
     "elixirLS.suggestSpecs": false,
-    "pyright.inlayHints.enable": false,
     "pyright.organizeimports.provider": "isort",
-    "vetur.validation.script": false
 }
