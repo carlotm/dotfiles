@@ -2,5 +2,5 @@ nodejs 17.5.0
 python 3.9.10
 postgres 14.2
 erlang 25.0
-elixir main-otp-25
+elixir 1.14.3-otp-25
 purescript 0.15.8-0
