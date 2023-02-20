@@ -95,6 +95,18 @@ let g:coc_global_extensions = ['coc-css', 'coc-diagnostic', 'coc-elixir', 'coc-e
 autocmd VimEnter,ColorScheme * hi! link CocMenuSel PMenuSel
 autocmd VimEnter,ColorScheme * hi! link CocSearch Identifier
 autocmd BufWritePre *.py silent! :call CocAction('runCommand', 'python.sortImports')
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
 
 """""""""""""""""""""""""""""" colorscheme settings
 if exists('+termguicolors')
@@ -162,5 +174,6 @@ let g:fzf_colors = {
 \ 'header':  ['fg', 'Comment'] }
 nmap <Leader>f :FZF<CR>
 nmap <Leader>/ :Ag!<CR>
+
 
 lua require('conf')
