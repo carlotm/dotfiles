@@ -3,4 +3,4 @@ python 3.9.10
 postgres 14.2
 erlang 25.0
 elixir 1.14.3-otp-25
-purescript 0.15.8-0
+gleam 0.26.2
