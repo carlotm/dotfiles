@@ -9,9 +9,7 @@
         "filetypes": ["elixir", "heex", "eex"]
       }
     },
-    "[elixir][heex][javascript]": {
-       "coc.preferences.formatOnSave": true,
-    },
+    "coc.preferences.formatOnSaveFiletypes": ["elixir", "heex", "javascript"],
     "css.validate": false,
     "python.analysis.extraPaths": ["."],
     "codeLens.enable": false,
@@ -31,5 +29,5 @@
     "css.lint.unknownAtRules": "ignore",
     "scss.lint.unknownAtRules": "ignore",
     "elixirLS.suggestSpecs": false,
-    "pyright.organizeimports.provider": "isort",
+    "pyright.organizeimports.provider": "isort"
 }
