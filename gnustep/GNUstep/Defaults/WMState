@@ -44,17 +44,6 @@
       },
       {
         Forced = No;
-        Name = "gimp-2\\.10.Gimp-2\\.10";
-        DropCommand = "gimp-2.10 %d";
-        BuggyApplication = No;
-        AutoLaunch = No;
-        Position = "0,6";
-        Lock = No;
-        PasteCommand = "gimp-2.10 %s";
-        Command = "gimp-2.10";
-      },
-      {
-        Forced = No;
         Name = thunar.Thunar;
         DropCommand = "thunar %d";
         BuggyApplication = No;
@@ -70,7 +59,7 @@
         DropCommand = "/usr/bin/python3 /sbin/fs-uae-launcher %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,7";
+        Position = "0,5";
         Lock = No;
         PasteCommand = "/usr/bin/python3 /sbin/fs-uae-launcher %s";
         Command = "/usr/bin/python3 /sbin/fs-uae-launcher";
@@ -103,7 +92,7 @@
         DropCommand = "audacious %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,8";
+        Position = "0,6";
         Lock = No;
         PasteCommand = "audacious %s";
         Command = audacious;
@@ -114,7 +103,7 @@
         DropCommand = "keepassxc %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,9";
+        Position = "0,7";
         Lock = No;
         PasteCommand = "keepassxc %s";
         Command = keepassxc;
@@ -136,21 +125,10 @@
         DropCommand = "simplescreenrecorder %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,10";
+        Position = "0,8";
         Lock = No;
         PasteCommand = "simplescreenrecorder %s";
         Command = simplescreenrecorder;
-      },
-      {
-        Forced = No;
-        Name = vocal.Vocal;
-        DropCommand = "vocal %d";
-        BuggyApplication = No;
-        AutoLaunch = No;
-        Position = "0,5";
-        Lock = No;
-        PasteCommand = "vocal %s";
-        Command = vocal;
       },
       {
         Forced = No;
@@ -158,7 +136,7 @@
         DropCommand = "inkscape %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,11";
+        Position = "0,9";
         Lock = Yes;
         PasteCommand = "inkscape %s";
         Command = inkscape;
@@ -169,13 +147,15 @@
         DropCommand = "ardour-7.2.0 %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,12";
+        Position = "0,10";
         Lock = Yes;
         PasteCommand = "ardour-7.2.0 %s";
         Command = ardour7;
       }
     );
-    Applications1080 = (
+    Lowered = Yes;
+    Position = "-64,193";
+    Applications1440 = (
       {
         Forced = No;
         Name = Logo.WMDock;
@@ -218,17 +198,6 @@
       },
       {
         Forced = No;
-        Name = "gimp-2\\.10.Gimp-2\\.10";
-        DropCommand = "gimp-2.10 %d";
-        BuggyApplication = No;
-        AutoLaunch = No;
-        Position = "0,6";
-        Lock = No;
-        PasteCommand = "gimp-2.10 %s";
-        Command = "gimp-2.10";
-      },
-      {
-        Forced = No;
         Name = thunar.Thunar;
         DropCommand = "thunar %d";
         BuggyApplication = No;
@@ -244,7 +213,7 @@
         DropCommand = "/usr/bin/python3 /sbin/fs-uae-launcher %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,7";
+        Position = "0,5";
         Lock = No;
         PasteCommand = "/usr/bin/python3 /sbin/fs-uae-launcher %s";
         Command = "/usr/bin/python3 /sbin/fs-uae-launcher";
@@ -277,7 +246,7 @@
         DropCommand = "audacious %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,8";
+        Position = "0,6";
         Lock = No;
         PasteCommand = "audacious %s";
         Command = audacious;
@@ -288,7 +257,7 @@
         DropCommand = "keepassxc %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,9";
+        Position = "0,7";
         Lock = No;
         PasteCommand = "keepassxc %s";
         Command = keepassxc;
@@ -310,21 +279,10 @@
         DropCommand = "simplescreenrecorder %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,10";
+        Position = "0,8";
         Lock = No;
         PasteCommand = "simplescreenrecorder %s";
         Command = simplescreenrecorder;
-      },
-      {
-        Forced = No;
-        Name = vocal.Vocal;
-        DropCommand = "vocal %d";
-        BuggyApplication = No;
-        AutoLaunch = No;
-        Position = "0,5";
-        Lock = No;
-        PasteCommand = "vocal %s";
-        Command = vocal;
       },
       {
         Forced = No;
@@ -332,7 +290,7 @@
         DropCommand = "inkscape %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,11";
+        Position = "0,9";
         Lock = Yes;
         PasteCommand = "inkscape %s";
         Command = inkscape;
@@ -343,14 +301,12 @@
         DropCommand = "ardour-7.2.0 %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,12";
+        Position = "0,10";
         Lock = Yes;
         PasteCommand = "ardour-7.2.0 %s";
         Command = ardour7;
       }
     );
-    Lowered = Yes;
-    Position = "-64,193";
   };
   Applications = ();
   Workspaces = (
