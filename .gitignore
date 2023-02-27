@@ -2,3 +2,6 @@ vim/.vim/black
 vim/.vim/plugged
 __pycache__
 *.pyc
+gnustep/GNUstep/Defaults/WMState.*
+gnustep/GNUstep/.AppInfo/
+gnustep/GNUstep/Library/WindowMaker/CachedPixmaps/
