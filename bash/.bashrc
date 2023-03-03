@@ -42,6 +42,7 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export BAT_THEME="GitHub"
 export FLYCTL_INSTALL="/home/carloratm/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 #
 # COMPLETION
