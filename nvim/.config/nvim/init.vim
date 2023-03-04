@@ -13,6 +13,7 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf.vim'
 Plug 'numToStr/Comment.nvim'
 Plug 'gpanders/editorconfig.nvim'
+Plug 'gleam-lang/gleam.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings

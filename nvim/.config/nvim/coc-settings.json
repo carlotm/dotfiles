@@ -1,33 +1,46 @@
 {
-    "languageserver": {
-      "erlang": {
-        "command": "erlang_ls",
-        "filetypes": ["erlang"]
-      },
-      "elixir": {
-        "command": "/home/carloratm/w/elixir-ls/language_server.sh",
-        "filetypes": ["elixir", "heex", "eex"]
-      }
+  "languageserver": {
+    "erlang": {
+      "command": "erlang_ls",
+      "filetypes": ["erlang"]
     },
-    "coc.preferences.formatOnSaveFiletypes": ["elixir", "heex", "javascript"],
-    "css.validate": false,
-    "python.analysis.extraPaths": ["."],
-    "codeLens.enable": false,
-    "yaml.format.enable": true,
-    "python.formatting.provider": "black",
-    "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
-    "diagnostic-languageserver.mergeConfig": true,
-    "diagnostic-languageserver.filetypes": {
-        "elixir": ["mix_credo", "mix_credo_compile"],
-        "eelixir": ["mix_credo", "mix_credo_compile"]
-    },
-    "diagnostic-languageserver.linters": {
-        "mix_credo": {
-            "args": ["credo", "suggest", "--strict", "--format", "flycheck", "--read-from-stdin"]
-        }
-    },
-    "css.lint.unknownAtRules": "ignore",
-    "scss.lint.unknownAtRules": "ignore",
-    "elixirLS.suggestSpecs": false,
-    "pyright.organizeimports.provider": "isort"
+    "elixir": {
+      "command": "/home/carloratm/w/elixir-ls/language_server.sh",
+      "filetypes": ["elixir", "heex", "eex"]
+    }
+  },
+  "coc.preferences.formatOnSaveFiletypes": [
+    "elixir",
+    "heex",
+    "javascript",
+    "purescript",
+    "json"
+  ],
+  "css.validate": false,
+  "python.analysis.extraPaths": ["."],
+  "codeLens.enable": false,
+  "yaml.format.enable": true,
+  "python.formatting.provider": "black",
+  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
+  "diagnostic-languageserver.mergeConfig": true,
+  "diagnostic-languageserver.filetypes": {
+    "elixir": ["mix_credo", "mix_credo_compile"],
+    "eelixir": ["mix_credo", "mix_credo_compile"]
+  },
+  "diagnostic-languageserver.linters": {
+    "mix_credo": {
+      "args": [
+        "credo",
+        "suggest",
+        "--strict",
+        "--format",
+        "flycheck",
+        "--read-from-stdin"
+      ]
+    }
+  },
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "elixirLS.suggestSpecs": false,
+  "pyright.organizeimports.provider": "isort"
 }
