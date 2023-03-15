@@ -1,5 +1,10 @@
 {
   "languageserver": {
+    "gleam": {
+      "command": "gleam",
+      "args": ["lsp"],
+      "filetypes": ["gleam"]
+    },
     "erlang": {
       "command": "erlang_ls",
       "filetypes": ["erlang"]
@@ -14,7 +19,8 @@
     "heex",
     "javascript",
     "purescript",
-    "json"
+    "json",
+    "gleam"
   ],
   "css.validate": false,
   "python.analysis.extraPaths": ["."],
