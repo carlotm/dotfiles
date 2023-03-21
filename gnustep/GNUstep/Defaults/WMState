@@ -25,13 +25,11 @@
       {
         Forced = No;
         Name = groupLeader.WPrefs;
-        DropCommand = "/usr/lib/GNUstep/Applications/WPrefs.app/WPrefs %d";
         BuggyApplication = No;
         AutoLaunch = No;
         Position = "0,1";
         Lock = No;
-        PasteCommand = "/usr/lib/GNUstep/Applications/WPrefs.app/WPrefs %s";
-        Command = "/usr/lib/GNUstep/Applications/WPrefs.app/WPrefs";
+        Command = WPrefs;
       },
       {
         Forced = No;
@@ -154,7 +152,7 @@
       }
     );
     Lowered = Yes;
-    Position = "-64,193";
+    Position = "2496,193";
     Applications1440 = (
       {
         Forced = No;
@@ -179,13 +177,11 @@
       {
         Forced = No;
         Name = groupLeader.WPrefs;
-        DropCommand = "/usr/lib/GNUstep/Applications/WPrefs.app/WPrefs %d";
         BuggyApplication = No;
         AutoLaunch = No;
         Position = "0,1";
         Lock = No;
-        PasteCommand = "/usr/lib/GNUstep/Applications/WPrefs.app/WPrefs %s";
-        Command = "/usr/lib/GNUstep/Applications/WPrefs.app/WPrefs";
+        Command = WPrefs;
       },
       {
         Forced = No;
