@@ -3,4 +3,5 @@ python 3.9.10
 postgres 14.2
 erlang 25.3
 elixir 1.14.3-otp-25
+rebar 3.20.0
 gleam 0.27.0
