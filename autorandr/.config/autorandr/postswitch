@@ -1,0 +1,3 @@
+#!/bin/bash
+notify-send "wmaker restarted"
+kill -s SIGUSR1 $(pidof -S $'\n' wmaker | head -1)
