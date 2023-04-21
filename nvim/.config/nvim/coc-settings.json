@@ -48,5 +48,6 @@
   "css.lint.unknownAtRules": "ignore",
   "scss.lint.unknownAtRules": "ignore",
   "elixirLS.suggestSpecs": false,
-  "pyright.organizeimports.provider": "isort"
+  "pyright.organizeimports.provider": "isort",
+  "snippets.ultisnips.pythonPrompt": false
 }

@@ -1,0 +1,8 @@
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+snippet log
+require Logger
+Logger.error("====================================")
+Logger.error("#{inspect(${1:value}, pretty: true)}")
+Logger.error("====================================")
+endsnippet
