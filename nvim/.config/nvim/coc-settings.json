@@ -12,6 +12,10 @@
     "elixir": {
       "command": "/home/carloratm/w/elixir-ls/language_server.sh",
       "filetypes": ["elixir", "heex", "eex"]
+    },
+    "elm": {
+      "command": "elm-language-server",
+      "filetypes": ["elm"]
     }
   },
   "coc.preferences.formatOnSaveFiletypes": [
@@ -20,7 +24,8 @@
     "javascript",
     "purescript",
     "json",
-    "gleam"
+    "gleam",
+    "elm"
   ],
   "css.validate": false,
   "python.analysis.extraPaths": ["."],
