@@ -82,7 +82,7 @@
         Position = "0,-2";
         Lock = Yes;
         PasteCommand = "wmbattery %s";
-        Command = wmbattery;
+        Command = "wmbattery -x /home/carloratm/bin/notify-battery";
       },
       {
         Forced = No;
@@ -234,7 +234,7 @@
         Position = "0,-2";
         Lock = Yes;
         PasteCommand = "wmbattery %s";
-        Command = wmbattery;
+        Command = "wmbattery -x /home/carloratm/bin/notify-battery";
       },
       {
         Forced = No;
@@ -304,7 +304,6 @@
       }
     );
   };
-  Applications = ();
   Workspaces = (
     {
       Name = "Workspace 1";
@@ -334,5 +333,4 @@
       Name = "Workspace 9";
     }
   );
-  Workspace = "Workspace 1";
 }
