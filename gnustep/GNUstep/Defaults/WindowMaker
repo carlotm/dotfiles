@@ -1,11 +1,10 @@
 {
-  FrameBorderColor = "#000000";
   FTitleColor = "#000000";
-  WindowTitleBalloons = NO;
+  FrameBorderColor = "#000000";
   MiniaturizeKey = None;
+  WindowTitleBalloons = NO;
   MenuDisabledColor = "#7f7f7f";
-  IconTitleBack = "#000000";
-  MoveToWorkspace9Key = "Shift+Mod1+9";
+  HotCornerEdge = 3;
   PixmapPath = (
     "/home/carloratm/GNUstep/Library/WindowMaker/Pixmaps",
     "/home/carloratm/GNUstep/Library/WindowMaker/Backgrounds",
@@ -14,33 +13,37 @@
     "/usr/share/WindowMaker/Backgrounds",
     "/usr/share/pixmaps"
   );
+  MoveToWorkspace9Key = "Shift+Mod1+9";
+  IconTitleBack = "#000000";
   FTitleBack = (solid, "#edc63f");
   ToggleKbdModeKey = "Mod1+space";
   DragMaximizedWindow = RestoreGeometry;
   WindowMenuKey = None;
   HideKey = None;
-  IconTitleFont = "Misc Ohsnapu:slant=0:weight=200:width=100:pixelsize=12";
   MoveToWorkspace7Key = "Shift+Mod1+7";
+  IconTitleFont = "Misc Ohsnapu:slant=0:weight=200:width=100:pixelsize=12";
   MenuTextBack = (solid, "#c7c7c7");
-  LargeDisplayFont = "Droid Sans:slant=0:weight=200:width=100:pixelsize=72";
   WindowPlacement = center;
+  LargeDisplayFont = "Droid Sans:slant=0:weight=200:width=100:pixelsize=72";
+  HotCornerDelay = 250;
   DisableClip = YES;
   MoveDisplay = center;
-  TitleJustify = left;
   IconTitleColor = "#ffffff";
-  MenuTextColor = "#000000";
+  TitleJustify = left;
   MoveToWorkspace2Key = "Shift+Mod1+2";
+  MenuTextColor = "#000000";
   IconBack = (dgradient, "#dfdfdf", "#9d9d9d");
   MenuTitleColor = "#000000";
   AntialiasedText = YES;
+  HotCorners = NO;
   MenuTitleFont = "Droid Sans:slant=0:weight=200:width=100:pixelsize=14";
   LowerKey = None;
   MoveToWorkspace5Key = "Shift+Mod1+5";
   WindowListKey = None;
   MoveTo6to12Head = None;
   SmoothWorkspaceBack = YES;
-  MenuTextFont = "Droid Sans:slant=0:weight=80:width=100:pixelsize=14";
   NoWindowOverDock = YES;
+  MenuTextFont = "Droid Sans:slant=0:weight=80:width=100:pixelsize=14";
   WorkspaceBack = (solid, "#29659a");
   HighlightTextColor = "#000000";
   MenuTitleBack = (solid, "#edc63f");
@@ -51,17 +54,18 @@
   PrevWorkspaceKey = None;
   ClipTitleColor = "#000000";
   MoveTo12to6Head = None;
+  HotCornerActions = (None, None, None, None);
   CloseKey = "Shift+Mod1+C";
-  FrameFocusedBorderColor = "#000000";
   HighlightColor = "#ffffff";
-  WindowTitleFont = "Droid Sans:slant=0:weight=180:width=100:pixelsize=16";
+  FrameFocusedBorderColor = "#000000";
   FocusMode = sloppy;
+  WindowTitleFont = "Droid Sans:slant=0:weight=180:width=100:pixelsize=16";
   MoveToWorkspace8Key = "Shift+Mod1+8";
   NextWorkspaceKey = None;
   WindowPlaceOrigin = (817, 350);
   RunKey = "Mod1+F2";
-  DisableDrawers = YES;
   MoveToWorkspace3Key = "Shift+Mod1+3";
+  DisableDrawers = YES;
   CClipTitleColor = "#616161";
   RootMenuKey = None;
   MoveToWorkspace6Key = "Shift+Mod1+6";
