@@ -12,6 +12,7 @@ alias grep='grep --color -n'
 alias tree='tree -C -a -I .git'
 alias vim='nvim'
 alias trans="trans :it"
+alias fd="NO_COLOR=1 fd"
 diff() { command diff -u $* | diff-so-fancy; }
 
 shopt -s checkwinsize
