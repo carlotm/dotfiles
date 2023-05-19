@@ -1,8 +1,0 @@
-#!/bin/bash
-
-exec notify-send -u critical """
-  !!! BATTERY LOW !!!
-  !!! BATTERY LOW !!!
-  !!! BATTERY LOW !!!
-  !!! BATTERY LOW !!!
-"""
