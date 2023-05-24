@@ -23,6 +23,7 @@
     "elixir",
     "heex",
     "javascript",
+    "javascriptreact",
     "purescript",
     "json",
     "gleam",
