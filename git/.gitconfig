@@ -25,8 +25,8 @@
 [pull]
     rebase = true
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [diff]
-	tool = git icdiff
+	  tool = git icdiff
 [icdiff]
-	options = --highlight
+	  options = --highlight
