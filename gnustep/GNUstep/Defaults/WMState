@@ -303,6 +303,8 @@
         Command = ardour7;
       }
     );
+    Lowered = Yes;
+    Position = "1856,193";
   };
   Workspaces = (
     {
