@@ -1,0 +1,13 @@
+{
+  "Log": {
+    "prefix": ["log"],
+    "body": [
+      "require Logger",
+      "Logger.error(\"== LOG ${1:var} ==\")",
+      "Logger.error(\"#{inspect(${1}, pretty: true})\")",
+      "Logger.error(\"== END ${1} ==\")",
+      ""
+    ],
+    "description": "Log in red for great readability."
+  }
+}
