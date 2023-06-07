@@ -79,7 +79,7 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require('lspconfig').elixirls.setup {
-  cmd = { "/home/carloratm/w/elixir-ls/1.14-25.1/language_server.sh" },
+  cmd = { "/home/carloratm/w/elixir-ls/1.14.3-25.0.4/language_server.sh" },
   on_attach = on_attach,
   capabilities = capabilities
 }
