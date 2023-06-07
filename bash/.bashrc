@@ -45,6 +45,7 @@ export FLYCTL_INSTALL="/home/carloratm/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 export ERL_AFLAGS="-kernel shell_history enabled"
 export ERL_FLAGS="-enable-feature all"
+export KERL_BUILD_DOCS=yes
 
 #
 # COMPLETION
