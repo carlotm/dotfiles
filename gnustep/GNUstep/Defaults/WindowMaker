@@ -1,81 +1,74 @@
 {
-  FTitleColor = "#000000";
   FrameBorderColor = "#000000";
+  FTitleColor = "#000000";
+  MiniaturizeKey = None;
   WindowTitleBalloons = NO;
   MenuDisabledColor = "#7f7f7f";
-  MoveToWorkspace9Key = "Shift+Mod1+9";
-  IconTitleBack = "#000000";
+  HotCornerEdge = 3;
   PixmapPath = (
     "/home/carloratm/GNUstep/Library/WindowMaker/Pixmaps",
     "/home/carloratm/GNUstep/Library/WindowMaker/Backgrounds",
     "/home/carloratm/GNUstep/Library/WindowMaker/CachedPixmaps",
     "/usr/share/pixmaps"
   );
-  HotCornerEdge = 3;
+  IconTitleBack = "#000000";
+  MoveToWorkspace9Key = "Shift+Mod1+9";
   FTitleBack = (solid, "#edc63f");
+  ToggleKbdModeKey = "Mod1+space";
+  DragMaximizedWindow = RestoreGeometry;
+  WindowMenuKey = None;
   HideKey = None;
-  MoveToWorkspace7Key = "Shift+Mod1+7";
   IconTitleFont = "Misc Ohsnapu:slant=0:weight=200:width=100:pixelsize=12";
+  MoveToWorkspace7Key = "Shift+Mod1+7";
+  MenuTextBack = (solid, "#c7c7c7");
+  WindowPlacement = center;
   LargeDisplayFont = "Droid Sans:slant=0:weight=200:width=100:pixelsize=72";
+  HotCornerDelay = 250;
   DisableClip = YES;
   CenterKey = None;
   MoveDisplay = center;
+  TitleJustify = left;
   IconTitleColor = "#ffffff";
+  MenuTextColor = "#000000";
   MoveToWorkspace2Key = "Shift+Mod1+2";
+  IconBack = (dgradient, "#dfdfdf", "#9d9d9d");
+  AntialiasedText = YES;
   MenuTitleColor = "#000000";
-  HotCorners = NO;
+  LowerKey = None;
+  MoveToWorkspace5Key = "Shift+Mod1+5";
   MenuTitleFont = "Droid Sans:slant=0:weight=200:width=100:pixelsize=14";
-  MoveTo6to12Head = None;
+  HotCorners = NO;
+  WindowListKey = None;
   SmoothWorkspaceBack = YES;
+  MoveTo6to12Head = None;
   DbClickFullScreen = NO;
+  MenuTextFont = "Droid Sans:slant=0:weight=80:width=100:pixelsize=14";
   NoWindowOverDock = YES;
   WorkspaceBack = (solid, "#29659a");
   HighlightTextColor = "#000000";
+  MenuTitleBack = (solid, "#edc63f");
   EnforceIconMargin = NO;
   WindowSnapping = YES;
+  SnapToTopMaximizesFullscreen = YES;
   PrevWorkspaceKey = None;
   AutoArrangeIcons = YES;
   ClipTitleColor = "#000000";
   MoveTo12to6Head = None;
   HotCornerActions = (None, None, None, None);
-  FrameFocusedBorderColor = "#000000";
-  WindowTitleFont = "Droid Sans:slant=0:weight=180:width=100:pixelsize=16";
-  MoveToWorkspace8Key = "Shift+Mod1+8";
-  RunKey = "Mod1+F2";
-  WindowPlaceOrigin = (817, 350);
-  RootMenuKey = None;
-  MoveToWorkspace6Key = "Shift+Mod1+6";
-  MoveToWorkspace10Key = "Shift+Mod1+0";
-  KbdModeLock = YES;
-  OpenTransientOnOwnerWorkspace = YES;
-  CloseRootMenuByLeftOrRightMouseClick = NO;
-  MoveToWorkspace1Key = "Shift+Mod1+1";
-  IgnoreGtkHints = YES;
-  FrameSelectedBorderColor = "#ffffff";
-  MiniaturizeKey = None;
-  ToggleKbdModeKey = "Mod1+space";
-  WindowMenuKey = None;
-  DragMaximizedWindow = RestoreGeometry;
-  MenuTextBack = (solid, "#c7c7c7");
-  WindowPlacement = center;
-  HotCornerDelay = 250;
-  TitleJustify = left;
-  MenuTextColor = "#000000";
-  IconBack = (dgradient, "#dfdfdf", "#9d9d9d");
-  AntialiasedText = YES;
-  MoveToWorkspace5Key = "Shift+Mod1+5";
-  LowerKey = None;
-  WindowListKey = None;
-  MenuTextFont = "Droid Sans:slant=0:weight=80:width=100:pixelsize=14";
-  MenuTitleBack = (solid, "#edc63f");
-  SnapToTopMaximizesFullscreen = YES;
   CloseKey = "Shift+Mod1+C";
   HighlightColor = "#ffffff";
+  FrameFocusedBorderColor = "#000000";
   FocusMode = sloppy;
+  WindowTitleFont = "Droid Sans:slant=0:weight=180:width=100:pixelsize=16";
+  MoveToWorkspace8Key = "Shift+Mod1+8";
   NextWorkspaceKey = None;
-  MoveToWorkspace3Key = "Shift+Mod1+3";
+  RunKey = "Mod1+F2";
+  WindowPlaceOrigin = (817, 350);
   DisableDrawers = YES;
+  MoveToWorkspace3Key = "Shift+Mod1+3";
   CClipTitleColor = "#616161";
+  RootMenuKey = None;
+  MoveToWorkspace6Key = "Shift+Mod1+6";
   IconPath = (
     "/home/carloratm/GNUstep/Library/Icons",
     "/home/carloratm/GNUstep/Library/WindowMaker/Pixmaps",
@@ -83,8 +76,15 @@
     "/usr/share/pixmaps"
   );
   RaiseKey = None;
+  MoveToWorkspace10Key = "Shift+Mod1+0";
+  KbdModeLock = YES;
+  OpenTransientOnOwnerWorkspace = YES;
   UTitleColor = "#000000";
   UTitleBack = (solid, "#e4e4e4");
   PTitleColor = "#ffffff";
+  CloseRootMenuByLeftOrRightMouseClick = NO;
+  MoveToWorkspace1Key = "Shift+Mod1+1";
+  IgnoreGtkHints = YES;
   MoveToWorkspace4Key = "Shift+Mod1+4";
+  FrameSelectedBorderColor = "#ffffff";
 }

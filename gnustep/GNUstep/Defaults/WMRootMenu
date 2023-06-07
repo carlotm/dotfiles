@@ -1,6 +1,5 @@
 (
   "Window Maker",
-  (Docs, SHORTCUT, "Control+k", EXEC, "/home/carloratm/bin/devdocs"),
   (Terminal, SHORTCUT, "Shift+Mod1+Return", EXEC, "/usr/bin/alacritty"),
   (Run..., SHORTCUT, "Mod1+F2", EXEC, "%A(Run, Type command:)"),
   (Workspaces, WORKSPACE_MENU),
