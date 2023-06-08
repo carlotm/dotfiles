@@ -1,5 +1,5 @@
-vim/.vim/black
-vim/.vim/plugged
+config/.vim/black
+config/.vim/plugged
 __pycache__
 *.pyc
 gnustep/GNUstep/Defaults/WMState.*
