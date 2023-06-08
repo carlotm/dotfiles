@@ -86,22 +86,11 @@
       },
       {
         Forced = No;
-        Name = audacious.Audacious;
-        DropCommand = "audacious %d";
-        BuggyApplication = No;
-        AutoLaunch = No;
-        Position = "0,6";
-        Lock = No;
-        PasteCommand = "audacious %s";
-        Command = audacious;
-      },
-      {
-        Forced = No;
         Name = keepassxc.KeePassXC;
         DropCommand = "keepassxc %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,7";
+        Position = "0,6";
         Lock = No;
         PasteCommand = "keepassxc %s";
         Command = keepassxc;
@@ -109,13 +98,13 @@
       {
         Forced = No;
         Name = paginator.Paginator;
-        DropCommand = "paginator -iw -g58x58 -l2x2 %d";
+        DropCommand = "paginator -iw -g 50x50 -l 3x3 %d";
         BuggyApplication = No;
-        AutoLaunch = Yes;
+        AutoLaunch = No;
         Position = "0,-1";
-        Lock = Yes;
-        PasteCommand = "paginator -iw -g58x58 -l2x2 %s";
-        Command = "paginator -iw -g58x58 -l3x3";
+        Lock = No;
+        PasteCommand = "paginator -iw -g 50x50 -l 3x3 %s";
+        Command = "paginator -iw -g 50x50 -l 3x3";
       },
       {
         Forced = No;
@@ -123,7 +112,7 @@
         DropCommand = "simplescreenrecorder %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,8";
+        Position = "0,7";
         Lock = No;
         PasteCommand = "simplescreenrecorder %s";
         Command = simplescreenrecorder;
@@ -134,7 +123,7 @@
         DropCommand = "inkscape %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,9";
+        Position = "0,8";
         Lock = Yes;
         PasteCommand = "inkscape %s";
         Command = inkscape;
@@ -145,15 +134,13 @@
         DropCommand = "ardour-7.2.0 %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,10";
+        Position = "0,9";
         Lock = Yes;
         PasteCommand = "ardour-7.2.0 %s";
         Command = ardour7;
       }
     );
-    Lowered = Yes;
-    Position = "4416,193";
-    Applications1440 = (
+    Applications1080 = (
       {
         Forced = No;
         Name = Logo.WMDock;
@@ -238,22 +225,11 @@
       },
       {
         Forced = No;
-        Name = audacious.Audacious;
-        DropCommand = "audacious %d";
-        BuggyApplication = No;
-        AutoLaunch = No;
-        Position = "0,6";
-        Lock = No;
-        PasteCommand = "audacious %s";
-        Command = audacious;
-      },
-      {
-        Forced = No;
         Name = keepassxc.KeePassXC;
         DropCommand = "keepassxc %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,7";
+        Position = "0,6";
         Lock = No;
         PasteCommand = "keepassxc %s";
         Command = keepassxc;
@@ -261,13 +237,13 @@
       {
         Forced = No;
         Name = paginator.Paginator;
-        DropCommand = "paginator -iw -g58x58 -l2x2 %d";
+        DropCommand = "paginator -iw -g 50x50 -l 3x3 %d";
         BuggyApplication = No;
-        AutoLaunch = Yes;
+        AutoLaunch = No;
         Position = "0,-1";
-        Lock = Yes;
-        PasteCommand = "paginator -iw -g58x58 -l2x2 %s";
-        Command = "paginator -iw -g58x58 -l3x3";
+        Lock = No;
+        PasteCommand = "paginator -iw -g 50x50 -l 3x3 %s";
+        Command = "paginator -iw -g 50x50 -l 3x3";
       },
       {
         Forced = No;
@@ -275,7 +251,7 @@
         DropCommand = "simplescreenrecorder %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,8";
+        Position = "0,7";
         Lock = No;
         PasteCommand = "simplescreenrecorder %s";
         Command = simplescreenrecorder;
@@ -286,7 +262,7 @@
         DropCommand = "inkscape %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,9";
+        Position = "0,8";
         Lock = Yes;
         PasteCommand = "inkscape %s";
         Command = inkscape;
@@ -297,7 +273,7 @@
         DropCommand = "ardour-7.2.0 %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,10";
+        Position = "0,9";
         Lock = Yes;
         PasteCommand = "ardour-7.2.0 %s";
         Command = ardour7;
@@ -306,6 +282,7 @@
     Lowered = Yes;
     Position = "1856,193";
   };
+  Applications = ();
   Workspaces = (
     {
       Name = "Workspace 1";
@@ -335,4 +312,5 @@
       Name = "Workspace 9";
     }
   );
+  Workspace = "Workspace 1";
 }
