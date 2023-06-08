@@ -1,3 +1,5 @@
 Xcursor.theme: Hackneyed
 Xft.dpi: 96
-paginator.background: #e4e4e4
+paginator.background: #202020
+paginator.separator: #20b2ae
+paginator.selbackground: #666666

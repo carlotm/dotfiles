@@ -98,13 +98,11 @@
       {
         Forced = No;
         Name = paginator.Paginator;
-        DropCommand = "paginator -iw -g 50x50 -l 3x3 %d";
         BuggyApplication = No;
-        AutoLaunch = No;
+        AutoLaunch = Yes;
         Position = "0,-1";
         Lock = No;
-        PasteCommand = "paginator -iw -g 50x50 -l 3x3 %s";
-        Command = "paginator -iw -g 50x50 -l 3x3";
+        Command = "paginator -iw -g 62x62 -l 3x3";
       },
       {
         Forced = No;
@@ -237,13 +235,11 @@
       {
         Forced = No;
         Name = paginator.Paginator;
-        DropCommand = "paginator -iw -g 50x50 -l 3x3 %d";
         BuggyApplication = No;
-        AutoLaunch = No;
+        AutoLaunch = Yes;
         Position = "0,-1";
         Lock = No;
-        PasteCommand = "paginator -iw -g 50x50 -l 3x3 %s";
-        Command = "paginator -iw -g 50x50 -l 3x3";
+        Command = "paginator -iw -g 62x62 -l 3x3";
       },
       {
         Forced = No;
