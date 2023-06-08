@@ -17,8 +17,6 @@ require('Comment').setup({
   },
 })
 
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
-
 -- helper functions
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -78,6 +76,11 @@ end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+require('lspconfig').erlangls.setup {
+  cmd = { "/home/carloratm/w/erlang_ls/26.0/bin/erlang_ls" },
+  on_attach = on_attach,
+  capabilities = capabilities
+}
 require('lspconfig').elixirls.setup {
   cmd = { "/home/carloratm/w/elixir-ls/1.14.3-25.0.4/language_server.sh" },
   on_attach = on_attach,
