@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-xrdb -merge ~/.Xresources &
+xrdb ~/.Xresources
 xfce4-power-manager &
 xbindkeys &
 dunst &
