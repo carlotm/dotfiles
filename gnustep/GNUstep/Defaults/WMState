@@ -125,20 +125,11 @@
         Lock = Yes;
         PasteCommand = "inkscape %s";
         Command = inkscape;
-      },
-      {
-        Forced = No;
-        Name = "ardour-7\\.2\\.0.Ardour-7\\.2\\.0";
-        DropCommand = "ardour-7.2.0 %d";
-        BuggyApplication = No;
-        AutoLaunch = No;
-        Position = "0,9";
-        Lock = Yes;
-        PasteCommand = "ardour-7.2.0 %s";
-        Command = ardour7;
       }
     );
-    Applications1080 = (
+    Lowered = Yes;
+    Position = "2496,193";
+    Applications1440 = (
       {
         Forced = No;
         Name = Logo.WMDock;
@@ -262,21 +253,8 @@
         Lock = Yes;
         PasteCommand = "inkscape %s";
         Command = inkscape;
-      },
-      {
-        Forced = No;
-        Name = "ardour-7\\.2\\.0.Ardour-7\\.2\\.0";
-        DropCommand = "ardour-7.2.0 %d";
-        BuggyApplication = No;
-        AutoLaunch = No;
-        Position = "0,9";
-        Lock = Yes;
-        PasteCommand = "ardour-7.2.0 %s";
-        Command = ardour7;
       }
     );
-    Lowered = Yes;
-    Position = "1856,193";
   };
   Applications = ();
   Workspaces = (
