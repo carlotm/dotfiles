@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "elixir", "heex", "eex", "css" },
+  ensure_installed = { "elixir", "heex", "eex", "css", "javascript" },
   sync_install = true,
   auto_install = true,
   highlight = {
@@ -86,4 +86,5 @@ require('lspconfig').elixirls.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
-require'lspconfig'.stylelint_lsp.setup{}
+require('lspconfig').stylelint_lsp.setup{}
+require('lspconfig').tsserver.setup{}
