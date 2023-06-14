@@ -21,6 +21,9 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'hrsh7th/cmp-vsnip'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'css', 'json'] }
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
@@ -151,5 +154,11 @@ let g:fzf_colors = {
 nmap <Leader>f :FZF<CR>
 nmap <Leader>/ :Ag!<CR>
 
+"""""""""""""""""""""""""""""" prettier settings
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_config_present = 1
+let g:prettier#autoformat_require_pragma = 0
+
+map <leader>e :lua vim.diagnostic.open_float(0, {scope="line"})<CR>
 
 lua require('conf')
