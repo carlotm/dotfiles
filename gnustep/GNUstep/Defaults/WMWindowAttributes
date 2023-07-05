@@ -2,20 +2,16 @@
   "*" = {
     NoResizebar = Yes;
   };
-  gpodder.Gpodder = {
-    AlwaysUserIcon = Yes;
-    Icon = gpodder.png;
-  };
   "fs-uae-launcher.fs-uae-launcher" = {
     AlwaysUserIcon = Yes;
     Icon = amiga.png;
   };
   firefox.Firefox = {
-    Icon = firefox.png;
-  };
-  qutebrowser.qutebrowser = {
+    NoTitlebar = Yes;
+    StartMaximized = Yes;
     AlwaysUserIcon = Yes;
-    Icon = qutebrowser.png;
+    Icon = firefox.png;
+    NoResizebar = Yes;
   };
   gcolor3.Gcolor3 = {
     NoTitlebar = Yes;
@@ -28,14 +24,6 @@
     AlwaysUserIcon = Yes;
     Icon = terminal.svg;
   };
-  vocal.Vocal = {
-    NoTitlebar = Yes;
-    NoMiniaturizeButton = Yes;
-    AlwaysUserIcon = No;
-    NoResizebar = Yes;
-    Icon = gpodder.png;
-    NoCloseButton = Yes;
-  };
   inkscape.Inkscape = {
     Icon = inkscape.png;
   };
@@ -46,10 +34,6 @@
   org.inkscape.Inkscape.Inkscape = {
     AlwaysUserIcon = No;
     Icon = inkscape.png;
-  };
-  viewnior.Viewnior = {
-    AlwaysUserIcon = Yes;
-    Icon = viewnior.png;
   };
   wprefs.WPrefs = {
     AlwaysUserIcon = Yes;
