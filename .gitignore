@@ -1,5 +1,6 @@
 config/.vim/black
 config/.vim/plugged
+config/.vim/autoload
 __pycache__
 *.pyc
 gnustep/GNUstep/Defaults/WMState.*
