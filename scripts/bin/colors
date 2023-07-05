@@ -19,11 +19,11 @@ if test -t 1; then
     fi
 fi
 
-echo "${bla}black text .. ${bold}bright version${normal}"
-echo "${red}red text .... ${bold}bright version${normal}"
-echo "${gre}green text .. ${bold}bright version${normal}"
-echo "${yel}yellow text . ${bold}bright version${normal}"
-echo "${blu}blue text ... ${bold}bright version${normal}"
-echo "${mag}magenta text  ${bold}bright version${normal}"
-echo "${cya}cyan text ... ${bold}bright version${normal}"
-echo "${whi}white text .. ${bold}bright version${normal}"
+echo "${bla}black text .. ■ ${bold}bright version ■${normal}"
+echo "${red}red text .... ■ ${bold}bright version ■${normal}"
+echo "${gre}green text .. ■ ${bold}bright version ■${normal}"
+echo "${yel}yellow text . ■ ${bold}bright version ■${normal}"
+echo "${blu}blue text ... ■ ${bold}bright version ■${normal}"
+echo "${mag}magenta text  ■ ${bold}bright version ■${normal}"
+echo "${cya}cyan text ... ■ ${bold}bright version ■${normal}"
+echo "${whi}white text .. ■ ${bold}bright version ■${normal}"
