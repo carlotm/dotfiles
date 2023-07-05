@@ -1,4 +1,7 @@
 {
+  "*" = {
+    NoResizebar = Yes;
+  };
   gpodder.Gpodder = {
     AlwaysUserIcon = Yes;
     Icon = gpodder.png;
