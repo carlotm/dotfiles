@@ -11,19 +11,13 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf.vim'
 Plug 'numToStr/Comment.nvim'
-Plug 'gpanders/editorconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'hrsh7th/cmp-vsnip'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install --frozen-lockfile --production',
-  \ 'for': ['javascript', 'typescript', 'css', 'json'] }
 call plug#end()
 
 """""""""""""""""""""""""""""" general settings
@@ -59,7 +53,6 @@ set fillchars=vert:\│
 filetype indent off
 filetype on
 syntax on
-let g:markdown_folding = 1
 
 """""""""""""""""""""""""""""" Key mapping
 nnoremap <SPACE> <Nop>
@@ -72,8 +65,8 @@ vnoremap < <gv
 vnoremap > >gv
 nnoremap < <<
 nnoremap > >>
-nmap <silent> gn :bnext<CR>
-nmap <silent> gp :bprev<CR>
+nmap <silent> <Leader>bn :bnext<CR>
+nmap <silent> <Leader>bp :bprev<CR>
 nmap <silent> <Leader>bo :Buffers<CR>
 nmap <silent> <Leader>bd :bp\|bd #<CR>
 nmap <silent> <Leader>ww :wincmd w<CR>
@@ -154,11 +147,7 @@ let g:fzf_colors = {
 nmap <Leader>f :FZF<CR>
 nmap <Leader>/ :Ag!<CR>
 
-"""""""""""""""""""""""""""""" prettier settings
-let g:prettier#autoformat = 1
-let g:prettier#autoformat_config_present = 1
-let g:prettier#autoformat_require_pragma = 0
-
+"""""""""""""""""""""""""""""" lsp settings
 map <leader>e :lua vim.diagnostic.open_float(0, {scope="line"})<CR>
 
 lua require('conf')
