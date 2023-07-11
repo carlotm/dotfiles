@@ -16,7 +16,6 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'hrsh7th/cmp-vsnip'
 call plug#end()
 
@@ -146,6 +145,9 @@ let g:fzf_colors = {
 \ 'header':  ['fg', 'Comment'] }
 nmap <Leader>f :FZF<CR>
 nmap <Leader>/ :Ag!<CR>
+
+"""""""""""""""""""""""""""""" personal TODO settings
+map <leader>tt :e ~/w/wiki/index.md<CR>
 
 """""""""""""""""""""""""""""" lsp settings
 map <leader>e :lua vim.diagnostic.open_float(0, {scope="line"})<CR>
