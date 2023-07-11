@@ -69,6 +69,8 @@ nmap <silent> <Leader>bp :bprev<CR>
 nmap <silent> <Leader>bo :Buffers<CR>
 nmap <silent> <Leader>bd :bp\|bd #<CR>
 nmap <silent> <Leader>ww :wincmd w<CR>
+map <leader>tt :e ~/w/wiki/index.md<CR>
+map <leader>ec :e ~/.config/nvim/init.vim<CR>
 
 """""""""""""""""""""""""""""" vim-plug settings
 let g:plug_threads = 16
