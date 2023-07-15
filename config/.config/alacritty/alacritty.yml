@@ -1,6 +1,8 @@
 import:
   - ~/.config/alacritty/papercolor.yml
 
+draw_bold_text_with_bright_colors: true
+
 font:
   normal:
     family: Astacid
@@ -12,11 +14,11 @@ font:
 
   italic:
     family: Astacid
-    style: Italic
+    style: Regular
 
   bold_italic:
     family: Astacid
-    style: Italic
+    style: Regular
 
   size: 20
 

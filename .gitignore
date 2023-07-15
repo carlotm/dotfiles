@@ -1,5 +1,6 @@
 config/.vim/black
 config/.vim/plugged
+config/.config/nvim/plugged/
 config/.vim/autoload
 __pycache__
 *.pyc

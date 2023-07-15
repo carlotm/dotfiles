@@ -6,13 +6,13 @@ colors:
     foreground: "#b2b2b2"
     background: "#000000"
   cursor:
-    text: "#ffffff"
-    cursor: "#333333"
+    text: "#000000"
+    cursor: "#b2b2b2"
   selection:
     text: "#ffffff"
     background: "#333333"
   normal:
-    black: "#000000"
+    black: "#202020"
     red: "#b21818"
     green: "#18b218"
     yellow: "#b26818"
