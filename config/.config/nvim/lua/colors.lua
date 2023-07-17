@@ -9,5 +9,8 @@ vim.cmd.highlight({"Search",        "ctermbg=226 ctermfg=8" })
 vim.cmd.highlight({"MatchParen",    "ctermbg=15" })
 vim.cmd.highlight({"WinSeparator",  "ctermfg=18 ctermbg=None" })
 -- Syntax
+vim.cmd.highlight({"Comment",       "ctermfg=244" })
 vim.cmd.highlight({"Statement",     "ctermfg=125" })
 vim.cmd.highlight({"Type",          "ctermfg=18" })
+-- Telescope
+vim.cmd.highlight({"TelescopeSelection", "ctermbg=194" })

@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = {"elixirls"}
+    ensure_installed = {"elixirls", "eslint", "stylelint_lsp"}
 })
 
 local has_words_before = function()
@@ -62,3 +62,9 @@ lspconfig.elixirls.setup({ cmd = {"elixir-ls"}
                          , capabilities = capabilities
                          , on_attach = on_attach
                          })
+lspconfig.eslint.setup({ capabilities = capabilities
+                       , on_attach = on_attach
+                       })
+lspconfig.stylelint_lsp.setup({ capabilities = capabilities
+                              , on_attach = on_attach
+                              })
