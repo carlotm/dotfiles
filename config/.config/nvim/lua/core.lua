@@ -16,4 +16,6 @@ vim.o.expandtab = true
 vim.o.termguicolors = false
 vim.o.background = "light"
 vim.o.signcolumn = "number"
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = " "
