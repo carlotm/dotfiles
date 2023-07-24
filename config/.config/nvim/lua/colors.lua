@@ -14,3 +14,7 @@ vim.cmd.highlight({"Statement",     "ctermfg=125" })
 vim.cmd.highlight({"Type",          "ctermfg=18" })
 -- Telescope
 vim.cmd.highlight({"TelescopeSelection", "ctermbg=194" })
+vim.cmd.highlight({"RedundantSpaces", "ctermbg=196" })
+vim.cmd([[
+    match RedundantSpaces /\s\+$/
+]])
