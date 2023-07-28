@@ -1,10 +1,7 @@
 {
-  gcolor3.Gcolor3 = {
-    NoTitlebar = Yes;
-    NoMiniaturizeButton = Yes;
-    AlwaysUserIcon = No;
-    NoResizebar = Yes;
-    NoCloseButton = Yes;
+  "fs-uae-launcher.fs-uae-launcher" = {
+    AlwaysUserIcon = Yes;
+    Icon = amiga.png;
   };
   firefox.Firefox = {
     NoTitlebar = Yes;
@@ -13,16 +10,20 @@
     Icon = firefox.png;
     NoResizebar = Yes;
   };
-  "fs-uae-launcher.fs-uae-launcher" = {
-    AlwaysUserIcon = Yes;
-    Icon = amiga.png;
+  gcolor3.Gcolor3 = {
+    NoTitlebar = Yes;
+    NoMiniaturizeButton = Yes;
+    AlwaysUserIcon = No;
+    NoResizebar = Yes;
+    NoCloseButton = Yes;
   };
   Alacritty.Alacritty = {
     AlwaysUserIcon = Yes;
     Icon = terminal.svg;
   };
   pavucontrol.Pavucontrol = {
-    Icon = pavucontrol.Pavucontrol.xpm;
+    AlwaysUserIcon = Yes;
+    Icon = pavucontrol.png;
   };
   inkscape.Inkscape = {
     Icon = inkscape.png;
@@ -35,12 +36,12 @@
     AlwaysUserIcon = No;
     Icon = inkscape.png;
   };
-  xterm.XTerm = {
-    Icon = terminal.png;
-  };
   wprefs.WPrefs = {
     AlwaysUserIcon = Yes;
     Icon = "gnome-settings-theme.png";
+  };
+  xterm.XTerm = {
+    Icon = terminal.png;
   };
   audacious.Audacious = {
     NoTitlebar = Yes;
