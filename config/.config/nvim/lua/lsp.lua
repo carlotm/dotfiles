@@ -53,7 +53,51 @@ cmp.setup({
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 
+vim.diagnostic.config({
+  virtual_text = {
+    source = "never",
+    prefix = "▸",
+    severity = {
+      min = vim.diagnostic.severity.ERROR,
+    },
+  },
+  float = {
+    source = "always",
+  },
+  signs = true,
+  underline = false,
+  update_in_insert = false,
+  severity_sort = true,
+})
+
+vim.o.updatetime = 120
+vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
+vim.cmd [[
+  highlight! DiagnosticLineNrError ctermbg=9 ctermfg=15
+  highlight! DiagnosticLineNrWarn ctermbg=11 ctermfg=15
+  highlight! DiagnosticLineNrInfo ctermbg=12 ctermfg=15
+  highlight! DiagnosticLineNrHint ctermbg=2 ctermfg=15
+
+  sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticLineNrError
+  sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=DiagnosticLineNrWarn
+  sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=DiagnosticLineNrInfo
+  sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=DiagnosticLineNrHint
+]]
+
 local on_attach = function(client, bufnr)
+	-- auto refresh code lens
+	vim.api.nvim_create_autocmd({'CursorHold','CursorHoldI','InsertLeave'}, {
+		pattern = '*',
+		callback = vim.lsp.codelens.refresh
+	})
+
+	vim.api.nvim_create_autocmd('LspDetach', {
+		callback = function(opt)
+			vim.lsp.codelens.clear(opt.data.client_id, opt.buf)
+		end
+	})
+
     local opts = { noremap=true, silent=true }
 
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
@@ -68,7 +112,11 @@ local lspconfig = require("lspconfig")
 lspconfig.elixirls.setup({ cmd = {"elixir-ls"}
                          , capabilities = capabilities
                          , on_attach = on_attach
-                         })
+						 , settings = { elixirls = { enableTestLenses = true
+												   , suggestSpecs = true
+												   }
+									  }
+						 })
 lspconfig.eslint.setup({ capabilities = capabilities
                        , on_attach = on_attach
                        })
