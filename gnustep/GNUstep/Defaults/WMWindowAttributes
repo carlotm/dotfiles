@@ -57,6 +57,11 @@
     AlwaysUserIcon = Yes;
     Icon = thunar.png;
   };
+  evince.Evince = {
+    NoTitlebar = Yes;
+    NoBorder = Yes;
+    AlwaysUserIcon = No;
+  };
   "gimp-2.10.Gimp-2.10" = {
     AlwaysUserIcon = Yes;
     Icon = gimp.png;

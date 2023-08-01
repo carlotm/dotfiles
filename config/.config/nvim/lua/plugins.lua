@@ -33,11 +33,19 @@ return require("packer").startup(function(use)
     use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/vim-vsnip"
     use "hrsh7th/cmp-vsnip"
-    use "nvim-tree/nvim-tree.lua"
+	use {
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
+		}
+	}
 
-    -- Automatically set up your configuration after cloning packer.nvim
-    -- Put this at the end after all plugins
-    if packer_bootstrap then
-        require("packer").sync()
-    end
+	-- Automatically set up your configuration after cloning packer.nvim
+	-- Put this at the end after all plugins
+	if packer_bootstrap then
+		require("packer").sync()
+	end
 end)
