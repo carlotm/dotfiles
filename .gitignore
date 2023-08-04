@@ -9,3 +9,5 @@ gnustep/GNUstep/Defaults/WMState.*
 gnustep/GNUstep/.AppInfo/
 gnustep/GNUstep/Library/WindowMaker/CachedPixmaps/
 gnustep/GNUstep/Library/WindowMaker/Screenshots/
+carloratm_repo/pkgs/*/pkg
+carloratm_repo/pkgs/*/src

@@ -11,7 +11,7 @@
   ClipTitleFont = "Sans:bold:pixelsize=10";
   IconTitleFont = "Misc Ohsnapu:slant=0:weight=200:width=100:pixelsize=12";
   MenuTextBack = (solid, "#c7c7c7");
-  LargeDisplayFont = "Droid Sans:slant=0:weight=200:width=100:pixelsize=72";
+  LargeDisplayFont = "DejaVu Sans:slant=0:weight=200:width=78:pixelsize=72";
   ResizeCursor = (builtin, sizing);
   TextCursor = (builtin, xterm);
   TitleJustify = left;
@@ -19,11 +19,11 @@
   MenuTextColor = "#000000";
   IconBack = (dgradient, "#dfdfdf", "#9d9d9d");
   MenuTitleColor = "#000000";
-  MenuTitleFont = "Droid Sans:slant=0:weight=200:width=100:pixelsize=14";
+  MenuTitleFont = "DejaVu Sans:slant=0:weight=200:width=78:pixelsize=14";
   WindowTitleExtendSpace = 0;
   NormalCursor = (builtin, left_ptr);
   ArrowCursor = (builtin, top_left_arrow);
-  MenuTextFont = "Droid Sans:slant=0:weight=80:width=100:pixelsize=14";
+  MenuTextFont = "DejaVu Sans:slant=0:weight=80:width=78:pixelsize=14";
   WorkspaceBack = (solid, "#29659a");
   VerticalResizeCursor = (builtin, sb_v_double_arrow);
   HighlightTextColor = "#000000";
@@ -34,7 +34,7 @@
   HighlightColor = "#ffffff";
   FrameFocusedBorderColor = "#000000";
   BottomRightResizeCursor = (builtin, bottom_right_corner);
-  WindowTitleFont = "Droid Sans:slant=0:weight=180:width=100:pixelsize=16";
+  WindowTitleFont = "DejaVu Sans:slant=0:weight=180:width=78:pixelsize=16";
   CClipTitleColor = "#616161";
   MoveCursor = (builtin, fleur);
   ResizebarBack = (solid, "rgb:aa/aa/aa");
