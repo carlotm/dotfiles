@@ -1,6 +1,0 @@
-#!/bin/bash
-
-SOLR_DIR=${HOME}/solr/9.2.1
-if [ -d "$SOLR_DIR" ]; then
-  exec ${SOLR_DIR}/bin/solr start
-fi

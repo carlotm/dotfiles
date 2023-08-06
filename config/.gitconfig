@@ -1,32 +1,8 @@
 [user]
-    name = Ascani Carlo
-    email = carlo@doloops.net
+		name = Ascani Carlo
+		email = carlotm@protonmail.com
 [alias]
-    co = checkout
-    s = status
-    d = icdiff
-[color]
-    branch = auto
-    diff = auto
-    status = auto
-	ui = true
-[color "branch"]
-    current = green reverse
-    local = green
-    remote = yellow
-[color "status"]
-    added = cyan
-    changed = green
-    untracked = yellow
-[http]
-    postBuffer = 524288000
-[credential]
-    helper = cache --timeout=10800
-[pull]
-    rebase = true
+		co = checkout
+		s = status
 [init]
-    defaultBranch = main
-[diff]
-	  tool = git icdiff
-[icdiff]
-	  options = --highlight
+		defaultBranch = main

@@ -22,14 +22,6 @@ font:
 
   size: 20
 
-  offset:
-    x: 0
-    y: 8
-
-  glyph_offset:
-    x: 0
-    y: 4
-
 mouse:
   hide_when_typing: true
 
