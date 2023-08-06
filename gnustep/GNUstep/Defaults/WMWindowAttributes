@@ -43,24 +43,9 @@
     AlwaysUserIcon = Yes;
     Icon = "gnome-settings-theme.png";
   };
-  audacious.Audacious = {
-    NoTitlebar = Yes;
-    NoMiniaturizable = Yes;
-    NoMiniaturizeButton = Yes;
-    NoBorder = Yes;
-    AlwaysUserIcon = Yes;
-    NoResizebar = Yes;
-    Icon = audacious.png;
-    NoCloseButton = Yes;
-  };
   thunar.Thunar = {
     AlwaysUserIcon = Yes;
     Icon = thunar.png;
-  };
-  evince.Evince = {
-    NoTitlebar = Yes;
-    NoBorder = Yes;
-    AlwaysUserIcon = No;
   };
   "gimp-2.10.Gimp-2.10" = {
     AlwaysUserIcon = Yes;
@@ -76,17 +61,9 @@
     AlwaysUserIcon = Yes;
     Icon = simplescreenrecorder.png;
   };
-  obs.obs = {
-    SharedAppIcon = No;
-    NoAppIcon = Yes;
-    AlwaysUserIcon = No;
-  };
   keepassxc.KeePassXC = {
     AlwaysUserIcon = Yes;
     Icon = keepassx.png;
-  };
-  "ardour-7.2.0.Ardour-7.2.0" = {
-    Icon = ardour.png;
   };
   Logo.WMDock = {
     Icon = "distributor-logo-archlinux.png";
