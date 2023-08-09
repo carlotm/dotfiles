@@ -127,9 +127,7 @@
         Command = inkscape;
       }
     );
-    Lowered = Yes;
-    Position = "2496,193";
-    Applications1440 = (
+    Applications1080 = (
       {
         Forced = No;
         Name = Logo.WMDock;
@@ -255,6 +253,8 @@
         Command = inkscape;
       }
     );
+    Lowered = Yes;
+    Position = "3776,193";
   };
   Workspaces = (
     {
