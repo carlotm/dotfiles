@@ -28,6 +28,10 @@
   inkscape.Inkscape = {
     Icon = inkscape.png;
   };
+  simplescreenrecorder.SimpleScreenRecorder = {
+    AlwaysUserIcon = Yes;
+    Icon = simplescreenrecorder.png;
+  };
   gimp.Gimp = {
     AlwaysUserIcon = Yes;
     Icon = gimp.png;
@@ -43,6 +47,10 @@
     AlwaysUserIcon = Yes;
     Icon = "gnome-settings-theme.png";
   };
+  keepassxc.KeePassXC = {
+    AlwaysUserIcon = Yes;
+    Icon = keepassx.png;
+  };
   thunar.Thunar = {
     AlwaysUserIcon = Yes;
     Icon = thunar.png;
@@ -53,17 +61,6 @@
   };
   gpodder. = {
     Icon = gpodder.png;
-  };
-  groupLeader.WPrefs = {
-    Icon = "gnome-settings-theme.png";
-  };
-  simplescreenrecorder.SimpleScreenRecorder = {
-    AlwaysUserIcon = Yes;
-    Icon = simplescreenrecorder.png;
-  };
-  keepassxc.KeePassXC = {
-    AlwaysUserIcon = Yes;
-    Icon = keepassx.png;
   };
   Logo.WMDock = {
     Icon = "distributor-logo-archlinux.png";
@@ -77,5 +74,8 @@
     AlwaysUserIcon = Yes;
     Icon = firefox.png;
     NoResizebar = Yes;
+  };
+  groupLeader.WPrefs = {
+    Icon = "gnome-settings-theme.png";
   };
 }
