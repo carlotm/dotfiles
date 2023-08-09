@@ -46,7 +46,7 @@
     "/usr/share/pixmaps"
   );
   MoveToWorkspace9Key = "Shift+Mod1+9";
-  FTitleBack = (solid, "#edc63f");
+  FTitleBack = (dgradient, "#dfdfdf", "#5d5d5d");
   HideKey = None;
   IconTitleFont = "Misc Ohsnapu:slant=0:weight=200:width=100:pixelsize=12";
   LargeDisplayFont = "DejaVu Sans:slant=0:weight=200:width=78:pixelsize=72";
@@ -55,7 +55,7 @@
   HotCorners = NO;
   SmoothWorkspaceBack = YES;
   NoWindowOverDock = YES;
-  WorkspaceBack = (solid, "#29659a");
+  WorkspaceBack = (solid, "#131c29");
   HighlightTextColor = "#000000";
   EnforceIconMargin = NO;
   PrevWorkspaceKey = None;
@@ -76,7 +76,7 @@
   WindowPlacement = center;
   TitleJustify = left;
   MenuTextColor = "#000000";
-  IconBack = (dgradient, "#dfdfdf", "#9d9d9d");
+  IconBack = (dgradient, "#dfdfdf", "#5d5d5d");
   LowerKey = None;
   SnapToTopMaximizesFullscreen = YES;
   CloseKey = "Shift+Mod1+C";
