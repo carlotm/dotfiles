@@ -2,6 +2,23 @@
   "Window Maker",
   (Terminal, SHORTCUT, "Shift+Mod1+Return", EXEC, alacritty),
   (Run..., SHORTCUT, "Mod1+F2", EXEC, "%A(Run, Type command:)"),
+  (
+    Utilities,
+    (
+      "Brightness up",
+      SHORTCUT,
+      XF86MonBrightnessUp,
+      EXEC,
+      "brightnessctl s 10%+"
+    ),
+    (
+      "Brightness down",
+      SHORTCUT,
+      XF86MonBrightnessDown,
+      EXEC,
+      "brightnessctl s 10%-"
+    )
+  ),
   (Workspaces, WORKSPACE_MENU),
   (
     Workspace,
