@@ -55,7 +55,7 @@
   HotCorners = NO;
   SmoothWorkspaceBack = YES;
   NoWindowOverDock = YES;
-  WorkspaceBack = (solid, "#131c29");
+  WorkspaceBack = (solid, "#121212");
   HighlightTextColor = "#000000";
   EnforceIconMargin = NO;
   PrevWorkspaceKey = None;
