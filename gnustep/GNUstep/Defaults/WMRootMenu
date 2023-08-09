@@ -1,6 +1,6 @@
 (
   "Window Maker",
-  (Terminal, SHORTCUT, "Shift+Mod1+Return", EXEC, "alacritty"),
+  (Terminal, SHORTCUT, "Shift+Mod1+Return", EXEC, alacritty),
   (Run..., SHORTCUT, "Mod1+F2", EXEC, "%A(Run, Type command:)"),
   (Workspaces, WORKSPACE_MENU),
   (

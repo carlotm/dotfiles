@@ -125,6 +125,17 @@
         Lock = Yes;
         PasteCommand = "inkscape %s";
         Command = inkscape;
+      },
+      {
+        Forced = No;
+        Name = pavucontrol.Pavucontrol;
+        DropCommand = "pavucontrol %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,9";
+        Lock = No;
+        PasteCommand = "pavucontrol %s";
+        Command = pavucontrol;
       }
     );
     Applications1080 = (
@@ -251,10 +262,21 @@
         Lock = Yes;
         PasteCommand = "inkscape %s";
         Command = inkscape;
+      },
+      {
+        Forced = No;
+        Name = pavucontrol.Pavucontrol;
+        DropCommand = "pavucontrol %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,9";
+        Lock = No;
+        PasteCommand = "pavucontrol %s";
+        Command = pavucontrol;
       }
     );
     Lowered = Yes;
-    Position = "3776,193";
+    Position = "0,193";
   };
   Workspaces = (
     {
