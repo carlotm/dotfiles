@@ -1,8 +1,0 @@
-[user]
-		name = Ascani Carlo
-		email = carlotm@protonmail.com
-[alias]
-		co = checkout
-		s = status
-[init]
-		defaultBranch = main
