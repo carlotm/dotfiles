@@ -43,7 +43,7 @@
   DbClickFullScreen = NO;
   MenuTextFont = "DejaVu Sans:slant=0:weight=80:width=78:pixelsize=14";
   NoWindowOverDock = YES;
-  WorkspaceBack = (solid, "#303440");
+  WorkspaceBack = (solid, "#233e6b");
   HighlightTextColor = "#000000";
   MenuTitleBack = (solid, "#040404");
   EnforceIconMargin = NO;
