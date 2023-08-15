@@ -239,7 +239,7 @@
         AutoLaunch = Yes;
         Position = "0,-1";
         Lock = No;
-        Command = "paginator -iw -g 53x53 -l 3x3";
+        Command = "paginator 3 3";
       },
       {
         Forced = No;
