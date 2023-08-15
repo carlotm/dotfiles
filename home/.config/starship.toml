@@ -1,0 +1,13 @@
+add_newline = false
+command_timeout = 800
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
+
+[git_status]
+disabled = true
+[package]
+disabled = true
+[cmd_duration]
+disabled = true
