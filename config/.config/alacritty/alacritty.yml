@@ -1,7 +1,7 @@
 import:
-    - ~/.config/alacritty/dark.yml
+  - ~/.config/alacritty/dark.yml
 font:
-  size: 16
+  size: 20
   normal:
     family: Terminus
     style: Regular

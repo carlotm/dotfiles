@@ -276,7 +276,7 @@
       }
     );
     Lowered = Yes;
-    Position = "-64,192";
+    Position = "1856,193";
   };
   Workspaces = (
     {

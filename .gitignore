@@ -2,6 +2,7 @@ config/.vim/black
 config/.vim/plugged
 config/.config/nvim/plugged/
 config/.config/nvim/plugin/
+config/.config/pulse
 config/.vim/autoload
 __pycache__
 *.pyc
@@ -9,5 +10,3 @@ gnustep/GNUstep/Defaults/WMState.*
 gnustep/GNUstep/.AppInfo/
 gnustep/GNUstep/Library/WindowMaker/CachedPixmaps/
 gnustep/GNUstep/Library/WindowMaker/Screenshots/
-carloratm_repo/pkgs/*/pkg
-carloratm_repo/pkgs/*/src
