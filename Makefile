@@ -11,3 +11,4 @@ dotfiles: home
 
 conf: etc
 	sudo stow -t /etc $<
+	sudo locale-gen
