@@ -1,7 +1,10 @@
 {
-  "fs-uae-launcher.fs-uae-launcher" = {
-    AlwaysUserIcon = Yes;
-    Icon = amiga.png;
+  gcolor3.Gcolor3 = {
+    NoTitlebar = Yes;
+    NoMiniaturizeButton = Yes;
+    AlwaysUserIcon = No;
+    NoResizebar = Yes;
+    NoCloseButton = Yes;
   };
   firefox.Firefox = {
     NoTitlebar = Yes;
@@ -10,12 +13,9 @@
     Icon = firefox.png;
     NoResizebar = Yes;
   };
-  gcolor3.Gcolor3 = {
-    NoTitlebar = Yes;
-    NoMiniaturizeButton = Yes;
-    AlwaysUserIcon = No;
-    NoResizebar = Yes;
-    NoCloseButton = Yes;
+  "fs-uae-launcher.fs-uae-launcher" = {
+    AlwaysUserIcon = Yes;
+    Icon = amiga.png;
   };
   Alacritty.Alacritty = {
     AlwaysUserIcon = Yes;
@@ -25,12 +25,12 @@
     AlwaysUserIcon = Yes;
     Icon = pavucontrol.png;
   };
+  inkscape.Inkscape = {
+    Icon = inkscape.png;
+  };
   simplescreenrecorder.SimpleScreenRecorder = {
     AlwaysUserIcon = Yes;
     Icon = simplescreenrecorder.png;
-  };
-  inkscape.Inkscape = {
-    Icon = inkscape.png;
   };
   gimp.Gimp = {
     AlwaysUserIcon = Yes;
@@ -40,12 +40,12 @@
     AlwaysUserIcon = No;
     Icon = inkscape.png;
   };
+  xterm.XTerm = {
+    Icon = terminal.png;
+  };
   wprefs.WPrefs = {
     AlwaysUserIcon = Yes;
     Icon = "gnome-settings-theme.png";
-  };
-  xterm.XTerm = {
-    Icon = terminal.png;
   };
   keepassxc.KeePassXC = {
     AlwaysUserIcon = Yes;
