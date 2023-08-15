@@ -1,11 +1,13 @@
-packages = $(notdir $(realpath $(dir $(wildcard ./*/))))
+.PHONY: all clean
 
-.PHONY: all clean link
-
-all: clean link
+all: clean dotfiles conf
 
 clean:
-	stow -D $(packages)
+	stow -D home
+	stow -D etc
 
-link: $(packages)
-	stow $(packages)
+dotfiles: home
+	stow $<
+
+conf: etc
+	sudo stow -t /etc $<

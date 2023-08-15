@@ -1,0 +1,310 @@
+{
+  Dock = {
+    AutoRaiseLower = No;
+    Applications = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = No;
+        Command = "-";
+      },
+      {
+        Forced = No;
+        Name = firefox.Firefox;
+        DropCommand = "firefox %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,2";
+        Lock = No;
+        PasteCommand = "firefox %s";
+        Command = firefox;
+      },
+      {
+        Forced = No;
+        Name = groupLeader.WPrefs;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,1";
+        Lock = No;
+        Command = WPrefs;
+      },
+      {
+        Forced = No;
+        Name = xterm.XTerm;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,3";
+        Lock = No;
+        Command = "/usr/bin/alacritty";
+      },
+      {
+        Forced = No;
+        Name = thunar.Thunar;
+        DropCommand = "thunar %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,4";
+        Lock = No;
+        PasteCommand = "thunar %s";
+        Command = thunar;
+      },
+      {
+        Forced = No;
+        Name = "fs-uae-launcher.fs-uae-launcher";
+        DropCommand = "/usr/bin/python3 /sbin/fs-uae-launcher %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,5";
+        Lock = No;
+        PasteCommand = "/usr/bin/python3 /sbin/fs-uae-launcher %s";
+        Command = "/usr/bin/python3 /sbin/fs-uae-launcher";
+      },
+      {
+        Forced = No;
+        Name = wmtime.wmtime;
+        DropCommand = "wmtime %d";
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,-3";
+        Lock = Yes;
+        PasteCommand = "wmtime %s";
+        Command = "wmtime -d";
+      },
+      {
+        Forced = No;
+        Name = wmbattery.wmbattery;
+        DropCommand = "wmbattery %d";
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,-2";
+        Lock = Yes;
+        PasteCommand = "wmbattery %s";
+        Command = "wmbattery -x /home/carloratm/bin/notify-battery";
+      },
+      {
+        Forced = No;
+        Name = keepassxc.KeePassXC;
+        DropCommand = "keepassxc %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,6";
+        Lock = No;
+        PasteCommand = "keepassxc %s";
+        Command = keepassxc;
+      },
+      {
+        Forced = No;
+        Name = paginator.Paginator;
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,-1";
+        Lock = No;
+        Command = "paginator -iw -g 53x53 -l 3x3";
+      },
+      {
+        Forced = No;
+        Name = simplescreenrecorder.SimpleScreenRecorder;
+        DropCommand = "simplescreenrecorder %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,7";
+        Lock = No;
+        PasteCommand = "simplescreenrecorder %s";
+        Command = simplescreenrecorder;
+      },
+      {
+        Forced = No;
+        Name = inkscape.Inkscape;
+        DropCommand = "inkscape %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,8";
+        Lock = Yes;
+        PasteCommand = "inkscape %s";
+        Command = inkscape;
+      },
+      {
+        Forced = No;
+        Name = pavucontrol.Pavucontrol;
+        DropCommand = "pavucontrol %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,9";
+        Lock = No;
+        PasteCommand = "pavucontrol %s";
+        Command = pavucontrol;
+      }
+    );
+    Applications1080 = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = No;
+        Command = "-";
+      },
+      {
+        Forced = No;
+        Name = firefox.Firefox;
+        DropCommand = "firefox %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,2";
+        Lock = No;
+        PasteCommand = "firefox %s";
+        Command = firefox;
+      },
+      {
+        Forced = No;
+        Name = groupLeader.WPrefs;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,1";
+        Lock = No;
+        Command = WPrefs;
+      },
+      {
+        Forced = No;
+        Name = xterm.XTerm;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,3";
+        Lock = No;
+        Command = "/usr/bin/alacritty";
+      },
+      {
+        Forced = No;
+        Name = thunar.Thunar;
+        DropCommand = "thunar %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,4";
+        Lock = No;
+        PasteCommand = "thunar %s";
+        Command = thunar;
+      },
+      {
+        Forced = No;
+        Name = "fs-uae-launcher.fs-uae-launcher";
+        DropCommand = "/usr/bin/python3 /sbin/fs-uae-launcher %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,5";
+        Lock = No;
+        PasteCommand = "/usr/bin/python3 /sbin/fs-uae-launcher %s";
+        Command = "/usr/bin/python3 /sbin/fs-uae-launcher";
+      },
+      {
+        Forced = No;
+        Name = wmtime.wmtime;
+        DropCommand = "wmtime %d";
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,-3";
+        Lock = Yes;
+        PasteCommand = "wmtime %s";
+        Command = "wmtime -d";
+      },
+      {
+        Forced = No;
+        Name = wmbattery.wmbattery;
+        DropCommand = "wmbattery %d";
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,-2";
+        Lock = Yes;
+        PasteCommand = "wmbattery %s";
+        Command = "wmbattery -x /home/carloratm/bin/notify-battery";
+      },
+      {
+        Forced = No;
+        Name = keepassxc.KeePassXC;
+        DropCommand = "keepassxc %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,6";
+        Lock = No;
+        PasteCommand = "keepassxc %s";
+        Command = keepassxc;
+      },
+      {
+        Forced = No;
+        Name = paginator.Paginator;
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,-1";
+        Lock = No;
+        Command = "paginator -iw -g 53x53 -l 3x3";
+      },
+      {
+        Forced = No;
+        Name = simplescreenrecorder.SimpleScreenRecorder;
+        DropCommand = "simplescreenrecorder %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,7";
+        Lock = No;
+        PasteCommand = "simplescreenrecorder %s";
+        Command = simplescreenrecorder;
+      },
+      {
+        Forced = No;
+        Name = inkscape.Inkscape;
+        DropCommand = "inkscape %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,8";
+        Lock = Yes;
+        PasteCommand = "inkscape %s";
+        Command = inkscape;
+      },
+      {
+        Forced = No;
+        Name = pavucontrol.Pavucontrol;
+        DropCommand = "pavucontrol %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,9";
+        Lock = No;
+        PasteCommand = "pavucontrol %s";
+        Command = pavucontrol;
+      }
+    );
+    Lowered = Yes;
+    Position = "1856,193";
+  };
+  Workspaces = (
+    {
+      Name = "Workspace 1";
+    },
+    {
+      Name = "Workspace 2";
+    },
+    {
+      Name = "Workspace 3";
+    },
+    {
+      Name = "Workspace 4";
+    },
+    {
+      Name = "Workspace 5";
+    },
+    {
+      Name = "Workspace 6";
+    },
+    {
+      Name = "Workspace 7";
+    },
+    {
+      Name = "Workspace 8";
+    },
+    {
+      Name = "Workspace 9";
+    }
+  );
+}
