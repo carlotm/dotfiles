@@ -4,7 +4,7 @@ font:
   size: 16
   normal:
     family: Terminus
-    style: Bold
+    style: Regular
   bold:
     family: Terminus
     style: Bold
