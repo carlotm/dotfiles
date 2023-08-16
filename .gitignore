@@ -5,6 +5,7 @@ home/.config/nvim/plugin/
 home/.config/pulse
 home/.config/QtProject.conf
 home/.config/keepassxc
+home/.config/dconf
 home/.vim/autoload
 home/GNUstep/Defaults/WMState.*
 home/GNUstep/.AppInfo/
