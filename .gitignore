@@ -3,6 +3,8 @@ home/.vim/plugged
 home/.config/nvim/plugged/
 home/.config/nvim/plugin/
 home/.config/pulse
+home/.config/QtProject.conf
+home/.config/keepassxc
 home/.vim/autoload
 home/GNUstep/Defaults/WMState.*
 home/GNUstep/.AppInfo/
