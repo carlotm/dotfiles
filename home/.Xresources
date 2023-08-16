@@ -1,5 +1,5 @@
 Xcursor.size: 48
 Xft.dpi: 96
-Paginator.background: #202020
-Paginator.foreground: #444444
-Paginator.separatorColor: #444444
+Paginator.desktopBackground: #233e6b
+Paginator.currentDesktopBackground: #122036
+Paginator.separatorColor: #3660a6
