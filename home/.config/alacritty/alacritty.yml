@@ -1,7 +1,7 @@
 import:
   - ~/.config/alacritty/dark.yml
 font:
-  size: 20
+  size: 24
   normal:
     family: Terminus
     style: Regular
@@ -14,12 +14,6 @@ font:
   bold_italic:
     family: Terminus
     style: Bold
-  offset:
-    x: 0
-    y: 8
-  glyph_offset:
-    x: 0
-    y: 4
 draw_bold_text_with_bright_colors: true
 mouse:
   hide_when_typing: true
