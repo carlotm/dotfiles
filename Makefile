@@ -1,12 +1,6 @@
-.PHONY: all clean
+.PHONY: all clean ansible
 
-all: clean ansible dotfiles
-
-clean:
-	stow -D home
-
-dotfiles: home
-	stow $<
+all: clean ansible
 
 ansible: system
 	cd $< && ansible-playbook --ask-become-pass setup.yml

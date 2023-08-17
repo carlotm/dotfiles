@@ -11,14 +11,14 @@
         dest: /etc/locale.conf
         owner: root
         group: root
-        mode: '0644'
+        mode: "0644"
     - name: "COPY LOCALE GEN"
       ansible.builtin.copy:
         src: templates/etc/locale.gen
         dest: /etc/locale.gen
         owner: root
         group: root
-        mode: '0644'
+        mode: "0644"
       notify:
         - Generate locales
     - name: "COPY PACMAN CONF"
@@ -27,22 +27,29 @@
         dest: /etc/pacman.conf
         owner: root
         group: root
-        mode: '0644'
+        mode: "0644"
     - name: "COPY VCONSOLE CONF"
       ansible.builtin.copy:
         src: templates/etc/vconsole.conf
         dest: /etc/vconsole.conf
         owner: root
         group: root
-        mode: '0644'
+        mode: "0644"
     - name: "COPY TIMEZONE"
       ansible.builtin.copy:
         src: templates/etc/timezone
         dest: /etc/timezone
         owner: root
         group: root
-        mode: '0644'
+        mode: "0644"
 
   handlers:
     - name: Generate locales
       ansible.builtin.command: locale-gen
+
+- hosts: localhost
+  gather_facts: no
+  connection: local
+  tasks:
+    - name: "STOW DOTFILES"
+      ansible.builtin.command: stow home --target={{ lookup('env', 'HOME') }}
