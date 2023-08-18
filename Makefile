@@ -2,5 +2,5 @@
 
 all: clean ansible
 
-ansible: system
-	cd $< && ansible-playbook --ask-become-pass setup.yml
+ansible:
+	ansible-playbook --ask-become-pass setup.yml

@@ -5,14 +5,14 @@
   gather_facts: no
   connection: local
   tasks:
-    - name: "COPY LOCALE CONF"
+    - name: COPY LOCALE CONF
       ansible.builtin.copy:
         src: templates/etc/locale.conf
         dest: /etc/locale.conf
         owner: root
         group: root
         mode: "0644"
-    - name: "COPY LOCALE GEN"
+    - name: COPY LOCALE GEN
       ansible.builtin.copy:
         src: templates/etc/locale.gen
         dest: /etc/locale.gen
@@ -21,27 +21,42 @@
         mode: "0644"
       notify:
         - Generate locales
-    - name: "COPY PACMAN CONF"
+    - name: COPY PACMAN CONF
       ansible.builtin.copy:
         src: templates/etc/pacman.conf
         dest: /etc/pacman.conf
         owner: root
         group: root
         mode: "0644"
-    - name: "COPY VCONSOLE CONF"
+    - name: COPY VCONSOLE CONF
       ansible.builtin.copy:
         src: templates/etc/vconsole.conf
         dest: /etc/vconsole.conf
         owner: root
         group: root
         mode: "0644"
-    - name: "COPY TIMEZONE"
+    - name: COPY TIMEZONE
       ansible.builtin.copy:
         src: templates/etc/timezone
         dest: /etc/timezone
         owner: root
         group: root
         mode: "0644"
+    - name: SYNC PACMAN
+      pacman:
+        update_cache: yes
+    - name: INSTALL PACKAGES
+      pacman:
+        name:
+          - ratm-base
+          - ratm-desktop
+          - libdockapp
+          - wmbattery
+          - wmtime
+          - paginator-git
+          - firefox
+          - keepassxc
+        state: present
 
   handlers:
     - name: Generate locales
@@ -51,5 +66,5 @@
   gather_facts: no
   connection: local
   tasks:
-    - name: "STOW DOTFILES"
+    - name: STOW DOTFILES
       ansible.builtin.command: stow home --target={{ lookup('env', 'HOME') }}
