@@ -1,0 +1,7 @@
+- name: COPY VCONSOLE CONF
+  ansible.builtin.copy:
+    src: templates/etc/vconsole.conf
+    dest: /etc/vconsole.conf
+    owner: root
+    group: root
+    mode: "0644"

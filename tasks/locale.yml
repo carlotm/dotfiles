@@ -1,0 +1,23 @@
+- name: COPY LOCALE CONF
+  ansible.builtin.copy:
+    src: templates/etc/locale.conf
+    dest: /etc/locale.conf
+    owner: root
+    group: root
+    mode: "0644"
+- name: COPY LOCALE GEN
+  ansible.builtin.copy:
+    src: templates/etc/locale.gen
+    dest: /etc/locale.gen
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+    - Generate locales
+- name: COPY TIMEZONE
+  ansible.builtin.copy:
+    src: templates/etc/timezone
+    dest: /etc/timezone
+    owner: root
+    group: root
+    mode: "0644"

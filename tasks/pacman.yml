@@ -1,0 +1,22 @@
+- name: COPY PACMAN CONF
+  ansible.builtin.copy:
+    src: templates/etc/pacman.conf
+    dest: /etc/pacman.conf
+    owner: root
+    group: root
+    mode: "0644"
+- name: SYNC PACMAN
+  pacman:
+    update_cache: yes
+- name: INSTALL PACKAGES
+  pacman:
+    name:
+      - ratm-base
+      - ratm-desktop
+      - libdockapp
+      - wmbattery
+      - wmtime
+      - paginator-git
+      - firefox
+      - keepassxc
+    state: present
