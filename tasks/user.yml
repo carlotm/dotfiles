@@ -1,0 +1,4 @@
+- name: SET USER GROUPS
+  ansible.builtin.user:
+    name: "{{ user.username }}"
+    groups: "{{ user.groups }}"

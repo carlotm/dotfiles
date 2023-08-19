@@ -1,0 +1,7 @@
+- name: COPY NIX CONF
+  ansible.builtin.copy:
+    src: templates/etc/nix/nix.conf
+    dest: /etc/nix/nix.conf
+    owner: root
+    group: root
+    mode: "0644"

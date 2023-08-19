@@ -24,6 +24,7 @@ set incsearch hlsearch
 set ignorecase smartcase
 set showmatch
 set foldmethod=marker
+set fillchars+=vert:\│
 nnoremap <SPACE> <Nop>
 let mapleader = " "
 " }}}
@@ -38,6 +39,9 @@ endfun
 " Colors {{{
 highlight Comment ctermfg=8
 highlight Visual ctermbg=237
+highlight VertSplit ctermfg=4 ctermbg=16 cterm=NONE
+highlight StatusLine ctermfg=15 ctermbg=4 cterm=NONE
+highlight StatusLineNC ctermfg=8 ctermbg=234
 highlight ExtraWhitespace ctermbg=1
 match ExtraWhitespace /\s\+$/
 " }}}
