@@ -4,6 +4,17 @@
   become_method: sudo
   gather_facts: no
   connection: local
+  vars:
+    pkgs:
+      - ratm-base
+      - ratm-desktop
+      - libdockapp
+      - wmbattery
+      - wmtime
+      - paginator-git
+      - firefox
+      - keepassxc
+      - slock
   tasks:
     - ansible.builtin.include_tasks: tasks/locale.yml
     - ansible.builtin.include_tasks: tasks/vconsole.yml

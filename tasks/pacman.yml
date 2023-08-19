@@ -10,13 +10,5 @@
     update_cache: yes
 - name: INSTALL PACKAGES
   pacman:
-    name:
-      - ratm-base
-      - ratm-desktop
-      - libdockapp
-      - wmbattery
-      - wmtime
-      - paginator-git
-      - firefox
-      - keepassxc
+    name: "{{ pkgs }}"
     state: present
