@@ -15,10 +15,14 @@
       - firefox
       - keepassxc
       - slock
+      - nix
+    services:
+      - nix-daemon
   tasks:
     - ansible.builtin.include_tasks: tasks/locale.yml
     - ansible.builtin.include_tasks: tasks/vconsole.yml
     - ansible.builtin.include_tasks: tasks/pacman.yml
+    - ansible.builtin.include_tasks: tasks/services.yml
   handlers:
     - ansible.builtin.include_tasks: tasks/locale_gen.yml
 

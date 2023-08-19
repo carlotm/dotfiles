@@ -51,7 +51,9 @@ vnoremap < <gv
 vnoremap > >gv
 nnoremap < <<
 nnoremap > >>
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprev<CR>
+nnoremap gn :bnext<CR>
+nnoremap gp :bprev<CR>
+nnoremap <Leader>bd :bdelete<CR>
+nnoremap <Leader>ww :wincmd w<CR>
 " }}}
 
