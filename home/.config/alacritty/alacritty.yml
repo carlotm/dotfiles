@@ -1,19 +1,25 @@
 import:
   - ~/.config/alacritty/dark.yml
 font:
-  size: 20
+  size: 16
   normal:
-    family: Astacid
+    family: Spleen
     style: Regular
   bold:
-    family: Astacid
+    family: Spleen
     style: Regular
   italic:
-    family: Astacid
+    family: Spleen
     style: Italic
   bold_italic:
-    family: Astacid
+    family: Spleen
     style: Bold
+  offset:
+    x: 0
+    y: 4
+  glyph_offset:
+    x: 0
+    y: 2
 draw_bold_text_with_bright_colors: true
 mouse:
   hide_when_typing: true
