@@ -1,18 +1,18 @@
 import:
   - ~/.config/alacritty/dark.yml
 font:
-  size: 24
+  size: 20
   normal:
-    family: Terminus
+    family: Astacid
     style: Regular
   bold:
-    family: Terminus
+    family: Astacid
     style: Regular
   italic:
-    family: Terminus
+    family: Astacid
     style: Italic
   bold_italic:
-    family: Terminus
+    family: Astacid
     style: Bold
 draw_bold_text_with_bright_colors: true
 mouse:

@@ -9,7 +9,6 @@
       username: carloratm
       groups:
         - carloratm
-        - nix-users
     pkgs:
       - ratm-base
       - ratm-desktop
