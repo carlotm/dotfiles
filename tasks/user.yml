@@ -1,4 +1,6 @@
-- name: SET USER GROUPS
+- name: SET USER
   ansible.builtin.user:
     name: "{{ user.username }}"
-    groups: "{{ user.groups }}"
+    shell: /bin/bash
+    groups:
+      "{{ ['users', 'wheel', 'disk', 'power', 'adm', 'network'] + user.groups }}"
