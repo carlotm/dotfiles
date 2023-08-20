@@ -8,10 +8,12 @@ endif
 
 call plug#begin("~/.vim/plugged")
 Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 " }}}
 
-" Common {{{
+" Vim settings {{{
 set nocompatible
 filetype on
 filetype plugin on
@@ -27,13 +29,6 @@ set foldmethod=marker
 set fillchars+=vert:\│
 nnoremap <SPACE> <Nop>
 let mapleader = " "
-" }}}
-
-" Functions {{{
-function! SynGroup()
-	let l:s = synID(line('.'), col('.'), 1)
-	echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
-endfun
 " }}}
 
 " Colors {{{
@@ -59,5 +54,8 @@ nnoremap gn :bnext<CR>
 nnoremap gp :bprev<CR>
 nnoremap <Leader>bd :bdelete<CR>
 nnoremap <Leader>ww :wincmd w<CR>
+nnoremap <Leader>ff :GFiles<CR>
+nnoremap <Leader>fb :Buffers<CR>
+nnoremap <Leader>fg :Rg<CR>
 " }}}
 
