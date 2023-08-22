@@ -1,7 +1,7 @@
 import:
   - ~/.config/alacritty/dark.yml
 font:
-  size: 16
+  size: 32
   normal:
     family: Spleen
     style: Regular

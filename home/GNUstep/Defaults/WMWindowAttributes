@@ -22,7 +22,7 @@
   };
   Alacritty.Alacritty = {
     AlwaysUserIcon = Yes;
-    Icon = terminal.svg;
+    Icon = terminal.png;
   };
   pavucontrol.Pavucontrol = {
     AlwaysUserIcon = Yes;
