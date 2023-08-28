@@ -1,18 +1,18 @@
 import:
   - ~/.config/alacritty/dark.yml
 font:
-  size: 32
+  size: 24
   normal:
-    family: Spleen
+    family: Terminus
     style: Regular
   bold:
-    family: Spleen
+    family: Terminus
     style: Regular
   italic:
-    family: Spleen
+    family: Terminus
     style: Italic
   bold_italic:
-    family: Spleen
+    family: Terminus
     style: Bold
   offset:
     x: 0

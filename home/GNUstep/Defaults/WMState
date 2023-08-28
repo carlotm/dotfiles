@@ -114,28 +114,6 @@
         Lock = No;
         PasteCommand = "simplescreenrecorder %s";
         Command = simplescreenrecorder;
-      },
-      {
-        Forced = No;
-        Name = inkscape.Inkscape;
-        DropCommand = "inkscape %d";
-        BuggyApplication = No;
-        AutoLaunch = No;
-        Position = "0,8";
-        Lock = Yes;
-        PasteCommand = "inkscape %s";
-        Command = inkscape;
-      },
-      {
-        Forced = No;
-        Name = pavucontrol.Pavucontrol;
-        DropCommand = "pavucontrol %d";
-        BuggyApplication = No;
-        AutoLaunch = No;
-        Position = "0,9";
-        Lock = No;
-        PasteCommand = "pavucontrol %s";
-        Command = pavucontrol;
       }
     );
     Applications1080 = (
@@ -251,28 +229,6 @@
         Lock = No;
         PasteCommand = "simplescreenrecorder %s";
         Command = simplescreenrecorder;
-      },
-      {
-        Forced = No;
-        Name = inkscape.Inkscape;
-        DropCommand = "inkscape %d";
-        BuggyApplication = No;
-        AutoLaunch = No;
-        Position = "0,8";
-        Lock = Yes;
-        PasteCommand = "inkscape %s";
-        Command = inkscape;
-      },
-      {
-        Forced = No;
-        Name = pavucontrol.Pavucontrol;
-        DropCommand = "pavucontrol %d";
-        BuggyApplication = No;
-        AutoLaunch = No;
-        Position = "0,9";
-        Lock = No;
-        PasteCommand = "pavucontrol %s";
-        Command = pavucontrol;
       }
     );
     Lowered = Yes;
