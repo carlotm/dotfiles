@@ -1,29 +1,29 @@
 {
-  FTitleColor = "#ffffff";
   FrameBorderColor = "#000000";
-  WindowTitleBalloons = NO;
+  FTitleColor = "#ffffff";
   MiniaturizeKey = None;
+  WindowTitleBalloons = NO;
   MenuDisabledColor = "#7f7f7f";
-  MoveToWorkspace9Key = "Shift+Mod1+9";
+  IconTitleBack = "#000000";
+  HotCornerEdge = 3;
   PixmapPath = (
     "/home/carloratm/GNUstep/Library/WindowMaker/CachedPixmaps",
     "/usr/share/pixmaps"
   );
-  HotCornerEdge = 3;
-  IconTitleBack = "#000000";
+  MoveToWorkspace9Key = "Shift+Mod1+9";
   FTitleBack = (vgradient, "#181818", "#222222");
   ToggleKbdModeKey = "Mod1+space";
-  WindowMenuKey = None;
   DragMaximizedWindow = RestoreGeometry;
+  WindowMenuKey = None;
   HideKey = None;
-  IconTitleFont = "Spleen 6x12:slant=0:weight=100:width=100:pixelsize=12";
+  IconTitleFont = "Terminus:slant=0:weight=200:width=100:pixelsize=10";
   MoveToWorkspace7Key = "Shift+Mod1+7";
   MenuTextBack = (solid, "#c7c7c7");
-  LargeDisplayFont = "DejaVu Sans:slant=0:weight=200:width=78:pixelsize=72";
+  LargeDisplayFont = "DejaVu Sans:slant=0:weight=200:width=87:pixelsize=72";
   WindowPlacement = center;
   KeepDockOnPrimaryHead = YES;
-  DisableClip = YES;
   HotCornerDelay = 250;
+  DisableClip = YES;
   CenterKey = None;
   MoveDisplay = center;
   TitleJustify = left;
@@ -33,7 +33,7 @@
   IconBack = (dgradient, "#dfdfdf", "#5d5d5d");
   MenuTitleColor = "#ffffff";
   AntialiasedText = YES;
-  MenuTitleFont = "DejaVu Sans:slant=0:weight=200:width=78:pixelsize=14";
+  MenuTitleFont = "Terminus:slant=0:weight=200:width=100:pixelsize=18";
   LowerKey = None;
   MoveToWorkspace5Key = "Shift+Mod1+5";
   HotCorners = NO;
@@ -41,7 +41,7 @@
   SmoothWorkspaceBack = YES;
   MoveTo6to12Head = None;
   DbClickFullScreen = NO;
-  MenuTextFont = "DejaVu Sans:slant=0:weight=80:width=78:pixelsize=14";
+  MenuTextFont = "Terminus:slant=0:weight=200:width=100:pixelsize=15";
   NoWindowOverDock = YES;
   WorkspaceBack = (solid, "#233e6b");
   HighlightTextColor = "#000000";
@@ -49,22 +49,22 @@
   EnforceIconMargin = NO;
   WindowSnapping = YES;
   SnapToTopMaximizesFullscreen = YES;
-  AutoArrangeIcons = YES;
   PrevWorkspaceKey = None;
+  AutoArrangeIcons = YES;
   ClipTitleColor = "#000000";
   MoveTo12to6Head = None;
   HotCornerActions = (None, None, None, None);
   CloseKey = "Shift+Mod1+C";
-  HighlightColor = "#ffffff";
   FrameFocusedBorderColor = "#000000";
-  WindowTitleFont = "DejaVu Sans:slant=0:weight=200:width=87:pixelsize=14";
+  HighlightColor = "#ffffff";
+  WindowTitleFont = "Terminus:slant=0:weight=200:width=100:pixelsize=18";
   FocusMode = sloppy;
   MoveToWorkspace8Key = "Shift+Mod1+8";
   NextWorkspaceKey = None;
-  WindowPlaceOrigin = (817, 350);
   RunKey = "Mod1+F2";
-  MoveToWorkspace3Key = "Shift+Mod1+3";
+  WindowPlaceOrigin = (817, 350);
   DisableDrawers = YES;
+  MoveToWorkspace3Key = "Shift+Mod1+3";
   CClipTitleColor = "#616161";
   RootMenuKey = None;
   MoveToWorkspace6Key = "Shift+Mod1+6";
@@ -79,8 +79,8 @@
   OpenTransientOnOwnerWorkspace = YES;
   UTitleColor = "#000000";
   UTitleBack = (solid, "#e4e4e4");
-  CloseRootMenuByLeftOrRightMouseClick = NO;
   PTitleColor = "#ffffff";
+  CloseRootMenuByLeftOrRightMouseClick = NO;
   MoveToWorkspace1Key = "Shift+Mod1+1";
   IgnoreGtkHints = YES;
   MoveToWorkspace4Key = "Shift+Mod1+4";
