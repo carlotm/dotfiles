@@ -1,29 +1,29 @@
 {
   FrameBorderColor = "#000000";
   FTitleColor = "#ffffff";
-  MiniaturizeKey = None;
   WindowTitleBalloons = NO;
+  MiniaturizeKey = None;
   MenuDisabledColor = "#7f7f7f";
   IconTitleBack = "#000000";
-  HotCornerEdge = 3;
+  MoveToWorkspace9Key = "Shift+Mod1+9";
   PixmapPath = (
     "/home/carloratm/GNUstep/Library/WindowMaker/CachedPixmaps",
     "/usr/share/pixmaps"
   );
-  MoveToWorkspace9Key = "Shift+Mod1+9";
+  HotCornerEdge = 3;
   FTitleBack = (vgradient, "#181818", "#222222");
   ToggleKbdModeKey = "Mod1+space";
-  DragMaximizedWindow = RestoreGeometry;
   WindowMenuKey = None;
+  DragMaximizedWindow = RestoreGeometry;
   HideKey = None;
-  IconTitleFont = "Terminus:slant=0:weight=200:width=100:pixelsize=10";
+  IconTitleFont = "Spleen:slant=0:weight=100:width=100:pixelsize=12";
   MoveToWorkspace7Key = "Shift+Mod1+7";
   MenuTextBack = (solid, "#c7c7c7");
   LargeDisplayFont = "DejaVu Sans:slant=0:weight=200:width=87:pixelsize=72";
   WindowPlacement = center;
   KeepDockOnPrimaryHead = YES;
-  HotCornerDelay = 250;
   DisableClip = YES;
+  HotCornerDelay = 250;
   CenterKey = None;
   MoveDisplay = center;
   TitleJustify = left;
@@ -49,22 +49,22 @@
   EnforceIconMargin = NO;
   WindowSnapping = YES;
   SnapToTopMaximizesFullscreen = YES;
-  PrevWorkspaceKey = None;
   AutoArrangeIcons = YES;
+  PrevWorkspaceKey = None;
   ClipTitleColor = "#000000";
   MoveTo12to6Head = None;
   HotCornerActions = (None, None, None, None);
   CloseKey = "Shift+Mod1+C";
   FrameFocusedBorderColor = "#000000";
   HighlightColor = "#ffffff";
-  WindowTitleFont = "Terminus:slant=0:weight=200:width=100:pixelsize=18";
+  WindowTitleFont = "Spleen:slant=0:weight=100:width=100:pixelsize=14";
   FocusMode = sloppy;
   MoveToWorkspace8Key = "Shift+Mod1+8";
   NextWorkspaceKey = None;
-  RunKey = "Mod1+F2";
   WindowPlaceOrigin = (817, 350);
-  DisableDrawers = YES;
+  RunKey = "Mod1+F2";
   MoveToWorkspace3Key = "Shift+Mod1+3";
+  DisableDrawers = YES;
   CClipTitleColor = "#616161";
   RootMenuKey = None;
   MoveToWorkspace6Key = "Shift+Mod1+6";
