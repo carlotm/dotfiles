@@ -29,12 +29,6 @@
     - ansible.builtin.include_tasks: tasks/pacman.yml
     - ansible.builtin.include_tasks: tasks/nix.yml
     - ansible.builtin.include_tasks: tasks/services.yml
+    - ansible.builtin.include_tasks: tasks/dotfiles.yml
   handlers:
     - ansible.builtin.include_tasks: tasks/locale_gen.yml
-
-- hosts: localhost
-  gather_facts: no
-  connection: local
-  tasks:
-    - name: STOW DOTFILES
-      ansible.builtin.command: stow home --target={{ lookup('env', 'HOME') }}

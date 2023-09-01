@@ -1,0 +1,17 @@
+- name: COPY DOTFILES
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ lookup('env', 'HOME') }}"
+    owner: "{{ user.username }}"
+    group: "{{ user.username }}"
+    mode: "0644"
+  loop:
+    - templates/dotfiles/.bashrc
+    - templates/dotfiles/.bash_profile
+    - templates/dotfiles/.gitconfig
+    - templates/dotfiles/.xinitrc
+    - templates/dotfiles/.Xresources
+    - templates/dotfiles/.vimrc
+    - templates/dotfiles/.config
+    - templates/dotfiles/.local
+    - templates/dotfiles/GNUstep
