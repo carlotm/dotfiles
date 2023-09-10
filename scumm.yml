@@ -1,24 +1,20 @@
 ---
 - hosts: localhost
-  become: yes
-  become_method: sudo
   gather_facts: no
   connection: local
   vars:
+    host: scumm
     user:
       username: carloratm
       groups:
         - carloratm
     pkgs:
       - ratm-base
-      - ratm-desktop
-      - libdockapp
-      - wmbattery
-      - wmtime
-      - paginator-git
+      - xfce4
+      - xfce4-goodies
+      - alacritty
       - firefox
       - keepassxc
-      - slock
       - nix
     services:
       - nix-daemon
@@ -30,5 +26,6 @@
     - ansible.builtin.include_tasks: tasks/nix.yml
     - ansible.builtin.include_tasks: tasks/services.yml
     - ansible.builtin.include_tasks: tasks/dotfiles.yml
+    - ansible.builtin.include_tasks: tasks/xfce.yml
   handlers:
     - ansible.builtin.include_tasks: tasks/locale_gen.yml

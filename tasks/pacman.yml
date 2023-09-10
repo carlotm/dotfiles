@@ -1,14 +1,17 @@
 - name: COPY PACMAN CONF
+  become: yes
   ansible.builtin.copy:
-    src: templates/etc/pacman.conf
+    src: "templates/{{ host }}/etc/pacman.conf"
     dest: /etc/pacman.conf
     owner: root
     group: root
     mode: "0644"
 - name: SYNC PACMAN
+  become: yes
   pacman:
     update_cache: yes
 - name: INSTALL PACKAGES
+  become: yes
   pacman:
     name: "{{ pkgs }}"
     state: present

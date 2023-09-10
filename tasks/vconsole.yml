@@ -1,6 +1,7 @@
 - name: COPY VCONSOLE CONF
+  become: yes
   ansible.builtin.copy:
-    src: templates/etc/vconsole.conf
+    src: "templates/{{ host }}/etc/vconsole.conf"
     dest: /etc/vconsole.conf
     owner: root
     group: root
