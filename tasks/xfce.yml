@@ -60,3 +60,4 @@
     - {chan: "xfce4-panel", prop: "/panels/panel-1/size", type: "int", val: "48"}
     - {chan: "xfce4-panel", prop: "/panels/panel-1/position", type: "string", val: "p=6;x=0;y=0"}
     - {chan: "xfce4-panel", prop: "/panels/panel-1/position-locked", type: "bool", val: "true"}
+    - {chan: "xfce4-keyboard-shortcuts", prop: "/xfwm4/custom/<Alt>1", type: "string", val: "workspace_1_key"}
