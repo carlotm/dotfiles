@@ -11,3 +11,5 @@ disabled = true
 disabled = true
 [cmd_duration]
 disabled = true
+[battery]
+format = '[$percentage]($style) '
