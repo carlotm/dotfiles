@@ -4,82 +4,477 @@
     value_type: "{{ item.type }}"
     value: "{{ item.val }}"
   loop:
-    - {chan: xfce4-keyboard-shortcuts, prop: /providers, type: string, val: ["commands", "xfwm4"]}
-    - {chan: xsettings, prop: /Gtk/ButtonImages, type: bool, val: true}
-    - {chan: xsettings, prop: /Gtk/CursorThemeName, type: string, val: Adwaita}
-    - {chan: xsettings, prop: /Gtk/CursorThemeSize, type: int, val: 48}
-    - {chan: xsettings, prop: /Gtk/DecorationLayout, type: string, val: menu:minimize,maximize,close}
-    - {chan: xsettings, prop: /Gtk/FontName, type: string, val: Noto Sans 14}
-    - {chan: xsettings, prop: /Gtk/MenuImages, type: bool, val: true}
-    - {chan: xsettings, prop: /Gtk/MonospaceFontName, type: string, val: Spleen 22}
-    - {chan: xsettings, prop: /Gtk/ToolbarIconSize, type: int, val: 3}
-    - {chan: xsettings, prop: /Gtk/ToolbarStyle, type: string, val: icons}
-    - {chan: xsettings, prop: /Xft/DPI, type: int, val: 96}
-    - {chan: xsettings, prop: /Xft/Antialias, type: int, val: 1}
-    - {chan: xsettings, prop: /Xft/Hinting, type: int, val: 1}
-    - {chan: xsettings, prop: /Xft/HintStyle, type: string, val: hintfull}
-    - {chan: xsettings, prop: /Xft/RGBA, type: string, val: rgb}
-    - {chan: xfce4-terminal, prop: /font-allow-bold, type: bool, val: false}
-    - {chan: xfce4-terminal, prop: /font-name, type: string, val: Spleen Medium 22}
-    - {chan: xfce4-terminal, prop: /font-use-system, type: bool, val: false}
-    - {chan: xfce4-terminal, prop: /misc-show-unsafe-paste-dialog, type: bool, val: false}
-    - {chan: xfwm4, prop: /general/activate_action, type: string, val: bring}
-    - {chan: xfwm4, prop: /general/borderless_maximize, type: bool, val: true}
-    - {chan: xfwm4, prop: /general/box_move, type: bool, val: false}
-    - {chan: xfwm4, prop: /general/box_resize, type: bool, val: false}
-    - {chan: xfwm4, prop: /general/button_layout, type: string, val: O|SHMC}
-    - {chan: xfwm4, prop: /general/button_offset, type: int, val: 0}
-    - {chan: xfwm4, prop: /general/button_spacing, type: int, val: 0}
-    - {chan: xfwm4, prop: /general/click_to_focus, type: bool, val: false}
-    - {chan: xfwm4, prop: /general/cycle_apps_only, type: bool, val: false}
-    - {chan: xfwm4, prop: /general/cycle_draw_frame, type: bool, val: true}
-    - {chan: xfwm4, prop: /general/cycle_hidden, type: bool, val: true}
-    - {chan: xfwm4, prop: /general/cycle_minimized, type: bool, val: false}
-    - {chan: xfwm4, prop: /general/cycle_minimum, type: bool, val: true}
-    - {chan: xfwm4, prop: /general/cycle_preview, type: bool, val: true}
-    - {chan: xfwm4, prop: /general/cycle_raise, type: bool, val: false}
-    - {chan: xfwm4, prop: /general/easy_click, type: string, val: Alt}
-    - {chan: xfwm4, prop: /general/focus_delay, type: int, val: 0}
-    - {chan: xfwm4, prop: /general/focus_hint, type: bool, val: true}
-    - {chan: xfwm4, prop: /general/focus_new, type: bool, val: true}
-    - {chan: xfwm4, prop: /general/raise_delay, type: int, val: 0}
-    - {chan: xfwm4, prop: /general/use_compositing, type: bool, val: false}
-    - {chan: xfwm4, prop: /general/workspace_count, type: int, val: 9}
-    - {chan: xfwm4, prop: /general/workspace_names, type: string, val: [1, 2, 3, 4, 5, 6, 7, 8, 9]}
-    - {chan: xfwm4, prop: /general/wrap_cycle, type: bool, val: false}
-    - {chan: xfwm4, prop: /general/wrap_layout, type: bool, val: false}
-    - {chan: xfwm4, prop: /general/wrap_resistance, type: int, val: 10}
-    - {chan: xfwm4, prop: /general/wrap_windows, type: bool, val: false}
-    - {chan: xfwm4, prop: /general/wrap_workspaces, type: bool, val: false}
-    - {chan: xfwm4, prop: /general/zoom_desktop, type: bool, val: true}
-    - {chan: xfwm4, prop: /general/zoom_pointer, type: bool, val: true}
-    - {chan: xfce4-notifyd, prop: /applications/known_applications, type: string, val: [xfce4-power-manager]}
-    - {chan: xfce4-notifyd, prop: /log-max-size-enabled, type: bool, val: true}
-    - {chan: xfce4-panel, prop: /panels, type: int, val: [1]}
-    - {chan: xfce4-panel, prop: /panels/dark-mode, type: bool, val: true}
-    - {chan: xfce4-panel, prop: /panels/panel-1/icon-size, type: int, val: 24}
-    - {chan: xfce4-panel, prop: /panels/panel-1/length, type: int, val: 100}
-    - {chan: xfce4-panel, prop: /panels/panel-1/size, type: int, val: 48}
-    - {chan: xfce4-panel, prop: /panels/panel-1/position, type: string, val: p=6;x=0;y=0}
-    - {chan: xfce4-panel, prop: /panels/panel-1/position-locked, type: bool, val: true}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt>1, type: string, val: workspace_1_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt>2, type: string, val: workspace_2_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt>3, type: string, val: workspace_3_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt>4, type: string, val: workspace_4_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt>5, type: string, val: workspace_5_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt>6, type: string, val: workspace_6_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt>7, type: string, val: workspace_7_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt>8, type: string, val: workspace_8_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt>9, type: string, val: workspace_9_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt><Shift>1, type: string, val: move_window_workspace_1_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt><Shift>2, type: string, val: move_window_workspace_2_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt><Shift>3, type: string, val: move_window_workspace_3_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt><Shift>4, type: string, val: move_window_workspace_4_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt><Shift>5, type: string, val: move_window_workspace_5_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt><Shift>6, type: string, val: move_window_workspace_6_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt><Shift>7, type: string, val: move_window_workspace_7_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt><Shift>8, type: string, val: move_window_workspace_8_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt><Shift>9, type: string, val: move_window_workspace_9_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /xfwm4/custom/<Alt><Shift>c, type: string, val: close_window_key}
-    - {chan: xfce4-keyboard-shortcuts, prop: /commands/custom/<Alt>F2, type: string, val: xfce4-appfinder}
-    - {chan: xfce4-keyboard-shortcuts, prop: /commands/custom/<Alt>F2/startup-notify, type: bool, val: true}
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /providers,
+        type: string,
+        val: ["commands", "xfwm4"]
+    }
+    - {
+        chan: xsettings,
+        prop: /Gtk/ButtonImages,
+        type: bool,
+        val: true
+    }
+    - {
+        chan: xsettings,
+        prop: /Gtk/CursorThemeName,
+        type: string,
+        val: Adwaita
+    }
+    - {
+        chan: xsettings,
+        prop: /Gtk/CursorThemeSize,
+        type: int,
+        val: 48
+    }
+    - {
+        chan: xsettings,
+        prop: /Gtk/DecorationLayout,
+        type: string,
+        val: "menu:minimize,maximize,close"
+    }
+    - {
+        chan: xsettings,
+        prop: /Gtk/FontName,
+        type: string,
+        val: Noto Sans 14
+    }
+    - {
+        chan: xsettings,
+        prop: /Gtk/MenuImages,
+        type: bool,
+        val: true
+    }
+    - {
+        chan: xsettings,
+        prop: /Gtk/MonospaceFontName,
+        type: string,
+        val: Spleen 22
+    }
+    - {
+        chan: xsettings,
+        prop: /Gtk/ToolbarIconSize,
+        type: int,
+        val: 3
+    }
+    - {
+        chan: xsettings,
+        prop: /Gtk/ToolbarStyle,
+        type: string,
+        val: icons
+    }
+    - {
+        chan: xsettings,
+        prop: /Xft/DPI,
+        type: int,
+        val: 96
+    }
+    - {
+        chan: xsettings,
+        prop: /Xft/Antialias,
+        type: int,
+        val: 1
+    }
+    - {
+        chan: xsettings,
+        prop: /Xft/Hinting,
+        type: int,
+        val: 1
+    }
+    - {
+        chan: xsettings,
+        prop: /Xft/HintStyle,
+        type: string,
+        val: hintfull
+    }
+    - {
+        chan: xsettings,
+        prop: /Xft/RGBA,
+        type: string,
+        val: rgb
+    }
+    - {
+        chan: xfce4-terminal,
+        prop: /font-allow-bold,
+        type: bool,
+        val: false
+    }
+    - {
+        chan: xfce4-terminal,
+        prop: /font-name,
+        type: string,
+        val: Spleen Medium 22
+    }
+    - {
+        chan: xfce4-terminal,
+        prop: /font-use-system,
+        type: bool,
+        val: false
+    }
+    - {
+        chan: xfce4-terminal,
+        prop: /misc-show-unsafe-paste-dialog,
+        type: bool,
+        val: false
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/activate_action,
+        type: string,
+        val: bring
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/borderless_maximize,
+        type: bool,
+        val: true
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/box_move,
+        type: bool,
+        val: false
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/box_resize,
+        type: bool,
+        val: false
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/button_layout,
+        type: string,
+        val: O|SHMC
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/button_offset,
+        type: int,
+        val: 0
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/button_spacing,
+        type: int,
+        val: 0
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/click_to_focus,
+        type: bool,
+        val: false
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/cycle_apps_only,
+        type: bool,
+        val: false
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/cycle_draw_frame,
+        type: bool,
+        val: true
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/cycle_hidden,
+        type: bool,
+        val: true
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/cycle_minimized,
+        type: bool,
+        val: false
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/cycle_minimum,
+        type: bool,
+        val: true
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/cycle_preview,
+        type: bool,
+        val: true
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/cycle_raise,
+        type: bool,
+        val: false
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/easy_click,
+        type: string,
+        val: Alt
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/focus_delay,
+        type: int,
+        val: 0
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/focus_hint,
+        type: bool,
+        val: true
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/focus_new,
+        type: bool,
+        val: true
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/raise_delay,
+        type: int,
+        val: 0
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/use_compositing,
+        type: bool,
+        val: false
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/workspace_count,
+        type: int,
+        val: 9
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/workspace_names,
+        type: string,
+        val: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/wrap_cycle,
+        type: bool,
+        val: false
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/wrap_layout,
+        type: bool,
+        val: false
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/wrap_resistance,
+        type: int,
+        val: 10
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/wrap_windows,
+        type: bool,
+        val: false
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/wrap_workspaces,
+        type: bool,
+        val: false
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/zoom_desktop,
+        type: bool,
+        val: true
+    }
+    - {
+        chan: xfwm4,
+        prop: /general/zoom_pointer,
+        type: bool,
+        val: true
+    }
+    - {
+        chan: xfce4-notifyd,
+        prop: /applications/known_applications,
+        type: string,
+        val: [xfce4-power-manager]
+    }
+    - {
+        chan: xfce4-notifyd,
+        prop: /log-max-size-enabled,
+        type: bool,
+        val: true
+    }
+    - {
+        chan: xfce4-panel,
+        prop: /panels,
+        type: int,
+        val: [1]
+    }
+    - {
+        chan: xfce4-panel,
+        prop: /panels/dark-mode,
+        type: bool,
+        val: true
+    }
+    - {
+        chan: xfce4-panel,
+        prop: /panels/panel-1/icon-size,
+        type: int,
+        val: 24
+    }
+    - {
+        chan: xfce4-panel,
+        prop: /panels/panel-1/length,
+        type: int,
+        val: 100
+    }
+    - {
+        chan: xfce4-panel,
+        prop: /panels/panel-1/size,
+        type: int,
+        val: 48
+    }
+    - {
+        chan: xfce4-panel,
+        prop: /panels/panel-1/position,
+        type: string,
+        val: p=6;x=0;y=0
+    }
+    - {
+        chan: xfce4-panel,
+        prop: /panels/panel-1/position-locked,
+        type: bool,
+        val: true
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt>1,
+        type: string,
+        val: workspace_1_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt>2,
+        type: string,
+        val: workspace_2_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt>3,
+        type: string,
+        val: workspace_3_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt>4,
+        type: string,
+        val: workspace_4_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt>5,
+        type: string,
+        val: workspace_5_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt>6,
+        type: string,
+        val: workspace_6_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt>7,
+        type: string,
+        val: workspace_7_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt>8,
+        type: string,
+        val: workspace_8_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt>9,
+        type: string,
+        val: workspace_9_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt><Shift>1,
+        type: string,
+        val: move_window_workspace_1_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt><Shift>2,
+        type: string,
+        val: move_window_workspace_2_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt><Shift>3,
+        type: string,
+        val: move_window_workspace_3_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt><Shift>4,
+        type: string,
+        val: move_window_workspace_4_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt><Shift>5,
+        type: string,
+        val: move_window_workspace_5_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt><Shift>6,
+        type: string,
+        val: move_window_workspace_6_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt><Shift>7,
+        type: string,
+        val: move_window_workspace_7_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt><Shift>8,
+        type: string,
+        val: move_window_workspace_8_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt><Shift>9,
+        type: string,
+        val: move_window_workspace_9_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /xfwm4/custom/<Alt><Shift>c,
+        type: string,
+        val: close_window_key
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /commands/custom/<Alt>F2,
+        type: string,
+        val: xfce4-appfinder
+    }
+    - {
+        chan: xfce4-keyboard-shortcuts,
+        prop: /commands/custom/<Alt>F2/startup-notify,
+        type: bool,
+        val: true
+    }
