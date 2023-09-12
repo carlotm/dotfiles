@@ -4,6 +4,7 @@
     value_type: "{{ item.type }}"
     value: "{{ item.val }}"
   loop:
+    - {chan: xfce4-keyboard-shortcuts, prop: /providers, type: string, val: ["commands", "xfwm4"]}
     - {chan: xsettings, prop: /Gtk/ButtonImages, type: bool, val: true}
     - {chan: xsettings, prop: /Gtk/CursorThemeName, type: string, val: Adwaita}
     - {chan: xsettings, prop: /Gtk/CursorThemeSize, type: int, val: 48}
