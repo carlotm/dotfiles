@@ -1,5 +1,14 @@
 - community.general.xfconf:
     channel: xfce4-keyboard-shortcuts
+    property: "/commands/custom/{{ item.prop }}"
+    value_type: string
+    value: "{{ item.val }}"
+  loop:
+    - { prop: <Alt>F2,            val: xfce4-appfinder }
+    - { prop: <Alt><Shift>Return, val: alacritty }
+
+- community.general.xfconf:
+    channel: xfce4-keyboard-shortcuts
     property: "/xfwm4/custom/{{ item.prop }}"
     value_type: string
     value: "{{ item.val }}"
@@ -24,7 +33,6 @@
     - { prop: <Alt><Shift>8, val: move_window_workspace_8_key }
     - { prop: <Alt><Shift>9, val: move_window_workspace_9_key }
     - { prop: <Alt><Shift>c, val: close_window_key }
-    - { prop: <Alt>F2, val: xfce4-appfinder }
 
 - community.general.xfconf:
     channel: xfwm4
@@ -43,8 +51,8 @@
     - { type: int,    val: 9,       prop: workspace_count }
     - { type: int,    val: 10,      prop: wrap_resistance }
     - { type: bool,   val: true,    prop: borderless_maximize }
-    - { type: bool,   val: false,   prop: box_mode }
-    - { type: bool,   val: false,   prop: box_resize }
+    - { type: bool,   val: true,    prop: box_move }
+    - { type: bool,   val: true,    prop: box_resize }
     - { type: bool,   val: false,   prop: click_to_focus }
     - { type: bool,   val: false,   prop: click_apps_only }
     - { type: bool,   val: true,    prop: cycle_draw_frame }
