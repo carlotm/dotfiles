@@ -26,7 +26,6 @@
     - ansible.builtin.include_tasks: tasks/nix.yml
     - ansible.builtin.include_tasks: tasks/services.yml
     - ansible.builtin.include_tasks: tasks/dotfiles.yml
-    - ansible.builtin.include_tasks: tasks/reset-xfce.yml
     - ansible.builtin.include_tasks: tasks/xfce.yml
   handlers:
     - ansible.builtin.include_tasks: tasks/locale_gen.yml

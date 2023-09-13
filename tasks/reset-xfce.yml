@@ -1,3 +1,0 @@
-- ansible.builtin.command: xfconf-query --reset --recursive --channel xfce4-panel --property /panels/panel-2
-- ansible.builtin.command: xfconf-query --reset --recursive --channel xfce4-keyboard-shortcuts --property /commands/custom
-- ansible.builtin.command: xfconf-query --reset --recursive --channel xfce4-keyboard-shortcuts --property /xfwm4/custom
