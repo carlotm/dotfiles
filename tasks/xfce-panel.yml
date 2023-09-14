@@ -23,7 +23,7 @@
     - { type: int,    prop: length,           val: 100 }
     - { type: int,    prop: size,             val: 36 }
     - { type: int,    prop: background-style, val: 1 }
-    - { type: int,    prop: plugin-ids,       val: [1,4,3,6,8,9,2,12,14] }
+    - { type: int,    prop: plugin-ids,       val: [4,3,6,8,9,2,12,14] }
     - { type: string, prop: position,         val: "p=6;x=0;y=0" }
     - { type: double, prop: background-rgba,  val: [0.078431, 0.223529, 0.443137, 1.000000] }
     - { type: bool,   prop: position-locked,  val: true }
@@ -34,7 +34,6 @@
     value_type: string
     value: "{{ item.val }}"
   loop:
-    - { idx: 1,   val: applicationsmenu }
     - { idx: 12,  val: clock }
     - { idx: 14,  val: actions }
     - { idx: 2,   val: xkb }
@@ -50,8 +49,6 @@
     value_type: "{{ item.type }}"
     value: "{{ item.val }}"
   loop:
-    - { i: 1,   type: string,   prop: button-icon,        val: archlinux-logo }
-    - { i: 1,   type: bool,     prop: show-button-title,  val: false }
     - { i: 12,  type: int,      prop: digital-layout,     val: 3 }
     - { i: 12,  type: string,   prop: digital-time-font,  val: Noto Sans Bold 12 }
     - { i: 12,  type: bool,     prop: flash-separators,   val: false }
