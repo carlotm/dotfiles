@@ -99,4 +99,4 @@
     value: "{{ item.val }}"
   loop:
     - { type: string, val: [xfce4-power-manager], prop: /applications/known_applications }
-    - { type: bool,   val: true,          prop: /log-max-size-enabled }
+    - { type: bool,   val: true, prop: /log-max-size-enabled }
