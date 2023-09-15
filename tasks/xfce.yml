@@ -100,3 +100,64 @@
   loop:
     - { type: string, val: [xfce4-power-manager], prop: /applications/known_applications }
     - { type: bool,   val: true, prop: /log-max-size-enabled }
+
+- community.general.xfconf:
+    channel: xfce4-desktop
+    property: "/backdrop/screen0/monitor{{ item.monitor }}eDP-1/workspace{{ item.i }}/{{ item.prop }}"
+    value_type: "{{ item.type }}"
+    value: "{{ item.val }}"
+  loop:
+    - { monitor: eDP-1, i: 0, type: int, prop: color-style, val: 0 }
+    - { monitor: eDP-1, i: 0, type: int, prop: image-style, val: 0 }
+    - { monitor: eDP-1, i: 0, type: double, prop: rgba1, val: [0.078322, 0.226031, 0.443333, 1.000000] }
+    - { monitor: eDP-1, i: 1, type: int, prop: color-style, val: 0 }
+    - { monitor: eDP-1, i: 1, type: int, prop: image-style, val: 0 }
+    - { monitor: eDP-1, i: 1, type: double, prop: rgba1, val: [0.078322, 0.226031, 0.443333, 1.000000] }
+    - { monitor: eDP-1, i: 2, type: int, prop: color-style, val: 0 }
+    - { monitor: eDP-1, i: 2, type: int, prop: image-style, val: 0 }
+    - { monitor: eDP-1, i: 2, type: double, prop: rgba1, val: [0.078322, 0.226031, 0.443333, 1.000000] }
+    - { monitor: eDP-1, i: 3, type: int, prop: color-style, val: 0 }
+    - { monitor: eDP-1, i: 3, type: int, prop: image-style, val: 0 }
+    - { monitor: eDP-1, i: 3, type: double, prop: rgba1, val: [0.078322, 0.226031, 0.443333, 1.000000] }
+    - { monitor: eDP-1, i: 4, type: int, prop: color-style, val: 0 }
+    - { monitor: eDP-1, i: 4, type: int, prop: image-style, val: 0 }
+    - { monitor: eDP-1, i: 4, type: double, prop: rgba1, val: [0.078322, 0.226031, 0.443333, 1.000000] }
+    - { monitor: eDP-1, i: 5, type: int, prop: color-style, val: 0 }
+    - { monitor: eDP-1, i: 5, type: int, prop: image-style, val: 0 }
+    - { monitor: eDP-1, i: 5, type: double, prop: rgba1, val: [0.078322, 0.226031, 0.443333, 1.000000] }
+    - { monitor: eDP-1, i: 6, type: int, prop: color-style, val: 0 }
+    - { monitor: eDP-1, i: 6, type: int, prop: image-style, val: 0 }
+    - { monitor: eDP-1, i: 6, type: double, prop: rgba1, val: [0.078322, 0.226031, 0.443333, 1.000000] }
+    - { monitor: eDP-1, i: 7, type: int, prop: color-style, val: 0 }
+    - { monitor: eDP-1, i: 7, type: int, prop: image-style, val: 0 }
+    - { monitor: eDP-1, i: 7, type: double, prop: rgba1, val: [0.078322, 0.226031, 0.443333, 1.000000] }
+    - { monitor: eDP-1, i: 8, type: int, prop: color-style, val: 0 }
+    - { monitor: eDP-1, i: 8, type: int, prop: image-style, val: 0 }
+    - { monitor: eDP-1, i: 8, type: double, prop: rgba1, val: [0.078322, 0.226031, 0.443333, 1.000000] }
+    - { monitor: HDMI-2,i: 0, type: int, prop: color-style, val: 0 }
+    - { monitor: HDMI-2,i: 0, type: int, prop: image-style, val: 0 }
+    - { monitor: HDMI-2,i: 0, type: double, prop: rgba1, val: [0.078322, 0.226031, 0.443333, 1.000000] }
+    - { monitor: HDMI-2,i: 1, type: int, prop: color-style, val: 0 }
+    - { monitor: HDMI-2,i: 1, type: int, prop: image-style, val: 0 }
+    - { monitor: HDMI-2,i: 1, type: double, prop: rgba1, val: [0.078322, 0.226031, 0.443333, 1.000000] }
+    - { monitor: HDMI-2,i: 2, type: int, prop: color-style, val: 0 }
+    - { monitor: HDMI-2,i: 2, type: int, prop: image-style, val: 0 }
+    - { monitor: HDMI-2,i: 2, type: double, prop: rgba1, val: [0.078322, 0.226031, 0.443333, 1.000000] }
+    - { monitor: HDMI-2,i: 3, type: int, prop: color-style, val: 0 }
+    - { monitor: HDMI-2,i: 3, type: int, prop: image-style, val: 0 }
+    - { monitor: HDMI-2,i: 3, type: double, prop: rgba1, val: [0.078322, 0.226031, 0.443333, 1.000000] }
+    - { monitor: HDMI-2,i: 4, type: int, prop: color-style, val: 0 }
+    - { monitor: HDMI-2,i: 4, type: int, prop: image-style, val: 0 }
+    - { monitor: HDMI-2,i: 4, type: double, prop: rgba1, val: [0.078322, 0.226031, 0.443333, 1.000000] }
+    - { monitor: HDMI-2,i: 5, type: int, prop: color-style, val: 0 }
+    - { monitor: HDMI-2,i: 5, type: int, prop: image-style, val: 0 }
+    - { monitor: HDMI-2,i: 5, type: double, prop: rgba1, val: [0.078322, 0.226031, 0.443333, 1.000000] }
+    - { monitor: HDMI-2,i: 6, type: int, prop: color-style, val: 0 }
+    - { monitor: HDMI-2,i: 6, type: int, prop: image-style, val: 0 }
+    - { monitor: HDMI-2,i: 6, type: double, prop: rgba1, val: [0.078322, 0.226031, 0.443333, 1.000000] }
+    - { monitor: HDMI-2,i: 7, type: int, prop: color-style, val: 0 }
+    - { monitor: HDMI-2,i: 7, type: int, prop: image-style, val: 0 }
+    - { monitor: HDMI-2,i: 7, type: double, prop: rgba1, val: [0.078322, 0.226031, 0.443333, 1.000000] }
+    - { monitor: HDMI-2,i: 8, type: int, prop: color-style, val: 0 }
+    - { monitor: HDMI-2,i: 8, type: int, prop: image-style, val: 0 }
+    - { monitor: HDMI-2,i: 8, type: double, prop: rgba1, val: [0.078322, 0.226031, 0.443333, 1.000000] }
