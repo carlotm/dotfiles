@@ -9,7 +9,23 @@
       groups:
         - carloratm
     pkgs:
-      - ratm-base
+      - base
+      - base-devel
+      - xorg
+      - xorg-xinit
+      - git
+      - vim
+      - terminus-font
+      - bash-completion
+      - starship
+      - fd
+      - ripgrep
+      - stow
+      - inotify-tools
+      - libiconv
+      - upower
+      - ansible
+      - fzf
       - xfce4
       - xfce4-goodies
       - alacritty

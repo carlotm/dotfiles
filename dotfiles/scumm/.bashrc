@@ -1,7 +1,7 @@
 [[ $- != *i* ]] && return
 
-alias ls="exa --long --header"
-alias tree="exa --tree"
+alias ls="eza --long --header"
+alias tree="eza --tree"
 alias grep="rg -i"
 alias find="fd"
 

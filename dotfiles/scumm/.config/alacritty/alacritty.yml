@@ -17,6 +17,10 @@ font:
   size: 22
 mouse:
   hide_when_typing: true
+window:
+  dimensions:
+    columns: 80
+    lines: 24
 TERM: xterm-256color
 key_bindings:
   - { key: F11, action: ToggleFullscreen }
