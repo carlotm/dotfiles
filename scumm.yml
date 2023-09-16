@@ -29,6 +29,7 @@
       - fzf
       - xfce4
       - xfce4-goodies
+      - awesome
       - alacritty
       - firefox
       - keepassxc
