@@ -13,6 +13,7 @@
       - base-devel
       - xorg
       - xorg-xinit
+      - xorg-fonts-encodings
       - git
       - vim
       - terminus-font
@@ -32,6 +33,8 @@
       - firefox
       - keepassxc
       - nix
+      - fontconfig
+      - fontforge
     services:
       - nix-daemon
   tasks:
