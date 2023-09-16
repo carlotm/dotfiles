@@ -10,7 +10,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 
 -- {{{ Variable definitions
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init("/home/carloratm/.config/awesome/theme.lua")
 
 terminal = "alacritty"
 editor = os.getenv("EDITOR") or "vim"

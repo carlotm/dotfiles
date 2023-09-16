@@ -56,6 +56,7 @@ nnoremap gp :bprev<CR>
 nnoremap <Leader>bd :bdelete<CR>
 nnoremap <Leader>ww :wincmd w<CR>
 nnoremap <Leader>ff :GFiles<CR>
+nnoremap <Leader>fa :Files<CR>
 nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fg :Rg<CR>
 nnoremap <Leader>cc :Goyo 60%x100%<CR>
