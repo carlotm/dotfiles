@@ -7,32 +7,10 @@
     - { prop: <Alt>F2,            val: xfce4-appfinder }
     - { prop: <Alt><Shift>Return, val: alacritty }
 
-- community.general.xfconf:
-    channel: xfce4-keyboard-shortcuts
-    property: "/xfwm4/custom/{{ item.prop }}"
-    value_type: string
-    value: "{{ item.val }}"
+- ansible.builtin.command: "xfconf-query --reset --recursive --channel xfce4-keyboard-shortcuts --property {{ item }}"
   loop:
-    - { prop: <Alt>Tab, val: cycle_windows_key }
-    - { prop: <Alt>1, val: workspace_1_key }
-    - { prop: <Alt>2, val: workspace_2_key }
-    - { prop: <Alt>3, val: workspace_3_key }
-    - { prop: <Alt>4, val: workspace_4_key }
-    - { prop: <Alt>5, val: workspace_5_key }
-    - { prop: <Alt>6, val: workspace_6_key }
-    - { prop: <Alt>7, val: workspace_7_key }
-    - { prop: <Alt>8, val: workspace_8_key }
-    - { prop: <Alt>9, val: workspace_9_key }
-    - { prop: <Alt><Shift>1, val: move_window_workspace_1_key }
-    - { prop: <Alt><Shift>2, val: move_window_workspace_2_key }
-    - { prop: <Alt><Shift>3, val: move_window_workspace_3_key }
-    - { prop: <Alt><Shift>4, val: move_window_workspace_4_key }
-    - { prop: <Alt><Shift>5, val: move_window_workspace_5_key }
-    - { prop: <Alt><Shift>6, val: move_window_workspace_6_key }
-    - { prop: <Alt><Shift>7, val: move_window_workspace_7_key }
-    - { prop: <Alt><Shift>8, val: move_window_workspace_8_key }
-    - { prop: <Alt><Shift>9, val: move_window_workspace_9_key }
-    - { prop: <Alt><Shift>c, val: close_window_key }
+    - /commands/custom
+    - /xfwm4/custom
 
 - community.general.xfconf:
     channel: xfwm4
