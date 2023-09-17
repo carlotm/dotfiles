@@ -30,6 +30,7 @@
       - autorandr
       - awesome
       - xfce4-appfinder
+      - xfce4-power-manager
       - alacritty
       - firefox
       - keepassxc
