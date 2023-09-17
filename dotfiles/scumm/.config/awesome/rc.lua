@@ -115,9 +115,6 @@ awful.rules.rules = {
 	},
 	{ rule_any = { type = { "normal", "dialog" } }
 	, properties = { titlebars_enabled = false }
-	},
-	{ rule = { instance = "xfce4-panel" }
-	, properties = { border_width = false }
 	}
 }
 -- }}}
