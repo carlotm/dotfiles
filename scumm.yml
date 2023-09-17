@@ -27,9 +27,9 @@
       - upower
       - ansible
       - fzf
+      - autorandr
       - awesome
       - xfce4-appfinder
-      - xfce4-panel
       - alacritty
       - firefox
       - keepassxc
@@ -42,6 +42,7 @@
     - ansible.builtin.include_tasks: tasks/user.yml
     - ansible.builtin.include_tasks: tasks/locale.yml
     - ansible.builtin.include_tasks: tasks/vconsole.yml
+    - ansible.builtin.include_tasks: tasks/udev.yml
     - ansible.builtin.include_tasks: tasks/pacman.yml
     - ansible.builtin.include_tasks: tasks/nix.yml
     - ansible.builtin.include_tasks: tasks/services.yml
