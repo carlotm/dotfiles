@@ -1,3 +1,18 @@
+- name: COPY CONSOLE FONTS
+  become: yes
+  ansible.builtin.copy:
+    src: "templates/{{ host }}/usr/share/kbd/consolefonts/{{ item }}"
+    dest: /usr/share/kbd/consolefonts/
+    owner: root
+    group: root
+    mode: "0644"
+  loop:
+    - spleen-5x8.psfu
+    - spleen-6x12.psfu
+    - spleen-8x16.psfu
+    - spleen-12x24.psfu
+    - spleen-16x32.psfu
+    - spleen-32x64.psfu
 - name: COPY VCONSOLE CONF
   become: yes
   ansible.builtin.copy:
