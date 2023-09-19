@@ -1,0 +1,2 @@
+- name: REFRESH FONT CACHE
+  ansible.builtin.command: fc-cache -f -v
