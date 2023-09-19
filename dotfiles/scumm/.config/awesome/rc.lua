@@ -47,7 +47,7 @@ awful.layout.layouts = {
 
 -- {{{ Wibar
 keyboard_layout = awful.widget.keyboardlayout()
-clock = wibox.widget.textclock()
+clock = wibox.widget.textclock("%H:%M %A %d %B")
 awful.screen.connect_for_each_screen(function(s)
 	awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 	s.mylayoutbox = awful.widget.layoutbox(s)
@@ -69,13 +69,13 @@ awful.screen.connect_for_each_screen(function(s)
 			layout = wibox.layout.fixed.horizontal,
 			spacing = 10,
 			s.mytaglist,
-			s.mylayoutbox,
 		},
 		clock,
 		{
 			layout = wibox.layout.fixed.horizontal,
 			keyboard_layout,
-			wibox.widget.systray()
+			wibox.widget.systray(),
+			s.mylayoutbox
 		}
 }
 end)
@@ -99,7 +99,7 @@ globalkeys = gears.table.join(
 		{description = "increase master width factor", group = "layout"}),
 	awful.key({ modkey }, "h", function () awful.tag.incmwfact(-0.05) end,
 		{description = "decrease master width factor", group = "layout"}),
-	awful.key({ modkey, "Shift" }, "space", function () awful.layout.inc(1) end,
+	awful.key({ modkey, }, "space", function () awful.layout.inc(1) end,
 		{description = "select next", group = "layout"})
 )
 
