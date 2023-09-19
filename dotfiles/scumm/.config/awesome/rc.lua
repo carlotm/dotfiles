@@ -1,60 +1,120 @@
 pcall(require, "luarocks.loader")
-
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local naughty = require("naughty")
+local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 
+-- Error handling {{{
+if awesome.startup_errors then
+	naughty.notify({
+		preset = naughty.config.presets.critical,
+		title = "Oops, there were errors during startup!",
+		text = awesome.startup_errors
+	})
+end
+do
+	local in_error = false
+	awesome.connect_signal("debug::error", function (err)
+		if in_error then return end
+		in_error = true
+		naughty.notify({
+			preset = naughty.config.presets.critical,
+			title = "Oops, an error happened!",
+			text = tostring(err)
+		})
+		in_error = false
+	end)
+end
+-- }}}
+
 -- {{{ Variable definitions
 beautiful.init("/home/carloratm/.config/awesome/theme.lua")
-
 terminal = "alacritty"
+launcher = "xfce4-appfinder"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod1"
-
 awful.layout.layouts = {
 	awful.layout.suit.tile.right,
 	awful.layout.suit.max,
-	awful.layout.suit.max.fullscreen,
-	awful.layout.suit.floating,
 }
+-- }}}
 
+-- {{{ Wibar
+keyboard_layout = awful.widget.keyboardlayout()
+clock = wibox.widget.textclock()
 awful.screen.connect_for_each_screen(function(s)
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+	awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+	s.mylayoutbox = awful.widget.layoutbox(s)
+	s.mylayoutbox:buttons(gears.table.join(awful.button({ }, 1, function() awful.layout.inc(1) end)))
+	s.mytaglist = awful.widget.taglist {
+		screen  = s,
+		filter  = awful.widget.taglist.filter.all,
+		layout  = {
+			layout  = wibox.layout.fixed.horizontal,
+			spacing = 10
+		},
+	}
+
+	s.mywibox = awful.wibar({ position = "top", screen = s })
+	s.mywibox:setup {
+		layout = wibox.layout.align.horizontal,
+		expand = "none",
+		{
+			layout = wibox.layout.fixed.horizontal,
+			spacing = 10,
+			s.mytaglist,
+			s.mylayoutbox,
+		},
+		clock,
+		{
+			layout = wibox.layout.fixed.horizontal,
+			keyboard_layout,
+			wibox.widget.systray()
+		}
+}
 end)
 -- }}}
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
-	awful.key({ modkey, }, "j", function () awful.client.focus.byidx(1) end,
+	awful.key({ modkey }, "s", hotkeys_popup.show_help,
+		{description="show help", group="awesome"}),
+	awful.key({ modkey }, "j", function () awful.client.focus.byidx( 1) end,
 		{description = "focus next by index", group = "client"}),
-	awful.key({ modkey, }, "k", function () awful.client.focus.byidx(-1) end,
+	awful.key({ modkey }, "k", function () awful.client.focus.byidx(-1) end,
 		{description = "focus previous by index", group = "client"}),
-	awful.key({ modkey, }, "F2", function () awful.spawn("xfce4-appfinder") end,
-		{description = "open an application runner", group = "launcher"}),
-	awful.key({ modkey, "Shift"}, "Return", function () awful.spawn(terminal) end,
+	awful.key({ modkey, "Shift" }, "Return", function () awful.spawn(terminal) end,
 		{description = "open a terminal", group = "launcher"}),
+	awful.key({ modkey }, "F2", function () awful.spawn(launcher) end,
+		{description = "open an application launcher", group = "launcher"}),
 	awful.key({ modkey, "Control" }, "r", awesome.restart,
 		{description = "reload awesome", group = "awesome"}),
-	awful.key({ modkey, }, "l", function () awful.tag.incmwfact( 0.05) end,
+	awful.key({ modkey }, "l", function () awful.tag.incmwfact( 0.05) end,
 		{description = "increase master width factor", group = "layout"}),
-	awful.key({ modkey, }, "h", function () awful.tag.incmwfact(-0.05) end,
+	awful.key({ modkey }, "h", function () awful.tag.incmwfact(-0.05) end,
 		{description = "decrease master width factor", group = "layout"}),
-	awful.key({ modkey, }, "space", function () awful.layout.inc(1) end,
+	awful.key({ modkey, "Shift" }, "space", function () awful.layout.inc(1) end,
 		{description = "select next", group = "layout"})
 )
 
 clientkeys = gears.table.join(
+	awful.key({ modkey }, "f",
+		function (c)
+			c.fullscreen = not c.fullscreen
+			c:raise()
+		end,
+		{description = "toggle fullscreen", group = "client"}),
 	awful.key({ modkey, "Shift" }, "c", function (c) c:kill() end,
 		{description = "close", group = "client"}),
-	awful.key({ modkey, "Shift" }, "t",  awful.client.floating.toggle,
+	awful.key({ modkey, "Shift" }, "t", awful.client.floating.toggle,
 		{description = "toggle floating", group = "client"}),
-	awful.key({ modkey, }, "Return", function (c) c:swap(awful.client.getmaster()) end,
+	awful.key({ modkey }, "Return", function (c) c:swap(awful.client.getmaster()) end,
 		{description = "move to master", group = "client"})
 )
 
@@ -101,41 +161,58 @@ root.keys(globalkeys)
 
 -- {{{ Rules
 awful.rules.rules = {
-	{ rule = { }
-	, properties =
-		{ border_width = beautiful.border_width
-		, border_color = beautiful.border_normal
-		, focus = awful.client.focus.filter
-		, raise = true
-		, keys = clientkeys
-		, buttons = clientbuttons
-		, screen = awful.screen.preferred
-		, placement = awful.placement.no_overlap+awful.placement.no_offscreen
+	{
+		rule = { },
+		properties = {
+			border_width = beautiful.border_width,
+			border_color = beautiful.border_normal,
+			focus = awful.client.focus.filter,
+			raise = true,
+			keys = clientkeys,
+			buttons = clientbuttons,
+			screen = awful.screen.preferred,
+			placement = awful.placement.no_overlap+awful.placement.no_offscreen
 		}
+	}, {
+		rule_any = {
+			instance = {
+				-- "pinentry",
+			},
+			class = {
+				"Gcolor3",
+			},
+			role = {
+				"pop-up",
+			}
+		},
+		properties = { floating = true }
+	}, {
+		rule_any = {
+			type = { "normal", "dialog" }
+		},
+		properties = { titlebars_enabled = false }
 	},
-	{ rule_any = { type = { "normal", "dialog" } }
-	, properties = { titlebars_enabled = false }
-	}
 }
 -- }}}
 
 -- {{{ Signals
-client.connect_signal("manage", function (c)
-    if awesome.startup
-      and not c.size_hints.user_position
-      and not c.size_hints.program_position then
-        awful.placement.no_offscreen(c)
-    end
-end)
 screen.connect_signal("arrange", function (s)
-    local only_one = #s.tiled_clients == 1
-    for _, c in pairs(s.clients) do
-        if only_one and not c.floating or c.maximized then
-            c.border_width = 0
-        else
-            c.border_width = beautiful.border_width
-        end
-    end
+	local only_one = #s.tiled_clients == 1
+	for _, c in pairs(s.clients) do
+		if only_one and not c.floating or c.maximized then
+			c.border_width = 0
+		else
+			c.border_width = beautiful.border_width
+		end
+	end
+end)
+client.connect_signal("manage", function (c)
+	if awesome.startup
+	and not c.size_hints.user_position
+	and not c.size_hints.program_position
+	then
+		awful.placement.no_offscreen(c)
+	end
 end)
 client.connect_signal("mouse::enter", function(c)
 	c:emit_signal("request::activate", "mouse_enter", {raise = false})

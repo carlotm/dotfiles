@@ -22,8 +22,10 @@ REPO=git@github.com:fcambus/spleen.git
 cd $WD
 git clone $REPO
 cd spleen
-FONTFILES=(*.bdf)
+
+FONTFILES=(*.bdf *.pcf)
 opentype-bitmap.py ${FONTFILES[*]} >/dev/null 2>&1
+
 mkdir -p ${HOME}/.local/share/fonts
 cp *.otb ${HOME}/.local/share/fonts
 fc-cache -f -v
