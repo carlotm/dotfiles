@@ -31,7 +31,7 @@ theme.taglist_fg_occupied	= "#555555"
 theme.notification_font			= "Spleen 22"
 theme.notification_bg			= "#000000"
 theme.notification_fg			= "#ffffff"
-theme.notification_border_color	= "#ffff00"
+theme.notification_border_color	= "#ffffff"
 
 theme.layout_max = "/home/carloratm/.config/awesome/maxw.png"
 theme.layout_tile = "/home/carloratm/.config/awesome/tile.png"
