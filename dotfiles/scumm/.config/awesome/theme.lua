@@ -28,10 +28,10 @@ theme.taglist_fg_urgent		= "#ff0000"
 theme.taglist_fg_empty		= "#000000"
 theme.taglist_fg_occupied	= "#555555"
 
--- notification_font
--- notification_[bg|fg]
--- notification_[width|height|margin]
--- notification_[border_color|border_width|shape|opacity]
+theme.notification_font			= "Spleen 22"
+theme.notification_bg			= "#000000"
+theme.notification_fg			= "#ffffff"
+theme.notification_border_color	= "#ffff00"
 
 theme.layout_max = "/home/carloratm/.config/awesome/maxw.png"
 theme.layout_tile = "/home/carloratm/.config/awesome/tile.png"
