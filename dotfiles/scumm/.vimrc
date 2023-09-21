@@ -10,7 +10,6 @@ call plug#begin("~/.vim/plugged")
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
 call plug#end()
 " }}}
 
@@ -63,6 +62,5 @@ nnoremap <Leader>ff :GFiles<CR>
 nnoremap <Leader>fa :Files<CR>
 nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fg :Rg<CR>
-nnoremap <Leader>cc :Goyo 60%x100%<CR>
 " }}}
 
