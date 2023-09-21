@@ -39,6 +39,7 @@
       - fontconfig
       - fontforge
     services:
+      - sshd
       - nix-daemon
   tasks:
     - ansible.builtin.include_tasks: tasks/user.yml
