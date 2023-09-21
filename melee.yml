@@ -1,0 +1,35 @@
+---
+- hosts: localhost
+  gather_facts: no
+  connection: local
+  vars:
+    host: melee
+    user:
+      username: gianfranco
+      groups:
+        - gianfranco
+        - autologin
+    pkgs:
+      - base
+      - base-devel
+      - xorg
+      - xorg-xinit
+      - xorg-fonts-encodings
+      - git
+      - bash-completion
+      - ansible
+      - xfce4
+      - xfce4-goodies
+      - eos-qogir-icons
+      - firefox
+      - fontconfig
+    services:
+      - sshd
+  tasks:
+    - ansible.builtin.include_tasks: tasks/user.yml
+    - ansible.builtin.include_tasks: tasks/locale.yml
+    - ansible.builtin.include_tasks: tasks/vconsole.yml
+    - ansible.builtin.include_tasks: tasks/pacman.yml
+    - ansible.builtin.include_tasks: tasks/services.yml
+  handlers:
+    - ansible.builtin.include_tasks: tasks/locale_gen.yml
