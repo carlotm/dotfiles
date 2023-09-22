@@ -52,7 +52,6 @@ battery = awful.widget.watch('bash -c \'echo "BAT: $(upower -i /org/freedesktop/
 awful.screen.connect_for_each_screen(function(s)
 	awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 	s.mylayoutbox = awful.widget.layoutbox(s)
-	s.mylayoutbox:buttons(gears.table.join(awful.button({ }, 1, function() awful.layout.inc(1) end)))
 	s.mytaglist = awful.widget.taglist {
 		screen  = s,
 		filter  = awful.widget.taglist.filter.all,
