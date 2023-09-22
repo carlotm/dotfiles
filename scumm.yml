@@ -22,6 +22,7 @@
       - elementary-icon-theme
       - keepassxc
       - nix
+      - direnv
     services:
       - sshd
       - nix-daemon

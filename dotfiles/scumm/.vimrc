@@ -40,7 +40,7 @@ highlight VertSplit ctermfg=4 ctermbg=16 cterm=NONE
 highlight StatusLine ctermfg=15 ctermbg=4 cterm=NONE
 highlight StatusLineNC ctermfg=8 ctermbg=234
 highlight ExtraWhitespace ctermbg=1
-highlight SpecialKey ctermfg=234
+highlight SpecialKey ctermfg=235
 highlight Folded ctermbg=234 ctermfg=6
 match ExtraWhitespace /\s\+$/
 " }}}
