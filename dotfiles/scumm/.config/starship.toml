@@ -13,3 +13,5 @@ disabled = true
 disabled = true
 [battery]
 format = '[$percentage]($style) '
+[nix_shell]
+format = '[$symbol]($style) '

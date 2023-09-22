@@ -10,4 +10,3 @@ export EDITOR=vim
 source /usr/share/bash-completion/bash_completion
 
 eval "$(starship init bash)"
-eval "$(direnv hook bash)"
