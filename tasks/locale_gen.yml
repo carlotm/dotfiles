@@ -1,2 +1,0 @@
-- name: Generate locales
-  ansible.builtin.command: locale-gen

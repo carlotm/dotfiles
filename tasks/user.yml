@@ -1,7 +1,0 @@
-- name: SET USER
-  become: yes
-  ansible.builtin.user:
-    name: "{{ user.username }}"
-    shell: /bin/bash
-    groups:
-      "{{ ['users', 'wheel', 'disk', 'power', 'adm', 'network'] + user.groups }}"

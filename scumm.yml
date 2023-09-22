@@ -27,14 +27,9 @@
       - sshd
       - nix-daemon
   tasks:
-    - ansible.builtin.include_tasks: tasks/user.yml
-    - ansible.builtin.include_tasks: tasks/locale.yml
-    - ansible.builtin.include_tasks: tasks/vconsole.yml
+    - ansible.builtin.include_tasks: tasks/system.yml
     - ansible.builtin.include_tasks: tasks/udev.yml
     - ansible.builtin.include_tasks: tasks/pacman.yml
-    - ansible.builtin.include_tasks: tasks/nix.yml
     - ansible.builtin.include_tasks: tasks/services.yml
     - ansible.builtin.include_tasks: tasks/dotfiles.yml
     - ansible.builtin.include_tasks: tasks/fc_cache.yml
-  handlers:
-    - ansible.builtin.include_tasks: tasks/locale_gen.yml

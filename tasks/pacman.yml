@@ -6,10 +6,12 @@
     owner: root
     group: root
     mode: "0644"
+
 - name: SYNC PACMAN
   become: yes
   pacman:
     update_cache: yes
+
 - name: INSTALL COMMON PACKAGES
   become: yes
   pacman:
@@ -29,6 +31,7 @@
       - fontconfig
       - openssh
     state: present
+
 - name: INSTALL PACKAGES
   become: yes
   pacman:
