@@ -19,10 +19,8 @@
     services:
       - sshd
   tasks:
-    - ansible.builtin.include_tasks: tasks/user.yml
-    - ansible.builtin.include_tasks: tasks/locale.yml
-    - ansible.builtin.include_tasks: tasks/vconsole.yml
+    - ansible.builtin.include_tasks: tasks/system.yml
     - ansible.builtin.include_tasks: tasks/pacman.yml
     - ansible.builtin.include_tasks: tasks/services.yml
-  handlers:
-    - ansible.builtin.include_tasks: tasks/locale_gen.yml
+    - ansible.builtin.include_tasks: tasks/dotfiles.yml
+    - ansible.builtin.include_tasks: tasks/fc_cache.yml

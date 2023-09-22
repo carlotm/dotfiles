@@ -67,3 +67,18 @@
     src: "templates/{{ host }}/etc/nix/nix.conf"
     dest: /etc/nix/nix.conf
   when: nixconf.stat.exists
+
+- name: CHECK UDEV
+  local_action: "stat path=templates/{{ host }}/etc/udev/rules.d/95-hdmi-plug.rules"
+  register: udevrule
+
+- name: COPY NIX CONF
+  become: yes
+  ansible.builtin.copy:
+    src: "templates/{{ host }}/etc/udev/rules.d/95-hdmi-plug.rules"
+    dest: /etc/udev/rules.d/95-hdmi-plug.rules
+    owner: root
+    group: root
+    mode: "0644"
+  when: udevrule.stat.exists
+

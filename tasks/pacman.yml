@@ -30,6 +30,7 @@
       - firefox
       - fontconfig
       - openssh
+      - stow
     state: present
 
 - name: INSTALL PACKAGES

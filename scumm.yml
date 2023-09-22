@@ -14,7 +14,6 @@
       - starship
       - fd
       - ripgrep
-      - stow
       - fzf
       - autorandr
       - awesome
@@ -28,7 +27,6 @@
       - nix-daemon
   tasks:
     - ansible.builtin.include_tasks: tasks/system.yml
-    - ansible.builtin.include_tasks: tasks/udev.yml
     - ansible.builtin.include_tasks: tasks/pacman.yml
     - ansible.builtin.include_tasks: tasks/services.yml
     - ansible.builtin.include_tasks: tasks/dotfiles.yml
