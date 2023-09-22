@@ -10,6 +10,25 @@
   become: yes
   pacman:
     update_cache: yes
+- name: INSTALL COMMON PACKAGES
+  become: yes
+  pacman:
+    name:
+      - base
+      - base-devel
+      - git
+      - vim
+      - terminus-font
+      - bash-completion
+      - inotify-tools
+      - libiconv
+      - upower
+      - ansible
+      - alacritty
+      - firefox
+      - fontconfig
+      - openssh
+    state: present
 - name: INSTALL PACKAGES
   become: yes
   pacman:

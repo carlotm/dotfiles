@@ -10,19 +10,12 @@
         - gianfranco
         - autologin
     pkgs:
-      - base
-      - base-devel
       - xorg
       - xorg-xinit
       - xorg-fonts-encodings
-      - git
-      - bash-completion
-      - ansible
       - xfce4
       - xfce4-goodies
       - eos-qogir-icons
-      - firefox
-      - fontconfig
     services:
       - sshd
   tasks:

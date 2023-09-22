@@ -6,38 +6,23 @@
     host: scumm
     user:
       username: carloratm
-      groups:
-        - carloratm
+      groups: [carloratm]
     pkgs:
-      - base
-      - base-devel
       - xorg
       - xorg-xinit
       - xorg-fonts-encodings
-      - git
-      - vim
-      - terminus-font
-      - bash-completion
       - starship
       - fd
       - ripgrep
       - stow
-      - inotify-tools
-      - libiconv
-      - upower
-      - ansible
       - fzf
       - autorandr
       - awesome
       - xfce4-appfinder
       - xfce4-power-manager
       - elementary-icon-theme
-      - alacritty
-      - firefox
       - keepassxc
       - nix
-      - fontconfig
-      - fontforge
     services:
       - sshd
       - nix-daemon
