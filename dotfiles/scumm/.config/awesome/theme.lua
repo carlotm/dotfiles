@@ -29,9 +29,9 @@ theme.taglist_fg_empty		= "#000000"
 theme.taglist_fg_occupied	= "#555555"
 
 theme.notification_font			= "Spleen 18"
-theme.notification_bg			= "#202020"
+theme.notification_bg			= "#141414"
 theme.notification_fg			= "#ffffff"
-theme.notification_border_color	= "#000000"
+theme.notification_border_color	= "#141414"
 
 theme.layout_max = "/home/carloratm/.config/awesome/maxw.png"
 theme.layout_tile = "/home/carloratm/.config/awesome/tile.png"
