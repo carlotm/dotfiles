@@ -14,4 +14,9 @@ disabled = true
 [battery]
 format = '[$percentage]($style) '
 [nix_shell]
-format = '[$symbol]($style) '
+format = '[\[NIX\]]($style)'
+[git_branch]
+format = '[\[$branch\]]($style)'
+[elixir]
+format = '[\[ELIXIR $version OTP $otp_version\]]($style)'
+version_format = '${raw}'
