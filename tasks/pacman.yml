@@ -21,6 +21,8 @@
       - git
       - vim
       - terminus-font
+      - noto-fonts
+      - noto-fonts-emoji
       - bash-completion
       - inotify-tools
       - libiconv
