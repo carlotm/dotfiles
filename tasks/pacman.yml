@@ -33,6 +33,8 @@
       - fontconfig
       - openssh
       - stow
+      - gphoto2
+      - gvfs-gphoto2
     state: present
 
 - name: INSTALL PACKAGES
