@@ -1,24 +1,27 @@
+vim9script
 
-" Plugins {{{
-let data_dir = has("nvim") ? stdpath("data") . "/site" : "~/.vim"
-if empty(glob(data_dir . "/autoload/plug.vim"))
+# Plugins {{{
+var data_dir = "~/.vim"
+if empty(glob(data_dir .. "/autoload/plug.vim"))
   silent execute "!curl -fLo ".data_dir."/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin("~/.vim/plugged")
+plug#begin("~/.vim/plugged")
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-call plug#end()
-" }}}
+Plug 'yegappan/lsp'
+plug#end()
+# }}}
 
-" Vim settings {{{
+# Vim settings {{{
 set nocompatible
 filetype on
 filetype plugin on
 filetype indent on
 syntax on
+set background=dark
 set noexpandtab tabstop=4 shiftwidth=4
 set nobackup
 set scrolloff=10
@@ -30,10 +33,10 @@ set fillchars+=vert:\│
 set list
 set listchars=tab:↳\ 
 nnoremap <SPACE> <Nop>
-let mapleader = " "
-" }}}
+var mapleader = " "
+# }}}
 
-" Colors {{{
+# Colors {{{
 highlight Comment ctermfg=8
 highlight Visual ctermbg=236
 highlight VertSplit ctermfg=4 ctermbg=16 cterm=NONE
@@ -43,9 +46,9 @@ highlight ExtraWhitespace ctermbg=1
 highlight SpecialKey ctermfg=235
 highlight Folded ctermbg=234 ctermfg=6
 match ExtraWhitespace /\s\+$/
-" }}}
+# }}}
 
-" Key mappings {{{
+# Key mappings {{{
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 noremap <Up> <Nop>
@@ -62,5 +65,56 @@ nnoremap <Leader>ff :GFiles<CR>
 nnoremap <Leader>fa :Files<CR>
 nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fg :Rg<CR>
-" }}}
+inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+# }}}
 
+# LSP {{{
+var lspErlang = {
+	name: 'erlangls',
+	filetype: ['erlang'],
+	path: 'erlang_ls',
+	args: []
+}
+if executable('erlang_ls')
+	autocmd VimEnter * call LspAddServer([lspErlang])
+endif
+const lspOpts = {
+	aleSupport: v:false,
+	autoComplete: v:true,
+	autoHighlight: v:false,
+	autoHighlightDiags: v:true,
+	autoPopulateDiags: v:false,
+	completionMatcher: 'case',
+	completionTextEdit: v:true,
+	completionKinds: {},
+	customCompletionKinds: v:false,
+	diagSignErrorText: 'E>',
+	diagSignInfoText: 'I>',
+	diagSignHintText: 'H>',
+	diagSignWarningText: 'W>',
+	diagVirtualTextAlign: 'above',
+	echoSignature: v:false,
+	hideDisabledCodeActions: v:false,
+	highlightDiagInline: v:true,
+	hoverInPreview: v:false,
+	ignoreMissingServer: v:false,
+	keepFocusInReferences: v:false,
+	noNewlineInCompletion: v:false,
+	outlineOnRight: v:false,
+	outlineWinSize: 20,
+	showDiagInBalloon: v:true,
+	showDiagInPopup: v:true,
+	showDiagOnStatusLine: v:false,
+	showDiagWithSign: v:true,
+	showDiagWithVirtualText: v:false,
+	showInlayHints: v:false,
+	showSignature: v:true,
+	snippetSupport: v:false,
+	ultisnipsSupport: v:false,
+	usePopupInCodeAction: v:false,
+	useQuickfixForLocations: v:false,
+	useBufferCompletion: v:false,
+}
+autocmd VimEnter * call LspOptionsSet(lspOpts)
+# }}}
