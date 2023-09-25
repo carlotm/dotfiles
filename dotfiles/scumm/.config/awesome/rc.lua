@@ -36,11 +36,13 @@ end
 beautiful.init("/home/carloratm/.config/awesome/theme.lua")
 terminal = "alacritty"
 launcher = "xfce4-appfinder"
+laptopMonitor = "autorandr laptop-only"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod1"
 awful.layout.layouts = {
 	awful.layout.suit.tile.right,
+	awful.layout.suit.floating,
 	awful.layout.suit.max,
 }
 -- }}}
@@ -100,7 +102,9 @@ globalkeys = gears.table.join(
 	awful.key({ modkey }, "h", function () awful.tag.incmwfact(-0.05) end,
 		{description = "decrease master width factor", group = "layout"}),
 	awful.key({ modkey, }, "space", function () awful.layout.inc(1) end,
-		{description = "select next", group = "layout"})
+		{description = "select next", group = "layout"}),
+	awful.key({ }, "XF86WakeUp", function () awful.spawn(laptopMonitor) end,
+		{description = "activate laptop monitor", group = "layout"})
 )
 
 clientkeys = gears.table.join(

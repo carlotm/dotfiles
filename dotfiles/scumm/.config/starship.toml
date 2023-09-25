@@ -22,3 +22,5 @@ format = '[\[ELIXIR $version OTP $otp_version\]]($style)'
 version_format = '${raw}'
 [erlang]
 format = '[\[ERLANG $version\]]($style)'
+[lua]
+format = '[\[LUA $version\]]($style)'
