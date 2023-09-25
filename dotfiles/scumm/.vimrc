@@ -33,7 +33,7 @@ set fillchars+=vert:\│
 set list
 set listchars=tab:↳\ 
 nnoremap <SPACE> <Nop>
-var mapleader = " "
+g:mapleader = " "
 # }}}
 
 # Colors {{{
