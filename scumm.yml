@@ -3,7 +3,6 @@
   gather_facts: no
   connection: local
   vars:
-    host: scumm
     user:
       username: carloratm
     pkgs:
