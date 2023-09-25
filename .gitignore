@@ -11,6 +11,7 @@ home/GNUstep/Defaults/WMState.*
 home/GNUstep/.AppInfo/
 home/GNUstep/Library/WindowMaker/CachedPixmaps/
 home/GNUstep/Library/WindowMaker/Screenshots/
-/dotfiles/scumm/.local/share/*
-/dotfiles/scumm/.local/state
-!/dotfiles/scumm/.local/share/fonts
+/dotfiles/*/.local/share/*
+/dotfiles/*/.local/state
+!/dotfiles/*/.local/share/fonts
+/dotfiles/*/.config/xfce4/xfconf/xfce-perchannel-xml
