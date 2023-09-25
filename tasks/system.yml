@@ -1,3 +1,7 @@
+- name: SET HOSTNAME
+  ansible.builtin.hostname:
+    name: "{{ host }}"
+
 - name: SET USER
   become: yes
   ansible.builtin.user:
