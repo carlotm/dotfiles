@@ -3,20 +3,22 @@
   ansible.builtin.hostname:
     name: "{{ host }}"
 
-- name: CREATE GROUPS
+- name: CREATE BASE GROUPS
   become: yes
   ansible.builtin.group:
     name: "{{ item }}"
     state: present
-  loop: "{{ user.groups }}"
+  loop:
+    - users
+    - nixbld
+    - "{{ user.username }}"
 
 - name: SET USER
   become: yes
   ansible.builtin.user:
     name: "{{ user.username }}"
     shell: /bin/bash
-    groups:
-      "{{ ['users', 'wheel', 'disk', 'power', 'adm', 'network'] + user.groups }}"
+    groups: ['users', 'nixbld', 'wheel', 'disk', 'power', 'adm', 'network']
 
 - name: COPY LOCALE CONF
   become: yes
@@ -71,9 +73,12 @@
     group: root
     mode: "0644"
 
-- name: CHECK NIX CONF
-  local_action: "stat path=templates/{{ host }}/etc/nix/nix.conf"
-  register: nixconf
+- name: CREATE NIX CONF DIR
+  become: yes
+  ansible.builtin.file:
+    path: /etc/nix
+    state: directory
+    mode: "0644"
 
 - name: COPY NIX CONF
   become: yes
@@ -83,13 +88,8 @@
     owner: root
     group: root
     mode: "0644"
-  when: nixconf.stat.exists
 
-- name: CHECK UDEV
-  local_action: "stat path=templates/{{ host }}/etc/udev/rules.d/95-hdmi-plug.rules"
-  register: udevrule
-
-- name: COPY NIX CONF
+- name: COPY UDEV CONF
   become: yes
   ansible.builtin.copy:
     src: "templates/{{ host }}/etc/udev/rules.d/95-hdmi-plug.rules"
@@ -97,5 +97,3 @@
     owner: root
     group: root
     mode: "0644"
-  when: udevrule.stat.exists
-

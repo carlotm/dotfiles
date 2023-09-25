@@ -6,7 +6,6 @@
     host: scumm
     user:
       username: carloratm
-      groups: [carloratm]
     pkgs:
       - nix
       - xorg

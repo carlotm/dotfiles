@@ -6,7 +6,6 @@
     host: monkey
     user:
       username: carloratm
-      groups: [carloratm]
     pkgs:
       - nix
       - xorg
