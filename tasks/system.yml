@@ -1,6 +1,14 @@
 - name: SET HOSTNAME
+  become: yes
   ansible.builtin.hostname:
     name: "{{ host }}"
+
+- name: CREATE GROUPS
+  become: yes
+  ansible.builtin.group:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ user.groups }}"
 
 - name: SET USER
   become: yes
@@ -29,6 +37,7 @@
     mode: "0644"
 
 - name: GENERATE LOCALES
+  become: yes
   community.general.locale_gen:
     name: "{{ item }}"
     state: present

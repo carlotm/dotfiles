@@ -1,0 +1,24 @@
+add_newline = false
+command_timeout = 800
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
+
+[git_status]
+disabled = true
+[package]
+disabled = true
+[cmd_duration]
+disabled = true
+[battery]
+format = '[$percentage]($style) '
+[nix_shell]
+format = '[\[NIX\]]($style)'
+[git_branch]
+format = '[\[$branch\]]($style)'
+[elixir]
+format = '[\[ELIXIR $version OTP $otp_version\]]($style)'
+version_format = '${raw}'
+[erlang]
+format = '[\[ERLANG $version\]]($style)'

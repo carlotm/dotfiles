@@ -3,7 +3,7 @@
   gather_facts: no
   connection: local
   vars:
-    host: scumm
+    host: monkey
     user:
       username: carloratm
       groups: [carloratm]
@@ -13,8 +13,8 @@
       - xorg-xinit
       - xorg-fonts-encodings
       - starship
-      - fd
       - eza
+      - fd
       - ripgrep
       - fzf
       - autorandr
