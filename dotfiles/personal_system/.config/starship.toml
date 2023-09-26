@@ -17,6 +17,7 @@ format = '[$percentage]($style) '
 format = '[\[NIX\]]($style)'
 [git_branch]
 format = '[\[$branch\]]($style)'
+style = 'bold yellow'
 [elixir]
 format = '[\[ELIXIR $version OTP $otp_version\]]($style)'
 version_format = '${raw}'

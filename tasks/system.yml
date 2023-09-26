@@ -79,7 +79,7 @@
   ansible.builtin.file:
     path: /etc/nix
     state: directory
-    mode: "0666"
+    mode: "0777"
 
 - name: COPY NIX CONF
   become: yes

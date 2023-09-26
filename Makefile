@@ -1,5 +1,5 @@
 scumm: personal_system.yml
-	ansible-playbook -e host=scumm --ask-become-pass $<
+	ansible-playbook -e host=$@ --ask-become-pass $<
 
 monkey: personal_system.yml
-	ansible-playbook -e host=monkey --ask-become-pass $<
+	ansible-playbook -e host=$@ --ask-become-pass $<
