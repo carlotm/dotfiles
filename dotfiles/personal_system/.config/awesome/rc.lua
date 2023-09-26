@@ -50,7 +50,7 @@ awful.layout.layouts = {
 -- {{{ Wibar
 keyboard_layout = awful.widget.keyboardlayout()
 clock = wibox.widget.textclock("%H:%M %A %d %B")
-battery = awful.widget.watch('bash -c \'echo "BAT: $(upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep percentage | cut -d ":" -f 2 | tr -d " ") "\'', 60)
+-- battery = awful.widget.watch('bash -c \'echo "BAT: $(upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep percentage | cut -d ":" -f 2 | tr -d " ") "\'', 60)
 awful.screen.connect_for_each_screen(function(s)
 	awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 	s.mylayoutbox = awful.widget.layoutbox(s)
@@ -74,7 +74,7 @@ awful.screen.connect_for_each_screen(function(s)
 		clock,
 		{
 			layout = wibox.layout.fixed.horizontal,
-			battery,
+			-- battery,
 			keyboard_layout,
 			wibox.widget.systray(),
 			s.mylayoutbox
