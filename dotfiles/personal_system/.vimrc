@@ -70,18 +70,28 @@ inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 # }}}
 
 # LSP {{{
-var lspErlang = {
-	name: 'erlangls',
-	filetype: ['erlang'],
-	path: 'erlang_ls',
-	args: []
-}
+var lspErlang = []
 if executable('erlang_ls')
-	autocmd VimEnter * call LspAddServer([lspErlang])
+	lspErlang = [{
+		name: 'erlangls',
+		filetype: ['erlang'],
+		path: 'erlang_ls',
+		args: []
+	}]
 endif
+var lspElixir = []
+if executable('elixir-ls')
+	lspElixir = [{
+		name: 'elixirls',
+		filetype: ['elixir'],
+		path: 'elixir-ls',
+		args: []
+	}]
+endif
+autocmd VimEnter * call LspAddServer(lspErlang + lspElixir)
 const lspOpts = {
 	aleSupport: v:false,
-	autoComplete: v:true,
+	autoComplete: v:false,
 	autoHighlight: v:false,
 	autoHighlightDiags: v:true,
 	autoPopulateDiags: v:false,
