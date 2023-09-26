@@ -5,6 +5,9 @@ command_timeout = 800
 success_symbol = "[>](bold green)"
 error_symbol = "[x](bold red)"
 
+[directory]
+fish_style_pwd_dir_length = 1
+format = '[$path]($style)[$read_only]($read_only_style)'
 [git_status]
 disabled = true
 [package]
