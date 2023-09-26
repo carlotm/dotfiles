@@ -1,11 +1,5 @@
-.PHONY: scumm melee monkey
-
-scumm: scumm.yml
+scumm: personal_system.yml
 	ansible-playbook -e host=scumm --ask-become-pass $<
 
-monkey: monkey.yml
+monkey: personal_system.yml
 	ansible-playbook -e host=monkey --ask-become-pass $<
-
-melee: melee.yml
-	ansible-playbook --ask-become-pass $<
-

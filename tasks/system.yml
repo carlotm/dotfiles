@@ -12,19 +12,19 @@
     - users
     - nixbld
     - nix-users
-    - "{{ user.username }}"
+    - "{{ username }}"
 
 - name: SET USER
   become: yes
   ansible.builtin.user:
-    name: "{{ user.username }}"
+    name: "{{ username }}"
     shell: /bin/bash
     groups: ['users', 'nix-users', 'nixbld', 'wheel', 'disk', 'power', 'adm', 'network']
 
 - name: COPY LOCALE CONF
   become: yes
   ansible.builtin.copy:
-    src: "templates/{{ host }}/etc/locale.conf"
+    src: "templates/{{ systemname }}/etc/locale.conf"
     dest: /etc/locale.conf
     owner: root
     group: root
@@ -33,7 +33,7 @@
 - name: COPY TIMEZONE
   become: yes
   ansible.builtin.copy:
-    src: "templates/{{ host }}/etc/timezone"
+    src: "templates/{{ systemname }}/etc/timezone"
     dest: /etc/timezone
     owner: root
     group: root
@@ -52,7 +52,7 @@
 - name: COPY CONSOLE FONTS
   become: yes
   ansible.builtin.copy:
-    src: "templates/{{ host }}/usr/share/kbd/consolefonts/{{ item }}"
+    src: "templates/{{ systemname }}/usr/share/kbd/consolefonts/{{ item }}"
     dest: /usr/share/kbd/consolefonts/
     owner: root
     group: root
@@ -68,7 +68,7 @@
 - name: COPY VCONSOLE CONF
   become: yes
   ansible.builtin.copy:
-    src: "templates/{{ host }}/etc/vconsole.conf"
+    src: "templates/{{ systemname }}/etc/vconsole.conf"
     dest: /etc/vconsole.conf
     owner: root
     group: root
@@ -84,7 +84,7 @@
 - name: COPY NIX CONF
   become: yes
   ansible.builtin.copy:
-    src: "templates/{{ host }}/etc/nix/nix.conf"
+    src: "templates/{{ systemname }}/etc/nix/nix.conf"
     dest: /etc/nix/nix.conf
     owner: root
     group: root
@@ -93,7 +93,7 @@
 - name: COPY UDEV CONF
   become: yes
   ansible.builtin.copy:
-    src: "templates/{{ host }}/etc/udev/rules.d/95-hdmi-plug.rules"
+    src: "templates/{{ systemname }}/etc/udev/rules.d/95-hdmi-plug.rules"
     dest: /etc/udev/rules.d/95-hdmi-plug.rules
     owner: root
     group: root
