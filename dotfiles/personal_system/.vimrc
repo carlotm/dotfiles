@@ -12,6 +12,7 @@ Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'yegappan/lsp'
+Plug 'elixir-editors/vim-elixir'
 plug#end()
 # }}}
 
