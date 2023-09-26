@@ -12,6 +12,7 @@ Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'yegappan/lsp'
+Plug 'elixir-editors/vim-elixir'
 plug#end()
 # }}}
 
@@ -67,21 +68,33 @@ nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fg :Rg<CR>
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+nnoremap K :LspHover<CR>
+nnoremap gd :LspGotoDefinition<CR>
 # }}}
 
 # LSP {{{
-var lspErlang = {
-	name: 'erlangls',
-	filetype: ['erlang'],
-	path: 'erlang_ls',
-	args: []
-}
+var lspErlang = []
 if executable('erlang_ls')
-	autocmd VimEnter * call LspAddServer([lspErlang])
+	lspErlang = [{
+		name: 'erlangls',
+		filetype: ['erlang'],
+		path: 'erlang_ls',
+		args: []
+	}]
 endif
+var lspElixir = []
+if executable('elixir-ls')
+	lspElixir = [{
+		name: 'elixirls',
+		filetype: ['elixir'],
+		path: 'elixir-ls',
+		args: []
+	}]
+endif
+autocmd VimEnter * call LspAddServer(lspErlang + lspElixir)
 const lspOpts = {
 	aleSupport: v:false,
-	autoComplete: v:true,
+	autoComplete: v:false,
 	autoHighlight: v:false,
 	autoHighlightDiags: v:true,
 	autoPopulateDiags: v:false,

@@ -15,3 +15,4 @@ home/GNUstep/Library/WindowMaker/Screenshots/
 /dotfiles/*/.local/state
 !/dotfiles/*/.local/share/fonts
 /dotfiles/*/.config/xfce4/xfconf/xfce-perchannel-xml
+/dotfiles/*/.config/xfce4/xfce4-screenshooter
