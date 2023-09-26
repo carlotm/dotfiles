@@ -67,6 +67,8 @@ nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fg :Rg<CR>
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+nnoremap K :LspHover<CR>
+nnoremap gd :LspGotoDefinition<CR>
 # }}}
 
 # LSP {{{
