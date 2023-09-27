@@ -28,3 +28,5 @@ version_format = '${raw}'
 format = '[\[ERLANG $version\]]($style)'
 [lua]
 format = '[\[LUA $version\]]($style)'
+[nodejs]
+format = '[\[NODE $version\]]($style)'
