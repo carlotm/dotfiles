@@ -13,6 +13,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'yegappan/lsp'
 Plug 'elixir-editors/vim-elixir'
+Plug 'editorconfig/editorconfig-vim'
 plug#end()
 # }}}
 
@@ -70,6 +71,7 @@ inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 nnoremap K :LspHover<CR>
 nnoremap gd :LspGotoDefinition<CR>
+nnoremap <Leader>e :LspDiagCurrent<CR>
 # }}}
 
 # LSP {{{
@@ -94,7 +96,7 @@ endif
 autocmd VimEnter * call LspAddServer(lspErlang + lspElixir)
 const lspOpts = {
 	aleSupport: v:false,
-	autoComplete: v:false,
+	autoComplete: v:true,
 	autoHighlight: v:false,
 	autoHighlightDiags: v:true,
 	autoPopulateDiags: v:false,
@@ -110,7 +112,7 @@ const lspOpts = {
 	echoSignature: v:false,
 	hideDisabledCodeActions: v:false,
 	highlightDiagInline: v:true,
-	hoverInPreview: v:false,
+	hoverInPreview: v:true,
 	ignoreMissingServer: v:false,
 	keepFocusInReferences: v:false,
 	noNewlineInCompletion: v:false,
@@ -130,4 +132,8 @@ const lspOpts = {
 	useBufferCompletion: v:false,
 }
 autocmd VimEnter * call LspOptionsSet(lspOpts)
+augroup LspCustom
+  au!
+  au CursorMoved * silent! LspDiagCurrent
+augroup END
 # }}}
