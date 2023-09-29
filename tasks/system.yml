@@ -10,8 +10,6 @@
     state: present
   loop:
     - users
-    - nixbld
-    - nix-users
     - "{{ username }}"
 
 - name: SET USER
@@ -19,7 +17,7 @@
   ansible.builtin.user:
     name: "{{ username }}"
     shell: /bin/bash
-    groups: ['users', 'nix-users', 'nixbld', 'wheel', 'disk', 'power', 'adm', 'network']
+    groups: ['users', 'wheel', 'disk', 'power', 'adm', 'network']
 
 - name: COPY LOCALE CONF
   become: yes
@@ -73,22 +71,6 @@
     owner: root
     group: root
     mode: "0644"
-
-- name: CREATE NIX CONF DIR
-  become: yes
-  ansible.builtin.file:
-    path: /etc/nix
-    state: directory
-    mode: "0777"
-
-- name: COPY NIX CONF
-  become: yes
-  ansible.builtin.copy:
-    src: "templates/{{ systemname }}/etc/nix/nix.conf"
-    dest: /etc/nix/nix.conf
-    owner: root
-    group: root
-    mode: "0666"
 
 - name: COPY UDEV CONF
   become: yes

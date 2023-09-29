@@ -6,7 +6,6 @@
     systemname: personal_system
     username: carloratm
     pkgs:
-      - nix
       - xorg
       - xorg-xinit
       - xorg-fonts-encodings
@@ -35,7 +34,6 @@
       - libopenraw
     services:
       - sshd
-      - nix-daemon
   tasks:
     - ansible.builtin.include_tasks: tasks/system.yml
     - ansible.builtin.include_tasks: tasks/pacman.yml
