@@ -108,6 +108,7 @@
     - {name: user.name, value: "Ascani Carlo"}
     - {name: alias.co, value: checkout}
     - {name: alias.s, value: status}
+    - {name: init.defaultBranch, value: main}
 
 - name: SET GIT EMAIL
   community.general.git_config:
