@@ -8,5 +8,6 @@ alias find="fd"
 export EDITOR=vim
 
 source /usr/share/bash-completion/bash_completion
+source /home/carloratm/.nix-profile/etc/profile.d/nix.sh
 
 eval "$(starship init bash)"
