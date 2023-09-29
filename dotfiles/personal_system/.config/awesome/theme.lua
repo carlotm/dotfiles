@@ -28,7 +28,7 @@ theme.taglist_fg_urgent		= "#ff0000"
 theme.taglist_fg_empty		= "#000000"
 theme.taglist_fg_occupied	= "#555555"
 
-theme.notification_font			= "Spleen 18"
+theme.notification_font			= "Spleen 16"
 theme.notification_bg			= "#141414"
 theme.notification_fg			= "#ffffff"
 theme.notification_border_color	= "#141414"
