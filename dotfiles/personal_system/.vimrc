@@ -47,6 +47,11 @@ highlight StatusLineNC ctermfg=8 ctermbg=234
 highlight ExtraWhitespace ctermbg=1
 highlight SpecialKey ctermfg=235
 highlight Folded ctermbg=234 ctermfg=6
+highlight SignColumn ctermbg=234
+highlight LspDiagInlineError ctermbg=52
+highlight LspDiagSignErrorText ctermbg=52
+highlight LspDiagInlineWarning ctermbg=3 ctermfg=16
+highlight LspDiagSignWarningText ctermbg=3 ctermfg=16
 match ExtraWhitespace /\s\+$/
 # }}}
 
@@ -96,7 +101,7 @@ endif
 autocmd VimEnter * call LspAddServer(lspErlang + lspElixir)
 const lspOpts = {
 	aleSupport: v:false,
-	autoComplete: v:true,
+	autoComplete: v:false,
 	autoHighlight: v:false,
 	autoHighlightDiags: v:true,
 	autoPopulateDiags: v:false,
