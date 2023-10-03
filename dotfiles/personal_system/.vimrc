@@ -12,8 +12,9 @@ Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'yegappan/lsp'
-Plug 'elixir-editors/vim-elixir'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'SirVer/ultisnips'
+Plug 'elixir-editors/vim-elixir'
 plug#end()
 # }}}
 
@@ -72,11 +73,8 @@ nnoremap <Leader>ff :GFiles<CR>
 nnoremap <Leader>fa :Files<CR>
 nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fg :Rg<CR>
-inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 nnoremap K :LspHover<CR>
 nnoremap gd :LspGotoDefinition<CR>
-nnoremap <Leader>e :LspDiagCurrent<CR>
 # }}}
 
 # LSP {{{
@@ -101,7 +99,7 @@ endif
 autocmd VimEnter * call LspAddServer(lspErlang + lspElixir)
 const lspOpts = {
 	aleSupport: v:false,
-	autoComplete: v:false,
+	autoComplete: v:true,
 	autoHighlight: v:false,
 	autoHighlightDiags: v:true,
 	autoPopulateDiags: v:false,
@@ -131,7 +129,7 @@ const lspOpts = {
 	showInlayHints: v:false,
 	showSignature: v:true,
 	snippetSupport: v:false,
-	ultisnipsSupport: v:false,
+	ultisnipsSupport: v:true,
 	usePopupInCodeAction: v:false,
 	useQuickfixForLocations: v:false,
 	useBufferCompletion: v:false,

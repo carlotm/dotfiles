@@ -1,0 +1,6 @@
+snippet log
+require Logger
+Logger.error("== LOG $1 ==")
+Logger.error("#{inspect($1, pretty: true)}")
+Logger.error("== END $1 ==")$0
+endsnippet
