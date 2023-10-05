@@ -140,3 +140,8 @@ augroup LspCustom
   au CursorMoved * silent! LspDiagCurrent
 augroup END
 # }}}
+
+# Misc {{{
+au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
+au BufRead,BufNewFile *.eex,*.heex,*.leex,*.lexs set filetype=eelixir
+# }}}
