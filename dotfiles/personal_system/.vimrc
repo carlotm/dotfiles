@@ -13,7 +13,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'yegappan/lsp'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'SirVer/ultisnips'
 Plug 'elixir-editors/vim-elixir'
 plug#end()
 # }}}
@@ -75,6 +74,8 @@ nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fg :Rg<CR>
 nnoremap K :LspHover<CR>
 nnoremap gd :LspGotoDefinition<CR>
+inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 # }}}
 
 # LSP {{{
@@ -129,7 +130,7 @@ const lspOpts = {
 	showInlayHints: v:false,
 	showSignature: v:true,
 	snippetSupport: v:false,
-	ultisnipsSupport: v:true,
+	ultisnipsSupport: v:false,
 	usePopupInCodeAction: v:false,
 	useQuickfixForLocations: v:false,
 	useBufferCompletion: v:false,
