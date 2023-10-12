@@ -5,6 +5,7 @@ alias tree="eza --tree"
 alias grep="rg -i"
 alias find="fd"
 alias d="devbox"
+alias du="gdu"
 
 export EDITOR=vim
 
