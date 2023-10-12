@@ -146,4 +146,5 @@ augroup END
 # Misc {{{
 au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
 au BufRead,BufNewFile *.eex,*.heex,*.leex,*.lexs set filetype=eelixir
+au BufRead,BufNewFile *.mustache set filetype=html
 # }}}
