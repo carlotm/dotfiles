@@ -143,6 +143,34 @@ augroup LspCustom
 augroup END
 # }}}
 
+# FZF {{{
+g:fzf_preview_window = ['down:50%', 'ctrl-/']
+g:fzf_layout = {
+	'window': {
+		'width': 1,
+		'height': 1,
+		'relative': v:true,
+		'yoffset': 1.0,
+		'border': 'no'
+	}
+}
+g:fzf_colors = {
+	'fg': ['fg', 'Normal'],
+	'bg': ['bg', 'Normal'],
+	'hl': ['fg', 'Comment'],
+	'fg+': ['fg', 'String', 'String', 'String'],
+	'bg+': ['bg', 'String', 'String'],
+	'hl+': ['fg', 'Statement'],
+	'info': ['fg', 'PreProc'],
+	'border': ['fg', 'Ignore'],
+	'prompt': ['fg', 'Conditional'],
+	'pointer': ['fg', 'Exception'],
+	'marker': ['fg', 'Keyword'],
+	'spinner': ['fg', 'Label'],
+	'header': ['fg', 'Comment'],
+}
+# }}}
+
 # Misc {{{
 au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
 au BufRead,BufNewFile *.eex,*.heex,*.leex,*.lexs set filetype=eelixir

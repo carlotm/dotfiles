@@ -12,6 +12,7 @@
       - starship
       - fd
       - eza
+      - bat
       - ripgrep
       - gdu
       - fzf
