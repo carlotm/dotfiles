@@ -74,6 +74,7 @@ nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fg :Rg<CR>
 nnoremap K :LspHover<CR>
 nnoremap gd :LspGotoDefinition<CR>
+nnoremap <Leader>e :LspDiagCurrent<CR>
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 # }}}
@@ -137,10 +138,6 @@ const lspOpts = {
 	useBufferCompletion: v:false,
 }
 autocmd VimEnter * call LspOptionsSet(lspOpts)
-augroup LspCustom
-  au!
-  au CursorMoved * silent! LspDiagCurrent
-augroup END
 # }}}
 
 # FZF {{{
