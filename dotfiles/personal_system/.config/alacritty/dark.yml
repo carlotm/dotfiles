@@ -6,8 +6,8 @@ colors:
     foreground: "#b2b2b2"
     background: "#000000"
   cursor:
-    text: "#000000"
-    cursor: "#b2b2b2"
+    text: "#ffffff"
+    cursor: "#ff0000"
   selection:
     text: "#ffffff"
     background: "#333333"
