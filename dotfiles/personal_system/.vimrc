@@ -24,7 +24,7 @@ filetype plugin on
 filetype indent on
 syntax on
 set background=dark
-set noexpandtab tabstop=4 shiftwidth=4
+set expandtab tabstop=4 shiftwidth=4
 set nobackup
 set scrolloff=10
 set incsearch hlsearch
