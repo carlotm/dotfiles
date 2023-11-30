@@ -68,9 +68,7 @@ globalkeys = gears.table.join(
 	awful.key({ modkey }, "h", function () awful.tag.incmwfact(-0.05) end,
 		{description = "decrease master width factor", group = "layout"}),
 	awful.key({ modkey, }, "space", function () awful.layout.inc(1) end,
-		{description = "select next", group = "layout"}),
-	awful.key({ }, "XF86WakeUp", function () awful.spawn(laptopMonitor) end,
-		{description = "activate laptop monitor", group = "layout"})
+		{description = "select next", group = "layout"})
 )
 
 clientkeys = gears.table.join(
