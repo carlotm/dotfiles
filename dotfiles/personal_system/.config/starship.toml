@@ -22,10 +22,10 @@ format = '[\[NIX\]]($style)'
 format = '[\[$branch\]]($style)'
 style = 'bold yellow'
 [elixir]
-format = '[\[ELIXIR $version OTP $otp_version\]]($style)'
+format = '[\[EX $version OTP $otp_version\]]($style)'
 version_format = '${raw}'
 [erlang]
-format = '[\[ERLANG $version\]]($style)'
+format = '[\[ERL $version\]]($style)'
 [lua]
 format = '[\[LUA $version\]]($style)'
 [nodejs]
