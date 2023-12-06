@@ -1,8 +1,0 @@
-- name: COPY UDEV RULE FOR EXTERNAL MONITOR
-  become: yes
-  ansible.builtin.copy:
-    src: "templates/{{ host }}/etc/udev/rules.d/95-hdmi-plug.rules"
-    dest: /etc/udev/rules.d/95-hdmi-plug.rules
-    owner: root
-    group: root
-    mode: "0644"

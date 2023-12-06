@@ -2,14 +2,5 @@
 - hosts: localhost
   gather_facts: no
   connection: local
-  vars:
-    username: carloratm
-    services:
-      - sshd
   tasks:
     - ansible.builtin.include_tasks: "tasks/{{host}}/system.yml"
-    - ansible.builtin.include_tasks: "tasks/{{host}}/pacman.yml"
-    - ansible.builtin.include_tasks: "tasks/{{host}}/services.yml"
-    - ansible.builtin.include_tasks: "tasks/{{host}}/dotfiles.yml"
-    - ansible.builtin.include_tasks: "tasks/{{host}}/fc_cache.yml"
-    - ansible.builtin.include_tasks: "tasks/{{host}}/xfce.yml"

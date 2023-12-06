@@ -1,7 +1,0 @@
-- name: ENABLE AND START SERVICES
-  become: yes
-  ansible.builtin.service:
-    name: "{{ item }}"
-    enabled: yes
-    state: started
-  loop: "{{ services }}"

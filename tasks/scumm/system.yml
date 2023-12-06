@@ -1,8 +1,14 @@
+##########################################
+# HOSTNAME
+#
 - name: SET HOSTNAME
   become: yes
   ansible.builtin.hostname:
     name: "{{ host }}"
 
+##########################################
+# USER AND GROUPS
+#
 - name: CREATE BASE GROUPS
   become: yes
   ansible.builtin.group:
@@ -10,15 +16,18 @@
     state: present
   loop:
     - users
-    - "{{ username }}"
+    - carloratm
 
 - name: SET USER
   become: yes
   ansible.builtin.user:
-    name: "{{ username }}"
+    name: carloratm
     shell: /bin/bash
     groups: ['users', 'wheel', 'disk', 'power', 'adm', 'network']
 
+##########################################
+# LOCALE AND TIMEZONE
+#
 - name: COPY LOCALE CONF
   become: yes
   ansible.builtin.copy:
@@ -47,6 +56,131 @@
     - it_IT.UTF-8
     - de_DE.UTF-8
 
+##########################################
+# AUTO DISPLAY SWITCH
+#
+- name: COPY UDEV CONF
+  become: yes
+  ansible.builtin.copy:
+    src: "templates/{{ host }}/etc/udev/rules.d/95-hdmi-plug.rules"
+    dest: /etc/udev/rules.d/95-hdmi-plug.rules
+    owner: root
+    group: root
+    mode: "0644"
+
+##########################################
+# GIT CONFIG
+#
+- name: SET GIT CONFIG
+  community.general.git_config:
+    name: "{{ item.name }}"
+    scope: global
+    value: "{{ item.value }}"
+  loop:
+    - {name: user.name, value: "Ascani Carlo"}
+    - {name: alias.co, value: checkout}
+    - {name: alias.s, value: status}
+    - {name: init.defaultBranch, value: main}
+
+- name: SET GIT EMAIL
+  community.general.git_config:
+    name: user.email
+    scope: global
+    value: "{{ email }}"
+
+##########################################
+# PACMAN
+#
+- name: COPY PACMAN CONF
+  become: yes
+  ansible.builtin.copy:
+    src: "templates/{{ host }}/etc/pacman.conf"
+    dest: /etc/pacman.conf
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: SYNC PACMAN
+  become: yes
+  pacman:
+    update_cache: yes
+
+- name: INSTALL COMMON PACKAGES
+  become: yes
+  pacman:
+    name:
+      - base
+      - base-devel
+      - xorg
+      - xorg-xinit
+      - xorg-fonts-encodings
+      - starship
+      - fd
+      - eza
+      - bat
+      - ripgrep
+      - gdu
+      - fzf
+      - autorandr
+      - awesome
+      - xfce4-appfinder
+      - xfce4-power-manager
+      - elementary-icon-theme
+      - keepassxc
+      - thunar
+      - tumbler
+      - gvfs
+      - gthumb
+      - thunar-volman
+      - thunar-archive-plugin
+      - thunar-media-tags-plugin
+      - ffmpegthumbnailer
+      - poppler-glib
+      - libgsf
+      - libgepub
+      - libopenraw
+      - git
+      - vim
+      - terminus-font
+      - noto-fonts
+      - noto-fonts-emoji
+      - bash-completion
+      - inotify-tools
+      - libiconv
+      - upower
+      - ansible
+      - alacritty
+      - firefox
+      - fontconfig
+      - openssh
+      - stow
+      - gphoto2
+      - gvfs-gphoto2
+    state: present
+
+##########################################
+# SYSTEMD SERVICES
+#
+- name: ENABLE AND START SERVICES
+  become: yes
+  ansible.builtin.service:
+    name: "{{ item }}"
+    enabled: yes
+    state: started
+  loop:
+    - sshd
+
+##########################################
+# DOTFILES
+#
+- name: STOW DOTFILES
+  ansible.builtin.shell: stow "{{ host }}" --target="{{lookup('env', 'HOME')}}"
+  args:
+    chdir: dotfiles
+
+##########################################
+# FONTS
+#
 - name: COPY CONSOLE FONTS
   become: yes
   ansible.builtin.copy:
@@ -72,28 +206,25 @@
     group: root
     mode: "0644"
 
-- name: COPY UDEV CONF
-  become: yes
-  ansible.builtin.copy:
-    src: "templates/{{ host }}/etc/udev/rules.d/95-hdmi-plug.rules"
-    dest: /etc/udev/rules.d/95-hdmi-plug.rules
-    owner: root
-    group: root
-    mode: "0644"
+- name: REFRESH FONT CACHE
+  ansible.builtin.command: fc-cache -f -v
 
-- name: SET GIT CONFIG
-  community.general.git_config:
-    name: "{{ item.name }}"
-    scope: global
-    value: "{{ item.value }}"
+##########################################
+# FONTS
+#
+- name: CONFIGURE XFCE
+  community.general.xfconf:
+    channel: thunar
+    property: "{{ item.p }}"
+    value_type: "{{ item.t }}"
+    value: "{{ item.v }}"
   loop:
-    - {name: user.name, value: "Ascani Carlo"}
-    - {name: alias.co, value: checkout}
-    - {name: alias.s, value: status}
-    - {name: init.defaultBranch, value: main}
-
-- name: SET GIT EMAIL
-  community.general.git_config:
-    name: user.email
-    scope: global
-    value: "{{ email }}"
+    - {t: string, p: /default-view, v: ThunarIconView}
+    - {t: bool, p: /misc-folders-first, v: false}
+    - {t: bool, p: /misc-single-click, v: false}
+    - {t: bool, p: /misc-text-beside-icons, v: false}
+    - {t: string, p: /shortcuts-icon-size, v: THUNAR_ICON_SIZE_24}
+    - {t: bool, p: /shortcuts-icon-emblems, v: false}
+    - {t: bool, p: /misc-volume-management, v: false}
+    - {t: bool, p: /last-statusbar-visible, v: false}
+    - {t: bool, p: /last-menubar-visible, v: false}
