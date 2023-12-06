@@ -1,10 +1,10 @@
-scumm: personal_system.yml
+scumm: personal.yml
 	ansible-playbook \
-		-e host=$@ \
+		-e system=personal \
 		-e email=carlotm@protonmail.com \
 		--ask-become-pass $<
 
-monkey: personal_system.yml
+monkey: personal.yml
 	ansible-playbook \
 		-e host=$@ \
 		-e email=carlo@doloops.net \
