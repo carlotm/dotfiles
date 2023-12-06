@@ -1,7 +1,7 @@
 - name: COPY PACMAN CONF
   become: yes
   ansible.builtin.copy:
-    src: "templates/{{ systemname }}/etc/pacman.conf"
+    src: "templates/{{ host }}/etc/pacman.conf"
     dest: /etc/pacman.conf
     owner: root
     group: root
@@ -18,6 +18,34 @@
     name:
       - base
       - base-devel
+      - xorg
+      - xorg-xinit
+      - xorg-fonts-encodings
+      - starship
+      - fd
+      - eza
+      - bat
+      - ripgrep
+      - gdu
+      - fzf
+      - autorandr
+      - awesome
+      - xfce4-appfinder
+      - xfce4-power-manager
+      - elementary-icon-theme
+      - keepassxc
+      - thunar
+      - tumbler
+      - gvfs
+      - gthumb
+      - thunar-volman
+      - thunar-archive-plugin
+      - thunar-media-tags-plugin
+      - ffmpegthumbnailer
+      - poppler-glib
+      - libgsf
+      - libgepub
+      - libopenraw
       - git
       - vim
       - terminus-font
@@ -35,10 +63,4 @@
       - stow
       - gphoto2
       - gvfs-gphoto2
-    state: present
-
-- name: INSTALL PACKAGES
-  become: yes
-  pacman:
-    name: "{{ pkgs }}"
     state: present

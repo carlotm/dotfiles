@@ -22,7 +22,7 @@
 - name: COPY LOCALE CONF
   become: yes
   ansible.builtin.copy:
-    src: "templates/{{ systemname }}/etc/locale.conf"
+    src: "templates/{{ host }}/etc/locale.conf"
     dest: /etc/locale.conf
     owner: root
     group: root
@@ -31,7 +31,7 @@
 - name: COPY TIMEZONE
   become: yes
   ansible.builtin.copy:
-    src: "templates/{{ systemname }}/etc/timezone"
+    src: "templates/{{ host }}/etc/timezone"
     dest: /etc/timezone
     owner: root
     group: root
@@ -50,7 +50,7 @@
 - name: COPY CONSOLE FONTS
   become: yes
   ansible.builtin.copy:
-    src: "templates/{{ systemname }}/usr/share/kbd/consolefonts/{{ item }}"
+    src: "templates/{{ host }}/usr/share/kbd/consolefonts/{{ item }}"
     dest: /usr/share/kbd/consolefonts/
     owner: root
     group: root
@@ -66,7 +66,7 @@
 - name: COPY VCONSOLE CONF
   become: yes
   ansible.builtin.copy:
-    src: "templates/{{ systemname }}/etc/vconsole.conf"
+    src: "templates/{{ host }}/etc/vconsole.conf"
     dest: /etc/vconsole.conf
     owner: root
     group: root
@@ -75,7 +75,7 @@
 - name: COPY UDEV CONF
   become: yes
   ansible.builtin.copy:
-    src: "templates/{{ systemname }}/etc/udev/rules.d/95-hdmi-plug.rules"
+    src: "templates/{{ host }}/etc/udev/rules.d/95-hdmi-plug.rules"
     dest: /etc/udev/rules.d/95-hdmi-plug.rules
     owner: root
     group: root

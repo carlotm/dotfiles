@@ -1,4 +1,0 @@
-- name: STOW DOTFILES
-  ansible.builtin.shell: stow "{{ systemname }}" --target="{{ lookup('env', 'HOME') }}"
-  args:
-    chdir: dotfiles
