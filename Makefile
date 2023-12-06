@@ -1,5 +1,11 @@
 scumm: personal_system.yml
-	ansible-playbook -e host=$@ -e email=carlotm@protonmail.com --ask-become-pass $<
+	ansible-playbook \
+		-e host=$@ \
+		-e email=carlotm@protonmail.com \
+		--ask-become-pass $<
 
 monkey: personal_system.yml
-	ansible-playbook -e host=$@ -e email=carlo@doloops.net --ask-become-pass $<
+	ansible-playbook \
+		-e host=$@ \
+		-e email=carlo@doloops.net \
+		--ask-become-pass $<
