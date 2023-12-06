@@ -1,6 +1,6 @@
 scumm: personal.yml
 	ansible-playbook \
-		-e system=personal \
+		-e host=$@ \
 		-e email=carlotm@protonmail.com \
 		--ask-become-pass $<
 
