@@ -1,72 +1,50 @@
 # SYSTEM PACKAGES {{{
-- name: REMOVE PACKAGES
+- name: FORCE REMOVE PACKAGES
   become: yes
   become_method: ansible.builtin.su
-  ansible.builtin.apt:
-    purge: true
-    state: absent
+  community.general.pacman:
     pkg:
-    - cups
-    - cups-common
-    - exfalso
-    - hv3
-    - libreoffice-base-core
-    - libreoffice-common
-    - libreoffice-core
-    - libsane-common
-    - parole
-    - quodlibet
-    - sane-utils
-    - synaptic
-    - system-config-printer
-    - tango-icon-theme
-    - xfburn
-    - xfce4-goodies
-    - xsane
-
+    - lftp
+    state: absent
 - name: INSTALL PACKAGES
   become: yes
   become_method: ansible.builtin.su
-  ansible.builtin.apt:
-    update_cache: yes
+  community.general.pacman:
     pkg:
     - ansible
     - bash-completion
+    - base
+    - base-devel
     - bat
-    - build-essential
     - curl
-    - elementary-xfce-icon-theme
-    - firefox-esr
+    - elementary-icon-theme
+    - eza
+    - fd
+    - firefox
     - fontconfig
-    - fonts-noto
-    - fonts-noto-color-emoji
-    - fonts-spleen
+    - noto-fonts
+    - noto-fonts-emoji
     - fzf
     - gdu
     - git
     - inotify-tools
     - keepassxc
-    - openssh-client
-    - openssh-server
+    - openssh
     - pavucontrol
     - pulseaudio
     - ripgrep
+    - starship
     - stow
     - sudo
     - vim
     - wget
-    - xfce4
-    - xfce4-power-manager
-    - xfce4-screenshooter
-    - xfce4-terminal
-    - xserver-xorg
-
-- name: CLEANUP
-  become: yes
-  become_method: ansible.builtin.su
-  ansible.builtin.apt:
-    autoremove: yes
-    purge: true
+    update_cache: true
+#- name: CLEANUP
+#  become: yes
+#  become_method: ansible.builtin.su
+#  ansible.builtin.apt:
+#    autoremove: yes
+#    purge: true
 # }}}
 
 # USER AND GROUPS {{{
@@ -79,7 +57,6 @@
   loop:
     - users
     - carloratm
-
 - name: SET USER
   become: yes
   become_method: ansible.builtin.su
@@ -97,7 +74,6 @@
       - tty
       - daemon
       - input
-
 - name: ADD USER TO SUDOERS
   become: yes
   become_method: ansible.builtin.su
@@ -117,6 +93,31 @@
   become: yes
   community.general.timezone:
     name: Europe/Vienna
+- name: COPY LOCALE CONF
+  become: yes
+  ansible.builtin.copy:
+    src: "templates/{{ host }}/etc/locale.conf"
+    dest: /etc/locale.conf
+    owner: root
+    group: root
+    mode: "0644"
+- name: COPY TIMEZONE
+  become: yes
+  ansible.builtin.copy:
+    src: "templates/{{ host }}/etc/timezone"
+    dest: /etc/timezone
+    owner: root
+    group: root
+    mode: "0644"
+- name: GENERATE LOCALES
+  become: yes
+  community.general.locale_gen:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - en_US.UTF-8
+    - it_IT.UTF-8
+    - de_DE.UTF-8
 # }}}
 
 # GIT CONFIG {{{
@@ -130,7 +131,6 @@
     - {name: alias.co, value: checkout}
     - {name: alias.s, value: status}
     - {name: init.defaultBranch, value: main}
-
 - name: SET GIT EMAIL
   community.general.git_config:
     name: user.email
@@ -153,119 +153,33 @@
     state: started
     enabled: yes
   loop:
-    - ssh
+    - sshd
 # }}}
 
-# XFCE {{{
-- name: REMOVE THE SECOND PANEL
-  ansible.builtin.command: xfconf-query --channel 'xfce4-panel' --property '/panels/panel-2' --reset --recursive
-
-- name: XFCE PANEL
-  community.general.xfconf:
-    channel: xfce4-panel
-    property: /panels
-    value_type: int
-    value: [1]
-    force_array: true
-
-- name: XFCE PANEL
-  community.general.xfconf:
-    channel: xfce4-panel
-    property: "{{ item.p }}"
-    value_type: "{{ item.t }}"
-    value: "{{ item.v }}"
-  loop:
-    - {t: bool, p: "/panels/dark-mode", v: false}
-    - {t: int, p: "/panels/panel-1/icon-size", v: 16}
-    - {t: int, p: "/panels/panel-1/length", v: 100}
-    - {t: string, p: "/panels/panel-1/position", v: "p=6;x=0;y=0"}
-    - {t: bool, p: "/panels/panel-1/position-locked", v: true}
-    - {t: int, p: "/panels/panel-1/size", v: 24}
-    - {t: int, p: "/panels/panel-1/plugin-ids", v: [4,2,5,6,8,10,12,14]}
-    - {t: int, p: "/plugins/plugin-12/digital-layout", v: 3}
-    - {t: string, p: "/plugins/plugin-12/digital-time-font", v: "Noto Sans Medium 10"}
-    - {t: string, p: "/plugins/plugin-12/digital-time-format", v: "%d %B %Y   %H:%M"}
-    - {t: string, p: "/plugins/plugin-12/timezone", v: "Europe/Vienna"}
-    - {t: int, p: "/plugins/plugin-14/appearance", v: 0}
-    - {t: string, p: "/plugins/plugin-14/items", v: ["+lock-screen", "-switch-user", "-separator", "-suspend", "-hibernate", "-hybrid-sleep", "-separator", "-shutdown", "-restart", "-separator", "+logout", "-logout-dialog"]}
-    - {t: bool, p: "/plugins/plugin-2/flat-buttons", v: true}
-    - {t: bool, p: "/plugins/plugin-2/grouping", v: false}
-    - {t: bool, p: "/plugins/plugin-2/show-handle", v: false}
-    - {t: bool, p: "/plugins/plugin-2/show-labels", v: false}
-    - {t: bool, p: "/plugins/plugin-2/show-tooltips", v: false}
-    - {t: bool, p: "/plugins/plugin-2/window-scrolling", v: false}
-    - {t: bool, p: "/plugins/plugin-4/miniature-view", v: true}
-    - {t: bool, p: "/plugins/plugin-4/workspace-scrolling", v: false}
-    - {t: int, p: "/plugins/plugin-4/rows", v: 1}
-
-- name: XFCE DESKTOP
-  community.general.xfconf:
-    channel: xfce4-desktop
-    property: "{{ item.p }}"
-    value_type: "{{ item.t }}"
-    value: "{{ item.v }}"
-  loop:
-    - {t: int, p: "/desktop-icons/style", v: 0}
-    - {t: bool, p: "/windowlist-menu/show-add-remove-workspaces", v: false}
-    - {t: int, p: "/backdrop/screen0/monitoreDP-1/workspace0/color-style", v: 0}
-    - {t: int, p: "/backdrop/screen0/monitoreDP-1/workspace0/image-style", v: 0}
-    - {t: float, p: "/backdrop/screen0/monitoreDP-1/workspace0/rgba1", v: [0.101961, 0.372549, 0.705882, 1.000000]}
-    - {t: int, p: "/backdrop/screen0/monitorHDMI-2/workspace0/color-style", v: 0}
-    - {t: int, p: "/backdrop/screen0/monitorHDMI-2/workspace0/image-style", v: 0}
-    - {t: float, p: "/backdrop/screen0/monitorHDMI-2/workspace0/rgba1", v: [0.101961, 0.372549, 0.705882, 1.000000]}
-
-- name: XFCE xfce4-keyboard-shortcuts
-  community.general.xfconf:
-    channel: xfce4-keyboard-shortcuts
-    property: "{{ item.p }}"
-    value_type: "{{ item.t }}"
-    value: "{{ item.v }}"
-  loop:
-    - {t: string, p: "/commands/custom/<Alt>F2", v: xfce4-appfinder}
-    - {t: string, p: "/commands/custom/<Alt><Shift>Return", v: "env GTK_CSD=1 GTK_THEME='Adwaita-dark' xfce4-terminal --disable-server"}
-    - {t: string, p: "/xfwm4/custom/<Alt>1", v: workspace_1_key}
-    - {t: string, p: "/xfwm4/custom/<Alt>2", v: workspace_2_key}
-    - {t: string, p: "/xfwm4/custom/<Alt>3", v: workspace_3_key}
-    - {t: string, p: "/xfwm4/custom/<Alt>4", v: workspace_4_key}
-    - {t: string, p: "/xfwm4/custom/<Alt>5", v: workspace_5_key}
-    - {t: string, p: "/xfwm4/custom/<Alt>6", v: workspace_6_key}
-    - {t: string, p: "/xfwm4/custom/<Alt>7", v: workspace_7_key}
-    - {t: string, p: "/xfwm4/custom/<Alt>8", v: workspace_8_key}
-    - {t: string, p: "/xfwm4/custom/<Alt>9", v: workspace_9_key}
-    - {t: string, p: "/xfwm4/custom/F11", v: fullscreen_key}
-    - {t: string, p: "/xfwm4/custom/<Alt><Shift>c", v: close_window_key}
-- name: XFCE xsettings
-  community.general.xfconf:
-    channel: xsettings
-    property: "{{ item.p }}"
-    value_type: "{{ item.t }}"
-    value: "{{ item.v }}"
-  loop:
-    - {t: int, p: /Xft/Antialias, v: 1}
-    - {t: int, p: /Xft/Hinting, v: 1}
-    - {t: string, p: /Xft/HintStyle, v: "hintfull"}
-    - {t: string, p: /Xft/RGBA, v: "rgb"}
-    - {t: bool, p: /Net/CursorBlink, v: "true"}
-    - {t: string, p: /Net/ThemeName, v: "Adwaita"}
-    - {t: string, p: /Net/IconThemeName, v: "elementary-xfce"}
-    - {t: string, p: /Gtk/FontName, v: "Noto Sans 12"}
-    - {t: string, p: /Gtk/MonospaceFontName, v: "Spleen 16"}
-    - {t: string, p: /Gtk/CursorThemeName, v: "Adwaita"}
-    - {t: int, p: /Gtk/CursorThemeSize, v: 48}
-# }}}
-
-# XFCE TERMINAL {{{
-- name: COPY XFCE4 TERMINAL DESKTOP FILE
+# FONTS {{{
+- name: COPY CONSOLE FONTS
   become: yes
   ansible.builtin.copy:
-    src: "templates/{{ host }}/usr/share/applications/xfce4-terminal.desktop"
-    dest: /usr/share/applications/xfce4-terminal.desktop
+    src: "templates/{{ host }}/usr/share/kbd/consolefonts/{{ item }}"
+    dest: /usr/share/kbd/consolefonts/
     owner: root
     group: root
-    mode: '0644'
-# }}}
-
-# MISC {{{
+    mode: "0644"
+  loop:
+    - spleen-5x8.psfu
+    - spleen-6x12.psfu
+    - spleen-8x16.psfu
+    - spleen-12x24.psfu
+    - spleen-16x32.psfu
+    - spleen-32x64.psfu
+- name: COPY VCONSOLE CONF
+  become: yes
+  ansible.builtin.copy:
+    src: "templates/{{ host }}/etc/vconsole.conf"
+    dest: /etc/vconsole.conf
+    owner: root
+    group: root
+    mode: "0644"
 - name: UPDATE FONT CACHE
   ansible.builtin.command: fc-cache -fv
 # }}}
