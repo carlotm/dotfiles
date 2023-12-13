@@ -40,6 +40,9 @@
     - sudo
     - vim
     - wget
+    - xfce4-appfinder
+    - xfce4-screenshooter
+    - xlockmore
     - xorg
     - xorg-xinit
     update_cache: true
