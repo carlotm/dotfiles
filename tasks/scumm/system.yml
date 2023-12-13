@@ -11,8 +11,8 @@
   become_method: ansible.builtin.su
   community.general.pacman:
     pkg:
-    - ansible
     - alacritty
+    - ansible
     - base
     - base-devel
     - bash-completion
@@ -27,9 +27,8 @@
     - gdu
     - git
     - inotify-tools
-    - keepassxc
+    - keepass
     - libnotify
-    - lxdm-gtk3
     - noto-fonts
     - noto-fonts-emoji
     - openssh
@@ -41,11 +40,17 @@
     - sudo
     - vim
     - wget
-    - xfce4-power-manager
-    - xfce4-settings
     - xorg
     - xorg-xinit
     update_cache: true
+# }}}
+
+# AUR {{{
+- name: AUR PACKAGES
+  kewlfft.aur.aur:
+    name: spectrwm
+    use: makepkg
+    state: present
 # }}}
 
 # USER AND GROUPS {{{
@@ -155,7 +160,6 @@
     enabled: yes
   loop:
     - sshd
-    - lxdm
 # }}}
 
 # FONTS {{{
