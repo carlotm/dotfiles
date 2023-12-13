@@ -12,9 +12,10 @@
   community.general.pacman:
     pkg:
     - ansible
-    - bash-completion
+    - alacritty
     - base
     - base-devel
+    - bash-completion
     - bat
     - curl
     - elementary-icon-theme
@@ -22,13 +23,15 @@
     - fd
     - firefox
     - fontconfig
-    - noto-fonts
-    - noto-fonts-emoji
     - fzf
     - gdu
     - git
     - inotify-tools
     - keepassxc
+    - libnotify
+    - lxdm-gtk3
+    - noto-fonts
+    - noto-fonts-emoji
     - openssh
     - pavucontrol
     - pulseaudio
@@ -38,13 +41,11 @@
     - sudo
     - vim
     - wget
+    - xfce4-power-manager
+    - xfce4-settings
+    - xorg
+    - xorg-xinit
     update_cache: true
-#- name: CLEANUP
-#  become: yes
-#  become_method: ansible.builtin.su
-#  ansible.builtin.apt:
-#    autoremove: yes
-#    purge: true
 # }}}
 
 # USER AND GROUPS {{{
@@ -154,6 +155,7 @@
     enabled: yes
   loop:
     - sshd
+    - lxdm
 # }}}
 
 # FONTS {{{
