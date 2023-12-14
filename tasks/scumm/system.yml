@@ -1,12 +1,12 @@
 # SYSTEM PACKAGES {{{
-- name: FORCE REMOVE PACKAGES
+- name: Force remove packages
   become: yes
   become_method: ansible.builtin.su
   community.general.pacman:
     pkg:
     - lftp
     state: absent
-- name: INSTALL PACKAGES
+- name: Install packages
   become: yes
   become_method: ansible.builtin.su
   community.general.pacman:
@@ -48,7 +48,7 @@
 # }}}
 
 # USER AND GROUPS {{{
-- name: CREATE BASE GROUPS
+- name: Create base groups
   become: yes
   become_method: ansible.builtin.su
   ansible.builtin.group:
@@ -57,7 +57,7 @@
   loop:
     - users
     - carloratm
-- name: SET USER
+- name: Create user
   become: yes
   become_method: ansible.builtin.su
   ansible.builtin.user:
@@ -74,7 +74,7 @@
       - tty
       - daemon
       - input
-- name: ADD USER TO SUDOERS
+- name: Add user to sudoers
   become: yes
   become_method: ansible.builtin.su
   community.general.sudoers:
@@ -85,15 +85,15 @@
 # }}}
 
 # SYSTEM CONFIG {{{
-- name: SET HOSTNAME
+- name: Set hostname
   become: yes
   ansible.builtin.hostname:
     name: "{{ host }}"
-- name: SET TIMEZONE
+- name: Set timezone
   become: yes
   community.general.timezone:
     name: Europe/Vienna
-- name: COPY LOCALE CONF
+- name: Copy locale conf
   become: yes
   ansible.builtin.copy:
     src: "templates/{{ host }}/etc/locale.conf"
@@ -101,7 +101,7 @@
     owner: root
     group: root
     mode: "0644"
-- name: COPY TIMEZONE
+- name: Copy timezone
   become: yes
   ansible.builtin.copy:
     src: "templates/{{ host }}/etc/timezone"
@@ -109,7 +109,7 @@
     owner: root
     group: root
     mode: "0644"
-- name: GENERATE LOCALES
+- name: Generate locales
   become: yes
   community.general.locale_gen:
     name: "{{ item }}"
@@ -121,7 +121,7 @@
 # }}}
 
 # GIT CONFIG {{{
-- name: SET GIT CONFIG
+- name: Config global git
   community.general.git_config:
     name: "{{ item.name }}"
     scope: global
@@ -131,7 +131,7 @@
     - {name: alias.co, value: checkout}
     - {name: alias.s, value: status}
     - {name: init.defaultBranch, value: main}
-- name: SET GIT EMAIL
+- name: Set git email
   community.general.git_config:
     name: user.email
     scope: global
@@ -139,14 +139,14 @@
 # }}}
 
 # DOTFILES {{{
-- name: STOW DOTFILES
+- name: Stow dotfiles
   ansible.builtin.shell: stow "{{ host }}" --target="{{lookup('env', 'HOME')}}"
   args:
     chdir: dotfiles
 # }}}
 
 # SERVICES {{{
-- name: SERVICES
+- name: Start and enable serives
   become: yes
   ansible.builtin.service:
     name: "{{ item }}"
@@ -157,7 +157,7 @@
 # }}}
 
 # FONTS {{{
-- name: COPY CONSOLE FONTS
+- name: Copy console fonts
   become: yes
   ansible.builtin.copy:
     src: "templates/{{ host }}/usr/share/kbd/consolefonts/{{ item }}"
@@ -172,7 +172,7 @@
     - spleen-12x24.psfu
     - spleen-16x32.psfu
     - spleen-32x64.psfu
-- name: COPY VCONSOLE CONF
+- name: Copy console configuration
   become: yes
   ansible.builtin.copy:
     src: "templates/{{ host }}/etc/vconsole.conf"
@@ -180,6 +180,6 @@
     owner: root
     group: root
     mode: "0644"
-- name: UPDATE FONT CACHE
+- name: Update font cache
   ansible.builtin.command: fc-cache -fv
 # }}}
