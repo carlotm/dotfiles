@@ -34,6 +34,7 @@
     - openssh
     - pavucontrol
     - pulseaudio
+    - qutebrowser
     - ripgrep
     - starship
     - stow
@@ -182,4 +183,117 @@
     mode: "0644"
 - name: Update font cache
   ansible.builtin.command: fc-cache -fv
+# }}}
+
+# XFCE {{{
+- name: Reset wallpapers
+  ansible.builtin.command: xfconf-query --channel xfce4-desktop --property /backdrop --recursive --reset
+- name: Set background image to solid color
+  community.general.xfconf:
+    channel: xfce4-desktop
+    property: "/backdrop/screen0/monitor{{item}}/workspace0/image-style"
+    value_type: int
+    value: 0
+  loop:
+    - HDMI-2
+    - eDPI-1
+- name: Set background color
+  community.general.xfconf:
+    channel: xfce4-desktop
+    property: "/backdrop/screen0/monitor{{item}}/workspace0/rgba1"
+    value_type: float
+    value: [0.101961, 0.372549, 0.705882, 1.000000]
+  loop:
+    - HDMI-2
+    - eDPI-1
+- name: Reset shortcuts
+  ansible.builtin.command: "xfconf-query --channel xfce4-keyboard-shortcuts --property {{item}} --recursive --reset"
+  loop:
+    - /commands/custom
+    - /xfwm4/custom
+- name: Set shortcuts overridable
+  community.general.xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "{{item}}/override"
+    value_type: bool
+    value: true
+  loop:
+    - /commands/custom
+    - /xfwm4/custom
+- name: Set xfce commands keyboard shortcuts
+  community.general.xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "{{item.p}}"
+    value_type: string
+    value: "{{item.v}}"
+  loop:
+    - {p: /commands/custom/<Alt>F2, v: xfce4-appfinder}
+    - {p: /commands/custom/Print, v: xfce4-screenshooter}
+    - {p: /commands/custom/<Alt><Shift>l, v: xflock4}
+    - {p: /commands/custom/<Shift><Alt>Return, v: alacritty}
+    - {p: /commands/custom/XF86Display, v: "xfce4-display-settings --minimal"}
+- name: Set xfwm4 shortcuts
+  community.general.xfconf:
+    channel: xfce4-keyboard-shortcuts
+    property: "{{item.p}}"
+    value_type: string
+    value: "{{item.v}}"
+  loop:
+    - {p: /xfwm4/custom/<Alt><Shift>f, v: fullscreen_key}
+    - {p: /xfwm4/custom/<Alt><Shift>c, v: close_window_key}
+    - {p: /xfwm4/custom/<Alt>Tab, v: cycle_windows_key}
+    - {p: /xfwm4/custom/<Alt><Shift>Tab, v: cycle_reverse_windows_key}
+    - {p: /xfwm4/custom/Down, v: down_key}
+    - {p: /xfwm4/custom/Up, v: up_key}
+    - {p: /xfwm4/custom/Escape, v: cancel_key}
+    - {p: /xfwm4/custom/Left, v: left_key}
+    - {p: /xfwm4/custom/Right, v: right_key}
+    - {p: /xfwm4/custom/<Alt>1, v: workspace_1_key}
+    - {p: /xfwm4/custom/<Alt>2, v: workspace_2_key}
+    - {p: /xfwm4/custom/<Alt>3, v: workspace_3_key}
+    - {p: /xfwm4/custom/<Alt>4, v: workspace_4_key}
+    - {p: /xfwm4/custom/<Alt>5, v: workspace_5_key}
+    - {p: /xfwm4/custom/<Alt>6, v: workspace_6_key}
+    - {p: /xfwm4/custom/<Alt>7, v: workspace_7_key}
+    - {p: /xfwm4/custom/<Alt>8, v: workspace_8_key}
+    - {p: /xfwm4/custom/<Alt>9, v: workspace_9_key}
+    - {p: /xfwm4/custom/<Alt><Shift>1, v: move_window_workspace_1_key}
+    - {p: /xfwm4/custom/<Alt><Shift>2, v: move_window_workspace_2_key}
+    - {p: /xfwm4/custom/<Alt><Shift>3, v: move_window_workspace_3_key}
+    - {p: /xfwm4/custom/<Alt><Shift>4, v: move_window_workspace_4_key}
+    - {p: /xfwm4/custom/<Alt><Shift>5, v: move_window_workspace_5_key}
+    - {p: /xfwm4/custom/<Alt><Shift>6, v: move_window_workspace_6_key}
+    - {p: /xfwm4/custom/<Alt><Shift>7, v: move_window_workspace_7_key}
+    - {p: /xfwm4/custom/<Alt><Shift>8, v: move_window_workspace_8_key}
+    - {p: /xfwm4/custom/<Alt><Shift>9, v: move_window_workspace_9_key}
+- name: Set xfce xsettings
+  community.general.xfconf:
+    channel: xsettings
+    property: "{{item.p}}"
+    value_type: "{{item.t}}"
+    value: "{{item.v}}"
+  loop:
+    - {p: /Gdk/WindowScalingFactor, t: int, v: 1}
+    - {p: /Gtk/ButtonImages, t: bool, v: true}
+    - {p: /Gtk/CanChangeAccels, t: bool, v: false}
+    - {p: /Gtk/CursorThemeName, t: string, v: Adwaita}
+    - {p: /Gtk/CursorThemeSize, t: int, v: 48}
+    - {p: /Gtk/DecorationLayout, t: string, v: "menu:minimize,maximize,close"}
+    - {p: /Gtk/DialogsUseHeader, t: bool, v: false}
+    - {p: /Gtk/FontName, t: string, v: "Noto Sans 12"}
+    - {p: /Gtk/MonospaceFontName, t: string, v: "Spleen 15"}
+    - {p: /Net/CursorBlink, t: bool, v: true}
+    - {p: /Net/CursorBlinkTime, t: int, v: 1200}
+    - {p: /Net/DndDragThreshold, t: int, v: 8}
+    - {p: /Net/DoubleClickDistance, t: int, v: 5}
+    - {p: /Net/DoubleClickTime, t: int, v: 400}
+    - {p: /Net/EnableEventSounds, t: bool, v: false}
+    - {p: /Net/EnableInputFeedbackSounds, t: bool, v: false}
+    - {p: /Net/IconThemeName, t: string, v: elementary}
+    - {p: /Net/SoundThemeName, t: string, v: default}
+    - {p: /Net/ThemeName, t: string, v: Adwaita}
+    - {p: /Xft/Antialias, t: int, v: 1}
+    - {p: /Xft/Hinting, t: int, v: -1}
+    - {p: /Xft/HintStyle, t: string, v: "hintfull"}
+    - {p: /Xft/RGBA, t: string, v: "rgb"}
 # }}}
