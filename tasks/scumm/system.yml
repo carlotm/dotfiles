@@ -248,6 +248,84 @@
     - {p: /xfwm4/custom/<Alt><Shift>7, v: move_window_workspace_7_key}
     - {p: /xfwm4/custom/<Alt><Shift>8, v: move_window_workspace_8_key}
     - {p: /xfwm4/custom/<Alt><Shift>9, v: move_window_workspace_9_key}
+- name: Set panel dark mode
+  community.general.xfconf:
+    channel: xfce4-panel
+    property: /panels/dark-mode
+    value_type: bool
+    value: true
+- name: Configure the panel
+  community.general.xfconf:
+    channel: xfce4-panel
+    property: "/panels/panel-1{{item.p}}"
+    value_type: "{{item.t}}"
+    value: "{{item.v}}"
+  loop:
+    - {p: /background-style, t: int, v: 0}
+    - {p: /enable-struts, t: bool, v: true}
+    - {p: /icon-size, t: int, v: 16}
+    - {p: /length, t: double, v: 100.000000}
+    - {p: /mode, t: int, v: 0}
+    - {p: /nrows, t: int, v: 1}
+    - {p: /plugin-ids, t: int, v: [1,2,3,4,5,6,8,9,14]}
+    - {p: /position, t: string, v: "p=6;x=0;y=0"}
+    - {p: /position-locked, t: bool, v: true}
+    - {p: /size, t: int, v: 24}
+- name: Configure the panel widgets
+  community.general.xfconf:
+    channel: xfce4-panel
+    property: "/plugins{{item.p}}"
+    value_type: "{{item.t}}"
+    value: "{{item.v}}"
+  loop:
+    - {p: /plugin-4, t: string, v: pager}
+    - {p: /plugin-4/miniature-view, t: bool, v: true}
+    - {p: /plugin-4/workspace-scrolling, t: bool, v: false}
+    - {p: /plugin-4/rows, t: int, v: 1}
+    - {p: /plugin-8, t: string, v: pulseaudio}
+    - {p: /plugin-8/enable-keyboard-shortcuts, t: bool, v: true}
+    - {p: /plugin-8/enable-mpris, t: bool, v: false}
+    - {p: /plugin-8/enable-multimedia-keys, t: bool, v: false}
+    - {p: /plugin-8/enable-wnck, t: bool, v: false}
+    - {p: /plugin-8/mixer-command, t: string, v: pavucontrol}
+    - {p: /plugin-8/play-sound, t: bool, v: false}
+    - {p: /plugin-8/rec-indicator-persistent, t: bool, v: false}
+    - {p: /plugin-8/show-notifications, t: int, v: 1}
+    - {p: /plugin-8/volume-max, t: int, v: 100}
+    - {p: /plugin-8/volume-step, t: int, v: 5}
+    - {p: /plugin-9, t: string, v: power-manager-plugin}
+    - {p: /plugin-14, t: string, v: actions}
+    - {p: /plugin-14/appearance, t: int, v: 0}
+    - {p: /plugin-14/ask-confirmation, t: bool, v: false}
+    - {p: /plugin-14/items, t: string, v: ["+lock-screen", "-switch-user", "-separator", "-suspend", "-hibernate", "-hybrid-sleep", "-separator", "-shutdown", "-restart", "-separator", "-logout", "+logout-dialog"]}
+- name: Configure xfwm4
+  community.general.xfconf:
+    channel: xfwm4
+    property: "/general{{item.p}}"
+    value_type: "{{item.t}}"
+    value: "{{item.v}}"
+  loop:
+    - {p: /activate_action, t: string, v: bring}
+    - {p: /borderless_maximize, t: bool, v: true}
+    - {p: /box_move, t: bool, v: true}
+    - {p: /box_resize, t: bool, v: true}
+    - {p: /button_layout, t: string, v: "O|SHMC"}
+    - {p: /click_to_focus, t: bool, v: false}
+    - {p: /cycle_draw_frame, t: bool, v: true}
+    - {p: /cycle_hidden, t: bool, v: true}
+    - {p: /cycle_minimized, t: bool, v: false}
+    - {p: /cycle_minimum, t: bool, v: true}
+    - {p: /cycle_preview, t: bool, v: true}
+    - {p: /cycle_raise, t: bool, v: false}
+    - {p: /cycle_tabwin_mode, t: int, v: 0}
+    - {p: /cycle_workspaces, t: bool, v: false}
+    - {p: /double_click_action, t: string, v: maximize}
+    - {p: /easy_click, t: string, v: Alt}
+    - {p: /focus_delay, t: int, v: 0}
+    - {p: /focus_hint, t: bool, v: true}
+    - {p: /focus_new, t: bool, v: true}
+    - {p: /workspace_count, t: int, v: 9}
+    - {p: /workspace_names, t: string, v: [1, 2, 3, 4, 5, 6, 7, 8, 9]}
 - name: Reset appfinder actions
   ansible.builtin.command: xfconf-query --channel xfce4-appfinder --property /actions --recursive --reset
 - name: Set xfce appfinder
