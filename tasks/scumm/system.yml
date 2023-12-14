@@ -317,4 +317,39 @@
     - {p: /panels/panel-1/position, t: string, v: "p=6;x=0;y=0"}
     - {p: /panels/panel-1/position-locked, t: bool, v: true}
     - {p: /panels/panel-1/size, t: int, v: 24}
+- name: Set xfce session
+  community.general.xfconf:
+    channel: xfce4-session
+    property: "{{item.p}}"
+    value_type: "{{item.t}}"
+    value: "{{item.v}}"
+  loop:
+    - {p: /general/FailsafeSessionName, t: string, v: Failsafe}
+    - {p: /general/LockCommand, t: string, v: xflock4}
+    - {p: /general/SaveOnExit, t: bool, v: false}
+- name: Set Failsafe session
+  community.general.xfconf:
+    channel: xfce4-session
+    property: "/sessions/Failsafe/{{item.p}}"
+    value_type: "{{item.t}}"
+    value: "{{item.v}}"
+    force_array: "{{item.a}}"
+  loop:
+    - {p: Client0_Command, t: string, v: ["xfwm4"], a: true}
+    - {p: Client0_PerScreen, t: bool, v: false, a: false}
+    - {p: Client0_Priority, t: int, v: 15, a: false}
+    - {p: Client1_Command, t: string, v: ["xfsettingsd"], a: true}
+    - {p: Client1_PerScreen, t: bool, v: false, a: false}
+    - {p: Client1_Priority, t: int, v: 20, a: false}
+    - {p: Client2_Command, t: string, v: ["xfce4-panel"], a: true}
+    - {p: Client2_PerScreen, t: bool, v: false, a: false}
+    - {p: Client2_Priority, t: int, v: 25, a: false}
+    - {p: Client3_Command, t: string, v: ["Thunar", "--daemon"], a: true}
+    - {p: Client3_PerScreen, t: bool, v: false, a: false}
+    - {p: Client3_Priority, t: int, v: 30, a: false}
+    - {p: Client4_Command, t: string, v: ["xfdesktop"], a: true}
+    - {p: Client4_PerScreen, t: bool, v: false, a: false}
+    - {p: Client4_Priority, t: int, v: 35, a: false}
+    - {p: Count, t: int, v: 5, a: false}
+    - {p: IsFailsafe, t: bool, v: true, a: false}
 # }}}
