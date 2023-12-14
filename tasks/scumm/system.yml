@@ -374,4 +374,31 @@
     - {p: /power-button-action, t: int, v: 4}
     - {p: /show-tray-icon, t: bool, v: false}
     - {p: /sleep-button-action, t: int, v: 0}
+- name: Configure terminal
+  community.general.xfconf:
+    channel: xfce4-terminal
+    property: "{{item.p}}"
+    value_type: "{{item.t}}"
+    value: "{{item.v}}"
+  loop:
+    - {p: /scrolling-bar, t: string, v: TERMINAL_SCROLLBAR_NONE}
+    - {p: /font-allow-bold, t: bool, v: false}
+    - {p: /font-name, t: string, v: "Spleen 22"}
+    - {p: /font-use-system, t: bool, v: false}
+    - {p: /misc-copy-on-select, t: bool, v: true}
+    - {p: /misc-cursor-blinks, t: bool, v: true}
+    - {p: /misc-cursor-shape, t: string, v: TERMINAL_CURSOR_SHAPE_BLOCK}
+    - {p: /misc-show-unsafe-paste-dialog, t: bool, v: false}
+    - {p: /misc-menubar-default, t: bool, v: false}
+    - {p: /misc-toolbar-default, t: bool, v: false}
+    - {p: /shortcuts-no-menukey, t: bool, v: true}
+    - {p: /shortcuts-no-mnemonics, t: bool, v: true}
+    - {p: /misc-middle-click-opens-uri, t: bool, v: false}
+    - {p: /misc-tab-close-middle-click, t: bool, v: false}
+    - {p: /misc-mouse-autohide, t: bool, v: true}
+    - {p: /misc-new-tab-adjacent, t: bool, v: false}
+    - {p: /misc-bell, t: bool, v: false}
+    - {p: /misc-bell-urgent, t: bool, v: true}
+    - {p: /misc-hyperlinks-enabled, t: bool, v: true}
+    - {p: /misc-right-click-action, t: string, v: TERMINAL_RIGHT_CLICK_ACTION_CONTEXT_MENU}
 # }}}
