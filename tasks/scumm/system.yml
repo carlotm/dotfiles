@@ -20,6 +20,7 @@
     - curl
     - elementary-icon-theme
     - eza
+    - feh
     - fd
     - firefox
     - fontconfig
@@ -188,24 +189,6 @@
 # XFCE {{{
 - name: Reset wallpapers
   ansible.builtin.command: xfconf-query --channel xfce4-desktop --property /backdrop --recursive --reset
-- name: Set background image to solid color
-  community.general.xfconf:
-    channel: xfce4-desktop
-    property: "/backdrop/screen0/monitor{{item}}/workspace0/image-style"
-    value_type: int
-    value: 0
-  loop:
-    - HDMI-2
-    - eDPI-1
-- name: Set background color
-  community.general.xfconf:
-    channel: xfce4-desktop
-    property: "/backdrop/screen0/monitor{{item}}/workspace0/rgba1"
-    value_type: float
-    value: [0.101961, 0.372549, 0.705882, 1.000000]
-  loop:
-    - HDMI-2
-    - eDPI-1
 - name: Reset shortcuts
   ansible.builtin.command: "xfconf-query --channel xfce4-keyboard-shortcuts --property {{item}} --recursive --reset"
   loop:
@@ -266,6 +249,22 @@
     - {p: /xfwm4/custom/<Alt><Shift>7, v: move_window_workspace_7_key}
     - {p: /xfwm4/custom/<Alt><Shift>8, v: move_window_workspace_8_key}
     - {p: /xfwm4/custom/<Alt><Shift>9, v: move_window_workspace_9_key}
+- name: Reset appfinder actions
+  ansible.builtin.command: xfconf-query --channel xfce4-appfinder --property /actions --recursive --reset
+- name: Set xfce appfinder
+  community.general.xfconf:
+    channel: xfce4-appfinder
+    property: "{{item.p}}"
+    value_type: "{{item.t}}"
+    value: "{{item.v}}"
+  loop:
+    - {p: /always-center, t: bool, v: true}
+    - {p: /enable-service, t: bool, v: true}
+    - {p: /hide-category-pane, t: bool, v: true}
+    - {p: /hide-window-decorations, t: bool, v: true}
+    - {p: /hide-window-decorations, t: bool, v: true}
+    - {p: /icon-view, t: bool, v: false}
+    - {p: /item-icon-size, t: int, v: 2}
 - name: Set xfce xsettings
   community.general.xfconf:
     channel: xsettings
@@ -296,4 +295,26 @@
     - {p: /Xft/Hinting, t: int, v: -1}
     - {p: /Xft/HintStyle, t: string, v: "hintfull"}
     - {p: /Xft/RGBA, t: string, v: "rgb"}
+- name: Reset second panel
+  ansible.builtin.command: xfconf-query --channel xfce4-panel --property /panels/panel-2 --recursive --reset
+- name: Set xfce panels to only one
+  community.general.xfconf:
+    channel: xfce4-panel
+    property: /panels
+    value_type: int
+    value: [1]
+    force_array: true
+- name: Set xfce panels
+  community.general.xfconf:
+    channel: xfce4-panel
+    property: "{{item.p}}"
+    value_type: "{{item.t}}"
+    value: "{{item.v}}"
+  loop:
+    - {p: /panels/panel-1/icon-size, t: int, v: 16}
+    - {p: /panels/panel-1/length, t: int, v: 100}
+    - {p: /panels/panel-1/plugin-ids, t: int, v: [1,2,3,4,5,6,8,9,10,11,12,13,14]}
+    - {p: /panels/panel-1/position, t: string, v: "p=6;x=0;y=0"}
+    - {p: /panels/panel-1/position-locked, t: bool, v: true}
+    - {p: /panels/panel-1/size, t: int, v: 24}
 # }}}
