@@ -40,20 +40,11 @@
     - sudo
     - vim
     - wget
-    - xfce4-appfinder
-    - xfce4-screenshooter
-    - xlockmore
+    - xfce4
+    - xfce4-goodies
     - xorg
     - xorg-xinit
     update_cache: true
-# }}}
-
-# AUR {{{
-- name: AUR PACKAGES
-  kewlfft.aur.aur:
-    name: spectrwm
-    use: makepkg
-    state: present
 # }}}
 
 # USER AND GROUPS {{{
