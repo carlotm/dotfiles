@@ -19,8 +19,8 @@
     - curl
     - elementary-icon-theme
     - eza
-    - feh
     - fd
+    - feh
     - firefox
     - fontconfig
     - fzf
@@ -401,4 +401,21 @@
     - {p: /misc-bell-urgent, t: bool, v: true}
     - {p: /misc-hyperlinks-enabled, t: bool, v: true}
     - {p: /misc-right-click-action, t: string, v: TERMINAL_RIGHT_CLICK_ACTION_CONTEXT_MENU}
+# }}}
+
+# FIREFOX {{{
+- name: Make firefox policies folder
+  become: yes
+  ansible.builtin.file:
+    path: /etc/firefox/policies
+    state: directory
+    mode: "0777"
+- name: Copy firefox policies
+  become: yes
+  ansible.builtin.copy:
+    src: "templates/{{ host }}/etc/firefox/policies/policies.json"
+    dest: /etc/firefox/policies/policies.json
+    owner: root
+    group: root
+    mode: "0644"
 # }}}
