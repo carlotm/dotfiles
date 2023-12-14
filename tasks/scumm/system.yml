@@ -11,7 +11,6 @@
   become_method: ansible.builtin.su
   community.general.pacman:
     pkg:
-    - alacritty
     - ansible
     - base
     - base-devel
@@ -28,7 +27,7 @@
     - gdu
     - git
     - inotify-tools
-    - keepass
+    - keepassxc
     - libnotify
     - noto-fonts
     - noto-fonts-emoji
@@ -213,7 +212,7 @@
     - {p: /commands/custom/<Alt>F2, v: xfce4-appfinder}
     - {p: /commands/custom/Print, v: xfce4-screenshooter}
     - {p: /commands/custom/<Alt><Shift>l, v: xflock4}
-    - {p: /commands/custom/<Shift><Alt>Return, v: alacritty}
+    - {p: /commands/custom/<Shift><Alt>Return, v: "exo-open --launch TerminalEmulator"}
     - {p: /commands/custom/XF86Display, v: "xfce4-display-settings --minimal"}
 - name: Set xfwm4 shortcuts
   community.general.xfconf:
@@ -330,26 +329,49 @@
 - name: Set Failsafe session
   community.general.xfconf:
     channel: xfce4-session
-    property: "/sessions/Failsafe/{{item.p}}"
+    property: "/sessions/Failsafe{{item.p}}"
     value_type: "{{item.t}}"
     value: "{{item.v}}"
     force_array: "{{item.a}}"
   loop:
-    - {p: Client0_Command, t: string, v: ["xfwm4"], a: true}
-    - {p: Client0_PerScreen, t: bool, v: false, a: false}
-    - {p: Client0_Priority, t: int, v: 15, a: false}
-    - {p: Client1_Command, t: string, v: ["xfsettingsd"], a: true}
-    - {p: Client1_PerScreen, t: bool, v: false, a: false}
-    - {p: Client1_Priority, t: int, v: 20, a: false}
-    - {p: Client2_Command, t: string, v: ["xfce4-panel"], a: true}
-    - {p: Client2_PerScreen, t: bool, v: false, a: false}
-    - {p: Client2_Priority, t: int, v: 25, a: false}
-    - {p: Client3_Command, t: string, v: ["Thunar", "--daemon"], a: true}
-    - {p: Client3_PerScreen, t: bool, v: false, a: false}
-    - {p: Client3_Priority, t: int, v: 30, a: false}
-    - {p: Client4_Command, t: string, v: ["xfdesktop"], a: true}
-    - {p: Client4_PerScreen, t: bool, v: false, a: false}
-    - {p: Client4_Priority, t: int, v: 35, a: false}
-    - {p: Count, t: int, v: 5, a: false}
-    - {p: IsFailsafe, t: bool, v: true, a: false}
+    - {p: /Client0_Command, t: string, v: ["xfwm4"], a: true}
+    - {p: /Client0_PerScreen, t: bool, v: false, a: false}
+    - {p: /Client0_Priority, t: int, v: 15, a: false}
+    - {p: /Client1_Command, t: string, v: ["xfsettingsd"], a: true}
+    - {p: /Client1_PerScreen, t: bool, v: false, a: false}
+    - {p: /Client1_Priority, t: int, v: 20, a: false}
+    - {p: /Client2_Command, t: string, v: ["xfce4-panel"], a: true}
+    - {p: /Client2_PerScreen, t: bool, v: false, a: false}
+    - {p: /Client2_Priority, t: int, v: 25, a: false}
+    - {p: /Client3_Command, t: string, v: ["Thunar", "--daemon"], a: true}
+    - {p: /Client3_PerScreen, t: bool, v: false, a: false}
+    - {p: /Client3_Priority, t: int, v: 30, a: false}
+    - {p: /Client4_Command, t: string, v: ["xfdesktop"], a: true}
+    - {p: /Client4_PerScreen, t: bool, v: false, a: false}
+    - {p: /Client4_Priority, t: int, v: 35, a: false}
+    - {p: /Count, t: int, v: 5, a: false}
+    - {p: /IsFailsafe, t: bool, v: true, a: false}
+- name: Set power manager
+  community.general.xfconf:
+    channel: xfce4-power-manager
+    property: "/xfce4-power-manager{{item.p}}"
+    value_type: "{{item.t}}"
+    value: "{{item.v}}"
+  loop:
+    - {p: /battery-button-action, t: int, v: 0}
+    - {p: /brightness-switch, t: int, v: 0}
+    - {p: /brightness-switch-restore-on-exit, t: int, v: 1}
+    - {p: /critical-power-action, t: int, v: 3}
+    - {p: /critical-power-level, t: int, v: 10}
+    - {p: /dpms-enabled, t: bool, v: false}
+    - {p: /general-notification, t: bool, v: true}
+    - {p: /handle-brightness-keys, t: bool, v: true}
+    - {p: /hibernate-button-action, t: int, v: 0}
+    - {p: /inactivity-on-ac, t: int, v: 14}
+    - {p: /inactivity-on-battery, t: int, v: 14}
+    - {p: /lid-action-on-ac, t: int, v: 0}
+    - {p: /lid-action-on-battery, t: int, v: 0}
+    - {p: /power-button-action, t: int, v: 4}
+    - {p: /show-tray-icon, t: bool, v: false}
+    - {p: /sleep-button-action, t: int, v: 0}
 # }}}
