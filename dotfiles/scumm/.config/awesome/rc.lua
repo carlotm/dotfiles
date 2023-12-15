@@ -36,6 +36,7 @@ end
 beautiful.init("/home/carloratm/.config/awesome/theme.lua")
 terminal = "alacritty"
 launcher = "xfce4-appfinder"
+screenshooter = "xfce4-screenshooter"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod1"
@@ -60,6 +61,8 @@ globalkeys = gears.table.join(
     {description = "open a terminal", group = "launcher"}),
   awful.key({ modkey }, "F2", function () awful.spawn(launcher) end,
     {description = "open an application launcher", group = "launcher"}),
+  awful.key({ }, "Print", function () awful.spawn(screenshooter) end,
+    {description = "open a screenshooter", group = "launcher"}),
   awful.key({ modkey, "Control" }, "r", awesome.restart,
     {description = "reload awesome", group = "awesome"}),
   awful.key({ modkey }, "l", function () awful.tag.incmwfact( 0.05) end,

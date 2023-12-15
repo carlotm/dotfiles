@@ -42,6 +42,8 @@
     - sudo
     - vim
     - wget
+    - xfce4-appfinder
+    - xfce4-screenshooter
     - xorg
     - xorg-xinit
     update_cache: true
