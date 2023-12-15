@@ -3,4 +3,4 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 xrdb ~/.Xresources &
 setxkbmap -layout us,it,de -option grp:win_space_toggle &
 feh --bg-tile ~/.config/wallpaper.png &
-exec startxfce4
+exec awesome
