@@ -351,7 +351,7 @@
   loop:
     - {p: /Gdk/WindowScalingFactor, t: int, v: 1}
     - {p: /Gtk/ButtonImages, t: bool, v: true}
-    - {p: /Gtk/CanChangeAccels, t: bool, v: false}
+    - {p: /Gtk/CanChangeAccels, t: bool, v: true}
     - {p: /Gtk/CursorThemeName, t: string, v: Adwaita}
     - {p: /Gtk/CursorThemeSize, t: int, v: 48}
     - {p: /Gtk/DecorationLayout, t: string, v: "menu:minimize,maximize,close"}
