@@ -11,6 +11,7 @@
   become_method: ansible.builtin.su
   community.general.pacman:
     pkg:
+    - alacritty
     - ansible
     - awesome
     - base
