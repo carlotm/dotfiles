@@ -23,7 +23,6 @@
     - eza
     - fd
     - feh
-    - firefox
     - fontconfig
     - fzf
     - gdu
@@ -36,6 +35,7 @@
     - openssh
     - pavucontrol
     - pulseaudio
+    - qutebrowser
     - ripgrep
     - starship
     - stow
@@ -195,21 +195,4 @@
 #     value: "{{item.v}}"
 #   loop:
 #     - {p: /scrolling-bar, t: string, v: TERMINAL_SCROLLBAR_NONE}
-# }}}
-
-# FIREFOX {{{
-- name: Make firefox policies folder
-  become: yes
-  ansible.builtin.file:
-    path: /etc/firefox/policies
-    state: directory
-    mode: "0777"
-- name: Copy firefox policies
-  become: yes
-  ansible.builtin.copy:
-    src: "templates/{{ host }}/etc/firefox/policies/policies.json"
-    dest: /etc/firefox/policies/policies.json
-    owner: root
-    group: root
-    mode: "0644"
 # }}}
