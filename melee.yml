@@ -22,6 +22,7 @@
       - base-devel
       - bash-completion
       - bat
+      - blueman
       - bluez
       - bluez-utils
       - curl
@@ -41,6 +42,7 @@
       - openssh
       - pavucontrol
       - pulseaudio
+      - pulseaudio-bluetooth
       - retroarch
       - retroarch-assets-xmb
       - ripgrep
@@ -250,6 +252,11 @@
       - {p: /plugin-3, t: string, v: separator}
       - {p: /plugin-3/expand, t: bool, v: true}
       - {p: /plugin-3/style, t: int, v: 0}
+      - {p: /plugin-6, t: string, v: systray}
+      - {p: /plugin-6/hide-new-items, t: bool, v: false}
+      - {p: /plugin-6/icon-size, t: int, v: 0}
+      - {p: /plugin-6/square-icons, t: bool, v: false}
+      - {p: /plugin-6/symbolic-icons, t: bool, v: true}
       - {p: /plugin-8, t: string, v: pulseaudio}
       - {p: /plugin-8/enable-keyboard-shortcuts, t: bool, v: true}
       - {p: /plugin-8/enable-mpris, t: bool, v: false}
@@ -300,7 +307,7 @@
       - {p: /general-notification, t: bool, v: false}
       - {p: /lock-screen-suspend-hibernate, t: bool, v: false}
       - {p: /power-button-action, t: int, v: 3}
-      - {p: /show-tray-icon, t: bool, v: true}
+      - {p: /show-tray-icon, t: bool, v: false}
   - name: Configure fonts
     community.general.xfconf:
       channel: xsettings
@@ -313,6 +320,7 @@
       - {p: /Xft/Hinting, t: int, v: -1}
       - {p: /Xft/HintStyle, t: string, v: hintfull}
       - {p: /Xft/RGBA, t: string, v: rgb}
+      - {p: /Gtk/CursorThemeSize, t: int, v: 64}
       - {p: /Gtk/FontName, t: string, v: "Noto Sans 16"}
       - {p: /Gtk/MonospaceFontName, t: string, v: "Noto Sans Mono Regular 18"}
       - {p: /Net/IconThemeName, t: string, v: elementary}
