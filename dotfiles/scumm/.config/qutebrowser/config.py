@@ -327,46 +327,21 @@ c.spellcheck.languages = []
 ## Type: QssColor
 # c.colors.statusbar.url.warn.fg = 'yellow'
 
-## Background color of the tab bar.
-## Type: QssColor
-# c.colors.tabs.bar.bg = '#555555'
-
-## Background color of unselected even tabs.
-## Type: QtColor
-# c.colors.tabs.even.bg = 'darkgrey'
-
-## Foreground color of unselected even tabs.
-## Type: QtColor
-# c.colors.tabs.even.fg = 'white'
-
-## Color for the tab indicator on errors.
-## Type: QtColor
-# c.colors.tabs.indicator.error = '#ff0000'
-
-## Color gradient start for the tab indicator.
-## Type: QtColor
-# c.colors.tabs.indicator.start = '#0000aa'
-
-## Color gradient end for the tab indicator.
-## Type: QtColor
-# c.colors.tabs.indicator.stop = '#00aa00'
-
-## Color gradient interpolation system for the tab indicator.
-## Type: ColorSystem
-## Valid values:
-##   - rgb: Interpolate in the RGB color system.
-##   - hsv: Interpolate in the HSV color system.
-##   - hsl: Interpolate in the HSL color system.
-##   - none: Don't show a gradient.
-# c.colors.tabs.indicator.system = 'rgb'
-
-## Background color of unselected odd tabs.
-## Type: QtColor
-# c.colors.tabs.odd.bg = 'grey'
-
-## Foreground color of unselected odd tabs.
-## Type: QtColor
-# c.colors.tabs.odd.fg = 'white'
+c.colors.tabs.bar.bg = '#000000'
+c.colors.tabs.even.bg = '#4f4f4f'
+c.colors.tabs.even.fg = '#cccccc'
+c.colors.tabs.odd.bg = '#4f4f4f'
+c.colors.tabs.odd.fg = '#cccccc'
+c.colors.tabs.indicator.error = '#ff0000'
+c.colors.tabs.indicator.start = '#0000aa'
+c.colors.tabs.indicator.stop = '#00aa00'
+c.colors.tabs.indicator.system = 'rgb'
+c.colors.tabs.selected.even.bg = 'black'
+c.colors.tabs.selected.even.fg = 'white'
+c.colors.tabs.selected.odd.bg = 'black'
+c.colors.tabs.selected.odd.fg = 'white'
+c.colors.tooltip.bg = 'black'
+c.colors.tooltip.fg = 'white'
 
 ## Background color of pinned unselected even tabs.
 ## Type: QtColor
@@ -400,30 +375,6 @@ c.spellcheck.languages = []
 ## Type: QtColor
 # c.colors.tabs.pinned.selected.odd.fg = 'white'
 
-## Background color of selected even tabs.
-## Type: QtColor
-# c.colors.tabs.selected.even.bg = 'black'
-
-## Foreground color of selected even tabs.
-## Type: QtColor
-# c.colors.tabs.selected.even.fg = 'white'
-
-## Background color of selected odd tabs.
-## Type: QtColor
-# c.colors.tabs.selected.odd.bg = 'black'
-
-## Foreground color of selected odd tabs.
-## Type: QtColor
-# c.colors.tabs.selected.odd.fg = 'white'
-
-## Background color of tooltips. If set to null, the Qt default is used.
-## Type: QssColor
-# c.colors.tooltip.bg = None
-
-## Foreground color of tooltips. If set to null, the Qt default is used.
-## Type: QssColor
-# c.colors.tooltip.fg = None
-
 c.colors.webpage.preferred_color_scheme = 'auto'
 
 # }}}
@@ -447,7 +398,7 @@ c.completion.web_history.max_items = 10
 
 # }}}
 
-# Content {{{
+# CONTENT {{{
 
 c.content.autoplay = False
 c.content.blocking.enabled = True
@@ -530,120 +481,32 @@ c.editor.remove_file = True
 
 # FONTS {{{
 
-## Font used in the completion categories.
-## Type: Font
-# c.fonts.completion.category = 'bold default_size default_family'
-
-## Font used in the completion widget.
-## Type: Font
-# c.fonts.completion.entry = 'default_size default_family'
-
-## Font used for the context menu. If set to null, the Qt default is
-## used.
-## Type: Font
-# c.fonts.contextmenu = None
-
-## Font used for the debugging console.
-## Type: Font
-# c.fonts.debug_console = 'default_size default_family'
-
-## Default font families to use. Whenever "default_family" is used in a
-## font setting, it's replaced with the fonts listed here. If set to an
-## empty value, a system-specific monospace default is used.
-## Type: List of Font, or Font
-# c.fonts.default_family = []
-
-## Default font size to use. Whenever "default_size" is used in a font
-## setting, it's replaced with the size listed here. Valid values are
-## either a float value with a "pt" suffix, or an integer value with a
-## "px" suffix.
-## Type: String
-# c.fonts.default_size = '10pt'
-
-## Font used for the downloadbar.
-## Type: Font
-# c.fonts.downloads = 'default_size default_family'
-
-## Font used for the hints.
-## Type: Font
-# c.fonts.hints = 'bold default_size default_family'
-
-## Font used in the keyhint widget.
-## Type: Font
-# c.fonts.keyhint = 'default_size default_family'
-
-## Font used for error messages.
-## Type: Font
-# c.fonts.messages.error = 'default_size default_family'
-
-## Font used for info messages.
-## Type: Font
-# c.fonts.messages.info = 'default_size default_family'
-
-## Font used for warning messages.
-## Type: Font
-# c.fonts.messages.warning = 'default_size default_family'
-
-## Font used for prompts.
-## Type: Font
-# c.fonts.prompts = 'default_size sans-serif'
-
-## Font used in the statusbar.
-## Type: Font
-# c.fonts.statusbar = 'default_size default_family'
-
-## Font used for selected tabs.
-## Type: Font
-# c.fonts.tabs.selected = 'default_size default_family'
-
-## Font used for unselected tabs.
-## Type: Font
-# c.fonts.tabs.unselected = 'default_size default_family'
-
-## Font used for tooltips. If set to null, the Qt default is used.
-## Type: Font
-# c.fonts.tooltip = None
-
-## Font family for cursive fonts.
-## Type: FontFamily
-# c.fonts.web.family.cursive = ''
-
-## Font family for fantasy fonts.
-## Type: FontFamily
-# c.fonts.web.family.fantasy = ''
-
-## Font family for fixed fonts.
-## Type: FontFamily
-# c.fonts.web.family.fixed = ''
-
-## Font family for sans-serif fonts.
-## Type: FontFamily
-# c.fonts.web.family.sans_serif = ''
-
-## Font family for serif fonts.
-## Type: FontFamily
-# c.fonts.web.family.serif = ''
-
-## Font family for standard fonts.
-## Type: FontFamily
-# c.fonts.web.family.standard = ''
-
-## Default font size (in pixels) for regular text.
-## Type: Int
-# c.fonts.web.size.default = 16
-
-## Default font size (in pixels) for fixed-pitch text.
-## Type: Int
-# c.fonts.web.size.default_fixed = 13
-
-## Hard minimum font size (in pixels).
-## Type: Int
-# c.fonts.web.size.minimum = 0
-
-## Minimum logical font size (in pixels) that is applied when zooming
-## out.
-## Type: Int
-# c.fonts.web.size.minimum_logical = 6
+c.fonts.default_family = 'Spleen'
+c.fonts.default_size = '16px'
+c.fonts.completion.entry = 'default_size default_family'
+c.fonts.contextmenu = 'default_size default_family'
+c.fonts.debug_console = 'default_size default_family'
+c.fonts.downloads = 'default_size default_family'
+c.fonts.hints = 'bold default_size default_family'
+c.fonts.keyhint = 'default_size default_family'
+c.fonts.messages.error = 'default_size default_family'
+c.fonts.messages.info = 'default_size default_family'
+c.fonts.messages.warning = 'default_size default_family'
+c.fonts.prompts = 'default_size sans-serif'
+c.fonts.statusbar = 'default_size default_family'
+c.fonts.tabs.selected = 'default_size default_family'
+c.fonts.tabs.unselected = 'default_size default_family'
+c.fonts.tooltip = 'default_size default_family'
+c.fonts.web.family.cursive = 'Noto Sans'
+c.fonts.web.family.fantasy = 'Noto Sans'
+c.fonts.web.family.fixed = 'Noto Sans Mono'
+c.fonts.web.family.sans_serif = 'Noto Sans'
+c.fonts.web.family.serif = 'Noto Serif'
+c.fonts.web.family.standard = 'Noto Sans'
+c.fonts.web.size.default = 16
+c.fonts.web.size.default_fixed = 16
+c.fonts.web.size.minimum = 0
+c.fonts.web.size.minimum_logical = 6
 
 # }}}
 
@@ -783,10 +646,10 @@ c.statusbar.widgets = ['keypress', 'search_match', 'url', 'scroll', 'history', '
 c.tabs.background = True
 c.tabs.close_mouse_button = 'middle'
 c.tabs.close_mouse_button_on_bar = 'new-tab'
-c.tabs.favicons.scale = 0.4
-c.tabs.favicons.show = 'always' # 'never'
+c.tabs.favicons.scale = 0
+c.tabs.favicons.show = 'never'
 c.tabs.indicator.padding = {'top': 2, 'bottom': 2, 'left': 0, 'right': 4}
-c.tabs.indicator.width = 3
+c.tabs.indicator.width = 0
 c.tabs.last_close = 'close'
 c.tabs.max_width = -1
 c.tabs.min_width = -1
@@ -795,7 +658,7 @@ c.tabs.mousewheel_switching = False
 c.tabs.new_position.related = 'next'
 c.tabs.new_position.stacking = True
 c.tabs.new_position.unrelated = 'last'
-c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 5, 'right': 5}
+c.tabs.padding = {'top': 3, 'bottom': 4, 'left': 6, 'right': 6}
 c.tabs.pinned.frozen = True
 c.tabs.pinned.shrink = True
 c.tabs.position = 'top'
@@ -804,23 +667,7 @@ c.tabs.show = 'multiple'
 c.tabs.tabs_are_windows = False
 c.tabs.title.alignment = 'left'
 c.tabs.title.elide = 'right'
-
-## Format to use for the tab title. The following placeholders are
-## defined:  * `{perc}`: Percentage as a string like `[10%]`. *
-## `{perc_raw}`: Raw percentage, e.g. `10`. * `{current_title}`: Title of
-## the current web page. * `{title_sep}`: The string `" - "` if a title
-## is set, empty otherwise. * `{index}`: Index of this tab. *
-## `{aligned_index}`: Index of this tab padded with spaces to have the
-## same   width. * `{relative_index}`: Index of this tab relative to the
-## current tab. * `{id}`: Internal tab ID of this tab. * `{scroll_pos}`:
-## Page scroll position. * `{host}`: Host of the current web page. *
-## `{backend}`: Either `webkit` or `webengine` * `{private}`: Indicates
-## when private mode is enabled. * `{current_url}`: URL of the current
-## web page. * `{protocol}`: Protocol (http/https/...) of the current web
-## page. * `{audio}`: Indicator for audio/mute status.
-## Type: FormatString
-# c.tabs.title.format = '{audio}{index}: {current_title}'
-
+c.tabs.title.format = '{audio}{current_title}'
 c.tabs.title.format_pinned = '{index}'
 c.tabs.tooltips = False
 c.tabs.undo_stack_size = 10
@@ -915,8 +762,8 @@ c.zoom.levels = ['25%', '33%', '50%', '67%', '75%', '90%', '100%', '110%', '125%
 # config.bind('F', 'hint all tab')
 # config.bind('G', 'scroll-to-perc')
 # config.bind('H', 'back')
-# config.bind('J', 'tab-next')
-# config.bind('K', 'tab-prev')
+config.bind('gn', 'tab-next')
+config.bind('gp', 'tab-prev')
 # config.bind('L', 'forward')
 # config.bind('M', 'bookmark-add')
 # config.bind('N', 'search-prev')
