@@ -58,12 +58,12 @@
     state: present
   loop:
     - users
-    - carloratm
+    - "{{ username }}"
 - name: Create user
   become: yes
   become_method: ansible.builtin.su
   ansible.builtin.user:
-    name: carloratm
+    name: "{{ username }}"
     shell: /bin/bash
     groups:
       - users
@@ -82,7 +82,7 @@
   community.general.sudoers:
     name: sudo
     state: present
-    user: carloratm
+    user: "{{ username }}"
     commands: ALL
 # }}}
 

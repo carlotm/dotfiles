@@ -3,4 +3,4 @@
   gather_facts: no
   connection: local
   tasks:
-    - ansible.builtin.include_tasks: "tasks/{{host}}/system.yml"
+    - ansible.builtin.include_tasks: "tasks/personal.yml"
