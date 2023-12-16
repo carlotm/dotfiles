@@ -22,6 +22,8 @@
       - base-devel
       - bash-completion
       - bat
+      - bluez
+      - bluez-utils
       - curl
       - elementary-icon-theme
       - eza
@@ -31,6 +33,7 @@
       - fzf
       - gdu
       - git
+      - gvfs
       - inotify-tools
       - libnotify
       - noto-fonts
@@ -38,6 +41,8 @@
       - openssh
       - pavucontrol
       - pulseaudio
+      - retroarch
+      - retroarch-assets-xmb
       - ripgrep
       - stow
       - sudo
@@ -163,6 +168,7 @@
       enabled: yes
     loop:
       - sshd
+      - bluetooth
 # }}}
 
 # FONTS {{{
@@ -282,6 +288,19 @@
       - {p: /scrolling-on-keystroke, t: bool, v: true}
       - {p: /shortcuts-no-menukey, t: bool, v: true}
       - {p: /shortcuts-no-mnemonics, t: bool, v: true}
+  - name: Configure power manager
+    community.general.xfconf:
+      channel: xfce4-power-manager
+      property: "/xfce4-power-manager{{item.p}}"
+      value_type: "{{item.t}}"
+      value: "{{item.v}}"
+    loop:
+      - {p: /blank-on-ac, t: int, v: 0}
+      - {p: /dpms-enabled, t: bool, v: false}
+      - {p: /general-notification, t: bool, v: false}
+      - {p: /lock-screen-suspend-hibernate, t: bool, v: false}
+      - {p: /power-button-action, t: int, v: 3}
+      - {p: /show-tray-icon, t: bool, v: true}
   - name: Configure fonts
     community.general.xfconf:
       channel: xsettings
@@ -297,6 +316,12 @@
       - {p: /Gtk/FontName, t: string, v: "Noto Sans 16"}
       - {p: /Gtk/MonospaceFontName, t: string, v: "Noto Sans Mono Regular 18"}
       - {p: /Net/IconThemeName, t: string, v: elementary}
+  - name: Hide desktop icons
+    community.general.xfconf:
+      channel: xfce4-desktop
+      property: /desktop-icons/style
+      value_type: int
+      value: 0
   - name: Configure wallpaper
     community.general.xfconf:
       channel: xfce4-desktop

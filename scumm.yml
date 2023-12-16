@@ -35,6 +35,7 @@
       - inotify-tools
       - keepassxc
       - libnotify
+      - mupdf
       - noto-fonts
       - noto-fonts-emoji
       - openssh
