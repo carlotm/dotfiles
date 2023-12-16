@@ -3,4 +3,189 @@
   gather_facts: no
   connection: local
   tasks:
-    - ansible.builtin.include_tasks: "tasks/personal.yml"
+# SYSTEM PACKAGES {{{
+  - name: Force remove packages
+    become: yes
+    become_method: ansible.builtin.su
+    community.general.pacman:
+      pkg:
+      - lftp
+      state: absent
+  - name: Install packages
+    become: yes
+    become_method: ansible.builtin.su
+    community.general.pacman:
+      pkg:
+      - alacritty
+      - ansible
+      - awesome
+      - base
+      - base-devel
+      - bash-completion
+      - bat
+      - curl
+      - elementary-icon-theme
+      - eza
+      - fd
+      - fontconfig
+      - fzf
+      - gdu
+      - git
+      - inotify-tools
+      - keepassxc
+      - libnotify
+      - noto-fonts
+      - noto-fonts-emoji
+      - openssh
+      - pavucontrol
+      - pulseaudio
+      - qutebrowser
+      - ripgrep
+      - starship
+      - stow
+      - sudo
+      - vim
+      - wget
+      - xfce4-appfinder
+      - xfce4-screenshooter
+      - xorg
+      - xorg-xinit
+      update_cache: true
+# }}}
+
+# USER AND GROUPS {{{
+  - name: Create base groups
+    become: yes
+    become_method: ansible.builtin.su
+    ansible.builtin.group:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - users
+      - "{{ username }}"
+  - name: Create user
+    become: yes
+    become_method: ansible.builtin.su
+    ansible.builtin.user:
+      name: "{{ username }}"
+      shell: /bin/bash
+      groups:
+        - users
+        - disk
+        - adm
+        - audio
+        - video
+        - disk
+        - sys
+        - tty
+        - daemon
+        - input
+  - name: Add user to sudoers
+    become: yes
+    become_method: ansible.builtin.su
+    community.general.sudoers:
+      name: sudo
+      state: present
+      user: "{{ username }}"
+      commands: ALL
+# }}}
+
+# SYSTEM CONFIG {{{
+  - name: Set hostname
+    become: yes
+    ansible.builtin.hostname:
+      name: "{{ host }}"
+  - name: Set timezone
+    become: yes
+    community.general.timezone:
+      name: Europe/Vienna
+  - name: Copy locale conf
+    become: yes
+    ansible.builtin.copy:
+      src: "templates/{{ host }}/etc/locale.conf"
+      dest: /etc/locale.conf
+      owner: root
+      group: root
+      mode: "0644"
+  - name: Copy timezone
+    become: yes
+    ansible.builtin.copy:
+      src: "templates/{{ host }}/etc/timezone"
+      dest: /etc/timezone
+      owner: root
+      group: root
+      mode: "0644"
+  - name: Generate locales
+    become: yes
+    community.general.locale_gen:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - en_US.UTF-8
+      - it_IT.UTF-8
+      - de_DE.UTF-8
+# }}}
+
+# GIT CONFIG {{{
+  - name: Config global git
+    community.general.git_config:
+      name: "{{ item.name }}"
+      scope: global
+      value: "{{ item.value }}"
+    loop:
+      - {name: user.name, value: "Ascani Carlo"}
+      - {name: alias.co, value: checkout}
+      - {name: alias.s, value: status}
+      - {name: init.defaultBranch, value: main}
+  - name: Set git email
+    community.general.git_config:
+      name: user.email
+      scope: global
+      value: "{{ email }}"
+# }}}
+
+# DOTFILES {{{
+  - name: Stow dotfiles
+    ansible.builtin.shell: stow "{{ host }}" --target="{{lookup('env', 'HOME')}}"
+    args:
+      chdir: dotfiles
+# }}}
+
+# SERVICES {{{
+  - name: Start and enable serives
+    become: yes
+    ansible.builtin.service:
+      name: "{{ item }}"
+      state: started
+      enabled: yes
+    loop:
+      - sshd
+# }}}
+
+# FONTS {{{
+  - name: Copy console fonts
+    become: yes
+    ansible.builtin.copy:
+      src: "templates/{{ host }}/usr/share/kbd/consolefonts/{{ item }}"
+      dest: /usr/share/kbd/consolefonts/
+      owner: root
+      group: root
+      mode: "0644"
+    loop:
+      - spleen-5x8.psfu
+      - spleen-6x12.psfu
+      - spleen-8x16.psfu
+      - spleen-12x24.psfu
+      - spleen-16x32.psfu
+      - spleen-32x64.psfu
+  - name: Copy console configuration
+    become: yes
+    ansible.builtin.copy:
+      src: "templates/{{ host }}/etc/vconsole.conf"
+      dest: /etc/vconsole.conf
+      owner: root
+      group: root
+      mode: "0644"
+  - name: Update font cache
+    ansible.builtin.command: fc-cache -fv
+# }}}
