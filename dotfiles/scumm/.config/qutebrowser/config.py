@@ -730,8 +730,6 @@ c.zoom.levels = ['25%', '33%', '50%', '67%', '75%', '90%', '100%', '110%', '125%
 # config.bind('<Ctrl-F5>', 'reload -f')
 # config.bind('<Ctrl-F>', 'scroll-page 0 1')
 # config.bind('<Ctrl-N>', 'open -w')
-# config.bind('<Ctrl-PgDown>', 'tab-next')
-# config.bind('<Ctrl-PgUp>', 'tab-prev')
 # config.bind('<Ctrl-Q>', 'quit')
 # config.bind('<Ctrl-Return>', 'selection-follow -t')
 # config.bind('<Ctrl-Shift-N>', 'open -p')
