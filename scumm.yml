@@ -11,6 +11,7 @@
       pkg:
       - lftp
       state: absent
+      update_cache: true
   - name: Install packages
     become: yes
     become_method: ansible.builtin.su

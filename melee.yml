@@ -1,7 +1,7 @@
 ---
-- hosts: localhost
+- hosts: 192.168.1.103
+  remote_user: "{{ username }}"
   gather_facts: no
-  connection: local
   tasks:
 # SYSTEM PACKAGES {{{
   - name: Force remove packages
@@ -11,6 +11,7 @@
       pkg:
       - lftp
       state: absent
+      update_cache: true
   - name: Install packages
     become: yes
     become_method: ansible.builtin.su
@@ -120,13 +121,37 @@
       - en_US.UTF-8
       - it_IT.UTF-8
       - de_DE.UTF-8
+  - name: Create autologin conf folder
+    become: yes
+    ansible.builtin.file:
+      path: /etc/systemd/system/getty@tty1.service.d
+      owner: root
+      group: root
+      state: directory
+      mode: "0644"
+  - name: Autologin conf
+    become: yes
+    ansible.builtin.copy:
+      src: "templates/{{ host }}/etc/systemd/system/getty@tty1.service.d/autologin.conf"
+      dest: /etc/systemd/system/getty@tty1.service.d/autologin.conf
+      owner: root
+      group: root
+      mode: "0644"
 # }}}
 
 # DOTFILES {{{
-  - name: Stow dotfiles
-    ansible.builtin.shell: stow "{{ host }}" --target="{{lookup('env', 'HOME')}}"
-    args:
-      chdir: dotfiles
+  - name: Copy dotfiles
+    ansible.builtin.copy:
+      src: "dotfiles/{{host}}/{{item.s}}"
+      dest: "/home/{{username}}/{{item.d}}"
+      owner: "{{username}}"
+      group: "{{username}}"
+      mode: "{{item.m}}"
+    loop:
+      - {s: ".bashrc", d: "", m: "0644"}
+      - {s: ".bash_profile", d: "", m: "0644"}
+      - {s: ".xinitrc", d: "", m: "0744"}
+      - {s: "wallpaper.jpg", d: "", m: "0644"}
 # }}}
 
 # SERVICES {{{
@@ -169,12 +194,117 @@
 # }}}
 
 # XFCE {{{
-# - name: Configure terminal
-#   community.general.xfconf:
-#     channel: xfce4-terminal
-#     property: "{{item.p}}"
-#     value_type: "{{item.t}}"
-#     value: "{{item.v}}"
-#   loop:
-#     - {p: /scrolling-bar, t: string, v: TERMINAL_SCROLLBAR_NONE}
+  - name: Configure panels
+    community.general.xfconf:
+      channel: xfce4-panel
+      property: /panels
+      value_type: int
+      value: [1]
+      force_array: true
+  - name: Make panel dark
+    community.general.xfconf:
+      channel: xfce4-panel
+      property: /panels/dark-mode
+      value_type: bool
+      value: true
+  - name: Configure panel
+    community.general.xfconf:
+      channel: xfce4-panel
+      property: "/panels/panel-1{{item.p}}"
+      value_type: "{{item.t}}"
+      value: "{{item.v}}"
+    loop:
+      - {p: /autohide-behavior, t: int, v: 0}
+      - {p: /enable-struts, t: bool, v: true}
+      - {p: /icon-size, t: int, v: 42}
+      - {p: /length, t: double, v: 100.000000}
+      - {p: /length-adjust, t: bool, v: true}
+      - {p: /mode, t: int, v: 2}
+      - {p: /plugin-ids, t: int, v: [1,2,3,6,8,12,14]}
+      - {p: /position, t: string, v: "p=2;x=1266;y=360"}
+      - {p: /position-locked, t: bool, v: true}
+      - {p: /size, t: int, v: 64}
+  - name: Configure panel plugins
+    community.general.xfconf:
+      channel: xfce4-panel
+      property: "/plugins{{item.p}}"
+      value_type: "{{item.t}}"
+      value: "{{item.v}}"
+    loop:
+      - {p: /plugin-1, t: string, v: applicationsmenu}
+      - {p: /plugin-1/button-icon, t: string, v: archlinux-logo}
+      - {p: /plugin-1/show-button-title, t: bool, v: false}
+      - {p: /plugin-2, t: string, v: tasklist}
+      - {p: /plugin-2/flat-buttons, t: bool, v: true}
+      - {p: /plugin-2/grouping, t: bool, v: false}
+      - {p: /plugin-2/show-handle, t: bool, v: false}
+      - {p: /plugin-2/show-labels, t: bool, v: false}
+      - {p: /plugin-2/show-tooltips, t: bool, v: false}
+      - {p: /plugin-2/window-scrolling, t: bool, v: false}
+      - {p: /plugin-3, t: string, v: separator}
+      - {p: /plugin-3/expand, t: bool, v: true}
+      - {p: /plugin-3/style, t: int, v: 0}
+      - {p: /plugin-8, t: string, v: pulseaudio}
+      - {p: /plugin-8/enable-keyboard-shortcuts, t: bool, v: true}
+      - {p: /plugin-8/enable-mpris, t: bool, v: false}
+      - {p: /plugin-8/enable-multimedia-keys, t: bool, v: false}
+      - {p: /plugin-8/enable-wnck, t: bool, v: false}
+      - {p: /plugin-8/mixer-command, t: string, v: pavucontrol}
+      - {p: /plugin-8/play-sound, t: bool, v: true}
+      - {p: /plugin-8/show-notifications, t: bool, v: true}
+      - {p: /plugin-8/volume-max, t: int, v: 120}
+      - {p: /plugin-12, t: string, v: clock}
+      - {p: /plugin-12/digital-date-font, t: string, v: "Noto Sans Bold 10"}
+      - {p: /plugin-12/digital-date-format, t: string, v: "%d %b"}
+      - {p: /plugin-12/digital-time-font, t: string, v: "Noto Sans Bold 16"}
+      - {p: /plugin-12/mode, t: int, v: 2}
+      - {p: /plugin-12/timezone, t: string, v: "Europe/Vienna"}
+      - {p: /plugin-14, t: string, v: actions}
+      - {p: /plugin-14/appearance, t: int, v: 0}
+      - {p: /plugin-14/ask-confirmation, t: bool, v: false}
+      - {p: /plugin-14/items, t: string, v: ["-lock-screen", "-switch-user", "-separator", "-suspend", "-hibernate", "-hybrid-sleep", "-separator", "+shutdown", "-restart", "-separator", "-logout", "-logout-dialog"]}
+  - name: Configure terminal
+    community.general.xfconf:
+      channel: xfce4-terminal
+      property: "{{item.p}}"
+      value_type: "{{item.t}}"
+      value: "{{item.v}}"
+    loop:
+      - {p: /font-use-system, t: bool, v: true}
+      - {p: /misc-copy-on-select, t: bool, v: true}
+      - {p: /misc-cursor-blinks, t: bool, v: true}
+      - {p: /misc-menubar-default, t: bool, v: false}
+      - {p: /misc-toolbar-default, t: bool, v: false}
+      - {p: /misc-mouse-autohide, t: bool, v: true}
+      - {p: /misc-show-unsafe-paste-dialog, t: bool, v: false}
+      - {p: /misc-default-geometry, t: string, v: "80x20"}
+      - {p: /scrolling-bar, t: string, v: TERMINAL_SCROLLBAR_NONE}
+      - {p: /scrolling-on-keystroke, t: bool, v: true}
+      - {p: /shortcuts-no-menukey, t: bool, v: true}
+      - {p: /shortcuts-no-mnemonics, t: bool, v: true}
+  - name: Configure fonts
+    community.general.xfconf:
+      channel: xsettings
+      property: "{{item.p}}"
+      value_type: "{{item.t}}"
+      value: "{{item.v}}"
+    loop:
+      - {p: /Xft/Antialias, t: int, v: 1}
+      - {p: /Xft/DPI, t: int, v: 96}
+      - {p: /Xft/Hinting, t: int, v: -1}
+      - {p: /Xft/HintStyle, t: string, v: hintfull}
+      - {p: /Xft/RGBA, t: string, v: rgb}
+      - {p: /Gtk/FontName, t: string, v: "Noto Sans 16"}
+      - {p: /Gtk/MonospaceFontName, t: string, v: "Noto Sans Mono Regular 18"}
+      - {p: /Net/IconThemeName, t: string, v: elementary}
+  - name: Configure wallpaper
+    community.general.xfconf:
+      channel: xfce4-desktop
+      property: "/backdrop/screen0/monitorHDMI-1{{item.p}}"
+      value_type: "{{item.t}}"
+      value: "{{item.v}}"
+    loop:
+      - {p: /workspace0/color-style, t: int, v: 0}
+      - {p: /workspace0/image-style, t: int, v: 5}
+      - {p: /workspace0/last-image, t: string, v: "/home/{{username}}/wallpaper.jpg"}
 # }}}

@@ -19,5 +19,3 @@ export EDITOR=vim
 source /usr/share/bash-completion/bash_completion
 NIX_PROFILE=/home/carloratm/.nix-profile/etc/profile.d/nix.sh
 if [ -e $NIX_PROFILE ]; then source $NIX_PROFILE; fi
-
-eval "$(starship init bash)"
