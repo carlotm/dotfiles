@@ -4,3 +4,9 @@ scumm: scumm.yml
 		-e host=$@ \
 		-e email=carlotm@protonmail.com \
 		--ask-become-pass $<
+
+melee: melee.yml
+	ansible-playbook \
+		-e username=gianfranco \
+		-e host=$@ \
+		--ask-become-pass $<
