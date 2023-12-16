@@ -687,8 +687,8 @@ c.url.yank_ignored_parameters = ['ref', 'utm_source', 'utm_medium', 'utm_campaig
 # }}}
 
 # ZOOM {{{
-c.zoom.default = '120%'
-c.zoom.levels = ['25%', '33%', '50%', '67%', '75%', '90%', '100%', '110%', '125%', '150%', '175%', '200%', '250%', '300%', '400%', '500%']
+c.zoom.default = '140%'
+c.zoom.levels = ['25%', '50%', '75%', '100%', '125%', '140%', '150%', '175%', '200%']
 # }}}
 
 # BINDINGS {{{
