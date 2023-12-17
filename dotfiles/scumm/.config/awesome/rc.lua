@@ -37,6 +37,8 @@ beautiful.init("/home/carloratm/.config/awesome/theme.lua")
 terminal = "alacritty"
 launcher = "xfce4-appfinder"
 screenshooter = "xfce4-screenshooter"
+home_desk_screen = "/home/carloratm/.screenlayout/home_desk.sh"
+only_laptop_screen = "/home/carloratm/.screenlayout/only_laptop.sh"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod1"
@@ -57,6 +59,10 @@ globalkeys = gears.table.join(
     {description = "focus next by index", group = "client"}),
   awful.key({ modkey }, "k", function () awful.client.focus.byidx(-1) end,
     {description = "focus previous by index", group = "client"}),
+  awful.key({ modkey }, "F9", function () awful.spawn(only_laptop_screen) end,
+    {description = "set home desk screenlayout", group = "launcher"}),
+  awful.key({ modkey }, "F10", function () awful.spawn(home_desk_screen) end,
+    {description = "set home desk screenlayout", group = "launcher"}),
   awful.key({ modkey, "Shift" }, "Return", function () awful.spawn(terminal) end,
     {description = "open a terminal", group = "launcher"}),
   awful.key({ modkey }, "F2", function () awful.spawn(launcher) end,

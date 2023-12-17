@@ -39,6 +39,7 @@
       - gvfs
       - inotify-tools
       - libnotify
+      - libretro
       - noto-fonts
       - noto-fonts-emoji
       - openssh
