@@ -2,5 +2,6 @@
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 xrdb ~/.Xresources &
 setxkbmap -layout us,it,de -option grp:win_space_toggle &
+xfce4-power-manager &
 xsetroot -solid "#000000" &
 exec awesome
