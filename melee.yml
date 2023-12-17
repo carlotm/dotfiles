@@ -102,6 +102,14 @@
     become: yes
     ansible.builtin.hostname:
       name: "{{ host }}"
+  - name: Copy motd
+    become: yes
+    ansible.builtin.copy:
+      src: "templates/{{ host }}/etc/motd"
+      dest: /etc/motd
+      owner: root
+      group: root
+      mode: "0644"
   - name: Set timezone
     become: yes
     community.general.timezone:
