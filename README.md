@@ -8,7 +8,7 @@ The control machine needs `make` `git` (to clone this repo) and `ansible`.
 
 On archlinux: `sudo pacman -S base base-devel git ansible`
 
-## scumm
+## scumm (142)
 
 It's my personal laptop.
 

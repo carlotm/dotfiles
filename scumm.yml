@@ -36,6 +36,7 @@
       - keepassxc
       - libnotify
       - mupdf
+      - networkmanager
       - noto-fonts
       - noto-fonts-emoji
       - openssh
@@ -161,6 +162,7 @@
       state: started
       enabled: yes
     loop:
+      - NetworkManager
       - sshd
 # }}}
 
