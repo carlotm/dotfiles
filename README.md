@@ -12,6 +12,10 @@ On archlinux: `sudo pacman -S base base-devel git ansible`
 
 It's my personal laptop.
 
+## monkey
+
+It's my work laptop, it's an exact copy of `scumm`.
+
 ## melee (143)
 
 It's a computer I use as a media center, attached to a beam.
