@@ -3,64 +3,54 @@
   remote_user: "{{ username }}"
   gather_facts: no
   tasks:
-# SYSTEM PACKAGES {{{
-  - name: Force remove packages
-    become: yes
-    become_method: ansible.builtin.su
-    community.general.pacman:
-      pkg:
-      - lftp
-      state: absent
-      update_cache: true
-  - name: Install packages
-    become: yes
-    become_method: ansible.builtin.su
-    community.general.pacman:
-      pkg:
-      - ansible
-      - base
-      - base-devel
-      - bash-completion
-      - bat
-      - blueman
-      - bluez
-      - bluez-utils
-      - curl
-      - elementary-icon-theme
-      - eza
-      - fd
-      - firefox
-      - fontconfig
-      - fs-uae
-      - fs-uae-launcher
-      - fzf
-      - gdu
-      - git
-      - gvfs
-      - inotify-tools
-      - libnotify
-      - libretro
-      - networkmanager
-      - noto-fonts
-      - noto-fonts-emoji
-      - openssh
-      - pavucontrol
-      - pulseaudio
-      - pulseaudio-bluetooth
-      - retroarch
-      - retroarch-assets-xmb
-      - ripgrep
-      - stow
-      - sudo
-      - unzip
-      - vim
-      - wget
-      - xfce4
-      - xfce4-goodies
-      - xorg
-      - xorg-xinit
-      update_cache: true
-# }}}
+  - import_tasks: _pacman.yml
+    vars:
+      remove:
+        - lftp
+      install:
+        - ansible
+        - base
+        - base-devel
+        - bash-completion
+        - bat
+        - blueman
+        - bluez
+        - bluez-utils
+        - curl
+        - elementary-icon-theme
+        - eza
+        - fd
+        - firefox
+        - figlet
+        - fontconfig
+        - fs-uae
+        - fs-uae-launcher
+        - fzf
+        - gdu
+        - git
+        - gvfs
+        - inotify-tools
+        - libnotify
+        - libretro
+        - networkmanager
+        - noto-fonts
+        - noto-fonts-emoji
+        - openssh
+        - pavucontrol
+        - pulseaudio
+        - pulseaudio-bluetooth
+        - retroarch
+        - retroarch-assets-xmb
+        - ripgrep
+        - stow
+        - sudo
+        - unzip
+        - vim
+        - wget
+        - xfce4
+        - xfce4-goodies
+        - xorg
+        - xorg-xinit
 
 # USER AND GROUPS {{{
   - name: Create base groups
@@ -169,46 +159,13 @@
       - {s: "wallpaper.jpg", d: "", m: "0644"}
 # }}}
 
-# SERVICES {{{
-  - name: Start and enable serives
-    become: yes
-    ansible.builtin.service:
-      name: "{{ item }}"
-      state: started
-      enabled: yes
-    loop:
-      - NetworkManager
-      - sshd
-      - bluetooth
-# }}}
-
-# FONTS {{{
-  - name: Copy console fonts
-    become: yes
-    ansible.builtin.copy:
-      src: "templates/{{ host }}/usr/share/kbd/consolefonts/{{ item }}"
-      dest: /usr/share/kbd/consolefonts/
-      owner: root
-      group: root
-      mode: "0644"
-    loop:
-      - spleen-5x8.psfu
-      - spleen-6x12.psfu
-      - spleen-8x16.psfu
-      - spleen-12x24.psfu
-      - spleen-16x32.psfu
-      - spleen-32x64.psfu
-  - name: Copy console configuration
-    become: yes
-    ansible.builtin.copy:
-      src: "templates/{{ host }}/etc/vconsole.conf"
-      dest: /etc/vconsole.conf
-      owner: root
-      group: root
-      mode: "0644"
-  - name: Update font cache
-    ansible.builtin.command: fc-cache -fv
-# }}}
+  - import_tasks: _services.yml
+    vars:
+      services:
+        - NetworkManager
+        - sshd
+        - bluetooth
+  - import_tasks: _fonts.yml
 
 # XFCE {{{
   - name: Configure panels

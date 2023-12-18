@@ -3,62 +3,51 @@
   gather_facts: no
   connection: local
   tasks:
-# SYSTEM PACKAGES {{{
-  - name: Force remove packages
-    become: yes
-    become_method: ansible.builtin.su
-    community.general.pacman:
-      pkg:
-      - lftp
-      state: absent
-      update_cache: true
-  - name: Install packages
-    become: yes
-    become_method: ansible.builtin.su
-    community.general.pacman:
-      pkg:
-      - alacritty
-      - ansible
-      - awesome
-      - base
-      - base-devel
-      - bash-completion
-      - bat
-      - curl
-      - elementary-icon-theme
-      - eza
-      - fd
-      - figlet
-      - fontconfig
-      - fzf
-      - gdu
-      - git
-      - inotify-tools
-      - keepassxc
-      - libnotify
-      - mupdf
-      - networkmanager
-      - noto-fonts
-      - noto-fonts-emoji
-      - openssh
-      - pavucontrol
-      - pulseaudio
-      - qutebrowser
-      - ripgrep
-      - starship
-      - stow
-      - sudo
-      - unzip
-      - vim
-      - wget
-      - xfce4-appfinder
-      - xfce4-power-manager
-      - xfce4-screenshooter
-      - xfce4-settings
-      - xorg
-      - xorg-xinit
-      update_cache: true
-# }}}
+  - import_tasks: _pacman.yml
+    vars:
+      remove:
+        - lftp
+      install:
+        - alacritty
+        - ansible
+        - awesome
+        - base
+        - base-devel
+        - bash-completion
+        - bat
+        - curl
+        - elementary-icon-theme
+        - eza
+        - fd
+        - figlet
+        - fontconfig
+        - fzf
+        - gdu
+        - git
+        - inotify-tools
+        - keepassxc
+        - libnotify
+        - mupdf
+        - networkmanager
+        - noto-fonts
+        - noto-fonts-emoji
+        - openssh
+        - pavucontrol
+        - pulseaudio
+        - qutebrowser
+        - ripgrep
+        - starship
+        - stow
+        - sudo
+        - unzip
+        - vim
+        - wget
+        - xfce4-appfinder
+        - xfce4-power-manager
+        - xfce4-screenshooter
+        - xfce4-settings
+        - xorg
+        - xorg-xinit
 
 # USER AND GROUPS {{{
   - name: Create base groups
@@ -161,45 +150,12 @@
       chdir: dotfiles
 # }}}
 
-# SERVICES {{{
-  - name: Start and enable serives
-    become: yes
-    ansible.builtin.service:
-      name: "{{ item }}"
-      state: started
-      enabled: yes
-    loop:
-      - NetworkManager
-      - sshd
-# }}}
-
-# FONTS {{{
-  - name: Copy console fonts
-    become: yes
-    ansible.builtin.copy:
-      src: "templates/{{ host }}/usr/share/kbd/consolefonts/{{ item }}"
-      dest: /usr/share/kbd/consolefonts/
-      owner: root
-      group: root
-      mode: "0644"
-    loop:
-      - spleen-5x8.psfu
-      - spleen-6x12.psfu
-      - spleen-8x16.psfu
-      - spleen-12x24.psfu
-      - spleen-16x32.psfu
-      - spleen-32x64.psfu
-  - name: Copy console configuration
-    become: yes
-    ansible.builtin.copy:
-      src: "templates/{{ host }}/etc/vconsole.conf"
-      dest: /etc/vconsole.conf
-      owner: root
-      group: root
-      mode: "0644"
-  - name: Update font cache
-    ansible.builtin.command: fc-cache -fv
-# }}}
+  - import_tasks: _services.yml
+    vars:
+      services:
+        - NetworkManager
+        - sshd
+  - import_tasks: _fonts.yml
 
 # XFCE {{{
   - name: Configure power manager
