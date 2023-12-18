@@ -38,6 +38,7 @@ terminal = "alacritty"
 launcher = "xfce4-appfinder"
 screenshooter = "xfce4-screenshooter"
 home_desk_screen = "/home/carloratm/.screenlayout/home_desk.sh"
+office_desk_screen = "/home/carloratm/.screenlayout/office_desk.sh"
 only_laptop_screen = "/home/carloratm/.screenlayout/only_laptop.sh"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
@@ -63,6 +64,8 @@ globalkeys = gears.table.join(
     {description = "set home desk screenlayout", group = "launcher"}),
   awful.key({ modkey }, "F10", function () awful.spawn(home_desk_screen) end,
     {description = "set home desk screenlayout", group = "launcher"}),
+  awful.key({ modkey }, "F11", function () awful.spawn(office_desk_screen) end,
+    {description = "set office desk screenlayout", group = "launcher"}),
   awful.key({ modkey, "Shift" }, "Return", function () awful.spawn(terminal) end,
     {description = "open a terminal", group = "launcher"}),
   awful.key({ modkey }, "F2", function () awful.spawn(launcher) end,
