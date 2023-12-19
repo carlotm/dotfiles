@@ -14,6 +14,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'yegappan/lsp'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elixir-editors/vim-elixir'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 plug#end()
 # }}}
 
@@ -77,6 +79,7 @@ nnoremap gd :LspGotoDefinition<CR>
 nnoremap <Leader>e :LspDiagCurrent<CR>
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+g:UltiSnipsExpandTrigger = "ss"
 # }}}
 
 # LSP {{{
