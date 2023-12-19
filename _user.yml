@@ -1,0 +1,34 @@
+- name: Create base groups
+  become: yes
+  become_method: ansible.builtin.su
+  ansible.builtin.group:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - users
+    - "{{ username }}"
+- name: Create user
+  become: yes
+  become_method: ansible.builtin.su
+  ansible.builtin.user:
+    name: "{{ username }}"
+    shell: /bin/bash
+    groups:
+      - users
+      - disk
+      - adm
+      - audio
+      - video
+      - disk
+      - sys
+      - tty
+      - daemon
+      - input
+- name: Add user to sudoers
+  become: yes
+  become_method: ansible.builtin.su
+  community.general.sudoers:
+    name: sudo
+    state: present
+    user: "{{ username }}"
+    commands: ALL

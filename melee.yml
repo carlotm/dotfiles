@@ -1,6 +1,6 @@
 ---
 - hosts: 192.168.1.143
-  remote_user: "{{ username }}"
+  remote_user: gianfranco
   gather_facts: no
   tasks:
   - import_tasks: _pacman.yml
@@ -51,43 +51,9 @@
         - xfce4-goodies
         - xorg
         - xorg-xinit
-
-# USER AND GROUPS {{{
-  - name: Create base groups
-    become: yes
-    become_method: ansible.builtin.su
-    ansible.builtin.group:
-      name: "{{ item }}"
-      state: present
-    loop:
-      - users
-      - "{{ username }}"
-  - name: Create user
-    become: yes
-    become_method: ansible.builtin.su
-    ansible.builtin.user:
-      name: "{{ username }}"
-      shell: /bin/bash
-      groups:
-        - users
-        - disk
-        - adm
-        - audio
-        - video
-        - disk
-        - sys
-        - tty
-        - daemon
-        - input
-  - name: Add user to sudoers
-    become: yes
-    become_method: ansible.builtin.su
-    community.general.sudoers:
-      name: sudo
-      state: present
-      user: "{{ username }}"
-      commands: ALL
-# }}}
+  - import_tasks: _user.yml
+    vars:
+      username: gianfranco
 
 # SYSTEM CONFIG {{{
   - name: Set hostname
@@ -148,9 +114,9 @@
   - name: Copy dotfiles
     ansible.builtin.copy:
       src: "dotfiles/{{host}}/{{item.s}}"
-      dest: "/home/{{username}}/{{item.d}}"
-      owner: "{{username}}"
-      group: "{{username}}"
+      dest: "/home/gianfranco/{{item.d}}"
+      owner: gianfranco
+      group: gianfranco
       mode: "{{item.m}}"
     loop:
       - {s: ".bashrc", d: "", m: "0644"}
@@ -305,5 +271,5 @@
     loop:
       - {p: /workspace0/color-style, t: int, v: 0}
       - {p: /workspace0/image-style, t: int, v: 5}
-      - {p: /workspace0/last-image, t: string, v: "/home/{{username}}/wallpaper.jpg"}
+      - {p: /workspace0/last-image, t: string, v: "/home/gianfranco/wallpaper.jpg"}
 # }}}
