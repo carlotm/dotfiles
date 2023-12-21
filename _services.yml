@@ -1,4 +1,4 @@
-- name: Start and enable serives
+- name: Start and enable services
   become: yes
   ansible.builtin.service:
     name: "{{ item }}"

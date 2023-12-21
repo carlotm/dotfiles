@@ -146,7 +146,7 @@
       - {p: /dpms-on-battery-off, t: int, v: 19}
       - {p: /dpms-on-battery-sleep, t: int, v: 18}
       - {p: /general-notification, t: bool, v: true}
-      - {p: /handle-brightness-keys, t: bool, v: false}
+      - {p: /handle-brightness-keys, t: bool, v: true}
       - {p: /hibernate-button-action, t: int, v: 0}
       - {p: /inactivity-on-ac, t: int, v: 14}
       - {p: /inactivity-on-battery, t: int, v: 14}
