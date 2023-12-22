@@ -1,0 +1,36 @@
+- name: Set hostname
+  become: yes
+  ansible.builtin.hostname:
+    name: "{{ host }}"
+- name: Generate motd
+  become: yes
+  ansible.builtin.command: "figlet {{ host }} > /etc/motd"
+- name: Set timezone
+  become: yes
+  community.general.timezone:
+    name: Europe/Vienna
+- name: Copy locale conf
+  become: yes
+  ansible.builtin.copy:
+    src: "locale.conf"
+    dest: /etc/locale.conf
+    owner: root
+    group: root
+    mode: "0644"
+- name: Copy timezone
+  become: yes
+  ansible.builtin.copy:
+    src: "timezone"
+    dest: /etc/timezone
+    owner: root
+    group: root
+    mode: "0644"
+- name: Generate locales
+  become: yes
+  community.general.locale_gen:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - en_US.UTF-8
+    - it_IT.UTF-8
+    - de_DE.UTF-8

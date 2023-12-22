@@ -1,0 +1,50 @@
+- name: Force remove packages
+  become: yes
+  become_method: ansible.builtin.su
+  community.general.pacman:
+    pkg:
+      - lftp
+    state: absent
+    update_cache: true
+- name: Install packages
+  become: yes
+  become_method: ansible.builtin.su
+  community.general.pacman:
+    pkg:
+      - alacritty
+      - ansible
+      - base
+      - base-devel
+      - bash-completion
+      - bat
+      - curl
+      - elementary-icon-theme
+      - eza
+      - fd
+      - figlet
+      - fontconfig
+      - fzf
+      - gdu
+      - git
+      - inotify-tools
+      - mupdf
+      - networkmanager
+      - noto-fonts
+      - noto-fonts-emoji
+      - openssh
+      - pavucontrol
+      - pulseaudio
+      - ripgrep
+      - starship
+      - stow
+      - sudo
+      - unzip
+      - vim
+      - wget
+      - xorg
+      - xorg-xinit
+- name: Install extra packages
+  become: yes
+  become_method: ansible.builtin.su
+  community.general.pacman:
+    pkg: "{{pkgs}}"

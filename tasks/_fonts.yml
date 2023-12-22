@@ -1,7 +1,7 @@
 - name: Copy console fonts
   become: yes
   ansible.builtin.copy:
-    src: "templates/{{ host }}/usr/share/kbd/consolefonts/{{ item }}"
+    src: "{{ item }}"
     dest: /usr/share/kbd/consolefonts/
     owner: root
     group: root
@@ -16,7 +16,7 @@
 - name: Copy console configuration
   become: yes
   ansible.builtin.copy:
-    src: "templates/{{ host }}/etc/vconsole.conf"
+    src: vconsole.conf
     dest: /etc/vconsole.conf
     owner: root
     group: root
