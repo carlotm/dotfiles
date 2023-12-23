@@ -18,6 +18,7 @@
       - base-devel
       - bash-completion
       - bat
+      - cpupower
       - curl
       - elementary-icon-theme
       - eza
@@ -140,6 +141,16 @@
   loop:
     - NetworkManager
     - sshd
+    - cpupower
+
+- name: Copy cpupower conf
+  become: yes
+  ansible.builtin.copy:
+    src: templates/cpupower
+    dest: /etc/default/cpupower
+    owner: root
+    group: root
+    mode: "0644"
 
 - name: Copy console fonts
   become: yes
