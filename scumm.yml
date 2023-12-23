@@ -25,10 +25,7 @@
   - import_tasks: tasks/fonts.yml
   - import_tasks: tasks/git.yml
   - import_tasks: tasks/power_manager.yml
-
-# # DOTFILES {{{
-  # - name: Stow dotfiles
-  #   ansible.builtin.shell: stow "{{ host }}" --target="{{lookup('env', 'HOME')}}"
-  #   args:
-  #     chdir: dotfiles
-# # }}}
+  - name: Stow dotfiles
+    ansible.builtin.shell: stow "{{ host }}" --target="{{lookup('env', 'HOME')}}"
+    args:
+      chdir: dotfiles
