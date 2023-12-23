@@ -1,0 +1,6 @@
+- name: Install packages
+  become: yes
+  become_method: ansible.builtin.su
+  community.general.pacman:
+    pkg:
+      - fs-uae

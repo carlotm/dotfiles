@@ -16,6 +16,6 @@
   - import_tasks: tasks/awesomewm.yml
 
   - name: Stow dotfiles
-    ansible.builtin.shell: stow "{{ host }}" --target="{{lookup('env', 'HOME')}}"
+    ansible.builtin.shell: stow "{{ host }}" --target="/home/carloratm"
     args:
       chdir: dotfiles
