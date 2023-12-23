@@ -3,7 +3,7 @@
   gather_facts: no
   connection: local
   tasks:
-  - import_tasks: tasks/_pacman.yml
+  - import_tasks: tasks/pacman.yml
     vars:
       pkgs:
         - awesome
@@ -14,74 +14,21 @@
         - xfce4-power-manager
         - xfce4-screenshooter
         - xfce4-settings
-  - import_tasks: tasks/_user.yml
+  - import_tasks: tasks/user.yml
     vars:
       username: carloratm
-  - import_tasks: tasks/_locale.yml
-  - import_tasks: tasks/_services.yml
+  - import_tasks: tasks/locale.yml
+  - import_tasks: tasks/services.yml
     vars:
       services:
         - ""
-  - import_tasks: tasks/_fonts.yml
-
-# # GIT CONFIG {{{
-  # - name: Config global git
-  #   community.general.git_config:
-  #     name: "{{ item.name }}"
-  #     scope: global
-  #     value: "{{ item.value }}"
-  #   loop:
-  #     - {name: user.name, value: "Ascani Carlo"}
-  #     - {name: alias.co, value: checkout}
-  #     - {name: alias.s, value: status}
-  #     - {name: init.defaultBranch, value: main}
-  # - name: Set git email
-  #   community.general.git_config:
-  #     name: user.email
-  #     scope: global
-  #     value: "{{ email }}"
-# # }}}
+  - import_tasks: tasks/fonts.yml
+  - import_tasks: tasks/git.yml
+  - import_tasks: tasks/power_manager.yml
 
 # # DOTFILES {{{
   # - name: Stow dotfiles
   #   ansible.builtin.shell: stow "{{ host }}" --target="{{lookup('env', 'HOME')}}"
   #   args:
   #     chdir: dotfiles
-# # }}}
-
-# # XFCE {{{
-  # - name: Configure power manager
-  #   community.general.xfconf:
-  #     channel: xfce4-power-manager
-  #     property: "/xfce4-power-manager{{item.p}}"
-  #     value_type: "{{item.t}}"
-  #     value: "{{item.v}}"
-  #   loop:
-  #     - {p: /battery-button-action, t: int, v: 0}
-  #     - {p: /blank-on-ac, t: int, v: 0}
-  #     - {p: /blank-on-battery, t: int, v: 0}
-  #     - {p: /brightness-level-on-acc, t: int, v: 100}
-  #     - {p: /brightness-level-on-battery, t: int, v: 100}
-  #     - {p: /brightness-on-ac, t: int, v: 9}
-  #     - {p: /brightness-on-battery, t: int, v: 9}
-  #     - {p: /brightness-switch, t: int, v: 0}
-  #     - {p: /brightness-switch-restore-on-exit, t: int, v: 1}
-  #     - {p: /critical-power-action, t: int, v: 3}
-  #     - {p: /critical-power-level, t: int, v: 5}
-  #     - {p: /dpms-enabled, t: bool, v: false}
-  #     - {p: /dpms-on-battery-off, t: int, v: 19}
-  #     - {p: /dpms-on-battery-sleep, t: int, v: 18}
-  #     - {p: /general-notification, t: bool, v: true}
-  #     - {p: /handle-brightness-keys, t: bool, v: true}
-  #     - {p: /hibernate-button-action, t: int, v: 0}
-  #     - {p: /inactivity-on-ac, t: int, v: 14}
-  #     - {p: /inactivity-on-battery, t: int, v: 14}
-  #     - {p: /lid-action-on-ac, t: int, v: 0}
-  #     - {p: /lid-action-on-battery, t: int, v: 0}
-  #     - {p: /lock-screen-suspend-hibernate, t: bool, v: false}
-  #     - {p: /power-button-action, t: int, v: 4}
-  #     - {p: /show-panel-label, t: int, v: 0}
-  #     - {p: /show-presentation-indicator, t: bool, v: false}
-  #     - {p: /show-tray-icon, t: bool, v: false}
-  #     - {p: /sleep-button-action, t: int, v: 0}
 # # }}}

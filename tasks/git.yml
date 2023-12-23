@@ -1,0 +1,15 @@
+- name: Config global git
+  community.general.git_config:
+    name: "{{ item.name }}"
+    scope: global
+    value: "{{ item.value }}"
+  loop:
+    - {name: user.name, value: "Ascani Carlo"}
+    - {name: alias.co, value: checkout}
+    - {name: alias.s, value: status}
+    - {name: init.defaultBranch, value: main}
+- name: Set git email
+  community.general.git_config:
+    name: user.email
+    scope: global
+    value: "{{ email }}"

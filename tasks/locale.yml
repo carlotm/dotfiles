@@ -12,7 +12,7 @@
 - name: Copy locale conf
   become: yes
   ansible.builtin.copy:
-    src: "locale.conf"
+    src: templates/locale.conf
     dest: /etc/locale.conf
     owner: root
     group: root
@@ -20,7 +20,7 @@
 - name: Copy timezone
   become: yes
   ansible.builtin.copy:
-    src: "timezone"
+    src: templates/timezone
     dest: /etc/timezone
     owner: root
     group: root
