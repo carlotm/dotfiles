@@ -1,3 +1,14 @@
+- name: Install packages
+  become: yes
+  become_method: ansible.builtin.su
+  community.general.pacman:
+    pkg:
+      - awesome
+      - xfce4-appfinder
+      - xfce4-power-manager
+      - xfce4-screenshooter
+      - xfce4-settings
+
 - name: Configure power manager
   community.general.xfconf:
     channel: xfce4-power-manager

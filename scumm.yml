@@ -4,33 +4,16 @@
   connection: local
   tasks:
 
-  - import_tasks: tasks/pacman.yml
-    vars:
-      pkgs:
-        - awesome
-        - keepassxc
-        - qutebrowser
-        - xfce4-appfinder
-        - xfce4-power-manager
-        - xfce4-screenshooter
-        - xfce4-settings
-
-  - import_tasks: tasks/user.yml
+  - import_tasks: tasks/system.yml
     vars:
       username: carloratm
-
-  - import_tasks: tasks/locale.yml
-
-  - import_tasks: tasks/services.yml
-    vars:
-      services:
-        - ""
-
-  - import_tasks: tasks/fonts.yml
+      pkgs:
+        - keepassxc
+        - qutebrowser
 
   - import_tasks: tasks/git.yml
 
-  - import_tasks: tasks/power_manager.yml
+  - import_tasks: tasks/awesomewm.yml
 
   - name: Stow dotfiles
     ansible.builtin.shell: stow "{{ host }}" --target="{{lookup('env', 'HOME')}}"

@@ -4,39 +4,22 @@
   gather_facts: no
   tasks:
 
-  - import_tasks: tasks/pacman.yml
-    vars:
-      pkgs:
-        - blueman
-        - bluez
-        - bluez-utils
-        - firefox
-        - fs-uae
-        - fs-uae-launcher
-        - gvfs
-        - libretro
-        - pulseaudio-bluetooth
-        - retroarch
-        - retroarch-assets-xmb
-        - xfce4
-        - xfce4-goodies
-
-  - import_tasks: tasks/user.yml
+  - import_tasks: tasks/system.yml
     vars:
       username: gianfranco
+      pkgs:
+        - firefox
+        - gvfs
+        - xfce4
+        - xfce4-goodies
 
   - import_tasks: tasks/autologin.yml
     vars:
       username: gianfranco
 
-  - import_tasks: tasks/locale.yml
+  - import_tasks: tasks/bluetooth.yml
 
-  - import_tasks: tasks/services.yml
-    vars:
-      services:
-        - bluetooth
-
-  - import_tasks: tasks/fonts.yml
+  - import_tasks: tasks/retrogaming.yml
 
   - name: Copy dotfiles
     ansible.builtin.copy:

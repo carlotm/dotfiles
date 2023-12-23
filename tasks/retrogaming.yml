@@ -1,0 +1,10 @@
+- name: Install packages
+  become: yes
+  become_method: ansible.builtin.su
+  community.general.pacman:
+    pkg:
+      - fs-uae
+      - fs-uae-launcher
+      - libretro
+      - retroarch
+      - retroarch-assets-xmb
