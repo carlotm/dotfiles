@@ -8,3 +8,20 @@
       - libretro
       - retroarch
       - retroarch-assets-xmb
+
+- name: Create retroarch conf folder
+  become: yes
+  ansible.builtin.file:
+    path: "/home/{{username}}/.config/retroarch"
+    owner: "{{username}}"
+    group: "{{username}}"
+    state: directory
+    mode: "0744"
+
+- name: Copy retroarch config
+  ansible.builtin.copy:
+    src: templates/retroarch.cfg
+    dest: "/home/{{username}}/.config/retroarch/retroarch.cfg"
+    owner: "{{username}}"
+    group: "{{username}}"
+    mode: "0644"

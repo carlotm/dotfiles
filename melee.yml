@@ -20,6 +20,8 @@
   - import_tasks: tasks/bluetooth.yml
 
   - import_tasks: tasks/retrogaming.yml
+    vars:
+      username: gianfranco
 
   - name: Copy dotfiles
     ansible.builtin.copy:
