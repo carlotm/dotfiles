@@ -3,114 +3,41 @@
   remote_user: gianfranco
   gather_facts: no
   tasks:
-  - import_tasks: _pacman.yml
+
+  - import_tasks: tasks/pacman.yml
     vars:
-      remove:
-        - lftp
-      install:
-        - ansible
-        - base
-        - base-devel
-        - bash-completion
-        - bat
+      pkgs:
         - blueman
         - bluez
         - bluez-utils
-        - curl
-        - elementary-icon-theme
-        - eza
-        - fd
         - firefox
-        - figlet
-        - fontconfig
         - fs-uae
         - fs-uae-launcher
-        - fzf
-        - gdu
-        - git
         - gvfs
-        - inotify-tools
-        - libnotify
         - libretro
-        - networkmanager
-        - noto-fonts
-        - noto-fonts-emoji
-        - openssh
-        - pavucontrol
-        - pulseaudio
         - pulseaudio-bluetooth
         - retroarch
         - retroarch-assets-xmb
-        - ripgrep
-        - stow
-        - sudo
-        - unzip
-        - vim
-        - wget
         - xfce4
         - xfce4-goodies
-        - xorg
-        - xorg-xinit
-  - import_tasks: _user.yml
+
+  - import_tasks: tasks/user.yml
     vars:
       username: gianfranco
 
-# SYSTEM CONFIG {{{
-  - name: Set hostname
-    become: yes
-    ansible.builtin.hostname:
-      name: "{{ host }}"
-  - name: Generate motd
-    become: yes
-    ansible.builtin.command: "figlet {{ host }} > /etc/motd"
-  - name: Set timezone
-    become: yes
-    community.general.timezone:
-      name: Europe/Vienna
-  - name: Copy locale conf
-    become: yes
-    ansible.builtin.copy:
-      src: "templates/{{ host }}/etc/locale.conf"
-      dest: /etc/locale.conf
-      owner: root
-      group: root
-      mode: "0644"
-  - name: Copy timezone
-    become: yes
-    ansible.builtin.copy:
-      src: "templates/{{ host }}/etc/timezone"
-      dest: /etc/timezone
-      owner: root
-      group: root
-      mode: "0644"
-  - name: Generate locales
-    become: yes
-    community.general.locale_gen:
-      name: "{{ item }}"
-      state: present
-    loop:
-      - en_US.UTF-8
-      - it_IT.UTF-8
-      - de_DE.UTF-8
-  - name: Create autologin conf folder
-    become: yes
-    ansible.builtin.file:
-      path: /etc/systemd/system/getty@tty1.service.d
-      owner: root
-      group: root
-      state: directory
-      mode: "0644"
-  - name: Autologin conf
-    become: yes
-    ansible.builtin.copy:
-      src: "templates/{{ host }}/etc/systemd/system/getty@tty1.service.d/autologin.conf"
-      dest: /etc/systemd/system/getty@tty1.service.d/autologin.conf
-      owner: root
-      group: root
-      mode: "0644"
-# }}}
+  - import_tasks: tasks/autologin.yml
+    vars:
+      username: gianfranco
 
-# DOTFILES {{{
+  - import_tasks: tasks/locale.yml
+
+  - import_tasks: tasks/services.yml
+    vars:
+      services:
+        - bluetooth
+
+  - import_tasks: tasks/fonts.yml
+
   - name: Copy dotfiles
     ansible.builtin.copy:
       src: "dotfiles/{{host}}/{{item.s}}"
@@ -123,17 +50,7 @@
       - {s: ".bash_profile", d: "", m: "0644"}
       - {s: ".xinitrc", d: "", m: "0744"}
       - {s: "wallpaper.jpg", d: "", m: "0644"}
-# }}}
 
-  - import_tasks: _services.yml
-    vars:
-      services:
-        - NetworkManager
-        - sshd
-        - bluetooth
-  - import_tasks: _fonts.yml
-
-# XFCE {{{
   - name: Configure panels
     community.general.xfconf:
       channel: xfce4-panel
@@ -272,4 +189,3 @@
       - {p: /workspace0/color-style, t: int, v: 0}
       - {p: /workspace0/image-style, t: int, v: 5}
       - {p: /workspace0/last-image, t: string, v: "/home/gianfranco/wallpaper.jpg"}
-# }}}

@@ -27,6 +27,7 @@
       - gdu
       - git
       - inotify-tools
+      - libnotify
       - mupdf
       - networkmanager
       - noto-fonts
