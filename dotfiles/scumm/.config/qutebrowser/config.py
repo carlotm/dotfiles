@@ -328,9 +328,9 @@ c.spellcheck.languages = []
 # c.colors.statusbar.url.warn.fg = 'yellow'
 
 c.colors.tabs.bar.bg = '#000000'
-c.colors.tabs.even.bg = '#4f4f4f'
+c.colors.tabs.even.bg = '#404040'
 c.colors.tabs.even.fg = '#cccccc'
-c.colors.tabs.odd.bg = '#4f4f4f'
+c.colors.tabs.odd.bg = '#404040'
 c.colors.tabs.odd.fg = '#cccccc'
 c.colors.tabs.indicator.error = '#ff0000'
 c.colors.tabs.indicator.start = '#0000aa'
@@ -342,38 +342,14 @@ c.colors.tabs.selected.odd.bg = 'black'
 c.colors.tabs.selected.odd.fg = 'white'
 c.colors.tooltip.bg = 'black'
 c.colors.tooltip.fg = 'white'
-
-## Background color of pinned unselected even tabs.
-## Type: QtColor
-# c.colors.tabs.pinned.even.bg = 'darkseagreen'
-
-## Foreground color of pinned unselected even tabs.
-## Type: QtColor
-# c.colors.tabs.pinned.even.fg = 'white'
-
-## Background color of pinned unselected odd tabs.
-## Type: QtColor
-# c.colors.tabs.pinned.odd.bg = 'seagreen'
-
-## Foreground color of pinned unselected odd tabs.
-## Type: QtColor
-# c.colors.tabs.pinned.odd.fg = 'white'
-
-## Background color of pinned selected even tabs.
-## Type: QtColor
-# c.colors.tabs.pinned.selected.even.bg = 'black'
-
-## Foreground color of pinned selected even tabs.
-## Type: QtColor
-# c.colors.tabs.pinned.selected.even.fg = 'white'
-
-## Background color of pinned selected odd tabs.
-## Type: QtColor
-# c.colors.tabs.pinned.selected.odd.bg = 'black'
-
-## Foreground color of pinned selected odd tabs.
-## Type: QtColor
-# c.colors.tabs.pinned.selected.odd.fg = 'white'
+c.colors.tabs.pinned.even.bg = '#404040'
+c.colors.tabs.pinned.even.fg = '#cccccc'
+c.colors.tabs.pinned.odd.bg = '#404040'
+c.colors.tabs.pinned.odd.fg = '#cccccc'
+c.colors.tabs.pinned.selected.even.bg = 'black'
+c.colors.tabs.pinned.selected.even.fg = 'white'
+c.colors.tabs.pinned.selected.odd.bg = 'black'
+c.colors.tabs.pinned.selected.odd.fg = 'white'
 
 c.colors.webpage.preferred_color_scheme = 'auto'
 
@@ -646,8 +622,8 @@ c.statusbar.widgets = ['keypress', 'search_match', 'url', 'scroll', 'history', '
 c.tabs.background = True
 c.tabs.close_mouse_button = 'middle'
 c.tabs.close_mouse_button_on_bar = 'new-tab'
-c.tabs.favicons.scale = 0
-c.tabs.favicons.show = 'never'
+c.tabs.favicons.scale = 1
+c.tabs.favicons.show = 'pinned'
 c.tabs.indicator.padding = {'top': 2, 'bottom': 2, 'left': 0, 'right': 4}
 c.tabs.indicator.width = 0
 c.tabs.last_close = 'close'
