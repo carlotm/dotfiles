@@ -10,6 +10,8 @@
       pkgs:
         - catfish
         - ffmpegthumbnailer
+        - gphoto2
+        - gvfs-gphoto2
         - gvfs
         - keepassxc
         - libgepub
