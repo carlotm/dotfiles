@@ -8,8 +8,19 @@
     vars:
       username: carloratm
       pkgs:
+        - catfish
+        - ffmpegthumbnailer
+        - gvfs
         - keepassxc
+        - libgepub
+        - libgsf
+        - poppler-glib
         - qutebrowser
+        - thunar
+        - thunar-volman
+        - thunar-archive-plugin
+        - thunar-media-tags-plugin
+        - tumbler
 
   - import_tasks: tasks/git.yml
 
