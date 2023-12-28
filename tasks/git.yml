@@ -8,6 +8,7 @@
     - {name: alias.co, value: checkout}
     - {name: alias.s, value: status}
     - {name: init.defaultBranch, value: main}
+
 - name: Set git email
   community.general.git_config:
     name: user.email

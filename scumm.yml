@@ -31,6 +31,6 @@
   - import_tasks: tasks/amiga.yml
 
   - name: Stow dotfiles
-    ansible.builtin.shell: stow "{{ host }}" --target="/home/carloratm"
+    ansible.builtin.shell: stow "{{kind}}" --target="/home/carloratm"
     args:
       chdir: dotfiles

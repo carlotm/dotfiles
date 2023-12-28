@@ -93,11 +93,11 @@
 - name: Set hostname
   become: yes
   ansible.builtin.hostname:
-    name: "{{ host }}"
+    name: "{{ target_hostname }}"
 
 - name: Generate motd
   become: yes
-  ansible.builtin.command: "figlet {{ host }} > /etc/motd"
+  ansible.builtin.command: "figlet {{ target_hostname }} > /etc/motd"
 
 - name: Set timezone
   become: yes
@@ -167,6 +167,7 @@
     - spleen-12x24.psfu
     - spleen-16x32.psfu
     - spleen-32x64.psfu
+
 - name: Copy console configuration
   become: yes
   ansible.builtin.copy:
@@ -175,5 +176,6 @@
     owner: root
     group: root
     mode: "0644"
+
 - name: Update font cache
   ansible.builtin.command: fc-cache -fv
