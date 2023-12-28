@@ -1,4 +1,3 @@
-TERM = "xterm-256color"
 import = ["/home/carloratm/.config/alacritty/dark.toml"]
 
 [colors]

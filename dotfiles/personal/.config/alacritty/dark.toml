@@ -1,8 +1,3 @@
-[colors]
-author = "Carlo Ascani (https://tilde.club/~carloratm)"
-description = "My personal dark Theme"
-name = "Dark Theme"
-
 [colors.bright]
 black = "#686868"
 blue = "#5454ff"
