@@ -15,96 +15,28 @@ c.spellcheck.languages = []
 
 # COLORS {{{
 
-## Background color of the completion widget category headers.
-## Type: QssColor
-# c.colors.completion.category.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #888888, stop:1 #505050)'
+c.colors.completion.category.bg = 'black'
+c.colors.completion.category.border.bottom = 'black'
+c.colors.completion.category.border.top = 'black'
+c.colors.completion.category.fg = 'white'
+c.colors.completion.even.bg = '#2d2d2d'
+c.colors.completion.odd.bg = '#222222'
+c.colors.completion.fg = ['white', 'gray', 'white']
+c.colors.completion.item.selected.bg = '#ff0000'
+c.colors.completion.item.selected.border.bottom = '#ff0000'
+c.colors.completion.item.selected.border.top = '#ff0000'
+c.colors.completion.item.selected.fg = 'white'
+c.colors.completion.item.selected.match.fg = 'white'
+c.colors.completion.match.fg = '#ff0000'
+c.colors.completion.scrollbar.bg = 'black'
+c.colors.completion.scrollbar.fg = '#222222'
 
-## Bottom border color of the completion widget category headers.
-## Type: QssColor
-# c.colors.completion.category.border.bottom = 'black'
-
-## Top border color of the completion widget category headers.
-## Type: QssColor
-# c.colors.completion.category.border.top = 'black'
-
-## Foreground color of completion widget category headers.
-## Type: QtColor
-# c.colors.completion.category.fg = 'white'
-
-## Background color of the completion widget for even rows.
-## Type: QssColor
-# c.colors.completion.even.bg = '#333333'
-
-## Text color of the completion widget. May be a single color to use for
-## all columns or a list of three colors, one for each column.
-## Type: List of QtColor, or QtColor
-# c.colors.completion.fg = ['white', 'white', 'white']
-
-## Background color of the selected completion item.
-## Type: QssColor
-# c.colors.completion.item.selected.bg = '#e8c000'
-
-## Bottom border color of the selected completion item.
-## Type: QssColor
-# c.colors.completion.item.selected.border.bottom = '#bbbb00'
-
-## Top border color of the selected completion item.
-## Type: QssColor
-# c.colors.completion.item.selected.border.top = '#bbbb00'
-
-## Foreground color of the selected completion item.
-## Type: QtColor
-# c.colors.completion.item.selected.fg = 'black'
-
-## Foreground color of the matched text in the selected completion item.
-## Type: QtColor
-# c.colors.completion.item.selected.match.fg = '#ff4444'
-
-## Foreground color of the matched text in the completion.
-## Type: QtColor
-# c.colors.completion.match.fg = '#ff4444'
-
-## Background color of the completion widget for odd rows.
-## Type: QssColor
-# c.colors.completion.odd.bg = '#444444'
-
-## Color of the scrollbar in the completion view.
-## Type: QssColor
-# c.colors.completion.scrollbar.bg = '#333333'
-
-## Color of the scrollbar handle in the completion view.
-## Type: QssColor
-# c.colors.completion.scrollbar.fg = 'white'
-
-## Background color of disabled items in the context menu. If set to
-## null, the Qt default is used.
-## Type: QssColor
-# c.colors.contextmenu.disabled.bg = None
-
-## Foreground color of disabled items in the context menu. If set to
-## null, the Qt default is used.
-## Type: QssColor
-# c.colors.contextmenu.disabled.fg = None
-
-## Background color of the context menu. If set to null, the Qt default
-## is used.
-## Type: QssColor
-# c.colors.contextmenu.menu.bg = None
-
-## Foreground color of the context menu. If set to null, the Qt default
-## is used.
-## Type: QssColor
-# c.colors.contextmenu.menu.fg = None
-
-## Background color of the context menu's selected item. If set to null,
-## the Qt default is used.
-## Type: QssColor
-# c.colors.contextmenu.selected.bg = None
-
-## Foreground color of the context menu's selected item. If set to null,
-## the Qt default is used.
-## Type: QssColor
-# c.colors.contextmenu.selected.fg = None
+c.colors.contextmenu.disabled.bg = None
+c.colors.contextmenu.disabled.fg = None
+c.colors.contextmenu.menu.bg = None
+c.colors.contextmenu.menu.fg = None
+c.colors.contextmenu.selected.bg = None
+c.colors.contextmenu.selected.fg = None
 
 ## Background color for the download bar.
 ## Type: QssColor
@@ -361,7 +293,7 @@ c.completion.cmd_history_max_items = 40
 c.completion.delay = 0
 c.completion.height = '50%'
 c.completion.min_chars = 1
-c.completion.open_categories = ['searchengines', 'quickmarks', 'bookmarks', 'history', 'filesystem']
+c.completion.open_categories = ['searchengines', 'bookmarks', 'history', 'filesystem']
 c.completion.quick = True
 c.completion.scrollbar.padding = 2
 c.completion.scrollbar.width = 12
@@ -459,7 +391,7 @@ c.editor.remove_file = True
 
 c.fonts.default_family = 'Spleen'
 c.fonts.default_size = '16px'
-c.fonts.completion.entry = 'default_size default_family'
+c.fonts.completion.entry = '24px default_family'
 c.fonts.contextmenu = '18px Noto Sans'
 c.fonts.debug_console = 'default_size default_family'
 c.fonts.downloads = 'default_size default_family'
@@ -657,7 +589,7 @@ c.tabs.wrap = True
 c.url.auto_search = 'naive'
 c.url.default_page = 'https://start.duckduckgo.com/'
 c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
-c.url.start_pages = ['https://start.duckduckgo.com']
+c.url.start_pages = ['qute://bookmarks/']
 c.url.yank_ignored_parameters = ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_name']
 
 # }}}
