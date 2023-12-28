@@ -13,9 +13,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'yegappan/lsp'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'elixir-editors/vim-elixir'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 plug#end()
 # }}}
 
