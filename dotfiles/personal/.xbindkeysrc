@@ -21,3 +21,12 @@
 
 "xfce4-screenshooter"
     Print
+
+"/home/carloratm/.screenlayout/only_laptop.sh"
+    Alt + F9
+
+"/home/carloratm/.screenlayout/home_desk.sh"
+    Alt + F10
+
+"/home/carloratm/.screenlayout/office_desk.sh"
+    Alt + F11
