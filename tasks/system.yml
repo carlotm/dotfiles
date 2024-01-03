@@ -42,6 +42,7 @@
       - pavucontrol
       - pulseaudio
       - ripgrep
+      - rxvt-unicode
       - starship
       - stow
       - sudo
