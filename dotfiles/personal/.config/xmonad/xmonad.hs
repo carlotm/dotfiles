@@ -3,6 +3,7 @@ import XMonad
 import XMonad.Util.EZConfig
 import XMonad.Util.Ungrab
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Layout.NoBorders
 
 main :: IO ()
 main = xmonad $ ewmhFullscreen $ ewmh $ myConfig
@@ -16,4 +17,4 @@ myConfig = def
     , layoutHook  = myLayout
     }
 
-myLayout = Tall 1 (3/100) (1/2)
+myLayout = smartBorders $ Tall 1 (3/100) (1/2)
