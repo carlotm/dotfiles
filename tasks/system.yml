@@ -3,6 +3,7 @@
   become_method: ansible.builtin.su
   community.general.pacman:
     pkg:
+      - asp
       - lftp
     state: absent
     update_cache: true
