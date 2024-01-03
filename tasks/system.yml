@@ -93,11 +93,16 @@
 - name: Set hostname
   become: yes
   ansible.builtin.hostname:
-    name: "{{ target_hostname }}"
+    name: "{{ host_name }}"
 
-- name: Generate motd
+- name: Copy motd
   become: yes
-  ansible.builtin.command: "figlet {{ target_hostname }} > /etc/motd"
+  ansible.builtin.template:
+    src: templates/motd.j2
+    dest: /etc/motd
+    owner: root
+    group: root
+    mode: "0644"
 
 - name: Set timezone
   become: yes

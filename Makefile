@@ -1,22 +1,24 @@
-personal: scumm.yml
+personal: personal.yml
 	ansible-playbook \
 		-i hosts \
-		-e kind=personal \
-		-e target_hostname=scumm \
+		-e dotfiles=personal \
+		-e host_name=scumm \
 		-e email=carlotm@protonmail.com \
 		--ask-become-pass $<
 
-work: scumm.yml
+work: personal.yml
 	ansible-playbook \
 		-i hosts \
-		-e kind=personal \
-		-e target_hostname=monkey \
+		-e dotfiles=personal \
+		-e host_name=monkey \
 		-e email=carlo@doloops.net \
 		--ask-become-pass $<
 
-mediacenter: melee.yml
+mediacenter: mediacenter.yml
 	ansible-playbook \
 		-i hosts \
-		-e kind=$@ \
-		-e target_hostname=melee \
+		-e dotfiles=mediacenter \
+		-e host_name=melee \
 		--ask-become-pass $<
+
+.PHONY: personal work mediacenter
