@@ -7,4 +7,4 @@ xrdb -merge ~/.Xresources
 setxkbmap -layout us,it,de -option grp:win_space_toggle
 xfce4-power-manager &
 xsetroot -solid "#000000"
-exec xmonad
+exec dbus-launch xmonad

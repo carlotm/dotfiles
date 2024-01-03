@@ -8,25 +8,15 @@
     vars:
       username: carloratm
       pkgs:
-        - catfish
-        - ffmpegthumbnailer
-        - gphoto2
-        - gvfs-gphoto2
-        - gvfs
         - keepassxc
         - libgepub
         - libgsf
         - poppler-glib
         - qutebrowser
-        - thunar
-        - thunar-volman
-        - thunar-archive-plugin
-        - thunar-media-tags-plugin
-        - tumbler
 
   - import_tasks: tasks/git.yml
 
-  - import_tasks: tasks/awesomewm.yml
+  - import_tasks: tasks/xmonad.yml
 
   - import_tasks: tasks/amiga.yml
 

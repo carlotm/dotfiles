@@ -20,14 +20,17 @@
       - bat
       - cpupower
       - curl
-      - elementary-icon-theme
       - eza
       - fd
+      - ffmpegthumbnailer
       - figlet
       - fontconfig
       - fzf
       - gdu
       - git
+      - gphoto2
+      - gvfs-gphoto2
+      - gvfs
       - inotify-tools
       - libnotify
       - mupdf

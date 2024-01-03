@@ -3,7 +3,15 @@
   become_method: ansible.builtin.su
   community.general.pacman:
     pkg:
-      - awesome
+      - catfish
+      - elementary-icon-theme
+      - thunar
+      - thunar-volman
+      - thunar-archive-plugin
+      - thunar-media-tags-plugin
+      - tumbler
+      - xmonad
+      - xmonad-contrib
       - xfce4-appfinder
       - xfce4-power-manager
       - xfce4-screenshooter
