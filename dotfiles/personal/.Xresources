@@ -1,5 +1,6 @@
 Xcursor.size: 48
 Xcursor.theme: Adwaita
+
 Xft.dpi: 96
 Xft.autohint: true
 Xft.antialias: true
@@ -7,4 +8,35 @@ Xft.hinting: true
 Xft.hintstyle: hintsfull
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
+
 URxvt.geometry: 400x400
+URxvt.depth: 32
+URxvt.termName: rxvt-unicode-256color
+URxvt.scrollBar: false
+URxvt.cursorBlink: true
+URxvt.pointerBlank: true
+URxvt.pointerBlankDelay: 2
+URxvt.font: xft:Spleen:size=22
+URxvt.boldFont: 
+URxvt.italicFont: 
+URxvt.boldItalicFont: 
+
+*.foreground:  #b2b2b2
+*.background:  #000000
+*.cursorColor: #afbfbf
+*.color0:      #202020
+*.color1:      #1818b2
+*.color2:      #18b2b2
+*.color3:      #18b218
+*.color4:      #b218b2
+*.color5:      #b21818
+*.color6:      #b2b2b2
+*.color7:      #b26818
+*.color8:      #686868
+*.color9:      #5454ff
+*.color10:     #54ffff
+*.color11:     #54ff54
+*.color12:     #ff54ff
+*.color13:     #ff5454
+*.color14:     #ffffff
+*.color15:     #ffff54

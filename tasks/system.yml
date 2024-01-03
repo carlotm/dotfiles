@@ -47,6 +47,7 @@
       - stow
       - sudo
       - unzip
+      - urxvt-perls
       - vim
       - wget
       - xorg
