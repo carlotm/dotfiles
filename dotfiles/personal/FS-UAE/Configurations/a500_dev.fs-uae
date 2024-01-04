@@ -1,5 +1,8 @@
 [config]
 amiga_model = A500
-#hard_drive_0 = "/home/carloratm/FS-UAE/Hard Drives/a500_dev"
+hard_drive_0 = workbench
+hard_drive_1 = code
+floppy_drive_0 = workbench_v1.3.3.adf
 kickstart_file = Kickstart1.3r34.5.rom
+slow_memory = 1024
 console_debugger = 1
