@@ -4,3 +4,7 @@
   community.general.pacman:
     pkg:
       - fs-uae
+
+- import_tasks: tasks/aur.yml
+  vars:
+    pkg: vasm
