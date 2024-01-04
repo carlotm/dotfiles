@@ -11,7 +11,7 @@ main :: IO ()
 main = xmonad $ ewmhFullscreen $ ewmh $ myConfig
 
 myConfig = def
-    { terminal = "alacritty"
+    { terminal = "lxterminal"
     , modMask = mod1Mask
     , borderWidth = 2
     , normalBorderColor = "#222222"

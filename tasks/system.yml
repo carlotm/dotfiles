@@ -34,6 +34,7 @@
       - gvfs
       - inotify-tools
       - libnotify
+      - lxterminal
       - mupdf
       - networkmanager
       - noto-fonts
@@ -42,12 +43,10 @@
       - pavucontrol
       - pulseaudio
       - ripgrep
-      - rxvt-unicode
       - starship
       - stow
       - sudo
       - unzip
-      - urxvt-perls
       - vim
       - wget
       - xorg
