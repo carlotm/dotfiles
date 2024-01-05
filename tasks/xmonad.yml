@@ -33,6 +33,7 @@
     value_type: "{{item.t}}"
     value: "{{item.v}}"
   loop:
+    - {p: /override, t: bool, v: true}
     - {p: /<Alt>F2, t: string, v: xfce4-appfinder}
     - {p: /Print, t: string, v: xfce4-screenshooter}
     - {p: /XF86Display, t: string, v: xfce4-display-settings --minimal}

@@ -34,7 +34,6 @@
       - gvfs
       - inotify-tools
       - libnotify
-      - lxterminal
       - mupdf
       - networkmanager
       - noto-fonts
