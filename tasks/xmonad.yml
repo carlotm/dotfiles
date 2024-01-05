@@ -128,6 +128,8 @@
     - {p: /position, t: string, v: "p=2;x=1266;y=360"}
     - {p: /position-locked, t: bool, v: true}
     - {p: /size, t: int, v: 64}
+    - {p: /background-style, t: int, v: 1}
+    - {p: /background-rgba, t: double, v: [0.000000, 0.000000, 0.000000, 1.000000]}
 - name: Configure panel plugins
   community.general.xfconf:
     channel: xfce4-panel
@@ -138,13 +140,10 @@
     - {p: /plugin-1, t: string, v: applicationsmenu}
     - {p: /plugin-1/button-icon, t: string, v: archlinux-logo}
     - {p: /plugin-1/show-button-title, t: bool, v: false}
-    - {p: /plugin-2, t: string, v: tasklist}
-    - {p: /plugin-2/flat-buttons, t: bool, v: true}
-    - {p: /plugin-2/grouping, t: bool, v: false}
-    - {p: /plugin-2/show-handle, t: bool, v: false}
-    - {p: /plugin-2/show-labels, t: bool, v: false}
-    - {p: /plugin-2/show-tooltips, t: bool, v: false}
-    - {p: /plugin-2/window-scrolling, t: bool, v: false}
+    - {p: /plugin-2, t: string, v: pager}
+    - {p: /plugin-2/miniature-view, t: bool, v: true}
+    - {p: /plugin-2/rows, t: int, v: 9}
+    - {p: /plugin-2/workspace-scrolling, t: bool, v: false}
     - {p: /plugin-3, t: string, v: separator}
     - {p: /plugin-3/expand, t: bool, v: true}
     - {p: /plugin-3/style, t: int, v: 0}
