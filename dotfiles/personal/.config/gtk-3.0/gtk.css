@@ -1,11 +1,12 @@
 wnck-pager
 {
-    color: #333333;
+    color: #141414;
+    background-color: #141414;
 }
 
 wnck-pager:selected
 {
-    background-color: #202020;
+    background-color: #242424;
 }
 
 wnck-pager:hover
