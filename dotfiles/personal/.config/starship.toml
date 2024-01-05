@@ -30,3 +30,5 @@ format = '[\[ERL $version\]]($style)'
 format = '[\[LUA $version\]]($style)'
 [nodejs]
 format = '[\[NODE $version\]]($style)'
+[haskell]
+format = '[\[HASKELL $version\]]($style)'
