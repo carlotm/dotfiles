@@ -13,7 +13,6 @@
         - libgsf
         - poppler-glib
         - qutebrowser
-        - xbindkeys
 
   - import_tasks: tasks/git.yml
 
