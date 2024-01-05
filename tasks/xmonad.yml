@@ -12,11 +12,83 @@
       - tumbler
       - xmonad
       - xmonad-contrib
-      - xfce4-appfinder
-      - xfce4-power-manager
-      - xfce4-screenshooter
-      - xfce4-settings
+      - xfce4
+      - xfce4-goodies
 
+- name: Configure panels
+  community.general.xfconf:
+    channel: xfce4-panel
+    property: /panels
+    value_type: int
+    value: [1]
+    force_array: true
+- name: Make panel dark
+  community.general.xfconf:
+    channel: xfce4-panel
+    property: /panels/dark-mode
+    value_type: bool
+    value: true
+- name: Configure panel
+  community.general.xfconf:
+    channel: xfce4-panel
+    property: "/panels/panel-1{{item.p}}"
+    value_type: "{{item.t}}"
+    value: "{{item.v}}"
+  loop:
+    - {p: /autohide-behavior, t: int, v: 0}
+    - {p: /enable-struts, t: bool, v: true}
+    - {p: /icon-size, t: int, v: 42}
+    - {p: /length, t: double, v: 100.000000}
+    - {p: /length-adjust, t: bool, v: true}
+    - {p: /mode, t: int, v: 2}
+    - {p: /plugin-ids, t: int, v: [1,2,3,6,8,12,14]}
+    - {p: /position, t: string, v: "p=2;x=1266;y=360"}
+    - {p: /position-locked, t: bool, v: true}
+    - {p: /size, t: int, v: 64}
+- name: Configure panel plugins
+  community.general.xfconf:
+    channel: xfce4-panel
+    property: "/plugins{{item.p}}"
+    value_type: "{{item.t}}"
+    value: "{{item.v}}"
+  loop:
+    - {p: /plugin-1, t: string, v: applicationsmenu}
+    - {p: /plugin-1/button-icon, t: string, v: archlinux-logo}
+    - {p: /plugin-1/show-button-title, t: bool, v: false}
+    - {p: /plugin-2, t: string, v: tasklist}
+    - {p: /plugin-2/flat-buttons, t: bool, v: true}
+    - {p: /plugin-2/grouping, t: bool, v: false}
+    - {p: /plugin-2/show-handle, t: bool, v: false}
+    - {p: /plugin-2/show-labels, t: bool, v: false}
+    - {p: /plugin-2/show-tooltips, t: bool, v: false}
+    - {p: /plugin-2/window-scrolling, t: bool, v: false}
+    - {p: /plugin-3, t: string, v: separator}
+    - {p: /plugin-3/expand, t: bool, v: true}
+    - {p: /plugin-3/style, t: int, v: 0}
+    - {p: /plugin-6, t: string, v: systray}
+    - {p: /plugin-6/hide-new-items, t: bool, v: false}
+    - {p: /plugin-6/icon-size, t: int, v: 0}
+    - {p: /plugin-6/square-icons, t: bool, v: false}
+    - {p: /plugin-6/symbolic-icons, t: bool, v: true}
+    - {p: /plugin-8, t: string, v: pulseaudio}
+    - {p: /plugin-8/enable-keyboard-shortcuts, t: bool, v: true}
+    - {p: /plugin-8/enable-mpris, t: bool, v: false}
+    - {p: /plugin-8/enable-multimedia-keys, t: bool, v: false}
+    - {p: /plugin-8/enable-wnck, t: bool, v: false}
+    - {p: /plugin-8/mixer-command, t: string, v: pavucontrol}
+    - {p: /plugin-8/play-sound, t: bool, v: true}
+    - {p: /plugin-8/show-notifications, t: bool, v: true}
+    - {p: /plugin-8/volume-max, t: int, v: 120}
+    - {p: /plugin-12, t: string, v: clock}
+    - {p: /plugin-12/digital-date-font, t: string, v: "Noto Sans Bold 10"}
+    - {p: /plugin-12/digital-date-format, t: string, v: "%d %b"}
+    - {p: /plugin-12/digital-time-font, t: string, v: "Noto Sans Bold 16"}
+    - {p: /plugin-12/mode, t: int, v: 2}
+    - {p: /plugin-12/timezone, t: string, v: "Europe/Vienna"}
+    - {p: /plugin-14, t: string, v: actions}
+    - {p: /plugin-14/appearance, t: int, v: 0}
+    - {p: /plugin-14/ask-confirmation, t: bool, v: false}
+    - {p: /plugin-14/items, t: string, v: ["-lock-screen", "-switch-user", "-separator", "-suspend", "-hibernate", "-hybrid-sleep", "-separator", "+shutdown", "-restart", "-separator", "-logout", "-logout-dialog"]}
 - name: Configure power manager
   community.general.xfconf:
     channel: xfce4-power-manager
