@@ -172,6 +172,7 @@
     - {p: /plugin-14/appearance, t: int, v: 0}
     - {p: /plugin-14/ask-confirmation, t: bool, v: false}
     - {p: /plugin-14/items, t: string, v: ["-lock-screen", "-switch-user", "-separator", "-suspend", "-hibernate", "-hybrid-sleep", "-separator", "+shutdown", "-restart", "-separator", "-logout", "-logout-dialog"]}
+
 - name: Configure power manager
   community.general.xfconf:
     channel: xfce4-power-manager
@@ -206,3 +207,49 @@
     - {p: /show-presentation-indicator, t: bool, v: false}
     - {p: /show-tray-icon, t: bool, v: false}
     - {p: /sleep-button-action, t: int, v: 0}
+
+- name: Configure terminal
+  community.general.xfconf:
+    channel: xfce4-terminal
+    property: "{{item.p}}"
+    value_type: "{{item.t}}"
+    value: "{{item.v}}"
+  loop:
+    - {p: /color-bold-is-bright, t: bool, v: true}
+    - {p: /command-login-shell, t: bool, v: false}
+    - {p: /font-allow-bold, t: bool, v: false}
+    - {p: /font-name, t: string, v: "Spleen 22"}
+    - {p: /font-use-system, t: bool, v: false}
+    - {p: /kinetic-scrolling, t: bool, v: false}
+    - {p: /misc-bell-urgent, t: bool, v: true}
+    - {p: /misc-borders-default, t: bool, v: true}
+    - {p: /misc-copy-on-select, t: bool, v: true}
+    - {p: /misc-cursor-blinks, t: bool, v: true}
+    - {p: /misc-hyperlinks-enabled, t: bool, v: true}
+    - {p: /misc-menubar-default, t: bool, v: false}
+    - {p: /misc-middle-click-opens-uri, t: bool, v: false}
+    - {p: /misc-mouse-autohide, t: bool, v: true}
+    - {p: /misc-right-click-action, t: string, v: TERMINAL_RIGHT_CLICK_ACTION_CONTEXT_MENU}
+    - {p: /misc-show-unsafe-paste-dialog, t: bool, v: false}
+    - {p: /misc-tab-close-middle-click, t: bool, v: false}
+    - {p: /misc-toolbar-default, t: bool, v: false}
+    - {p: /overlay-scrolling, t: bool, v: false}
+    - {p: /run-custom-command, t: bool, v: false}
+    - {p: /scrolling-bar, t: string, v: TERMINAL_SCROLLBAR_NONE}
+    - {p: /scrolling-on-keystroke, t: bool, v: true}
+    - {p: /scrolling-on-output, t: bool, v: false}
+    - {p: /shortcuts-no-menukey, t: bool, v: true}
+    - {p: /shortcuts-no-mnemonics, t: bool, v: true}
+    - {p: /text-blink-mode, t: string, v: TERMINAL_TEXT_BLINK_MODE_ALWAYS}
+    - {p: /title-initial, t: string, v: ""}
+    - {p: /title-mode, t: string, v: TERMINAL_TITLE_HIDE}
+    - {p: /use-default-working-dir, t: bool, v: false}
+    - {p: /color-selection-use-default, t: bool, v: false}
+    - {p: /color-selection, t: string, v: "#ffffffffffff"}
+    - {p: /color-selection-background, t: string, v: "#333333333333"}
+    - {p: /color-cursor, t: string, v: "#ffff00000000"}
+    - {p: /color-cursor-foreground, t: string, v: "#ffffffffffff"}
+    - {p: /color-cursor-use-default, t: bool, v: false}
+    - {p: /color-foreground, t: string, v: "#b2b2b2b2b2b2"}
+    - {p: /color-background, t: string, v: "#000000000000"}
+    - {p: /color-palette, t: string, v: "#202020;#b21818;#18b218;#b26818;#1818b2;#b218b2;#18b2b2;#b2b2b2;#686868;#ff5454;#54ff54;#ffff54;#5454ff;#ff54ff;#54ffff;#ffffff"}
