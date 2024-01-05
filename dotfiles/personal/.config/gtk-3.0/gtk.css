@@ -1,15 +1,36 @@
-wnck-pager
+.xfce4-panel widget grid button.flat.toggle
 {
-    color: #141414;
-    background-color: #141414;
+    font-family: 'Noto Sans';
+    font-weight: 900;
+    font-size: 16px;
+    border-radius: 0;
+    border-color: transparent;
+    border-right: 2px solid black;
+    padding: 8px;
+    color: #666;
 }
 
-wnck-pager:selected
+.xfce4-panel widget grid button.flat.toggle:hover
 {
-    background-color: #242424;
+    font-family: 'Noto Sans';
+    font-weight: 900;
+    font-size: 16px;
+    border-radius: 0;
+    border-color: transparent;
+    border-right: 2px solid black;
+    padding: 8px;
+    color: #666;
 }
 
-wnck-pager:hover
+.xfce4-panel widget grid button.flat.toggle:checked
 {
-    background-color: #333333;
+    font-family: 'Noto Sans';
+    font-weight: 900;
+    font-size: 16px;
+    border-radius: 0;
+    padding: 8px;
+    border-color: transparent;
+    border-right: 2px solid red;
+    background: #000000;
+    color: white;
 }

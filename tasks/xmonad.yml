@@ -10,10 +10,45 @@
       - thunar-archive-plugin
       - thunar-media-tags-plugin
       - tumbler
-      - xmonad
-      - xmonad-contrib
       - xfce4
       - xfce4-goodies
+      - xmonad
+      - xmonad-contrib
+
+- name: Xfce4 session setup
+  community.general.xfconf:
+    channel: xfce4-session
+    property: "{{item.p}}"
+    value_type: "{{item.t}}"
+    value: "{{item.v}}"
+  loop:
+    - {p: /general/FailsafeSessionName, t: string, v: Failsafe}
+    - {p: /general/LockCommand, t: string, v: xflock4}
+    - {p: /general/SaveOnExit, t: bool, v: false}
+    - {p: /general/SessionName, t: string, v: xfmonad}
+    - {p: /sessions/xfmonad/Count, t: int, v: 5}
+    - {p: /sessions/xfmonad/IsFailsafe, t: bool, v: false}
+    - {p: /sessions/xfmonad/Client0_PerScreen, t: bool, v: false}
+    - {p: /sessions/xfmonad/Client1_PerScreen, t: bool, v: false}
+    - {p: /sessions/xfmonad/Client2_PerScreen, t: bool, v: false}
+    - {p: /sessions/xfmonad/Client3_PerScreen, t: bool, v: false}
+    - {p: /sessions/xfmonad/Client0_Priority, t: int, v: 20}
+    - {p: /sessions/xfmonad/Client1_Priority, t: int, v: 15}
+    - {p: /sessions/xfmonad/Client2_Priority, t: int, v: 25}
+    - {p: /sessions/xfmonad/Client3_Priority, t: int, v: 30}
+
+- name: Xfce4 session commands
+  community.general.xfconf:
+    channel: xfce4-session
+    property: "/sessions/xfmonad{{item.p}}"
+    value_type: string
+    value: "{{item.v}}"
+    force_array: true
+  loop:
+    - {p: /Client0_Command, v: ["xfsettingsd"]}
+    - {p: /Client1_Command, v: ["xmonad"]}
+    - {p: /Client2_Command, v: ["xfce4-panel", "--disable-wm-check"]}
+    - {p: /Client3_Command, v: ["Thunar", "--daemon"]}
 
 - name: Reset xfwm4 xfce4 keyboard shortcuts
   ansible.builtin.command: xfconf-query -r -R -c xfce4-keyboard-shortcuts -p /xfwm4/custom
@@ -141,8 +176,9 @@
     - {p: /plugin-1/button-icon, t: string, v: archlinux-logo}
     - {p: /plugin-1/show-button-title, t: bool, v: false}
     - {p: /plugin-2, t: string, v: pager}
-    - {p: /plugin-2/miniature-view, t: bool, v: true}
+    - {p: /plugin-2/miniature-view, t: bool, v: false}
     - {p: /plugin-2/rows, t: int, v: 9}
+    - {p: /plugin-2/grouping, t: int, v: 1}
     - {p: /plugin-2/workspace-scrolling, t: bool, v: false}
     - {p: /plugin-3, t: string, v: separator}
     - {p: /plugin-3/expand, t: bool, v: true}
