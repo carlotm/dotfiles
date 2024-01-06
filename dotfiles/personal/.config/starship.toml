@@ -32,3 +32,5 @@ format = '[\[LUA $version\]]($style)'
 format = '[\[NODE $version\]]($style)'
 [haskell]
 format = '[\[HASKELL $version\]]($style)'
+[elm]
+format = '[\[ELM $version\]]($style)'
