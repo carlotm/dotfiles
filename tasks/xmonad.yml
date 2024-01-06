@@ -248,7 +248,7 @@
     - {p: /misc-cursor-blinks, t: bool, v: true}
     - {p: /misc-hyperlinks-enabled, t: bool, v: true}
     - {p: /misc-menubar-default, t: bool, v: false}
-    - {p: /misc-middle-click-opens-uri, t: bool, v: false}
+    - {p: /misc-middle-click-opens-uri, t: bool, v: true}
     - {p: /misc-mouse-autohide, t: bool, v: true}
     - {p: /misc-right-click-action, t: string, v: TERMINAL_RIGHT_CLICK_ACTION_CONTEXT_MENU}
     - {p: /misc-show-unsafe-paste-dialog, t: bool, v: false}
