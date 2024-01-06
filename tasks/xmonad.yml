@@ -15,6 +15,15 @@
       - xmonad
       - xmonad-contrib
 
+- name: Copy xfce+xmonad session file
+  become: yes
+  ansible.builtin.copy:
+    src: templates/xfmonad.xml
+    dest: /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
+    owner: root
+    group: root
+    mode: "0644"
+
 - name: Xfce4 session setup
   community.general.xfconf:
     channel: xfce4-session
@@ -25,30 +34,7 @@
     - {p: /general/FailsafeSessionName, t: string, v: Failsafe}
     - {p: /general/LockCommand, t: string, v: xflock4}
     - {p: /general/SaveOnExit, t: bool, v: false}
-    - {p: /general/SessionName, t: string, v: xfmonad}
-    - {p: /sessions/xfmonad/Count, t: int, v: 5}
-    - {p: /sessions/xfmonad/IsFailsafe, t: bool, v: false}
-    - {p: /sessions/xfmonad/Client0_PerScreen, t: bool, v: false}
-    - {p: /sessions/xfmonad/Client1_PerScreen, t: bool, v: false}
-    - {p: /sessions/xfmonad/Client2_PerScreen, t: bool, v: false}
-    - {p: /sessions/xfmonad/Client3_PerScreen, t: bool, v: false}
-    - {p: /sessions/xfmonad/Client0_Priority, t: int, v: 20}
-    - {p: /sessions/xfmonad/Client1_Priority, t: int, v: 15}
-    - {p: /sessions/xfmonad/Client2_Priority, t: int, v: 25}
-    - {p: /sessions/xfmonad/Client3_Priority, t: int, v: 30}
-
-- name: Xfce4 session commands
-  community.general.xfconf:
-    channel: xfce4-session
-    property: "/sessions/xfmonad{{item.p}}"
-    value_type: string
-    value: "{{item.v}}"
-    force_array: true
-  loop:
-    - {p: /Client0_Command, v: ["xfsettingsd"]}
-    - {p: /Client1_Command, v: ["xmonad"]}
-    - {p: /Client2_Command, v: ["xfce4-panel", "--disable-wm-check"]}
-    - {p: /Client3_Command, v: ["Thunar", "--daemon"]}
+    - {p: /general/SessionName, t: string, v: Failsafe}
 
 - name: Reset xfwm4 xfce4 keyboard shortcuts
   ansible.builtin.command: xfconf-query -r -R -c xfce4-keyboard-shortcuts -p /xfwm4/custom
