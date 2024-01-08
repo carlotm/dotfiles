@@ -99,7 +99,16 @@ if executable('elixir-ls')
 		args: []
 	}]
 endif
-autocmd VimEnter * call LspAddServer(lspErlang + lspElixir)
+var lspElm = []
+if executable('elm-language-server')
+	lspElm = [{
+		name: 'elmls',
+		filetype: ['elm'],
+		path: 'elm-language-server',
+		args: []
+	}]
+endif
+autocmd VimEnter * call LspAddServer(lspElm + lspErlang + lspElixir)
 const lspOpts = {
 	aleSupport: v:false,
 	autoComplete: v:true,
