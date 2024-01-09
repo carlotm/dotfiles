@@ -34,3 +34,5 @@ format = '[\[NODE $version\]]($style)'
 format = '[\[HASKELL $version\]]($style)'
 [elm]
 format = '[\[ELM $version\]]($style)'
+[python]
+format = '[\[PYTHON $version\]]($style)'
