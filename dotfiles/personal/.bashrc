@@ -9,7 +9,7 @@ shopt -s histappend
 alias ls="eza --long --header"
 alias tree="eza --tree"
 alias grep="rg -i"
-alias find="fd"
+alias find="fd --hidden"
 alias d="devbox"
 alias du="gdu"
 alias cat="bat"
