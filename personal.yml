@@ -18,6 +18,8 @@
 
   - import_tasks: tasks/xmonad.yml
 
+  - import_tasks: tasks/devbox.yml
+
   - import_tasks: tasks/amiga.yml
 
   - name: Stow dotfiles
