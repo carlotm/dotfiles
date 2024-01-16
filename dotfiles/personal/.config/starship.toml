@@ -36,3 +36,5 @@ format = '[\[HASKELL $version\]]($style)'
 format = '[\[ELM $version\]]($style)'
 [python]
 format = '[\[PYTHON $version\]]($style)'
+[java]
+format = '[\[JAVA $version\]]($style)'
