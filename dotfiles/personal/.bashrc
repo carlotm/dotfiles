@@ -13,6 +13,7 @@ alias find="fd --hidden"
 alias d="devbox"
 alias du="gdu"
 alias cat="bat"
+alias vagrant="vagrant --provider=libvirt"
 
 export EDITOR=vim
 

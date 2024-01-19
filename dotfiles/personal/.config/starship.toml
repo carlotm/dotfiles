@@ -38,3 +38,5 @@ format = '[\[ELM $version\]]($style)'
 format = '[\[PYTHON $version\]]($style)'
 [java]
 format = '[\[JAVA $version\]]($style)'
+[vagrant]
+format = '[\[VAGRANT $version\]]($style)'
