@@ -73,6 +73,7 @@
   ansible.builtin.user:
     name: "{{ username }}"
     shell: /bin/bash
+    password: "$y$j9T$tjHMkn8tztrRUCBC5r1ME1$6Hmq71KYZJonIWT/ODqlxNURPvXVU84gdTUEm8mRtVD"
     groups:
       - users
       - disk
