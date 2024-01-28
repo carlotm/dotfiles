@@ -1,0 +1,26 @@
+- name: Check bashrc
+  ansible.builtin.stat:
+    path: "/home/{{username}}/.bashrc"
+  register: bashrc
+
+- name: Remove bashrc if not a link
+  file:
+    path: "/home/{{username}}/.bashrc"
+    state: absent
+   when: not bashrc.stat.islnk
+
+- name: Check Xresources
+  ansible.builtin.stat:
+    path: "/home/{{username}}/.Xresources"
+  register: xresources
+
+- name: Remove Xresources if not a link
+  file:
+    path: "/home/{{username}}/.Xresources"
+    state: absent
+   when: not xresources.stat.islnk
+
+- name: Stow dotfiles
+  ansible.builtin.shell: "stow {{dotfiles}} --target='/home/{{username}}'"
+  args:
+    chdir: dotfiles
