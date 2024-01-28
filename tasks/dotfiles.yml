@@ -35,3 +35,12 @@
   ansible.builtin.shell: "stow {{dotfiles}} --target='/home/{{username}}'"
   args:
     chdir: dotfiles
+
+- name: Chown recursive
+  ansible.builtin.file:
+    path: "/home/{{username}}/{{item}}"
+    owner: "{{username}}"
+    group: "{{username}}"
+    recurse: true
+  with_fileglob:
+    - "/home/{{username}}/.*"
