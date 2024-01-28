@@ -32,15 +32,8 @@
   when: xresources.stat.islnk is defined and not xresources.stat.islnk
 
 - name: Stow dotfiles
+  become: yes
+  become_user: "{{username}}"
   ansible.builtin.shell: "stow {{dotfiles}} --target='/home/{{username}}'"
   args:
     chdir: dotfiles
-
-- name: Chown recursive
-  ansible.builtin.file:
-    path: "/home/{{username}}/{{item}}"
-    owner: "{{username}}"
-    group: "{{username}}"
-    recurse: true
-  with_fileglob:
-    - "/home/{{username}}/.*"
