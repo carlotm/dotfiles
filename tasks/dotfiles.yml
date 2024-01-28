@@ -9,6 +9,17 @@
     state: absent
   when: not bashrc.stat.islnk
 
+- name: Check bash_profile
+  ansible.builtin.stat:
+    path: "/home/{{username}}/.bash_profile"
+  register: bash_profile
+
+- name: Remove bash_profile if not a link
+  file:
+    path: "/home/{{username}}/.bash_profile"
+    state: absent
+  when: not bash_profile.stat.islnk
+
 - name: Check Xresources
   ansible.builtin.stat:
     path: "/home/{{username}}/.Xresources"
