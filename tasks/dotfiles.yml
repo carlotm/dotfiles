@@ -7,7 +7,7 @@
   file:
     path: "/home/{{username}}/.bashrc"
     state: absent
-  when: not bashrc.stat.islnk
+  when: bashrc.stat.islnk is defined and not bashrc.stat.islnk
 
 - name: Check bash_profile
   ansible.builtin.stat:
@@ -18,7 +18,7 @@
   file:
     path: "/home/{{username}}/.bash_profile"
     state: absent
-  when: not bash_profile.stat.islnk
+  when: bash_profile.stat.islnk is defined and not bash_profile.stat.islnk
 
 - name: Check Xresources
   ansible.builtin.stat:
@@ -29,7 +29,7 @@
   file:
     path: "/home/{{username}}/.Xresources"
     state: absent
-  when: not xresources.stat.islnk
+  when: xresources.stat.islnk is defined and not xresources.stat.islnk
 
 - name: Stow dotfiles
   ansible.builtin.shell: "stow {{dotfiles}} --target='/home/{{username}}'"
