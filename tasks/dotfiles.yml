@@ -1,39 +1,6 @@
-- name: Check bashrc
-  ansible.builtin.stat:
-    path: "/home/{{username}}/.bashrc"
-  register: bashrc
-
-- name: Remove bashrc if not a link
-  file:
-    path: "/home/{{username}}/.bashrc"
-    state: absent
-  when: bashrc.stat.islnk is defined and not bashrc.stat.islnk
-
-- name: Check bash_profile
-  ansible.builtin.stat:
-    path: "/home/{{username}}/.bash_profile"
-  register: bash_profile
-
-- name: Remove bash_profile if not a link
-  file:
-    path: "/home/{{username}}/.bash_profile"
-    state: absent
-  when: bash_profile.stat.islnk is defined and not bash_profile.stat.islnk
-
-- name: Check Xresources
-  ansible.builtin.stat:
-    path: "/home/{{username}}/.Xresources"
-  register: xresources
-
-- name: Remove Xresources if not a link
-  file:
-    path: "/home/{{username}}/.Xresources"
-    state: absent
-  when: xresources.stat.islnk is defined and not xresources.stat.islnk
-
 - name: Stow dotfiles
   become: yes
   become_user: "{{username}}"
-  ansible.builtin.shell: "stow {{dotfiles}} --target='/home/{{username}}'"
+  ansible.builtin.shell: "stow {{dotfiles}} --target=/home/{{username}} --adopt"
   args:
     chdir: dotfiles
