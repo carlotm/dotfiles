@@ -16,7 +16,7 @@
       - xmonad-contrib
 
 - name: Copy xfce+xmonad session file
-  become: yes
+  become: true
   ansible.builtin.copy:
     src: templates/xfmonad.xml
     dest: /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
@@ -25,6 +25,8 @@
     mode: "0644"
 
 - name: Xfce4 session setup
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xfce4-session
     property: "{{item.p}}"
@@ -37,10 +39,16 @@
     - {p: /general/SessionName, t: string, v: Failsafe}
 
 - name: Reset xfwm4 xfce4 keyboard shortcuts
+  become: true
+  become_user: "{{username}}"
   ansible.builtin.command: xfconf-query -r -R -c xfce4-keyboard-shortcuts -p /xfwm4/custom
 - name: Reset commands xfce4 keyboard shortcuts
+  become: true
+  become_user: "{{username}}"
   ansible.builtin.command: xfconf-query -r -R -c xfce4-keyboard-shortcuts -p /commands/custom
 - name: Set keyboard shortcuts providers
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xfce4-keyboard-shortcuts
     property: /providers
@@ -48,6 +56,8 @@
     value: [commands]
     force_array: true
 - name: Set commands xfce4 keyboard shortcuts
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xfce4-keyboard-shortcuts
     property: "/commands/custom{{item.p}}"
@@ -60,6 +70,8 @@
     - {p: /XF86Display, t: string, v: xfce4-display-settings --minimal}
 
 - name: Thunar settings
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: thunar
     property: "{{item.p}}"
@@ -93,6 +105,8 @@
     - {p: /tree-icon-size, t: string, v: THUNAR_ICON_SIZE_16}
 
 - name: Xfce4 settings
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xsettings
     property: "{{item.p}}"
@@ -120,6 +134,8 @@
     - {p: /Xft/RGBA, t: string, v: rgb}
 
 - name: Configure panels
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xfce4-panel
     property: /panels
@@ -127,12 +143,16 @@
     value: [1]
     force_array: true
 - name: Make panel dark
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xfce4-panel
     property: /panels/dark-mode
     value_type: bool
     value: true
 - name: Configure panel
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xfce4-panel
     property: "/panels/panel-1{{item.p}}"
@@ -152,6 +172,8 @@
     - {p: /background-style, t: int, v: 1}
     - {p: /background-rgba, t: double, v: [0.000000, 0.000000, 0.000000, 1.000000]}
 - name: Configure panel plugins
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xfce4-panel
     property: "/plugins{{item.p}}"
@@ -195,6 +217,8 @@
     - {p: /plugin-14/items, t: string, v: ["-lock-screen", "-switch-user", "-separator", "-suspend", "-hibernate", "-hybrid-sleep", "-separator", "+shutdown", "-restart", "-separator", "-logout", "-logout-dialog"]}
 
 - name: Configure power manager
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xfce4-power-manager
     property: "/xfce4-power-manager{{item.p}}"
@@ -230,6 +254,8 @@
     - {p: /sleep-button-action, t: int, v: 0}
 
 - name: Configure terminal
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xfce4-terminal
     property: "{{item.p}}"

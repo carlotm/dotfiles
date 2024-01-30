@@ -10,6 +10,7 @@
   register: devbox_installer
   when: not devbox_bin.stat.exists
 - name: Install devbox
+  become: true
   ansible.builtin.command: /tmp/devbox_installer --force
   when: not devbox_bin.stat.exists
 - name: Remove installer

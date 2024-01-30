@@ -1,5 +1,5 @@
 - name: Install xfce
-  become: yes
+  become: true
   become_method: ansible.builtin.su
   community.general.pacman:
     pkg:
@@ -7,6 +7,8 @@
       - xfce4-goodies
 
 - name: Configure panels
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xfce4-panel
     property: /panels
@@ -14,12 +16,16 @@
     value: [1]
     force_array: true
 - name: Make panel dark
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xfce4-panel
     property: /panels/dark-mode
     value_type: bool
     value: true
 - name: Configure panel
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xfce4-panel
     property: "/panels/panel-1{{item.p}}"
@@ -37,6 +43,8 @@
     - {p: /position-locked, t: bool, v: true}
     - {p: /size, t: int, v: 64}
 - name: Configure panel plugins
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xfce4-panel
     property: "/plugins{{item.p}}"
@@ -81,6 +89,8 @@
     - {p: /plugin-14/ask-confirmation, t: bool, v: false}
     - {p: /plugin-14/items, t: string, v: ["-lock-screen", "-switch-user", "-separator", "-suspend", "-hibernate", "-hybrid-sleep", "-separator", "+shutdown", "-restart", "-separator", "-logout", "-logout-dialog"]}
 - name: Configure terminal
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xfce4-terminal
     property: "{{item.p}}"
@@ -100,6 +110,8 @@
     - {p: /shortcuts-no-menukey, t: bool, v: true}
     - {p: /shortcuts-no-mnemonics, t: bool, v: true}
 - name: Configure power manager
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xfce4-power-manager
     property: "/xfce4-power-manager{{item.p}}"
@@ -113,6 +125,8 @@
     - {p: /power-button-action, t: int, v: 3}
     - {p: /show-tray-icon, t: bool, v: false}
 - name: Configure fonts
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xsettings
     property: "{{item.p}}"
@@ -129,12 +143,16 @@
     - {p: /Gtk/MonospaceFontName, t: string, v: "Noto Sans Mono Regular 18"}
     - {p: /Net/IconThemeName, t: string, v: elementary}
 - name: Hide desktop icons
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xfce4-desktop
     property: /desktop-icons/style
     value_type: int
     value: 0
 - name: Configure wallpaper
+  become: true
+  become_user: "{{username}}"
   community.general.xfconf:
     channel: xfce4-desktop
     property: "/backdrop/screen0/monitorHDMI-1{{item.p}}"
