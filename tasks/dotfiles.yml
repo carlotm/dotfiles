@@ -1,6 +1,27 @@
+- name: Create the holy projects folder
+  ansible.builtin.file:
+    path: "/home/{{username}}/w"
+    owner: "{{username}}"
+    group: "{{username}}"
+    mode: 0755
+    state: directory
+
+- name: "Check if {{username}} has this repo"
+  ansible.builtin.stat:
+    path: "/home/{{username}}/w/dotfiles"
+  register: dots
+
+- name: If not, download this repo
+  become: true
+  become_user: "{{username}}"
+  ansible.builtin.git:
+    repo: https://github.com/carlotm/dotfiles.git
+    dest: "/home/{{username}}/w/dotfiles"
+  when: not dots.stat.exists
+
 - name: Stow dotfiles
   become: yes
   become_user: "{{username}}"
   ansible.builtin.shell: "stow {{dotfiles}} --target=/home/{{username}} --adopt"
   args:
-    chdir: dotfiles
+    chdir: "/home/{{username}}/w/dotfiles/dotfiles"
