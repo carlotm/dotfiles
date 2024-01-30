@@ -17,6 +17,7 @@
   ansible.builtin.git:
     repo: https://github.com/carlotm/dotfiles.git
     dest: "/home/{{username}}/w/dotfiles"
+    depth: 1
   when: not dots.stat.exists
 
 - name: Stow dotfiles
