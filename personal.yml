@@ -15,12 +15,20 @@
         - qutebrowser
 
   - import_tasks: tasks/git.yml
+    vars:
+      username: carloratm
 
   - import_tasks: tasks/xmonad.yml
+    vars:
+      username: carloratm
 
   - import_tasks: tasks/devbox.yml
+    vars:
+      username: carloratm
 
   - import_tasks: tasks/amiga.yml
+    vars:
+      username: carloratm
 
   - import_tasks: tasks/dotfiles.yml
     vars:
