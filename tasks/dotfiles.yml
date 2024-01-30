@@ -11,6 +11,18 @@
     path: "/home/{{username}}/w/dotfiles"
   register: dots
 
+- name: Clean up previous dotfiles
+  become: true
+  become_user: "{{username}}"
+  ansible.builtin.file:
+    path: "/home/{{username}}/{{item}}"
+    state: absent
+  with_items:
+    - .Xresources
+    - .bash_profile
+    - .bashrc
+  when: not dots.stat.exists
+
 - name: If not, download this repo
   become: true
   become_user: "{{username}}"
