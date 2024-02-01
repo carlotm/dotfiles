@@ -2,6 +2,7 @@
 - hosts: localhost
   gather_facts: no
   connection: local
+  become: true
   tasks:
 
   - import_tasks: tasks/system.yml
