@@ -8,12 +8,7 @@ scumm:
 monkey:
 	$(ANSIBLE) -e hostname=$@ plays/sys.yml
 
-mediacenter:
-	ansible-playbook \
-		-i inventory \
-		-e dotfiles=mediacenter \
-		-e host_name=melee \
-		--ask-become-pass \
-		mediacenter.yml
+dots:
+	$(ANSIBLE) plays/dots.yml
 
-.PHONY: mediacenter scumm monkey
+.PHONY: scumm monkey dots

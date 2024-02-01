@@ -7,3 +7,5 @@ pkgs:
   - poppler-glib
   - qutebrowser
   - firefox
+aur:
+  - vasm
