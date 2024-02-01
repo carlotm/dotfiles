@@ -1,0 +1,289 @@
+---
+- hosts: localhost
+  gather_facts: no
+  connection: local
+  become: true
+  become_user: "{{username}}"
+  tasks:
+    - name: Install packages
+      become: yes
+      become_user: root
+      community.general.pacman:
+        pkg:
+          - catfish
+          - elementary-icon-theme
+          - thunar
+          - thunar-volman
+          - thunar-archive-plugin
+          - thunar-media-tags-plugin
+          - tumbler
+          - xfce4
+          - xfce4-goodies
+          - xmonad
+          - xmonad-contrib
+
+    - name: Copy xfce+xmonad session file
+      become: true
+      become_user: root
+      ansible.builtin.copy:
+        src: ../templates/xfmonad.xml
+        dest: /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Xfce4 session setup
+      community.general.xfconf:
+        channel: xfce4-session
+        property: "{{item.p}}"
+        value_type: "{{item.t}}"
+        value: "{{item.v}}"
+      loop:
+        - {p: /general/FailsafeSessionName, t: string, v: Failsafe}
+        - {p: /general/LockCommand, t: string, v: xflock4}
+        - {p: /general/SaveOnExit, t: bool, v: false}
+        - {p: /general/SessionName, t: string, v: Failsafe}
+
+    - name: Reset xfwm4 xfce4 keyboard shortcuts
+      ansible.builtin.command: xfconf-query -r -R -c xfce4-keyboard-shortcuts -p /xfwm4/custom
+    - name: Reset commands xfce4 keyboard shortcuts
+      ansible.builtin.command: xfconf-query -r -R -c xfce4-keyboard-shortcuts -p /commands/custom
+
+    - name: Set keyboard shortcuts providers
+      community.general.xfconf:
+        channel: xfce4-keyboard-shortcuts
+        property: /providers
+        value_type: string
+        value: [commands]
+        force_array: true
+
+    - name: Set commands xfce4 keyboard shortcuts
+      community.general.xfconf:
+        channel: xfce4-keyboard-shortcuts
+        property: "/commands/custom{{item.p}}"
+        value_type: "{{item.t}}"
+        value: "{{item.v}}"
+      loop:
+        - {p: /override, t: bool, v: true}
+        - {p: /<Alt>F2, t: string, v: xfce4-appfinder}
+        - {p: /Print, t: string, v: xfce4-screenshooter}
+        - {p: /XF86Display, t: string, v: xfce4-display-settings --minimal}
+
+    - name: Thunar settings
+      community.general.xfconf:
+        channel: thunar
+        property: "{{item.p}}"
+        value_type: "{{item.t}}"
+        value: "{{item.v}}"
+      loop:
+        - {p: /default-view, t: string, v: void}
+        - {p: /last-icon-view-zoom-level, t: string, v: THUNAR_ZOOM_LEVEL_100_PERCENT}
+        - {p: /last-restore-tabs, t: bool, v: false}
+        - {p: /last-sort-column, t: string, v: THUNAR_COLUMN_NAME}
+        - {p: /last-sort-order, t: string, v: GTK_SORT_ASCENDING}
+        - {p: /last-view, t: string, v: ThunarIconView}
+        - {p: /misc-date-style, t: string, v: THUNAR_DATE_STYLE_LONG}
+        - {p: /misc-directory-specific-settings, t: bool, v: false}
+        - {p: /misc-file-size-binary, t: bool, v: true}
+        - {p: /misc-folders-first, t: bool, v: true}
+        - {p: /misc-full-path-in-tab-title, t: bool, v: false}
+        - {p: /misc-image-preview-mode, t: string, v: THUNAR_IMAGE_PREVIEW_MODE_EMBEDDED}
+        - {p: /misc-middle-click-in-tab, t: bool, v: true}
+        - {p: /misc-open-new-window-as-tab, t: bool, v: false}
+        - {p: /misc-show-delete-action, t: bool, v: false}
+        - {p: /misc-single-click, t: bool, v: false}
+        - {p: /misc-text-beside-icons, t: bool, v: false}
+        - {p: /misc-thumbnail-draw-frames, t: bool, v: true}
+        - {p: /misc-thumbnail-max-file-size, t: int, v: 10485760}
+        - {p: /misc-thumbnail-mode, t: string, v: THUNAR_THUMBNAIL_MODE_ALWAYS}
+        - {p: /misc-volume-management, t: bool, v: true}
+        - {p: /shortcuts-icon-emblems, t: bool, v: true}
+        - {p: /shortcuts-icon-size, t: string, v: THUNAR_ICON_SIZE_24}
+        - {p: /tree-icon-emblems, t: bool, v: true}
+        - {p: /tree-icon-size, t: string, v: THUNAR_ICON_SIZE_16}
+
+    - name: Xfce4 settings
+      community.general.xfconf:
+        channel: xsettings
+        property: "{{item.p}}"
+        value_type: "{{item.t}}"
+        value: "{{item.v}}"
+      loop:
+        - {p: /Gdk/WindowScalingFactor, t: int, v: 1}
+        - {p: /Gtk/ButtonImages, t: bool, v: true}
+        - {p: /Gtk/CanChangeAccels, t: bool, v: false}
+        - {p: /Gtk/CursorThemeName, t: string, v: elementary}
+        - {p: /Gtk/CursorThemeSize, t: int, v: 48}
+        - {p: /Gtk/DialogsUseHeader, t: bool, v: false}
+        - {p: /Gtk/FontName, t: string, v: "Noto Sans 16"}
+        - {p: /Gtk/MonospaceFontName, t: string, v: "Spleen 22"}
+        - {p: /Gtk/MenuImages, t: bool, v: true}
+        - {p: /Gtk/ToolbarStyle, t: string, v: icons}
+        - {p: /Net/CursorBlink, t: bool, v: true}
+        - {p: /Net/CursorBlinkTime, t: int, v: 1200}
+        - {p: /Net/IconThemeName, t: string, v: elementary}
+        - {p: /Net/ThemeName, t: string, v: Adwaita}
+        - {p: /Xft/Antialias, t: int, v: 1}
+        - {p: /Xft/DPI, t: int, v: 96}
+        - {p: /Xft/Hinting, t: int, v: 1}
+        - {p: /Xft/HintStyle, t: string, v: hintfull}
+        - {p: /Xft/RGBA, t: string, v: rgb}
+
+    - name: Configure panels
+      community.general.xfconf:
+        channel: xfce4-panel
+        property: /panels
+        value_type: int
+        value: [1]
+        force_array: true
+
+    - name: Make panel dark
+      community.general.xfconf:
+        channel: xfce4-panel
+        property: /panels/dark-mode
+        value_type: bool
+        value: true
+
+    - name: Configure panel
+      community.general.xfconf:
+        channel: xfce4-panel
+        property: "/panels/panel-1{{item.p}}"
+        value_type: "{{item.t}}"
+        value: "{{item.v}}"
+      loop:
+        - {p: /autohide-behavior, t: int, v: 0}
+        - {p: /enable-struts, t: bool, v: true}
+        - {p: /icon-size, t: int, v: 42}
+        - {p: /length, t: double, v: 100.000000}
+        - {p: /length-adjust, t: bool, v: true}
+        - {p: /mode, t: int, v: 2}
+        - {p: /plugin-ids, t: int, v: [1,2,3,6,8,12,14]}
+        - {p: /position, t: string, v: "p=2;x=1266;y=360"}
+        - {p: /position-locked, t: bool, v: true}
+        - {p: /size, t: int, v: 64}
+        - {p: /background-style, t: int, v: 1}
+        - {p: /background-rgba, t: double, v: [0.000000, 0.000000, 0.000000, 1.000000]}
+
+    - name: Configure panel plugins
+      community.general.xfconf:
+        channel: xfce4-panel
+        property: "/plugins{{item.p}}"
+        value_type: "{{item.t}}"
+        value: "{{item.v}}"
+      loop:
+        - {p: /plugin-1, t: string, v: applicationsmenu}
+        - {p: /plugin-1/button-icon, t: string, v: archlinux-logo}
+        - {p: /plugin-1/show-button-title, t: bool, v: false}
+        - {p: /plugin-2, t: string, v: pager}
+        - {p: /plugin-2/miniature-view, t: bool, v: false}
+        - {p: /plugin-2/rows, t: int, v: 9}
+        - {p: /plugin-2/grouping, t: int, v: 1}
+        - {p: /plugin-2/workspace-scrolling, t: bool, v: false}
+        - {p: /plugin-3, t: string, v: separator}
+        - {p: /plugin-3/expand, t: bool, v: true}
+        - {p: /plugin-3/style, t: int, v: 0}
+        - {p: /plugin-6, t: string, v: systray}
+        - {p: /plugin-6/hide-new-items, t: bool, v: false}
+        - {p: /plugin-6/icon-size, t: int, v: 0}
+        - {p: /plugin-6/square-icons, t: bool, v: false}
+        - {p: /plugin-6/symbolic-icons, t: bool, v: true}
+        - {p: /plugin-8, t: string, v: pulseaudio}
+        - {p: /plugin-8/enable-keyboard-shortcuts, t: bool, v: true}
+        - {p: /plugin-8/enable-mpris, t: bool, v: false}
+        - {p: /plugin-8/enable-multimedia-keys, t: bool, v: false}
+        - {p: /plugin-8/enable-wnck, t: bool, v: false}
+        - {p: /plugin-8/mixer-command, t: string, v: pavucontrol}
+        - {p: /plugin-8/play-sound, t: bool, v: true}
+        - {p: /plugin-8/show-notifications, t: bool, v: true}
+        - {p: /plugin-8/volume-max, t: int, v: 120}
+        - {p: /plugin-12, t: string, v: clock}
+        - {p: /plugin-12/digital-date-font, t: string, v: "Noto Sans Bold 10"}
+        - {p: /plugin-12/digital-date-format, t: string, v: "%d %b"}
+        - {p: /plugin-12/digital-time-font, t: string, v: "Noto Sans Bold 16"}
+        - {p: /plugin-12/mode, t: int, v: 2}
+        - {p: /plugin-12/timezone, t: string, v: "Europe/Vienna"}
+        - {p: /plugin-14, t: string, v: actions}
+        - {p: /plugin-14/appearance, t: int, v: 0}
+        - {p: /plugin-14/ask-confirmation, t: bool, v: false}
+        - {p: /plugin-14/items, t: string, v: ["-lock-screen", "-switch-user", "-separator", "-suspend", "-hibernate", "-hybrid-sleep", "-separator", "+shutdown", "-restart", "-separator", "-logout", "-logout-dialog"]}
+
+    - name: Configure power manager
+      community.general.xfconf:
+        channel: xfce4-power-manager
+        property: "/xfce4-power-manager{{item.p}}"
+        value_type: "{{item.t}}"
+        value: "{{item.v}}"
+      loop:
+        - {p: /battery-button-action, t: int, v: 0}
+        - {p: /blank-on-ac, t: int, v: 0}
+        - {p: /blank-on-battery, t: int, v: 0}
+        - {p: /brightness-level-on-acc, t: int, v: 100}
+        - {p: /brightness-level-on-battery, t: int, v: 100}
+        - {p: /brightness-on-ac, t: int, v: 9}
+        - {p: /brightness-on-battery, t: int, v: 9}
+        - {p: /brightness-switch, t: int, v: 0}
+        - {p: /brightness-switch-restore-on-exit, t: int, v: 1}
+        - {p: /critical-power-action, t: int, v: 3}
+        - {p: /critical-power-level, t: int, v: 5}
+        - {p: /dpms-enabled, t: bool, v: false}
+        - {p: /dpms-on-battery-off, t: int, v: 19}
+        - {p: /dpms-on-battery-sleep, t: int, v: 18}
+        - {p: /general-notification, t: bool, v: true}
+        - {p: /handle-brightness-keys, t: bool, v: true}
+        - {p: /hibernate-button-action, t: int, v: 0}
+        - {p: /inactivity-on-ac, t: int, v: 14}
+        - {p: /inactivity-on-battery, t: int, v: 14}
+        - {p: /lid-action-on-ac, t: int, v: 0}
+        - {p: /lid-action-on-battery, t: int, v: 0}
+        - {p: /lock-screen-suspend-hibernate, t: bool, v: false}
+        - {p: /power-button-action, t: int, v: 4}
+        - {p: /show-panel-label, t: int, v: 0}
+        - {p: /show-presentation-indicator, t: bool, v: false}
+        - {p: /show-tray-icon, t: bool, v: false}
+        - {p: /sleep-button-action, t: int, v: 0}
+
+    - name: Configure terminal
+      community.general.xfconf:
+        channel: xfce4-terminal
+        property: "{{item.p}}"
+        value_type: "{{item.t}}"
+        value: "{{item.v}}"
+      loop:
+        - {p: /color-bold-is-bright, t: bool, v: true}
+        - {p: /command-login-shell, t: bool, v: false}
+        - {p: /font-allow-bold, t: bool, v: false}
+        - {p: /font-name, t: string, v: "Spleen 22"}
+        - {p: /font-use-system, t: bool, v: false}
+        - {p: /kinetic-scrolling, t: bool, v: false}
+        - {p: /misc-bell-urgent, t: bool, v: true}
+        - {p: /misc-borders-default, t: bool, v: true}
+        - {p: /misc-copy-on-select, t: bool, v: true}
+        - {p: /misc-cursor-blinks, t: bool, v: true}
+        - {p: /misc-hyperlinks-enabled, t: bool, v: true}
+        - {p: /misc-menubar-default, t: bool, v: false}
+        - {p: /misc-middle-click-opens-uri, t: bool, v: true}
+        - {p: /misc-mouse-autohide, t: bool, v: true}
+        - {p: /misc-right-click-action, t: string, v: TERMINAL_RIGHT_CLICK_ACTION_CONTEXT_MENU}
+        - {p: /misc-show-unsafe-paste-dialog, t: bool, v: false}
+        - {p: /misc-tab-close-middle-click, t: bool, v: false}
+        - {p: /misc-toolbar-default, t: bool, v: false}
+        - {p: /overlay-scrolling, t: bool, v: false}
+        - {p: /run-custom-command, t: bool, v: false}
+        - {p: /scrolling-bar, t: string, v: TERMINAL_SCROLLBAR_NONE}
+        - {p: /scrolling-on-keystroke, t: bool, v: true}
+        - {p: /scrolling-on-output, t: bool, v: false}
+        - {p: /shortcuts-no-menukey, t: bool, v: true}
+        - {p: /shortcuts-no-mnemonics, t: bool, v: true}
+        - {p: /text-blink-mode, t: string, v: TERMINAL_TEXT_BLINK_MODE_ALWAYS}
+        - {p: /title-initial, t: string, v: ""}
+        - {p: /title-mode, t: string, v: TERMINAL_TITLE_HIDE}
+        - {p: /use-default-working-dir, t: bool, v: false}
+        - {p: /color-selection-use-default, t: bool, v: false}
+        - {p: /color-selection, t: string, v: "#ffffffffffff"}
+        - {p: /color-selection-background, t: string, v: "#333333333333"}
+        - {p: /color-cursor, t: string, v: "#ffff00000000"}
+        - {p: /color-cursor-foreground, t: string, v: "#ffffffffffff"}
+        - {p: /color-cursor-use-default, t: bool, v: false}
+        - {p: /color-foreground, t: string, v: "#b2b2b2b2b2b2"}
+        - {p: /color-background, t: string, v: "#000000000000"}
+        - {p: /color-palette, t: string, v: "#202020;#b21818;#18b218;#b26818;#1818b2;#b218b2;#18b2b2;#b2b2b2;#686868;#ff5454;#54ff54;#ffff54;#5454ff;#ff54ff;#54ffff;#ffffff"}

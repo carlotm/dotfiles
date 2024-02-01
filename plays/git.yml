@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  gather_facts: no
+  connection: local
+  become: true
+  become_user: "{{username}}"
+  tasks:
+    - name: Config global git
+      community.general.git_config:
+        name: "{{item.name}}"
+        scope: global
+        value: "{{item.value}}"
+      loop:
+        - {name: user.name, value: "Ascani Carlo"}
+        - {name: user.email, value: "carlotm@protonmail.com"}
+        - {name: alias.co, value: checkout}
+        - {name: alias.s, value: status}
+        - {name: init.defaultBranch, value: main}

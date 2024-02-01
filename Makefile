@@ -1,24 +1,23 @@
-personal: personal.yml
+personal:
 	ansible-playbook \
-		-i hosts \
+		-i inventory \
 		-e dotfiles=personal \
-		-e host_name=scumm \
-		-e email=carlotm@protonmail.com \
-		--ask-become-pass $<
+		--ask-become-pass \
+		personal.yml
 
 work: personal.yml
 	ansible-playbook \
-		-i hosts \
+		-i inventory \
 		-e dotfiles=personal \
-		-e host_name=monkey \
-		-e email=carlo@doloops.net \
-		--ask-become-pass $<
+		--ask-become-pass \
+		personal.yml
 
-mediacenter: mediacenter.yml
+mediacenter:
 	ansible-playbook \
-		-i hosts \
+		-i inventory \
 		-e dotfiles=mediacenter \
 		-e host_name=melee \
-		--ask-become-pass $<
+		--ask-become-pass \
+		mediacenter.yml
 
 .PHONY: personal work mediacenter

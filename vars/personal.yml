@@ -1,0 +1,9 @@
+hostname: scumm
+username: carloratm
+pkgs:
+  - keepassxc
+  - libgepub
+  - libgsf
+  - poppler-glib
+  - qutebrowser
+  - firefox
