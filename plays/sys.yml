@@ -5,6 +5,9 @@
   become: true
   become_method: ansible.builtin.su
   tasks:
+    - name: Load vars
+      ansible.builtin.include_vars:
+        file: ../vars/personal.yml
     - name: Force remove packages
       community.general.pacman:
         pkg:

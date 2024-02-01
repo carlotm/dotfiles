@@ -1,4 +1,4 @@
-hostname: scumm
+hostname: "{{ hostname }}"
 username: carloratm
 pkgs:
   - keepassxc

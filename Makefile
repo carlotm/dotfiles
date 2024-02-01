@@ -1,16 +1,12 @@
-personal:
-	ansible-playbook \
-		-i inventory \
-		-e dotfiles=personal \
-		--ask-become-pass \
-		personal.yml
+INV = --inventory $(abspath ./inventory)
+ASK = --ask-become-pass
+ANSIBLE = ansible-playbook $(INV) $(ASK)
 
-work: personal.yml
-	ansible-playbook \
-		-i inventory \
-		-e dotfiles=personal \
-		--ask-become-pass \
-		personal.yml
+scumm:
+	$(ANSIBLE) -e hostname=$@ plays/sys.yml
+
+monkey:
+	$(ANSIBLE) -e hostname=$@ plays/sys.yml
 
 mediacenter:
 	ansible-playbook \
@@ -20,4 +16,4 @@ mediacenter:
 		--ask-become-pass \
 		mediacenter.yml
 
-.PHONY: personal work mediacenter
+.PHONY: mediacenter scumm monkey
