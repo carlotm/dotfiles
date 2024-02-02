@@ -1,23 +1,21 @@
 {
   "lockfile_version": "1",
   "packages": {
-    "ansible@latest": {
-      "last_modified": "2024-01-22T00:24:37Z",
-      "resolved": "github:NixOS/nixpkgs/5f5210aa20e343b7e35f40c033000db0ef80d7b9#ansible",
+    "ansible": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#ansible",
+      "source": "nixpkg"
+    },
+    "glibcLocales@latest": {
+      "last_modified": "2024-01-14T03:55:27Z",
+      "resolved": "github:NixOS/nixpkgs/dd5621df6dcb90122b50da5ec31c411a0de3e538#glibcLocales",
       "source": "devbox-search",
-      "version": "2.16.2",
+      "version": "2.38-27",
       "systems": {
-        "aarch64-darwin": {
-          "store_path": "/nix/store/99m409pdryi4fi5i1mzcr5spsmjxc275-python3.11-ansible-core-2.16.2"
-        },
         "aarch64-linux": {
-          "store_path": "/nix/store/nxirmpwyv575q3blfgx61nmappzc1n5h-python3.11-ansible-core-2.16.2"
-        },
-        "x86_64-darwin": {
-          "store_path": "/nix/store/awvjsjcvncw90r0z468kx076cs937izg-python3.11-ansible-core-2.16.2"
+          "store_path": "/nix/store/i0aff1lm1js9j9ggw7js7n5869bfxm6z-glibc-locales-2.38-27"
         },
         "x86_64-linux": {
-          "store_path": "/nix/store/i38ag7y4gxyv250kvx9jx776j5irqvd6-python3.11-ansible-core-2.16.2"
+          "store_path": "/nix/store/wyl74hap7bh513hp3rz1j608gs7267af-glibc-locales-2.38-27"
         }
       }
     }

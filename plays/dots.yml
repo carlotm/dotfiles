@@ -334,3 +334,12 @@
       ansible.builtin.shell: "stow personal --target=/home/{{username}} --adopt"
       args:
         chdir: "/home/{{username}}/w/dotfiles/dotfiles"
+    - name: Create downloads folder
+      become: yes
+      become_user: "{{username}}"
+      ansible.builtin.file:
+        path: "/home/{{username}}/downloads"
+        owner: "{{username}}"
+        group: "{{username}}"
+        state: directory
+        mode: 0755

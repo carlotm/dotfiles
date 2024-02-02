@@ -1,13 +1,18 @@
 {
-  "packages": ["ansible@latest"],
+  "packages": [
+    "glibcLocales@latest",
+    "ansible"
+  ],
+  "env": {
+    "ANSIBLE": "ansible-playbook --inventory inventory --ask-become-pass",
+    "SYS":     "plays/sys.yml",
+    "DOTS":    "plays/dots.yml"
+  },
   "shell": {
-    "init_hook": [
-      "echo 'Welcome to devbox!' > /dev/null"
-    ],
     "scripts": {
-      "test": [
-        "echo \"Error: no test specified\" && exit 1"
-      ]
+      "scumm":  "$ANSIBLE -e hostname=scumm $SYS",
+      "monkey": "$ANSIBLE -e hostname=monkey $SYS",
+      "dots":   "$ANSIBLE $DOTS"
     }
   }
 }
