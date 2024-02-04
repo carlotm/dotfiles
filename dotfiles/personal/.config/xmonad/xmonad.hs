@@ -20,7 +20,7 @@ main = xmonad xfceConfig
     , manageHook = manageHook xfceConfig <+> myManageHook
     }
 
-myLayout = smartBorders $ Tall 1 (3/100) (1/2)
+myLayout = smartBorders $ Tall 1 (3/100) (1/2) ||| Full
 
 myManageHook = composeAll
     [ className =? "Xfce4-notifyd" --> doIgnore
