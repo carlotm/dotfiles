@@ -18,6 +18,17 @@
           "store_path": "/nix/store/wyl74hap7bh513hp3rz1j608gs7267af-glibc-locales-2.38-27"
         }
       }
+    },
+    "incus@latest": {
+      "last_modified": "2024-01-31T06:48:05Z",
+      "resolved": "github:NixOS/nixpkgs/5ad9903c16126a7d949101687af0aa589b1d7d3d#incus",
+      "source": "devbox-search",
+      "version": "0.4.0",
+      "systems": {
+        "x86_64-linux": {
+          "store_path": "/nix/store/z3clgk3xf2iq86ncf0wzmaxmk4d8l3zn-incus-0.4.0"
+        }
+      }
     }
   }
 }
