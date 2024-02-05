@@ -41,7 +41,7 @@ jobs:
 
           sudo incus launch images:archlinux/cloud archbox --vm -c security.secureboot=false
 
-          until [ -n "$(sudo incus list $1 -c4 -fcsv)" ]do
+          until [ -n "$(sudo incus list $1 -c4 -fcsv)" ] do
             echo "Waiting for the vm interface to be up...."
             sleep 1
           done
