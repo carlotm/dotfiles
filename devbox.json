@@ -11,12 +11,6 @@
   },
   "shell": {
     "scripts": {
-      "archlinux": [
-        "incus admin init --auto",
-        "systemctl start incus",
-        "incus admin waitready",
-        "incus launch archlinux/cloud --vm archbox"
-      ],
       "scumm":  "$ANSIBLE -e hostname=scumm $SYS",
       "monkey": "$ANSIBLE -e hostname=monkey $SYS",
       "dots":   "$ANSIBLE $DOTS"
