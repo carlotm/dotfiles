@@ -1,0 +1,4 @@
+   CC0Textures/Wood058/2K-JPG
+   _0132_LightGray
+   wood_plank01.jpg
+Add (Shift A) ▸ Shader ▸ Principled BSDF
