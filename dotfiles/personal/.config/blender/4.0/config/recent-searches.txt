@@ -2,3 +2,32 @@
    _0132_LightGray
    wood_plank01.jpg
 Add (Shift A) ▸ Shader ▸ Principled BSDF
+ 0 wood_floor_worn
+   wood_floor_worn_rough.png
+Orientation (,) ▸ Normal
+Generate ▸ Screw
+Mesh ▸ Cube
+Object ▸ Join|Ctrl J
+Mesh ▸ Snap ▸ Cursor to Active
+Add (Shift A) ▸ Texture ▸ Environment Texture
+Vector ▸ Bump
+Color ▸ Hue/Saturation/Value
+Texture ▸ Noise Texture
+   AmigaPlastic.Grey
+Snap (Shift S) ▸ Cursor to Active
+Snap (Shift S) ▸ Cursor to Selected
+   AmigaPlastic
+   SVGMat.002
+   SVGMat.005
+   SVGMat.004
+   SVGMat.003
+   SVGMat.006
+   SVGMat.007
+   TotalBlack
+Generate ▸ Solidify
+Object ▸ Convert ▸ Mesh
+Generate ▸ Boolean
+Mesh ▸ Snap ▸ Cursor to Selected
+Object ▸ Set Origin ▸ Origin to 3D Cursor
+Generate ▸ Array
+Generate ▸ Bevel

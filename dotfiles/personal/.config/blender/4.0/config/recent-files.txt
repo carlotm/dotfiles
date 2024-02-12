@@ -1,1 +1,3 @@
+/home/carloratm/3d/blend/a500.blend
+/home/carloratm/3d/blend/a501.blend
 /home/carloratm/3d/blend/desk.blend

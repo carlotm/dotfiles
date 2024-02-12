@@ -38,6 +38,7 @@
           - fzf
           - gdu
           - git
+          - git-lfs
           - gphoto2
           - gvfs-gphoto2
           - gvfs
