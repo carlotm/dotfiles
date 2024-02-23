@@ -2,7 +2,6 @@ import XMonad
 
 import XMonad.StackSet
 import XMonad.Util.EZConfig
-import XMonad.Util.Ungrab
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Layout.NoBorders
 import XMonad.Hooks.ManageHelpers
