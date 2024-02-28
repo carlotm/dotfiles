@@ -39,6 +39,7 @@ jobs:
 
       - name: Install ansible on arch
         run: |
+          sudo incus config show archbox
           sudo incus exec archbox -- ping -c 5 google.com
           sudo incus exec archbox -- ping -c 5 mirrors.kernel.org
           sudo incus exec archbox -- pacman -S ansible --noconfirm
