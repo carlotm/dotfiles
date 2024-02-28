@@ -16,6 +16,8 @@ alias cat="bat"
 alias vagrant="vagrant --provider=libvirt"
 
 export EDITOR=vim
+export MANPAGER="less -R --use-color -Dd+r -Du+b"
+export MANROFFOPT="-P -c"
 
 source /usr/share/bash-completion/bash_completion
 NIX_PROFILE=/home/carloratm/.nix-profile/etc/profile.d/nix.sh
