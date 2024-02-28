@@ -39,6 +39,8 @@ jobs:
 
       - name: Install ansible on arch
         run: |
+          sudo iptables -I DOCKER-USER -i incusbr0 -j ACCEPT
+          sudo iptables -I DOCKER-USER -o incusbr0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
           sleep 10
           sudo incus list
           sudo incus config show archbox
