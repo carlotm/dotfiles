@@ -39,6 +39,7 @@ jobs:
 
       - name: Install ansible on arch
         run: |
+          sleep 10
           sudo incus list
           sudo incus config show archbox
           sudo incus exec archbox -- ping -c 5 google.com
