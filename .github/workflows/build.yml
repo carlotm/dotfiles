@@ -34,5 +34,8 @@ jobs:
       - name: Start incus
         run: sudo systemctl start incus
 
-      - name: Launch an Archlinux container
+      - name: Launch an arch container
         run: sudo incus launch images:b0b987c75be9 archbox
+
+      - name: Install ansible on arch
+        run: sudo incus exec archbox -- pacman -S ansible --noconfirm
