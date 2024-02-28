@@ -16,7 +16,7 @@ alias cat="bat"
 alias vagrant="vagrant --provider=libvirt"
 
 export EDITOR=vim
-export MANPAGER="less -R --use-color -Dd+r -Du+b"
+export MANPAGER="less -R --use-color -Dd+y -Du+g"
 export MANROFFOPT="-P -c"
 
 source /usr/share/bash-completion/bash_completion
