@@ -12,8 +12,7 @@ alias grep="rg -i"
 alias find="fd --hidden"
 alias d="devbox"
 alias du="gdu"
-alias cat="bat"
-alias vagrant="vagrant --provider=libvirt"
+alias cat="bat -p"
 
 export EDITOR=vim
 export MANPAGER="less -R --use-color -Dd+y -Du+g"
