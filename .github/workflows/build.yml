@@ -27,6 +27,8 @@ jobs:
           EOF'
           sudo apt update
           sudo apt install incus
+          sudo iptables -I DOCKER-USER -i incusbr0 -j ACCEPT
+          sudo iptables -I DOCKER-USER -o incusbr0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 
       - name: Init incus
         run: sudo incus admin init --auto
@@ -39,8 +41,6 @@ jobs:
 
       - name: Install ansible on arch
         run: |
-          sudo iptables -I DOCKER-USER -i incusbr0 -j ACCEPT
-          sudo iptables -I DOCKER-USER -o incusbr0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
           sleep 10
           sudo incus list
           sudo incus config show archbox
