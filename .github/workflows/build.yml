@@ -48,3 +48,6 @@ jobs:
 
       - name: Copy files to arch
         run: sudo incus file push -r * archbox/root/
+
+      - name: Run the sys playbook
+        run: ansible-playbook --inventory inventory -e hostname=scumm plays/sys.yml
