@@ -44,3 +44,4 @@ jobs:
         run: |
           sleep 10
           sudo incus exec archbox -- pacman -Syu ansible --noconfirm
+          sudo ansible --version
