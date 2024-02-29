@@ -47,4 +47,4 @@ jobs:
           sudo incus exec archbox -- ansible --version
 
       - name: Copy files to arch
-          sudo incus file push -r * archbox/root/
+        run: sudo incus file push -r * archbox/root/
