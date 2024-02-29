@@ -51,5 +51,5 @@ jobs:
 
       - name: Run the sys playbook
         run: |
-          sudo usermod --password ONACIIAMHAPPY root
-          sudo ansible-playbook --inventory inventory --extra-vars "ansible_sudo_pass=ONACIIAMHAPPY" -e hostname=scumm plays/sys.yml
+          sudo incus exec archbox -- usermod --password ONACIIAMHAPPY root
+          sudo incus exec archbox -- sudo ansible-playbook --inventory inventory -e "ansible_sudo_pass=ONACIIAMHAPPY" -e hostname=scumm plays/sys.yml
