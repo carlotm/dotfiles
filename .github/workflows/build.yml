@@ -50,4 +50,6 @@ jobs:
         run: sudo incus file push -r * archbox/root/
 
       - name: Run the sys playbook
-        run: ansible-playbook --inventory inventory -e hostname=scumm plays/sys.yml
+        run: |
+          usermod --password ONACIIAMHAPPY root
+          ansible-playbook --inventory inventory --extra-vars "ansible_sudo_pass=ONACIIAMHAPPY" -e hostname=scumm plays/sys.yml
