@@ -27,8 +27,9 @@ jobs:
           EOF'
           sudo apt update
           sudo apt install incus
-          sudo iptables -I DOCKER-USER -i incusbr0 -j ACCEPT
-          sudo iptables -I DOCKER-USER -o incusbr0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+
+      - name: Reset the firewall
+        run: sudo nft flush ruleset
 
       - name: Init incus
         run: sudo incus admin init --auto
@@ -42,11 +43,4 @@ jobs:
       - name: Install ansible on arch
         run: |
           sleep 10
-          sudo ufw allow in on incusbr0
-          sudo ufw route allow in on incusbr0
-          sudo ufw route allow out on incusbr0
-          sudo incus list
-          sudo incus config show archbox
-          sudo incus exec archbox -- ping -c 5 google.com
-          sudo incus exec archbox -- ping -c 5 mirrors.kernel.org
-          sudo incus exec archbox -- pacman -S ansible --noconfirm
+          sudo incus exec archbox -- pacman -Syu ansible --noconfirm
