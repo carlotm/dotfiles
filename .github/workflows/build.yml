@@ -45,5 +45,6 @@ jobs:
           sleep 10
           sudo incus exec archbox -- pacman -Syu ansible --noconfirm
           sudo incus exec archbox -- ansible --version
-          # sudo incus file push -r 
-          ls
+
+      - name: Copy files to arch
+          sudo incus file push -r * archbox/root/
