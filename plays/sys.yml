@@ -44,7 +44,7 @@
           - gvfs-gphoto2
           - gvfs
           - incus
-          - iptables
+          - iptables-nft
           - inotify-tools
           - libnotify
           - mupdf
