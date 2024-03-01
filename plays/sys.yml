@@ -64,6 +64,7 @@
     - name: Install extra packages
       community.general.pacman:
         pkg: "{{pkgs}}"
+        force: true
     - name: Create base groups
       ansible.builtin.group:
         name: "{{ item }}"
