@@ -12,7 +12,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Install incus
+
+      - name: Reset the firewall
+        run: sudo nft flush ruleset
+
+      - name: Install and start incus
         run: |
           sudo mkdir -p /etc/apt/keyrings
           wget -qO - https://pkgs.zabbly.com/key.asc | sudo tee /etc/apt/keyrings/zabbly.asc
@@ -27,15 +31,8 @@ jobs:
           EOF'
           sudo apt update
           sudo apt install incus
-
-      - name: Reset the firewall
-        run: sudo nft flush ruleset
-
-      - name: Init incus
-        run: sudo incus admin init --auto
-
-      - name: Start incus
-        run: sudo systemctl start incus
+          sudo incus admin init --auto
+          sudo systemctl start incus
 
       - name: Launch an arch container
         run: sudo incus launch images:b0b987c75be9 archbox
