@@ -39,7 +39,6 @@ jobs:
 
       - name: Install ansible on arch
         run: |
-          sleep 10
           sudo incus exec archbox -- pacman -Syyu --noconfirm
           sudo incus exec archbox -- pacman -S ansible make --noconfirm
 
