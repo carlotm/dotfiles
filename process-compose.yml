@@ -1,8 +1,0 @@
-# Process compose for starting django
-version: "0.5"
-
-processes:
-  incus:
-   command: sudo incusd --group docker --verbose
-   availability:
-    restart: "always"
