@@ -15,6 +15,7 @@
           - lftp
           - iptables
         state: absent
+        force: true
         update_cache: true
     - name: Remove skel folder
       ansible.builtin.file:

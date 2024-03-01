@@ -12,6 +12,8 @@ Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'yegappan/lsp'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elixir-editors/vim-elixir'
 plug#end()
@@ -77,7 +79,8 @@ nnoremap gd :LspGotoDefinition<CR>
 nnoremap <Leader>e :LspDiagCurrent<CR>
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
-g:UltiSnipsExpandTrigger = "ss"
+imap <expr> <CR> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<CR>'
+smap <expr> <CR> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<CR>'
 # }}}
 
 # LSP {{{
@@ -142,7 +145,7 @@ const lspOpts = {
 	showSignature: v:true,
 	snippetSupport: v:false,
 	ultisnipsSupport: v:false,
-	vsnipSupport: v:false,
+	vsnipSupport: v:true,
 	usePopupInCodeAction: v:false,
 	useQuickfixForLocations: v:false,
 	useBufferCompletion: v:false,
