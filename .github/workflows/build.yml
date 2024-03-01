@@ -57,8 +57,5 @@ jobs:
       - name: Assert sys.yml has done its thing
         run: |
           sudo incus exec archbox -- id carloratm
-          sudo incus exec archbox -- ls /home/carloratm
-          # sudo incus exec archbox -- which figlet
-          # sudo incus exec archbox -- sudo systemctl is-active --quiet sshd
-          # sudo incus exec archbox -- sudo systemctl is-active --quiet cpupower
-          sudo incus exec archbox -- ls /usr/share/kbd/consolefonts/spleen-*
+          sudo incus exec archbox -- ls -ld /home/carloratm
+          sudo incus exec archbox -- sudo systemctl is-active --quiet sshd
