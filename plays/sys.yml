@@ -13,6 +13,7 @@
         pkg:
           - asp
           - lftp
+          - iptables
         state: absent
         update_cache: true
     - name: Remove skel folder
@@ -43,6 +44,7 @@
           - gvfs-gphoto2
           - gvfs
           - incus
+          - iptables
           - inotify-tools
           - libnotify
           - mupdf
