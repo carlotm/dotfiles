@@ -43,7 +43,7 @@ jobs:
       - name: Install ansible on arch
         run: |
           sleep 10
-          sudo incus exec archbox -- pacman -Syu ansible --noconfirm
+          sudo incus exec archbox -- pacman -S ansible --noconfirm
           sudo incus exec archbox -- ansible --version
 
       - name: Copy files to arch
