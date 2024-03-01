@@ -44,7 +44,7 @@ jobs:
         run: |
           sleep 10
           sudo incus exec archbox -- pacman -Syyu --noconfirm
-          sudo incus exec archbox -- pacman -S ansible --noconfirm
+          sudo incus exec archbox -- pacman -S ansible make --noconfirm
 
       - name: Copy files to arch
         run: sudo incus file push -r * archbox/root/
