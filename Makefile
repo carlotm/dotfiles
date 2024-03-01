@@ -1,7 +1,11 @@
-ansible = ansible-playbook --inventory inventory --ask-become-pass
+ANSIBLE = ansible-playbook --inventory inventory
+TARGET ?= scumm
 
-.PHONY: scumm
+.PHONY: sys scumm
+
+sys:
+	$(ANSIBLE) $(EXTRA) -e hostname=$(TARGET) plays/sys.yml
 
 scumm:
-	$(ansible) -e hostname=scumm plays/sys.yml
-	$(ansible) plays/dots.yml
+	sudo make sys
+	sudo $(ANSIBLE) plays/dots.yml

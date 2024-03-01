@@ -51,11 +51,10 @@ jobs:
 
       - name: Run the sys playbook
         run: |
-          sudo incus exec archbox -- usermod --password ONACIIAMHAPPY root
-          sudo incus exec archbox -- sudo ansible-playbook --inventory inventory -e "ansible_sudo_pass=ONACIIAMHAPPY" -e hostname=scumm plays/sys.yml
+          sudo incus exec archbox -- make sys
 
       - name: Assert sys.yml has done its thing
         run: |
           sudo incus exec archbox -- id carloratm
           sudo incus exec archbox -- ls -ld /home/carloratm
-          sudo incus exec archbox -- sudo systemctl is-active --quiet sshd
+          sudo incus exec archbox -- systemctl is-active --quiet sshd
