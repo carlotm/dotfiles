@@ -42,6 +42,9 @@
           - git
           - git-lfs
           - gphoto2
+          - gst-libav
+          - gst-plugins-bad
+          - gst-plugins-ugly
           - gvfs-gphoto2
           - gvfs
           - incus
