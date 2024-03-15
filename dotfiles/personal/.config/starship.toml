@@ -40,3 +40,5 @@ format = '[\[PYTHON $version\]]($style)'
 format = '[\[JAVA $version\]]($style)'
 [vagrant]
 format = '[\[VAGRANT $version\]]($style)'
+[php]
+format = '[\[PHP $version\]]($style)'
