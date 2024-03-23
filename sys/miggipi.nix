@@ -1,58 +1,51 @@
 { config, pkgs, lib, ... }:
 {
-	boot = {
-		kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
-		initrd.availableKernelModules = [
-			"xhci_pci"
-			"usbhid"
-			"usb_storage"
-		];
-		loader.grub.enable = false;
-		loader.generic-extlinux-compatible.enable = true;
-	};
+	imports = [
+		"${fetchTarball "https://github.com/NixOS/nixos-hardware/tarball/master"}/raspberry-pi/4"
+	];
 
-	fileSystems = {
-		"/" = {
-			device = "/dev/disk/by-label/NIXOS_SD";
-			fsType = "ext4";
-			options = [ "noatime" ];
-		};
-	};
+	sound.enable = true;
 
-	networking = {
-		hostName = "miggipi";
-		wireless = {
-			enable = true;
-			networks.AscaniFerretti.psk = "g:B4$1F\\A\\@X.";
-			interfaces = [ "wlan0" ];
-		};
-	};
+	hardware.pulseaudio.enable = true;
+	hardware.raspberry-pi."4".fkms-3d.enable = true;
+	hardware.raspberry-pi."4".apply-overlays-dtmerge.enable = true;
+	hardware.deviceTree.enable = true;
+	hardware.enableRedistributableFirmware = true;
+
+	boot.kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
+	boot.initrd.availableKernelModules = [ "xhci_pci" "usbhid" "usb_storage" ];
+	boot.loader.grub.enable = false;
+	boot.loader.generic-extlinux-compatible.enable = true;
+
+	fileSystems."/".device = "/dev/disk/by-label/NIXOS_SD";
+	fileSystems."/".fsType = "ext4";
+	fileSystems."/".options = [ "noatime" ];
+
+	networking.hostName = "miggipi";
+	networking.wireless.enable = true;
+	networking.wireless.networks.AscaniFerretti.psk = "g:B4$1F\\A\\@X.";
+	networking.wireless.interfaces = [ "wlan0" ];
+
+	console.enable = false;
 
 	environment.systemPackages = [
 		pkgs.vim
 		pkgs.git
 		pkgs.gnumake
-  ];
+		pkgs.libraspberrypi
+		pkgs.raspberrypi-eeprom
+		pkgs.fsuae
+		pkgs.fsuae-launcher
+	];
 
-	services.openssh.enable = true;
+	users.mutableUsers = false;
+	users.users.carloratm.isNormalUser = true;
+	users.users.carloratm.password = "gia";
+	users.users.carloratm.extraGroups = [ "wheel" ];
 
-	users = {
-		mutableUsers = false;
-		users.carloratm = {
-			isNormalUser = true;
-			initialPassword = "changeme";
-			extraGroups = [ "wheel" ];
-		};
-	};
-
-	security.sudo = {
-		enable = true;
-		extraRules = [{
-			commands = [
-			{
-				command = "${pkgs.systemd}/bin/systemctl suspend";
-				options = [ "NOPASSWD" ];
-			}
+	security.sudo.enable = true;
+	security.sudo.extraRules = [{
+		commands = [
 			{
 				command = "${pkgs.systemd}/bin/reboot";
 				options = [ "NOPASSWD" ];
@@ -61,25 +54,30 @@
 				command = "${pkgs.systemd}/bin/poweroff";
 				options = [ "NOPASSWD" ];
 			}
-			];
-			groups = [ "wheel" ];
-		}];
-	};
+		];
+		groups = [ "wheel" ];
+	}];
 
-	services.xserver.enable = true;
-	services.xserver.displayManager.startx.enable = true;
-	services.xserver.windowManager.jwm.enable = true;
+	services.getty.autologinUser = "carloratm";
+	services.openssh.enable = true;
+	services.xserver = {
+		enable = true;
+		xkb.layout = "us";
+		desktopManager.xterm.enable = false;
+		windowManager.jwm.enable = true;
+		displayManager.lightdm.enable = true;
+		displayManager.autoLogin.enable = true;
+		displayManager.autoLogin.user = "carloratm";
+		displayManager.defaultSession = "none+jwm";
+	};
 
 	programs.vim.defaultEditor = true;
 	programs.git.enable = true;
-	programs.git.config = {
-		init.defaultBranch = "main";
-		user.name = "Ascani Carlo";
-		user.email = "carlotm@protonmail.com";
-		alias.co = "checkout";
-		alias.s = "status";
-	};
+	programs.git.config.init.defaultBranch = "main";
+	programs.git.config.user.name = "Ascani Carlo";
+	programs.git.config.user.email = "carlotm@protonmail.com";
+	programs.git.config.alias.co = "checkout";
+	programs.git.config.alias.s = "status";
 
-	hardware.enableRedistributableFirmware = true;
 	system.stateVersion = "24.05";
 }
