@@ -17,7 +17,7 @@ in
 
 	nix.gc.automatic = true;
   	nix.gc.dates = "weekly";
-	nix.gc.options = "--delete-older-than 20d";
+	nix.gc.options = "--delete-older-than 10d";
 
 	sound.enable = true;
 
@@ -31,6 +31,7 @@ in
 	boot.initrd.availableKernelModules = [ "xhci_pci" "usbhid" "usb_storage" ];
 	boot.loader.grub.enable = false;
 	boot.loader.generic-extlinux-compatible.enable = true;
+	boot.loader.generic-extlinux-compatible.configurationLimit = 3;
 
 	fileSystems."/".device = "/dev/disk/by-label/NIXOS_SD";
 	fileSystems."/".fsType = "ext4";
@@ -144,8 +145,8 @@ in
 		home.pointerCursor.package = pkgs.gnome.adwaita-icon-theme;
 		gtk.cursorTheme.name = "Adwaita";
 		home.pointerCursor.name = "Adwaita";
-		gtk.cursorTheme.size = 64;
-		home.pointerCursor.size = 64;
+		gtk.cursorTheme.size = 48;
+		home.pointerCursor.size = 48;
 		home.pointerCursor.x11.enable = true;
 		home.pointerCursor.gtk.enable = true;
 	};
