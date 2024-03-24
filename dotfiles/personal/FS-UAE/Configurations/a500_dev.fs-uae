@@ -1,7 +1,0 @@
-[config]
-amiga_model = A500
-hard_drive_0 = workbench
-hard_drive_1 = code
-kickstart_file = Kickstart1.3r34.5.rom
-slow_memory = 1024
-console_debugger = 1
