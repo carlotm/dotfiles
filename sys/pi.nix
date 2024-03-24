@@ -96,6 +96,7 @@ in
 	services.xserver.displayManager.autoLogin.user = "${user}";
 	services.xserver.displayManager.defaultSession = "none+openbox";
 
+	programs.dconf.enable = true;
 	programs.vim.defaultEditor = true;
 	programs.git.enable = true;
 	programs.git.config.init.defaultBranch = "main";
@@ -138,6 +139,15 @@ in
 		'';
 		xdg.configFile."openbox/autostart".text = "fs-uae-launcher &";
 		xdg.configFile."openbox/autostart".executable = true;
+		gtk.enable = true;
+		gtk.cursorTheme.package = pkgs.gnome.adwaita-icon-theme;
+		home.pointerCursor.package = pkgs.gnome.adwaita-icon-theme;
+		gtk.cursorTheme.name = "Adwaita";
+		home.pointerCursor.name = "Adwaita";
+		gtk.cursorTheme.size = 64;
+		home.pointerCursor.size = 64;
+		home.pointerCursor.x11.enable = true;
+		home.pointerCursor.gtk.enable = true;
 	};
 
 	system.stateVersion = "24.05";
