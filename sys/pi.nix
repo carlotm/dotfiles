@@ -3,7 +3,7 @@ let
 	hostname = "miggipi";
 	user = "carloratm";
 	essid = "AscaniFerretti";
-	password_user = "gia";
+	password_user = "$y$j9T$pGm/q8feI0o7dmJv02Vki1$DSZ9bsykllIlTIaSpzlTReXx5o0HylY0dl5tAB0Hgh5";
 	password_wifi = "g:B4$1F\\A\\@X.";
 
 	nixos-hw = fetchTarball "https://github.com/NixOS/nixos-hardware/tarball/master";
@@ -67,7 +67,7 @@ in
 	users.mutableUsers = false;
 	users.users."${user}" = {
 		isNormalUser = true;
-		password = "${password_user}";
+		hashedPassword = "${password_user}";
 		extraGroups = [ "wheel" ];
 	};
 
