@@ -98,12 +98,17 @@ in
 	home-manager.users."${user}" = { lib, ... } : {
 
 		home.stateVersion = "23.11";
+
 		gtk.enable = true;
 		gtk.cursorTheme.package = pkgs.gnome.adwaita-icon-theme;
-		home.pointerCursor.package = pkgs.gnome.adwaita-icon-theme;
 		gtk.cursorTheme.name = "Adwaita";
-		home.pointerCursor.name = "Adwaita";
 		gtk.cursorTheme.size = 48;
+		gtk.font.name = "DejaVu Sans";
+		gtk.font.package = pkgs.dejavu_fonts;
+		gtk.font.size = 18;
+
+		home.pointerCursor.package = pkgs.gnome.adwaita-icon-theme;
+		home.pointerCursor.name = "Adwaita";
 		home.pointerCursor.size = 48;
 		home.pointerCursor.x11.enable = true;
 		home.pointerCursor.gtk.enable = true;
