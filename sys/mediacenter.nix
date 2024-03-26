@@ -6,11 +6,13 @@ let
 	password_user = "$y$j9T$xx9s8/V2nKlTKOprcsked1$YObCHNQ/AJ00sN7KaC2KKBpiVJfM6FXxJtoH45oWNy/";
 	password_wifi = "g:B4$1F\\A\\@X.";
 
-	nixos-hw = fetchTarball "https://github.com/NixOS/nixos-hardware/tarball/master";
 	home-manager = fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
 in
 {
-	imports = [ ./hardware-configuration.nix ];
+	imports = [
+		./hardware-configuration.nix 
+		(import "${home-manager}/nixos")
+	];
 
 	hardware.pulseaudio.enable = false;
 
@@ -52,6 +54,8 @@ in
 	nixpkgs.config.allowUnfree = true;
 
 	environment.systemPackages = [
+		pkgs.git
+		pkgs.gnumake
 		pkgs.vim 
 		pkgs.firefox
 	];
@@ -83,6 +87,108 @@ in
 
 	programs.gnupg.agent.enable = true;
 	programs.gnupg.agent.enableSSHSupport = true;
+
+
+	home-manager.users."${user}" = { lib, ... } : {
+
+		home.stateVersion = "23.11";
+		gtk.enable = true;
+		gtk.cursorTheme.package = pkgs.gnome.adwaita-icon-theme;
+		home.pointerCursor.package = pkgs.gnome.adwaita-icon-theme;
+		gtk.cursorTheme.name = "Adwaita";
+		home.pointerCursor.name = "Adwaita";
+		gtk.cursorTheme.size = 48;
+		home.pointerCursor.size = 48;
+		home.pointerCursor.x11.enable = true;
+		home.pointerCursor.gtk.enable = true;
+
+
+  dconf.settings = with lib.hm.gvariant; {
+    "org/gnome/Console" = {
+      font-scale = 1.8000000000000007;
+      last-window-size = mkTuple [ 859 534 ];
+    };
+
+    "org/gnome/control-center" = {
+      last-panel = "power";
+      window-state = mkTuple [ 980 640 false ];
+    };
+
+    "org/gnome/desktop/app-folders" = {
+      folder-children = [ "Utilities" "YaST" "Pardus" ];
+    };
+
+    "org/gnome/desktop/app-folders/folders/Pardus" = {
+      categories = [ "X-Pardus-Apps" ];
+      name = "X-Pardus-Apps.directory";
+      translate = true;
+    };
+
+    "org/gnome/desktop/app-folders/folders/Utilities" = {
+      apps = [ "gnome-abrt.desktop" "gnome-system-log.desktop" "nm-connection-editor.desktop" "org.gnome.baobab.desktop" "org.gnome.Connections.desktop" "org.gnome.DejaDup.desktop" "org.gnome.Dictionary.desktop" "org.gnome.DiskUtility.desktop" "org.gnome.Evince.desktop" "org.gnome.FileRoller.desktop" "org.gnome.fonts.desktop" "org.gnome.Loupe.desktop" "org.gnome.seahorse.Application.desktop" "org.gnome.tweaks.desktop" "org.gnome.Usage.desktop" "vinagre.desktop" ];
+      categories = [ "X-GNOME-Utilities" ];
+      name = "X-GNOME-Utilities.directory";
+      translate = true;
+    };
+
+    "org/gnome/desktop/app-folders/folders/YaST" = {
+      categories = [ "X-SuSE-YaST" ];
+      name = "suse-yast.directory";
+      translate = true;
+    };
+
+    "org/gnome/desktop/input-sources" = {
+      sources = [ (mkTuple [ "xkb" "us" ]) ];
+      xkb-options = [ "terminate:ctrl_alt_bksp" ];
+    };
+
+    "org/gnome/desktop/notifications" = {
+      application-children = [ "org-gnome-console" "gnome-power-panel" ];
+    };
+
+    "org/gnome/desktop/notifications/application/gnome-power-panel" = {
+      application-id = "gnome-power-panel.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-console" = {
+      application-id = "org.gnome.Console.desktop";
+    };
+
+    "org/gnome/desktop/session" = {
+      idle-delay = mkUint32 0;
+    };
+
+    "org/gnome/epiphany" = {
+      ask-for-default = false;
+    };
+
+    "org/gnome/evolution-data-server" = {
+      migrated = true;
+    };
+
+    "org/gnome/nautilus/preferences" = {
+      migrated-gtk-settings = true;
+    };
+
+    "org/gnome/settings-daemon/plugins/power" = {
+      power-button-action = "interactive";
+      sleep-inactive-ac-type = "nothing";
+    };
+
+    "org/gnome/shell" = {
+      last-selected-power-profile = "performance";
+      welcome-dialog-last-shown-version = "45.5";
+    };
+
+    "org/gnome/shell/world-clocks" = {
+      locations = [];
+    };
+
+  };
+
+
+
+	};
 
 	system.stateVersion = "23.11";
 }
