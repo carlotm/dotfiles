@@ -87,7 +87,13 @@ in
 
 	programs.gnupg.agent.enable = true;
 	programs.gnupg.agent.enableSSHSupport = true;
-
+	programs.vim.defaultEditor = true;
+	programs.git.enable = true;
+	programs.git.config.init.defaultBranch = "main";
+	programs.git.config.user.name = "Ascani Carlo";
+	programs.git.config.user.email = "carlotm@protonmail.com";
+	programs.git.config.alias.co = "checkout";
+	programs.git.config.alias.s = "status";
 
 	home-manager.users."${user}" = { lib, ... } : {
 
