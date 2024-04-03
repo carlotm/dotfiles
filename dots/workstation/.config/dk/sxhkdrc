@@ -1,0 +1,44 @@
+alt + F2
+    xfce4-appfinder --disable-server --class=appfinder
+
+alt + shift + Return
+    xfce4-terminal
+
+alt + space
+    dkcmd set layout cycle
+
+alt + {j,k}
+    dkcmd win focus {next,prev}
+
+alt + {h,l}
+    dkcmd win resize {w=-20,w=+20}
+
+{_,alt + }F11
+    dkcmd win {full,fakefull}
+
+alt + {_,shift + }{1-9}
+    dkcmd ws {view,send} {1-9}
+
+alt + t
+    dkcmd win float
+
+alt + shift + c
+    dkcmd win kill
+
+alt + Return
+    dkcmd win swap
+
+alt + Tab
+    dkcmd win cycle
+
+alt + shift + x
+    pkill -USR1 -x sxhkd
+
+{XF86MonBrightnessUp,XF86MonBrightnessDown}
+    xbacklight {+10,-10}
+
+{XF86AudioRaiseVolume,XF86AudioLowerVolume}
+    pamixer {-i,-d} 2
+
+@Print
+    xfce4-screenshooter

@@ -1,0 +1,266 @@
+---
+- hosts: localhost
+  gather_facts: no
+  become: true
+  tasks:
+
+    # Load vars {{{
+    - name: Load {{machine}} vars
+      ansible.builtin.include_vars:
+        file: "./vars/{{machine}}.yml"
+    # }}}
+
+# Install packages {{{
+    - name: Common packages
+      community.general.xbps:
+        name:
+          - adwaita-icon-theme
+          - alsa-plugins-pulseaudio
+          - base-devel
+          - bash-completion
+          - cronie
+          - curl
+          - font-spleen
+          - mdocml
+          - noto-fonts-emoji
+          - noto-fonts-ttf
+          - pavucontrol
+          - pulseaudio
+          - stow
+          - vim
+          - void-repo-nonfree
+          - wget
+          - xorg
+          - xtools
+    - name: User packages
+      community.general.xbps:
+        name: "{{ sys.packages|default([]) }}"
+# }}}
+
+    # Hardware {{{
+    - name: Gather DISC-MAX and DISC-GRAN
+      ansible.builtin.command:
+        cmd: lsblk --discard -o DISC-MAX,DISC-GRAN -n -i -r /dev/sda
+      register: _res
+    - name: Gather DISC-MAX and DISC-GRAN
+      ansible.builtin.set_fact:
+        need_trim: "{{ _res.stdout_lines[0] != '0 0' }}"
+        cacheable: true
+    - name: Enable SSD TRIM
+      ansible.builtin.cron:
+        name: "TRIM SSD"
+        special_time: weekly
+        job: "fstrim /"
+      when: need_trim
+    # }}}
+
+    # Hostname {{{
+    - name: Set hostname
+      ansible.builtin.hostname:
+        name: "{{sys.hostname}}"
+    # }}}
+
+# Git {{{
+    - name: Configure git
+      community.general.git_config:
+        name: "{{ item.n }}"
+        scope: system
+        value: "{{ item.v }}"
+      loop:
+        - {n: core.editor, v: vim}
+        - {n: user.name, v: sys.user.name}
+        - {n: user.username, v: sys.user.username}
+        - {n: user.email, v: sys.user.email}
+        - {n: alias.s, v: status}
+        - {n: alias.co, v: checkout}
+# }}}
+
+# Vim {{{
+    - name: Configure vim
+      ansible.builtin.copy:
+        src: ./templates/vimrc.local
+        dest: /etc/vimrc.local
+        owner: root
+        group: root
+        mode: '0666'
+# }}}
+
+    # rc.conf {{{
+    - name: Set rc.conf
+      ansible.builtin.copy:
+        content: |
+          HARDWARECLOCK="UTC"
+          KEYMAP=us
+          FONT="spleen-16x32"
+        dest: /etc/rc.conf
+        owner: root
+        group: root
+        mode: '0644'
+    # }}}
+
+    # i18n {{{
+    - name: Set locales to be generated
+      ansible.builtin.copy:
+        content: |
+          en_US.UTF-8 UTF-8
+          it_IT.UTF-8 UTF-8
+          de_AT.UTF-8 UTF-8
+        dest: /etc/default/libc-locales
+        owner: root
+        group: root
+        mode: '0644'
+    - name: Generate locales
+      ansible.builtin.command:
+        cmd: xbps-reconfigure --force glibc-locales
+    - name: Set system locale
+      ansible.builtin.template:
+        src: ./templates/locale.conf.j2
+        dest: /etc/locale.conf
+        owner: root
+        group: root
+        mode: '0644'
+    # }}}
+
+# User and groups {{{
+    - name: Clean up skel files
+      ansible.builtin.file:
+        path: "/home/{{ sys.user.username }}/{{ item }}"
+        state: absent
+      loop:
+        - .bashrc
+        - .bash_profile
+    - name: Create base groups
+      ansible.builtin.group:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - users
+        - "{{ sys.user.username }}"
+    - name: "Create user {{ sys.user.name }}"
+      ansible.builtin.user:
+        name: "{{ sys.user.username }}"
+        shell: /bin/bash
+        groups:
+          - audio
+          - cdrom
+          - floppy
+          - input
+          - kvm
+          - optical
+          - plugdev
+          - storage
+          - tty
+          - usbmon
+          - users
+          - video
+          - wheel
+          - xbuilder
+# }}}
+
+# Network {{{
+# }}}
+
+# Services {{{
+    - name: Enable common services
+      community.general.runit:
+        name: "{{ item }}"
+        state: started
+        enabled: true
+      loop:
+        - cronie
+    - name: Enable user services
+      community.general.runit:
+        name: "{{ item }}"
+        state: started
+        enabled: true
+      loop:
+        "{{ sys.services|default([]) }}"
+# }}}
+
+# Dotfiles {{{
+    - name: Link dotfiles
+      become: true
+      become_user: "{{ sys.user.username }}"
+      ansible.builtin.command:
+        cmd: "stow {{ machine }} --target=/home/{{ sys.user.username }}/ --adopt"
+        chdir: dots
+# }}}
+
+# Templates {{{
+    - name: Copy templates
+      become: true
+      ansible.builtin.copy:
+        src: "./templates/{{ machine }}/{{ item.s }}"
+        dest: "{{ item.d }}/{{ item.s }}"
+      loop:
+        "{{ sys.templates|default([]) }}"
+# }}}
+
+# Xfce config {{{
+    - name: Configure panels
+      become: true
+      become_user: "{{ sys.user.username }}"
+      community.general.xfconf:
+        channel: xfce4-panel
+        property: /panels
+        value_type: int
+        value: [1]
+        force_array: true
+
+    - name: Xfce4 config community.general.xfconf
+      become: true
+      become_user: "{{ sys.user.username }}"
+      community.general.xfconf:
+        channel: "{{ item.0.key }}"
+        property: "{{ item.1.p }}"
+        value_type: "{{ item.1.t }}"
+        value: "{{ item.1.v }}"
+      loop:
+        "{{ sys.xfconf|dict2items|subelements('value') }}"
+      loop_control:
+        label: "{{ item.0.key}} {{ item.1.p }}"
+# }}}
+
+# Xmonad {{{
+    - name: Maybe build xmonad
+      become: true
+      block:
+        - name: Install requirements
+          community.general.xbps:
+            name:
+              - libX11-devel
+              - libXScrnSaver-devel
+              - libXft-devel
+              - libXinerama-devel
+              - libXrandr-devel
+              - ncurses-libtinfo-devel
+              - ncurses-libtinfo-libs
+              - pkg-config
+              - stack
+        - name: Download xmonad sources
+          become_user: "{{ sys.user.username }}"
+          ansible.builtin.git:
+            repo: "{{ item.r }}"
+            depth: 1
+            dest: "/home/{{ sys.user.username }}/.config/xmonad/{{ item.d }}"
+          loop:
+            - {r: "https://github.com/xmonad/xmonad", d: xmonad}
+            - {r: "https://github.com/xmonad/xmonad-contrib", d: xmonad-contrib}
+        - name: Check stack.yaml
+          become_user: "{{ sys.user.username }}"
+          ansible.builtin.stat:
+            path: "/home/{{ sys.user.username }}/.config/xmonad/stack.yaml"
+          register: st
+        - name: Stack init
+          become_user: "{{ sys.user.username }}"
+          ansible.builtin.command:
+            cmd: stack init
+            chdir: "/home/{{ sys.user.username }}/.config/xmonad"
+          when: st.stat.islnk is not defined
+        - name: Build xmonad
+          become_user: "{{ sys.user.username }}"
+          ansible.builtin.command:
+            cmd: stack install
+            chdir: "/home/{{ sys.user.username }}/.config/xmonad"
+      when: sys.xmonad|default(false)|bool()
+# }}}k

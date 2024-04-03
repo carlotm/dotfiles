@@ -1,1 +1,0 @@
-{Intel/Mesa Intel(R) HD Graphics 520 (SKL GT2)/4.6 (Core Profile) Mesa 23.3.5-arch1.1}=SUPPORTED

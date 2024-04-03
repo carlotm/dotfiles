@@ -1,11 +1,13 @@
 ANSIBLE = ansible-playbook --inventory inventory
-TARGET ?= scumm
 
-.PHONY: sys scumm
+workstation: sys.yml vars/workstation.yml
+	$(ANSIBLE) -e machine=$@ $<
 
-sys:
-	$(ANSIBLE) $(EXTRA) -e hostname=$(TARGET) plays/sys.yml
+chiara:
+	@echo TODO
 
-scumm:
-	sudo make sys
-	sudo $(ANSIBLE) plays/dots.yml
+mediacenter:
+	@echo TODO
+
+pi:
+	@echo TODO
