@@ -19,14 +19,17 @@ sys:
     - gvfs
     - gvfs-gphoto2
     - intel-ucode
+    - io.elementary.icons
     - keepassxc
     - make
+    - mkpasswd
     - pamixer
     - ripgrep
     - starship
     - sxhkd
     - xbacklight
     - xfce4
+    - xfce4-pulseaudio-plugin
   services:
     - dhcpcd
     - dbus

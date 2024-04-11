@@ -139,6 +139,7 @@
     - name: "Create user {{ sys.user.name }}"
       ansible.builtin.user:
         name: "{{ sys.user.username }}"
+        password: "{{ lookup('ansible.builtin.env', 'PASSWORD') | password_hash('sha256') }}"
         shell: /bin/bash
         groups:
           - audio
@@ -155,6 +156,13 @@
           - video
           - wheel
           - xbuilder
+    - name: Remove bashrc and bash_profile
+      ansible.builtin.file:
+        path: "/home/{{ sys.user.username }}/{{ item }}"
+        state: absent
+      loop:
+        - .bashrc
+        - .bash_profile
 # }}}
 
 # Network {{{
@@ -178,22 +186,42 @@
 # }}}
 
 # Dotfiles {{{
+    - name: Create system dotfiles folder
+      ansible.builtin.file:
+        path: "/opt/dotfiles"
+        state: directory
+        mode: '0755'
+        owner: "{{ sys.user.username }}"
+        group: "{{ sys.user.username }}"
+    - name: Copy dotfiles to the system folder
+      ansible.builtin.copy:
+        src: "{{ playbook_dir }}/dots/{{ machine }}"
+        dest: "/opt/dotfiles/"
+        owner: "{{ sys.user.username }}"
+        group: "{{ sys.user.username }}"
+        mode: '0744'
     - name: Link dotfiles
       become: true
       become_user: "{{ sys.user.username }}"
       ansible.builtin.command:
         cmd: "stow {{ machine }} --target=/home/{{ sys.user.username }}/ --adopt"
-        chdir: dots
+        chdir: /opt/dotfiles
+    - name: Udpate xdg user dirs
+      become: true
+      become_user: "{{ sys.user.username }}"
+      ansible.builtin.command:
+        cmd: xdg-user-dirs-update
+        chdir: "/home/{{ sys.user.username }}"
 # }}}
 
 # Templates {{{
-    - name: Copy templates
-      become: true
-      ansible.builtin.copy:
-        src: "./templates/{{ machine }}/{{ item.s }}"
-        dest: "{{ item.d }}/{{ item.s }}"
-      loop:
-        "{{ sys.templates|default([]) }}"
+    # - name: Copy templates
+    #   become: true
+    #   ansible.builtin.copy:
+    #     src: "./templates/{{ machine }}/{{ item.s }}"
+    #     dest: "{{ item.d }}/{{ item.s }}"
+    #   loop:
+    #     "{{ sys.templates|default([]) }}"
 # }}}
 
 # Xfce config {{{
