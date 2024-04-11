@@ -197,35 +197,35 @@
 # }}}
 
 # Xfce config {{{
-    - name: Configure panels
-      become: true
-      become_user: "{{ sys.user.username }}"
-      community.general.xfconf:
-        channel: xfce4-panel
-        property: /panels
-        value_type: int
-        value: [1]
-        force_array: true
+    # - name: Configure panels
+    #   become: true
+    #   become_user: "{{ sys.user.username }}"
+    #   community.general.xfconf:
+    #     channel: xfce4-panel
+    #     property: /panels
+    #     value_type: int
+    #     value: [1]
+    #     force_array: true
 
-    - name: Xfce4 config community.general.xfconf
-      become: true
-      become_user: "{{ sys.user.username }}"
-      community.general.xfconf:
-        channel: "{{ item.0.key }}"
-        property: "{{ item.1.p }}"
-        value_type: "{{ item.1.t }}"
-        value: "{{ item.1.v }}"
-      loop:
-        "{{ sys.xfconf|dict2items|subelements('value') }}"
-      loop_control:
-        label: "{{ item.0.key}} {{ item.1.p }}"
+    # - name: Xfce4 config community.general.xfconf
+    #   become: true
+    #   become_user: "{{ sys.user.username }}"
+    #   community.general.xfconf:
+    #     channel: "{{ item.0.key }}"
+    #     property: "{{ item.1.p }}"
+    #     value_type: "{{ item.1.t }}"
+    #     value: "{{ item.1.v }}"
+    #   loop:
+    #     "{{ sys.xfconf|dict2items|subelements('value') }}"
+    #   loop_control:
+    #     label: "{{ item.0.key}} {{ item.1.p }}"
 # }}}
 
 # Xmonad {{{
     - name: Maybe build xmonad
       become: true
       block:
-        - name: Install requirements
+        - name: Install xmonad requirements
           community.general.xbps:
             name:
               - libX11-devel
