@@ -139,7 +139,6 @@
     - name: "Create user {{ sys.user.name }}"
       ansible.builtin.user:
         name: "{{ sys.user.username }}"
-        password: "{{ lookup('ansible.builtin.env', 'PASSWORD') | password_hash('sha256') }}"
         shell: /bin/bash
         groups:
           - audio

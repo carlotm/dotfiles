@@ -1,7 +1,7 @@
 ANSIBLE = ansible-playbook --inventory inventory
 
 workstation: sys.yml vars/workstation.yml
-	$(ANSIBLE) -e machine=$@ $<
+	@$(ANSIBLE) -e machine=$@ $<
 
 chiara:
 	@echo TODO
