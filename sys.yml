@@ -290,4 +290,33 @@
             cmd: stack install
             chdir: "/home/{{ sys.user.username }}/.config/xmonad"
       when: sys.xmonad|default(false)|bool()
-# }}}k
+# }}}
+
+# Devbox {{{
+    - name: Maybe install devbox
+      become: true
+      block:
+        - name: Check if devbox exists
+          ansible.builtin.stat:
+            path: /usr/local/bin/devbox
+          register: devbox_bin
+        - name: Download devbox
+          ansible.builtin.get_url:
+            url: https://get.jetify.com/devbox
+            dest: /tmp/devbox_installer
+            mode: 0777
+          register: devbox_installer
+          when: not devbox_bin.stat.exists
+        - name: Install devbox
+          become: true
+          ansible.builtin.command: /tmp/devbox_installer --force
+          when: not devbox_bin.stat.exists
+        - name: Remove installer
+          ansible.builtin.file:
+            path: "{{ devbox_installer.dest }}"
+            state: absent
+        - name: Fix devbox bin permissions
+          ansible.builtin.file:
+            path: /usr/local/bin/devbox
+            mode: 0777
+      when: sys.devbox|default(false)|bool()
