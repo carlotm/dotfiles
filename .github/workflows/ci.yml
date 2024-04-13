@@ -39,7 +39,7 @@ jobs:
       - name: Install pre-requisites on void
         run: |
           sleep 10
-          sudo incus exec void -- xbps-install --yes make ansible ansible-lint
+          sudo incus exec void -- xbps-install --yes make ansible python3-ansible-lint
 
       - name: Copy this repository files to void
         run: sudo incus file push -r * void/root/
