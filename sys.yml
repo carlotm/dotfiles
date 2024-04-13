@@ -262,13 +262,14 @@
             cmd: stack init
             chdir: "/home/{{ sys.user.username }}/.config/xmonad"
           when: st.stat.islnk is not defined
-        - name: Change file ownership, group and permissions
+        - name: Change /tmp permissions on CI
           ansible.builtin.file:
             path: /tmp
             owner: root
             group: root
             mode: "0777"
             recurse: yes
+          when: lookup("ansible.builtin.env", "CI", default="false")|bool()
         - name: Build xmonad
           become_user: "{{ sys.user.username }}"
           ansible.builtin.command:
