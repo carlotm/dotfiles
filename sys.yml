@@ -223,16 +223,6 @@
         chdir: "/home/{{ sys.user.username }}"
 # }}}
 
-# Templates {{{
-    # - name: Copy templates
-    #   become: true
-    #   ansible.builtin.copy:
-    #     src: "./templates/{{ machine }}/{{ item.s }}"
-    #     dest: "{{ item.d }}/{{ item.s }}"
-    #   loop:
-    #     "{{ sys.templates|default([]) }}"
-# }}}
-
 # Xfce config {{{
     # - name: Configure panels
     #   become: true
