@@ -1,14 +1,15 @@
 ---
-- hosts: localhost
-  gather_facts: no
+- name: System configuration
+  hosts: localhost
+  gather_facts: false
   become: true
   tasks:
 
-    # Load vars {{{
-    - name: Load {{machine}} vars
+# Load vars {{{
+    - name: Load vars
       ansible.builtin.include_vars:
-        file: "./vars/{{machine}}.yml"
-    # }}}
+        file: "./vars/{{ machine }}.yml"
+# }}}
 
 # Install packages {{{
     - name: Common packages
@@ -34,13 +35,14 @@
           - xtools
     - name: User packages
       community.general.xbps:
-        name: "{{ sys.packages|default([]) }}"
+        name: "{{ sys.packages | default([]) }}"
 # }}}
 
     # Hardware {{{
     - name: Hardware config
+      when: not lookup("ansible.builtin.env", "CI", default="false") | bool()
       block:
-        - name: Gather DISC-MAX and DISC-GRAN
+        - name: Gather DISC-MAX and DISC-GRAN # noqa no-changed-when
           ansible.builtin.command:
             cmd: lsblk --discard -o DISC-MAX,DISC-GRAN -n -i -r /dev/sda
           register: o
@@ -54,13 +56,12 @@
             special_time: weekly
             job: "fstrim /"
           when: need_trim
-      when: not lookup("ansible.builtin.env", "CI", default="false")|bool()
     # }}}
 
     # Hostname {{{
     - name: Set hostname
       ansible.builtin.hostname:
-        name: "{{sys.hostname}}"
+        name: "{{ sys.hostname }}"
     # }}}
 
 # Git {{{
@@ -85,7 +86,7 @@
         dest: /etc/vimrc.local
         owner: root
         group: root
-        mode: '0666'
+        mode: "0666"
 # }}}
 
     # rc.conf {{{
@@ -98,7 +99,7 @@
         dest: /etc/rc.conf
         owner: root
         group: root
-        mode: '0644'
+        mode: "0644"
     # }}}
 
     # i18n {{{
@@ -111,8 +112,8 @@
         dest: /etc/default/libc-locales
         owner: root
         group: root
-        mode: '0644'
-    - name: Generate locales
+        mode: "0644"
+    - name: Generate locales # noqa no-changed-when
       ansible.builtin.command:
         cmd: xbps-reconfigure --force glibc-locales
     - name: Set system locale
@@ -121,7 +122,7 @@
         dest: /etc/locale.conf
         owner: root
         group: root
-        mode: '0644'
+        mode: "0644"
     # }}}
 
 # User and groups {{{
@@ -184,7 +185,7 @@
         state: started
         enabled: true
       loop:
-        "{{ sys.services|default([]) }}"
+        "{{ sys.services | default([]) }}"
 # }}}
 
 # Dotfiles {{{
@@ -192,7 +193,7 @@
       ansible.builtin.file:
         path: "/opt/dotfiles"
         state: directory
-        mode: '0755'
+        mode: "0755"
         owner: "{{ sys.user.username }}"
         group: "{{ sys.user.username }}"
     - name: Copy dotfiles to the system folder
@@ -201,8 +202,8 @@
         dest: "/opt/dotfiles/"
         owner: "{{ sys.user.username }}"
         group: "{{ sys.user.username }}"
-        mode: '0744'
-    - name: Link dotfiles
+        mode: "0744"
+    - name: Link dotfiles # noqa no-changed-when
       become: true
       become_user: "{{ sys.user.username }}"
       ansible.builtin.command:
@@ -213,12 +214,12 @@
       ansible.builtin.file:
         path: "/home/{{ sys.user.username }}/{{ item }}"
         state: directory
-        mode: '0711'
+        mode: "0711"
         owner: "{{ sys.user.username }}"
         group: "{{ sys.user.username }}"
       loop:
-        "{{ sys.user.dirs|default([]) }}"
-    - name: Udpate xdg user dirs
+        "{{ sys.user.dirs | default([]) }}"
+    - name: Udpate xdg user dirs # noqa no-changed-when
       become: true
       become_user: "{{ sys.user.username }}"
       ansible.builtin.command:
@@ -228,9 +229,10 @@
 
 # Xmonad {{{
     - name: Maybe build xmonad
-      become: true
+      when: sys.xmonad | default(false) | bool()
       block:
         - name: Install xmonad requirements
+          become: true
           community.general.xbps:
             name:
               - libX11-devel
@@ -243,44 +245,52 @@
               - pkg-config
               - stack
         - name: Download xmonad sources
+          become: true
           become_user: "{{ sys.user.username }}"
           ansible.builtin.git:
             repo: "{{ item.r }}"
             depth: 1
             dest: "/home/{{ sys.user.username }}/.config/xmonad/{{ item.d }}"
+            version: "v0.18.0"
           loop:
             - {r: "https://github.com/xmonad/xmonad", d: xmonad}
             - {r: "https://github.com/xmonad/xmonad-contrib", d: xmonad-contrib}
         - name: Check stack.yaml
+          become: true
           become_user: "{{ sys.user.username }}"
           ansible.builtin.stat:
             path: "/home/{{ sys.user.username }}/.config/xmonad/stack.yaml"
           register: st
         - name: Stack init
+          become: true
           become_user: "{{ sys.user.username }}"
           ansible.builtin.command:
             cmd: stack init
+            creates: "/home/{{ sys.user.username }}/.config/xmonad/stack.yaml"
             chdir: "/home/{{ sys.user.username }}/.config/xmonad"
           when: st.stat.islnk is not defined
         - name: Change /tmp permissions on CI
+          become: true
           ansible.builtin.file:
             path: /tmp
             owner: root
             group: root
             mode: "0777"
-            recurse: yes
-          when: lookup("ansible.builtin.env", "CI", default="false")|bool()
+            recurse: true
+          when: lookup("ansible.builtin.env", "CI", default="false") | bool()
         - name: Build xmonad
+          become: true
           become_user: "{{ sys.user.username }}"
           ansible.builtin.command:
             cmd: stack install
+            creates: "/home/{{ sys.user.username }}/.local/bin/xmonad"
             chdir: "/home/{{ sys.user.username }}/.config/xmonad"
-      when: sys.xmonad|default(false)|bool()
 # }}}
 
 # Devbox {{{
     - name: Maybe install devbox
       become: true
+      when: sys.devbox | default(false) | bool()
       block:
         - name: Check if devbox exists
           ansible.builtin.stat:
@@ -290,12 +300,14 @@
           ansible.builtin.get_url:
             url: https://get.jetify.com/devbox
             dest: /tmp/devbox_installer
-            mode: 0777
+            mode: "0777"
           register: devbox_installer
           when: not devbox_bin.stat.exists
         - name: Install devbox
           become: true
-          ansible.builtin.command: /tmp/devbox_installer --force
+          ansible.builtin.command:
+            cmd: /tmp/devbox_installer --force
+            creates: /usr/local/bin/devbox
           when: not devbox_bin.stat.exists
         - name: Remove installer
           ansible.builtin.file:
@@ -305,5 +317,4 @@
         - name: Fix devbox bin permissions
           ansible.builtin.file:
             path: /usr/local/bin/devbox
-            mode: 0777
-      when: sys.devbox|default(false)|bool()
+            mode: "0777"

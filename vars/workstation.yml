@@ -11,15 +11,13 @@ sys:
   net:
     dynamic: true
   packages:
-    - autorandr
     - ansible
     - bat
-    - dk
     - eza
     - fd
     - fzf
-    - git
     - gdu
+    - git
     - gvfs
     - gvfs-gphoto2
     - intel-ucode
@@ -29,6 +27,7 @@ sys:
     - make
     - mkpasswd
     - pamixer
+    - python3-ansible-lint
     - qutebrowser
     - ripgrep
     - starship
