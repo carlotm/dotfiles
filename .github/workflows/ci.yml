@@ -34,3 +34,8 @@ jobs:
 
       - name: Launch a Voidlinux container
         run: sudo incus launch images:voidlinux void
+
+      - name: Install pre-requisites on void
+        run: |
+          sleep 10
+          sudo incus exec void -- xbps-install --yes make ansible
