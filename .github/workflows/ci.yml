@@ -1,0 +1,33 @@
+name: My Dotfiles CI
+
+on:
+  push:
+    branches: [void]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Reset the firewall
+        run: sudo nft flush ruleset
+
+      - name: Install and start incus
+        run: |
+          sudo mkdir -p /etc/apt/keyrings
+          wget -qO - https://pkgs.zabbly.com/key.asc | sudo tee /etc/apt/keyrings/zabbly.asc
+          sudo bash -c 'cat << EOF > /etc/apt/sources.list.d/zabbly-incus-stable.sources
+          Enabled: yes
+          Types: deb
+          URIs: https://pkgs.zabbly.com/incus/stable
+          Suites: jammy
+          Components: main
+          Architectures: amd64
+          Signed-By: /etc/apt/keyrings/zabbly.asc
+          EOF'
+          sudo apt update
+          sudo apt install incus
+          sudo incus admin init --auto
+          sudo systemctl start incus
