@@ -39,3 +39,7 @@ jobs:
         run: |
           sleep 10
           sudo incus exec void -- xbps-install --yes make ansible
+
+      - name: Copy this repository files to void
+        run: sudo incus file push -r * void/root/
+
