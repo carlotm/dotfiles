@@ -31,3 +31,6 @@ jobs:
           sudo apt install incus
           sudo incus admin init --auto
           sudo systemctl start incus
+
+      - name: Launch a Voidlinux container
+        run: sudo incus launch images:voidlinux void
