@@ -44,4 +44,4 @@ jobs:
         run: sudo incus file push -r * void/root/
 
       - name: Run the playbook
-        run: sudo incus exec void -- CI=true make workstation
+        run: sudo incus exec void -- make CI=true workstation
