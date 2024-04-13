@@ -6,10 +6,14 @@ on:
 
 jobs:
   build:
+    name: Ansible lint and run
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Ansible lint
+        uses: ansible/ansible-lint@main
 
       - name: Reset the firewall
         run: sudo nft flush ruleset
