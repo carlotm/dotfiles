@@ -23,6 +23,7 @@ sys:
     - gvfs
     - gvfs-gphoto2
     - intel-ucode
+    - intel-video-accel
     - io.elementary.icons
     - keepassxc
     - make
