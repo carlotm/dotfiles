@@ -38,8 +38,5 @@ sys:
   services:
     - dhcpcd
     - dbus
-  templates:
-    - { s: xfce4-session.xml, d: /etc/xdg/xfce4/xfconf/xfce-perchannel-xml }
-    - { s: xfce4-keyboard-shortcuts.xml, d: /etc/xdg/xfce4/xfconf/xfce-perchannel-xml }
   xmonad: true
   devbox: true
