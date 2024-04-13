@@ -38,20 +38,23 @@
 # }}}
 
     # Hardware {{{
-    - name: Gather DISC-MAX and DISC-GRAN
-      ansible.builtin.command:
-        cmd: lsblk --discard -o DISC-MAX,DISC-GRAN -n -i -r /dev/sda
-      register: _res
-    - name: Gather DISC-MAX and DISC-GRAN
-      ansible.builtin.set_fact:
-        need_trim: "{{ _res.stdout_lines[0] != '0 0' }}"
-        cacheable: true
-    - name: Enable SSD TRIM
-      ansible.builtin.cron:
-        name: "TRIM SSD"
-        special_time: weekly
-        job: "fstrim /"
-      when: need_trim
+    - name: Hardware config
+      block:
+        - name: Gather DISC-MAX and DISC-GRAN
+          ansible.builtin.command:
+            cmd: lsblk --discard -o DISC-MAX,DISC-GRAN -n -i -r /dev/sda
+          register: o
+        - name: Gather DISC-MAX and DISC-GRAN
+          ansible.builtin.set_fact:
+            need_trim: "{{ o.stdout_lines[0] != '0 0' }}"
+            cacheable: true
+        - name: Enable SSD TRIM
+          ansible.builtin.cron:
+            name: "TRIM SSD"
+            special_time: weekly
+            job: "fstrim /"
+          when: need_trim
+      when: not lookup("ansible.builtin.env", "CI", default="false")|bool()
     # }}}
 
     # Hostname {{{
@@ -221,31 +224,6 @@
       ansible.builtin.command:
         cmd: xdg-user-dirs-update
         chdir: "/home/{{ sys.user.username }}"
-# }}}
-
-# Xfce config {{{
-    # - name: Configure panels
-    #   become: true
-    #   become_user: "{{ sys.user.username }}"
-    #   community.general.xfconf:
-    #     channel: xfce4-panel
-    #     property: /panels
-    #     value_type: int
-    #     value: [1]
-    #     force_array: true
-
-    # - name: Xfce4 config community.general.xfconf
-    #   become: true
-    #   become_user: "{{ sys.user.username }}"
-    #   community.general.xfconf:
-    #     channel: "{{ item.0.key }}"
-    #     property: "{{ item.1.p }}"
-    #     value_type: "{{ item.1.t }}"
-    #     value: "{{ item.1.v }}"
-    #   loop:
-    #     "{{ sys.xfconf|dict2items|subelements('value') }}"
-    #   loop_control:
-    #     label: "{{ item.0.key}} {{ item.1.p }}"
 # }}}
 
 # Xmonad {{{
