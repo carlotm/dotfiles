@@ -12,9 +12,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Ansible lint
-        uses: ansible/ansible-lint@main
-
       - name: Reset the firewall
         run: sudo nft flush ruleset
 
@@ -42,10 +39,13 @@ jobs:
       - name: Install pre-requisites on void
         run: |
           sleep 10
-          sudo incus exec void -- xbps-install --yes make ansible
+          sudo incus exec void -- xbps-install --yes make ansible ansible-lint
 
       - name: Copy this repository files to void
         run: sudo incus file push -r * void/root/
+
+      - name: Lint allthethings
+        run: sudo incus exec void -- ansible-lint
 
       - name: Run the playbook
         run: sudo incus exec void -- make CI=true workstation
