@@ -1,4 +1,5 @@
-ANSIBLE = ansible-playbook --inventory inventory
+ANSIBLE = ansible-playbook
+INVENTORY = --inventory inventory
 
 workstation: sys.yml vars/workstation.yml
 	@$(ANSIBLE) -e machine=$@ $<
