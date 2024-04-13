@@ -4,6 +4,10 @@ sys:
     name: Ascani Carlo
     username: carloratm
     email: carlotm@protonmail.com
+    dirs:
+      - w
+      - downloads
+      - docs
   net:
     dynamic: true
   packages:
@@ -24,6 +28,7 @@ sys:
     - make
     - mkpasswd
     - pamixer
+    - qutebrowser
     - ripgrep
     - starship
     - sxhkd

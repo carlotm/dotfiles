@@ -205,6 +205,16 @@
       ansible.builtin.command:
         cmd: "stow {{ machine }} --target=/home/{{ sys.user.username }}/ --adopt"
         chdir: /opt/dotfiles
+    - name: Make user dirs
+      become: true
+      ansible.builtin.file:
+        path: "/home/{{ sys.user.username }}/{{ item }}"
+        state: directory
+        mode: '0711'
+        owner: "{{ sys.user.username }}"
+        group: "{{ sys.user.username }}"
+      loop:
+        "{{ sys.user.dirs|default([]) }}"
     - name: Udpate xdg user dirs
       become: true
       become_user: "{{ sys.user.username }}"
@@ -315,6 +325,7 @@
           ansible.builtin.file:
             path: "{{ devbox_installer.dest }}"
             state: absent
+          when: not devbox_bin.stat.exists
         - name: Fix devbox bin permissions
           ansible.builtin.file:
             path: /usr/local/bin/devbox
