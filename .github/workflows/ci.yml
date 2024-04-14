@@ -2,7 +2,7 @@ name: My Dotfiles CI
 
 on:
   push:
-    branches: [void]
+    branches: [master]
 
 jobs:
   build:
