@@ -2,7 +2,7 @@ name: Dotfiles CI
 
 on:
   push:
-    branches: [master]
+    branches: [archlinux]
   pull_request:
     branches: [master]
 
