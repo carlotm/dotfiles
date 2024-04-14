@@ -194,7 +194,12 @@
         enabled: true
       loop:
         - cronie
-        - wpa_supplicant
+    - name: Enable wpa_supplicant only if not in CI
+      community.general.runit:
+        name: wpa_supplicant
+        state: started
+        enabled: true
+      when: not lookup("ansible.builtin.env", "CI", default="false") | bool()
     - name: Enable user services
       community.general.runit:
         name: "{{ item }}"
