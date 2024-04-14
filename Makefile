@@ -7,7 +7,7 @@ chiara:
 	@echo TODO
 
 mediacenter: sys.yml vars/mediacenter.yml
-	@$(ANSIBLE) -e machine=$@ -e target=192.168.1.142 $<
+	@$(ANSIBLE) -e machine=$@ -e target=192.168.1.103 $<
 
 pi:
 	@echo TODO
