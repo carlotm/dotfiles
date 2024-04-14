@@ -11,6 +11,13 @@
         file: "./vars/{{ machine }}.yml"
 # }}}
 
+# Set root shell {{{
+    - name: Set root shell
+      ansible.builtin.user:
+        name: root
+        shell: /bin/bash
+# }}}
+
 # Network {{{
     - name: Configure wpa_supplicant
       when: sys.net.wpa_supplicant | default('false') | bool()
@@ -158,12 +165,14 @@
       loop:
         - users
         - "{{ sys.user.username }}"
+        - bluetooth
     - name: "Create user {{ sys.user.name }}"
       ansible.builtin.user:
         name: "{{ sys.user.username }}"
         shell: /bin/bash
         groups:
           - audio
+          - bluetooth
           - cdrom
           - floppy
           - input

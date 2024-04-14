@@ -1,10 +1,5 @@
 sys:
   hostname: melee
-  rc:
-    local: |
-      ip link set dev wlp2s0 up
-      ip addr add 192.168.1.142/24 brd + dev wlp2s0
-      ip route add default via 192.168.1.1
   user:
     name: Gian Fran
     username: gianfranco
@@ -12,6 +7,9 @@ sys:
     dirs:
       - downloads
   packages:
+    - blueman
+    - bluez
+    - bluez-alsa
     - firefox
     - intel-ucode
     - intel-video-accel
@@ -23,3 +21,5 @@ sys:
   services:
     - dbus
     - sshd
+    - dhcpcd
+    - bluetoothd
