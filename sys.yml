@@ -1,6 +1,6 @@
 ---
 - name: System configuration
-  hosts: localhost
+  hosts: "{{ target | default('localhost') }}"
   gather_facts: false
   become: true
   tasks:
@@ -9,6 +9,17 @@
     - name: Load vars
       ansible.builtin.include_vars:
         file: "./vars/{{ machine }}.yml"
+# }}}
+
+# Network {{{
+    - name: Configure wpa_supplicant
+      when: sys.net.wpa_supplicant | default('false') | bool()
+      ansible.builtin.copy:
+        src: templates/wpa_supplicant.conf
+        dest: /etc/wpa_supplicant/wpa_supplicant.conf
+        owner: root
+        group: root
+        mode: "0640"
 # }}}
 
 # Install packages {{{
@@ -31,6 +42,7 @@
           - vim
           - void-repo-nonfree
           - wget
+          - xdg-user-dirs
           - xorg
           - xtools
     - name: User packages
@@ -89,7 +101,7 @@
         mode: "0666"
 # }}}
 
-    # rc.conf {{{
+# rc.conf and rc.local {{{
     - name: Set rc.conf
       ansible.builtin.copy:
         content: |
@@ -100,7 +112,13 @@
         owner: root
         group: root
         mode: "0644"
-    # }}}
+    - name: Set rc.local
+      ansible.builtin.blockinfile:
+        path: /etc/rc.local
+        append_newline: true
+        prepend_newline: true
+        block: "{{ sys.rc.local | default('') }}"
+# }}}
 
     # i18n {{{
     - name: Set locales to be generated
@@ -168,9 +186,6 @@
         - .bash_profile
 # }}}
 
-# Network {{{
-# }}}
-
 # Services {{{
     - name: Enable common services
       community.general.runit:
@@ -179,6 +194,7 @@
         enabled: true
       loop:
         - cronie
+        - wpa_supplicant
     - name: Enable user services
       community.general.runit:
         name: "{{ item }}"

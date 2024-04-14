@@ -1,5 +1,4 @@
-ANSIBLE = ansible-playbook
-INVENTORY = --inventory inventory
+ANSIBLE = ansible-playbook --inventory inventory
 
 workstation: sys.yml vars/workstation.yml
 	@$(ANSIBLE) -e machine=$@ $<
@@ -7,8 +6,8 @@ workstation: sys.yml vars/workstation.yml
 chiara:
 	@echo TODO
 
-mediacenter:
-	@echo TODO
+mediacenter: sys.yml vars/mediacenter.yml
+	@$(ANSIBLE) -e machine=$@ -e target=192.168.1.142 $<
 
 pi:
 	@echo TODO

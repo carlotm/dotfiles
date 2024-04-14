@@ -1,0 +1,25 @@
+sys:
+  hostname: melee
+  rc:
+    local: |
+      ip link set dev wlp2s0 up
+      ip addr add 192.168.1.142/24 brd + dev wlp2s0
+      ip route add default via 192.168.1.1
+  user:
+    name: Gian Fran
+    username: gianfranco
+    email: gianfranco@melee
+    dirs:
+      - downloads
+  packages:
+    - firefox
+    - intel-ucode
+    - intel-video-accel
+    - io.elementary.icons
+    - linux-firmware-qualcomm-20240312_1
+    - xbacklight
+    - xfce4
+    - xfce4-pulseaudio-plugin
+  services:
+    - dbus
+    - sshd

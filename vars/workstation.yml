@@ -8,13 +8,12 @@ sys:
       - w
       - downloads
       - docs
-  net:
-    dynamic: true
   packages:
     - ansible
     - bat
     - eza
     - fd
+    - firefox
     - fzf
     - gdu
     - git
@@ -26,12 +25,10 @@ sys:
     - keepassxc
     - make
     - mkpasswd
-    - pamixer
     - python3-ansible-lint
     - qutebrowser
     - ripgrep
     - starship
-    - sxhkd
     - xbacklight
     - xfce4
     - xfce4-pulseaudio-plugin
