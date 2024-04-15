@@ -19,7 +19,5 @@ sys:
     - xfce4
     - xfce4-pulseaudio-plugin
   services:
-    - dbus
     - sshd
-    - dhcpcd
     - bluetoothd

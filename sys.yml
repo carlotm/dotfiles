@@ -18,17 +18,6 @@
         shell: /bin/bash
 # }}}
 
-# Network {{{
-    - name: Configure wpa_supplicant
-      when: sys.net.wpa_supplicant | default('false') | bool()
-      ansible.builtin.copy:
-        src: templates/wpa_supplicant.conf
-        dest: /etc/wpa_supplicant/wpa_supplicant.conf
-        owner: root
-        group: root
-        mode: "0640"
-# }}}
-
 # Install packages {{{
     - name: Common packages
       community.general.xbps:
@@ -195,6 +184,18 @@
         - .bash_profile
 # }}}
 
+# Network {{{
+    - name: Disable base network services on CI
+      when: lookup("ansible.builtin.env", "CI", default="false") | bool()
+      community.general.runit:
+        name: "{{ item }}"
+        state: stopped
+        enabled: false
+      loop:
+        - wpa_supplicant
+        - dhcpcd
+# }}}
+
 # Services {{{
     - name: Enable common services
       community.general.runit:
@@ -203,12 +204,7 @@
         enabled: true
       loop:
         - cronie
-    - name: Enable wpa_supplicant only if not in CI
-      community.general.runit:
-        name: wpa_supplicant
-        state: started
-        enabled: true
-      when: not lookup("ansible.builtin.env", "CI", default="false") | bool()
+        - dbus
     - name: Enable user services
       community.general.runit:
         name: "{{ item }}"
