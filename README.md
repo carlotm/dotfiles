@@ -1,8 +1,6 @@
 # My personal systems playbooks
 
-![Build](https://github.com/carlotm/dotfiles/actions/workflows/ci.yml/badge.svg)
-
-| System | Hostname | Build command | OS | Description |
+| System | Hostname | OS | Description | CI |
 | :--- | :--- | :--- | :--- | :--- |
-| workstation | scumm | sudo make workstation | Voidlinux | My personal laptop |
-| mediacenter | melee | sudo make mediacenter | Voidlinux | The computer attached to our TV |
+| workstation | scumm | Voidlinux | My personal laptop | ![status](https://github.com/carlotm/dotfiles/actions/workflows/workstation.yml/badge.svg)
+| mediacenter | melee | Voidlinux | The computer attached to our TV | N/A |
