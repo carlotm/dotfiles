@@ -1,4 +1,4 @@
-name: My Dotfiles CI
+name: Workstation
 
 on:
   push:
