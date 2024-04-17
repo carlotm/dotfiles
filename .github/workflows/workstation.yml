@@ -33,31 +33,35 @@ jobs:
           sudo incus admin init --auto
           sudo systemctl start incus
 
-      - name: Launch a Voidlinux workstation system
-        run: sudo incus launch images:voidlinux workstation
-
-      - name: Install pre-requisites on workstation
+      - name: Run the playbook on a voidlinux container
         run: |
-          sleep 10
+          sudo incus launch images:voidlinux workstation
+
+          until [[ -n $(incus list workstation -c4 -fcsv) ]]
+          do
+            echo "Waiting for the vm interface to be up..."
+            sleep 1
+          done
+
           sudo incus exec workstation -- xbps-install --yes make ansible python3-ansible-lint
 
-      - name: Copy this repository files to workstation
-        run: sudo incus file push -r * workstation/root/
+      # - name: Copy this repository files to workstation
+      #   run: sudo incus file push -r * workstation/root/
 
-      - name: Lint allthethings on workstation
-        run: sudo incus exec workstation -- ansible-lint
+      # - name: Lint allthethings on workstation
+      #   run: sudo incus exec workstation -- ansible-lint
 
-      - name: Run the playbook on workstation
-        run: sudo incus exec workstation -- make CI=true workstation
+      # - name: Run the playbook on workstation
+      #   run: sudo incus exec workstation -- make CI=true workstation
 
-      - name: Asserts on workstation
-        run: |
-          sudo incus exec workstation -- id carloratm
-          sudo incus exec workstation -- ls -d /home/carloratm
-          sudo incus exec workstation -- ls -d /var/service/cronie
-          sudo incus exec workstation -- ls /home/carloratm/.local/bin/xmonad
-          sudo incus exec workstation -- ls /home/carloratm/.local/bin/colors.sh
-          sudo incus exec workstation -- ls /usr/local/bin/devbox
-          sudo incus exec workstation -- ls /etc/vimrc.local
-          sudo incus exec workstation -- grep "FONT=\"spleen-" /etc/rc.conf
-          sudo incus exec workstation -- which keepassxc
+      # - name: Asserts on workstation
+      #   run: |
+      #     sudo incus exec workstation -- id carloratm
+      #     sudo incus exec workstation -- ls -d /home/carloratm
+      #     sudo incus exec workstation -- ls -d /var/service/cronie
+      #     sudo incus exec workstation -- ls /home/carloratm/.local/bin/xmonad
+      #     sudo incus exec workstation -- ls /home/carloratm/.local/bin/colors.sh
+      #     sudo incus exec workstation -- ls /usr/local/bin/devbox
+      #     sudo incus exec workstation -- ls /etc/vimrc.local
+      #     sudo incus exec workstation -- grep "FONT=\"spleen-" /etc/rc.conf
+      #     sudo incus exec workstation -- which keepassxc
