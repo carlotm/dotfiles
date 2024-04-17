@@ -37,7 +37,7 @@ jobs:
         run: |
           sudo incus launch images:voidlinux workstation
 
-          until [[ -n $(incus list workstation -c4 -fcsv) ]]
+          until [[ -n $(sudo incus list workstation -c4 -fcsv) ]]
           do
             echo "Waiting for the vm interface to be up..."
             sleep 1
