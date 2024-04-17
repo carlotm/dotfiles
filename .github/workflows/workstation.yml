@@ -52,13 +52,11 @@ jobs:
 
           sudo incus exec workstation -- sed -i -e 's/#StrictModes yes/StrictModes no/' /etc/ssh/sshd_config
 
-          sudo incus exec workstation -- ln -s /etc/sv/sshd /var/service
-
           sudo incus exec workstation -- mkdir /root/.ssh
 
           sudo incus file push "${SSH_ROOT}/id_rsa.pub" workstation/root/.ssh/authorized_keys
 
-          sudo incus exec workstation -- sv restart sshd
+          sudo incus exec workstation -- ln -s /etc/sv/sshd /var/service/
 
           ssh-add $SSH_ROOT/id_rsa
 
