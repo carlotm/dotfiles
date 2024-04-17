@@ -61,6 +61,8 @@ jobs:
           eval `ssh-agent`
           ssh-add $SSH_ROOT/id_rsa
 
+          ssh root@$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f 1) "echo o/ from void!"
+
       # - name: Copy this repository files to workstation
       #   run: sudo incus file push -r * workstation/root/
 
