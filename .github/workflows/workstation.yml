@@ -58,6 +58,7 @@ jobs:
 
           sudo incus exec workstation -- ln -s /etc/sv/sshd /var/service/
 
+          eval `ssh-agent`
           ssh-add $SSH_ROOT/id_rsa
 
       # - name: Copy this repository files to workstation
