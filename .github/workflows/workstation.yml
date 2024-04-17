@@ -45,6 +45,9 @@ jobs:
 
           sudo incus exec workstation -- xbps-install --yes make ansible python3-ansible-lint
 
+          SSH_ROOT=$(mktemp -d)
+          ssh-keygen -q -t rsa -N '' -f "${SSH_ROOT}/id_rsa" <<<y >/dev/null 2>&1
+
       # - name: Copy this repository files to workstation
       #   run: sudo incus file push -r * workstation/root/
 
