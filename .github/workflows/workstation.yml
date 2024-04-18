@@ -63,4 +63,4 @@ jobs:
 
           sudo incus exec workstation -- ln -s /etc/sv/sshd /var/service/
 
-          ssh -v root@$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f 1) "echo o/ from void!"
+          ssh -vvv root@$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f 1) "echo o/ from void!"
