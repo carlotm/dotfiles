@@ -43,10 +43,7 @@ jobs:
             sleep 1
           done
 
-          sudo incus exec workstation -- xbps-install --yes make ansible python3-ansible-lint
-
-          SSH_ROOT=$(mktemp -d)
-          ssh-keygen -q -t rsa -N '' -f "${SSH_ROOT}/id_rsa" <<<y >/dev/null 2>&1
+          sudo incus exec workstation -- xbps-install --yes make ansible
 
           sudo incus exec workstation -- sed -i -e 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
@@ -54,12 +51,11 @@ jobs:
 
           sudo incus exec workstation -- mkdir /root/.ssh
 
-          sudo incus file push "${SSH_ROOT}/id_rsa.pub" workstation/root/.ssh/authorized_keys
+          mkdir ~/.ssh
+          ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1
+          sudo incus file push ~/.ssh/id_rsa.pub workstation/root/.ssh/authorized_keys
 
           sudo incus exec workstation -- ln -s /etc/sv/sshd /var/service/
-
-          eval `ssh-agent`
-          ssh-add $SSH_ROOT/id_rsa
 
           ssh root@$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f 1) "echo o/ from void!"
 
