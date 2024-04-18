@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Step 1: Install and start incus
+      - name: Step 1 - Install and start incus
         run: |
           sudo nft flush ruleset
 
@@ -38,7 +38,7 @@ jobs:
 
           sudo systemctl start incus
 
-      - name: Step 2: launch a voidlinux container
+      - name: Step 2 - Launch a voidlinux container
         run: |
           sudo incus launch images:voidlinux workstation
 
@@ -48,7 +48,7 @@ jobs:
             sleep 1
           done
 
-      - name: Step 3: set up ssh
+      - name: Step 3 - Set up ssh
         run: |
           sudo incus exec workstation -- xbps-install --yes make ansible
 
