@@ -57,7 +57,7 @@ jobs:
 
           sudo incus exec workstation -- ln -s /etc/sv/sshd /var/service/
 
-          ssh root@$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f 1) "echo o/ from void!"
+          ssh -v root@$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f 1) "echo o/ from void!"
 
       # - name: Copy this repository files to workstation
       #   run: sudo incus file push -r * workstation/root/
