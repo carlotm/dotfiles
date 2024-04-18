@@ -12,13 +12,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Reset the firewall
-        run: sudo nft flush ruleset
-
-      - name: Install and start incus
+      - name: Step 1: Install and start incus
         run: |
+          sudo nft flush ruleset
+
           sudo mkdir -p /etc/apt/keyrings
+
           wget -qO - https://pkgs.zabbly.com/key.asc | sudo tee /etc/apt/keyrings/zabbly.asc
+
           sudo bash -c 'cat << EOF > /etc/apt/sources.list.d/zabbly-incus-stable.sources
           Enabled: yes
           Types: deb
@@ -28,12 +29,16 @@ jobs:
           Architectures: amd64
           Signed-By: /etc/apt/keyrings/zabbly.asc
           EOF'
+
           sudo apt update
+
           sudo apt install incus
+
           sudo incus admin init --auto
+
           sudo systemctl start incus
 
-      - name: Run the playbook on a voidlinux container
+      - name: Step 2: launch a voidlinux container
         run: |
           sudo incus launch images:voidlinux workstation
 
@@ -43,10 +48,11 @@ jobs:
             sleep 1
           done
 
+      - name: Step 3: set up ssh
+        run: |
           sudo incus exec workstation -- xbps-install --yes make ansible
 
           sudo incus exec workstation -- sed -i -e 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
-
           sudo incus exec workstation -- sed -i -e 's/#StrictModes yes/StrictModes no/' /etc/ssh/sshd_config
 
           sudo incus exec workstation -- mkdir /root/.ssh
@@ -58,24 +64,3 @@ jobs:
           sudo incus exec workstation -- ln -s /etc/sv/sshd /var/service/
 
           ssh -v root@$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f 1) "echo o/ from void!"
-
-      # - name: Copy this repository files to workstation
-      #   run: sudo incus file push -r * workstation/root/
-
-      # - name: Lint allthethings on workstation
-      #   run: sudo incus exec workstation -- ansible-lint
-
-      # - name: Run the playbook on workstation
-      #   run: sudo incus exec workstation -- make CI=true workstation
-
-      # - name: Asserts on workstation
-      #   run: |
-      #     sudo incus exec workstation -- id carloratm
-      #     sudo incus exec workstation -- ls -d /home/carloratm
-      #     sudo incus exec workstation -- ls -d /var/service/cronie
-      #     sudo incus exec workstation -- ls /home/carloratm/.local/bin/xmonad
-      #     sudo incus exec workstation -- ls /home/carloratm/.local/bin/colors.sh
-      #     sudo incus exec workstation -- ls /usr/local/bin/devbox
-      #     sudo incus exec workstation -- ls /etc/vimrc.local
-      #     sudo incus exec workstation -- grep "FONT=\"spleen-" /etc/rc.conf
-      #     sudo incus exec workstation -- which keepassxc
