@@ -22,6 +22,7 @@
     - name: Common packages
       community.general.xbps:
         name:
+          - NetworkManager
           - adwaita-icon-theme
           - alsa-plugins-pulseaudio
           - base-devel
@@ -184,18 +185,6 @@
         - .bash_profile
 # }}}
 
-# Network {{{
-    - name: Disable base network services on CI
-      when: lookup("ansible.builtin.env", "CI", default="false") | bool()
-      community.general.runit:
-        name: "{{ item }}"
-        state: stopped
-        enabled: false
-      loop:
-        - wpa_supplicant
-        - dhcpcd
-# }}}
-
 # Services {{{
     - name: Enable common services
       community.general.runit:
@@ -344,3 +333,28 @@
           ansible.builtin.file:
             path: /usr/local/bin/devbox
             mode: "0777"
+# }}}
+
+# Network {{{
+    - name: Configure wifi home connection
+      community.general.nmcli:
+        type: wifi
+        conn_name: Casa
+        ssid: AscaniFerretti
+        ip4: "{{ item.ip }}"
+        gw4: "192.168.1.1"
+        wifi_sec:
+          key-mgmt: wpa-psk
+          psk: 3710b6bf14aa95eb7329391433895167f357670bc90f74bb1bea6eb724eda984
+        autoconnect: "{{ item.autoconnect | default(false) }}"
+        state: present
+      with_items:
+        "{{ sys.networks | default([]) }}"
+    - name: Restart NetworkManager
+      when: lookup("ansible.builtin.env", "CI", default="false") | bool()
+      community.general.runit:
+        name: NetworkManager
+        state: restarted
+        enabled: true
+# }}}
+
