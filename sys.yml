@@ -1,6 +1,6 @@
 ---
 - name: System configuration
-  hosts: "{{ target | default('localhost') }}"
+  hosts: all
   gather_facts: false
   become: true
   tasks:
@@ -8,7 +8,7 @@
 # Load vars {{{
     - name: Load vars
       ansible.builtin.include_vars:
-        file: "./vars/{{ machine }}.yml"
+        file: "./vars/{{ profile }}.yml"
 # }}}
 
 # Set root shell {{{
@@ -213,7 +213,7 @@
         group: "{{ sys.user.username }}"
     - name: Copy dotfiles to the system folder
       ansible.builtin.copy:
-        src: "{{ playbook_dir }}/dots/{{ machine }}"
+        src: "{{ playbook_dir }}/dots/{{ profile }}"
         dest: "/opt/dotfiles/"
         owner: "{{ sys.user.username }}"
         group: "{{ sys.user.username }}"
@@ -222,7 +222,7 @@
       become: true
       become_user: "{{ sys.user.username }}"
       ansible.builtin.command:
-        cmd: "stow {{ machine }} --target=/home/{{ sys.user.username }}/ --adopt"
+        cmd: "stow {{ profile }} --target=/home/{{ sys.user.username }}/ --adopt"
         chdir: /opt/dotfiles
     - name: Make user dirs
       become: true
@@ -343,9 +343,10 @@
         ssid: AscaniFerretti
         ip4: "{{ item.ip }}"
         gw4: "192.168.1.1"
+        method6: "disabled"
         wifi_sec:
           key-mgmt: wpa-psk
-          psk: 3710b6bf14aa95eb7329391433895167f357670bc90f74bb1bea6eb724eda984
+          psk: "g:B4$1F\\A\\@X."
         autoconnect: "{{ item.autoconnect | default(false) }}"
         state: present
       with_items:
