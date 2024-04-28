@@ -28,7 +28,6 @@ sys:
     - keepassxc
     - make
     - mkpasswd
-    - polybar
     - python3-ansible-lint
     - qutebrowser
     - ripgrep
