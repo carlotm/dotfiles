@@ -49,7 +49,6 @@
 
     # Hardware {{{
     - name: Hardware config
-      when: not lookup("ansible.builtin.env", "CI", default="false") | bool()
       block:
         - name: Gather DISC-MAX and DISC-GRAN # noqa no-changed-when
           ansible.builtin.command:
@@ -284,15 +283,6 @@
             creates: "/home/{{ sys.user.username }}/.config/xmonad/stack.yaml"
             chdir: "/home/{{ sys.user.username }}/.config/xmonad"
           when: st.stat.islnk is not defined
-        - name: Change /tmp permissions on CI
-          become: true
-          ansible.builtin.file:
-            path: /tmp
-            owner: root
-            group: root
-            mode: "0777"
-            recurse: true
-          when: lookup("ansible.builtin.env", "CI", default="false") | bool()
         - name: Build xmonad
           become: true
           become_user: "{{ sys.user.username }}"
@@ -352,7 +342,6 @@
       with_items:
         "{{ sys.networks | default([]) }}"
     - name: Restart NetworkManager
-      when: lookup("ansible.builtin.env", "CI", default="false") | bool()
       community.general.runit:
         name: NetworkManager
         state: restarted
