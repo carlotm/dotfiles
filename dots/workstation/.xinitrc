@@ -4,4 +4,4 @@ xsetroot -cursor_name left_ptr
 setxkbmap -layout us,it,de -option grp:win_space_toggle
 sxhkd &
 xfce4-power-manager &
-exec dbus-run-session xmonad
+exec dbus-launch-session xmonad
