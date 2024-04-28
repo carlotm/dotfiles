@@ -138,6 +138,8 @@
 # }}}
 # Dotfiles {{{
     - name: Make sure destination dir exists
+      become: true
+      become_user: "{{ sys.user.username }}"
       file:
         path: "/home/{{ sys.user.username }}/{{ item | dirname }}"
         state: directory
@@ -150,6 +152,22 @@
         group: "{{ sys.user.username }}"
         mode: preserve
       loop: "{{ sys.dots | default([]) }}"
+    - name: Make user dirs
+      become: true
+      ansible.builtin.file:
+        path: "/home/{{ sys.user.username }}/{{ item }}"
+        state: directory
+        mode: "0711"
+        owner: "{{ sys.user.username }}"
+        group: "{{ sys.user.username }}"
+      loop:
+        "{{ sys.user.dirs | default([]) }}"
+    - name: Udpate xdg user dirs # noqa no-changed-when
+      become: true
+      become_user: "{{ sys.user.username }}"
+      ansible.builtin.command:
+        cmd: xdg-user-dirs-update
+        chdir: "/home/{{ sys.user.username }}"
 # }}}
 # Starship {{{
     - name: Maybe install starship
