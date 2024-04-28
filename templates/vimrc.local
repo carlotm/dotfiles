@@ -38,6 +38,7 @@ set list
 set listchars=tab:↳\ 
 set mouse-=a
 set ttymouse-=a
+set mouse=
 set noshowcmd
 nnoremap <SPACE> <Nop>
 g:mapleader = " "

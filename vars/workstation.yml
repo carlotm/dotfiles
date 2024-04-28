@@ -11,6 +11,10 @@ sys:
       - w
       - downloads
       - docs
+  dots:
+    - .bashrc
+    - .local/bin/colors.sh
+    - .config/starship.toml
   packages:
     - firefox-esr
     - fzf
@@ -18,4 +22,5 @@ sys:
     - gvfs-backends
     - keepassxc
     - qutebrowser
+  starship: true
   devbox: true

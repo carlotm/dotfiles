@@ -6,21 +6,16 @@ HISTFILESIZE=2000
 shopt -s checkwinsize
 shopt -s histappend
 
-alias ls="eza --long --header"
-alias tree="eza --tree"
+alias ls="ls -l --color=auto"
 alias grep="rg -i"
 alias find="fd --hidden"
 alias d="devbox"
-alias du="gdu"
-alias cat="bat -p"
 
+export PATH=$HOME/.local/bin:$PATH
 export EDITOR=vim
 export MANPAGER="less -R --use-color -Dd+y -Du+g"
 export MANROFFOPT="-P -c"
 
 source /usr/share/bash-completion/bash_completion
-
-#NIX_PROFILE=/home/carloratm/.nix-profile/etc/profile.d/nix.sh
-#if [ -e $NIX_PROFILE ]; then source $NIX_PROFILE; fi
 
 eval "$(starship init bash)"
