@@ -10,68 +10,107 @@
       ansible.builtin.include_vars:
         file: "./vars/{{ profile }}.yml"
 # }}}
-
-# Set root shell {{{
-    - name: Set root shell
-      ansible.builtin.user:
-        name: root
-        shell: /bin/bash
-# }}}
-
 # Install packages {{{
+    - name: Force uninstall packages
+      ansible.builtin.apt:
+        state: absent
+        purge: true
+        pkg:
+          - cups
+          - cups-browsed
+          - cups-client
+          - cups-common
+          - cups-core-drivers
+          - cups-daemon
+          - cups-filters
+          - cups-filters-core-drivers
+          - cups-ipp-utils
+          - cups-pk-helper
+          - cups-ppdc
+          - cups-server-common
     - name: Common packages
-      community.general.xbps:
-        name:
-          - NetworkManager
+      ansible.builtin.apt:
+        update_cache: yes
+        state: latest
+        pkg:
+          - network-manager
           - adwaita-icon-theme
-          - alsa-plugins-pulseaudio
-          - base-devel
+          - build-essential
           - bash-completion
-          - cronie
           - curl
-          - font-spleen
-          - mdocml
-          - noto-fonts-emoji
-          - noto-fonts-ttf
+          - fonts-spleen
+          - fonts-noto
+          - fonts-noto-color-emoji
           - pavucontrol
           - pulseaudio
           - stow
           - vim
-          - void-repo-nonfree
           - wget
           - xdg-user-dirs
           - xorg
-          - xtools
     - name: User packages
-      community.general.xbps:
-        name: "{{ sys.packages | default([]) }}"
+      ansible.builtin.apt:
+        state: latest
+        pkg: "{{ sys.packages | default([]) }}"
 # }}}
-
-    # Hardware {{{
-    - name: Hardware config
-      block:
-        - name: Gather DISC-MAX and DISC-GRAN # noqa no-changed-when
-          ansible.builtin.command:
-            cmd: lsblk --discard -o DISC-MAX,DISC-GRAN -n -i -r /dev/sda
-          register: o
-        - name: Gather DISC-MAX and DISC-GRAN
-          ansible.builtin.set_fact:
-            need_trim: "{{ o.stdout_lines[0] != '0 0' }}"
-            cacheable: true
-        - name: Enable SSD TRIM
-          ansible.builtin.cron:
-            name: "TRIM SSD"
-            special_time: weekly
-            job: "fstrim /"
-          when: need_trim
-    # }}}
-
-    # Hostname {{{
+# Hostname {{{
     - name: Set hostname
       ansible.builtin.hostname:
         name: "{{ sys.hostname }}"
-    # }}}
-
+# }}}
+# Locales {{{
+    - name: Ensure a locale exists
+      community.general.locale_gen:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - en_US.UTF-8
+        - it_IT.UTF-8
+        - de_DE.UTF-8
+# }}}
+# User and groups {{{
+    - name: Create base groups
+      ansible.builtin.group:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - users
+        - "{{ sys.user.username }}"
+        - sudo
+        - wheel
+    - name: "Create user {{ sys.user.name }}"
+      ansible.builtin.user:
+        name: "{{ sys.user.username }}"
+        shell: /bin/bash
+        groups:
+          - audio
+          - bluetooth
+          - cdrom
+          - floppy
+          - input
+          - kvm
+          - sudo
+          - tty
+          - users
+          - video
+          - wheel
+    - name: Put user in sudoers
+      ansible.builtin.copy:
+        src: "templates/sudoer_{{ sys.user.username }}"
+        dest: "/etc/sudoers.d/{{ sys.user.username }}"
+        owner: root
+        group: root
+        mode: "0440"
+# }}}
+# Vim {{{
+    - name: Configure vim
+      ansible.builtin.copy:
+        src: ./templates/vimrc.local
+        dest: /etc/vim/vimrc.local
+        owner: root
+        group: root
+        mode: "0666"
+# }}}
 # Git {{{
     - name: Configure git
       community.general.git_config:
@@ -86,265 +125,33 @@
         - {n: alias.s, v: status}
         - {n: alias.co, v: checkout}
 # }}}
-
-# Vim {{{
-    - name: Configure vim
-      ansible.builtin.copy:
-        src: ./templates/vimrc.local
-        dest: /etc/vimrc.local
-        owner: root
-        group: root
-        mode: "0666"
-# }}}
-
-# rc.conf and rc.local {{{
-    - name: Set rc.conf
-      ansible.builtin.copy:
-        content: |
-          HARDWARECLOCK="UTC"
-          KEYMAP=us
-          FONT="spleen-16x32"
-        dest: /etc/rc.conf
-        owner: root
-        group: root
-        mode: "0644"
-    - name: Set rc.local
-      ansible.builtin.blockinfile:
-        path: /etc/rc.local
-        append_newline: true
-        prepend_newline: true
-        block: "{{ sys.rc.local | default('') }}"
-# }}}
-
-    # i18n {{{
-    - name: Set locales to be generated
-      ansible.builtin.copy:
-        content: |
-          en_US.UTF-8 UTF-8
-          it_IT.UTF-8 UTF-8
-          de_AT.UTF-8 UTF-8
-        dest: /etc/default/libc-locales
-        owner: root
-        group: root
-        mode: "0644"
-    - name: Generate locales # noqa no-changed-when
-      ansible.builtin.command:
-        cmd: xbps-reconfigure --force glibc-locales
-    - name: Set system locale
-      ansible.builtin.template:
-        src: ./templates/locale.conf.j2
-        dest: /etc/locale.conf
-        owner: root
-        group: root
-        mode: "0644"
-    # }}}
-
-# User and groups {{{
-    - name: Clean up skel files
-      ansible.builtin.file:
-        path: "/home/{{ sys.user.username }}/{{ item }}"
-        state: absent
-      loop:
-        - .bashrc
-        - .bash_profile
-    - name: Create base groups
-      ansible.builtin.group:
-        name: "{{ item }}"
-        state: present
-      loop:
-        - users
-        - "{{ sys.user.username }}"
-        - bluetooth
-    - name: "Create user {{ sys.user.name }}"
-      ansible.builtin.user:
-        name: "{{ sys.user.username }}"
-        shell: /bin/bash
-        groups:
-          - audio
-          - bluetooth
-          - cdrom
-          - floppy
-          - input
-          - kvm
-          - optical
-          - plugdev
-          - storage
-          - tty
-          - usbmon
-          - users
-          - video
-          - wheel
-          - xbuilder
-    - name: Remove bashrc and bash_profile
-      ansible.builtin.file:
-        path: "/home/{{ sys.user.username }}/{{ item }}"
-        state: absent
-      loop:
-        - .bashrc
-        - .bash_profile
-# }}}
-
 # Services {{{
-    - name: Enable common services
-      community.general.runit:
+    - name: System services
+      ansible.builtin.systemd:
         name: "{{ item }}"
-        state: started
-        enabled: true
-      loop:
-        - cronie
-        - dbus
-    - name: Enable user services
-      community.general.runit:
-        name: "{{ item }}"
-        state: started
-        enabled: true
-      loop:
-        "{{ sys.services | default([]) }}"
-# }}}
-
-# Dotfiles {{{
-    - name: Create system dotfiles folder
-      ansible.builtin.file:
-        path: "/opt/dotfiles"
-        state: directory
-        mode: "0755"
-        owner: "{{ sys.user.username }}"
-        group: "{{ sys.user.username }}"
-    - name: Copy dotfiles to the system folder
-      ansible.builtin.copy:
-        src: "{{ playbook_dir }}/dots/{{ profile }}"
-        dest: "/opt/dotfiles/"
-        owner: "{{ sys.user.username }}"
-        group: "{{ sys.user.username }}"
-        mode: "0744"
-    - name: Link dotfiles # noqa no-changed-when
-      become: true
-      become_user: "{{ sys.user.username }}"
-      ansible.builtin.command:
-        cmd: "stow {{ profile }} --target=/home/{{ sys.user.username }}/ --adopt"
-        chdir: /opt/dotfiles
-    - name: Make user dirs
-      become: true
-      ansible.builtin.file:
-        path: "/home/{{ sys.user.username }}/{{ item }}"
-        state: directory
-        mode: "0711"
-        owner: "{{ sys.user.username }}"
-        group: "{{ sys.user.username }}"
-      loop:
-        "{{ sys.user.dirs | default([]) }}"
-    - name: Udpate xdg user dirs # noqa no-changed-when
-      become: true
-      become_user: "{{ sys.user.username }}"
-      ansible.builtin.command:
-        cmd: xdg-user-dirs-update
-        chdir: "/home/{{ sys.user.username }}"
-# }}}
-
-# Xmonad {{{
-    - name: Maybe build xmonad
-      when: sys.xmonad | default(false) | bool()
-      block:
-        - name: Install xmonad requirements
-          become: true
-          community.general.xbps:
-            name:
-              - libX11-devel
-              - libXScrnSaver-devel
-              - libXft-devel
-              - libXinerama-devel
-              - libXrandr-devel
-              - ncurses-libtinfo-devel
-              - ncurses-libtinfo-libs
-              - pkg-config
-              - stack
-        - name: Download xmonad sources
-          become: true
-          become_user: "{{ sys.user.username }}"
-          ansible.builtin.git:
-            repo: "{{ item.r }}"
-            depth: 1
-            dest: "/home/{{ sys.user.username }}/.config/xmonad/{{ item.d }}"
-            version: "v0.18.0"
-          loop:
-            - {r: "https://github.com/xmonad/xmonad", d: xmonad}
-            - {r: "https://github.com/xmonad/xmonad-contrib", d: xmonad-contrib}
-        - name: Check stack.yaml
-          become: true
-          become_user: "{{ sys.user.username }}"
-          ansible.builtin.stat:
-            path: "/home/{{ sys.user.username }}/.config/xmonad/stack.yaml"
-          register: st
-        - name: Stack init
-          become: true
-          become_user: "{{ sys.user.username }}"
-          ansible.builtin.command:
-            cmd: stack init
-            creates: "/home/{{ sys.user.username }}/.config/xmonad/stack.yaml"
-            chdir: "/home/{{ sys.user.username }}/.config/xmonad"
-          when: st.stat.islnk is not defined
-        - name: Build xmonad
-          become: true
-          become_user: "{{ sys.user.username }}"
-          ansible.builtin.command:
-            cmd: stack install
-            creates: "/home/{{ sys.user.username }}/.local/bin/xmonad"
-            chdir: "/home/{{ sys.user.username }}/.config/xmonad"
-# }}}
-
-# Devbox {{{
-    - name: Maybe install devbox
-      become: true
-      when: sys.devbox | default(false) | bool()
-      block:
-        - name: Check if devbox exists
-          ansible.builtin.stat:
-            path: /usr/local/bin/devbox
-          register: devbox_bin
-        - name: Download devbox
-          ansible.builtin.get_url:
-            url: https://get.jetify.com/devbox
-            dest: /tmp/devbox_installer
-            mode: "0777"
-          register: devbox_installer
-          when: not devbox_bin.stat.exists
-        - name: Install devbox
-          become: true
-          ansible.builtin.command:
-            cmd: /tmp/devbox_installer --force
-            creates: /usr/local/bin/devbox
-          when: not devbox_bin.stat.exists
-        - name: Remove installer
-          ansible.builtin.file:
-            path: "{{ devbox_installer.dest }}"
-            state: absent
-          when: not devbox_bin.stat.exists
-        - name: Fix devbox bin permissions
-          ansible.builtin.file:
-            path: /usr/local/bin/devbox
-            mode: "0777"
-# }}}
-
-# Network {{{
-    - name: Configure wifi home connection
-      community.general.nmcli:
-        type: wifi
-        conn_name: Casa
-        ssid: AscaniFerretti
-        ip4: "{{ item.ip }}"
-        gw4: "192.168.1.1"
-        method6: "disabled"
-        wifi_sec:
-          key-mgmt: wpa-psk
-          psk: "g:B4$1F\\A\\@X."
-        autoconnect: "{{ item.autoconnect | default(false) }}"
-        state: present
-      with_items:
-        "{{ sys.networks | default([]) }}"
-    - name: Restart NetworkManager
-      community.general.runit:
-        name: NetworkManager
         state: restarted
         enabled: true
+      loop:
+        - sshd
 # }}}
-
+# Network {{{
+#   - name: Configure home wifi connection
+#     community.general.nmcli:
+#       type: wifi
+#       conn_name: Casa
+#       ifname: "{{ sys.net.interface }}"
+#       ssid: AscaniFerretti
+#       ip4: "{{ sys.net.ip }}"
+#       gw4: "192.168.1.1"
+#       method6: "disabled"
+#       wifi_sec:
+#         key-mgmt: wpa-psk
+#         psk: "g:B4$1F\\A\\@X."
+#       autoconnect: yes
+#       state: present
+#   - name: Restart NetworkManager
+#     ansible.builtin.systemd:
+#       name: NetworkManager
+#       state: restarted
+#       enabled: true
+# }}}
