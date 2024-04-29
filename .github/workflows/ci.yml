@@ -65,4 +65,4 @@ jobs:
       - name: Step 4 - Run the playbook
         run: |
           sudo incus file push -rp * workstation/root/
-          sudo incus exec workstation -- make ANSIBLE_HOST_KEY_CHECKING=False workstation
+          sudo incus exec workstation -- make workstation
