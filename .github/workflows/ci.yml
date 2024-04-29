@@ -75,4 +75,10 @@ jobs:
           ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1
           sudo incus file push ~/.ssh/id_rsa.pub workstation/root/.ssh/authorized_keys
 
-          ssh -o StrictHostKeyChecking=no root@$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f 1) "echo o/ from debian!"
+      - name: Step 4 - Run the playbook
+        run: |
+          export ANSIBLE_HOST_KEY_CHECKING=False
+          export WORKSTATION_IP=$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f 1)
+
+          make TARGET=$WORKSTATION_IP workstation
+
