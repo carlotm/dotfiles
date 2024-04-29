@@ -33,15 +33,14 @@
         update_cache: true
         state: latest
         pkg:
-          - network-manager
           - adwaita-icon-theme
-          - build-essential
           - bash-completion
+          - build-essential
           - curl
           - fd-find
-          - fonts-spleen
           - fonts-noto
           - fonts-noto-color-emoji
+          - fonts-spleen
           - pavucontrol
           - pulseaudio
           - ripgrep
