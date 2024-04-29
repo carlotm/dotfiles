@@ -138,8 +138,12 @@
     - name: Make sure destination dir exists
       become: true
       become_user: "{{ sys.user.username }}"
-      ansible.builtin.command:
-        cmd: "mkdir -p $(dirname {{ item }})"
+      ansible.builtin.file:
+        path: "$(dirname {{ item }})"
+        state: directory
+        owner: "{{ sys.user.username }}"
+        group: "{{ sys.user.username }}"
+        mode: "1755"
       loop: "{{ sys.dots | default([]) }}"
     - name: Copy dotfiles
       ansible.builtin.copy:
