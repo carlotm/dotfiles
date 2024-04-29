@@ -24,5 +24,7 @@ sys:
     - .config/starship.toml
     - .config/user-dirs.dirs
     - .config/user-dirs.locale
+    - .config/gtk-3.0/gtk.css
+    - .config/gtk-3.0/settings.ini
   starship: true
   devbox: true
