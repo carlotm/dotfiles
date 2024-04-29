@@ -61,8 +61,8 @@ jobs:
 
           sudo incus exec workstation -- systemctl restart sshd
 
-          sudo mkdir ~/.ssh
-          sudo ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1
+          mkdir ~/.ssh
+          ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1
           sudo incus file push ~/.ssh/id_rsa.pub workstation/root/.ssh/authorized_keys
 
           ssh -o StrictHostKeyChecking=no root@$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f 1) "echo o/ from debian!"
