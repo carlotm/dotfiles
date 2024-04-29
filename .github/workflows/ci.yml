@@ -25,11 +25,8 @@ jobs:
       - name: Step 1 - Install and start incus
         run: |
           sudo nft flush ruleset
-
           sudo mkdir -p /etc/apt/keyrings
-
           wget -qO - https://pkgs.zabbly.com/key.asc | sudo tee /etc/apt/keyrings/zabbly.asc
-
           sudo bash -c 'cat << EOF > /etc/apt/sources.list.d/zabbly-incus-stable.sources
           Enabled: yes
           Types: deb
@@ -39,27 +36,20 @@ jobs:
           Architectures: amd64
           Signed-By: /etc/apt/keyrings/zabbly.asc
           EOF'
-
           sudo apt update
-
           sudo apt install incus
-
           sudo incus admin init --auto
-
           sudo systemctl start incus
 
       - name: Step 2 - Launch a debian container
         run: |
           sudo incus launch images:debian/12/cloud workstation
-
           until [[ -n $(sudo incus list workstation -c4 -fcsv) ]]
           do
             echo "Waiting for the vm interface to be up..."
             sleep 1
           done
-
-          sudo apt install ansible make
-          sudo incus exec workstation -- apt install --yes openssh-server
+          sudo incus exec workstation -- apt install --yes openssh-server ansible make
 
       - name: Step 3 - Set up ssh
         run: |
@@ -67,17 +57,12 @@ jobs:
           PermitRootLogin yes
           StrictModes no
           EOF
-
           sudo incus file push enable_ssh_root workstation/etc/ssh/sshd_config.d/enable_ssh_root
-
           sudo incus exec workstation -- systemctl restart sshd
-
           mkdir ~runner/.ssh
           ssh-keygen -q -t rsa -N '' -f ~runner/.ssh/id_rsa <<<y >/dev/null 2>&1
           sudo incus file push ~runner/.ssh/id_rsa.pub workstation/root/.ssh/authorized_keys
 
       - name: Step 4 - Run the playbook
         run: |
-          export ANSIBLE_HOST_KEY_CHECKING=False
-          export WORKSTATION_IP=$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f 1)
-          make TARGET=$WORKSTATION_IP workstation
+          sudo incus exec workstation -- ANSIBLE_HOST_KEY_CHECKING=False make workstation
