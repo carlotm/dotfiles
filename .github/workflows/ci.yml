@@ -72,12 +72,12 @@ jobs:
 
           sudo incus exec workstation -- systemctl restart sshd
 
-          mkdir ~/.ssh
-          ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1
-          sudo incus file push ~/.ssh/id_rsa.pub workstation/root/.ssh/authorized_keys
+          mkdir ~runner/.ssh
+          ssh-keygen -q -t rsa -N '' -f ~runner/.ssh/id_rsa <<<y >/dev/null 2>&1
+          sudo incus file push ~runner/.ssh/id_rsa.pub workstation/root/.ssh/authorized_keys
 
       - name: Step 4 - Run the playbook
         run: |
           export ANSIBLE_HOST_KEY_CHECKING=False
           export WORKSTATION_IP=$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f 1)
-          sudo make TARGET=$WORKSTATION_IP workstation
+          make TARGET=$WORKSTATION_IP workstation
