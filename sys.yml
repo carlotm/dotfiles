@@ -98,7 +98,7 @@
           - wheel
     - name: Put user in sudoers
       ansible.builtin.copy:
-        src: "templates/sudoer_{{ sys.user.username }}"
+        src: "templates/sudoer.j2"
         dest: "/etc/sudoers.d/{{ sys.user.username }}"
         owner: root
         group: root
