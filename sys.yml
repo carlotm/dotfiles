@@ -137,7 +137,6 @@
 # Dotfiles {{{
     - name: Make sure destination dir exists
       become: true
-      become_user: "{{ sys.user.username }}"
       ansible.builtin.file:
         path: "{{ item | dirname }}"
         state: directory
@@ -147,6 +146,7 @@
         mode: "1755"
       loop: "{{ sys.dots | default([]) | map('regex_replace', '^', '/home/{{ sys.user.username }}/') }}"
     - name: Copy dotfiles
+      become: true
       ansible.builtin.copy:
         src: "dots/{{ profile }}/{{ item }}"
         dest: "/home/{{ sys.user.username }}/{{ item }}"
