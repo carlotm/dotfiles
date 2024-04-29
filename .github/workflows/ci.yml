@@ -47,3 +47,8 @@ jobs:
             echo "Waiting for the vm interface to be up..."
             sleep 1
           done
+
+      - name: Step 3 - Set up ssh
+        run: |
+          whoami
+          pwd
