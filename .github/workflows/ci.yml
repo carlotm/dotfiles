@@ -59,7 +59,6 @@ jobs:
           EOF
           sudo incus file push enable_ssh_root workstation/etc/ssh/sshd_config.d/enable_ssh_root
           sudo incus exec workstation -- systemctl restart sshd
-          sudo incus exec workstation -- mkdir .ssh
           sudo incus exec workstation -- ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1
           sudo incus exec workstation -- cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
 
