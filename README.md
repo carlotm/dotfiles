@@ -2,5 +2,4 @@
 
 | System | Hostname | OS | Description |
 | :--- | :--- | :--- | :--- |
-| workstation | scumm | Voidlinux | My personal laptop |
-| mediacenter | melee | Voidlinux | The computer attached to our TV |
+| workstation | scumm | Debian | My personal laptop |
