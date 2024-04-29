@@ -58,7 +58,8 @@ jobs:
             sleep 1
           done
 
-          sudo incus exec workstation -- apt install --yes openssh-server make ansible
+          sudo apt install ansible make
+          sudo incus exec workstation -- apt install --yes openssh-server
 
       - name: Step 3 - Set up ssh
         run: |
