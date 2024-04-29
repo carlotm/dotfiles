@@ -1,0 +1,49 @@
+name: My Dotfiles CI
+
+on:
+  push:
+    branches: [debian]
+
+jobs:
+  build:
+    name: Ansible lint and run
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Step 1 - Install and start incus
+        run: |
+          sudo nft flush ruleset
+
+          sudo mkdir -p /etc/apt/keyrings
+
+          wget -qO - https://pkgs.zabbly.com/key.asc | sudo tee /etc/apt/keyrings/zabbly.asc
+
+          sudo bash -c 'cat << EOF > /etc/apt/sources.list.d/zabbly-incus-stable.sources
+          Enabled: yes
+          Types: deb
+          URIs: https://pkgs.zabbly.com/incus/stable
+          Suites: jammy
+          Components: main
+          Architectures: amd64
+          Signed-By: /etc/apt/keyrings/zabbly.asc
+          EOF'
+
+          sudo apt update
+
+          sudo apt install incus
+
+          sudo incus admin init --auto
+
+          sudo systemctl start incus
+
+      - name: Step 2 - Launch a debian container
+        run: |
+          sudo incus launch images:debian/12/cloud workstation
+
+          until [[ -n $(sudo incus list workstation -c4 -fcsv) ]]
+          do
+            echo "Waiting for the vm interface to be up..."
+            sleep 1
+          done
