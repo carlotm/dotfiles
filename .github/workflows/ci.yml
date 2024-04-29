@@ -5,8 +5,18 @@ on:
     branches: [debian]
 
 jobs:
+  lint:
+    name: Ansible lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Lint playbooks
+        uses: ansible/ansible-lint@main
+
   build:
-    name: Ansible lint and run
+    name: Ansible run
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -48,7 +58,7 @@ jobs:
             sleep 1
           done
 
-          sudo incus exec workstation -- apt install --yes openssh-server make ansible ansible-lint
+          sudo incus exec workstation -- apt install --yes openssh-server make ansible
 
       - name: Step 3 - Set up ssh
         run: |
