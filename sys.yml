@@ -139,12 +139,13 @@
       become: true
       become_user: "{{ sys.user.username }}"
       ansible.builtin.file:
-        path: "'/home/{{ sys.user.username }}/' + '$(dirname {{ item }})'"
+        path: "{{ item }}"
         state: directory
+        recurse: true
         owner: "{{ sys.user.username }}"
         group: "{{ sys.user.username }}"
         mode: "1755"
-      loop: "{{ sys.dots | default([]) }}"
+      loop: "{{ sys.dots | default([]) | map('regex_replace', '^', '/home/{{ sys.user.username }}/') }}"
     - name: Copy dotfiles
       ansible.builtin.copy:
         src: "dots/{{ profile }}/{{ item }}"
