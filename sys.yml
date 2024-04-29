@@ -28,9 +28,9 @@
           - cups-pk-helper
           - cups-ppdc
           - cups-server-common
-    - name: Common packages
+    - name: Common packages # noqa package-latest
       ansible.builtin.apt:
-        update_cache: yes
+        update_cache: true
         state: latest
         pkg:
           - network-manager
@@ -50,7 +50,7 @@
           - wget
           - xdg-user-dirs
           - xorg
-    - name: User packages
+    - name: User packages # noqa package-latest
       ansible.builtin.apt:
         state: latest
         pkg: "{{ sys.packages | default([]) }}"
@@ -140,9 +140,12 @@
     - name: Make sure destination dir exists
       become: true
       become_user: "{{ sys.user.username }}"
-      file:
+      ansible.builtin.file:
         path: "/home/{{ sys.user.username }}/{{ item | dirname }}"
         state: directory
+        mode: "0755"
+        owner: "{{ sys.user.username }}"
+        group: "{{ sys.user.username }}"
       loop: "{{ sys.dots | default([]) }}"
     - name: Copy dotfiles
       ansible.builtin.copy:
