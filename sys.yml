@@ -115,13 +115,13 @@
     - name: Configure git
       community.general.git_config:
         name: "{{ item.n }}"
-        scope: system
         value: "{{ item.v }}"
+        scope: system
       loop:
         - {n: core.editor, v: vim}
-        - {n: user.name, v: sys.user.name}
-        - {n: user.username, v: sys.user.username}
-        - {n: user.email, v: sys.user.email}
+        - {n: user.name, v: "{{ sys.user.name }}"}
+        - {n: user.username, v: "{{ sys.user.username }}"}
+        - {n: user.email, v: "{{ sys.user.email }}"}
         - {n: alias.s, v: status}
         - {n: alias.co, v: checkout}
 # }}}

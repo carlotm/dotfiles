@@ -65,4 +65,10 @@ jobs:
       - name: Step 4 - Run the playbook
         run: |
           sudo incus file push -rp * workstation/root/
-          sudo incus exec workstation -- make workstation
+          sudo incus exec workstation -- make ANSIBLE_HOST_KEY_CHECKING=False workstation
+
+      - name: Step 5 - Assert
+        run: |
+          sudo incus exec workstation -- ls /home/carloratm
+          sudo incus exec workstation -- which rg
+          sudo incus exec workstation -- systemctl is-active sshd
