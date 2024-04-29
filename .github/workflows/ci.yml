@@ -48,7 +48,17 @@ jobs:
             sleep 1
           done
 
+          sudo incus exec workstation -- apt install --yes openssh-server make ansible ansible-lint
+
       - name: Step 3 - Set up ssh
         run: |
-          whoami
-          pwd
+          cat > enable_ssh_root << EOF
+          PermitRootLogin yes
+          StrictModes no
+          EOF
+
+          sudo incus file push enable_ssh_root workstation/etc/ssh/sshd_config.d/enable_ssh_root
+
+          sudo incus exec workstation -- systemctl restart sshd
+
+          echo ~runner
