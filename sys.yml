@@ -139,7 +139,7 @@
       become: true
       become_user: "{{ sys.user.username }}"
       ansible.builtin.file:
-        path: "$(dirname {{ item }})"
+        path: "/home/{{ sys.user.username }}/$(dirname {{ item }})"
         state: directory
         owner: "{{ sys.user.username }}"
         group: "{{ sys.user.username }}"
