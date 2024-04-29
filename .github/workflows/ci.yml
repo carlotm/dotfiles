@@ -77,8 +77,6 @@ jobs:
 
       - name: Step 4 - Run the playbook
         run: |
-          export ANSIBLE_HOST_KEY_CHECKING=False
-          export WORKSTATION_IP=$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f 1)
-
-          make TARGET=$WORKSTATION_IP workstation
-
+          sudo export ANSIBLE_HOST_KEY_CHECKING=False
+          sudo export WORKSTATION_IP=$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f 1)
+          sudo make TARGET=$WORKSTATION_IP workstation
