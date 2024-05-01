@@ -47,6 +47,7 @@ jobs:
             echo "Waiting for the vm interface to be up..."
             sleep 1
           done
+          export CONTAINER_IP=$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f1)
           sudo incus exec workstation -- apt install --yes openssh-server ansible make
 
           cat > enable_ssh_root << EOF
@@ -57,7 +58,7 @@ jobs:
           sudo incus exec workstation -- systemctl restart sshd
           ssh-keygen -q -t rsa -N '' -f /home/runner/.ssh/id_rsa
           sudo incus file push /home/runner/.ssh/id_rsa.pub workstation/root/.ssh/authorized_keys
-          echo ssh -o "StrictHostKeyChecking=no" root@$(sudo incus list workstation -c4 -fcsv) "lsb_release -a"
+          echo ssh -o "StrictHostKeyChecking=no" root@${CONTAINER_IP} "lsb_release -a"
 
       # - name: Act
       #   run: |
