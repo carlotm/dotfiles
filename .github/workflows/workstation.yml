@@ -58,7 +58,7 @@ jobs:
           sudo incus exec workstation -- systemctl restart sshd
           ssh-keygen -q -t rsa -N '' -f /home/runner/.ssh/id_rsa
           sudo incus file push /home/runner/.ssh/id_rsa.pub workstation/root/.ssh/authorized_keys
-          ssh -o "StrictHostKeyChecking=no" root@${CONTAINER_IP} "lsb_release -a"
+          sudo ssh -o "StrictHostKeyChecking=no" root@${CONTAINER_IP} "lsb_release -a"
 
       # - name: Act
       #   run: |
