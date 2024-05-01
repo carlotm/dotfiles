@@ -15,5 +15,7 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 c.fonts.default_family = ['Noto Sans']
 c.fonts.default_size = '18pt'
 c.statusbar.show = 'in-mode'
+c.statusbar.widgets = ['keypress']
 c.tabs.show = 'multiple'
+c.tabs.indicator.width = 0
 c.zoom.default = '140%'

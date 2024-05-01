@@ -90,6 +90,7 @@
 # }}}
 # LightDM {{{
     - name: Configure lightdm
+      when: lookup("ansible.builtin.env", "CI", default="false") == "false"
       ansible.builtin.template:
         src: "templates/lightdm.conf.j2"
         dest: /etc/lightdm/lightdm.conf
