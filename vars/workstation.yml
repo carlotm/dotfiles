@@ -19,6 +19,7 @@ sys:
     - gvfs-backends
     - keepassxc
     - qutebrowser
+    - xmonad
   dots:
     - .bashrc
     - .local/bin/colors.sh
@@ -27,5 +28,6 @@ sys:
     - .config/user-dirs.locale
     - .config/gtk-3.0/gtk.css
     - .config/gtk-3.0/settings.ini
+    - .config/xmonad/xmonad.hs
   starship: true
   devbox: true
