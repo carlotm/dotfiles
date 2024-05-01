@@ -3,11 +3,12 @@
     font-family: 'Noto Sans';
     font-weight: 900;
     font-size: 16px;
-    border-radius: 0;
     border-color: transparent;
-    border-right: 2px solid black;
+    border-radius: 4px;
+    background-color: #dedede;
     padding: 8px;
-    color: #666;
+    margin: 2px;
+    color: #333;
 }
 
 .xfce4-panel widget grid button.flat.toggle:hover
@@ -15,9 +16,8 @@
     font-family: 'Noto Sans';
     font-weight: 900;
     font-size: 16px;
-    border-radius: 0;
     border-color: transparent;
-    border-right: 2px solid black;
+    border-radius: 4px;
     padding: 8px;
     color: #666;
 }
@@ -27,10 +27,9 @@
     font-family: 'Noto Sans';
     font-weight: 900;
     font-size: 16px;
-    border-radius: 0;
-    padding: 8px;
     border-color: transparent;
-    border-right: 2px solid red;
-    background: #000000;
-    color: white;
+    border-radius: 4px;
+    padding: 8px;
+    background: #f00;
+    color: #fff;
 }

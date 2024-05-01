@@ -17,20 +17,24 @@ sys:
     - git
     - gvfs
     - gvfs-backends
+    - elementary-xfce-icon-theme
     - keepassxc
     - qutebrowser
     - xmonad
   dots:
     - .bashrc
-    - .local/bin/colors.sh
+    - .config/gtk-3.0/gtk.css
+    - .config/gtk-3.0/settings.ini
     - .config/starship.toml
     - .config/user-dirs.dirs
     - .config/user-dirs.locale
-    - .config/gtk-3.0/gtk.css
-    - .config/gtk-3.0/settings.ini
-    - .config/xmonad/xmonad.hs
     - .config/xfce4/terminal/terminalrc
-    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
     - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+    - .config/xmonad/xmonad.hs
+    - .local/bin/colors.sh
   starship: true
   devbox: true
