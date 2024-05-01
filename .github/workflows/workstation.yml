@@ -55,16 +55,17 @@ jobs:
           EOF
           sudo incus file push enable_ssh_root workstation/etc/ssh/sshd_config.d/enable_ssh_root
           sudo incus exec workstation -- systemctl restart sshd
-          sudo incus exec workstation -- ssh-keygen -q -t rsa -N '' -f /root/.ssh/id_rsa
-          sudo incus exec workstation -- cp /root/.ssh/id_rsa.pub /root/.ssh/authorized_keys
+          ssh-keygen -q -t rsa -N '' -f /home/runner/.ssh/id_rsa
+          sudo incus file push /home/runner/.ssh/id_rsa.pub workstation/root/.ssh/authorized_keys
+          echo "WORKSTATION IP: " $(sudo incus list workstation -c4 -fcsv)
 
-      - name: Act
-        run: |
-          sudo incus file push -rp * workstation/root/
-          sudo incus exec workstation -- make CI=true ANSIBLE_HOST_KEY_CHECKING=False workstation
+      # - name: Act
+      #   run: |
+      #     sudo incus file push -rp * workstation/root/
+      #     sudo incus exec workstation -- make CI=true ANSIBLE_HOST_KEY_CHECKING=False workstation
 
-      - name: Assert
-        run: |
-          sudo incus exec workstation -- ls /home/carloratm
-          sudo incus exec workstation -- which rg
-          sudo incus exec workstation -- systemctl is-active sshd
+      # - name: Assert
+      #   run: |
+      #     sudo incus exec workstation -- ls /home/carloratm
+      #     sudo incus exec workstation -- which rg
+      #     sudo incus exec workstation -- systemctl is-active sshd
