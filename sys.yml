@@ -140,10 +140,9 @@
       ansible.builtin.file:
         path: "{{ item | dirname }}"
         state: directory
-        recurse: true
         owner: "{{ sys.user.username }}"
         group: "{{ sys.user.username }}"
-        mode: "1755"
+        mode: "0744"
       loop: "{{ sys.dots | default([]) | map('regex_replace', '^', '/home/{{ sys.user.username }}/') }}"
     - name: Copy dotfiles
       become: true
