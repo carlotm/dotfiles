@@ -23,6 +23,7 @@ sys:
     - xmonad
   dots:
     - .bashrc
+    - .config/autostart/xmonad.desktop
     - .config/gtk-3.0/gtk.css
     - .config/gtk-3.0/settings.ini
     - .config/starship.toml

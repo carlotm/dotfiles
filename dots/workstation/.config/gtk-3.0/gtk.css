@@ -1,3 +1,8 @@
+#clock-button
+{
+    color: white;
+}
+
 .xfce4-panel widget grid button.flat.toggle
 {
     font-family: 'Noto Sans';
