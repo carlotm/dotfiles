@@ -61,7 +61,7 @@ jobs:
       - name: Act
         run: |
           sudo incus file push -rp * workstation/root/
-          sudo incus exec workstation -- make ANSIBLE_HOST_KEY_CHECKING=False workstation
+          sudo incus exec workstation -- make CI=true ANSIBLE_HOST_KEY_CHECKING=False workstation
 
       - name: Assert
         run: |

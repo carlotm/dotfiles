@@ -21,6 +21,30 @@ c.tabs.indicator.width = 0
 c.zoom.default = '140%'
 c.input.insert_mode.auto_enter = True
 
+c.colors.tabs.bar.bg = '#000000'
+c.colors.tabs.even.bg = '#404040'
+c.colors.tabs.even.fg = '#cccccc'
+c.colors.tabs.odd.bg = '#404040'
+c.colors.tabs.odd.fg = '#cccccc'
+c.colors.tabs.indicator.error = '#ff0000'
+c.colors.tabs.indicator.start = '#0000aa'
+c.colors.tabs.indicator.stop = '#00aa00'
+c.colors.tabs.indicator.system = 'rgb'
+c.colors.tabs.selected.even.bg = 'black'
+c.colors.tabs.selected.even.fg = 'white'
+c.colors.tabs.selected.odd.bg = 'black'
+c.colors.tabs.selected.odd.fg = 'white'
+c.colors.tooltip.bg = 'black'
+c.colors.tooltip.fg = 'white'
+c.colors.tabs.pinned.even.bg = '#404040'
+c.colors.tabs.pinned.even.fg = '#cccccc'
+c.colors.tabs.pinned.odd.bg = '#404040'
+c.colors.tabs.pinned.odd.fg = '#cccccc'
+c.colors.tabs.pinned.selected.even.bg = 'black'
+c.colors.tabs.pinned.selected.even.fg = 'white'
+c.colors.tabs.pinned.selected.odd.bg = 'black'
+c.colors.tabs.pinned.selected.odd.fg = 'white'
+
 config.bind('<Ctrl-Tab>', 'tab-next')
 config.unbind('<Alt-1>')
 config.unbind('<Alt-2>')
