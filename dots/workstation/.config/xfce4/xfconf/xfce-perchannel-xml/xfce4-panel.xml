@@ -14,7 +14,6 @@
       <property name="plugin-ids" type="array">
         <value type="int" value="4"/>
         <value type="int" value="5"/>
-        <value type="int" value="6"/>
         <value type="int" value="8"/>
         <value type="int" value="9"/>
         <value type="int" value="12"/>
@@ -25,7 +24,7 @@
       <property name="disable-struts" type="bool" value="false"/>
       <property name="nrows" type="uint" value="1"/>
       <property name="length-adjust" type="bool" value="true"/>
-      <property name="background-style" type="uint" value="0"/>
+      <property name="background-style" type="uint" value="1"/>
       <property name="background-rgba" type="array">
         <value type="double" value="0"/>
         <value type="double" value="0"/>
@@ -45,27 +44,10 @@
       <property name="style" type="uint" value="0"/>
       <property name="expand" type="bool" value="true"/>
     </property>
-    <property name="plugin-6" type="string" value="systray">
-      <property name="square-icons" type="bool" value="true"/>
-      <property name="icon-size" type="int" value="22"/>
-      <property name="single-row" type="bool" value="false"/>
-      <property name="hide-new-items" type="bool" value="false"/>
-      <property name="menu-is-primary" type="bool" value="false"/>
-      <property name="symbolic-icons" type="bool" value="true"/>
-      <property name="known-legacy-items" type="array">
-        <value type="string" value="wi-fi network connection “ascaniferretti” active: ascaniferretti (61%)"/>
-        <value type="string" value="wi-fi network connection “ascaniferretti” active: ascaniferretti (67%)"/>
-        <value type="string" value="wi-fi network connection “ascaniferretti” active: ascaniferretti (70%)"/>
-        <value type="string" value="wi-fi network connection “ascaniferretti” active: ascaniferretti (65%)"/>
-        <value type="string" value="wi-fi network connection “ascaniferretti” active: ascaniferretti (66%)"/>
-        <value type="string" value="wi-fi network connection “ascaniferretti” active: ascaniferretti (63%)"/>
-        <value type="string" value="networkmanager applet"/>
-      </property>
-    </property>
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="firefox.instance11827;firefox.instance3897;firefox.instance5537"/>
+      <property name="mpris-players" type="string" value="firefox.instance11827;firefox.instance2289;firefox.instance3897;firefox.instance5537"/>
       <property name="mixer-command" type="string" value="pavucontrol"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
