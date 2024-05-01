@@ -26,6 +26,7 @@ sys:
     - .config/autostart/xmonad.desktop
     - .config/gtk-3.0/gtk.css
     - .config/gtk-3.0/settings.ini
+    - .config/qutebrowser/config.py
     - .config/starship.toml
     - .config/user-dirs.dirs
     - .config/user-dirs.locale
