@@ -65,8 +65,10 @@ jobs:
           CONTAINER_IP=$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f1)
           sudo make CI=true ANSIBLE_HOST_KEY_CHECKING=False TARGET=${CONTAINER_IP} workstation
 
-      # - name: Assert
-      #   run: |
-      #     sudo incus exec workstation -- ls /home/carloratm
-      #     sudo incus exec workstation -- which rg
-      #     sudo incus exec workstation -- systemctl is-active sshd
+      - name: Assert
+        run: |
+          sudo incus exec workstation -- ls /home/carloratm
+          sudo incus exec workstation -- which rg
+          sudo incus exec workstation -- which devbox
+          sudo incus exec workstation -- which starship
+          sudo incus exec workstation -- systemctl is-active sshd
