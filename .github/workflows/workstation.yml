@@ -60,10 +60,10 @@ jobs:
           sudo incus file push /root/.ssh/id_rsa.pub workstation/root/.ssh/authorized_keys
           sudo ssh -o "StrictHostKeyChecking=no" root@${CONTAINER_IP} "lsb_release -a"
 
-      # - name: Act
-      #   run: |
-      #     sudo incus file push -rp * workstation/root/
-      #     sudo incus exec workstation -- make CI=true ANSIBLE_HOST_KEY_CHECKING=False workstation
+      - name: Act
+        run: |
+          export CONTAINER_IP=$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f1)
+          sudo make ANSIBLE_HOST_KEY_CHECKING=False TARGET=${CONTAINER_IP} workstation
 
       # - name: Assert
       #   run: |
