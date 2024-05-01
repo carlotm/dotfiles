@@ -73,9 +73,10 @@
       <property name="mode" type="uint" value="2"/>
       <property name="timezone" type="string" value="Europe/Vienna"/>
       <property name="digital-layout" type="uint" value="1"/>
-      <property name="digital-date-font" type="string" value="Noto Sans Bold Semi-Condensed 9"/>
-      <property name="digital-time-font" type="string" value="Noto Sans Semi-Bold Condensed 14"/>
+      <property name="digital-date-font" type="string" value="Noto Sans Semi-Bold 8"/>
+      <property name="digital-time-font" type="string" value="Noto Sans Bold 12"/>
       <property name="digital-date-format" type="string" value="%d %b"/>
+      <property name="digital-time-format" type="string" value="%_H:%M"/>
     </property>
     <property name="plugin-14" type="string" value="actions">
       <property name="appearance" type="uint" value="0"/>
