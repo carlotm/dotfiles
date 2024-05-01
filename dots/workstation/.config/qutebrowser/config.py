@@ -18,6 +18,7 @@ c.statusbar.show = 'in-mode'
 c.statusbar.widgets = ['keypress']
 c.tabs.show = 'multiple'
 c.tabs.indicator.width = 0
+c.tabs.title.format = '{current_title}'
 c.zoom.default = '140%'
 c.input.insert_mode.auto_enter = True
 
