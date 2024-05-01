@@ -47,7 +47,7 @@ jobs:
             echo "Waiting for the vm interface to be up..."
             sleep 1
           done
-          export CONTAINER_IP=$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f1)
+          CONTAINER_IP=$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f1)
           sudo incus exec workstation -- apt install --yes openssh-server ansible make
 
           cat > enable_ssh_root << EOF
@@ -62,6 +62,7 @@ jobs:
 
       - name: Act
         run: |
+          CONTAINER_IP=$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f1)
           sudo make CI=true ANSIBLE_HOST_KEY_CHECKING=False TARGET=${CONTAINER_IP} workstation
 
       # - name: Assert
