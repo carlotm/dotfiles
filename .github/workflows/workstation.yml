@@ -62,8 +62,7 @@ jobs:
 
       - name: Act
         run: |
-          export CONTAINER_IP=$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f1)
-          sudo make ANSIBLE_HOST_KEY_CHECKING=False TARGET=${CONTAINER_IP} workstation
+          sudo make CI=true ANSIBLE_HOST_KEY_CHECKING=False TARGET=${CONTAINER_IP} workstation
 
       # - name: Assert
       #   run: |
