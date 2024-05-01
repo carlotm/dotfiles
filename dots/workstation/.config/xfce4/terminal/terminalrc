@@ -35,4 +35,11 @@ FontAllowBold=FALSE
 ShortcutsNoMnemonics=TRUE
 ShortcutsNoMenukey=TRUE
 ShortcutsNoHelpkey=TRUE
+ColorCursorUseDefault=FALSE
+ColorCursorForeground=#ffffffffffff
+ColorCursor=#ffff00000000
+ColorSelectionUseDefault=FALSE
+ColorSelection=#ffffffffffff
+ColorSelectionBackground=#222222222222
+ColorForeground=#c0c0bfbfbcbc
 
