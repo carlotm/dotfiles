@@ -28,6 +28,27 @@
           - cups-pk-helper
           - cups-ppdc
           - cups-server-common
+          - libreoffice-base-core
+          - libreoffice-calc
+          - libreoffice-common
+          - libreoffice-core
+          - libreoffice-draw
+          - libreoffice-gtk3
+          - libreoffice-help-common
+          - libreoffice-help-en-us
+          - libreoffice-impress
+          - libreoffice-math
+          - libreoffice-style-colibre
+          - libreoffice-writer
+          - libsane-common
+          - libsane1
+          - sane-airscan
+          - sane-utils
+          - synaptic
+          - xfburn
+          - xsane
+          - xsane-common
+          - xterm
     - name: Common packages # noqa package-latest
       ansible.builtin.apt:
         update_cache: true
