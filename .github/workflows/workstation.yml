@@ -1,4 +1,4 @@
-name: My Dotfiles CI
+name: Workstation CI
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Step 1 - Install and start incus
+      - name: Arrange
         run: |
           sudo nft flush ruleset
           sudo mkdir -p /etc/apt/keyrings
@@ -37,12 +37,10 @@ jobs:
           Signed-By: /etc/apt/keyrings/zabbly.asc
           EOF'
           sudo apt update
-          sudo apt install incus
+          sudo apt install incus ansible make
           sudo incus admin init --auto
           sudo systemctl start incus
 
-      - name: Step 2 - Launch a debian container
-        run: |
           sudo incus launch images:debian/12/cloud workstation
           until [[ -n $(sudo incus list workstation -c4 -fcsv) ]]
           do
@@ -51,8 +49,6 @@ jobs:
           done
           sudo incus exec workstation -- apt install --yes openssh-server ansible make
 
-      - name: Step 3 - Set up ssh
-        run: |
           cat > enable_ssh_root << EOF
           PermitRootLogin yes
           StrictModes no
@@ -62,12 +58,12 @@ jobs:
           sudo incus exec workstation -- ssh-keygen -q -t rsa -N '' -f /root/.ssh/id_rsa
           sudo incus exec workstation -- cp /root/.ssh/id_rsa.pub /root/.ssh/authorized_keys
 
-      - name: Step 4 - Run the playbook
+      - name: Act
         run: |
           sudo incus file push -rp * workstation/root/
           sudo incus exec workstation -- make ANSIBLE_HOST_KEY_CHECKING=False workstation
 
-      - name: Step 5 - Assert
+      - name: Assert
         run: |
           sudo incus exec workstation -- ls /home/carloratm
           sudo incus exec workstation -- which rg
