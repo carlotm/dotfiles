@@ -27,6 +27,7 @@
           - cups-pk-helper
           - cups-ppdc
           - cups-server-common
+          - exfalso
           - libreoffice-base-core
           - libreoffice-calc
           - libreoffice-common
@@ -41,6 +42,7 @@
           - libreoffice-writer
           - libsane-common
           - libsane1
+          - quodlibet
           - sane-airscan
           - sane-utils
           - synaptic
