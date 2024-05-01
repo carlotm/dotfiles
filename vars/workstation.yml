@@ -30,5 +30,6 @@ sys:
     - .config/gtk-3.0/settings.ini
     - .config/xmonad/xmonad.hs
     - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
   starship: true
   devbox: true
