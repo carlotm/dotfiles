@@ -4,7 +4,6 @@
   gather_facts: false
   become: true
   tasks:
-
 # Load vars {{{
     - name: Load vars
       ansible.builtin.include_vars:
@@ -75,10 +74,17 @@
         state: latest
         pkg: "{{ sys.packages | default([]) }}"
 # }}}
-# Hostname {{{
+# Hostname and console setup {{{
     - name: Set hostname
       ansible.builtin.hostname:
         name: "{{ sys.hostname }}"
+    - name: Set the console config
+      ansible.builtin.copy:
+        src: ./templates/console-setup
+        dest: /etc/default/console-setup
+        owner: root
+        group: root
+        mode: "0644"
 # }}}
 # Locales {{{
     - name: Ensure a locale exists
