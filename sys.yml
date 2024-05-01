@@ -3,6 +3,8 @@
   hosts: all
   gather_facts: false
   become: true
+  vars:
+    ci: "{{ lookup('env', 'CI', default=false) | bool() }}"
   tasks:
 # Load vars {{{
     - name: Load vars
@@ -90,7 +92,7 @@
 # }}}
 # LightDM {{{
     - name: Configure lightdm
-      when: lookup("ansible.builtin.env", "CI", default="false") == "false"
+      when: not ci
       ansible.builtin.template:
         src: "templates/lightdm.conf.j2"
         dest: /etc/lightdm/lightdm.conf

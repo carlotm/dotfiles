@@ -19,3 +19,15 @@ c.statusbar.widgets = ['keypress']
 c.tabs.show = 'multiple'
 c.tabs.indicator.width = 0
 c.zoom.default = '140%'
+c.input.insert_mode.auto_enter = True
+
+config.bind('<Ctrl-Tab>', 'tab-next')
+config.unbind('<Alt-1>')
+config.unbind('<Alt-2>')
+config.unbind('<Alt-3>')
+config.unbind('<Alt-4>')
+config.unbind('<Alt-5>')
+config.unbind('<Alt-6>')
+config.unbind('<Alt-7>')
+config.unbind('<Alt-8>')
+config.unbind('<Alt-9>')
