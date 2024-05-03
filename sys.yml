@@ -254,6 +254,7 @@
             group: "{{ sys.user.username }}"
             mode: "0755"
         - name: Clone qutebrowser source
+          become: true
           become_user: "{{ sys.user.username }}"
           ansible.builtin.git:
             repo: https://github.com/qutebrowser/qutebrowser.git
