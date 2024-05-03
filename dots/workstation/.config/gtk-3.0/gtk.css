@@ -1,6 +1,6 @@
 #clock-button
 {
-    color: white;
+    color: black;
 }
 
 .xfce4-panel widget grid button.flat.toggle
@@ -9,12 +9,12 @@
     font-weight: 900;
     font-size: 16px;
     border-color: transparent;
-    border-radius: 0px;
-    border-right: 2px solid #000;
-    background-color: #000;
+    border-radius: 3px;
+    border: 0;
+    background-color: #f6f5f4;
     padding: 8px;
-    margin: 0;
-    color: #666;
+    margin: 2px;
+    color: #999;
 }
 
 .xfce4-panel widget grid button.flat.toggle:hover
@@ -23,10 +23,11 @@
     font-weight: 900;
     font-size: 16px;
     border-color: transparent;
-    border-radius: 0px;
+    border-radius: 3px;
     padding: 8px;
-    color: #666;
-    border-right: 2px solid #000;
+    margin: 2px;
+    color: #999;
+    border: 0;
 }
 
 .xfce4-panel widget grid button.flat.toggle:checked
@@ -35,9 +36,10 @@
     font-weight: 900;
     font-size: 16px;
     border-color: transparent;
-    border-radius: 0px;
+    border-radius: 3px;
     padding: 8px;
-    background: #000;
+    margin: 2px;
+    background: #f00;
     color: #fff;
-    border-right: 2px solid #f00;
+    border: 0;
 }

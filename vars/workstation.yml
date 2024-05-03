@@ -12,13 +12,19 @@ sys:
       - downloads
       - docs
   packages:
+    - elementary-xfce-icon-theme
     - firefox-esr
     - fzf
     - git
     - gvfs
     - gvfs-backends
-    - elementary-xfce-icon-theme
     - keepassxc
+    - xfce4
+    - xfce4-panel
+    - xfce4-power-manager
+    - xfce4-power-manager-plugins
+    - xfce4-screenshooter
+    - xfce4-session
     - xmonad
   dots:
     - .bashrc
