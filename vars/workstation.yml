@@ -19,7 +19,6 @@ sys:
     - gvfs-backends
     - elementary-xfce-icon-theme
     - keepassxc
-    - qutebrowser
     - xmonad
   dots:
     - .bashrc
@@ -38,5 +37,6 @@ sys:
     - .config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
     - .config/xmonad/xmonad.hs
     - .local/bin/colors.sh
+  qutebrowser: true
   starship: true
   devbox: true
