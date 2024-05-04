@@ -11,10 +11,10 @@
     border-color: transparent;
     border-radius: 3px;
     border: 0;
-    background-color: #f6f5f4;
+    background-color: #eee;
     padding: 8px;
     margin: 2px;
-    color: #999;
+    color: #777;
 }
 
 .xfce4-panel widget grid button.flat.toggle:hover
