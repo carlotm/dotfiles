@@ -261,9 +261,14 @@
             dest: /opt/qutebrowser/src
             depth: 1
             version: main
+        - name: Check if qutebrowser already installed
+          ansible.builtin.stat:
+            path: /usr/local/bin/qutebrowser
+          register: qutebrowser_bin
         - name: Install qutebrowser in a virtualenv # noqa no-changed-when
           become: true
           become_user: "{{ sys.user.username }}"
+          when: not qutebrowser_bin.stat.exists
           ansible.builtin.command:
             cmd: python3 scripts/mkvenv.py --skip-smoke-test
             chdir: /opt/qutebrowser/src
