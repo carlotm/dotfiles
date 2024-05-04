@@ -265,13 +265,14 @@
           ansible.builtin.stat:
             path: /usr/local/bin/qutebrowser
           register: qutebrowser_bin
-        - name: Install qutebrowser in a virtualenv # noqa no-changed-when
+        - name: Install qutebrowser in a virtualenv
           become: true
           become_user: "{{ sys.user.username }}"
           when: not qutebrowser_bin.stat.exists
           ansible.builtin.command:
             cmd: python3 scripts/mkvenv.py --skip-smoke-test
             chdir: /opt/qutebrowser/src
+            creates: /opt/qutebrowser/src/.venv
         - name: Make a wrapper bin
           ansible.builtin.copy:
             dest: /usr/local/bin/qutebrowser
