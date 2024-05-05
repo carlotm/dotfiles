@@ -4,7 +4,7 @@
   <property name="configver" type="int" value="2"/>
   <property name="panels" type="array">
     <value type="int" value="1"/>
-    <property name="dark-mode" type="bool" value="false"/>
+    <property name="dark-mode" type="bool" value="true"/>
     <property name="panel-1" type="empty">
       <property name="position" type="string" value="p=2;x=1906;y=540"/>
       <property name="length" type="double" value="100"/>
@@ -26,9 +26,9 @@
       <property name="length-adjust" type="bool" value="true"/>
       <property name="background-style" type="uint" value="1"/>
       <property name="background-rgba" type="array">
-        <value type="double" value="0.792156862745098"/>
-        <value type="double" value="0.79607843137254897"/>
-        <value type="double" value="0.80000000000000004"/>
+        <value type="double" value="0"/>
+        <value type="double" value="0"/>
+        <value type="double" value="0"/>
         <value type="double" value="1"/>
       </property>
     </property>
@@ -47,7 +47,7 @@
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance1116;firefox.instance11827;firefox.instance2289;firefox.instance3897;firefox.instance5537"/>
+      <property name="mpris-players" type="string" value="chromium.instance1116;chromium.instance1190;chromium.instance1196;firefox.instance10665;firefox.instance11827;firefox.instance2289;firefox.instance3132;firefox.instance3897;firefox.instance5537"/>
       <property name="mixer-command" type="string" value="pavucontrol"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
