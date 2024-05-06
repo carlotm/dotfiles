@@ -1,23 +1,26 @@
+
 sys:
   hostname: melee
+  net:
+    interface: wlp4s0
+    ip: 192.168.1.122
   user:
-    name: Gian Fran
+    name: Gian Franco
     username: gianfranco
-    email: gianfranco@melee
+    email: gianfranco@melee.com
     dirs:
+      - w
       - downloads
+      - docs
   packages:
+    - bluez-tools
     - blueman
-    - bluez
-    - bluez-alsa
-    - firefox
-    - intel-ucode
-    - intel-video-accel
-    - io.elementary.icons
-    - linux-firmware-qualcomm-20240312_1
-    - xbacklight
+    - elementary-xfce-icon-theme
+    - firefox-esr
+    - fzf
+    - git
+    - gvfs
+    - gvfs-backends
     - xfce4
-    - xfce4-pulseaudio-plugin
-  services:
-    - sshd
-    - bluetoothd
+  dots:
+    - .bashrc
