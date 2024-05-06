@@ -18,7 +18,7 @@ jobs:
   build:
     strategy:
       matrix:
-        profile: [workstation,mediacenter]
+        profile: [workstation, mediacenter]
     name: Ansible run
     runs-on: ubuntu-latest
     steps:
