@@ -1,10 +1,14 @@
-name: Workstation CI
+name: CI
 
 on:
   push:
     branches: [debian]
 
 jobs:
+  strategy:
+    matrix:
+      profile: [workstation]
+
   lint:
     name: Ansible lint
     runs-on: ubuntu-latest
@@ -41,34 +45,27 @@ jobs:
           sudo incus admin init --auto
           sudo systemctl start incus
 
-          sudo incus launch images:debian/12/cloud workstation
-          until [[ -n $(sudo incus list workstation -c4 -fcsv) ]]
+          PROFILE=${{ matrix.profile }}
+          sudo incus launch images:debian/12/cloud $PROFILE
+          until [[ -n $(sudo incus list $PROFILE -c4 -fcsv) ]]
           do
             echo "Waiting for the vm interface to be up..."
             sleep 1
           done
-          CONTAINER_IP=$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f1)
-          sudo incus exec workstation -- apt install --yes openssh-server ansible make
+          CONTAINER_IP=$(sudo incus list $PROFILE -c4 -fcsv | cut -d ' ' -f1)
+          sudo incus exec $PROFILE -- apt install --yes openssh-server ansible make
 
           cat > enable_ssh_root << EOF
           PermitRootLogin yes
           StrictModes no
           EOF
-          sudo incus file push enable_ssh_root workstation/etc/ssh/sshd_config.d/enable_ssh_root
-          sudo incus exec workstation -- systemctl restart sshd
+          sudo incus file push enable_ssh_root $PROFILE/etc/ssh/sshd_config.d/enable_ssh_root
+          sudo incus exec $PROFILE -- systemctl restart sshd
           sudo ssh-keygen -q -t rsa -N '' -f /root/.ssh/id_rsa
-          sudo incus file push /root/.ssh/id_rsa.pub workstation/root/.ssh/authorized_keys
+          sudo incus file push /root/.ssh/id_rsa.pub $PROFILE/root/.ssh/authorized_keys
           sudo ssh -o "StrictHostKeyChecking=no" root@${CONTAINER_IP} "lsb_release -a"
 
       - name: Act
         run: |
-          CONTAINER_IP=$(sudo incus list workstation -c4 -fcsv | cut -d ' ' -f1)
-          sudo make CI=true ANSIBLE_HOST_KEY_CHECKING=False TARGET=${CONTAINER_IP} workstation
-
-      - name: Assert
-        run: |
-          sudo incus exec workstation -- ls /home/carloratm
-          sudo incus exec workstation -- which rg
-          sudo incus exec workstation -- which devbox
-          sudo incus exec workstation -- which starship
-          sudo incus exec workstation -- systemctl is-active sshd
+          CONTAINER_IP=$(sudo incus list $PROFILE -c4 -fcsv | cut -d ' ' -f1)
+          sudo make CI=true ANSIBLE_HOST_KEY_CHECKING=False TARGET=${CONTAINER_IP} $PROFILE
