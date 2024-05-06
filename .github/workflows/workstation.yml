@@ -16,10 +16,10 @@ jobs:
         uses: ansible/ansible-lint@main
 
   build:
+    strategy:
+      matrix:
+        profile: [workstation]
     name: Ansible run
-    matrix:
-      profile: [workstation]
-
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
