@@ -350,23 +350,18 @@
             mode: "0777"
 # }}}
 # Network {{{
-#   - name: Configure home wifi connection
-#     community.general.nmcli:
-#       type: wifi
-#       conn_name: Casa
-#       ifname: "{{ sys.net.interface }}"
-#       ssid: AscaniFerretti
-#       ip4: "{{ sys.net.ip }}"
-#       gw4: "192.168.1.1"
-#       method6: "disabled"
-#       wifi_sec:
-#         key-mgmt: wpa-psk
-#         psk: "g:B4$1F\\A\\@X."
-#       autoconnect: yes
-#       state: present
-#   - name: Restart NetworkManager
-#     ansible.builtin.systemd:
-#       name: NetworkManager
-#       state: restarted
-#       enabled: true
+    - name: Configure home wifi connection
+      community.general.nmcli:
+        type: wifi
+        conn_name: Casa
+        ifname: "{{ sys.net.interface }}"
+        ssid: AscaniFerretti
+        ip4: "{{ sys.net.ip }}"
+        gw4: "192.168.1.1"
+        method6: "disabled"
+        wifi_sec:
+          key-mgmt: wpa-psk
+          psk: "g:B4$1F\\A\\@X."
+        autoconnect: yes
+        state: present
 # }}}
