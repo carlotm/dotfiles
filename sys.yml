@@ -358,10 +358,10 @@
         ssid: AscaniFerretti
         ip4: "{{ sys.net.ip }}"
         gw4: "192.168.1.1"
-        method6: "disabled"
+        method6: disabled
         wifi_sec:
           key-mgmt: wpa-psk
           psk: "g:B4$1F\\A\\@X."
-        autoconnect: yes
+        autoconnect: true
         state: present
 # }}}
