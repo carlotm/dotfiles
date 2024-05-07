@@ -66,6 +66,5 @@ jobs:
 
       - name: Act
         run: |
-          ansible-galaxy collection list community.general
           CONTAINER_IP=$(sudo incus list $PROFILE -c4 -fcsv | cut -d ' ' -f1)
           sudo make CI=true ANSIBLE_HOST_KEY_CHECKING=False TARGET=${CONTAINER_IP} $PROFILE
