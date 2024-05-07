@@ -351,6 +351,7 @@
 # }}}
 # Network {{{
     - name: Configure home wifi connection
+      when: not ci
       community.general.nmcli:
         type: wifi
         conn_name: Casa
