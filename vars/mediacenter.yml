@@ -23,3 +23,9 @@ sys:
     - xfce4
   dots:
     - .bashrc
+    - .config/xfce4/terminal/terminalrc
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+    - wallpaper.jpg
