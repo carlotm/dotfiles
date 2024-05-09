@@ -1,6 +1,6 @@
 # My systems
 
-![Playbook run](https://github.com/carlotm/dotfiles/actions/workflows/workstation.yml/badge.svg?branch=debian)
+![Playbook run](https://github.com/carlotm/dotfiles/actions/workflows/systems.yml/badge.svg?branch=debian)
 
 | Profile | Hostname | OS | Description
 | :--- | :--- | :--- | :---
