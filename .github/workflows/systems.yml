@@ -71,5 +71,7 @@ jobs:
 
       - name: Assert
         run: |
-          sudo incus file push /home/runner/work/dotfiles/dotfiles/priv/$PROFILE/test.sh $PROFILE/root/test.sh
-          sudo incus exec $PROFILE -- /root/test.sh
+          # sudo incus file push /home/runner/work/dotfiles/dotfiles/priv/$PROFILE/test.sh $PROFILE/root/test.sh
+          # sudo incus exec $PROFILE -- /root/test.sh
+          ls -la /home/runner/work
+          find /home/runner -type f -name test.sh
