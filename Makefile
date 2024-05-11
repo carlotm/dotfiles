@@ -1,8 +1,4 @@
-ANSIBLE = ansible-playbook
 TARGET ?= localhost
 
-workstation: sys.yml vars/workstation.yml
-	$(ANSIBLE) --inventory="$(TARGET)," -e profile=$@ $<
-
-mediacenter: sys.yml vars/mediacenter.yml
-	$(ANSIBLE) -u root --inventory="$(TARGET)," -e profile=$@ $<
+%: sys.yml vars/%.yml
+	ansible-playbook -u root --inventory="$(TARGET)," -e profile=$@ $<
