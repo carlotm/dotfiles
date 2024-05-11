@@ -44,6 +44,8 @@ jobs:
           sudo incus admin init --auto
           sudo systemctl start incus
 
+          PROFILE=${{ matrix.profile }}
+
           sudo incus launch images:debian/12/cloud $PROFILE
           until [[ -n $(sudo incus list $PROFILE -c4 -fcsv) ]]
           do
@@ -51,7 +53,6 @@ jobs:
             sleep 1
           done
 
-          PROFILE=${{ matrix.profile }}
           CONTAINER_IP=$(sudo incus list $PROFILE -c4 -fcsv | cut -d ' ' -f1)
 
           cat > enable_ssh_root << EOF
