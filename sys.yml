@@ -169,6 +169,7 @@
         - {n: user.email, v: "{{ sys.user.email }}"}
         - {n: alias.s, v: status}
         - {n: alias.co, v: checkout}
+        - {n: pull.rebase, v: true}
 # }}}
 # Services {{{
     - name: System services
