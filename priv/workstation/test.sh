@@ -1,12 +1,23 @@
 #! /bin/sh
 
-testEquality() {
-  assertEquals 1 1
-}
+testSystem() {
+    assertEquals "scumm" $(cat /etc/hostname)
 
-# testPartyLikeItIs1999() {
-#   year=`date '+%Y'`
-#   assertEquals "It's not 1999 :-(" '1999' "${year}"
-# }
+    assertTrue "[ -r /home/carloratm ]"
+    assertTrue "[ -r /home/carloratm/w ]"
+    assertTrue "[ -r /home/carloratm/downloads ]"
+
+    output=$(grep "Ascani Carlo" /etc/gitconfig)
+    assertTrue "${output}" $?
+
+    output=$(hash xmonad)
+    assertTrue "${output}" $?
+
+    output=$(hash devbox)
+    assertTrue "${output}" $?
+
+    output=$(hash starship)
+    assertTrue "${output}" $?
+}
 
 . shunit2
