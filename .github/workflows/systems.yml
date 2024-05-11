@@ -44,20 +44,21 @@ jobs:
           sudo incus admin init --auto
           sudo systemctl start incus
 
-          PROFILE=${{ matrix.profile }}
           sudo incus launch images:debian/12/cloud $PROFILE
           until [[ -n $(sudo incus list $PROFILE -c4 -fcsv) ]]
           do
             echo "Waiting for the vm interface to be up..."
             sleep 1
           done
+
+          PROFILE=${{ matrix.profile }}
           CONTAINER_IP=$(sudo incus list $PROFILE -c4 -fcsv | cut -d ' ' -f1)
-          sudo incus exec $PROFILE -- apt install --yes openssh-server ansible make
 
           cat > enable_ssh_root << EOF
           PermitRootLogin yes
           StrictModes no
           EOF
+          sudo incus exec $PROFILE -- apt install --yes openssh-server ansible make
           sudo incus file push enable_ssh_root $PROFILE/etc/ssh/sshd_config.d/enable_ssh_root
           sudo incus exec $PROFILE -- systemctl restart sshd
           sudo ssh-keygen -q -t rsa -N '' -f /root/.ssh/id_rsa
@@ -65,10 +66,9 @@ jobs:
 
       - name: Act
         run: |
-          CONTAINER_IP=$(sudo incus list $PROFILE -c4 -fcsv | cut -d ' ' -f1)
           sudo make CI=true ANSIBLE_HOST_KEY_CHECKING=False TARGET=${CONTAINER_IP} $PROFILE
 
       - name: Assert
         run: |
-          CONTAINER_IP=$(sudo incus list $PROFILE -c4 -fcsv | cut -d ' ' -f1)
-          sudo ssh -o "StrictHostKeyChecking=no" root@${CONTAINER_IP} priv/${PROFILE}/test.sh
+          sudo incus file push /home/runner/priv/$PROFILE/test.sh $PROFILE/root/test.sh
+          sudo incus exec $PROFILE -- /root/test.sh
