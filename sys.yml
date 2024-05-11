@@ -65,18 +65,19 @@
           - fonts-noto
           - fonts-noto-color-emoji
           - fonts-spleen
+          - gstreamer1.0-plugins-bad
+          - gstreamer1.0-plugins-base
+          - gstreamer1.0-plugins-good
+          - gstreamer1.0-plugins-ugly
           - pavucontrol
           - pulseaudio
           - ripgrep
+          - shunit2
           - tree
           - vim
           - wget
           - xdg-user-dirs
           - xorg
-          - gstreamer1.0-plugins-bad
-          - gstreamer1.0-plugins-base
-          - gstreamer1.0-plugins-good
-          - gstreamer1.0-plugins-ugly
     - name: User packages # noqa package-latest
       ansible.builtin.apt:
         state: latest
