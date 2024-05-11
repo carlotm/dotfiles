@@ -25,7 +25,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Arrange
+      - name: Run play and tests
         run: |
           sudo nft flush ruleset
           sudo mkdir -p /etc/apt/keyrings
