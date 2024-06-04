@@ -16,6 +16,7 @@ sys:
     - blueman
     - elementary-xfce-icon-theme
     - firefox-esr
+    - flatpak
     - fzf
     - git
     - gvfs
@@ -29,3 +30,4 @@ sys:
     - .config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
     - .config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
     - wallpaper.jpg
+  streamio: true

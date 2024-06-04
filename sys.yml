@@ -351,6 +351,18 @@
             path: /usr/local/bin/devbox
             mode: "0777"
 # }}}
+# Streamio {{{
+    - name: Add flathub
+      community.general.flatpak_remote:
+        name: flathub
+        state: present
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    - name: Install Streamio flatpack
+      community.general.flatpak:
+        name: com.stremio.Stremio
+        state: present
+        remote: flathub
+# }}}
 # Network {{{
     - name: Configure home wifi connection
       when: not ci
