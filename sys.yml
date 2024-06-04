@@ -353,11 +353,13 @@
 # }}}
 # Streamio {{{
     - name: Add flathub
+      when: sys.stremio | default(false) | bool()
       community.general.flatpak_remote:
         name: flathub
         state: present
         flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
     - name: Install Streamio flatpack
+      when: sys.stremio | default(false) | bool()
       community.general.flatpak:
         name: com.stremio.Stremio
         state: present
