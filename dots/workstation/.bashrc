@@ -8,7 +8,7 @@ shopt -s histappend
 
 alias ls="ls -l --color=auto"
 alias grep="rg -i"
-alias find="fd --hidden"
+alias find="fdfind --hidden"
 alias d="devbox"
 
 export PATH=$HOME/.local/bin:$PATH
