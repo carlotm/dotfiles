@@ -74,7 +74,7 @@
           - ripgrep
           - shunit2
           - tree
-          - vim
+          - vim-nox
           - wget
           - xdg-user-dirs
           - xorg
