@@ -181,31 +181,31 @@
       loop:
         - sshd
 # }}}
-# Flatpacks {{{
+# Flatpaks {{{
     - name: Set Apache URL
       ansible.builtin.set_fact:
-        flatpacks: "{{ sys.flatpacks | default([]) }}"
-    - name: Install flatpack # noqa package-latest
+        flatpaks: "{{ sys.flatpaks | default([]) }}"
+    - name: Install flatpak # noqa package-latest
       ansible.builtin.apt:
         update_cache: true
         state: latest
         pkg:
-          - flatpack
-      when: flatpacks != []
-    - name: Add flatpacks repositories
+          - flatpak
+      when: flatpaks != []
+    - name: Add flatpaks repositories
       community.general.flatpak_remote:
         name: "{{ item.name }}"
         flatpakrepo_url: "{{ item.url }}"
         state: present
       with_items:
-        "{{ flatpacks }}"
-    - name: Install flatpacks
+        "{{ flatpaks }}"
+    - name: Install flatpaks
       community.general.flatpak:
-        name: "{{ flatpacks.packages }}"
-        remote: "{{ flatpacks.name }}"
+        name: "{{ flatpaks.packages }}"
+        remote: "{{ flatpaks.name }}"
         state: present
       with_items:
-        "{{ flatpacks }}"
+        "{{ flatpaks }}"
 # }}}
 # Dotfiles {{{
     - name: Make sure destination dir exists

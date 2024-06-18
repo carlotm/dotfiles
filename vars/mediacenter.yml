@@ -21,7 +21,7 @@ sys:
     - gvfs
     - gvfs-backends
     - xfce4
-  flatpacks:
+  flatpaks:
     - name: flathub
       url: https://dl.flathub.org/repo/flathub.flatpakrepo
       packages:
