@@ -24,8 +24,7 @@ sys:
   flatpaks:
     - name: flathub
       url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      packages:
-        - com.stremio.Stremio
+      package: com.stremio.Stremio
   dots:
     - .bashrc
     - .config/xfce4/terminal/terminalrc
