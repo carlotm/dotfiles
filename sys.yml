@@ -170,7 +170,7 @@
         - {n: user.email, v: "{{ sys.user.email }}"}
         - {n: alias.s, v: status}
         - {n: alias.co, v: checkout}
-        - {n: pull.rebase, v: true}
+        - {n: pull.rebase, v: "true"}
 # }}}
 # Services {{{
     - name: System services
@@ -201,8 +201,8 @@
         "{{ flatpaks }}"
     - name: Install flatpaks
       community.general.flatpak:
-        name: "{{ flatpaks.packages }}"
-        remote: "{{ flatpaks.name }}"
+        name: "{{ item.packages }}"
+        remote: "{{ item.name }}"
         state: present
       with_items:
         "{{ flatpaks }}"
