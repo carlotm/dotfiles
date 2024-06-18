@@ -182,7 +182,7 @@
         - sshd
 # }}}
 # Flatpaks {{{
-    - name: Set Apache URL
+    - name: Set flatpaks list
       ansible.builtin.set_fact:
         flatpaks: "{{ sys.flatpaks | default([]) }}"
     - name: Install flatpak # noqa package-latest
@@ -206,6 +206,7 @@
         state: present
       with_items:
         "{{ flatpaks }}"
+      when: flatpaks != []
 # }}}
 # Dotfiles {{{
     - name: Make sure destination dir exists
