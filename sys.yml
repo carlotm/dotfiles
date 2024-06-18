@@ -181,6 +181,32 @@
       loop:
         - sshd
 # }}}
+# Flatpacks {{{
+    - name: Set Apache URL
+      ansible.builtin.set_fact:
+        flatpacks: "{{ sys.flatpacks | default([]) }}"
+    - name: Install flatpack # noqa package-latest
+      ansible.builtin.apt:
+        update_cache: true
+        state: latest
+        pkg:
+          - flatpack
+      when: flatpacks != []
+    - name: Add flatpacks repositories
+      community.general.flatpak_remote:
+        name: "{{ item.name }}"
+        flatpakrepo_url: "{{ item.url }}"
+        state: present
+      with_items:
+        "{{ flatpacks }}"
+    - name: Install flatpacks
+      community.general.flatpak:
+        name: "{{ flatpacks.packages }}"
+        remote: "{{ flatpacks.name }}"
+        state: present
+      with_items:
+        "{{ flatpacks }}"
+# }}}
 # Dotfiles {{{
     - name: Make sure destination dir exists
       become: true
@@ -350,20 +376,6 @@
           ansible.builtin.file:
             path: /usr/local/bin/devbox
             mode: "0777"
-# }}}
-# Streamio {{{
-    - name: Add flathub
-      when: sys.stremio | default(false) | bool()
-      community.general.flatpak_remote:
-        name: flathub
-        state: present
-        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
-    - name: Install Streamio flatpack
-      when: sys.stremio | default(false) | bool()
-      community.general.flatpak:
-        name: com.stremio.Stremio
-        state: present
-        remote: flathub
 # }}}
 # Network {{{
     - name: Configure home wifi connection

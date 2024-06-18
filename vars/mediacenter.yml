@@ -16,12 +16,16 @@ sys:
     - blueman
     - elementary-xfce-icon-theme
     - firefox-esr
-    - flatpak
     - fzf
     - git
     - gvfs
     - gvfs-backends
     - xfce4
+  flatpacks:
+    - name: flathub
+      url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      packages:
+        - com.stremio.Stremio
   dots:
     - .bashrc
     - .config/xfce4/terminal/terminalrc
@@ -30,4 +34,3 @@ sys:
     - .config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
     - .config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
     - wallpaper.jpg
-  streamio: true
