@@ -19,4 +19,6 @@ export MANROFFOPT="-P -c"
 
 source /usr/share/bash-completion/bash_completion
 
+setxkbmap -layout us,it,de -option grp:win_space_toggle
+
 eval "$(starship init bash)"
