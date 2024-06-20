@@ -1,4 +1,11 @@
 TARGET ?= undefined
+ANSIBLE = ansible-playbook -u root
+
+ifdef LOCAL
+	CONN = --connection=local
+else
+	CONN =
+endi
 
 %: sys.yml vars/%.yml
-	ansible-playbook -u root --inventory="$(TARGET)," -e profile=$@ $<
+	$(ANSIBLE) --inventory="$(TARGET)," $(CONN) -e profile=$@ $<
