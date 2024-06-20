@@ -5,7 +5,7 @@ ifdef LOCAL
 	CONN = --connection=local
 else
 	CONN =
-endi
+endif
 
 %: sys.yml vars/%.yml
 	$(ANSIBLE) --inventory="$(TARGET)," $(CONN) -e profile=$@ $<
