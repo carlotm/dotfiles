@@ -47,12 +47,6 @@ jobs:
           PROFILE=${{ matrix.profile }}
 
           sudo incus launch images:debian/12/cloud $PROFILE
-          # until [[ -n $(sudo incus list $PROFILE -c4 -fcsv) ]]
-          # do
-          #   echo "Waiting for the vm interface to be up..."
-          #   sleep 1
-          # done
-
           sudo incus file push -rp * $PROFILE/root/
           sudo incus exec $PROFILE -- apt install --yes ansible make
           sudo incus exec $PROFILE -- make CI=true LOCAL=true $PROFILE
