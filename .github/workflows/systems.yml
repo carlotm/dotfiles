@@ -71,4 +71,4 @@ jobs:
           # sudo incus exec $PROFILE -- /root/test.sh
 
           sudo incus file push -rp * $PROFILE/root/
-          sudo incus exec $PROFILE -- ls -l
+          sudo incus exec $PROFILE -- make CI=true LOCAL=true $PROFILE
