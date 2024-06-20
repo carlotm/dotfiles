@@ -40,7 +40,8 @@ jobs:
           Signed-By: /etc/apt/keyrings/zabbly.asc
           EOF'
           sudo apt update
-          sudo apt install incus ansible make
+          # sudo apt install incus ansible make
+          sudo apt install incus
           sudo incus admin init --auto
           sudo systemctl start incus
 
@@ -71,4 +72,5 @@ jobs:
           # sudo incus exec $PROFILE -- /root/test.sh
 
           sudo incus file push -rp * $PROFILE/root/
+          sudo incus exec $PROFILE -- apt install --yes ansible make
           sudo incus exec $PROFILE -- make CI=true LOCAL=true $PROFILE
