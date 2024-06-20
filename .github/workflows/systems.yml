@@ -53,19 +53,22 @@ jobs:
             sleep 1
           done
 
-          CONTAINER_IP=$(sudo incus list $PROFILE -c4 -fcsv | cut -d ' ' -f1)
+          # CONTAINER_IP=$(sudo incus list $PROFILE -c4 -fcsv | cut -d ' ' -f1)
 
-          cat > enable_ssh_root << EOF
-          PermitRootLogin yes
-          StrictModes no
-          EOF
-          sudo incus exec $PROFILE -- apt install --yes openssh-server ansible make
-          sudo incus file push enable_ssh_root $PROFILE/etc/ssh/sshd_config.d/enable_ssh_root
-          sudo incus exec $PROFILE -- systemctl restart sshd
-          sudo ssh-keygen -q -t rsa -N '' -f /root/.ssh/id_rsa
-          sudo incus file push /root/.ssh/id_rsa.pub $PROFILE/root/.ssh/authorized_keys
+          # cat > enable_ssh_root << EOF
+          # PermitRootLogin yes
+          # StrictModes no
+          # EOF
+          # sudo incus exec $PROFILE -- apt install --yes openssh-server ansible make
+          # sudo incus file push enable_ssh_root $PROFILE/etc/ssh/sshd_config.d/enable_ssh_root
+          # sudo incus exec $PROFILE -- systemctl restart sshd
+          # sudo ssh-keygen -q -t rsa -N '' -f /root/.ssh/id_rsa
+          # sudo incus file push /root/.ssh/id_rsa.pub $PROFILE/root/.ssh/authorized_keys
 
-          sudo make CI=true ANSIBLE_HOST_KEY_CHECKING=False TARGET=${CONTAINER_IP} $PROFILE
+          # sudo make CI=true ANSIBLE_HOST_KEY_CHECKING=False TARGET=${CONTAINER_IP} $PROFILE
 
-          sudo incus file push /home/runner/work/dotfiles/dotfiles/priv/$PROFILE/test.sh $PROFILE/root/test.sh
-          sudo incus exec $PROFILE -- /root/test.sh
+          # sudo incus file push /home/runner/work/dotfiles/dotfiles/priv/$PROFILE/test.sh $PROFILE/root/test.sh
+          # sudo incus exec $PROFILE -- /root/test.sh
+
+          sudo incus file push -rp dotfiles/* $PROFILE/root/
+          sudo incus exec $PROFILE -- ls -l
