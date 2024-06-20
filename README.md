@@ -6,3 +6,9 @@
 | :--- | :--- | :--- | :---
 | workstation | scumm | Debian | My personal laptop
 | mediacenter | melee | Debian | The pc at the projector
+
+## Requirements
+
+```
+apt install git make ansible openssh-server
+```
