@@ -74,4 +74,4 @@ jobs:
           sudo incus file push -rp * $PROFILE/root/
           sudo incus exec $PROFILE -- apt install --yes bash ansible make
           sudo incus exec $PROFILE -- make CI=true LOCAL=true $PROFILE
-          sudo incus exec $PROFILE -- bash priv/test.sh
+          sudo incus exec $PROFILE -- bash priv/$PROFILE/test.sh
