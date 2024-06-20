@@ -179,6 +179,8 @@
         name: "{{ item }}"
         state: restarted
         enabled: true
+        daemon_reload: true
+        force: true
       loop:
         - sshd
 # }}}
