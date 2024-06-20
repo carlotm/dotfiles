@@ -10,5 +10,5 @@
 ## Requirements
 
 ```
-apt install git make ansible openssh-server
+apt install git make ansible
 ```
