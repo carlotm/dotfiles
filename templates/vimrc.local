@@ -35,7 +35,7 @@ set showmatch
 set foldmethod=marker
 set fillchars+=vert:\│
 set list
-set listchars=tab:↳\ 
+set listchars=tab:˪\ 
 set mouse-=a
 set ttymouse-=a
 set mouse=
