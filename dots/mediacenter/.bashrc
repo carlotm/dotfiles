@@ -15,6 +15,8 @@ alias d="devbox"
 export PATH=$HOME/.local/bin:$PATH
 export EDITOR=vim
 export MANPAGER="less -R --use-color -Dd+y -Du+g"
-export MANROFFOPT="-P -c"
+export MANROFFOPT="-c"
 
 source /usr/share/bash-completion/bash_completion
+
+setxkbmap -layout us,it,de -option grp:win_space_toggle
