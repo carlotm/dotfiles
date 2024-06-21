@@ -172,6 +172,7 @@
         - {n: alias.s, v: status}
         - {n: alias.co, v: checkout}
         - {n: pull.rebase, v: "true"}
+        - {n: commit.gpgsign, v: "true"}
 # }}}
 # Services {{{
     - name: System services
