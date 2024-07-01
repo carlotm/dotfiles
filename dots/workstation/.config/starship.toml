@@ -30,6 +30,7 @@ format = '[\[ERL $version\]]($style)'
 format = '[\[LUA $version\]]($style)'
 [nodejs]
 format = '[\[NODE $version\]]($style)'
+detect_extensions = ['js']
 [haskell]
 format = '[\[HASKELL $version\]]($style)'
 [elm]
