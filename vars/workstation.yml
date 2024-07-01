@@ -6,11 +6,11 @@ sys:
   user:
     name: Ascani Carlo
     username: carloratm
-    email: carlotm@protonmail.com
     dirs:
       - w
       - downloads
       - docs
+      - ooo
   packages:
     - elementary-xfce-icon-theme
     - firefox-esr
@@ -40,6 +40,9 @@ sys:
     - .config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
     - .config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
     - .config/xmonad/xmonad.hs
+    - .gitconfig
+    - .gitconfig-ooo
+    - .gitconfig-personal
     - .local/bin/colors.sh
   qutebrowser: true
   starship: true

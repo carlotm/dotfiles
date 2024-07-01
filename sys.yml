@@ -168,11 +168,11 @@
         - {n: core.editor, v: vim}
         - {n: user.name, v: "{{ sys.user.name }}"}
         - {n: user.username, v: "{{ sys.user.username }}"}
-        - {n: user.email, v: "{{ sys.user.email }}"}
         - {n: alias.s, v: status}
         - {n: alias.co, v: checkout}
         - {n: pull.rebase, v: "true"}
         - {n: commit.gpgsign, v: "true"}
+        - {n: init.defaultBranch, v: "main"}
 # }}}
 # Services {{{
     - name: System services
