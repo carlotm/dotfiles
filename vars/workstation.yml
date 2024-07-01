@@ -19,6 +19,7 @@ sys:
     - gvfs
     - gvfs-backends
     - keepassxc
+    - ristretto
     - xfce4
     - xfce4-terminal
     - xmonad
