@@ -120,7 +120,7 @@ const lspOpts = {
   showDiagWithVirtualText: false,
   showInlayHints: false,
   showSignature: true,
-  snippetSupport: true,
+  snippetSupport: false,
   ultisnipsSupport: false,
   vsnipSupport: true,
   usePopupInCodeAction: false,
