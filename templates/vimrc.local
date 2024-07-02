@@ -72,7 +72,7 @@ nnoremap < <<
 nnoremap > >>
 nnoremap gn :bnext<CR>
 nnoremap gp :bprev<CR>
-nnoremap <Leader>bd :bdelete<CR>
+nnoremap bd :bdelete<CR>
 nnoremap <Leader>ww :wincmd w<CR>
 nnoremap <Leader>ff :GFiles<CR>
 nnoremap <Leader>fa :Files<CR>
@@ -80,6 +80,7 @@ nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fg :Rg<CR>
 nnoremap K :LspHover<CR>
 nnoremap gd :LspGotoDefinition<CR>
+nnoremap ff :LspFormat<CR>
 nnoremap <Leader>e :LspDiagCurrent<CR>
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
@@ -119,7 +120,7 @@ const lspOpts = {
   showDiagWithVirtualText: false,
   showInlayHints: false,
   showSignature: true,
-  snippetSupport: false,
+  snippetSupport: true,
   ultisnipsSupport: false,
   vsnipSupport: true,
   usePopupInCodeAction: false,
