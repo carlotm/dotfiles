@@ -72,7 +72,7 @@ nnoremap < <<
 nnoremap > >>
 nnoremap gn :bnext<CR>
 nnoremap gp :bprev<CR>
-nnoremap bd :bdelete<CR>
+nnoremap <Leader>bd :bdelete<CR>
 nnoremap <Leader>ww :wincmd w<CR>
 nnoremap <Leader>ff :GFiles<CR>
 nnoremap <Leader>fa :Files<CR>
