@@ -45,6 +45,7 @@ sys:
     - .gitconfig-ooo
     - .gitconfig-personal
     - .local/bin/colors.sh
+    - .local/bin/runtests.sh
   qutebrowser: true
   starship: true
   devbox: true
