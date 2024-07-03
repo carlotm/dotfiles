@@ -79,6 +79,7 @@
           - wget
           - xdg-user-dirs
           - xorg
+          - zathura
     - name: User packages # noqa package-latest
       ansible.builtin.apt:
         state: latest
