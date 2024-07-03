@@ -50,8 +50,4 @@ jobs:
           sudo incus file push -rp * $PROFILE/root/
           sudo incus exec $PROFILE -- apt install --yes ansible make
           sudo incus exec $PROFILE -- make CI=true LOCAL=true $PROFILE
-          # sudo incus exec $PROFILE -- sh /root/.local/bin/runtests.sh
-          sudo incus exec $PROFILE -- pwd
-          sudo incus exec $PROFILE -- whoami
-          sudo incus exec $PROFILE -- ls -la
-
+          sudo incus exec $PROFILE -- sh /root/dots/${PROFILE}/.local/bin/runtests.sh
