@@ -16,6 +16,7 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elixir-editors/vim-elixir'
+Plug 'tpope/vim-dispatch'
 plug#end()
 # }}}
 
@@ -25,21 +26,22 @@ filetype on
 filetype plugin on
 filetype indent on
 syntax on
+set autoread
 set background=dark
 set expandtab tabstop=4 shiftwidth=4
-set nobackup
-set scrolloff=10
-set incsearch hlsearch
-set ignorecase smartcase
-set showmatch
-set foldmethod=marker
 set fillchars+=vert:\│
+set foldmethod=marker
+set ignorecase smartcase
+set incsearch hlsearch
 set list
 set listchars=tab:˪\ 
 set mouse-=a
-set ttymouse-=a
 set mouse=
+set nobackup
 set noshowcmd
+set scrolloff=10
+set showmatch
+set ttymouse-=a
 nnoremap <SPACE> <Nop>
 g:mapleader = " "
 # }}}
@@ -85,7 +87,7 @@ nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fg :Rg<CR>
 nnoremap K :LspHover<CR>
 nnoremap gd :LspGotoDefinition<CR>
-nnoremap ff :LspFormat<CR>
+nnoremap ff :Dispatch!<CR>
 nnoremap <Leader>e :LspDiagCurrent<CR>
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
@@ -173,11 +175,7 @@ g:fzf_colors = {
 # }}}
 
 # Misc {{{
-augroup misc
-    au!
-    au BufRead,BufNewFile *.mustache set filetype=html
-    au BufRead,BufNewFile *.exs,*.ex hi elixirBlockDefinition ctermfg=240
-    au BufRead,BufNewFile *.exs,*.ex hi elixirDocString ctermfg=250
-    au VimEnter * set mouse=
-augroup end
+au FileType elixir b:dispatch = 'mix format %'
+au FileType eelixir b:dispatch = 'mix format %'
+au VimEnter * set mouse=
 # }}}
