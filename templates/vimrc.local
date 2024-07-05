@@ -45,19 +45,24 @@ g:mapleader = " "
 # }}}
 
 # Colors {{{
-highlight Comment ctermfg=8
-highlight Visual ctermbg=236
-highlight VertSplit ctermfg=4 ctermbg=16 cterm=NONE
-highlight StatusLine ctermfg=15 ctermbg=4 cterm=NONE
-highlight StatusLineNC ctermfg=8 ctermbg=234
-highlight ExtraWhitespace ctermbg=1
-highlight SpecialKey ctermfg=235
-highlight Folded ctermbg=234 ctermfg=6
-highlight SignColumn ctermbg=234
-highlight LspDiagInlineError ctermbg=52
-highlight LspDiagSignErrorText ctermbg=52
-highlight LspDiagInlineWarning ctermbg=3 ctermfg=16
-highlight LspDiagSignWarningText ctermbg=3 ctermfg=16
+augroup colors_overrides
+    au!
+    au BufRead * hi Comment ctermfg=240
+augroup end
+
+hi ExtraWhitespace ctermbg=1
+hi SpecialKey ctermfg=235
+hi Folded ctermbg=234 ctermfg=6
+hi Visual ctermbg=236
+hi VertSplit ctermfg=4 ctermbg=16 cterm=NONE
+hi StatusLine ctermfg=15 ctermbg=4 cterm=NONE
+hi StatusLineNC ctermfg=8 ctermbg=234
+hi SignColumn ctermbg=234
+hi LspDiagInlineError ctermbg=52
+hi LspDiagSignErrorText ctermbg=52
+hi LspDiagInlineWarning ctermbg=3 ctermfg=16
+hi LspDiagSignWarningText ctermbg=3 ctermfg=16
+
 match ExtraWhitespace /\s\+$/
 # }}}
 
@@ -168,8 +173,11 @@ g:fzf_colors = {
 # }}}
 
 # Misc {{{
-au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
-au BufRead,BufNewFile *.eex,*.heex,*.leex,*.lexs set filetype=eelixir
-au BufRead,BufNewFile *.mustache set filetype=html
-au VimEnter * set mouse=
+augroup misc
+    au!
+    au BufRead,BufNewFile *.mustache set filetype=html
+    au BufRead,BufNewFile *.exs,*.ex hi elixirBlockDefinition ctermfg=240
+    au BufRead,BufNewFile *.exs,*.ex hi elixirDocString ctermfg=250
+    au VimEnter * set mouse=
+augroup end
 # }}}
