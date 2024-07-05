@@ -5,6 +5,7 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 shopt -s checkwinsize
 shopt -s histappend
+tabs -4
 
 alias ls="ls -l --color=auto"
 alias grep="rg -i"
