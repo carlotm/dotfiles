@@ -46,6 +46,14 @@ nnoremap <SPACE> <Nop>
 g:mapleader = " "
 # }}}
 
+# Netrw {{{
+g:netrw_liststyle = 3
+g:netrw_keepdir = 0
+g:netrw_banner = 0
+g:netrw_localcopydircmd = 'cp -r'
+g:netrw_cursor = 0
+# }}}
+
 # Colors {{{
 augroup colors_overrides
     au!
@@ -64,6 +72,7 @@ hi LspDiagInlineError ctermbg=52
 hi LspDiagSignErrorText ctermbg=52
 hi LspDiagInlineWarning ctermbg=3 ctermfg=16
 hi LspDiagSignWarningText ctermbg=3 ctermfg=16
+hi netrwTreeBar ctermfg=0
 
 match ExtraWhitespace /\s\+$/
 # }}}
