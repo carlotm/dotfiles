@@ -42,5 +42,5 @@ ColorSelectionUseDefault=FALSE
 ColorSelection=#ffffffffffff
 ColorSelectionBackground=#222222222222
 ColorForeground=#c0c0bfbfbcbc
-ColorPalette=rgb(0,0,0);rgb(170,0,0);rgb(0,170,0);rgb(170,85,0);rgb(65,65,255);rgb(170,0,170);rgb(0,170,170);rgb(170,170,170);rgb(85,85,85);rgb(255,85,85);rgb(85,255,85);rgb(255,255,85);rgb(85,85,255);rgb(255,85,255);rgb(85,255,255);rgb(255,255,255)
+ColorPalette=rgb(0,0,0);rgb(170,0,0);rgb(0,170,0);rgb(170,85,0);rgb(0,87,255);rgb(170,0,170);rgb(0,170,170);rgb(170,170,170);rgb(85,85,85);rgb(255,85,85);rgb(85,255,85);rgb(255,255,85);rgb(0,117,255);rgb(255,85,255);rgb(85,255,255);rgb(255,255,255)
 
