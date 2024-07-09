@@ -19,6 +19,7 @@ sys:
     - gvfs
     - gvfs-backends
     - keepassxc
+    - parole
     - ristretto
     - xfce4
     - xfce4-screenshooter
@@ -29,6 +30,7 @@ sys:
     - .config/autostart/xmonad.desktop
     - .config/gtk-3.0/gtk.css
     - .config/gtk-3.0/settings.ini
+    - .config/mimeapps.list
     - .config/qutebrowser/config.py
     - .config/starship.toml
     - .config/user-dirs.dirs

@@ -20,6 +20,7 @@ sys:
     - git
     - gvfs
     - gvfs-backends
+    - parole
     - xfce4
   flatpaks:
     - name: flathub
