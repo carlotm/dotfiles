@@ -17,6 +17,7 @@ Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-dispatch'
+Plug 'moll/vim-bbye'
 plug#end()
 # }}}
 
@@ -88,7 +89,7 @@ nnoremap < <<
 nnoremap > >>
 nnoremap gn :bnext<CR>
 nnoremap gp :bprev<CR>
-nnoremap <Leader>bd :bdelete<CR>
+nnoremap <Leader>bd :Bdelete<CR>
 nnoremap <Leader>ww :wincmd w<CR>
 nnoremap <Leader>ff :GFiles<CR>
 nnoremap <Leader>fa :Files<CR>
