@@ -49,6 +49,7 @@ sys:
     - .local/bin/colors.sh
     - .local/bin/runtests.sh
     - .vsnip/elixir.json
+    - .vsnip/global.json
   qutebrowser: true
   starship: true
   devbox: true
