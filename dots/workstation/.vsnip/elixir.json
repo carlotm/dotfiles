@@ -5,7 +5,7 @@
     "body": [
         "require Logger",
         "Logger.error(\"==LOG $1 ==\")",
-        "Logger.error(\"#{IO.inspect($1, pretty: true)}\")",
+        "Logger.error(\"#{inspect($1, pretty: true)}\")",
         "Logger.error(\"==END $1 ==\")"
     ]
   }
