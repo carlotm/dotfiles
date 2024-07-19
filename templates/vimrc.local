@@ -16,7 +16,6 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elixir-editors/vim-elixir'
-Plug 'tpope/vim-dispatch'
 Plug 'moll/vim-bbye'
 plug#end()
 # }}}
@@ -45,6 +44,7 @@ set showmatch
 set ttymouse-=a
 nnoremap <SPACE> <Nop>
 g:mapleader = " "
+au VimEnter * set mouse=
 # }}}
 
 # Netrw {{{
@@ -76,33 +76,6 @@ hi LspDiagSignWarningText ctermbg=3 ctermfg=16
 hi netrwTreeBar ctermfg=0
 
 match ExtraWhitespace /\s\+$/
-# }}}
-
-# Key mappings {{{
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-vnoremap < <gv
-vnoremap > >gv
-nnoremap < <<
-nnoremap > >>
-nnoremap gn :bnext<CR>
-nnoremap gp :bprev<CR>
-nnoremap <Leader>bd :Bdelete<CR>
-nnoremap <Leader>ww :wincmd w<CR>
-nnoremap <Leader>ff :GFiles<CR>
-nnoremap <Leader>fa :Files<CR>
-nnoremap <Leader>fb :Buffers<CR>
-nnoremap <Leader>fg :Rg<CR>
-nnoremap K :LspHover<CR>
-nnoremap gd :LspGotoDefinition<CR>
-nnoremap ff :Dispatch!<CR>
-nnoremap <Leader>e :LspDiagCurrent<CR>
-inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
-imap <expr> <CR> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<CR>'
-smap <expr> <CR> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<CR>'
 # }}}
 
 # LSP {{{
@@ -153,7 +126,7 @@ if executable('lexical')
   })
 endif
 autocmd User LspSetup call LspAddServer(lspServers)
-autocmd VimEnter * call LspOptionsSet(lspOpts)
+autocmd User lspSetup call LspOptionsSet(lspOpts)
 # }}}
 
 # FZF {{{
@@ -184,8 +157,28 @@ g:fzf_colors = {
 }
 # }}}
 
-# Misc {{{
-au FileType elixir b:dispatch = 'mix format %'
-au FileType eelixir b:dispatch = 'mix format %'
-au VimEnter * set mouse=
+# Key mappings {{{
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+vnoremap < <gv
+vnoremap > >gv
+nnoremap < <<
+nnoremap > >>
+nnoremap gn :bnext<CR>
+nnoremap gp :bprev<CR>
+nnoremap <Leader>bd :Bdelete<CR>
+nnoremap <Leader>ww :wincmd w<CR>
+nnoremap <Leader>ff :GFiles<CR>
+nnoremap <Leader>fa :Files<CR>
+nnoremap <Leader>fb :Buffers<CR>
+nnoremap <Leader>fg :Rg<CR>
+nnoremap K :LspHover<CR>
+nnoremap gd :LspGotoDefinition<CR>
+nnoremap <Leader>e :LspDiagCurrent<CR>
+inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+imap <expr> <CR> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<CR>'
+smap <expr> <CR> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<CR>'
 # }}}
