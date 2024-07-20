@@ -6,7 +6,7 @@ HISTFILESIZE=2000
 shopt -s checkwinsize
 shopt -s histappend
 
-alias ls="ls -l --color=auto"
+alias ls="ls -lh --color=auto"
 alias grep="rg -i"
 alias find="fdfind --hidden"
 alias tree="tree -C --dirsfirst"

@@ -125,7 +125,7 @@ if executable('lexical')
 	})
 endif
 autocmd User LspSetup call LspAddServer(lspServers)
-autocmd User lspSetup call LspOptionsSet(lspOpts)
+autocmd VimEnter * call LspOptionsSet(lspOpts)
 # }}}
 
 # FZF {{{
