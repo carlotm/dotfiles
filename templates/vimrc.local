@@ -3,8 +3,8 @@ vim9script
 # Plugins {{{
 var data_dir = "~/.vim"
 if empty(glob(data_dir .. "/autoload/plug.vim"))
-  silent execute "!curl -fLo " .. data_dir .. "/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-  autocmd VimEnter * PlugInstall --sync
+	silent execute "!curl -fLo " .. data_dir .. "/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+	autocmd VimEnter * PlugInstall --sync
 endif
 
 plug#begin("~/.vim/plugged")
@@ -35,6 +35,7 @@ set ignorecase smartcase
 set incsearch hlsearch
 set list
 set listchars=tab:˪\ 
+set modeline
 set mouse-=a
 set mouse=
 set nobackup
@@ -48,8 +49,6 @@ au VimEnter * set mouse=
 # }}}
 
 # Netrw {{{
-g:netrw_liststyle = 1
-g:netrw_keepdir = 0
 g:netrw_banner = 0
 g:netrw_localcopydircmd = 'cp -r'
 g:netrw_cursor = 0
@@ -57,8 +56,8 @@ g:netrw_cursor = 0
 
 # Colors {{{
 augroup colors_overrides
-    au!
-    au BufRead * hi Comment ctermfg=240
+	au!
+	au BufRead * hi Comment ctermfg=240
 augroup end
 
 hi ExtraWhitespace ctermbg=1
@@ -80,50 +79,50 @@ match ExtraWhitespace /\s\+$/
 
 # LSP {{{
 const lspOpts = {
-  aleSupport: false,
-  autoComplete: true,
-  autoHighlight: false,
-  autoHighlightDiags: true,
-  autoPopulateDiags: false,
-  completionMatcher: 'case',
-  completionTextEdit: false,
-  completionKinds: {},
-  customCompletionKinds: false,
-  diagSignErrorText: 'E',
-  diagSignInfoText: 'I',
-  diagSignHintText: 'H',
-  diagSignWarningText: 'W',
-  diagVirtualTextAlign: 'above',
-  echoSignature: false,
-  hideDisabledCodeActions: false,
-  highlightDiagInline: true,
-  hoverInPreview: true,
-  ignoreMissingServer: false,
-  keepFocusInReferences: false,
-  noNewlineInCompletion: false,
-  outlineOnRight: true,
-  outlineWinSize: 30,
-  showDiagInBalloon: true,
-  showDiagInPopup: true,
-  showDiagOnStatusLine: false,
-  showDiagWithSign: true,
-  showDiagWithVirtualText: false,
-  showInlayHints: false,
-  showSignature: true,
-  snippetSupport: false,
-  ultisnipsSupport: false,
-  vsnipSupport: true,
-  usePopupInCodeAction: false,
-  useQuickfixForLocations: false,
-  useBufferCompletion: false,
+	aleSupport: false,
+	autoComplete: true,
+	autoHighlight: false,
+	autoHighlightDiags: true,
+	autoPopulateDiags: false,
+	completionMatcher: 'case',
+	completionTextEdit: false,
+	completionKinds: {},
+	customCompletionKinds: false,
+	diagSignErrorText: 'E',
+	diagSignInfoText: 'I',
+	diagSignHintText: 'H',
+	diagSignWarningText: 'W',
+	diagVirtualTextAlign: 'above',
+	echoSignature: false,
+	hideDisabledCodeActions: false,
+	highlightDiagInline: true,
+	hoverInPreview: true,
+	ignoreMissingServer: false,
+	keepFocusInReferences: false,
+	noNewlineInCompletion: false,
+	outlineOnRight: true,
+	outlineWinSize: 30,
+	showDiagInBalloon: true,
+	showDiagInPopup: true,
+	showDiagOnStatusLine: false,
+	showDiagWithSign: true,
+	showDiagWithVirtualText: false,
+	showInlayHints: false,
+	showSignature: true,
+	snippetSupport: false,
+	ultisnipsSupport: false,
+	vsnipSupport: true,
+	usePopupInCodeAction: false,
+	useQuickfixForLocations: false,
+	useBufferCompletion: false,
 }
 var lspServers: list<dict<any>>
 if executable('lexical')
-  lspServers->add({
-    name: 'lexical',
-    filetype: ['elixir', 'eelixir'],
-    path: 'lexical'
-  })
+	lspServers->add({
+		name: 'lexical',
+		filetype: ['elixir', 'eelixir'],
+		path: 'lexical'
+	})
 endif
 autocmd User LspSetup call LspAddServer(lspServers)
 autocmd User lspSetup call LspOptionsSet(lspOpts)
@@ -182,3 +181,5 @@ inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 imap <expr> <CR> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<CR>'
 smap <expr> <CR> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<CR>'
 # }}}
+
+# vim: set ts=4 sw=4 tw=0 noet :
