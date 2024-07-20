@@ -17,6 +17,7 @@ Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'moll/vim-bbye'
+Plug 'sbdchd/neoformat'
 plug#end()
 # }}}
 
@@ -126,6 +127,11 @@ if executable('lexical')
 endif
 autocmd User LspSetup call LspAddServer(lspServers)
 autocmd VimEnter * call LspOptionsSet(lspOpts)
+
+augroup fmt
+	autocmd!
+	autocmd BufWritePre * undojoin | Neoformat
+augroup END
 # }}}
 
 # FZF {{{
