@@ -12,6 +12,7 @@ Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'yegappan/lsp'
+Plug 'SirVer/ultisnips'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'moll/vim-bbye'
@@ -109,8 +110,8 @@ const lspOpts = {
 	showDiagWithVirtualText: false,
 	showInlayHints: true,
 	showSignature: true,
-	snippetSupport: false,
-	ultisnipsSupport: false,
+	snippetSupport: true,
+	ultisnipsSupport: true,
 	useBufferCompletion: false,
 	usePopupInCodeAction: false,
 	useQuickfixForLocations: false,
@@ -126,6 +127,7 @@ if executable('lexical')
 		filetype: ['elixir', 'eelixir'],
 		path: 'lexical'
 	})
+	autocmd! BufWritePre *.ex,*.exs,*.heex call execute('LspFormat')
 endif
 autocmd User LspSetup call LspAddServer(lspServers)
 # }}}
@@ -156,6 +158,11 @@ g:fzf_colors = {
 	'spinner': ['fg', 'Label'],
 	'header': ['fg', 'Comment'],
 }
+# }}}
+
+# UltiSnips {{{
+g:UltiSnipsSnippetDirectories = ["/home/carloratm/.UltiSnips"]
+g:UltiSnipsExpandTrigger = "<space>"
 # }}}
 
 # Key mappings {{{

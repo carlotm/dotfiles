@@ -48,8 +48,7 @@ sys:
     - .gitconfig-personal
     - .local/bin/colors.sh
     - .local/bin/runtests.sh
-    - .vsnip/elixir.json
-    - .vsnip/global.json
+    - .UltiSnips/elixir.snippets
   qutebrowser: true
   starship: true
   devbox: true
