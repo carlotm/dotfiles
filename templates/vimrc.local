@@ -12,12 +12,9 @@ Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'yegappan/lsp'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'moll/vim-bbye'
-Plug 'sbdchd/neoformat'
 plug#end()
 # }}}
 
@@ -82,41 +79,46 @@ match ExtraWhitespace /\s\+$/
 const lspOpts = {
 	aleSupport: false,
 	autoComplete: true,
-	autoHighlight: false,
+	autoHighlight: true,
 	autoHighlightDiags: true,
 	autoPopulateDiags: false,
+	completionKinds: {},
 	completionMatcher: 'case',
 	completionTextEdit: false,
-	completionKinds: {},
 	customCompletionKinds: false,
 	diagSignErrorText: 'E',
-	diagSignInfoText: 'I',
 	diagSignHintText: 'H',
+	diagSignInfoText: 'I',
 	diagSignWarningText: 'W',
-	diagVirtualTextAlign: 'above',
+	diagVirtualTextAlign: 'after',
+	diagVirtualTextWrap: 'truncate',
 	echoSignature: false,
 	hideDisabledCodeActions: false,
 	highlightDiagInline: true,
-	hoverInPreview: true,
+	hoverInPreview: false,
 	ignoreMissingServer: false,
 	keepFocusInReferences: false,
 	noNewlineInCompletion: false,
 	outlineOnRight: true,
 	outlineWinSize: 30,
-	showDiagInBalloon: true,
+	semanticHighlight: false,
+	showDiagInBalloon: false,
 	showDiagInPopup: true,
 	showDiagOnStatusLine: false,
 	showDiagWithSign: true,
 	showDiagWithVirtualText: false,
-	showInlayHints: false,
+	showInlayHints: true,
 	showSignature: true,
 	snippetSupport: false,
 	ultisnipsSupport: false,
-	vsnipSupport: true,
+	useBufferCompletion: false,
 	usePopupInCodeAction: false,
 	useQuickfixForLocations: false,
-	useBufferCompletion: false,
+	vsnipSupport: false,
 }
+autocmd User LspSetup call LspOptionsSet(lspOpts)
+# autocmd VimEnter * call LspOptionsSet(lspOpts)
+
 var lspServers: list<dict<any>>
 if executable('lexical')
 	lspServers->add({
@@ -126,12 +128,6 @@ if executable('lexical')
 	})
 endif
 autocmd User LspSetup call LspAddServer(lspServers)
-autocmd VimEnter * call LspOptionsSet(lspOpts)
-
-augroup fmt
-	autocmd!
-	autocmd BufWritePre * undojoin | Neoformat
-augroup END
 # }}}
 
 # FZF {{{
@@ -184,8 +180,8 @@ nnoremap gd :LspGotoDefinition<CR>
 nnoremap <Leader>e :LspDiagCurrent<CR>
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
-imap <expr> <CR> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<CR>'
-smap <expr> <CR> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<CR>'
+# imap <expr> <CR> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<CR>'
+# smap <expr> <CR> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<CR>'
 # }}}
 
 # vim: set ts=4 sw=4 tw=0 noet :
