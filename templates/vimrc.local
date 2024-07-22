@@ -16,6 +16,7 @@ Plug 'SirVer/ultisnips'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'moll/vim-bbye'
+Plug 'editorconfig/editorconfig-vim'
 plug#end()
 # }}}
 
