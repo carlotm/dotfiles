@@ -95,31 +95,31 @@ const lspOpts = {
 	diagVirtualTextAlign: 'after',
 	diagVirtualTextWrap: 'truncate',
 	echoSignature: false,
-	hideDisabledCodeActions: false,
+	hideDisabledCodeActions: true,
 	highlightDiagInline: true,
-	hoverInPreview: false,
+	hoverInPreview: true,
 	ignoreMissingServer: false,
-	keepFocusInReferences: false,
+	keepFocusInDiags: true,
+	keepFocusInReferences: true,
 	noNewlineInCompletion: false,
 	outlineOnRight: true,
 	outlineWinSize: 30,
-	semanticHighlight: false,
-	showDiagInBalloon: false,
+	semanticHighlight: true,
+	showDiagInBalloon: true,
 	showDiagInPopup: true,
 	showDiagOnStatusLine: false,
 	showDiagWithSign: true,
 	showDiagWithVirtualText: false,
-	showInlayHints: true,
-	showSignature: true,
+	showInlayHints: false,
+	showSignature: false,
 	snippetSupport: true,
 	ultisnipsSupport: true,
 	useBufferCompletion: false,
 	usePopupInCodeAction: false,
-	useQuickfixForLocations: false,
+	useQuickfixForLocations: true,
 	vsnipSupport: false,
 }
 autocmd User LspSetup call LspOptionsSet(lspOpts)
-# autocmd VimEnter * call LspOptionsSet(lspOpts)
 
 var lspServers: list<dict<any>>
 if executable('lexical')
@@ -128,7 +128,6 @@ if executable('lexical')
 		filetype: ['elixir', 'eelixir'],
 		path: 'lexical'
 	})
-	autocmd! BufWritePre *.ex,*.exs,*.heex call execute('LspFormat')
 endif
 autocmd User LspSetup call LspAddServer(lspServers)
 # }}}
@@ -177,19 +176,19 @@ nnoremap < <<
 nnoremap > >>
 nnoremap gn :bnext<CR>
 nnoremap gp :bprev<CR>
+nnoremap g[ :LspDiagNextWrap<CR>
+nnoremap gd :LspGotoDefinition<CR>
 nnoremap <Leader>bd :Bdelete<CR>
 nnoremap <Leader>ww :wincmd w<CR>
 nnoremap <Leader>ff :GFiles<CR>
 nnoremap <Leader>fa :Files<CR>
 nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fg :Rg<CR>
-nnoremap K :LspHover<CR>
-nnoremap gd :LspGotoDefinition<CR>
 nnoremap <Leader>e :LspDiagCurrent<CR>
+nnoremap K :LspHover<CR>
+nnoremap ff :LspFormat<CR>
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
-# imap <expr> <CR> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<CR>'
-# smap <expr> <CR> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<CR>'
 # }}}
 
 # vim: set ts=4 sw=4 tw=0 noet :
