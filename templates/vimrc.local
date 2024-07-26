@@ -46,6 +46,7 @@ set ttymouse-=a
 nnoremap <SPACE> <Nop>
 g:mapleader = " "
 au VimEnter * set mouse=
+au BufRead,BufNewFile *.heex set filetype=eelixir
 # }}}
 
 # Netrw {{{
@@ -161,7 +162,7 @@ g:fzf_colors = {
 # }}}
 
 # UltiSnips {{{
-g:UltiSnipsSnippetDirectories = ["/home/carloratm/.UltiSnips"]
+g:UltiSnipsSnippetDirectories = ["~/.UltiSnips"]
 g:UltiSnipsExpandTrigger = "<space>"
 # }}}
 
