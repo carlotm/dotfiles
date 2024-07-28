@@ -130,6 +130,13 @@ if executable('lexical')
 		path: 'lexical'
 	})
 endif
+if executable('erlang_ls')
+	lspServers->add({
+		name: 'erlang_ls',
+		filetype: ['erlang'],
+		path: 'erlang_ls'
+	})
+endif
 autocmd User LspSetup call LspAddServer(lspServers)
 # }}}
 
