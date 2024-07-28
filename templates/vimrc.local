@@ -82,7 +82,7 @@ match ExtraWhitespace /\s\+$/
 const lspOpts = {
 	aleSupport: false,
 	autoComplete: true,
-	autoHighlight: true,
+	autoHighlight: false,
 	autoHighlightDiags: true,
 	autoPopulateDiags: false,
 	completionKinds: {},
