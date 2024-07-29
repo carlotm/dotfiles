@@ -96,7 +96,7 @@ const lspOpts = {
 	diagVirtualTextAlign: 'after',
 	diagVirtualTextWrap: 'truncate',
 	echoSignature: false,
-	hideDisabledCodeActions: true,
+	hideDisabledCodeActions: false,
 	highlightDiagInline: true,
 	hoverInPreview: true,
 	ignoreMissingServer: false,
@@ -116,7 +116,7 @@ const lspOpts = {
 	snippetSupport: true,
 	ultisnipsSupport: true,
 	useBufferCompletion: false,
-	usePopupInCodeAction: false,
+	usePopupInCodeAction: true,
 	useQuickfixForLocations: true,
 	vsnipSupport: false,
 }
