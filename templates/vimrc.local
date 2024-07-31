@@ -68,11 +68,12 @@ hi Visual ctermbg=236
 hi VertSplit ctermfg=4 ctermbg=16 cterm=NONE
 hi StatusLine ctermfg=15 ctermbg=4 cterm=NONE
 hi StatusLineNC ctermfg=8 ctermbg=234
-hi SignColumn ctermbg=234
+hi SignColumn ctermbg=0
 hi LspDiagInlineError ctermbg=52
 hi LspDiagSignErrorText ctermbg=52
 hi LspDiagInlineWarning ctermbg=3 ctermfg=16
 hi LspDiagSignWarningText ctermbg=3 ctermfg=16
+hi LspDiagInlineHint ctermbg=234
 hi netrwTreeBar ctermfg=0
 
 match ExtraWhitespace /\s\+$/
