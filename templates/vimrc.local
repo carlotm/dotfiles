@@ -124,6 +124,22 @@ const lspOpts = {
 autocmd User LspSetup call LspOptionsSet(lspOpts)
 
 var lspServers: list<dict<any>>
+if executable('typescript-language-server')
+	lspServers->add({
+		name: 'typescript-language-server',
+		filetype: ['javascript'],
+		path: 'typescript-language-server',
+		args: ['--stdio']
+	})
+endif
+if executable('css-languageserver')
+	lspServers->add({
+		name: 'css-languageserver',
+		filetype: ['css', 'scss'],
+		path: 'css-languageserver',
+		args: ['--stdio']
+	})
+endif
 if executable('lexical')
 	lspServers->add({
 		name: 'lexical',
