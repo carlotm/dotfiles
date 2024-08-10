@@ -75,6 +75,10 @@ hi LspDiagInlineWarning ctermbg=3 ctermfg=16
 hi LspDiagSignWarningText ctermbg=3 ctermfg=16
 hi LspDiagInlineHint ctermbg=234
 hi netrwTreeBar ctermfg=0
+hi Pmenu ctermbg=234 ctermfg=15
+hi PmenuSel ctermbg=5 ctermfg=15
+hi PmenuSbar ctermbg=234
+hi PmenuThumb ctermbg=236
 
 match ExtraWhitespace /\s\+$/
 # }}}
