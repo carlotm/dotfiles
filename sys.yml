@@ -45,7 +45,6 @@
           - libsane-common
           - libsane1
           - quodlibet
-          - rsync
           - sane-airscan
           - sane-utils
           - synaptic
