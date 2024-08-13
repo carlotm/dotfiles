@@ -143,6 +143,17 @@
           - users
           - video
           - wheel
+    - name: Custom groups
+      ansible.builtin.group:
+        name: "{{ item }}"
+        state: present
+      with_items: "{{ sys.user.groups | default([]) }}"
+    - name: Adding user '{{ sys.user.username }}' to custom groups
+      user:
+        name: "{{ sys.user.username }}"
+        groups: "{{ item }}"
+        append: yes
+      with_items: "{{ sys.user.groups | default([]) }}"
     - name: Put user in sudoers
       ansible.builtin.template:
         src: "templates/sudoer.j2"

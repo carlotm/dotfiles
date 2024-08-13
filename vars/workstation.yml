@@ -6,6 +6,8 @@ sys:
   user:
     name: Ascani Carlo
     username: carloratm
+    groups:
+      - docker
     dirs:
       - w
       - downloads
