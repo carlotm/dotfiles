@@ -5,6 +5,7 @@
   become: true
   vars:
     ci: "{{ lookup('env', 'CI', default=false) | bool() }}"
+    cpu_governor: "{{ sys.cpu_governor | default('performance') }}"
   tasks:
 # Load vars {{{
     - name: Load vars
@@ -70,6 +71,7 @@
           - gstreamer1.0-plugins-good
           - gstreamer1.0-plugins-ugly
           - htop
+          - linux-cpupower
           - openssh-server
           - pavucontrol
           - pulseaudio
@@ -411,4 +413,17 @@
           psk: "g:B4$1F\\A\\@X."
         autoconnect: true
         state: present
+# }}}
+# CPU governor {{{
+    - name: Get current cpu governor
+      become: true
+      ansible.builtin.command:
+        cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+      register: cpu_gov
+    - name: Set cpu governor
+      become: true
+      ansible.builtin.command:
+        cmd: "cpupower frequency-set -g {{ cpu_governor }}"
+      when:
+        cpu_gov.stdout != cpu_governor
 # }}}
