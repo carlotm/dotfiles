@@ -151,11 +151,11 @@
         name: "{{ item }}"
         state: present
       with_items: "{{ sys.user.groups | default([]) }}"
-    - name: Adding user '{{ sys.user.username }}' to custom groups
-      user:
+    - name: Adding user to custom groups
+      ansible.builtin.user:
         name: "{{ sys.user.username }}"
         groups: "{{ item }}"
-        append: yes
+        append: true
       with_items: "{{ sys.user.groups | default([]) }}"
     - name: Put user in sudoers
       ansible.builtin.template:
@@ -415,12 +415,12 @@
         state: present
 # }}}
 # CPU governor {{{
-    - name: Get current cpu governor
+    - name: Get current cpu governor # noqa no-changed-when
       become: true
       ansible.builtin.command:
         cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
       register: cpu_gov
-    - name: Set cpu governor
+    - name: Set cpu governor # noqa no-changed-when
       become: true
       ansible.builtin.command:
         cmd: "cpupower frequency-set -g {{ cpu_governor }}"
