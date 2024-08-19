@@ -420,10 +420,10 @@
       ansible.builtin.command:
         cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
       register: cpu_gov
+      when: not ci
     - name: Set cpu governor # noqa no-changed-when
       become: true
       ansible.builtin.command:
         cmd: "cpupower frequency-set -g {{ cpu_governor }}"
-      when:
-        cpu_gov.stdout != cpu_governor
+      when: not ci and cpu_gov.stdout != cpu_governor
 # }}}
