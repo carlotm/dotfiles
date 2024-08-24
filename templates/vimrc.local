@@ -47,6 +47,8 @@ nnoremap <SPACE> <Nop>
 g:mapleader = " "
 au VimEnter * set mouse=
 au BufRead,BufNewFile *.heex set filetype=eelixir
+au BufRead,BufNewFile *.config set filetype=erlang
+au BufRead,BufNewFile *.app.src set filetype=erlang
 # }}}
 
 # Netrw {{{

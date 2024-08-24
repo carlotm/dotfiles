@@ -12,6 +12,7 @@ alias grep="rg -i"
 alias find="fdfind --hidden"
 alias tree="tree -C --dirsfirst"
 alias d="devbox"
+alias discord="flatpak run com.discordapp.Discord"
 
 export PATH=$HOME/.local/bin:$PATH
 export EDITOR=vim
