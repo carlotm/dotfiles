@@ -51,6 +51,7 @@ sys:
     - .local/bin/colors.sh
     - .local/bin/runtests.sh
     - .UltiSnips/elixir.snippets
+    - .UltiSnips/erlang.snippets
   qutebrowser: true
   starship: true
   devbox: true
