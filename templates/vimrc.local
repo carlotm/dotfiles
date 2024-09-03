@@ -153,6 +153,13 @@ if executable('lexical')
 		path: 'lexical'
 	})
 endif
+if executable('elixir-ls')
+	lspServers->add({
+		name: 'elixir-ls',
+		filetype: ['elixir', 'eelixir'],
+		path: 'elixir-ls'
+	})
+endif
 if executable('erlang_ls')
 	lspServers->add({
 		name: 'erlang_ls',
