@@ -17,6 +17,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'moll/vim-bbye'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'alvan/vim-closetag'
+Plug 'tpope/vim-endwise'
 plug#end()
 # }}}
 
