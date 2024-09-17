@@ -42,4 +42,6 @@ format = '[\[JAVA $version\]]($style)'
 [vagrant]
 format = '[\[VAGRANT $version\]]($style)'
 [php]
-format = '[\[PHP\]]($style)'
+format = '[\[PHP $version\]]($style)'
+[ruby]
+format = '[\[RUBY $version\]]($style)'
