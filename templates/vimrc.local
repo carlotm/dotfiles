@@ -20,6 +20,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-endwise'
 Plug 'nelsyeung/twig.vim'
+Plug 'mustache/vim-mustache-handlebars'
 plug#end()
 # }}}
 
