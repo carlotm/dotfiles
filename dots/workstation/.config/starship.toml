@@ -45,3 +45,5 @@ format = '[\[VAGRANT $version\]]($style)'
 format = '[\[PHP $version\]]($style)'
 [ruby]
 format = '[\[RUBY $version\]]($style)'
+[golang]
+format = '[\[GO $version\]]($style)'
