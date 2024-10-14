@@ -50,9 +50,22 @@ set ttymouse-=a
 nnoremap <SPACE> <Nop>
 g:mapleader = " "
 au VimEnter * set mouse=
-au BufRead,BufNewFile *.heex set filetype=eelixir
-au BufRead,BufNewFile *.config set filetype=erlang
-au BufRead,BufNewFile *.app.src set filetype=erlang
+# }}}
+
+# Filetypes {{{
+augroup ft_erlang_config
+	au!
+	autocmd BufRead,BufNewFile *.config set filetype=erlang
+	autocmd BufRead,BufNewFile *.app.src set filetype=erlang
+augroup END
+augroup ft_heex
+	au!
+	au BufRead,BufNewFile *.heex set filetype=eelixir
+augroup END
+augroup ft_django_templates
+	au!
+	au BufRead,BufNewFile *.dtl set filetype=htmldjango
+augroup END
 # }}}
 
 # Netrw {{{
