@@ -64,6 +64,7 @@ augroup ft_heex
 augroup END
 augroup ft_django_templates
 	au!
+	au BufRead,BufNewFile *.tpl set filetype=htmldjango
 	au BufRead,BufNewFile *.dtl set filetype=htmldjango
 augroup END
 # }}}
