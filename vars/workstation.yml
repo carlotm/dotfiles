@@ -59,3 +59,6 @@ sys:
     - name: flathub
       url: https://dl.flathub.org/repo/flathub.flatpakrepo
       package: com.discordapp.Discord
+    - name: flathub
+      url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      package: com.slack.Slack
