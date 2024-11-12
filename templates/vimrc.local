@@ -58,6 +58,7 @@ augroup ft_erlang_config
 	autocmd BufRead,BufNewFile *.config set filetype=erlang
 	autocmd BufRead,BufNewFile *.config.src set filetype=erlang
 	autocmd BufRead,BufNewFile *.app.src set filetype=erlang
+	autocmd BufRead,BufNewFile *.app.src.script set filetype=erlang
 	autocmd BufRead,BufNewFile *.escript set filetype=erlang
 augroup END
 augroup ft_heex
