@@ -8,19 +8,19 @@ if empty(glob(data_dir .. "/autoload/plug.vim"))
 endif
 
 plug#begin("~/.vim/plugged")
-Plug 'tpope/vim-commentary'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'yegappan/lsp'
 Plug 'SirVer/ultisnips'
+Plug 'alvan/vim-closetag'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elixir-editors/vim-elixir'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'moll/vim-bbye'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'alvan/vim-closetag'
-Plug 'tpope/vim-endwise'
-Plug 'nelsyeung/twig.vim'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'nelsyeung/twig.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'yegappan/lsp'
 plug#end()
 # }}}
 
