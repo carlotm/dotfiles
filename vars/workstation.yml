@@ -8,11 +8,15 @@ sys:
     username: carloratm
     groups:
       - docker
+      - incus
+      - incus-admin
     dirs:
       - w
       - downloads
       - docs
       - ooo
+  extra_repos:
+    - deb http://deb.debian.org/debian bookworm-backports main contrib non-free
   packages:
     - elementary-xfce-icon-theme
     - firefox-esr
@@ -20,8 +24,10 @@ sys:
     - git
     - gvfs
     - gvfs-backends
+    - incus
     - keepassxc
     - parole
+    - qemu-system
     - ristretto
     - xfce4
     - xfce4-screenshooter

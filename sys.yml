@@ -13,6 +13,12 @@
         file: "./vars/{{ profile }}.yml"
 # }}}
 # Install packages {{{
+    - name: User repos
+      ansible.builtin.apt_repository:
+        repo: "{{ item }}"
+        state: present
+      with_items:
+        "{{ sys.extra_repos | default([]) }}"
     - name: Force uninstall packages
       ansible.builtin.apt:
         state: absent
