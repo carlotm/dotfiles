@@ -68,3 +68,6 @@ sys:
     - name: flathub
       url: https://dl.flathub.org/repo/flathub.flatpakrepo
       package: com.slack.Slack
+    - name: flathub
+      url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      package: com.logseq.Logseq
