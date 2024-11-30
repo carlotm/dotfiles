@@ -371,7 +371,33 @@
             state: absent
           when: not starship_bin.stat.exists
 # }}}
-# Devbox {{{
+# nix and devbox {{{
+    - name: Maybe install nix
+      become: true
+      when: sys.devbox | default(false) | bool()
+      block:
+        - name: Check if nix exists
+          ansible.builtin.stat:
+            path: /nix/var/nix/profiles/default/bin/nix
+          register: nix
+        - name: Download nix installer
+          ansible.builtin.get_url:
+            url: https://nixos.org/nix/install
+            dest: /tmp/nix_installer
+            mode: "0777"
+          register: nix_installer
+          when: not nix.stat.exists
+        - name: Install nix
+          become: true
+          ansible.builtin.command:
+            cmd: /tmp/nix_installer --daemon --yes
+            creates: /usr/local/bin/nix
+          when: not nix.stat.exists
+        - name: Remove installer
+          ansible.builtin.file:
+            path: "{{ nix_installer.dest }}"
+            state: absent
+          when: not nix.stat.exists
     - name: Maybe install devbox
       become: true
       when: sys.devbox | default(false) | bool()
