@@ -398,6 +398,14 @@
             path: "{{ nix_installer.dest }}"
             state: absent
           when: not nix.stat.exists
+        - name: Copy nix conf
+          become: true
+          ansible.builtin.copy:
+            src: ./templates/nix.conf
+            dest: /etc/nix/nix.conf
+            owner: root
+            group: root
+            mode: "0644"
     - name: Maybe install devbox
       become: true
       when: sys.devbox | default(false) | bool()
