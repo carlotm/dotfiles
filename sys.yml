@@ -64,6 +64,7 @@
         update_cache: true
         state: latest
         pkg:
+          - atril
           - adwaita-icon-theme
           - bash-completion
           - build-essential
@@ -89,7 +90,6 @@
           - wget
           - xdg-user-dirs
           - xorg
-          - zathura
     - name: User packages # noqa package-latest
       ansible.builtin.apt:
         state: latest
