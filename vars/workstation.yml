@@ -8,8 +8,6 @@ sys:
     username: carloratm
     groups:
       - docker
-      - incus
-      - incus-admin
     dirs:
       - w
       - downloads
@@ -24,7 +22,6 @@ sys:
     - git
     - gvfs
     - gvfs-backends
-    - incus
     - keepassxc
     - parole
     - qemu-system
