@@ -2,7 +2,7 @@ add_newline = false
 command_timeout = 800
 
 [character]
-success_symbol = "[>](bold green)"
+success_symbol = "[-](bold green)"
 error_symbol = "[x](bold red)"
 
 [directory]
@@ -15,35 +15,33 @@ disabled = true
 [cmd_duration]
 disabled = true
 [battery]
-format = '[$percentage]($style) '
+format = ' [$percentage]($style)'
 [nix_shell]
-format = '[\[NIX\]]($style)'
+format = ' [NIX]($style)'
 [git_branch]
-format = '[\[$branch\]]($style)'
+format = ' [$branch]($style)'
 style = 'bold yellow'
 [elixir]
-format = '[\[EX $version OTP $otp_version\]]($style)'
+format = ' [EX $version OTP $otp_version]($style)'
 version_format = '${raw}'
 [erlang]
-format = '[\[ERL $version\]]($style)'
+format = ' [ERL $version]($style)'
 [lua]
-format = '[\[LUA $version\]]($style)'
+format = ' [LUA $version]($style)'
 [nodejs]
-format = '[\[NODE $version\]]($style)'
+format = ' [NODE $version]($style)'
 detect_extensions = ['js']
 [haskell]
-format = '[\[HASKELL $version\]]($style)'
+format = ' [\\= $version]($style)'
 [elm]
-format = '[\[ELM $version\]]($style)'
+format = ' [ELM $version]($style)'
 [python]
-format = '[\[PYTHON $version $virtualenv\]]($style)'
+format = ' [PY $version $virtualenv]($style)'
 [java]
-format = '[\[JAVA $version\]]($style)'
-[vagrant]
-format = '[\[VAGRANT $version\]]($style)'
+format = ' [JAVA $version]($style)'
 [php]
-format = '[\[PHP $version\]]($style)'
+format = ' [PHP $version]($style)'
 [ruby]
-format = '[\[RUBY $version\]]($style)'
+format = ' [RUBY $version]($style)'
 [golang]
-format = '[\[GO $version\]]($style)'
+format = ' [GO $version]($style)'
