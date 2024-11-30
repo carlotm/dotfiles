@@ -4,7 +4,7 @@
 
 | Profile | Hostname | OS | Description
 | :--- | :--- | :--- | :---
-| workstation | scumm | Debian | My personal laptop
+| workstation | scumm | Debian | My work and personal laptops
 | mediacenter | melee | Debian | The pc at the projector
 
 ## Requirements
@@ -18,3 +18,16 @@ You need to have `git` (to clone this repository),
 apt install git make ansible
 ```
 
+## Run
+
+To set up the machine, run:
+
+```
+sudo make <profile>
+```
+
+if you are **on** the machine you want to set up, run:
+
+```
+sudo make LOCAL=true <profile>
+```
