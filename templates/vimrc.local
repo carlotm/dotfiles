@@ -11,7 +11,6 @@ plug#begin("~/.vim/plugged")
 Plug 'SirVer/ultisnips'
 Plug 'alvan/vim-closetag'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
