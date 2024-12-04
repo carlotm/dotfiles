@@ -15,7 +15,7 @@ disabled = true
 [cmd_duration]
 disabled = true
 [battery]
-format = ' [$percentage]($style)'
+format = '[$percentage]($style)'
 [nix_shell]
 format = ' [NIX]($style)'
 [git_branch]
