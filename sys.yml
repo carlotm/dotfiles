@@ -125,7 +125,7 @@
       loop:
         - en_US.UTF-8
         - it_IT.UTF-8
-        - de_DE.UTF-8
+        - de_AT.UTF-8
 # }}}
 # User and groups {{{
     - name: Create base groups
@@ -436,6 +436,13 @@
           ansible.builtin.file:
             path: /usr/local/bin/devbox
             mode: "0777"
+        - name: Set the devox autocompletion
+          ansible.builtin.copy:
+            src: ./templates/devbox
+            dest: /etc/bash_completion.d/devbox
+            owner: root
+            group: root
+            mode: "0644"
 # }}}
 # Network {{{
     - name: Configure home wifi connection
