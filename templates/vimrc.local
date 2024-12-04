@@ -1,11 +1,13 @@
-" Plugins {{{
-let data_dir = '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-	silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+vim9script
+
+# Plugins {{{
+var data_dir = "~/.vim"
+if empty(glob(data_dir .. "/autoload/plug.vim"))
+	silent execute "!curl -fLo " .. data_dir .. "/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 	autocmd VimEnter * PlugInstall --sync
 endif
 
-call plug#begin("~/.vim/plugged")
+plug#begin("~/.vim/plugged")
 Plug 'SirVer/ultisnips'
 Plug 'alvan/vim-closetag'
 Plug 'editorconfig/editorconfig-vim'
@@ -17,13 +19,11 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'nelsyeung/twig.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-call plug#end()
-" }}}
+Plug 'yegappan/lsp'
+plug#end()
+# }}}
 
-" Vim settings {{{
+# Vim settings {{{
 set nocompatible
 filetype on
 filetype plugin on
@@ -39,19 +39,16 @@ set incsearch hlsearch
 set list
 set listchars=tab:˪\ 
 set modeline
-set mouse-=a
-set mouse=
 set nobackup
 set noshowcmd
 set scrolloff=10
 set showmatch
-set ttymouse-=a
 nnoremap <SPACE> <Nop>
-let g:mapleader = " "
+g:mapleader = " "
 au VimEnter * set mouse=
-" }}}
+# }}}
 
-" Filetypes {{{
+# Filetypes {{{
 augroup ft_erlang_config
 	au!
 	autocmd BufRead,BufNewFile *.config set filetype=erlang
@@ -69,15 +66,15 @@ augroup ft_django_templates
 	au BufRead,BufNewFile *.tpl set filetype=htmldjango
 	au BufRead,BufNewFile *.dtl set filetype=htmldjango
 augroup END
-" }}}
+# }}}
 
-" Netrw {{{
-let g:netrw_banner = 0
-let g:netrw_localcopydircmd = 'cp -r'
-let g:netrw_cursor = 0
-" }}}
+# Netrw {{{
+g:netrw_banner = 0
+g:netrw_localcopydircmd = 'cp -r'
+g:netrw_cursor = 0
+# }}}
 
-" Colors {{{
+# Colors {{{
 augroup colors_overrides
 	au!
 	au BufRead * hi Comment ctermfg=240
@@ -96,90 +93,119 @@ hi Pmenu ctermbg=234 ctermfg=15
 hi PmenuSel ctermbg=5 ctermfg=15
 hi PmenuSbar ctermbg=234
 hi PmenuThumb ctermbg=236
-hi LspErrorHighlight ctermbg=52
-hi LspWarningHighlight ctermbg=3 ctermfg=16
-hi LspInformationHighlight ctermbg=234
-hi LspHintHighlight ctermbg=234
 
 match ExtraWhitespace /\s\+$/
-" }}}
+# }}}
 
-" LSP {{{
-let g:lsp_preview_float = 0
-let g:lsp_completion_documentation_enabled = 1
-let g:lsp_diagnostics_virtual_text_enabled = 0
-let g:lsp_diagnostics_echo_cursor = 0
-let g:lsp_diagnostics_float_cursor = 1
-let g:lsp_diagnostics_signs_error = {'text': 'E'}
-let g:lsp_diagnostics_signs_warning = {'text': 'W'}
-let g:lsp_diagnostics_signs_information = {'text': 'I'}
-let g:lsp_diagnostics_signs_hint = {'text': '?'}
-let g:lsp_signature_help_enabled = 0
-let g:lsp_document_highlight_enabled = 0
-if executable('erlang_ls')
-	au User lsp_setup call lsp#register_server({
-				\ 'name': 'erlang_ls',
-				\ 'cmd': {server_info->[&shell, &shellcmdflag, 'erlang_ls --transport stdio']},
-				\ 'whitelist': ['erlang'],
-				\ })
+# LSP {{{
+hi LspDiagInlineError ctermbg=52
+hi LspDiagSignErrorText ctermbg=52
+hi LspDiagInlineWarning ctermbg=3 ctermfg=16
+hi LspDiagSignWarningText ctermbg=3 ctermfg=16
+hi LspDiagInlineHint ctermbg=234
+const lspOpts = {
+	aleSupport: false,
+	autoComplete: true,
+	autoHighlight: false,
+	autoHighlightDiags: true,
+	autoPopulateDiags: false,
+	completionKinds: {},
+	completionMatcher: 'case',
+	completionTextEdit: false,
+	customCompletionKinds: false,
+	diagSignErrorText: 'E',
+	diagSignHintText: 'H',
+	diagSignInfoText: 'I',
+	diagSignWarningText: 'W',
+	diagVirtualTextAlign: 'after',
+	diagVirtualTextWrap: 'truncate',
+	echoSignature: false,
+	hideDisabledCodeActions: false,
+	highlightDiagInline: true,
+	hoverInPreview: true,
+	ignoreMissingServer: false,
+	keepFocusInDiags: true,
+	keepFocusInReferences: true,
+	noNewlineInCompletion: false,
+	outlineOnRight: true,
+	outlineWinSize: 30,
+	semanticHighlight: true,
+	showDiagInBalloon: true,
+	showDiagInPopup: true,
+	showDiagOnStatusLine: false,
+	showDiagWithSign: true,
+	showDiagWithVirtualText: false,
+	showInlayHints: false,
+	showSignature: false,
+	snippetSupport: true,
+	ultisnipsSupport: true,
+	useBufferCompletion: false,
+	usePopupInCodeAction: true,
+	useQuickfixForLocations: true,
+	vsnipSupport: false,
+}
+autocmd User LspSetup call LspOptionsSet(lspOpts)
+
+var lspServers: list<dict<any>>
+if executable('typescript-language-server')
+	lspServers->add({
+		name: 'typescript-language-server',
+		filetype: ['javascript'],
+		path: 'typescript-language-server',
+		args: ['--stdio']
+	})
 endif
-if executable('elp')
-	au User lsp_setup call lsp#register_server({
-				\ 'name': 'elp',
-				\ 'cmd': {server_info->['elp', 'server']},
-				\ 'allowlist': ['erlang'],
-				\ })
+if executable('css-languageserver')
+	lspServers->add({
+		name: 'css-languageserver',
+		filetype: ['css', 'scss'],
+		path: 'css-languageserver',
+		args: ['--stdio']
+	})
+endif
+if executable('lexical')
+	lspServers->add({
+		name: 'lexical',
+		filetype: ['elixir', 'eelixir'],
+		path: 'lexical'
+	})
 endif
 if executable('elixir-ls')
-	au User lsp_setup call lsp#register_server({
-				\ 'name': 'elixir-ls',
-				\ 'cmd': {server_info->['elixir-ls']},
-				\ 'allowlist': ['elixir'],
-				\ })
+	lspServers->add({
+		name: 'elixir-ls',
+		filetype: ['elixir', 'eelixir'],
+		path: 'elixir-ls'
+	})
 endif
-function! s:on_lsp_buffer_enabled() abort
-	setlocal omnifunc=lsp#complete
-	if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-	" nmap <buffer> gs <plug>(lsp-document-symbol-search)
-	" nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
-	" nmap <buffer> gi <plug>(lsp-implementation)
-	" nmap <buffer> gt <plug>(lsp-type-definition)
-	nmap <buffer> gd <plug>(lsp-definition)
-	nmap <buffer> gr <plug>(lsp-references)
-	nmap <buffer> <leader>rn <plug>(lsp-rename)
-	nmap <buffer> [g <plug>(lsp-previous-diagnostic)
-	nmap <buffer> ]g <plug>(lsp-next-diagnostic)
-	nmap <buffer> K <plug>(lsp-hover)
-	nmap ff :LspDocumentFormatSync<CR>
-	nnoremap <buffer> <expr><c-j> lsp#scroll(+4)
-	nnoremap <buffer> <expr><c-k> lsp#scroll(-4)
+if executable('erlang_ls')
+	lspServers->add({
+		name: 'erlang_ls',
+		filetype: ['erlang'],
+		path: 'erlang_ls'
+	})
+endif
+autocmd User LspSetup call LspAddServer(lspServers)
+# }}}
 
-	let g:lsp_format_sync_timeout = 1000
-endfunction
-augroup lsp_install
-	au!
-	autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
-" }}}
+# FZF {{{
+g:fzf_preview_window = ['down:50%', 'ctrl-/']
+g:fzf_layout = {
+	'window': {
+		'width': 1,
+		'height': 1,
+		'relative': v:true,
+		'yoffset': 1.0,
+		'border': 'no'
+	}
+}
+# }}}
 
-" FZF {{{
-let g:fzf_preview_window = ['down:50%', 'ctrl-/']
-let g:fzf_layout = {
-	\ 'window': {
-		\ 'width': 1,
-		\ 'height': 1,
-		\ 'relative': v:true,
-		\ 'yoffset': 1.0,
-		\ 'border': 'no',
-		\ }}
-" }}}
+# UltiSnips {{{
+g:UltiSnipsSnippetDirectories = ["~/.UltiSnips"]
+g:UltiSnipsExpandTrigger = "<space>"
+# }}}
 
-" UltiSnips {{{
-let g:UltiSnipsSnippetDirectories = ["~/.UltiSnips"]
-let g:UltiSnipsExpandTrigger = "<space>"
-" }}}
-
-" Key mappings {{{
+# Key mappings {{{
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 noremap <Up> <Nop>
@@ -190,15 +216,19 @@ nnoremap < <<
 nnoremap > >>
 nnoremap gn :bnext<CR>
 nnoremap gp :bprev<CR>
+nnoremap g[ :LspDiagNextWrap<CR>
+nnoremap gd :LspGotoDefinition<CR>
 nnoremap <Leader>bd :Bdelete<CR>
 nnoremap <Leader>ww :wincmd w<CR>
 nnoremap <Leader>ff :GFiles<CR>
 nnoremap <Leader>fa :Files<CR>
 nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fg :Rg<CR>
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
-" }}}
+nnoremap <Leader>e :LspDiagCurrent<CR>
+nnoremap K :LspHover<CR>
+nnoremap ff :LspFormat<CR>
+inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+# }}}
 
-" vim: set ts=4 sw=4 tw=0 noet :
+# vim: set ts=4 sw=4 tw=0 noet :
