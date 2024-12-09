@@ -4,8 +4,9 @@
 
 | Profile | Hostname | OS | Description
 | :--- | :--- | :--- | :---
-| workstation | scumm | Debian | My work and personal laptops
-| mediacenter | melee | Debian | The pc at the projector
+| workstation | scumm | Debian stable | My work and personal laptops
+| mediacenter | melee | Debian stable | The pc at the projector
+| chiara | elaine | Debian stable | My wife's laptop
 
 ## Requirements
 
