@@ -43,6 +43,8 @@ set nobackup
 set noshowcmd
 set scrolloff=10
 set showmatch
+set swapfile
+set dir=~/.cache
 nnoremap <SPACE> <Nop>
 g:mapleader = " "
 au VimEnter * set mouse=
