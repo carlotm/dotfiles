@@ -11,6 +11,11 @@ sys:
       - w
       - downloads
       - docs
+  disks:
+    - uuid: 1107d480-e318-40f7-bccb-f77d52a64146
+      path: /mnt/ROBA01
+    - uuid: adf50683-ef49-4332-8bbf-42186c20729a
+      path: /mnt/ROBA02
   packages:
     - bluez-tools
     - blueman

@@ -483,3 +483,14 @@
         "{{ sys.dconf | default([]) }}"
       when: not ci
 # }}}
+# Disks {{{
+    - name: Mount disks
+      ansible.posix.mount:
+        path: "{{ item.path }}"
+        src: "UUID={{ item.uuid }}"
+        fstype: ext4
+        state: present
+      with_items:
+        "{{ sys.disks | default([]) }}"
+      when: not ci
+# }}}
