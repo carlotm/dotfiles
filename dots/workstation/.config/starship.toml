@@ -45,3 +45,5 @@ format = ' [PHP $version]($style)'
 format = ' [RUBY $version]($style)'
 [golang]
 format = ' [GO $version]($style)'
+[c]
+format = ' [C $version]($style)'
