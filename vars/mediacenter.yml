@@ -33,6 +33,7 @@ sys:
       package: com.stremio.Stremio
   dots:
     - .bashrc
+    - .config/gtk-3.0/bookmarks
     - .config/xfce4/terminal/terminalrc
     - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
     - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
