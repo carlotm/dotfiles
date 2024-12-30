@@ -17,6 +17,7 @@ sys:
     - uuid: adf50683-ef49-4332-8bbf-42186c20729a
       path: /mnt/ROBA02
   packages:
+    - anacron
     - bluez-tools
     - blueman
     - elementary-xfce-icon-theme
@@ -41,3 +42,5 @@ sys:
     - .config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
     - .local/bin/runtests.sh
     - wallpaper.jpg
+  custom_templates:
+    - etc/cron.daily/backup

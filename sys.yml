@@ -82,6 +82,7 @@
           - pavucontrol
           - pulseaudio
           - ripgrep
+          - rsync
           - shunit2
           - sudo
           - tree
@@ -267,6 +268,22 @@
       ansible.builtin.command:
         cmd: xdg-user-dirs-update
         chdir: "/home/{{ sys.user.username }}"
+# }}}
+# Custom templates {{{
+    - name: Make sure destination dir exists
+      become: true
+      ansible.builtin.file:
+        path: "{{ item | dirname }}"
+        state: directory
+        mode: "0744"
+      loop: "{{ sys.custom_templates | default([]) | map('regex_replace', '^', '/') }}"
+    - name: Copy dotfiles
+      become: true
+      ansible.builtin.copy:
+        src: "templates/{{ profile }}/{{ item }}"
+        dest: "/{{ item }}"
+        mode: preserve
+      loop: "{{ sys.custom_templates | default([]) }}"
 # }}}
 # Qutebrowser {{{
     - name: Maybe install qutebrowser
