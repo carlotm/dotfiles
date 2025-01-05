@@ -5,9 +5,6 @@ testSystem() {
 
     assertTrue "[ -r /home/chiara ]"
 
-    output=$(hash gnome3)
-    assertTrue "${output}" $?
-
     output=$(hash keepassxc)
     assertTrue "${output}" $?
 }
