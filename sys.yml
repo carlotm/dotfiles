@@ -63,7 +63,7 @@
         state: absent
         purge: true
         pkg: "{{ sys.force_remove | default([]) }}"
-    - name: Common packages # noqa package-latest
+    - name: Common packages
       ansible.builtin.apt:
         update_cache: true
         state: latest
@@ -94,10 +94,18 @@
           - wget
           - xdg-user-dirs
           - xorg
-    - name: User packages # noqa package-latest
+    - name: Set packages to exclude when CI
+      when: ci
+      ansible.builtin.set_fact:
+        not_to_install: "{{ sys.exclude_from_ci | default([]) }}"
+    - name: Set packages to exclude to an empty list when not CI
+      when: not ci
+      ansible.builtin.set_fact:
+        not_to_install: "{{ sys.exclude_from_ci | default([]) }}"
+    - name: User packages
       ansible.builtin.apt:
         state: latest
-        pkg: "{{ sys.packages | default([]) }}"
+        pkg: "{{ sys.packages | default([]) | difference(not_to_install) }}"
 # }}}
 # Hostname and console setup {{{
     - name: Set hostname
@@ -215,7 +223,7 @@
     - name: Set flatpaks list
       ansible.builtin.set_fact:
         flatpaks: "{{ sys.flatpaks | default([]) }}"
-    - name: Install flatpak # noqa package-latest
+    - name: Install flatpak
       ansible.builtin.apt:
         update_cache: true
         state: latest
@@ -266,7 +274,7 @@
         group: "{{ sys.user.username }}"
       loop:
         "{{ sys.user.dirs | default([]) }}"
-    - name: Udpate xdg user dirs # noqa no-changed-when
+    - name: Udpate xdg user dirs
       become: true
       become_user: "{{ sys.user.username }}"
       ansible.builtin.command:
@@ -482,13 +490,13 @@
         state: present
 # }}}
 # CPU governor {{{
-    - name: Get current cpu governor # noqa no-changed-when
+    - name: Get current cpu governor
       become: true
       ansible.builtin.command:
         cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
       register: cpu_gov
       when: not ci
-    - name: Set cpu governor # noqa no-changed-when
+    - name: Set cpu governor
       become: true
       ansible.builtin.command:
         cmd: "cpupower frequency-set -g {{ cpu_governor }}"

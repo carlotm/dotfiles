@@ -11,6 +11,8 @@ sys:
     dirs:
       - documenti
       - scaricati
+  extra_repos:
+    - deb http://deb.debian.org/debian bookworm-backports main contrib non-free
   packages:
     - firefox-esr
     - git
@@ -20,5 +22,8 @@ sys:
     - keepassxc
     - lightdm
     - python3-psutil
+  exclude_from_ci:
+    - gnome
+    - lightdm
   dots:
     - .local/bin/runtests.sh
