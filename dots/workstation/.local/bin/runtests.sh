@@ -13,9 +13,6 @@ testSystem() {
     output=$(hash spectrwm)
     assertTrue "${output}" $?
 
-    output=$(hash alacritty)
-    assertTrue "${output}" $?
-
     output=$(hash devbox)
     assertTrue "${output}" $?
 

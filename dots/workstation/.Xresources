@@ -1,2 +1,28 @@
 Xcursor.size: 64
 Xft.dpi: 96
+URxvt.font: xft:Spleen 32x64:size=24:style=Medium,\
+            xft:Font Awesome 6 Free:style=Solid
+URxvt.boldFont: xft:Spleen 32x64:size=24:style=Medium
+URxvt.italicFont: xft:Spleen 32x64:size=24:style=Medium
+URxvt.boldItalicFont: xft:Spleen 32x64:size=24:style=Medium
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/local/bin/qutebrowser
+URxvt.matcher.button: 1
+URxvt.scrollBar: false
+URxvt.foreground: #999999
+URxvt.background: #000000
+URxvt.color1: #cd0000
+URxvt.color2: #00cd00
+URxvt.color3: #cdcd00
+URxvt.color4: #0000ee
+URxvt.color5: #cd00cd
+URxvt.color6: #00cdcd
+URxvt.color7: #e5e5e5
+URxvt.color8: #7f7f7f
+URxvt.color9: #ff0000
+URxvt.color10: #00ff00
+URxvt.color11: #ffff00
+URxvt.color12: #5c5cff
+URxvt.color13: #ff00ff
+URxvt.color14: #00ffff
+URxvt.color15: #ffffff
