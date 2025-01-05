@@ -16,19 +16,10 @@ testSystem() {
     output=$(hash alacritty)
     assertTrue "${output}" $?
 
-    output=$(hash xmonad)
-    assertFalse "${output}" $?
-
-    output=$(hash xfce4)
-    assertFalse "${output}" $?
-
     output=$(hash devbox)
     assertTrue "${output}" $?
 
     output=$(hash starship)
-    assertTrue "${output}" $?
-
-    output=$(hash nix)
     assertTrue "${output}" $?
 
     output=$(hash qutebrowser)

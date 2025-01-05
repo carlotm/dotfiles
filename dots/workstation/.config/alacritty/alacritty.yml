@@ -10,7 +10,7 @@ colors:
     red:     '#eb4129'
     green:   '#abe047'
     yellow:  '#f6c744'
-    blue:    '#1142bf'
+    blue:    '#3861A1'
     magenta: '#7b5cb0'
     cyan:    '#64dbed'
     white:   '#e5e9f0'
@@ -42,3 +42,4 @@ font:
   bolditalic:
     style: Medium
   size: 15
+draw_bold_text_with_bright_colors: true

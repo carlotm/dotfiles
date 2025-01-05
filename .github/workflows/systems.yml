@@ -5,17 +5,10 @@ on:
     branches: [main]
 
 jobs:
-  lint:
-    name: Ansible lint
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
   build:
     strategy:
       matrix:
-        profile: [workstation, mediacenter]
+        profile: [workstation, mediacenter, chiara]
     name: Ansible run
     runs-on: ubuntu-latest
     steps:

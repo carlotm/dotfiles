@@ -24,3 +24,5 @@ sys:
     - gnome
     - lightdm
     - python3-psutil
+  dots:
+    - .local/bin/runtests.sh
