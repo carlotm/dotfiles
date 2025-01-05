@@ -12,7 +12,7 @@ config.set('content.javascript.enabled', True, 'devtools://*')
 config.set('content.javascript.enabled', True, 'chrome://*/*')
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
-c.fonts.default_family = ['Noto Sans']
+c.fonts.default_family = ['Open Sans']
 c.fonts.default_size = '18pt'
 c.statusbar.show = 'in-mode'
 c.statusbar.widgets = ['keypress']

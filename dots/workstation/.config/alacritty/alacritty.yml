@@ -1,0 +1,44 @@
+colors:
+  primary:
+    background: '#000000'
+    foreground: '#cccccc'
+  cursor:
+    text: '#ffffff'
+    cursor: '#ff0000'
+  normal:
+    black:   '#2e2e2e'
+    red:     '#eb4129'
+    green:   '#abe047'
+    yellow:  '#f6c744'
+    blue:    '#47a0f3'
+    magenta: '#7b5cb0'
+    cyan:    '#64dbed'
+    white:   '#e5e9f0'
+  bright:
+    black:   '#565656'
+    red:     '#ec5357'
+    green:   '#c0e17d'
+    yellow:  '#f9da6a'
+    blue:    '#49a4f8'
+    magenta: '#a47de9'
+    cyan:    '#99faf2'
+    white:   '#ffffff'
+mouse:
+  hide_when_typing: true
+cursor:
+  style:
+    shape: Block
+    blinking: On
+  blink_interval: 400
+  blink_timeout: 0
+font:
+  normal:
+    family: Spleen 32x64
+    style: Medium
+  bold:
+    style: Medium
+  italic:
+    style: Medium
+  bolditalic:
+    style: Medium
+  size: 15

@@ -16,46 +16,57 @@ sys:
   extra_repos:
     - deb http://deb.debian.org/debian bookworm-backports main contrib non-free
   packages:
+    - alacritty
     - atril
-    - elementary-xfce-icon-theme
+    - dmenu
+    - dunst
+    - elementary-icon-theme
     - firefox-esr
     - fzf
     - git
     - gvfs
     - gvfs-backends
     - keepassxc
+    - libnotify-bin
+    - spectrwm
+    - udiskie
+  force_remove:
     - parole
     - ristretto
     - simplescreenrecorder
     - xfce4
+    - xfce4-helpers
+    - xfce4-notifyd
+    - xfce4-panel
+    - xfce4-power-manager
+    - xfce4-power-manager-data
+    - xfce4-power-manager-plugins
     - xfce4-screenshooter
+    - xfce4-session
+    - xfce4-settings
     - xfce4-terminal
+    - xfwm4
     - xmonad
   dots:
+    - .UltiSnips/elixir.snippets
+    - .UltiSnips/erlang.snippets
+    - .Xresources
     - .bashrc
-    - .config/autostart/xmonad.desktop
-    - .config/gtk-3.0/gtk.css
+    - .config/alacritty/alacritty.yml
     - .config/gtk-3.0/settings.ini
     - .config/mimeapps.list
+    - .config/pcmanfm/default/pcmanfm.conf
     - .config/qutebrowser/config.py
+    - .config/spectrwm/spectrwm.conf
     - .config/starship.toml
     - .config/user-dirs.dirs
     - .config/user-dirs.locale
-    - .config/xfce4/terminal/terminalrc
-    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
-    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
-    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml
-    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
-    - .config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
-    - .config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
-    - .config/xmonad/xmonad.hs
     - .gitconfig
     - .gitconfig-ooo
     - .gitconfig-personal
+    - .gtkrc-2.0
     - .local/bin/colors.sh
     - .local/bin/runtests.sh
-    - .UltiSnips/elixir.snippets
-    - .UltiSnips/erlang.snippets
   qutebrowser: true
   starship: true
   devbox: true

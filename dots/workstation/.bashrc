@@ -23,4 +23,6 @@ source /usr/share/bash-completion/bash_completion
 
 setxkbmap -layout us,it,de -option grp:win_space_toggle
 
+unset LD_PRELOAD
+
 eval "$(starship init bash)"

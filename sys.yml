@@ -58,7 +58,11 @@
           - xfburn
           - xsane
           - xsane-common
-          - xterm
+    - name: Force uninstall user packages
+      ansible.builtin.apt:
+        state: absent
+        purge: true
+        pkg: "{{ sys.force_remove | default([]) }}"
     - name: Common packages # noqa package-latest
       ansible.builtin.apt:
         update_cache: true
