@@ -23,6 +23,6 @@ sys:
     - lightdm
     - python3-psutil
   exclude_from_ci:
-    - lightdm
+    - gnome
   dots:
     - .local/bin/runtests.sh

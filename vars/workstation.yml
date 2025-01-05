@@ -54,6 +54,10 @@ sys:
     - .Xresources
     - .bashrc
     - .config/alacritty/alacritty.yml
+    - .config/autorandr/home-desk/config
+    - .config/autorandr/home-desk/setup
+    - .config/autorandr/T460s/config
+    - .config/autorandr/T460s/setup
     - .config/gtk-3.0/settings.ini
     - .config/mimeapps.list
     - .config/pcmanfm/default/pcmanfm.conf
