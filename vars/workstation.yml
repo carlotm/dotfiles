@@ -71,6 +71,7 @@ sys:
     - .gtkrc-2.0
     - .local/bin/colors.sh
     - .local/bin/runtests.sh
+    - .urxvt/ext/font-size
   starship: true
   qutebrowser: true
   devbox: true
