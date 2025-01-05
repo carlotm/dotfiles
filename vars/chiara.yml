@@ -11,17 +11,13 @@ sys:
     dirs:
       - documenti
       - scaricati
-  extra_repos:
-    - deb http://deb.debian.org/debian bookworm-backports main contrib non-free
   packages:
-    - dconf-editor
     - firefox-esr
     - git
     - gnome
     - gvfs
     - gvfs-backends
     - keepassxc
-    - gnome
     - lightdm
     - python3-psutil
   dots:
