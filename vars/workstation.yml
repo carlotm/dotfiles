@@ -28,6 +28,7 @@ sys:
     - gvfs-backends
     - keepassxc
     - libnotify-bin
+    - qutebrowser
     - spectrwm
     - udiskie
   force_remove:
@@ -67,10 +68,5 @@ sys:
     - .gtkrc-2.0
     - .local/bin/colors.sh
     - .local/bin/runtests.sh
-  qutebrowser: true
   starship: true
   devbox: true
-  flatpaks:
-    - name: flathub
-      url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      package: com.discordapp.Discord
