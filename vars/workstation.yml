@@ -69,4 +69,5 @@ sys:
     - .local/bin/colors.sh
     - .local/bin/runtests.sh
   starship: true
+  qutebrowser: true
   devbox: true

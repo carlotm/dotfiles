@@ -27,6 +27,12 @@ testSystem() {
 
     output=$(hash starship)
     assertTrue "${output}" $?
+
+    output=$(hash nix)
+    assertTrue "${output}" $?
+
+    output=$(hash qutebrowser)
+    assertTrue "${output}" $?
 }
 
 . shunit2
