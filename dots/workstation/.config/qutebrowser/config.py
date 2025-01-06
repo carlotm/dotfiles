@@ -13,9 +13,9 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
 c.fonts.default_family = ['Open Sans']
-c.fonts.default_size = '22pt'
+c.fonts.default_size = '18pt'
 c.fonts.web.family.sans_serif = 'Open Sans'
-c.fonts.contextmenu = '22pt Open Sans'
+c.fonts.contextmenu = '18pt Open Sans'
 c.statusbar.show = 'in-mode'
 c.statusbar.widgets = ['keypress']
 c.tabs.show = 'multiple'
