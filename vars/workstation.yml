@@ -17,61 +17,39 @@ sys:
     - deb http://deb.debian.org/debian bookworm-backports main contrib non-free
   packages:
     - atril
-    - dmenu
-    - dunst
-    - elementary-icon-theme
+    - elementary-xfce-icon-theme
     - firefox-esr
     - fzf
     - git
     - gvfs
     - gvfs-backends
+    - fonts-open-sans
+    - freeciv
+    - freeciv-client-extras
     - keepassxc
-    - libnotify-bin
-    - qutebrowser
-    - rxvt-unicode
-    - spectrwm
-    - udiskie
-  force_remove:
-    - parole
-    - ristretto
-    - simplescreenrecorder
+    - lightdm
     - xfce4
-    - xfce4-helpers
-    - xfce4-notifyd
-    - xfce4-panel
-    - xfce4-power-manager
-    - xfce4-power-manager-data
-    - xfce4-power-manager-plugins
-    - xfce4-screenshooter
-    - xfce4-session
-    - xfce4-settings
-    - xfce4-terminal
-    - xfwm4
-    - xmonad
+    - xfce4-goodies
   dots:
     - .UltiSnips/elixir.snippets
     - .UltiSnips/erlang.snippets
-    - .Xresources
     - .bashrc
-    - .config/autorandr/home-desk/config
-    - .config/autorandr/home-desk/setup
-    - .config/autorandr/T460s/config
-    - .config/autorandr/T460s/setup
-    - .config/gtk-3.0/settings.ini
     - .config/mimeapps.list
-    - .config/pcmanfm/default/pcmanfm.conf
     - .config/qutebrowser/config.py
-    - .config/spectrwm/spectrwm.conf
     - .config/starship.toml
     - .config/user-dirs.dirs
     - .config/user-dirs.locale
+    - .config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
     - .gitconfig
     - .gitconfig-ooo
     - .gitconfig-personal
-    - .gtkrc-2.0
     - .local/bin/colors.sh
     - .local/bin/runtests.sh
-    - .urxvt/ext/font-size
   starship: true
   qutebrowser: true
   devbox: true

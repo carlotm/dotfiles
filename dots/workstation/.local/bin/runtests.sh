@@ -10,7 +10,7 @@ testSystem() {
     output=$(grep "Ascani Carlo" /etc/gitconfig)
     assertTrue "${output}" $?
 
-    output=$(hash spectrwm)
+    output=$(hash xfce4-about)
     assertTrue "${output}" $?
 
     output=$(hash devbox)
