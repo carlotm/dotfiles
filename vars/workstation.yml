@@ -39,6 +39,7 @@ sys:
     - .config/starship.toml
     - .config/user-dirs.dirs
     - .config/user-dirs.locale
+    - .config/gtk-3.0/gtk.css
     - .config/xfce4/terminal/accels.scm
     - .config/xfce4/terminal/terminalrc
     - .config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
