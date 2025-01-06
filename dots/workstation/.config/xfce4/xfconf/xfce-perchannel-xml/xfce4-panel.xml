@@ -15,7 +15,7 @@
         <value type="int" value="4"/>
         <value type="int" value="5"/>
         <value type="int" value="8"/>
-        <value type="int" value="9"/>
+        <value type="int" value="2"/>
         <value type="int" value="11"/>
         <value type="int" value="12"/>
         <value type="int" value="1"/>
@@ -52,7 +52,6 @@
       <property name="show-notifications" type="bool" value="true"/>
       <property name="mpris-players" type="string" value="chromium.instance8912"/>
     </property>
-    <property name="plugin-9" type="string" value="power-manager-plugin"/>
     <property name="plugin-11" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
@@ -87,5 +86,6 @@
       <property name="digital-date-format" type="string" value="%m/%d"/>
       <property name="digital-date-font" type="string" value="Open Sans 10"/>
     </property>
+    <property name="plugin-2" type="string" value="battery"/>
   </property>
 </channel>
