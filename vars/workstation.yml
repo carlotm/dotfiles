@@ -59,3 +59,5 @@ sys:
   starship: true
   qutebrowser: true
   devbox: true
+  custom_templates:
+    - etc/profile.d/gtk-csd.sh
