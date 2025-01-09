@@ -61,3 +61,4 @@ sys:
   devbox: true
   custom_templates:
     - etc/environment.d/60-enable-csd.conf
+    - etc/profile.d/enable-csd.sh
