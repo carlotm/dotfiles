@@ -40,17 +40,17 @@ sys:
     - .config/user-dirs.dirs
     - .config/user-dirs.locale
     - .config/xfce4/panel/battery-2.rc
-    # - .config/xfce4/terminal/accels.scm
-    # - .config/xfce4/terminal/terminalrc
-    # - .config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
-    # - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
-    # - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
-    # - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml
+    - .config/xfce4/terminal/accels.scm
+    - .config/xfce4/terminal/terminalrc
+    - .config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml
     - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
-    # - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml
-    # - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
-    # - .config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
-    # - .config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
     - .gitconfig
     - .gitconfig-ooo
     - .gitconfig-personal
