@@ -1,4 +1,4 @@
 ACTIVE_CONSOLES="/dev/tty[1-6]"
 CHARMAP="UTF-8"
-FONTFACE="spleen-16x32"
+FONT="spleen-16x32"
 VIDEOMODE=
