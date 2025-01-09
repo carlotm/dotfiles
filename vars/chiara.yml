@@ -1,8 +1,5 @@
 sys:
   hostname: elaine
-  net:
-    interface: wlp4s0
-    ip: 192.168.1.105
   user:
     name: Chiara Ferretti
     username: chiara

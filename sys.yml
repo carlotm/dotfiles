@@ -91,6 +91,7 @@
           - sudo
           - tree
           - vim-nox
+          - webext-ublock-origin-firefox
           - wget
           - xdg-user-dirs
           - xorg
@@ -471,23 +472,6 @@
             owner: root
             group: root
             mode: "0644"
-# }}}
-# Network {{{
-    - name: Configure home wifi connection
-      when: not ci
-      community.general.nmcli:
-        type: wifi
-        conn_name: Casa
-        ifname: "{{ sys.net.interface }}"
-        ssid: AscaniFerretti
-        ip4: "{{ sys.net.ip }}"
-        gw4: "192.168.1.1"
-        method6: disabled
-        wifi_sec:
-          key-mgmt: wpa-psk
-          psk: "g:B4$1F\\A\\@X."
-        autoconnect: true
-        state: present
 # }}}
 # CPU governor {{{
     - name: Get current cpu governor

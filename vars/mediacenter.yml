@@ -1,8 +1,5 @@
 sys:
   hostname: melee
-  net:
-    interface: wlp4s0
-    ip: 192.168.1.122
   user:
     name: Gian Franco
     username: gianfranco
