@@ -289,14 +289,14 @@
         path: "{{ item | dirname }}"
         state: directory
         mode: "0744"
-      loop: "{{ sys.custom_templates | default([]) | map('regex_replace', '^', '/') }}"
+      loop: "{{ sys.templates | default([]) | map('regex_replace', '^', '/') }}"
     - name: Copy dotfiles
       become: true
       ansible.builtin.copy:
         src: "templates/{{ profile }}/{{ item }}"
         dest: "/{{ item }}"
         mode: preserve
-      loop: "{{ sys.custom_templates | default([]) }}"
+      loop: "{{ sys.templates | default([]) }}"
 # }}}
 # Qutebrowser {{{
     - name: Maybe install qutebrowser

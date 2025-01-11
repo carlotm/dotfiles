@@ -28,6 +28,7 @@ sys:
   dots:
     - .UltiSnips/elixir.snippets
     - .UltiSnips/erlang.snippets
+    - .Xresources
     - .bashrc
     - .config/mimeapps.list
     - .config/qutebrowser/config.py

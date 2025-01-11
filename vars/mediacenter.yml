@@ -39,5 +39,5 @@ sys:
     - .config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
     - .local/bin/runtests.sh
     - wallpaper.jpg
-  custom_templates:
+  templates:
     - etc/cron.daily/backup
