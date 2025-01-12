@@ -122,7 +122,7 @@
 # }}}
 # LightDM {{{
     - name: Configure lightdm
-      when: not ci
+      when: not ci and "lightdm" in sys.packages
       ansible.builtin.template:
         src: "templates/lightdm.conf.j2"
         dest: /etc/lightdm/lightdm.conf

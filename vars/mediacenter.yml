@@ -15,8 +15,6 @@ sys:
       path: /mnt/ROBA02
   packages:
     - anacron
-    - bluez-tools
-    - blueman
     - elementary-xfce-icon-theme
     - firefox-esr
     - fzf
