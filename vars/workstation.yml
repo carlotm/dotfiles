@@ -30,6 +30,8 @@ sys:
     - .UltiSnips/erlang.snippets
     - .Xresources
     - .bashrc
+    - .config/GIMP/2.10/gimprc
+    - .config/GIMP/2.10/sessionrc
     - .config/gtk-3.0/gtk.css
     - .config/mimeapps.list
     - .config/qutebrowser/config.py
