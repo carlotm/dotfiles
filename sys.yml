@@ -247,6 +247,25 @@
         "{{ flatpaks }}"
 # }}}
 # Dotfiles {{{
+    - name: Install themes
+      become: true
+      when: sys.themes | default([]) | length > 0
+      ansible.builtin.file:
+        path: "/home/{{ sys.user.username }}/.local/share/themes"
+        state: directory
+        owner: "{{ sys.user.username }}"
+        group: "{{ sys.user.username }}"
+        mode: "0744"
+    - name: Copy themes
+      become: true
+      when: sys.themes | default([]) | length > 0
+      ansible.builtin.copy:
+        src: "dots/{{ profile }}/themes/{{ item }}"
+        dest: "/home/{{ sys.user.username }}/.local/share/themes/"
+        owner: "{{ sys.user.username }}"
+        group: "{{ sys.user.username }}"
+        mode: preserve
+      loop: "{{ sys.themes | default([]) }}"
     - name: Make sure destination dir exists
       become: true
       ansible.builtin.file:

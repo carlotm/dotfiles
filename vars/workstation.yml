@@ -56,6 +56,8 @@ sys:
     - .gitconfig-personal
     - .local/bin/colors.sh
     - .local/bin/runtests.sh
+  themes:
+    - Mnml
   starship: true
   qutebrowser: true
   devbox: true
