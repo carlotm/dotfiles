@@ -63,6 +63,6 @@
     </property>
   </property>
   <property name="chooser" type="empty">
-    <property name="AlwaysDisplay" type="bool" value="true"/>
+    <property name="AlwaysDisplay" type="bool" value="false"/>
   </property>
 </channel>

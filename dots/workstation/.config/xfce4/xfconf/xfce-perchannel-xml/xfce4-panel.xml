@@ -14,6 +14,7 @@
       <property name="plugin-ids" type="array">
         <value type="int" value="4"/>
         <value type="int" value="5"/>
+        <value type="int" value="3"/>
         <value type="int" value="8"/>
         <value type="int" value="2"/>
         <value type="int" value="11"/>
@@ -50,7 +51,7 @@
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance8912"/>
+      <property name="mpris-players" type="string" value="chromium.instance8912;firefox.instance_1_69;firefox.instance_1_84"/>
     </property>
     <property name="plugin-11" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
@@ -87,5 +88,12 @@
       <property name="digital-date-font" type="string" value="Open Sans 10"/>
     </property>
     <property name="plugin-2" type="string" value="battery"/>
+    <property name="plugin-3" type="string" value="xkb">
+      <property name="display-type" type="uint" value="2"/>
+      <property name="display-name" type="uint" value="1"/>
+      <property name="caps-lock-indicator" type="bool" value="true"/>
+      <property name="display-tooltip-icon" type="bool" value="true"/>
+      <property name="group-policy" type="uint" value="0"/>
+    </property>
   </property>
 </channel>
