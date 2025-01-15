@@ -42,6 +42,7 @@ sys:
     - .config/mimeapps.list
     - .config/qutebrowser/config.py
     - .config/starship.toml
+    - .config/sxhkd/sxhkdrc
     - .config/user-dirs.dirs
     - .config/user-dirs.locale
     - .config/xfce4/panel/battery-2.rc
