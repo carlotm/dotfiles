@@ -2,9 +2,9 @@
 Encoding=UTF-8
 Version=0.9.4
 Type=Application
-Name=xmonad
+Name=bspwm
 Comment=WindowManager
-Exec=xmonad
+Exec=bspwm
 OnlyShowIn=XFCE;
 RunHook=0
 StartupNotify=false

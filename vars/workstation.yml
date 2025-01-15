@@ -14,6 +14,7 @@ sys:
     - deb http://deb.debian.org/debian bookworm-backports main contrib non-free
   packages:
     - atril
+    - bspwm
     - elementary-xfce-icon-theme
     - firefox-esr
     - fzf
@@ -27,16 +28,15 @@ sys:
     - lightdm
     - xfce4
     - xfce4-goodies
-    - xmonad
   dots:
     - .UltiSnips/elixir.snippets
     - .UltiSnips/erlang.snippets
     - .Xresources
     - .bashrc
-    - .guile
-    - .config/autostart/WindowManager.desktop
     - .config/GIMP/2.10/gimprc
     - .config/GIMP/2.10/sessionrc
+    - .config/autostart/WindowManager.desktop
+    - .config/bspwm/bspwmrc
     - .config/gtk-3.0/gtk.css
     - .config/htop/htoprc
     - .config/mimeapps.list
@@ -57,14 +57,12 @@ sys:
     - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
     - .config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
     - .config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
-    - .config/xmonad/xmonad.hs
     - .gitconfig
     - .gitconfig-ooo
     - .gitconfig-personal
+    - .guile
     - .local/bin/colors.sh
     - .local/bin/runtests.sh
-  themes:
-    - Mnml
   starship: true
   qutebrowser: true
   devbox: true
