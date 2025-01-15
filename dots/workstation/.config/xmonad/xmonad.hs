@@ -7,6 +7,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Hooks.ManageHelpers
 import XMonad.Config.Xfce
 import XMonad.Hooks.ManageDocks
+import XMonad.Layout.Gaps
 
 main :: IO ()
 main = xmonad xfceConfig
@@ -15,11 +16,13 @@ main = xmonad xfceConfig
     , borderWidth = 2
     , normalBorderColor = "#222222"
     , focusedBorderColor = "#ff0000"
-    , layoutHook = avoidStruts $ myLayout
+    , layoutHook = myLayoutHook
     , manageHook = manageHook xfceConfig <+> myManageHook
     }
 
-myLayout = smartBorders $ Tall 1 (3/100) (1/2) ||| Full
+withGap = gaps [(R,50)] $ Tall 1 (3/100) (1/2) ||| Full
+withSmartBorders = smartBorders $ withGap
+myLayoutHook = avoidStruts $ withSmartBorders
 
 myManageHook = composeAll
     [ className =? "Xfce4-notifyd" --> doIgnore
