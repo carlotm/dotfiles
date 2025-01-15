@@ -2,9 +2,9 @@
 Encoding=UTF-8
 Version=0.9.4
 Type=Application
-Name=WindowManager
+Name=xmonad
 Comment=WindowManager
-Exec=/usr/bin/awesome
+Exec=xmonad
 OnlyShowIn=XFCE;
 RunHook=0
 StartupNotify=false

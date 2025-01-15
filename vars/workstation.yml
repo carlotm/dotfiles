@@ -14,7 +14,6 @@ sys:
     - deb http://deb.debian.org/debian bookworm-backports main contrib non-free
   packages:
     - atril
-    - awesome
     - elementary-xfce-icon-theme
     - firefox-esr
     - fzf
@@ -28,13 +27,14 @@ sys:
     - lightdm
     - xfce4
     - xfce4-goodies
+    - xmonad
   dots:
     - .UltiSnips/elixir.snippets
     - .UltiSnips/erlang.snippets
     - .Xresources
     - .bashrc
     - .guile
-    # - .config/autostart/WindowManager.desktop
+    - .config/autostart/WindowManager.desktop
     - .config/GIMP/2.10/gimprc
     - .config/GIMP/2.10/sessionrc
     - .config/gtk-3.0/gtk.css
