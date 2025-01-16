@@ -14,7 +14,6 @@ sys:
     - deb http://deb.debian.org/debian bookworm-backports main contrib non-free
   packages:
     - atril
-    - bspwm
     - elementary-xfce-icon-theme
     - firefox-esr
     - fzf
@@ -23,6 +22,7 @@ sys:
     - gvfs-backends
     - guile-3.0
     - guile-3.0-doc
+    - i3
     - fonts-open-sans
     - keepassxc
     - lightdm
@@ -36,13 +36,11 @@ sys:
     - .config/GIMP/2.10/gimprc
     - .config/GIMP/2.10/sessionrc
     - .config/autostart/WindowManager.desktop
-    - .config/bspwm/bspwmrc
     - .config/gtk-3.0/gtk.css
     - .config/htop/htoprc
     - .config/mimeapps.list
     - .config/qutebrowser/config.py
     - .config/starship.toml
-    - .config/sxhkd/sxhkdrc
     - .config/user-dirs.dirs
     - .config/user-dirs.locale
     - .config/xfce4/panel/battery-2.rc
