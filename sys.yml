@@ -322,7 +322,12 @@
       become: true
       when: sys.qutebrowser | default(false) | bool()
       block:
+        - name: Check if qutebrowser already installed
+          ansible.builtin.stat:
+            path: /usr/local/bin/qutebrowser
+          register: qutebrowser_bin
         - name: Install pre-requisites
+          when: not qutebrowser_bin.stat.exists
           ansible.builtin.apt:
             state: present
             install_recommends: false
@@ -349,6 +354,7 @@
               - libxi6
               - libasound2
         - name: Create qutebrowser folder
+          when: not qutebrowser_bin.stat.exists
           ansible.builtin.file:
             path: /opt/qutebrowser
             state: directory
@@ -358,15 +364,12 @@
         - name: Clone qutebrowser source
           become: true
           become_user: "{{ sys.user.username }}"
+          when: not qutebrowser_bin.stat.exists
           ansible.builtin.git:
             repo: https://github.com/qutebrowser/qutebrowser.git
             dest: /opt/qutebrowser/src
             depth: 1
             version: main
-        - name: Check if qutebrowser already installed
-          ansible.builtin.stat:
-            path: /usr/local/bin/qutebrowser
-          register: qutebrowser_bin
         - name: Install qutebrowser in a virtualenv
           become: true
           become_user: "{{ sys.user.username }}"
@@ -376,6 +379,7 @@
             chdir: /opt/qutebrowser/src
             creates: /opt/qutebrowser/src/.venv
         - name: Make a wrapper bin
+          when: not qutebrowser_bin.stat.exists
           ansible.builtin.copy:
             dest: /usr/local/bin/qutebrowser
             owner: root
@@ -385,6 +389,7 @@
               #!/bin/bash
               /opt/qutebrowser/src/.venv/bin/python3 -m qutebrowser "$@"
         - name: Make a desktop file
+          when: not qutebrowser_bin.stat.exists
           ansible.builtin.template:
             src: ./templates/qutebrowser.desktop
             dest: /usr/share/applications/qutebrowser.desktop
@@ -525,4 +530,24 @@
       with_items:
         "{{ sys.disks | default([]) }}"
       when: not ci
+# }}}
+# Bsp Layout {{{
+    - name: Check if bsp-layout is already installed
+      ansible.builtin.stat:
+        path: /usr/local/bin/bsp-layout
+      register: b
+    - name: Maybe clone bsp layout
+      become: true
+      when: ("bspwm" in sys.packages|default([])) and not ci and not b.stat.exists
+      ansible.builtin.git:
+        repo: https://github.com/phenax/bsp-layout.git
+        dest: /opt/bspwm-layout
+        depth: 1
+        version: master
+    - name: Maybe install bsp layout
+      become: true
+      when: ("bspwm" in sys.packages|default([])) and not ci and not b.stat.exists
+      ansible.builtin.command:
+        cmd: make install
+        chdir: /opt/bspwm-layout
 # }}}
