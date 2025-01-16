@@ -165,13 +165,6 @@ if executable('css-languageserver')
 		args: ['--stdio']
 	})
 endif
-if executable('lexical')
-	lspServers->add({
-		name: 'lexical',
-		filetype: ['elixir', 'eelixir'],
-		path: 'lexical'
-	})
-endif
 if executable('elixir-ls')
 	lspServers->add({
 		name: 'elixir-ls',
