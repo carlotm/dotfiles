@@ -15,6 +15,7 @@ sys:
   packages:
     - atril
     - elementary-xfce-icon-theme
+    - feh
     - firefox-esr
     - fzf
     - git
@@ -61,6 +62,7 @@ sys:
     - .guile
     - .local/bin/colors.sh
     - .local/bin/runtests.sh
+    - .wallpaper.jpg
   starship: true
   qutebrowser: true
   devbox: true
