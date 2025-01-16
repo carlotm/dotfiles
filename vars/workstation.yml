@@ -38,6 +38,7 @@ sys:
     - .config/autostart/WindowManager.desktop
     - .config/gtk-3.0/gtk.css
     - .config/htop/htoprc
+    - .config/i3/config
     - .config/mimeapps.list
     - .config/qutebrowser/config.py
     - .config/starship.toml
