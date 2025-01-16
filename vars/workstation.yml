@@ -13,8 +13,9 @@ sys:
   extra_repos:
     - deb http://deb.debian.org/debian bookworm-backports main contrib non-free
   packages:
+    - alacritty
     - atril
-    - bspwm
+    - autorandr
     - elementary-xfce-icon-theme
     - firefox-esr
     - fzf
@@ -26,8 +27,7 @@ sys:
     - fonts-open-sans
     - keepassxc
     - lightdm
-    - xfce4
-    - xfce4-goodies
+    - spectrwm
   dots:
     - .UltiSnips/elixir.snippets
     - .UltiSnips/erlang.snippets
@@ -35,27 +35,18 @@ sys:
     - .bashrc
     - .config/GIMP/2.10/gimprc
     - .config/GIMP/2.10/sessionrc
-    - .config/autostart/WindowManager.desktop
-    - .config/bspwm/bspwmrc
+    - .config/alacritty/alacritty.yml
+    - .config/autorandr/T460s/config
+    - .config/autorandr/T460s/setup
     - .config/gtk-3.0/gtk.css
     - .config/htop/htoprc
     - .config/mimeapps.list
     - .config/qutebrowser/config.py
+    - .config/spectrwm/spectrwm.conf
+    - .config/spectrwm/keybindings.conf
     - .config/starship.toml
-    - .config/sxhkd/sxhkdrc
     - .config/user-dirs.dirs
     - .config/user-dirs.locale
-    - .config/xfce4/panel/battery-2.rc
-    - .config/xfce4/terminal/accels.scm
-    - .config/xfce4/terminal/terminalrc
-    - .config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
-    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-appfinder.xml
-    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
-    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml
-    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
-    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml
-    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
-    - .config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
     - .gitconfig
     - .gitconfig-ooo
     - .gitconfig-personal

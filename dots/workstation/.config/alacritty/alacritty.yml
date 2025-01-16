@@ -1,0 +1,65 @@
+
+# Import additional configuration files
+#
+# Imports are loaded in order, skipping all missing files, with the importing
+# file being loaded last. If a field is already present in a previous import, it
+# will be replaced.
+#
+# All imports must either be absolute paths starting with `/`, or paths relative
+# to the user's home directory starting with `~/`.
+#import:
+#  - /path/to/alacritty.yml
+
+font:
+  normal:
+    family: Spleen 32x64
+    style: Regular
+  bold:
+    style: Regular
+  italic:
+    style: Regular
+  bold_italic:
+    style: Regular
+  size: 16.0
+  builtin_box_drawing: true
+draw_bold_text_with_bright_colors: false
+
+colors:
+  primary:
+    background: '#000000'
+    foreground: '#999999'
+  cursor:
+    text: '#ffffff'
+    cursor: '#ff0000'
+  selection:
+    text: '#ffffff'
+    background: '#222222'
+  normal:
+    black: '#000000'
+    red: '#cd0000'
+    green: '#00cd00'
+    yellow: '#cdcd00'
+    blue: '#0000ee'
+    magenta: '#cd00cd'
+    cyan: '#00cdcd'
+    white: '#e5e5e5'
+  bright:
+    black: '#7f7f7f'
+    red: '#ff0000'
+    green: '#00ff00'
+    yellow: '#ffff00'
+    blue: '#5c5cff'
+    magenta: '#ff00ff'
+    cyan: '#00ffff'
+    white: '#ffffff'
+
+cursor:
+  style:
+    shape: Block
+    blinking: On
+  blink_interval: 650
+  blink_timeout: 0
+  unfocused_hollow: true
+
+mouse:
+  hide_when_typing: true
