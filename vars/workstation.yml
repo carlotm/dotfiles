@@ -35,6 +35,7 @@ sys:
     - .bashrc
     - .config/GIMP/2.10/gimprc
     - .config/GIMP/2.10/sessionrc
+    - .config/cortile/config.toml
     - .config/gtk-3.0/gtk.css
     - .config/htop/htoprc
     - .config/mimeapps.list
@@ -60,6 +61,7 @@ sys:
     - .gitconfig-personal
     - .guile
     - .local/bin/colors.sh
+    - .local/bin/cortile
     - .local/bin/runtests.sh
     - .wallpaper.jpg
   starship: true
