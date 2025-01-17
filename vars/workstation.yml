@@ -35,7 +35,6 @@ sys:
     - .bashrc
     - .config/GIMP/2.10/gimprc
     - .config/GIMP/2.10/sessionrc
-    - .config/autostart/Cortile.desktop
     - .config/cortile/config.toml
     - .config/gtk-3.0/gtk.css
     - .config/htop/htoprc
