@@ -33,6 +33,8 @@
     </property>
     <property name="custom" type="empty">
       <property name="override" type="bool" value="true"/>
+      <property name="&lt;Alt&gt;AudioLowerVolume" type="string" value="xfce4-appfinder"/>
+      <property name="&lt;Shift&gt;&lt;Alt&gt;Return" type="string" value="xfce4-terminal"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

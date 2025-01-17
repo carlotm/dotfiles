@@ -531,23 +531,3 @@
         "{{ sys.disks | default([]) }}"
       when: not ci
 # }}}
-# Bsp Layout {{{
-    - name: Check if bsp-layout is already installed
-      ansible.builtin.stat:
-        path: /usr/local/bin/bsp-layout
-      register: b
-    - name: Maybe clone bsp layout
-      become: true
-      when: ("bspwm" in sys.packages|default([])) and not ci and not b.stat.exists
-      ansible.builtin.git:
-        repo: https://github.com/phenax/bsp-layout.git
-        dest: /opt/bspwm-layout
-        depth: 1
-        version: master
-    - name: Maybe install bsp layout
-      become: true
-      when: ("bspwm" in sys.packages|default([])) and not ci and not b.stat.exists
-      ansible.builtin.command:
-        cmd: make install
-        chdir: /opt/bspwm-layout
-# }}}
