@@ -27,5 +27,4 @@ myManageHook = composeAll
     , isFullscreen --> doFullFloat
     , title =?  "Application Finder" --> doRectFloat (RationalRect 0.2 0.2 0.6 0.6)
     , title =? "Xfce4-display-settings" --> doCenterFloat
-    , className =? "fs-uae" --> doFullFloat
     ]
