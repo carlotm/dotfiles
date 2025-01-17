@@ -5,11 +5,10 @@ tiling_cycle = [
     "horizontal-top",
     "maximized",
 ]
-tiling_gui = 1500
+tiling_gui = 0
 tiling_icon = [
     ["toggle", "Enabled"],
     ["decoration", "Decoration"],
-    ["", ""],
     ["", ""],
     ["reset", "Reset"],
     ["", ""],
@@ -50,8 +49,8 @@ icon_foreground = [255, 255, 255, 255]
 toggle = "Mod1-t"
 decoration = "Mod1-d"
 cycle_next = "Mod1-Space"
-window_next = "Mod1-k"
-window_previous = "Mod1-j"
+#window_next = "Mod1-k"
+#window_previous = "Mod1-j"
 master_make = "Mod1-Return"
 proportion_increase = "Mod1-l"
 proportion_decrease = "Mod1-h"
