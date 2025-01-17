@@ -64,6 +64,8 @@ sys:
     - .local/bin/cortile
     - .local/bin/runtests.sh
     - .wallpaper.jpg
+  themes:
+    - Mnml
   starship: true
   qutebrowser: true
   devbox: true
