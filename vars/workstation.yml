@@ -35,10 +35,10 @@ sys:
     - .UltiSnips/erlang.snippets
     - .Xresources
     - .bashrc
+    - .xsessionrc
     - .config/GIMP/2.10/gimprc
     - .config/GIMP/2.10/sessionrc
     - .config/autostart/WindowManager.desktop
-    - .config/autostart/Wallpaper.desktop
     - .config/xmonad/xmonad.hs
     - .config/gtk-3.0/gtk.css
     - .config/htop/htoprc
@@ -64,7 +64,7 @@ sys:
     - .guile
     - .local/bin/colors.sh
     - .local/bin/runtests.sh
-    - .wallpaper.jpg
   starship: true
   qutebrowser: true
   devbox: true
+  propaganda: true

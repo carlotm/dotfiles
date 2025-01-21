@@ -531,3 +531,14 @@
         "{{ sys.disks | default([]) }}"
       when: not ci
 # }}}
+# Propaganda {{{
+    - name: Clone Propaganda tiles
+      when: sys.propaganda | default(false) and not ci
+      become: true
+      become_user: "{{ sys.user.username }}"
+      ansible.builtin.git:
+        repo: https://github.com/BenjaminHCCarr/PropagandaTiles.git
+        dest: "/home/{{ sys.user.username }}/.propaganda"
+        depth: 1
+        version: master
+# }}}
