@@ -12,11 +12,11 @@
       <property name="icon-size" type="uint" value="36"/>
       <property name="size" type="uint" value="48"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="12"/>
-        <value type="int" value="7"/>
-        <value type="int" value="1"/>
         <value type="int" value="4"/>
+        <value type="int" value="1"/>
+        <value type="int" value="12"/>
         <value type="int" value="13"/>
+        <value type="int" value="2"/>
         <value type="int" value="3"/>
         <value type="int" value="8"/>
         <value type="int" value="6"/>
@@ -40,7 +40,7 @@
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance1417;chromium.instance1430;chromium.instance8912;firefox.instance_1_69;firefox.instance_1_84"/>
+      <property name="mpris-players" type="string" value="chromium.instance11405;chromium.instance1200;chromium.instance1203;chromium.instance1204;chromium.instance1417;chromium.instance1430;chromium.instance19502;chromium.instance3505;chromium.instance3590;chromium.instance5549;chromium.instance7526;chromium.instance8912;firefox.instance_1_104;firefox.instance_1_298;firefox.instance_1_69;firefox.instance_1_84;firefox.instance_1_966"/>
     </property>
     <property name="plugin-12" type="string" value="clock">
       <property name="mode" type="uint" value="2"/>
@@ -49,7 +49,7 @@
     </property>
     <property name="plugin-13" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
-      <property name="expand" type="bool" value="true"/>
+      <property name="expand" type="bool" value="false"/>
     </property>
     <property name="plugin-14" type="string" value="actions">
       <property name="appearance" type="uint" value="0"/>
@@ -69,7 +69,7 @@
       </property>
     </property>
     <property name="plugin-3" type="string" value="xkb">
-      <property name="display-type" type="uint" value="1"/>
+      <property name="display-type" type="uint" value="2"/>
       <property name="display-name" type="uint" value="1"/>
       <property name="caps-lock-indicator" type="bool" value="true"/>
       <property name="display-tooltip-icon" type="bool" value="true"/>
@@ -85,15 +85,10 @@
     <property name="plugin-6" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-7" type="string" value="clock">
-      <property name="mode" type="uint" value="2"/>
-      <property name="digital-layout" type="uint" value="2"/>
-      <property name="digital-date-font" type="string" value="Open Sans Semi-Bold 10"/>
-      <property name="digital-date-format" type="string" value="%d %b"/>
-    </property>
     <property name="plugin-1" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>
     </property>
+    <property name="plugin-2" type="string" value="battery"/>
   </property>
 </channel>
