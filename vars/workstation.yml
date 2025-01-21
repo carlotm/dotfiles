@@ -29,6 +29,7 @@ sys:
     - xfce4
     - xfce4-goodies
     - xmonad
+    - xscreensaver
   dots:
     - .UltiSnips/elixir.snippets
     - .UltiSnips/erlang.snippets
