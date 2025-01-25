@@ -23,3 +23,7 @@ sys:
     - gnome
   dots:
     - .local/bin/runtests.sh
+  flatpaks:
+    - name: flathub
+      url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      package: net.ankiweb.Anki
