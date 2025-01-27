@@ -26,6 +26,7 @@ sys:
     - fonts-open-sans
     - keepassxc
     - lightdm
+    - pgmodeler
     - xfce4
     - xfce4-goodies
     - xmonad
