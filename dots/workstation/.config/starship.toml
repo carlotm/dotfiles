@@ -45,5 +45,6 @@ format = ' [PHP $version]($style)'
 format = ' [RUBY $version]($style)'
 [golang]
 format = ' [GO $version]($style)'
+detect_extensions = []
 [c]
 format = ' [C $version]($style)'
