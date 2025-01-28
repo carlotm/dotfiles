@@ -21,9 +21,6 @@ sys:
     - git
     - gvfs
     - gvfs-backends
-    - guile-3.0
-    - guile-3.0-dev
-    - guile-3.0-doc
     - fonts-open-sans
     - keepassxc
     - lightdm
