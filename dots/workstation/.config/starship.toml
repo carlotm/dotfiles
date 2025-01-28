@@ -50,3 +50,5 @@ detect_extensions = []
 format = ' [C $version]($style)'
 [cmake]
 disabled = true
+[zig]
+format = ' [ZIG $version]($style)'
