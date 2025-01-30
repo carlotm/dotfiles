@@ -23,4 +23,7 @@ source /usr/share/bash-completion/bash_completion
 
 setxkbmap -layout us,it,de -option grp:win_space_toggle
 
+GUIX_PROFILE="/home/carloratm/.config/guix/current"
+. "$GUIX_PROFILE/etc/profile"
+
 eval "$(starship init bash)"
