@@ -19,6 +19,7 @@ sys:
     - firefox-esr
     - fzf
     - git
+    - guix
     - gvfs
     - gvfs-backends
     - fonts-open-sans
