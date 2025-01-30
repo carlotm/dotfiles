@@ -19,7 +19,10 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'nelsyeung/twig.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
-Plug 'yegappan/lsp'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 plug#end()
 # }}}
 
@@ -99,89 +102,6 @@ hi PmenuThumb ctermbg=236
 match ExtraWhitespace /\s\+$/
 # }}}
 
-# LSP {{{
-hi LspDiagInlineError ctermbg=52
-hi LspDiagSignErrorText ctermbg=52
-hi LspDiagInlineWarning ctermbg=3 ctermfg=16
-hi LspDiagSignWarningText ctermbg=3 ctermfg=16
-hi LspDiagInlineHint ctermbg=234
-const lspOpts = {
-	aleSupport: false,
-	autoComplete: true,
-	autoHighlight: false,
-	autoHighlightDiags: true,
-	autoPopulateDiags: false,
-	completionKinds: {},
-	completionMatcher: 'case',
-	completionTextEdit: false,
-	customCompletionKinds: false,
-	diagSignErrorText: 'E',
-	diagSignHintText: 'H',
-	diagSignInfoText: 'I',
-	diagSignWarningText: 'W',
-	diagVirtualTextAlign: 'after',
-	diagVirtualTextWrap: 'truncate',
-	echoSignature: false,
-	hideDisabledCodeActions: false,
-	highlightDiagInline: true,
-	hoverInPreview: true,
-	ignoreMissingServer: false,
-	keepFocusInDiags: true,
-	keepFocusInReferences: true,
-	noNewlineInCompletion: false,
-	outlineOnRight: true,
-	outlineWinSize: 30,
-	semanticHighlight: true,
-	showDiagInBalloon: true,
-	showDiagInPopup: true,
-	showDiagOnStatusLine: false,
-	showDiagWithSign: true,
-	showDiagWithVirtualText: false,
-	showInlayHints: false,
-	showSignature: false,
-	snippetSupport: true,
-	ultisnipsSupport: true,
-	useBufferCompletion: false,
-	usePopupInCodeAction: true,
-	useQuickfixForLocations: true,
-	vsnipSupport: false,
-}
-autocmd User LspSetup call LspOptionsSet(lspOpts)
-
-var lspServers: list<dict<any>>
-if executable('typescript-language-server')
-	lspServers->add({
-		name: 'typescript-language-server',
-		filetype: ['javascript'],
-		path: 'typescript-language-server',
-		args: ['--stdio']
-	})
-endif
-if executable('css-languageserver')
-	lspServers->add({
-		name: 'css-languageserver',
-		filetype: ['css', 'scss'],
-		path: 'css-languageserver',
-		args: ['--stdio']
-	})
-endif
-if executable('elixir-ls')
-	lspServers->add({
-		name: 'elixir-ls',
-		filetype: ['elixir', 'eelixir'],
-		path: 'elixir-ls'
-	})
-endif
-if executable('erlang_ls')
-	lspServers->add({
-		name: 'erlang_ls',
-		filetype: ['erlang'],
-		path: 'erlang_ls'
-	})
-endif
-autocmd User LspSetup call LspAddServer(lspServers)
-# }}}
-
 # FZF {{{
 g:fzf_preview_window = ['down:50%', 'ctrl-/']
 g:fzf_layout = {
@@ -200,6 +120,11 @@ g:UltiSnipsSnippetDirectories = ["~/.UltiSnips"]
 g:UltiSnipsExpandTrigger = "<space>"
 # }}}
 
+# LSP {{{
+g:asyncomplete_auto_completeopt = 0
+set completeopt=menuone,noinsert,noselect
+# }}}
+
 # Key mappings {{{
 noremap <Left> <Nop>
 noremap <Right> <Nop>
@@ -211,19 +136,20 @@ nnoremap < <<
 nnoremap > >>
 nnoremap gn :bnext<CR>
 nnoremap gp :bprev<CR>
-nnoremap g[ :LspDiagNextWrap<CR>
-nnoremap gd :LspGotoDefinition<CR>
+nnoremap gd :LspDefinition<CR>
+nnoremap gr :LspReferences<CR>
 nnoremap <Leader>bd :Bdelete<CR>
 nnoremap <Leader>ww :wincmd w<CR>
 nnoremap <Leader>ff :GFiles<CR>
 nnoremap <Leader>fa :Files<CR>
 nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fg :Rg<CR>
-nnoremap <Leader>e :LspDiagCurrent<CR>
+# nnoremap <Leader>e :LspDiagCurrent<CR>
 nnoremap K :LspHover<CR>
-nnoremap ff :LspFormat<CR>
+nnoremap ff :LspDocumentFormat<CR>
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 # }}}
 
 # vim: set ts=4 sw=4 tw=0 noet :
