@@ -41,6 +41,7 @@ sys:
     - .config/autostart/WindowManager.desktop
     - .config/xmonad/xmonad.hs
     - .config/gtk-3.0/gtk.css
+    - .config/guix/channels.scm
     - .config/htop/htoprc
     - .config/mimeapps.list
     - .config/qutebrowser/config.py
