@@ -45,7 +45,6 @@ set scrolloff=10
 set showmatch
 set swapfile
 set dir=~/.cache
-set cursorcolumn
 nnoremap <SPACE> <Nop>
 g:mapleader = " "
 au VimEnter * set mouse=
