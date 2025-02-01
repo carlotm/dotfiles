@@ -45,6 +45,7 @@ set scrolloff=10
 set showmatch
 set swapfile
 set dir=~/.cache
+set cursorcolumn
 nnoremap <SPACE> <Nop>
 g:mapleader = " "
 au VimEnter * set mouse=
@@ -95,6 +96,7 @@ hi Pmenu ctermbg=234 ctermfg=15
 hi PmenuSel ctermbg=5 ctermfg=15
 hi PmenuSbar ctermbg=234
 hi PmenuThumb ctermbg=236
+hi CursorColumn ctermbg=234
 
 match ExtraWhitespace /\s\+$/
 # }}}
