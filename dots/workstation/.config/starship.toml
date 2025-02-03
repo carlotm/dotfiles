@@ -18,6 +18,8 @@ disabled = true
 format = '[$percentage]($style)'
 [nix_shell]
 format = ' [NIX]($style)'
+[guix_shell]
+format = ' [GUIX]($style)'
 [git_branch]
 format = ' [$branch]($style)'
 style = 'bold yellow'

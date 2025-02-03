@@ -14,7 +14,6 @@ alias tree="tree -C --dirsfirst"
 alias d="devbox"
 alias info="info --vi-keys"
 
-export PATH=$HOME/.local/bin:$PATH
 export EDITOR=vim
 export MANPAGER="less -R --use-color -Dd+y -Du+g"
 export MANROFFOPT="-c"
@@ -22,8 +21,5 @@ export MANROFFOPT="-c"
 source /usr/share/bash-completion/bash_completion
 
 setxkbmap -layout us,it,de -option grp:win_space_toggle
-
-GUIX_PROFILE="/home/carloratm/.config/guix/current"
-. "$GUIX_PROFILE/etc/profile"
 
 eval "$(starship init bash)"
